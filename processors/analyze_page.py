@@ -55,6 +55,23 @@ analysis = chain.invoke({
     "content": content
 })
 
+os.makedirs(
+    "analysis",
+    exist_ok=True
+)
+
+with open(
+    "analysis/page-1.json",
+    "w",
+    encoding="utf-8"
+) as f:
+
+    json.dump(
+        analysis.model_dump(),
+        f,
+        indent=2
+    )
+
 print(analysis)
 print(type(analysis))
 
