@@ -1,84 +1,68 @@
 from playwright.sync_api import sync_playwright
 import os
+from urllib.parse import urlparse, urljoin
 
 os.makedirs("pages", exist_ok=True)
+os.makedirs("analysis", exist_ok=True)
 
 with sync_playwright() as p:
 
-    start_url = "https://google.com"
+    start_url = "https://www.hubspot.com/"
     queue = [start_url]
     visited = set()
-    max_pages = 5
-
-    print(queue)
-    print(visited)
-
-    current_url = queue.pop(0)
-    print("current_url")
-    print(current_url)
-
-    visited.add(current_url)
-    print("visited->", visited)
-    print("queue->", queue)
-
-
+    max_pages = 20                          # tune as needed
+    page_count = 0
+    base_domain = urlparse(start_url).netloc
 
     browser = p.chromium.launch()
 
-    page = browser.new_page()
+    # ✅ LINE 43 ONWARDS — the crawl loop
+    while queue and page_count < max_pages:
+        current_url = queue.pop(0)
 
-    page.goto(
-        start_url,
-        wait_until="domcontentloaded"
-    )
+        if current_url in visited:
+            continue
+        visited.add(current_url)
 
-    links = page.eval_on_selector_all(
-    "a",
-    """
-    elements => elements.map(
-        el => el.href
-    )
-    """)
+        print(f"[{page_count+1}] Crawling: {current_url}")
 
-    for link in links:
-        if link not in visited:
-            queue.append(link)
+        try:
+            page = browser.new_page()
+            page.goto(current_url, wait_until="domcontentloaded", timeout=15000)
 
-    print(len(links))
+            # --- Collect same-domain links ---
+            links = page.eval_on_selector_all("a", "els => els.map(el => el.href)")
+            for link in links:
+                parsed = urlparse(link)
+                # Stay on same domain, skip anchors/mailto/tel
+                if (parsed.netloc == base_domain
+                        and parsed.scheme in ("http", "https")
+                        and link not in visited):
+                    queue.append(link)
 
-    for link in links[:5]:
-        print(link)
+            # --- Save screenshot, HTML, text ---
+            slug = f"page-{page_count + 1}"
+            page.screenshot(path=f"pages/{slug}.png", full_page=True)
 
-    print("Queue After Adding Links:")
-    print(queue[:5])
+            html = page.content()
+            with open(f"pages/{slug}.html", "w", encoding="utf-8") as f:
+                f.write(html)
 
-    print("Queue Size:")
-    print(len(queue))
+            text = page.locator("body").inner_text()
+            with open(f"pages/{slug}.txt", "w", encoding="utf-8") as f:
+                f.write(text)
 
-    # Screenshot
-    page.screenshot(
-        path="pages/page-1.png",
-        full_page=True
-    )
+            # --- Store metadata for next step ---
+            with open(f"pages/{slug}.meta", "w") as f:
+                f.write(current_url)
 
-    # HTML
-    html = page.content()
+            page_count += 1
+            page.close()
 
-    with open(
-        "pages/page-1.html",
-        "w",
-        encoding="utf-8"
-    ) as f:
-        f.write(html)
-
-    # Visible Text
-    text = page.locator("body").inner_text()
-
-    with open(
-        "pages/page-1.txt",
-        "w",
-        encoding="utf-8"
-    ) as f:
-        f.write(text)
+        except Exception as e:
+            print(f"  ⚠ Failed: {current_url} → {e}")
+            page.close()
+            continue
 
     browser.close()
+    print(f"\n✅ Done. Crawled {page_count} pages.")
