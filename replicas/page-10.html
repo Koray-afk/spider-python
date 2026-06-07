@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Software | HubSpot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="https://www.hubspot.com/favicon.ico">
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            color: #334155; /* Main body text color, text-slate-700 equivalent */
+        }
+        .text-hubspot-orange { color: #FF5E19; }
+        .bg-hubspot-orange { background-color: #FF5E19; }
+        .border-hubspot-orange { border-color: #FF5E19; }
+        .hover\:bg-hubspot-orange-dark:hover { background-color: #E65517; } /* Slightly darker for hover */
+
+        .text-hubspot-dark-blue { color: #192129; } /* For footer, etc. */
+        .bg-hubspot-dark-blue { background-color: #192129; }
+        .text-hubspot-light-green-bg { color: #F5F8F7; } /* for text on dark background */
+        .bg-hubspot-light-grey { background-color: #F5F8F7; } /* background for some sections */
+        .text-hubspot-blue-link { color: #006DFF; } /* Link color */
+        .text-hubspot-grey-text { color: #4D5B6A; } /* Lighter grey text */
+        .text-hubspot-main-text { color: #334155; } /* Main body text */
+
+        .max-w-screen-custom {
+            max-width: 1200px; /* Custom max-width for main content */
+        }
+
+        /* Custom shadows matching HubSpot's subtle shadows */
+        .shadow-custom-light {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.08);
+        }
+        .shadow-custom-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .shadow-custom-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .shadow-custom-xl {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* For the dropdowns (e.g. FAQs, Navbar) */
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+        .group:focus-within .group-focus-within\:block {
+            display: block;
+        }
+        .accordion-item input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .accordion-item input[type="checkbox"]:checked ~ .accordion-content {
+            max-height: 500px; /* Large enough to accommodate content */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-item input[type="checkbox"]:checked ~ .accordion-header .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="text-hubspot-main-text antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-custom-light">
+        <div class="max-w-screen-custom mx-auto px-6 sm:px-8 lg:px-10 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <a href="#" class="flex-shrink-0">
+                    <img src="https://www.hubspot.com/hubfs/assets/hubspot.svg" alt="HubSpot Logo" class="h-6">
+                </a>
+                <div class="hidden lg:flex items-center space-x-6 text-sm">
+                    <div class="relative group">
+                        <button class="flex items-center font-semibold text-gray-700 hover:text-hubspot-orange py-2">
+                            Products
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 py-2">
+                            <!-- Dropdown content placeholder -->
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="flex items-center font-semibold text-gray-700 hover:text-hubspot-orange py-2">
+                            Solutions
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 py-2">
+                            <!-- Dropdown content placeholder -->
+                        </div>
+                    </div>
+                    <a href="#" class="font-semibold text-gray-700 hover:text-hubspot-orange py-2">Pricing</a>
+                    <div class="relative group">
+                        <button class="flex items-center font-semibold text-gray-700 hover:text-hubspot-orange py-2">
+                            Resources
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 py-2">
+                            <!-- Dropdown content placeholder -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div class="hidden xl:flex items-center space-x-4 text-sm text-gray-600">
+                    <div class="relative group">
+                        <button class="flex items-center hover:text-hubspot-orange py-2">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M17 5l-2 2-2-2"></path></svg>
+                            English
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-32 py-2 right-0">
+                            <!-- Lang Dropdown content placeholder -->
+                        </div>
+                    </div>
+                    <a href="#" class="flex items-center hover:text-hubspot-orange py-2">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75a4.5 4.5 0 00-4.646-4.498H2.25c-1.24 0-2.25 1.01-2.25 2.25v13.5c0 1.24 1.01 2.25 2.25 2.25h14.854c.484 0 .94-.13 1.341-.36a4.5 4.5 0 005.029-4.385V6.75zM4.5 9h15.25"></path></svg>
+                        High Contrast
+                    </a>
+                    <a href="#" class="flex items-center hover:text-hubspot-orange py-2">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/

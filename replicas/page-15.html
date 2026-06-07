@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered CRM Software | HubSpot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            color: #33475b; /* HubSpot's default text color */
+        }
+        .text-hubspot-orange {
+            color: #ff7a59;
+        }
+        .bg-hubspot-orange {
+            background-color: #ff7a59;
+        }
+        .border-hubspot-orange {
+            border-color: #ff7a59;
+        }
+        .text-hubspot-darkblue {
+            color: #001e3e;
+        }
+        .bg-hubspot-lightgray {
+            background-color: #f5f8fa;
+        }
+        .text-hubspot-gray {
+            color: #6a7c8f;
+        }
+        .text-hubspot-lightgray-text {
+            color: #99aab8;
+        }
+        .border-hubspot-lightgray {
+            border-color: #e3e9ef;
+        }
+        .text-hubspot-pink {
+            color: #5031b2;
+        }
+
+        /* Custom font sizes for headings to match visual scale */
+        .text-6xl-ish { font-size: 3.5rem; line-height: 1.1; }
+        .text-5xl-ish { font-size: 2.75rem; line-height: 1.2; }
+        .text-4xl-ish { font-size: 2.25rem; line-height: 1.25; }
+
+        .icon-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .icon-box .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: #e3e9ef;
+            border-radius: 0.5rem;
+            color: #33475b;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .icon-box .icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .icon-box .icon-text h3 {
+            font-weight: 600;
+            color: #33475b;
+            margin-bottom: 0.25rem;
+        }
+        .icon-box .icon-text p {
+            color: #6a7c8f;
+            font-size: 0.875rem;
+        }
+
+        /* CRM UI elements for the screenshot - simplified */
+        .crm-ui-screenshot-placeholder {
+            min-height: 600px;
+            background-color: #f0f4f7;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e3e9ef;
+        }
+        .crm-sidebar {
+            width: 60px;
+            background-color: #111e2f;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
+        .crm-header-bar {
+            background-color: #ffffff;
+            height: 60px;
+            border-top-right-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-left: 60px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #e3e9ef;
+        }
+        .crm-main-content {
+            margin-left: 60px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            background-color: #f5f8fa;
+            border-bottom-right-radius: 12px;
+            height: calc(100% - 60px);
+            overflow-y: auto;
+        }
+        .crm-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+            border: 1px solid #e3e9ef;
+        }
+        .crm-profile-card {
+            width: 300px;
+            flex-shrink: 0;
+            height: fit-content;
+        }
+        .crm-profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ff7a59;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .crm-contact-card {
+            width: 250px;
+            flex-shrink: 0;
+            height: fit-content;
+        }
+        .crm-timeline-card {
+            flex-grow: 1;
+        }
+        .crm-timeline-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e3e9ef;
+            padding-bottom: 15px;
+        }
+        .crm-timeline-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .crm-timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f4f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            color: #33475b;
+        }
+        .crm-timeline-text h4 {
+            font-weight: 600;
+            color: #33475b;
+        }
+        .crm-timeline-text p {
+            color: #6a7c8f;
+            font-size: 0.875rem;
+        }
+        .crm-status-bar {
+            height: 40px;
+            background-color: #ffffff;
+            border-top: 1px solid #e3e9ef;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-left: 60px;
+        }
+
+        /* Specific styles for the "Recommended Actions" card */
+        .recommended-actions-popover {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fcebeb; /* HubSpot pink */
+            border: 1px solid #ffdedc;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 280px;
+            z-index: 10;
+        }
+        .recommended-actions-popover .action-button {
+            background-color: #ffffff;
+            border: 1px solid #e3e9ef;
+            color: #33475b;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.1s ease-in-out;
+        }
+        .recommended-actions-popover .action-button:hover {
+            background-color: #f5f8fa;
+        }
+
+        /* For the app connectors section */
+        .app-connector-card {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            border: 1px solid #e3e9ef;
+            border-radius: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #33475b;
+            font-weight: 500;
+            position: relative;
+        }
+        .app-connector-card .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .app-connector-card .logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .app-connector-card.active::after {
+            content: '✓';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #00ca41; /* Green checkmark background */
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        /* Pricing Card Checkmark */
+        .checkmark-icon {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            background-color: #00ca41; /* Green */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .checkmark-icon::before {
+            content: '✓';
+        }
+
+        /* FAQ dropdown arrow */
+        .faq-arrow {
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6a7c8f;
+        }
+        .faq-arrow::before {
+            content: '⌄'; /* Down arrow for closed state */
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Top Navbar -->
+    <div class="bg-hubspot-darkblue text-white text-sm py-2 px-8 flex justify-end items-center space-x-4">
+        <div class="flex items-center space-x-1">
+            <span class="mr-1">🌐</span>
+            <span class="cursor-pointer">English ⌄</span>
+        </div>
+        <div class="flex items-center space-x-1">
+            <span class="mr-1">🕶️</span>
+            <span class="cursor-pointer">High Contrast</span>
+        </div>
+        <div class="flex items-center space-x-1">
+            <span class="mr-1">📞</span>
+            <span class="cursor-pointer">Customer Support</span>
+        </div>
+        <div class="flex items-center space-x-1">
+            <span class="mr-1">👥</span>
+            <span class="cursor-pointer">Contact Sales</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span class="cursor-pointer">🔍</span>
+            <span class="cursor-pointer">Log in</span>
+            <span class="cursor-pointer">About ⌄</span>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="bg-white py-4 px-8 flex justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-8">
+            <a href="#" class="text-3xl font-bold text-hubspot-orange">HubSpot</a>
+            <div class="hidden lg:flex items-center space-x-6 text-hubspot-darkblue font-medium">
+                <a href="#" class="hover:text-hubspot-orange">Products ⌄</a>
+                <a href="#" class="hover:text-hubspot-orange">Solutions ⌄</a>
+                <a href="#" class="hover:text-hubspot-orange">Pricing</a>
+                <a href="#" class="hover:text-hubspot-orange">Resources ⌄</a>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="bg-hubspot-orange text-white px-6 py-3 rounded-md font-semibold hover:opacity-90">Get a demo</button>
+            <button class="border border-hubspot-orange text-hubspot-orange px-6 py-3 rounded-md font-semibold hover:bg-hubspot-orange hover:text-white transition-colors">Get free CRM</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-8 py-6 text-sm text-hubspot-gray">
+        <a href="#" class="hover:underline">Home</a> > <span class="font-semibold">Smart CRM</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-8 py-16 text-center">
+        <div class="flex items-center justify-center mb-4 text-hubspot-orange">
+            <span class="inline-block border border-hubspot-orange p-2 rounded-full mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.836 10.732A24.908 24.908 0 0112 21c-3.73 0-6.84-1.638-9.03-4.328m15.704-5.289A24.908 24.908 0 0112 3c-3.73 0-6.84 1.638-9.03 4.328m0 0H4m-1 0h1l.523 2.132C7.398 14.155 9.712 16 12 16c2.288 0 4.602-1.845 6.477-4.868L19 7h1m-1 0h1.5l.38-1.517M21 4h-1M12 12v.01" />
+                </svg>
+            </span>
+            <span class="text-xl font-bold text-hubspot-darkblue">Smart CRM™</span>
+        </div>
+        <h1 class="text-6xl-ish font-extrabold text-hubspot-darkblue mb-6 leading-tight">AI-Powered CRM Software</h1>
+        <p class="text-xl text-hubspot-darkblue max-w-3xl mx-auto mb-10">
+            One intelligent CRM that unifies your data and tools, automates the busywork, and gives every team the context they need to take the right next action.
+        </p>
+        <div class="flex justify-center space-x-4">
+            <button class="bg-hubspot-orange text-white px-8 py-4 rounded-md text-lg font-semibold hover:opacity-90">Get a demo</button>
+            <button class="border border-hubspot-orange text-hubspot-orange px-8 py-4 rounded-md text-lg font-semibold hover:bg-hubspot-orange hover:text-white transition-colors">Get free CRM</button>
+        </div>
+    </section>
+
+    <!-- Business Solutions Section -->
+    <section class="bg-hubspot-lightgray py-24">
+        <div class="container mx-auto px-8">
+            <span class="text-sm font-semibold text-hubspot-darkblue px-3 py-1 bg-white rounded-full border border-hubspot-lightgray mb-4 inline-block">Business Solutions</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
+                <div>
+                    <h2 class="text-5xl-ish font-extrabold text-hubspot-darkblue mb-6 leading-tight">Your CRM Just Got Smarter</h2>
+                    <p class="text-lg text-hubspot-gray leading-relaxed max-w-xl">
+                        Other CRMs simply store data. HubSpot's Smart CRM helps you act on it, showing what your team should do before anyone has to ask. The result is an intelligent data foundation where every team knows the right next action.
+                    </p>
+                </div>
+                <div>
+                    <!-- CRM UI Placeholder -->
+                    <div class="crm-ui-screenshot-placeholder relative">
+                        <!-- Simplified CRM UI elements -->
+                        <div class="crm-sidebar flex flex-col items-center pt-6 space-y-6">
+                            <div class="w-8 h-8 bg-hubspot-orange rounded-md"></div>
+                            <div class="w-6 h-6 bg-white rounded-md opacity-30"></div>
+                            <div class="w-6 h-6 bg-white rounded-md opacity-30"></div>
+                            <div class="w-6 h-6 bg-white rounded-md opacity-30"></div>
+                        </div>
+                        <div class="crm-header-bar">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-lg font-semibold text-hubspot-darkblue">Search HubSpot</span>
+                                <div class="flex items-center bg-hubspot-lightgray px-3 py-1 rounded-md text-sm text-hubspot-gray">
+                                    <span>🔍</span>
+                                    <input type="text" class="bg-transparent outline-none ml-2 w-48" placeholder="">
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-hubspot-gray text-xl">
+                                <span class="text-2xl">🔔</span>
+                                <span class="text-2xl">⚙️</span>
+                                <span class="text-2xl">💬</span>
+                                <span class="text-2xl">📧</span>
+                                <span class="text-base">👤 <span class="text-hubspot-darkblue font-medium">+ Assistant</span></span>
+                                <span class="text-base">👤 <span class="text-hubspot-darkblue font-medium">Biketools ⌄</span></span>
+                            </div>
+                        </div>
+                        <div class="crm-main-content">
+                            <div class="flex flex-col space-y-4">
+                                <div class="crm-card crm-profile-card">
+                                    <div class="flex items-center space-x-4 mb-4">
+                                        <div class="crm-profile-avatar">S</div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-hubspot-darkblue">Sunburst</h3>
+                                            <p class="text-hubspot-gray text-sm">sunburst.io</p>
+                                            <p class="text-hubspot-gray text-sm">(800) 745-3000</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-around text-hubspot-gray text-sm mb-4">
+                                        <span>📧 Email</span>
+                                        <span>📝 Note</span>
+                                        <span>📞 Task</span>
+                                        <span>... More</span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <h4 class="font-semibold text-hubspot-darkblue mb-2">Sentiment</h4>
+                                        <div class="flex items-center justify-between text-xs text-hubspot-gray mb-2">
+                                            <span>Generated Apr 7, 2020</span>
+                                            <span class="text-lg">⚙️</span>
+                                        </div>
+                                        <div class="w-full bg-hubspot-lightgray rounded-full h-2">
+                                            <div class="bg-green-500 h-2 rounded-full" style="width: 70%;"></div>
+                                        </div>
+                                        <p class="text-xs text-hubspot-gray mt-2">Sunburst continues to show strong engagement and satisfaction,</p>
+                                    </div>
+                                </div>
+                                <div class="crm-card crm-contact-card">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h3 class="text-xl font-bold text-hubspot-darkblue">Contacts (1)</h3>
+                                        <button class="bg-hubspot-orange text-white text-sm px-3 py-1 rounded-md">+ Add</button>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm text-hubspot-gray mb-4">
+                                        <span>Sort by: Create date ⌄</span>
+                                        <span>Ascending ▵</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-10 h-10 bg-hubspot-orange rounded-full flex items-center justify-center text-white font-bold">JM</div>
+                                        <div>
+                                            <p class="font-semibold text-hubspot-darkblue">Jordan Miles</p>
+                                            <p class="text-xs text-hubspot-gray">Job title: Sales Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="crm-card crm-timeline-card">
+                                <h3 class="text-xl font-bold text-hubspot-darkblue mb-4">Activity</h3>
+                                <div class="crm-timeline-item">
+                                    <div class="crm-timeline-icon">📝</div>
+                                    <div class="crm-timeline-text">
+                                        <h4>Enrichment update</h4>
+                                        <p class="text-hubspot-gray">2 properties were updated: description, annual revenue</p>
+                                        <div class="mt-2 text-xs text-hubspot-gray">Apr 1, 2023 at 10:00 AM</div>
+                                    </div>
+                                </div>
+                                <div class="crm-timeline-item">
+                                    <div class="crm-timeline-icon">🔗</div>
+                                    <div class="crm-timeline-text">
+                                        <h4>Record enriched</h4>
+                                        <p class="text-hubspot-gray">2 properties were updated: employees, annual revenue, country, phone, city, company name...</p>
+                                        <div class="mt-2 text-xs text-hubspot-gray">Mar 30, 2023 at 3:30 PM</div>
+                                    </div>
+                                </div>
+                                <div class="crm-timeline-item">
+                                    <div class="crm-timeline-icon">📞</div>
+                                    <div class="crm-timeline-text">
+                                        <h4>Call logged</h4>
+                                        <p class="text-hubspot-gray">Called Biglytics customer, discussed Q2 plans.</p>
+                                        <div class="mt-2 text-xs text-hubspot-gray">Mar 28, 2023 at 11:00 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-20 items-start">
+                <div>
+                    <h2 class="text-4xl-ish font-extrabold text-hubspot-darkblue mb-6 leading-tight">See Your Customers Clearly</h2>
+                    <p class="text-lg text-hubspot-gray leading-relaxed max-w-xl mb-10">
+                        Stop making decisions with incomplete data. HubSpot's Smart CRM unifies your customer information, conversations, and tools — so every team walks into every interaction already knowing the full story.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+                    <div class="icon-box">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10l2-1V8l-2-1zm0 0l2 1V7l-2-1zM10 4h.01M10 8h.01M10 12h.01M10 16h.01M10 20h.01M16 4h.01M16 8h.01M16 12h.01M16 16h.01M16 20h.01M20 4h.01M20 8h.01M20 12h.01M20 16h.01M20 20h.01M4 4h.01M4 8h.01M4 12h.01M4 16h.01M4 20h.01M8 4h.01M8 8h.01M8 12h.01M8 16h.01M8 20h.01M12 4h.01M12 8h.01M12 12h.01M12 16h.01M12 20h.01" />
+                            </svg>
+                        </div>
+                        <div class="icon-text">
+                            <h3>Custom Data Model</h3>
+                            <p>Store any type of data in your CRM with custom objects, events, scoring, and calculations.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div class="icon-text">
+                            <h3>Data Enrichment</h3>
+                            <p>Automatically enrich contact and company records with information from emails, calls, the web, and HubSpot's database, so your team does less manual research.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9.228a4.25 4.25 0 100 5.544l2.55-2.55a4.25 4.25 0 100-5.544l-2.55 2.55zM15.772 9.228a4.25 4.25 0 100 5.544l-2.55-2.55a4.25 4.25 0 100-5.544l2.55 2.55z" />
+                            </svg>
+                        </div>
+                        <div class="icon-text">
+                            <h3>Data Agent</h3>
+                            <p>Ask any question about a customer, contact, or prospect — AI searches your CRM, calls, emails, documents, and the web to find the answer.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16v4m-2-2h4m5-12v4m-2-2h4m-9 0a3 3 0 11-6 0 3 3 0 016 0zm-9 0a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="icon-text">
+                            <h3>AI Insights <span class="text-xs text-hubspot-gray">(Beta)</span></h3>
+                            <p>Get important information on CRM records, flag data issues, and highlight what matters most about your customers and deals.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                        <div class="icon-text">
+                            <h3>Dashboards & Reporting</h3>
+                            <p>View marketing, sales, and service data in one customizable place, so every team has the visibility they need to make faster, more confident decisions.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <div class="icon-text">
+                            <h3>Sensitive Data</h3>
+                            <p>Securely store sensitive customer data with encryption, precise access controls, and built-in compliance to give every team the access they need.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Your Team on the Same Page Section -->
+    <section class="container mx-auto px-8 py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl-ish font-extrabold text-hubspot-darkblue mb-6 leading-tight">Get Your Team on the Same Page</h2>
+                <p class="text-lg text-hubspot-gray leading-relaxed max-w-xl">
+                    You shouldn't have to chase down data or fix errors manually. HubSpot's Smart CRM automates routine tasks, keeps your data clean, and gives admins the controls they need to stay on top of everything as the team grows.
+                </p>
+            </div>
+            <div class="relative bg-white rounded-lg p-6 shadow-lg border border-hubspot-lightgray text-center">
+                <h3 class="text-lg font-semibold text-hubspot-darkblue mb-4">Data Quality</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col items-center">
+                        <p class="text-sm text-hubspot-gray">Duplicate Issues</p>
+                        <p class="text-4xl font-bold text-hubspot-darkblue">727</p>
+                        <p class="text-sm text-red-500">▼ 428</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-sm text-hubspot-gray">Total Issues</p>
+                        <p class="text-4xl font-bold text-hubspot-darkblue">128</p>
+                        <p class="text-sm text-hubspot-gray">properties</p>
+                    </div>
+                    <div class="col-span-2 flex flex-col items-center mt-4">
+                        <p class="text-sm text-hubspot-gray">Missing Data</p>
+                        <p class="text-4xl font-bold text-hubspot-darkblue">700</p>
+                        <p class="text-sm text-hubspot-gray">contacts with available enrichment</p>
+                    </div>
+                </div>
+                <div class="recommended-actions-popover">
+                    <h4 class="font-bold text-hubspot-darkblue mb-3">Recommended Actions</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="action-button">Duplicates</button>
+                        <button class="action-button">Formatting issues</button>
+                        <button class="action-button">App sync</button>
+                        <button class="action-button">Workflows</button>
+                        <button class="action-button">Company data</button>
+                        <button class="action-button">Contact data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mt-20">
+            <div class="icon-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </div>
+                <div class="icon-text">
+                    <h3>Workflows</h3>
+                    <p>Automate tasks and customer communications with intelligent workflows that trigger based on customer behavior.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <div class="icon-text">
+                    <h3>Custom Reporting</h3>
+                    <p>Turn data into insights with flexible custom reports that track everything from deal progression to revenue attribution.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.279A7 7 0 0012 2c-3.132 0-5.845 1.964-7.047 4.70M5 10V7a4 4 0 014-4h6a4 4 0 014 4v3m-5-3h4m-4 7v4" />
+                    </svg>
+                </div>
+                <div class="icon-text">
+                    <h3>Team Governance</h3>
+                    <p>Give every team member the exact access they need. Precise permissions, 2FA, SSO, and SOC2 compliance mean your IT and security teams are aligned.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                </div>
+                <div class="icon-text">
+                    <h3>Centralized Audit Log</h3>
+                    <p>Track every action taken by humans, automations, integrations, and AI for transparency and accountability.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                </div>
+                <div class="icon-text">
+                    <h3>Automatic Duplicate Detection</h3>
+                    <p>Use AI to automatically identify and merge duplicate records, keeping your database clean and accurate.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7m-9 4h2m-2 4h2M9 4h6a2 2 0 012 2v1H7V6a2 2 0 012-2z" />
+                    </svg>
+                </div>
+                <div class="icon-text">
+                    <h3>Project Management <span class="text-xs text-hubspot-gray">(Beta)</span></h3>
+                    <p>Keep customer projects and CRM data in the same place. Coordinate across teams, track progress, and automate handoffs, without switching tools or losing context.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All your tools, connected in one place Section -->
+    <section class="bg-hubspot-lightgray py-24">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col">
+                    <h2 class="text-5xl-ish font-extrabold text-hubspot-darkblue mb-6 leading-tight">All your tools, connected in one place.</h2>
+                    <p class="text-lg text-hubspot-gray leading-relaxed max-w-xl mb-10">
+                        No more switching between systems or reconciling data across disconnected tools. HubSpot's Smart CRM connects your apps, syncs your data, and integrates with your existing tools, so your agents, workflows, and data all work from the same source of truth.
+                    </p>
+                </div>
+                <div>
+                    <!-- Connector Apps carousel/section -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg border border-hubspot-lightgray relative">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold text-hubspot-darkblue">Best Connector apps for HubSpot</h3>
+                            <div class="flex items-center text-sm text-hubspot-gray">
+                                <span>Sort by:</span>
+                                <span class="ml-2 px-3 py-1 border border-hubspot-lightgray rounded-md cursor-pointer">Most installed ⌄</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4 overflow-x-auto pb-4">
+                            <div class="app-connector-card active">
+                                <div class="logo bg-white flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/48x48?text=Zapier" alt="Zapier Logo" class="rounded-md">
+                                </div>
+                                <span>Zapier</span>
+                            </div>
+                            <div class="app-connector-card">
+                                <div class="logo bg-white flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/48x48?text=Workato" alt="Workato Logo" class="rounded-md">
+                                </div>
+                                <span>Workato</span>
+                            </div>
+                            <div class="app-connector-card">
+                                <div class="logo bg-white flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/48x48?text=Make" alt="Make Logo" class="rounded-md">
+                                </div>
+                                <span>Make</span>
+                            </div>
+                            <div class="app-connector-card">
+                                <div class="logo bg-white flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/48x48?text=Skyvia" alt="Skyvia Logo" class="rounded-md">
+                                </div>
+                                <span>Skyvia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mt-20">
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm-8 0v1.5a2.5 2.5 0 005 0V12m-5-6h5a2 2 0 012 2v2m-7-2H7a2 2 0 00-2 2v2a2 2 0 002 2h4a2 2 0 002-2v-2a2 2 0 00-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="icon-text">
+                        <h3>HubSpot Marketplace</h3>
+                        <p>Connect your CRM to over 2,000 popular business apps through third-party and HubSpot-built integrations.</p>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                    </div>
+                    <div class="icon-text">
+                        <h3>Data Sync</h3>
+                        <p>Automatically sync data two ways between HubSpot and dozens of popular third-party apps.</p>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-6.75-3zm0-11H9V5h6v1h-1.75m-3.5 0H12a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75V6.75a.75.75 0 01.75-.75z" />
+                        </svg>
+                    </div>
+                    <div class="icon-text">
+                        <h3>Sandbox Test Account</h3>
+                        <p>Safely test changes and functionalities in a sandbox environment before they go live.</p>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5a2 2 0 00-2 2v2a2 2 0 002 2h14a2 2 0 002-2v-2a2 2 0 00-2-2zM7 7h10M7 21h10" />
+                        </svg>
+                    </div>
+                    <div class="icon-text">
+                        <h3>Custom CRM Interface</h3>
+                        <p>Match the layout of your CRM data to your team's unique needs to ensure your team sees the right data.</p>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="icon-text">
+                        <h3>UI Extensibility</h3>
+                        <p>Build custom interfaces, connect your existing tools, and extend HubSpot with flexible APIs, so your CRM works the way your business does.</p>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 7v6m-3-3h6m0 0V4m0 0H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-4V4a2 2 0 00-2-2h-2a2 2 0 00-2 2v1" />
+                        </svg>
+                    </div>
+                    <div class="icon-text">
+                        <h3>Integrated Tool Actions in Workflows</h3>
+                        <p>Combine HubSpot automation with your favorite apps to automate processes and keep teams operating smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Growth, Real Stories Section (Testimonials) -->
+    <section class="container mx-auto px-8 py-24">
+        <div class="flex justify-between items-center mb-12 flex-col md:flex-row text-center md:text-left">
+            <div>
+                <span class="text-sm font-semibold text-hubspot-darkblue px-3 py-1 bg-hubspot-lightgray rounded-full border border-hubspot-lightgray mb-4 inline-block">Customer Proof</span>
+                <h2 class="text-5xl-ish font-extrabold text-hubspot-darkblue leading-tight mt-4">Real Growth, Real Stories</h2>
+            </div>
+            <button class="border border-hubspot-orange text-hubspot-orange px-6 py-3 rounded-md font-semibold hover:bg-hubspot-orange hover:text-white transition-colors mt-6 md:mt-0">Explore case studies</button>
+        </div>
+
+        <p class="text-lg text-hubspot-gray leading-relaxed max-w-2xl mx-auto text-center mb-12">
+            See what teams like yours have accomplished with HubSpot Smart CRM.
+        </p>
+
+        <div class="flex justify-center space-x-6 mb-12">
+            <button class="pb-2 border-b-2 border-hubspot-orange text-hubspot-darkblue font-semibold">Telavox</button>
+            <button class="pb-2 text-hubspot-gray hover:text-hubspot-darkblue hover:border-b-2 hover:border-hubspot-lightgray">Storykit</button>
+            <button class="pb-2 text-hubspot-gray hover:text-hubspot-darkblue hover:border-b-2 hover:border-hubspot-lightgray">Cold Jet</button>
+            <button class="pb-2 text-hubspot-gray hover:text-hubspot-darkblue hover:border-b-2 hover:border-hubspot-lightgray">MedicAlert</button>
+        </div>
+
+        <div class="bg-white rounded-lg p-10 shadow-lg border border-hubspot-lightgray max-w-4xl mx-auto">
+            <p class="text-2xl text-hubspot-darkblue leading-relaxed italic mb-8">
+                "Thanks to HubSpot, because we don't have everything dispersed across systems, we're able to give the customer a much better experience."
+            </p>
+            <p class="font-semibold text-hubspot-darkblue">Elisabeth Norberg</p>
+            <p class="text-hubspot-gray mb-4">Revenue Operations Manager</p>
+            <a href="#" class="text-hubspot-orange font-semibold hover:underline">Read full case study</a>
+        </div>
+    </section>
+
+    <!-- Growth Statistics Section -->
+    <section class="bg-hubspot-lightgray py-24">
+        <div class="container mx-auto px-8 text-center">
+            <div class="mb-12">
+                <p class="text-lg text-hubspot-darkblue font-semibold">See what Smart CRM makes possible.</p>
+                <a href="#" class="text-hubspot-orange font-semibold hover:underline">Download the ROI report</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div>
+                    <p class="text-6xl-ish font-extrabold text-hubspot-darkblue">83%</p>
+                    <p class="text-lg text-hubspot-gray mt-2">of HubSpot users say it's effective at unifying their company's data</p>
+                </div>
+                <div>
+                    <p class="text-6xl-ish font-extrabold text-hubspot-darkblue">93%</p>
+                    <p class="text-lg text-hubspot-gray mt-2">of HubSpot users use HubSpot daily</p>
+                </div>
+                <div>
+                    <p class="text-6xl-ish font-extrabold text-hubspot-darkblue">87%</p>
+                    <p class="text-lg text-hubspot-gray mt-2">of HubSpot users say HubSpot is easy to use</p>
+                </div>
+            </div>
+
+            <p class="text-xl text-hubspot-darkblue font-semibold">299,000+ customers in over 135 countries grow their businesses with HubSpot</p>
+        </div>
+    </section>
+
+    <!-- Smart CRM Pricing Section -->
+    <section class="container mx-auto px-8 py-24">
+        <h2 class="text-5xl-ish font-extrabold text-hubspot-darkblue text-center mb-4 leading-tight">Smart CRM Pricing That Grows With You</h2>
+        <p class="text-lg text-hubspot-gray text-center mb-16">Scale your business without starting from scratch.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Free Card -->
+            <div class="crm-card p-8 flex flex-col items-start">
+                <h3 class="text-2xl font-bold text-hubspot-darkblue mb-2">Free</h3>
+                <p class="text-sm text-hubspot-gray mb-4">No credit card required</p>
+                <p class="text-5xl font-extrabold text-hubspot-darkblue mb-6">$0<span class="text-2xl font-bold">/month</span></p>
+                <ul class="space-y-4 text-hubspot-gray text-lg flex-grow">
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Manage contacts, companies & deals</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Organize your pipeline</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Sync your data</span></li>
+                </ul>
+            </div>
+
+            <!-- Starter Card -->
+            <div class="crm-card p-8 flex flex-col items-start">
+                <h3 class="text-2xl font-bold text-hubspot-darkblue mb-2">Starter</h3>
+                <p class="text-sm text-hubspot-gray mb-4">Starts at</p>
+                <p class="text-5xl font-extrabold text-hubspot-darkblue mb-6">
+                    <span class="text-2xl font-bold line-through text-hubspot-gray">$20</span> $10<span class="text-2xl font-bold">/month</span>
+                </p>
+                <ul class="space-y-4 text-hubspot-gray text-lg flex-grow">
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Remove HubSpot branding</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Configure user permissions</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Automatically enrich data</span></li>
+                </ul>
+            </div>
+
+            <!-- Professional Card -->
+            <div class="crm-card p-8 flex flex-col items-start">
+                <h3 class="text-2xl font-bold text-hubspot-darkblue mb-2">Professional</h3>
+                <p class="text-sm text-hubspot-gray mb-4">Starts at</p>
+                <p class="text-5xl font-extrabold text-hubspot-darkblue mb-6">$50<span class="text-2xl font-bold">/month</span></p>
+                <ul class="space-y-4 text-hubspot-gray text-lg flex-grow">
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Configure your CRM layout</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Merge duplicate records</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Organize users into teams</span></li>
+                </ul>
+            </div>
+
+            <!-- Enterprise Card -->
+            <div class="crm-card p-8 flex flex-col items-start">
+                <h3 class="text-2xl font-bold text-hubspot-darkblue mb-2">Enterprise</h3>
+                <p class="text-sm text-hubspot-gray mb-4">Starts at</p>
+                <p class="text-5xl font-extrabold text-hubspot-darkblue mb-6">$75<span class="text-2xl font-bold">/month</span></p>
+                <ul class="space-y-4 text-hubspot-gray text-lg flex-grow">
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Get AI insights on CRM index pages</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Set custom objects</span></li>
+                    <li class="flex items-center space-x-2"><span class="checkmark-icon"></span><span>Enable single sign-on</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flex justify-center space-x-4 mt-16">
+            <button class="bg-hubspot-orange text-white px-8 py-4 rounded-md text-lg font-semibold hover:opacity-90">Demo premium editions</button>
+            <button class="border border-hubspot-orange text-hubspot-orange px-8 py-4 rounded-md text-lg font-semibold hover:bg-hubspot-orange hover:text-white transition-colors">Get free CRM</button>
+        </div>
+        <p class="text-sm text-hubspot-gray text-center max-w-3xl mx-auto mt-8">
+            <span class="font-bold">*</span>Discount available for new customers only. Offer available for a limited time. For more detailed information on product packaging and the limits that apply, please see our <a href="#" class="text-hubspot-orange hover:underline font-semibold">pricing page</a>. Price shown in USD and subject to applicable tax.
+        </p>
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section class="container mx-auto px-8 py-24">
+        <h2 class="text-4xl-ish font-extrabold text-hubspot-darkblue mb-12">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+            <div class="border-b border-hubspot-lightgray pb-4">
+                <button class="flex justify-between items-center w-full text-left text-xl font-semibold text-hubspot-darkblue group hover:text-hubspot-orange transition-colors">
+                    <span>How does HubSpot Smart CRM work with HubSpot’s core products?</span>
+                    <span class="faq-arrow"></span>
+                </button>
+            </div>
+            <div class="border-b border-hubspot-lightgray pb-4">
+                <button class="flex justify-between items-center w-full text-left text-xl font-semibold text-hubspot-darkblue group hover:text-hubspot-orange transition-colors">
+                    <span>How can I purchase HubSpot Smart CRM?</span>
+                    <span class="faq-arrow"></span>
+                </button>
+            </div>
+            <div class="border-b border-hubspot-lightgray pb-4">
+                <button class="flex justify-between items-center w-full text-left text-xl font-semibold text-hubspot-darkblue group hover:text-hubspot-orange transition-colors">
+                    <span>How is AI used in HubSpot’s Smart CRM?</span>
+                    <span class="faq-arrow"></span>
+                </button>
+            </div>
+            <div class="border-b border-hubspot-lightgray pb-4">
+                <button class="flex justify-between items-center w-full text-left text-xl font-semibold text-hubspot-darkblue group hover:text-hubspot-orange transition-colors">
+                    <span>What data does HubSpot Smart CRM store, and is it secure?</span>
+                    <span class="faq-arrow"></span>
+                </button>
+            </div>
+            <div class="border-b border-hubspot-lightgray pb-4">
+                <button class="flex justify-between items-center w-full text-left text-xl font-semibold text-hubspot-darkblue group hover:text-hubspot-orange transition-colors">
+                    <span>Does HubSpot Smart CRM work with my existing tools?</span>
+                    <span class="faq-arrow"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-hubspot-orange py-20 text-center text-white">
+        <h2 class="text-5xl-ish font-extrabold mb-6 leading-tight">Ready for a CRM that understands your customers?</h2>
+        <p class="text-xl max-w-3xl mx-auto mb-10">
+            Connect your data, teams, and tools, and give every team the insights they need — all in one place.
+        </p>
+        <div class="flex justify-center space-x-4">
+            <button class="bg-white text-hubspot-orange px-8 py-4 rounded-md text-lg font-semibold hover:opacity-90">Get a demo</button>
+            <button class="border border-white text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-white hover:text-hubspot-orange transition-colors">Get free CRM</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-hubspot-darkblue text-white py-16 px-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-sm">
+            <div>
+                <h4 class="font-bold mb-4">Popular Features</h4>
+                <ul class="space-y-2 text-hubspot-lightgray-text">
+                    <li><a href="#" class="hover:underline">All Products and Features</a></li>
+                    <li><a href="#" class="hover:underline">HubSpot SEO</a></li>
+                    <li><a href="#" class="hover:underline">Free Meeting Scheduler App</a></li>
+                    <li><a href="#" class="hover:underline">Breeze AI Tools</a></li>
+                    <li><a href="#" class="hover:underline">Email Tracking Software</a></li>
+                    <li><a href="#" class="hover:underline">AI Content Writer</a></li>
+                    <li><a href="#" class="hover:underline">Email Marketing Software</a></li>
+                    <li><a href="#" class="hover:underline">Lead Management Software</a></li>
+                    <li><a href="#" class="hover:underline">AI Prospecting Agent</a></li>
+                    <li><a href="#" class="hover:underline">Free Website Builder</a></li>
+                    <li><a href="#" class="hover:underline">Landing Pages</a></li>
+                    <li><a href="#" class="hover:underline">Free Online Form Builder</a></li>
+                    <li><a href="#" class="hover:underline">Free Chatbot Builder</a></li>
+                    <li><a href="#" class="hover:underline">Free Live Chat Software</a></li>
+                    <li><a href="#" class="hover:underline">Marketing Analytics</a></li>
+                    <li><a href="#" class="hover:underline">Free Landing Page Builder</a></li>
+                    <li><a href="#" class="hover:underline">Free Web Hosting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Free Tools</h4>
+                <ul class="space-y-2 text-hubspot-lightgray-text">
+                    <li><a href="#" class="hover:underline">See All Free Business Tools</a></li>
+                    <li><a href="#" class="hover:underline">AEO Grader</a></li>
+                    <li><a href="#" class="hover:underline">Make My Persona</a></li>
+                    <li><a href="#" class="hover:underline">Email Signature Generator</a></li>
+                    <li><a href="#" class="hover:underline">Free Business Templates</a></li>
+                    <li><a href="#" class="hover:underline">Software Comparisons Library</a></li>
+                    <li><a href="#" class="hover:underline">Website Templates</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Company</h4>
+                <ul class="space-y-2 text-hubspot-lightgray-text">
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Careers</a></li>
+                    <li><a href="#" class="hover:underline">Management Team</a></li>
+                    <li><a href="#" class="hover:underline">Investor Relations</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                    <li><a href="#" class="hover:underline">Sustainability</a></li>
+                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Customers</h4>
+                <ul class="space-y-2 text-hubspot-lightgray-text">
+                    <li><a href="#" class="hover:underline">Customer Support</a></li>
+                    <li><a href="#" class="hover:underline">Join a Local User Group</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Partners</h4>
+                <ul class="space-y-2 text-hubspot-lightgray-text">
+                    <li><a href="#" class="hover:underline">All Partner Programs</a></li>
+                    <li><a href="#" class="hover:underline">Solutions Partner Program</a></li>
+                    <li><a href="#" class="hover:underline">Technology Partner Program</a></li>
+                    <li><a href="#" class="hover:underline">HubSpot for Startups</a></li>
+                    <li><a href="#" class="hover:underline">Affiliate Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-16 pt-8 border-t border-hubspot-gray flex flex-col items-center">
+            <div class="flex space-x-6 text-2xl mb-8">
+                <a href="#" class="hover:text-hubspot-orange">f</a> <!-- Facebook -->
+                <a href="#" class="hover:text-hubspot-orange">instagram</a> <!-- Instagram (simplified text icon) -->
+                <a href="#" class="hover:text-hubspot-orange">youtube</a> <!-- Youtube (simplified text icon) -->
+                <a href="#" class="hover:text-hubspot-orange">x</a> <!-- Twitter (simplified text icon) -->
+                <a href="#" class="hover:text-hubspot-orange">in</a> <!-- LinkedIn (simplified text icon) -->
+                <a href="#" class="hover:text-hubspot-orange">reddit</a> <!-- Reddit (simplified text icon) -->
+                <a href="#" class="hover:text-hubspot-orange">tiktok</a> <!-- Tiktok (simplified text icon) -->
+            </div>
+            <p class="text-sm text-hubspot-lightgray-text mb-8">Copyright © 2026 HubSpot, Inc.</p>
+            <div class="flex space-x-6 text-hubspot-lightgray-text text-sm flex-wrap justify-center">
+                <a href="#" class="hover:underline">Legal Center</a>
+                <span class="text-hubspot-gray">|</span>
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <span class="text-hubspot-gray">|</span>
+                <a href="#" class="hover:underline">Security</a>
+                <span class="text-hubspot-gray">|</span>
+                <a href="#" class="hover:underline">Website Accessibility</a>
+                <span class="text-hubspot-gray">|</span>
+                <a href="#" class="hover:underline">Manage Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .google-logo-text span:nth-child(1) { color: #4285F4; } /* G */
+        .google-logo-text span:nth-child(2) { color: #EA4335; } /* o */
+        .google-logo-text span:nth-child(3) { color: #FBBC05; } /* o */
+        .google-logo-text span:nth-child(4) { color: #4285F4; } /* g */
+        .google-logo-text span:nth-child(5) { color: #34A853; } /* l */
+        .google-logo-text span:nth-child(6) { color: #EA4335; } /* e */
+        .search-input-container {
+            border: 1px solid #dadce0;
+            border-radius: 24px;
+            padding: 10px 14px;
+            width: 582px;
+            max-width: 90%;
+            display: flex;
+            align-items: center;
+            box-shadow: none;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .search-input-container:hover {
+            box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            border-color: rgba(223,225,229,0);
+        }
+        .search-input-container:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            border-color: rgba(223,225,229,0);
+        }
+        .search-input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 16px;
+            background-color: transparent;
+        }
+        .search-button {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            margin: 11px 4px;
+            padding: 0 16px;
+            line-height: 27px;
+            height: 36px;
+            min-width: 54px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .search-button:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            background-color: #f0f0f0;
+            border: 1px solid #dadce0;
+        }
+        .footer-top {
+            background-color: #f2f2f2;
+            padding: 15px 30px;
+            border-bottom: 1px solid #dadce0;
+            color: #70757a;
+            font-size: 15px;
+        }
+        .footer-bottom {
+            background-color: #f2f2f2;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            color: #70757a;
+            font-size: 14px;
+        }
+        .footer-bottom a {
+            color: #70757a;
+            margin-right: 27px;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom .left-links a:last-child {
+            margin-right: 0;
+        }
+        .footer-bottom .right-links a:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center p-4 text-sm text-gray-700">
+        <div class="flex space-x-4">
+            <a href="#" class="no-underline text-gray-700 hover:underline">About</a>
+            <a href="#" class="no-underline text-gray-700 hover:underline">Store</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="no-underline text-gray-700 hover:underline">Gmail</a>
+            <a href="#" class="no-underline text-gray-700 hover:underline">Images</a>
+            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100">
+                <div class="grid grid-cols-3 gap-px w-4 h-4">
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                    <div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+                </div>
+            </a>
+            <button class="bg-blue-500 text-white py-2 px-6 rounded-md hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Sign in</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center pb-24">
+        <div class="google-logo-text text-8xl font-normal mb-8">
+            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        </div>
+
+        <div class="search-input-container">
+            <svg class="h-5 w-5 text-gray-500 mr-3" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            <input type="text" class="search-input" aria-label="Search">
+            <svg class="h-6 w-6 text-gray-500 mx-1 cursor-pointer" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285f4" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path><path fill="#34a853" d="m11 18.08h2v3.92c0 .55-.45.5-1 0h-1v-3.92z"></path><path fill="#fbbc05" d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45.9 2.1 2 3.12l-1.95 1.75z"></path><path fill="#ea4335" d="m12 16.93c1.88 0 3.65-.79 4.9-1.99l-1.4-1.49c-.98.88-2.52 1.4-3.5 1.4-2.27 0-4.04-1.92-4.04-4.23h-2c0 3.52 2.91 6.37 6.04 6.37z"></path></svg>
+            <svg class="h-6 w-6 text-gray-500 ml-1 cursor-pointer" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 17H2v-2h20v2zm0-4H2v-2h20v2zm0-4H2V7h20v2z"/></svg>
+            <!-- Using a generic camera icon for simplicity, the original is a Google Lens icon -->
+            <svg class="h-6 w-6 text-gray-500 ml-1 cursor-pointer" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg>
+        </div>
+
+        <div class="mt-8 flex space-x-2">
+            <button class="search-button">Google Search</button>
+            <button class="search-button">I'm Feeling Lucky</button>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-700">
+            Google offered in: 
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">हिन्दी</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">বাংলা</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">తెలుగు</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">मराठी</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">தமிழ்</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">ગુજરાતી</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">ಕನ್ನಡ</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">മലയാളം</a>
+            <a href="#" class="text-blue-700 no-underline hover:underline px-1">ਪੰਜਾਬੀ</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <div class="footer-top">
+            India
+        </div>
+        <div class="footer-bottom">
+            <div class="left-links">
+                <a href="#">Advertising</a>
+                <a href="#">Business</a>
+                <a href="#">How Search works</a>
+            </div>
+            <div class="right-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

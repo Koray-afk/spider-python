@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automate Your Marketing | HubSpot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: #FBF9F6; /* Light beige background */
+            color: #2D353F; /* Dark text color */
+        }
+        .text-primary-orange {
+            color: #FF5C35;
+        }
+        .bg-primary-orange {
+            background-color: #FF5C35;
+        }
+        .border-primary-orange {
+            border-color: #FF5C35;
+        }
+        .text-dark-gray {
+            color: #2D353F;
+        }
+        .text-light-gray {
+            color: #6A7B8E;
+        }
+        .bg-greenish-light {
+            background-color: #D4E5E0; /* Specific light greenish color for the hero diagonal */
+        }
+        .bg-footer-dark {
+            background-color: #2D353F;
+        }
+        .hero-background-tilt {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%; /* Adjust width to make it cover correctly */
+            height: 100%; /* Ensure it covers the height of the parent */
+            background-color: #D4E5E0; /* The greenish color */
+            transform: skewY(-7deg) translateX(25%); /* Adjust skew and translate for positioning */
+            transform-origin: top right;
+            z-index: 0; /* Ensure it's behind content */
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white text-sm py-2 px-4 shadow-sm relative z-20">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-4 items-center text-light-gray">
+                <a href="#" class="flex items-center space-x-1 hover:text-dark-gray">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm-1.5 11.5a.5.5 0 01-1 0v-5a.5.5 0 011 0v5zM10 6a.5.5 0 01-1 0V5a.5.5 0 011 0v1zM13 11a.5.5 0 01-1 0V8a.5.5 0 011 0v3z"></path></svg>
+                    <span>English</span>
+                </a>
+                <a href="#" class="flex items-center space-x-1 hover:text-dark-gray">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5 10a.5.5 0 01-.5-.5v-1a.5.5 0 011 0v1a.5.5 0 01-.5.5zm10 0a.5.5 0 01-.5-.5v-1a.5.5 0 011 0v1a.5.5 0 01-.5.5z"></path></svg>
+                    <span>High Contrast</span>
+                </a>
+                <a href="#" class="flex items-center space-x-1 hover:text-dark-gray">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm-3-5a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                    <span>Customer Support</span>
+                </a>
+                <a href="#" class="flex items-center space-x-1 hover:text-dark-gray">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm2 0v14h12V3H4zm6 2a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 0110 5zm0 5a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 0110 10zM5 7a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 015 7zm10 0a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 0115 7zm-5 5a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 0110 12z"></path></svg>
+                    <span>Contact Sales</span>
+                </a>
+            </div>
+            <div class="flex space-x-4 items-center text-light-gray">
+                <a href="#" class="hover:text-dark-gray">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="#" class="hover:text-dark-gray">Log in</a>
+                <a href="#" class="hover:text-dark-gray flex items-center">
+                    <span>About</span>
+                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white shadow py-4 relative z-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center space-x-8">
+                <a href="#">
+                    <img src="https://www.hubspot.com/hubfs/assets/hubspot.com/logos/hubspot-wordmark.svg" alt="HubSpot Logo" class="h-6">
+                </a>
+                <div class="flex space-x-6 text-dark-gray font-medium text-base">
+                    <a href="#" class="flex items-center hover:text-primary-orange">
+                        <span>Products</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <a href="#" class="flex items-center hover:text-primary-orange">
+                        <span>Solutions</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <a href="#" class="hover:text-primary-orange">Pricing</a>
+                    <a href="#" class="flex items-center hover:text-primary-orange">
+                        <span>Resources</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium shadow-md hover:bg-orange-600">Get a demo</a>
+                <a href="#" class="text-primary-orange border border-primary-orange px-6 py-3 rounded-md font-medium hover:bg-orange-50">Get started free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden min-h-[600px] flex items-center">
+        <div class="absolute inset-0 z-0 hero-background-tilt"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-sm breadcrumbs mb-4 text-light-gray">
+                <a href="#" class="hover:text-primary-orange">Marketing Hub</a>
+                <span class="mx-1">&gt;</span>
+                <span class="text-dark-gray">Automate Your Marketing to Boost Campaign Efficiency</span>
+            </div>
+            <h1 class="text-6xl font-extrabold leading-tight max-w-2xl mb-6 text-dark-gray">
+                Automate Your Marketing to Boost Campaign Efficiency
+            </h1>
+            <p class="text-xl max-w-3xl mb-10 text-dark-gray">
+                Use marketing automation software to automate tasks, make data-driven marketing decisions, and turn contacts into loyal customers.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="bg-primary-orange text-white px-8 py-4 rounded-md text-lg font-medium shadow-md hover:bg-orange-600">Get a demo</a>
+                <a href="#" class="text-primary-orange border border-primary-orange px-8 py-4 rounded-md text-lg font-medium hover:bg-orange-50">Get started free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use HubSpot's marketing automation tools section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-extrabold mb-6 text-dark-gray leading-tight">
+                Use HubSpot's marketing automation tools to boost campaign efficiency.
+            </h2>
+            <p class="text-lg text-dark-gray mb-12">
+                Making an impact is hard when your team's bogged down by time constraints, manual processes, and unclear data. Marketing Hub's automation tools can help you surpass those challenges and drive measurable results. Get started using this simple framework.
+            </p>
+            <ol class="list-none space-y-6 text-lg text-dark-gray">
+                <li><span class="font-bold">1.</span> Save time and resources using automation for campaign management.</li>
+                <li><span class="font-bold">2.</span> Target your messaging at scale with AI marketing software.</li>
+                <li><span class="font-bold">3.</span> Measure and optimize with advanced marketing analytics.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Content Sections (alternating image/text) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 mb-16">
+            <div class="md:w-1/2">
+                <img src="https://f.hubspotusercontent00.net/hubfs/53/Automation-campaign-management-1.png" alt="Automation Campaign Management" class="w-full rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2 text-dark-gray">
+                <h3 class="text-3xl font-extrabold mb-6">1. Save time and resources using automation for campaign management.</h3>
+                <p class="mb-4 text-lg">
+                    Many marketers are dealing with the pressure to drive greater impact without increases in budget and resourcing. An effective way to address this pressure is by reducing low-impact, high-effort work and reallocating that time to focus on more complex and impactful projects.
+                </p>
+                <p class="mb-4 text-lg">
+                    Marketing Hub gives you many tools to help automate omni-channel campaigns.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-lg">
+                    <li>Use <span class="font-bold">email and SMS automation</span> to enroll contacts in specific messaging campaigns triggered by actions like link clicks, email opens, and replies.</li>
+                    <li>Set up <span class="font-bold">retargeting campaigns</span> that help your brand stay top of mind throughout your customer's journey.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center gap-12 mb-16">
+            <div class="md:w-1/2">
+                <img src="https://f.hubspotusercontent00.net/hubfs/53/Automation-AI-marketing-2.png" alt="AI Marketing Software" class="w-full rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2 text-dark-gray">
+                <h3 class="text-3xl font-extrabold mb-6">2. Target your messaging at scale with AI marketing software.</h3>
+                <p class="mb-4 text-lg">
+                    Customers are tired of being treated like clicks. Make every site visitor and email subscriber feel heard with personalized marketing content at scale.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-lg">
+                    <li>Turn leads into customers by nurturing them with personalized, AI-powered messaging across <span class="font-bold">SMS, WhatsApp, social, and email.</span></li>
+                    <li>Use <span class="font-bold">automated workflows</span> to create follow-ups based on customer interactions like link clicks, site visits, and more.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://f.hubspotusercontent00.net/hubfs/53/Automation-advanced-marketing-analytics-3.png" alt="Advanced Marketing Analytics" class="w-full rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2 text-dark-gray">
+                <h3 class="text-3xl font-extrabold mb-6">3. Measure and optimize with advanced marketing analytics.</h3>
+                <p class="mb-4 text-lg">
+                    Demonstrating your strategy's value can be stressful when you lack the ability to forecast and track marketing performance. At the same time, relying on your analytics teams to source data for you can be time-consuming and strain their bandwidth.
+                </p>
+                <p class="mb-4 text-lg">
+                    With Marketing Hub, you can find what is and isn't working with ease, without depending on cross-functional stakeholders.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-lg">
+                    <li>Track and report on what is and isn't working with <span class="font-bold">advanced marketing reporting tools</span>.</li>
+                    <li>Improve campaign results and boost lead generation using <span class="font-bold">Smart CRM data</span> to run predictive analytics.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-20 bg-[#FBF9F6]">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-extrabold mb-12 text-dark-gray">
+                With Marketing Hub, customers experienced these results:
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm flex flex-col items-center">
+                    <p class="text-5xl font-extrabold text-primary-orange mb-4">39%</p>
+                    <p class="text-lg text-dark-gray mb-6">
+                        increase <br> in their deals created after 12 months
+                    </p>
+                    <a href="#" class="text-primary-orange flex items-center space-x-2 text-lg font-medium hover:underline">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span>Download ROI report</span>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm flex flex-col items-center">
+                    <p class="text-5xl font-extrabold text-primary-orange mb-4">50%</p>
+                    <p class="text-lg text-dark-gray mb-6">
+                        increase <br> in their deals closed after 12 months
+                    </p>
+                    <a href="#" class="text-primary-orange flex items-center space-x-2 text-lg font-medium hover:underline">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span>Download ROI report</span>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm flex flex-col items-center">
+                    <p class="text-5xl font-extrabold text-primary-orange mb-4">8x more</p>
+                    <p class="text-lg text-dark-gray mb-6">
+                        deals closed with reporting compared to those <br> who don't use reporting
+                    </p>
+                    <a href="#" class="text-primary-orange flex items-center space-x-2 text-lg font-medium hover:underline">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span>Download ROI report</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automate your marketing with Marketing Hub section -->
+    <section class="py-20 relative bg-[#FBF9F6]">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 text-dark-gray z-10">
+                <h2 class="text-4xl font-extrabold leading-tight mb-6">
+                    Automate your marketing to boost campaign efficiency with Marketing Hub.
+                </h2>
+                <p class="text-lg mb-8">
+                    Save valuable time with AI-powered software that automates personalized marketing campaigns at scale.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="bg-primary-orange text-white px-8 py-4 rounded-md text-lg font-medium shadow-md hover:bg-orange-600">Learn more</a>
+                    <a href="#" class="text-primary-orange border border-primary-orange px-8 py-4 rounded-md text-lg font-medium hover:bg-orange-50">Get started free</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-0">
+                <img src="https://f.hubspotusercontent00.net/hubfs/53/assets/marketing-hub/marketing-hub-automate-image-1.svg" alt="Automation illustration" class="max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-dark-gray">
+                Discover how companies are boosting campaign efficiency with Marketing Hub's automation tools.
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Airstream Generates 78% More Leads at Scale with HubSpot</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Learn how Airstream uses HubSpot's marketing automation tools to generate more leads and improve processes.
+                    </p>
+                    <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium text-center hover:bg-orange-600">Watch Airstream story</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Momentive Aligns Marketing Processes With HubSpot</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Learn how Momentive simplified its marketing processes with Marketing Hub, reducing the number of website forms and increasing speed-to-lead time.
+                    </p>
+                    <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium text-center hover:bg-orange-600">Watch Momentive story</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Spocket Doubles Prospect Conversions with HubSpot</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Discover how Spocket implemented HubSpot to automate its marketing to engage and track leads better.
+                    </p>
+                    <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium text-center hover:bg-orange-600">Watch Spocket story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Resources Section -->
+    <section class="py-20 bg-[#FBF9F6]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-dark-gray">
+                Related Resources
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Building an Effective Automation Strategy</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Learn what your business needs before implementing an automation strategy. Discover how to use CRM data and business processes in HubSpot workflows.
+                    </p>
+                    <a href="#" class="text-primary-orange text-lg font-medium hover:underline">Take automation course</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Automation Blueprints</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Get an inside look at how HubSpot's Marketing, Sales and Services leaders use automation to unite their teams and delight their customers in this 5-part video series.
+                    </p>
+                    <a href="#" class="text-primary-orange text-lg font-medium hover:underline">Watch video series</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">AI Content Strategy for Startups</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Discover how companies automate tasks to increase revenue and improve customer experiences. This frees up employees to do more meaningful, critical work.
+                    </p>
+                    <a href="#" class="text-primary-orange text-lg font-medium hover:underline">Read about AI</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Smarter, Not Harder Section -->
+    <section class="bg-footer-dark py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-4xl font-extrabold mb-6 leading-tight">
+                Work Smarter, Not Harder
+            </h2>
+            <p class="text-lg mb-10 text-gray-200">
+                Spend less time managing software and more time getting results by using Marketing Hub to automate marketing. Get better leads, happy customers, and greater revenue.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-primary-orange text-white px-8 py-4 rounded-md text-lg font-medium shadow-md hover:bg-orange-600">Get a demo</a>
+                <a href="#" class="text-white border border-white px-8 py-4 rounded-md text-lg font-medium hover:bg-gray-700">Get started free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore other use cases section -->
+    <section class="py-20 bg-[#FBF9F6]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-dark-gray">
+                Explore other use cases
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col text-center">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Generate high-quality leads</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Create, publish, and measure omnichannel marketing campaigns to attract and capture high-quality leads.
+                    </p>
+                    <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium text-center hover:bg-orange-600">Get better leads</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col text-center">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Reach and engage sales prospects</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Find innovative tools and strategies that can help you stand out from the noise, reach sales prospects, and nurture revenue-driving relationships.
+                    </p>
+                    <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium text-center hover:bg-orange-600">Engage more prospects</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col text-center">
+                    <h3 class="text-xl font-extrabold mb-4 text-dark-gray leading-snug">Accelerate sales and close deals faster</h3>
+                    <p class="text-light-gray text-base flex-grow mb-6">
+                        Learn how HubSpot helps a variety of businesses streamline their sales pipeline, enhance sales rep productivity, and close deals faster.
+                    </p>
+                    <a href="#" class="bg-primary-orange text-white px-6 py-3 rounded-md font-medium text-center hover:bg-orange-600">Close more deals</a>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#" class="text-primary-orange border border-primary-orange px-8 py-4 rounded-md text-lg font-medium hover:bg-orange-50 inline-block">Explore More Tools</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-footer-dark text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-center space-x-6 text-2xl mb-12">
+                <a href="#" class="hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.766 7 2.504v6.731z"></path></svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.264-.149-4.771-1.682-4.92-4.919-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.92-4.919 1.265-.058 1.646-.07 4.85-.07zm0 2.163c-3.259 0-3.667.014-4.919.071-2.771.127-4.004 1.407-4.131 4.131-.059 1.252-.071 1.66-.071 4.919s.012 3.667.071 4.919c.127 2.724 1.36 3.994 4.131 4.131 1.252.059 1.66.071 4.919.071s3.667-.012 4.919-.071c2.724-.127 3.994-1.36 4.131-4.131.059-1.252.071-1.66.071-4.919s-.012-3.667-.071-4.919c-.127-2.771-1.36-4.004-4.131-4.131-1.252-.059-1.66-.071-4.919-.071zm0 4.326c-3.321 0-6 2.679-6 6s2.679 6 6 6 6-2.679 6-6-2.679-6-6-6zm0 2.163c2.155 0 3.837 1.701 3.837 3.837s-1.682 3.837-3.837 3.837-3.837-1.701-3.837-3.837 1.682-3.837 3.837-3.837z"></path></svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-8h2v8zm3-11v8h-2v-8h2zm3 0v8h-2v-8h2z"></path></svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.21-.628-3.322-3.322H3.704l7.185-8.196L2.607 2.25H5.85L11.3 9.362 18.244 2.25zm-2.88 17.088h1.182L5.808 3.75H4.506l9.856 18.75z"/></svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.638 7.234c.159.083.3.176.425.276 2.379 1.848 3.568 4.673 3.568 8.01 0 5.432-4.407 9.839-9.84 9.839-2.31 0-4.462-.801-6.168-2.149l-.497-.373-.591-.462-5.742 2.164.717-5.908-.38-.458-.291-.351c-1.624-1.93-2.503-4.326-2.503-6.848 0-5.432 4.407-9.839 9.84-9.839 2.515 0 4.881.944 6.703 2.658zm-11.457 4.544c-.732 0-1.332-.6-1.332-1.332s.6-1.332 1.332-1.332 1.332.6 1.332 1.332-.6 1.332-1.332 1.332zm7.147 0c-.732 0-1.332-.6-1.332-1.332s.6-1.332 1.332-1.332 1.332.6 1.332 1.332-.6 1.332-1.332 1.332z"></path></svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.216 16.54c-.167.312-.486.536-.856.59-.37.054-.77.022-1.127-.091-1.332-.423-2.618-1.285-3.837-2.545-1.21-1.25-2.28-2.616-3.15-4.04-.86-1.417-1.42-2.92-1.67-4.47-.25-1.55-.17-3.11.23-4.58.4-.92 1.09-1.63 1.95-2.09.86-.46 1.83-.6 2.8-.43.97.17 1.87.61 2.6 1.29.73.68 1.25 1.54 1.55 2.5.3.96.38 1.97.23 2.97-.15 1-.49 1.92-1.02 2.76-.53.84-1.15 1.56-1.87 2.15-.72.59-1.48 1.06-2.28 1.39-.8.33-1.63.5-2.48.5-.68 0-1.36-.1-2-.29-.64-.19-1.22-.52-1.74-.97-.52-.45-.96-1-1.31-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32 1.3.29 1.95-.03.65-.21 1.29-.53 1.89-.32.6-.74 1.15-1.27 1.65-.53.5-1.08.88-1.73 1.13-.65.25-1.32.39-2.01.39-.67 0-1.34-.1-2-.3-.66-.2-1.26-.53-1.79-.98-.53-.45-.98-1.01-1.33-1.64-.35-.64-.59-1.35-.71-2.09-.12-.74-.11-1.5-.02-2.24.09-.74.29-1.43.59-2.08.28-.6.67-1.12 1.15-1.58.48-.46 1.04-.8 1.67-1.03.63-.23 1.29-.3 1.96-.23.67.07 1.33.27 1.93.59.6.32 1.14.75 1.59 1.28.45.53.79 1.13 1.01 1.77.22.64.32

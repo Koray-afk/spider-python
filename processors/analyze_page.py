@@ -1,87 +1,46 @@
-from langchain_core.prompts import PromptTemplate
-from models.page_analysis import PageAnalysis
-from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+import json
+from services.gemini_service import analyze_page
 from dotenv import load_dotenv
 load_dotenv()
 
-import json
+os.makedirs("analysis", exist_ok=True)
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    api_key=os.getenv("GEMINI_API_KEY"),
-    temperature=0
-)
+for filename in sorted(os.listdir("pages")):
+    if not filename.endswith(".png"):
+        continue
 
-structured_llm = llm.with_structured_output(
-    PageAnalysis
-)
+    slug = filename.replace(".png", "")       # page-1, page-2 ...
+    png_path  = f"pages/{filename}"
+    meta_path = f"pages/{slug}.meta"
+    out_path  = f"analysis/{slug}.json"
 
+    if os.path.exists(out_path):
+        print(f"⏩ Skipping {slug}")
+        continue
 
-prompt_template = PromptTemplate.from_template(
-    """
-Analyze this webpage.
+    url = open(meta_path).read().strip() \
+          if os.path.exists(meta_path) else "unknown"
 
-URL:
-{url}
+    print(f"🔍 Analyzing {slug} → {url}")
 
-CONTENT:
-{content}
+    try:
+        raw_json = analyze_page(png_path, url)   # ← calls gemini_service
 
-Determine:
+        # Clean and parse
+        raw_json = raw_json.strip()
+        if raw_json.startswith("```"):
+            raw_json = raw_json.split("```")[1]
+            if raw_json.startswith("json"):
+                raw_json = raw_json[4:]
+        raw_json = raw_json.strip()
 
-1. Page Type
-2. Purpose
-3. Main CTA
-4. Summary
+        data = json.loads(raw_json)
 
-Be concise and factual .
-"""
-)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
 
-# print(prompt)
-chain = prompt_template | structured_llm
+        print(f"  ✅ Saved {out_path}")
 
-
-content =open(
-    "pages/page-1.txt",
-    "r",
-    encoding="utf-8"
-).read()
-
-
-analysis = chain.invoke({
-    "url": "https://stripe.com",
-    "content": content
-})
-
-os.makedirs(
-    "analysis",
-    exist_ok=True
-)
-
-with open(
-    "analysis/page-1.json",
-    "w",
-    encoding="utf-8"
-) as f:
-
-    json.dump(
-        analysis.model_dump(),
-        f,
-        indent=2
-    )
-
-print(analysis)
-print(type(analysis))
-
-
-
-
-
-
-
-
-
-
-
+    except Exception as e:
+        print(f"  ⚠ Failed {slug}: {e}")

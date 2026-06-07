@@ -1,0 +1,857 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Software - HubSpot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            color: #3D4855;
+            line-height: 1.5;
+        }
+        .text-orange-primary { color: #FF5E1E; }
+        .bg-orange-primary { background-color: #FF5E1E; }
+        .border-orange-primary { border-color: #FF5E1E; }
+        .bg-light-grey { background-color: #F9F6F2; }
+        .text-dark-grey { color: #3D4855; }
+        .text-medium-grey { color: #6A7888; }
+        .text-light-grey-text { color: #9CB3C9; }
+        .border-light-grey { border-color: #E5E8EB; }
+        .bg-footer { background-color: #253342; }
+        .text-hubspot-logo { font-family: "Google Sans", sans-serif; font-weight: 700; }
+        .shadow-custom { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+        .shadow-soft { box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.1); }
+        .gradient-bg { background: linear-gradient(135deg, #FF6F47 0%, #FF5E1E 100%); }
+        .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #F0F0F0; /* Placeholder background for icons */
+            color: #3D4855; /* Placeholder color for icon content */
+            font-size: 1.25rem;
+        }
+        .faux-chart-bar {
+            background-color: #FF5E1E;
+            width: 8px;
+            margin: 0 2px;
+            border-radius: 2px 2px 0 0;
+        }
+        .faux-line-chart-line {
+            stroke: #FF5E1E;
+            stroke-width: 2px;
+            fill: none;
+        }
+        .faux-pie-chart-segment {
+            fill: #FF5E1E;
+        }
+        .faux-card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #F8F8F8;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3D4855;
+            font-size: 1.5rem;
+        }
+        .faux-image-placeholder {
+            background-color: #d1d5db; /* A light gray */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .faux-image-placeholder img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Top Global Nav -->
+    <div class="bg-white border-b border-light-grey">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-2 px-6 text-sm text-medium-grey">
+            <div class="flex space-x-4">
+                <a href="#" class="flex items-center hover:text-dark-grey">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h8m-8 4h12m6 10a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                    English <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <a href="#" class="flex items-center hover:text-dark-grey">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.325-7.757l-.707-.707M6.343 17.657l-.707.707m12.162-7.071l.707-.707M5.636 5.636l-.707.707"></path></svg>
+                    High Contrast
+                </a>
+                <a href="#" class="flex items-center hover:text-dark-grey">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 0a2 2 0 10-2.828 2.828m2.828-2.828L5.636 18.364m0 0a2 2 0 102.828-2.828M18.364 18.364L5.636 5.636"></path></svg>
+                    Customer Support
+                </a>
+                <a href="#" class="flex items-center hover:text-dark-grey">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    Contact Sales
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="flex items-center hover:text-dark-grey">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </a>
+                <a href="#" class="hover:text-dark-grey">Log In</a>
+                <a href="#" class="flex items-center hover:text-dark-grey">About <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="#" class="flex items-center text-2xl text-dark-grey text-hubspot-logo">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zM8.336 12.87c.21-.295.42-.59.63-.884 2.115-2.986 4.62-5.594 7.514-7.822 2.656-2.008 5.672-3.327 8.944-3.957-.008.01-.016.02-.025.03L25.32 4.1C22.618 6.096 19.824 8.783 17.58 12.185c-.015.022-.03.045-.045.068-.31.464-.62 1.026-.93 1.686-.01.02-.02.04-.03.06-.02-.04-.03-.09-.04-.13L15.343 14.1c-.014-.047-.028-.094-.042-.142-.206-.675-.412-1.35-.618-2.025L13.722 9.17c-.012-.04-.024-.08-.036-.12-1.57-5.186-3.755-9.15-6.554-12.016-1.045-1.07-2.09-1.85-3.136-2.34-.14-.067-.28-.133-.42-.2-.048-.023-.096-.046-.144-.07C2.024 16.48 0 13.91 0 11.2V16c0 8.837 7.163 16 16 16s16-7.163 16-16H16c-4.418 0-8-3.582-8-8 0-.828.672-1.5 1.5-1.5.828 0 1.5.672 1.5 1.5 0 2.756 2.244 5 5 5s5-2.244 5-5-2.244-5-5-5-5 2.244-5 5-2.244 5-5 5v3zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z" fill="#FF5E1E"></path>
+                    </svg>
+                    HubSpot
+                </a>
+                <a href="#" class="font-semibold text-dark-grey hover:text-orange-primary flex items-center">Products <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <a href="#" class="font-semibold text-dark-grey hover:text-orange-primary flex items-center">Solutions <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <a href="#" class="font-semibold text-dark-grey hover:text-orange-primary">Pricing</a>
+                <a href="#" class="font-semibold text-dark-grey hover:text-orange-primary flex items-center">Resources <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+            </div>
+            <div class="flex space-x-4">
+                <button class="bg-orange-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-200">Get a demo</button>
+                <button class="border border-orange-primary text-orange-primary font-semibold py-3 px-6 rounded-md hover:bg-orange-primary hover:text-white transition duration-200">Start 14-day free trial</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-light-grey py-3 px-6 text-sm text-medium-grey border-b border-light-grey">
+        <div class="max-w-7xl mx-auto">
+            <a href="#" class="hover:underline">Home</a> &gt; Marketing Hub
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="bg-light-grey py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zM8.336 12.87c.21-.295.42-.59.63-.884 2.115-2.986 4.62-5.594 7.514-7.822 2.656-2.008 5.672-3.327 8.944-3.957-.008.01-.016.02-.025.03L25.32 4.1C22.618 6.096 19.824 8.783 17.58 12.185c-.015.022-.03.045-.045.068-.31.464-.62 1.026-.93 1.686-.01.02-.02.04-.03.06-.02-.04-.03-.09-.04-.13L15.343 14.1c-.014-.047-.028-.094-.042-.142-.206-.675-.412-1.35-.618-2.025L13.722 9.17c-.012-.04-.024-.08-.036-.12-1.57-5.186-3.755-9.15-6.554-12.016-1.045-1.07-2.09-1.85-3.136-2.34-.14-.067-.28-.133-.42-.2-.048-.023-.096-.046-.144-.07C2.024 16.48 0 13.91 0 11.2V16c0 8.837 7.163 16 16 16s16-7.163 16-16H16c-4.418 0-8-3.582-8-8 0-.828.672-1.5 1.5-1.5.828 0 1.5.672 1.5 1.5 0 2.756 2.244 5 5 5s5-2.244 5-5-2.244-5-5-5-5 2.244-5 5-2.244 5-5 5v3zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z" fill="#FF5E1E"></path>
+                </svg>
+                <span class="text-xl font-bold text-dark-grey">Marketing Hub<sup>®</sup></span>
+            </div>
+            <h1 class="text-6xl font-extrabold leading-tight mb-6">Marketing Software</h1>
+            <p class="text-2xl text-medium-grey mb-10">AI-powered tools to help you attract, convert, and engage high-intent visitors.</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-orange-primary text-white font-semibold py-4 px-8 rounded-md text-lg hover:bg-opacity-90 transition duration-200">Get a demo</button>
+                <button class="border border-orange-primary text-orange-primary font-semibold py-4 px-8 rounded-md text-lg hover:bg-orange-primary hover:text-white transition duration-200">Start 14-day free trial</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated UI Section Placeholder -->
+    <div class="relative bg-white pt-20 pb-40 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto rounded-lg shadow-custom relative" style="min-height: 500px; background-color: #F8F8F8;">
+            <!-- Placeholder for top bar -->
+            <div class="flex items-center justify-between p-4 border-b border-light-grey">
+                <div class="flex items-center space-x-2">
+                    <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                    <div class="w-20 h-4 bg-gray-200 rounded"></div>
+                </div>
+                <div class="flex items-center space-x-2 text-medium-grey">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.523 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.523 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <div class="w-8 h-8 rounded-full bg-gray-400"></div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="flex h-full">
+                <!-- Left sidebar: "Add to campaign" -->
+                <div class="w-1/4 bg-white border-r border-light-grey p-4 pt-6 relative">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-dark-grey font-semibold text-lg">Add to campaign</span>
+                        <svg class="w-4 h-4 text-medium-grey cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-sm text-medium-grey">Automation</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="border border-light-grey p-3 rounded-md flex flex-col items-center justify-center text-center text-xs text-medium-grey">
+                                <div class="w-8 h-8 bg-gray-200 mb-1 rounded"></div>
+                                Workflow
+                            </div>
+                            <div class="border border-light-grey p-3 rounded-md flex flex-col items-center justify-center text-center text-xs text-medium-grey">
+                                <div class="w-8 h-8 bg-gray-200 mb-1 rounded"></div>
+                                Sequence
+                            </div>
+                            <div class="border border-light-grey p-3 rounded-md flex flex-col items-center justify-center text-center text-xs text-medium-grey">
+                                <div class="w-8 h-8 bg-gray-200 mb-1 rounded"></div>
+                                SMS
+                            </div>
+                            <div class="border border-light-grey p-3 rounded-md flex flex-col items-center justify-center text-center text-xs text-medium-grey">
+                                <div class="w-8 h-8 bg-gray-200 mb-1 rounded"></div>
+                                Video
+                            </div>
+                        </div>
+                        <div class="text-sm text-medium-grey pt-4">Social</div>
+                        <div class="text-sm text-medium-grey pt-4">Ads</div>
+                    </div>
+                </div>
+
+                <!-- Main canvas area -->
+                <div class="flex-1 p-8 overflow-auto relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-20 z-0 rounded-lg"></div>
+
+                    <div class="relative z-10 w-full h-full flex items-center justify-center flex-col">
+                        <div class="flex items-center justify-between w-full px-6 py-3 bg-white rounded-t-lg border-b border-light-grey text-dark-grey text-sm font-semibold">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-orange-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                                <span>Add to Campaign</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span>Campaign X</span>
+                                <svg class="w-4 h-4 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 100-2 1 1 0 000 2zm0 7a1 1 0 100-2 1 1 0 000 2zm0 7a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                            </div>
+                        </div>
+
+                        <!-- Workflow items -->
+                        <div class="flex items-center justify-center space-x-8 mt-12 mb-8">
+                            <div class="relative bg-white border border-light-grey rounded-lg p-3 text-center text-sm shadow-soft flex-shrink-0 w-48">
+                                <span class="absolute top-0 right-0 -mt-2 -mr-2 bg-orange-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">?</span>
+                                <div class="w-full h-24 bg-gray-100 rounded mb-2 flex items-center justify-center overflow-hidden">
+                                    <div class="w-16 h-16 rounded-full bg-gray-300"></div>
+                                </div>
+                                <div class="font-semibold text-dark-grey">Website page</div>
+                                <div class="text-xs text-medium-grey mt-1">MIMI & LULA</div>
+                            </div>
+                            <div class="relative bg-white border border-light-grey rounded-lg p-3 text-center text-sm shadow-soft flex-shrink-0 w-48">
+                                <span class="absolute top-0 right-0 -mt-2 -mr-2 bg-orange-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">?</span>
+                                <div class="w-full h-24 bg-gray-100 rounded mb-2 flex items-center justify-center overflow-hidden">
+                                    <div class="w-16 h-16 rounded-full bg-gray-300"></div>
+                                </div>
+                                <div class="font-semibold text-dark-grey">Automated email</div>
+                                <div class="text-xs text-medium-grey mt-1">Your reminder email will expire in</div>
+                            </div>
+                            <div class="relative bg-white border border-light-grey rounded-lg p-3 text-center text-sm shadow-soft flex-shrink-0 w-48">
+                                <span class="absolute top-0 right-0 -mt-2 -mr-2 bg-orange-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">?</span>
+                                <div class="w-full h-24 bg-gray-100 rounded mb-2 flex items-center justify-center overflow-hidden">
+                                    <div class="w-16 h-16 rounded-full bg-gray-300"></div>
+                                </div>
+                                <div class="font-semibold text-dark-grey">Marketing email</div>
+                                <div class="text-xs text-medium-grey mt-1">Your reminder email will expire in</div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom panel placeholder -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-light-grey py-3 px-6 flex justify-between items-center rounded-b-lg">
+                            <div class="flex items-center space-x-2 text-medium-grey text-sm">
+                                <div class="w-6 h-6 bg-gray-200 rounded"></div>
+                                <div class="w-6 h-6 bg-gray-200 rounded"></div>
+                                <div class="w-6 h-6 bg-gray-200 rounded"></div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-medium-grey text-sm">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- AI-Powered Marketing Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs font-semibold text-medium-grey uppercase tracking-wider mb-2 block">Business Solutions</span>
+                <h2 class="text-5xl font-extrabold leading-tight text-dark-grey">AI-Powered Marketing That Multiplies Results</h2>
+            </div>
+            <div>
+                <p class="text-xl text-medium-grey leading-relaxed">Identify high-intent leads, automate personalized customer experiences, and launch cross-channel campaigns.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Features Section -->
+    <div class="bg-white pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <!-- Brand Visibility Chart Placeholder -->
+                    <div class="bg-white rounded-lg shadow-soft p-4 w-full h-64 relative overflow-hidden">
+                        <div class="text-sm font-semibold text-dark-grey mb-2">Brand Visibility Over Time</div>
+                        <div class="flex justify-between items-end h-32 mb-4">
+                            <div class="flex-1">
+                                <div class="text-xs text-medium-grey mb-2">750</div>
+                                <div class="text-xs text-medium-grey mb-2">500</div>
+                                <div class="text-xs text-medium-grey mb-2">250</div>
+                                <div class="text-xs text-medium-grey">0</div>
+                            </div>
+                            <div class="flex-1 h-full relative">
+                                <!-- Faux line chart -->
+                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                    <path class="faux-line-chart-line" d="M0,80 L20,60 L40,70 L60,50 L80,65 L100,40" stroke="#FF5E1E"/>
+                                    <path class="faux-line-chart-line" d="M0,90 L20,70 L40,80 L60,60 L80,75 L100,50" stroke="#87CEEB"/> <!-- Example second line -->
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-xs text-medium-grey mt-2">
+                            <span>1/1/26</span>
+                            <span>1/17/26</span>
+                        </div>
+                        <div class="flex items-center space-x-4 mt-4">
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 rounded-full bg-[#FF5E1E] mr-1"></span>
+                                <span class="text-xs text-medium-grey">ChatGPT</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 rounded-full bg-[#87CEEB] mr-1"></span>
+                                <span class="text-xs text-medium-grey">Gemini</span>
+                            </div>
+                        </div>
+
+                        <!-- Score Meter -->
+                        <div class="absolute right-4 bottom-4 bg-white p-4 rounded-lg shadow-soft">
+                            <div class="flex items-center justify-between text-xs text-medium-grey mb-2">
+                                <span>0-33 Low</span>
+                                <span>34-66 Medium</span>
+                                <span>67-100 High</span>
+                            </div>
+                            <div class="relative w-24 h-24">
+                                <svg class="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" stroke="#E5E8EB" stroke-width="12" fill="none"></circle>
+                                    <circle cx="50" cy="50" r="40" stroke="#FF5E1E" stroke-width="12" fill="none" stroke-dasharray="200 251.3" stroke-dashoffset="150" style="transition: stroke-dashoffset 0.5s ease-in-out;"></circle>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center font-bold text-dark-grey text-xl">57.78<span class="text-sm">%</span></div>
+                                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-2 text-xs text-medium-grey">SCORE</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-extrabold leading-tight text-dark-grey mb-4">Get Found in AI Search and Convert Visitors Into Leads</h3>
+                    <p class="text-lg text-medium-grey leading-relaxed">Buyers are asking AI for recommendations before they ever visit a website. AEO makes sure your brand shows up in those moments, so when they do click through, HubSpot’s lead capture tools are ready to convert them.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                    <div class="faux-card-icon mb-4"><span class="text-2xl">?</span></div>
+                    <h4 class="text-xl font-semibold text-dark-grey mb-2">HubSpot AEO</h4>
+                    <p class="text-medium-grey">Track your brand's visibility in AI answers — and get clear recommendations to improve it.</p>
+                </div>
+                <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                    <div class="faux-card-icon mb-4"><span class="text-2xl">&#x269B;</span></div>
+                    <h4 class="text-xl font-semibold text-dark-grey mb-2">Ads</h4>
+                    <p class="text-medium-grey">Create, track, and optimize ad campaigns across Meta, Google, LinkedIn, and TikTok.</p>
+                </div>
+                <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                    <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2612;</span></div>
+                    <h4 class="text-xl font-semibold text-dark-grey mb-2">Forms</h4>
+                    <p class="text-medium-grey">Capture higher-quality leads instantly with intelligent forms that adapt to each visitor and feed directly into your unified customer data.</p>
+                </div>
+                <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                    <div class="faux-card-icon mb-4"><span class="text-2xl">&#x265F;</span></div>
+                    <h4 class="text-xl font-semibold text-dark-grey mb-2">Breeze Customer Agent</h4>
+                    <p class="text-medium-grey">Drive marketing engagement with an AI agent that captures visitor interest, guides visitors to relevant resources, and converts traffic into sales-ready leads.</p>
+                </div>
+                <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                    <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2764;</span></div>
+                    <h4 class="text-xl font-semibold text-dark-grey mb-2">Social Media Management</h4>
+                    <p class="text-medium-grey">Transform scattered social conversations into meaningful customer relationships with a unified inbox.</p>
+                </div>
+                <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                    <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2601;</span></div>
+                    <h4 class="text-xl font-semibold text-dark-grey mb-2">Audience Segments</h4>
+                    <p class="text-medium-grey">Identify and target anonymous website visitors based on both fit and intent.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Automate Your Marketing Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl font-extrabold leading-tight text-dark-grey mb-4">Automate Your Marketing to Boost Campaign Efficiency</h2>
+                <p class="text-xl text-medium-grey leading-relaxed">Put tedious marketing tasks on autopilot while your team focuses on strategy and creative breakthroughs that actually move the needle.</p>
+            </div>
+            <div class="relative min-h-[300px]">
+                <!-- Placeholder for the interactive content block -->
+                <div class="bg-white rounded-lg shadow-custom absolute w-full h-full -top-8 -right-8 p-4 border border-light-grey">
+                    <!-- Top bar -->
+                    <div class="flex items-center justify-between pb-3 border-b border-light-grey mb-4 text-sm text-medium-grey">
+                        <div class="flex items-center space-x-2">
+                            <span>Paragraph</span>
+                            <span>|</span>
+                            <span>A</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            <span>Copy</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 100-2 1 1 0 000 2zm0 7a1 1 0 100-2 1 1 0 000 2zm0 7a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                        </div>
+                    </div>
+                    <!-- Content area -->
+                    <div class="h-48 bg-gray-50 rounded-md p-4 text-sm text-medium-grey leading-relaxed mb-4">
+                        <p>We're glad you're here. By signing up, you're one step closer to innovative marketing strategies that ignite your brand's success</p>
+                    </div>
+                    <!-- Bottom progress bar placeholder -->
+                    <div class="absolute bottom-4 left-4 right-4 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="bg-green-500 h-full w-[95%] rounded-full"></div>
+                        <span class="absolute right-0 top-1/2 -translate-y-1/2 text-xs font-semibold px-2 text-dark-grey">95%</span>
+                    </div>
+                </div>
+
+                <!-- "Edit Text" Popup -->
+                <div class="absolute bg-white shadow-lg rounded-lg p-3 z-10" style="top: 80px; left: 120px;">
+                    <div class="flex items-center space-x-2 text-orange-primary font-semibold text-sm mb-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        <span>Edit Text</span>
+                    </div>
+                    <ul class="space-y-2 text-dark-grey text-sm">
+                        <li class="p-2 hover:bg-gray-100 rounded-md cursor-pointer">Add dynamic token</li>
+                        <li class="p-2 hover:bg-gray-100 rounded-md cursor-pointer">Generate paragraph</li>
+                        <li class="p-2 hover:bg-gray-100 rounded-md cursor-pointer">Generate heading</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Automate Features Grid -->
+    <div class="bg-white pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2636;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Marketing Studio</h4>
+                <p class="text-medium-grey">Build marketing campaigns from one AI-powered workspace that unifies planning, creation, and execution.</p>
+            </div>
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2709;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">AI-Powered Emails</h4>
+                <p class="text-medium-grey">Automate manual email writing and deliver personalized content at scale using CRM data.</p>
+            </div>
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x265F;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Personalization</h4>
+                <p class="text-medium-grey">Manage website personalization with unified tools that scale tailored content and boost conversions.</p>
+            </div>
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2605;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Lookalike Lists</h4>
+                <p class="text-medium-grey">Find high-potential prospects within your contact lists.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Showcase ROI Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative min-h-[300px]">
+                <!-- Placeholder for New Journey Report -->
+                <div class="bg-white rounded-lg shadow-custom p-6 w-full max-w-sm absolute right-0 top-1/2 -translate-y-1/2 border border-light-grey">
+                    <div class="text-sm font-semibold text-dark-grey mb-4">New Journey Report</div>
+                    <div class="flex justify-between text-xs text-medium-grey mb-4">
+                        <span>Date Range</span>
+                        <div class="flex items-center space-x-1">
+                            <span>12/01/25</span>
+                            <span>to</span>
+                            <span>12/01/24</span>
+                        </div>
+                    </div>
+                    <div class="flex h-40 mb-6">
+                        <div class="w-1/3 bg-blue-100 rounded-l-md relative overflow-hidden">
+                            <div class="absolute bottom-0 left-0 w-full bg-blue-400 opacity-70" style="height: 60%;"></div>
+                            <div class="absolute bottom-0 left-0 w-full bg-blue-700 opacity-70" style="height: 30%;"></div>
+                        </div>
+                        <div class="w-1/3 bg-green-100 relative overflow-hidden">
+                            <div class="absolute bottom-0 left-0 w-full bg-green-400 opacity-70" style="height: 40%;"></div>
+                            <div class="absolute bottom-0 left-0 w-full bg-green-700 opacity-70" style="height: 20%;"></div>
+                        </div>
+                        <div class="w-1/3 bg-purple-100 rounded-r-md relative overflow-hidden">
+                            <div class="absolute bottom-0 left-0 w-full bg-purple-400 opacity-70" style="height: 20%;"></div>
+                            <div class="absolute bottom-0 left-0 w-full bg-purple-700 opacity-70" style="height: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm text-medium-grey">
+                        <div><span class="font-bold text-dark-grey">20%</span> Total Conversion</div>
+                        <div><span class="font-bold text-dark-grey">9 hours</span> Average to complete journey</div>
+                    </div>
+                </div>
+
+                <!-- Stage blocks -->
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 space-y-3 bg-white shadow-soft rounded-lg p-4 border border-light-grey">
+                    <div class="border border-light-grey rounded-md p-3 text-sm text-dark-grey">
+                        <span class="font-semibold">Stage 1</span><br>Email Delivered
+                    </div>
+                    <div class="border border-light-grey rounded-md p-3 text-sm text-dark-grey">
+                        <span class="font-semibold">Stage 2</span><br>Emails Opened
+                    </div>
+                    <div class="border border-light-grey rounded-md p-3 text-sm text-dark-grey">
+                        <span class="font-semibold">Stage 3</span><br>Top Events
+                    </div>
+                    <div class="border border-light-grey rounded-md p-3 text-sm text-dark-grey">
+                        <span class="font-semibold">Stage 4</span><br>Customer
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-5xl font-extrabold leading-tight text-dark-grey mb-4">Showcase ROI With Strategic Reporting</h2>
+                <p class="text-xl text-medium-grey leading-relaxed">Prove exactly which marketing efforts drive revenue with precise attribution that shows where to invest next for maximum impact.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reporting Features Grid -->
+    <div class="bg-white pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2690;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Marketing Analytics</h4>
+                <p class="text-medium-grey">Measure performance for marketing campaigns with built-in analytics, reports, and dashboards.</p>
+            </div>
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x26A1;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Dashboards and Reporting</h4>
+                <p class="text-medium-grey">Empower your team with insights from expert-level analytics, backed by easy-to-use reporting tools.</p>
+            </div>
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x265E;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Advanced Marketing Reporting</h4>
+                <p class="text-medium-grey">Engage customers and drive growth with multi-touch revenue attribution and customer journey analytics reporting tools.</p>
+            </div>
+            <div class="flex flex-col items-start p-6 rounded-lg bg-white">
+                <div class="faux-card-icon mb-4"><span class="text-2xl">&#x2600;</span></div>
+                <h4 class="text-xl font-semibold text-dark-grey mb-2">Pathfinder</h4>
+                <p class="text-medium-grey">Analyze your customer journey data to pinpoint where visitors are ready to convert, so you can place the right touchpoints at the moments that matter most.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loop Marketing Playbook Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-4xl mx-auto p-10 rounded-lg shadow-custom border border-light-grey">
+            <h3 class="text-3xl font-extrabold text-dark-grey mb-4">Loop Marketing Playbook: Master Growth in the AI Era</h3>
+            <p class="text-lg text-medium-grey leading-relaxed mb-8">Harness the power of humans and AI working together to express your unique brand story, reach customers where they are, and continuously improve your results in real time.</p>
+            <button class="bg-orange-primary text-white font-semibold py-4 px-8 rounded-md text-lg hover:bg-opacity-90 transition duration-200">Explore the playbook</button>
+        </div>
+    </div>
+
+    <!-- Customer Proof Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-10">
+                <div>
+                    <span class="text-xs font-semibold text-medium-grey uppercase tracking-wider mb-2 block">Customer Proof</span>
+                    <h2 class="text-5xl font-extrabold leading-tight text-dark-grey">Real Growth, Real Stories</h2>
+                </div>
+                <button class="border border-light-grey text-dark-grey font-semibold py-3 px-6 rounded-md hover:bg-gray-50 transition duration-200">Explore case studies</button>
+            </div>
+
+            <p class="text-xl text-medium-grey max-w-2xl leading-relaxed mb-16">See how marketing teams are using AI tools to scale their marketing efforts.</p>
+
+            <!-- Image with Score Distribution -->
+            <div class="relative w-full h-[500px] bg-gray-100 rounded-lg overflow-hidden mb-20">
+                <div class="faux-image-placeholder">
+                    <img src="https://via.placeholder.com/1200x500/F0F8F8/888888?text=Placeholder+Image+Woman+Working" alt="Woman working on laptop" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute bottom-8 right-8 bg-white p-6 rounded-lg shadow-custom border border-light-grey w-64">
+                        <div class="text-dark-grey text-sm font-semibold mb-4">Score Distribution</div>
+                        <div class="flex items-end h-32">
+                            <div class="flex-1 text-xs text-medium-grey mr-2">
+                                <span>30</span><br><br>
+                                <span>20</span><br><br>
+                                <span>10</span><br><br>
+                                <span>0</span>
+                            </div>
+                            <div class="flex h-full items-end justify-between flex-1">
+                                <div class="faux-chart-bar h-[10%] bg-blue-400"></div>
+                                <div class="faux-chart-bar h-[30%] bg-blue-400"></div>
+                                <div class="faux-chart-bar h-[60%] bg-blue-400"></div>
+                                <div class="faux-chart-bar h-[90%] bg-blue-400"></div>
+                                <div class="faux-chart-bar h-[70%] bg-blue-400"></div>
+                                <div class="faux-chart-bar h-[40%] bg-blue-400"></div>
+                                <div class="faux-chart-bar h-[10%] bg-blue-400"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-xs text-medium-grey mt-2">
+                            <span>0-5</span>
+                            <span>15-20</span>
+                            <span>...</span>
+                            <span>120+</span>
+                        </div>
+                        <div class="text-center text-xs text-medium-grey mt-1">Score Ranges</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:justify-between items-start md:items-end gap-12">
+                <div class="max-w-sm">
+                    <p class="text-xl font-semibold text-dark-grey mb-4">See why companies like to work with Marketing Hub.</p>
+                    <a href="#" class="text-orange-primary font-semibold border-b-2 border-orange-primary pb-1 hover:border-b-orange-primary-dark transition duration-200">Download the ROI report</a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+                    <div>
+                        <div class="text-6xl font-extrabold text-dark-grey">167%</div>
+                        <p class="text-medium-grey mt-2">increase in website traffic after 6 months</p>
+                    </div>
+                    <div>
+                        <div class="text-6xl font-extrabold text-dark-grey">3x</div>
+                        <p class="text-medium-grey mt-2">increase in inbound leads after 6 months</p>
+                    </div>
+                    <div>
+                        <div class="text-6xl font-extrabold text-dark-grey">83%</div>
+                        <p class="text-medium-grey mt-2">of users increase conversion rates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="bg-light-grey py-24 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-5xl font-extrabold leading-tight text-dark-grey mb-4">Grow Without Limits: Marketing Hub Pricing</h2>
+            <p class="text-xl text-medium-grey mb-16">Marketing software that scales with you.</p>
+
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Free Card -->
+                <div class="bg-white p-8 rounded-lg shadow-custom flex flex-col items-center text-left">
+                    <h3 class="text-2xl font-bold text-dark-grey mb-4">Free</h3>
+                    <p class="text-medium-grey text-sm mb-4">No credit card required</p>
+                    <div class="text-5xl font-extrabold text-dark-grey mb-6">$0<span class="text-2xl font-normal">/month</span></div>
+                    <ul class="text-medium-grey text-base space-y-3 w-full">
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Automate email campaigns</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Create lead capture forms</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Set up live chat</li>
+                    </ul>
+                    <button class="bg-orange-primary text-white font-semibold py-3 px-6 rounded-md mt-8 w-full hover:bg-opacity-90 transition duration-200">Get started free</button>
+                </div>
+                <!-- Starter Card -->
+                <div class="bg-white p-8 rounded-lg shadow-custom flex flex-col items-center text-left">
+                    <h3 class="text-2xl font-bold text-dark-grey mb-4">Starter</h3>
+                    <p class="text-medium-grey text-sm mb-4">Starts at</p>
+                    <div class="text-5xl font-extrabold text-dark-grey mb-6">
+                        $10 <s class="text-xl font-normal text-medium-grey">$20</s><span class="text-2xl font-normal">/month</span>
+                        <span class="text-base font-normal block text-medium-grey">per seat*</span>
+                    </div>
+                    <ul class="text-medium-grey text-base space-y-3 w-full">
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Set up calls-to-action</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Display multiple currencies</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Remove HubSpot branding</li>
+                    </ul>
+                    <button class="border border-orange-primary text-orange-primary font-semibold py-3 px-6 rounded-md mt-8 w-full hover:bg-orange-primary hover:text-white transition duration-200">Start free</button>
+                </div>
+                <!-- Professional Card -->
+                <div class="bg-white p-8 rounded-lg shadow-custom flex flex-col items-center text-left">
+                    <h3 class="text-2xl font-bold text-dark-grey mb-4">Professional</h3>
+                    <p class="text-medium-grey text-sm mb-4">Starts at</p>
+                    <div class="text-5xl font-extrabold text-dark-grey mb-6">
+                        $890<span class="text-2xl font-normal">/month</span>
+                        <span class="text-base font-normal block text-medium-grey">(3 seats included)</span>
+                    </div>
+                    <ul class="text-medium-grey text-base space-y-3 w-full">
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Personalize content</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Optimize search</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Deploy customer agent</li>
+                    </ul>
+                    <button class="border border-orange-primary text-orange-primary font-semibold py-3 px-6 rounded-md mt-8 w-full hover:bg-orange-primary hover:text-white transition duration-200">Start free</button>
+                </div>
+                <!-- Enterprise Card -->
+                <div class="bg-white p-8 rounded-lg shadow-custom flex flex-col items-center text-left">
+                    <h3 class="text-2xl font-bold text-dark-grey mb-4">Enterprise</h3>
+                    <p class="text-medium-grey text-sm mb-4">Starts at</p>
+                    <div class="text-5xl font-extrabold text-dark-grey mb-6">
+                        $3,600<span class="text-2xl font-normal">/month</span>
+                        <span class="text-base font-normal block text-medium-grey">(5 seats included)</span>
+                    </div>
+                    <ul class="text-medium-grey text-base space-y-3 w-full">
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Track revenue</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Run A/B tests</li>
+                        <li class="flex items-start"><span class="text-orange-primary mr-2">&#x2713;</span> Map customer journeys</li>
+                    </ul>
+                    <button class="border border-orange-primary text-orange-primary font-semibold py-3 px-6 rounded-md mt-8 w-full hover:bg-orange-primary hover:text-white transition duration-200">Start free</button>
+                </div>
+            </div>
+            
+            <div class="flex justify-center space-x-4 mb-6">
+                <button class="bg-orange-primary text-white font-semibold py-4 px-8 rounded-md text-lg hover:bg-opacity-90 transition duration-200">Demo premium editions</button>
+                <button class="border border-orange-primary text-orange-primary font-semibold py-4 px-8 rounded-md text-lg hover:bg-orange-primary hover:text-white transition duration-200">Start 14-day free trial</button>
+            </div>
+
+            <p class="text-sm text-medium-grey max-w-2xl mx-auto leading-relaxed">
+                *Discount available for new customers only. Offer available for a limited time. For more detailed information on product packaging and the limits that apply, please see our <a href="#" class="text-orange-primary underline">pricing page</a>. Price shown in USD and subject to applicable tax.
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-dark-grey mb-12">Frequently Asked Questions</h2>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">What are popular marketing automation software features?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">Does Marketing Hub integrate with Salesforce and other third-party tools?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">How's AI search changing the marketing landscape?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">What reporting capabilities do I have with Marketing Hub?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">How much does HubSpot's marketing software cost?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">How does Marketing Hub work with Sales Hub, Service Hub, Commerce Hub, Content Hub, and Data Hub?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">How much time does it take to implement marketing software?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">How is Marketing Hub different from other marketing software?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="border border-light-grey rounded-lg p-6 flex justify-between items-center bg-white shadow-soft">
+                    <p class="text-lg font-semibold text-dark-grey">What specific HubSpot tools can help me optimize for AI search?</p>
+                    <svg class="w-5 h-5 text-medium-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Win in an AI-Driven Market Section -->
+    <div class="bg-white py-24 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-5xl font-extrabold leading-tight text-dark-grey mb-4">Win in an AI-Driven Market</h2>
+            <p class="text-xl text-medium-grey mb-10">Capture higher-intent leads with Marketing Hub.</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-orange-primary text-white font-semibold py-4 px-8 rounded-md text-lg hover:bg-opacity-90 transition duration-200">Get a demo</button>
+                <button class="border border-orange-primary text-orange-primary font-semibold py-4 px-8 rounded-md text-lg hover:bg-orange-primary hover:text-white transition duration-200">Start 14-day free trial</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-footer text-light-grey-text py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 border-b border-gray-700 pb-12 mb-12">
+            <div>
+                <h4 class="font-bold text-white mb-4">Popular Features</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white">All Products and Features</a></li>
+                    <li><a href="#" class="hover:text-white">HubSpot AEO</a></li>
+                    <li><a href="#" class="hover:text-white">Free Meeting Scheduler App</a></li>
+                    <li><a href="#" class="hover:text-white">Breeze AI Tools</a></li>
+                    <li><a href="#" class="hover:text-white">Email Tracking Software</a></li>
+                    <li><a href="#" class="hover:text-white">AI Content Writer</a></li>
+                    <li><a href="#" class="hover:text-white">AI Website Generator</a></li>
+                    <li><a href="#" class="hover:text-white">Email Marketing Software</a></li>
+                    <li><a href="#" class="hover:text-white">Lead Management Software</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4"></h4>
+                <ul class="space-y-3 text-sm pt-8">
+                    <li><a href="#" class="hover:text-white">AI Prospecting Agent</a></li>
+                    <li><a href="#" class="hover:text-white">Free Website Builder</a></li>
+                    <li><a href="#" class="hover:text-white">Landing Pages</a></li>
+                    <li><a href="#" class="hover:text-white">Free Online Form Builder</a></li>
+                    <li><a href="#" class="hover:text-white">Free Chatbot Builder</a></li>
+                    <li><a href="#" class="hover:text-white">Free Live Chat Software</a></li>
+                    <li><a href="#" class="hover:text-white">Marketing Analytics</a></li>
+                    <li><a href="#" class="hover:text-white">Free Landing Page Builder</a></li>
+                    <li><a href="#" class="hover:text-white">Free Web Hosting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4">Free Tools</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white">See All Free Business Tools</a></li>
+                    <li><a href="#" class="hover:text-white">AEO Grader</a></li>
+                    <li><a href="#" class="hover:text-white">AEO Sensor</a></li>
+                    <li><a href="#" class="hover:text-white">Make My Persona</a></li>
+                    <li><a href="#" class="hover:text-white">Email Signature Generator</a></li>
+                    <li><a href="#" class="hover:text-white">Free Business Templates</a></li>
+                    <li><a href="#" class="hover:text-white">Software Comparisons Library</a></li>
+                    <li><a href="#" class="hover:text-white">Website Templates</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4">Company</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white">About Us</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">Management Team</a></li>
+                    <li><a href="#" class="hover:text-white">Board of Directors</a></li>
+                    <li><a href="#" class="hover:text-white">Investor Relations</a></li>
+                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                    <li><a href="#" class="hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4">Customers</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white">Customer Support</a></li>
+                    <li><a href="#" class="hover:text-white">Join a Local User Group</a></li>
+                </ul>
+                <h4 class="font-bold text-white mt-8 mb-4">Partners</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white">All Partner Programs</a></li>
+                    <li><a href="#" class="hover:text-white">Solutions Partner Program</a></li>
+                    <li><a href="#" class="hover:text-white">Technology Partner Program</a></li>
+                    <li><a href="#" class="hover:text-white">HubSpot for Startups</a></li>
+                    <li><a href="#" class="hover:text-white">Affiliate Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="flex space-x-6 mb-6 md:mb-0">
+                <a href="#" class="text-light-grey-text hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22c5.64-.65 10-5.597 10-11.21z" clip-rule="evenodd"></path></svg></a>
+                <a href="#" class="text-light-grey-text hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2.417a.75.75 0 01.07.867L12.08 7.234l4.318-.001a.75.75 0 01.554 1.254l-5.603 5.604 1.341 4.38a.75.75 0 01-1.155.942L8.537 15.68l-5.604 5.604a.75.75 0 01-1.254-.554l.001-4.318-4.817-.414a.75.75 0 01-.867-.07L2.417 12.315a.75.75 0 01.07-.867L7.234 12.08l-.001-4.318a.75.75 0 011.254-.554l5.604 5.603-4.38-1.341a.75.75 0 01-.942 1.155L15.68 8.537l5.604-5.604a.75.75 0 01.554 1.254l-4.318.001 4.817.414a.75.75 0 01.867.07z" clip-rule="evenodd"></path></svg></a>
+                <a href="#" class="text-light-grey-text hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22c5.64-.65 10-5.597 10-11.21z" clip-rule="evenodd"></path></svg></a>
+                <a href="#" class="text-light-grey-text hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22c5.64-.65 10-5.597 10-11.21z" clip-rule="evenodd"></path></svg></a>
+                <a href="#" class="text-light-grey-text hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22c5.64-.65 10-5.597 10-11.21z" clip-rule="evenodd"></path></svg></a>
+                <a href="#" class="text-light-grey-text hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22c5.64-.65 10-5.597 10-11.21z" clip-rule="evenodd"></path></svg></a>
+            </div>
+            <div class="text-center md:text-left">
+                Copyright © 2026 HubSpot, Inc.
+            </div>
+            <div class="flex space-x-4 mt-6 md:mt-0">
+                <a href="#" class="text-light-grey-text hover:text-white">Legal Center</a>
+                <a href="#" class="text-light-grey-text hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-light-grey-text hover:text-white">Security</a>
+                <a href="#" class="text-light-grey-text hover:text-white">Website Accessibility</a>
+                <a href="#" class="text-light-grey-text hover:text-white">Manage Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

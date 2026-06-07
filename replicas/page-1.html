@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HubSpot | Software, Tools, and Resources for Your Business</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        .hubspot-orange { background-color: #FF5C35; }
+        .hubspot-orange-text { color: #FF5C35; }
+        .hubspot-dark-blue { background-color: #1A2E35; }
+        .hubspot-hero-bg {
+            background-color: #1A2E35; /* Simulating dark background with people */
+            background-size: cover;
+            background-position: center;
+        }
+        .hubspot-gradient-bg {
+            background: linear-gradient(to right, #FFF4F1, #FFE9E0);
+        }
+        .btn-outline-white {
+            border: 1px solid white;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .btn-orange {
+            background-color: #FF5C35;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .icon-small {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .agentic-card {
+            position: absolute;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            min-width: 200px;
+        }
+        .agentic-card-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .mockup-frame {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background-color: #f8fafc;
+            height: 120px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            overflow: hidden;
+            position: relative;
+        }
+        .mockup-customer-agent { background: linear-gradient(135deg, #FF7B5B, #FF5C35); }
+        .mockup-prospecting-agent { background: linear-gradient(135deg, #FFB56B, #FF8E2E); }
+        .mockup-data-agent { background: linear-gradient(135deg, #9C89FF, #6B57D8); }
+
+        /* Icon styling to approximate icons in the screenshot using simple characters/shapes */
+        .icon-globe::before { content: '🌐'; }
+        .icon-sun::before { content: '☀️'; }
+        .icon-question::before { content: '❓'; }
+        .icon-phone::before { content: '📞'; }
+        .icon-search::before { content: '🔍'; }
+        .icon-user::before { content: '👤'; }
+        .icon-arrow-down::before { content: '⌄'; }
+        .icon-marketing::before { content: '⚡'; color: #FF5C35; }
+        .icon-sales::before { content: '⭐'; color: #FF5C35; }
+        .icon-service::before { content: '🧡'; color: #FF5C35; }
+        .icon-content::before { content: '📄'; color: #FF5C35; }
+        .icon-data::before { content: '📊'; color: #FF5C35; }
+        .icon-commerce::before { content: '💰'; color: #FF5C35; }
+        .icon-smartcrm::before { content: '🔄'; color: #FF5C35; }
+        .icon-breeze::before { content: '✨'; color: #FF5C35; }
+        .icon-check::before { content: '✓'; }
+        .icon-arrow-right::before { content: '→'; }
+        .icon-ai-star::before { content: '✨'; color: #FF5C35; }
+        .icon-fb::before { content: 'f'; }
+        .icon-ig::before { content: '📷'; }
+        .icon-yt::before { content: '▶️'; }
+        .icon-tw::before { content: '🐦'; }
+        .icon-li::before { content: 'in'; }
+        .icon-re::before { content: 'R'; }
+        .icon-tk::before { content: '🎶'; }
+
+        /* Specific styles for the Agentic Platform card simulation */
+        .agentic-platform-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 450px; /* Adjust height as needed for visual balance */
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-crm-card {
+            z-index: 30;
+            background-color: #FF5C35; /* Orange */
+            color: white;
+            width: 300px;
+            height: 350px;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .overlapping-card {
+            position: absolute;
+            width: 280px;
+            height: 320px;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .overlapping-card-1 { /* Light purple (Service Hub) */
+            background-color: #F0F4F8;
+            transform: translate(-180px, -40px);
+            z-index: 20;
+        }
+        .overlapping-card-2 { /* Light green (Sales Hub) */
+            background-color: #EDF7F6;
+            transform: translate(-90px, 40px);
+            z-index: 25;
+        }
+        .overlapping-card-3 { /* Light blue (Marketing Hub) */
+            background-color: #E6F3FA;
+            transform: translate(90px, -40px);
+            z-index: 25;
+        }
+        .overlapping-card-4 { /* Light orange (Data Hub) */
+            background-color: #FFF0EB;
+            transform: translate(180px, 40px);
+            z-index: 20;
+        }
+        .card-icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #FF5C35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-heading {
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: #1A2E35;
+        }
+        .card-description {
+            font-size: 0.9rem;
+            color: #4A5568;
+        }
+        .footer-link-group {
+            flex: 1;
+            min-width: 180px; /* Ensure columns don't get too narrow */
+        }
+
+        @media (max-width: 768px) {
+            .agentic-platform-container {
+                height: auto;
+                flex-direction: column;
+            }
+            .overlapping-card {
+                position: relative;
+                transform: none !important;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- Top Navigation Bar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-6 flex flex-wrap justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                <span class="icon-globe"></span><span>English</span>
+            </a>
+            <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                <span class="icon-sun"></span><span>High Contrast</span>
+            </a>
+            <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                <span class="icon-question"></span><span>Customer Support</span>
+            </a>
+            <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                <span class="icon-phone"></span><span>Contact Sales</span>
+            </a>
+        </div>
+        <div class="flex items-center space-x-4 mt-2 md:mt-0">
+            <a href="#" class="icon-search hover:text-gray-300"></a>
+            <a href="#" class="hover:text-gray-300">Log in</a>
+            <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                <span>About</span><span class="icon-arrow-down text-xs"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="bg-white shadow py-4 px-6 flex flex-wrap justify-between items-center">
+        <div class="flex items-center space-x-8">
+            <div class="font-bold text-3xl hubspot-orange-text">HubSpot</div>
+            <nav class="hidden md:flex items-center space-x-6 text-gray-700">
+                <a href="#" class="flex items-center space-x-1 hover:text-orange-500">
+                    <span>Products</span><span class="icon-arrow-down text-xs"></span>
+                </a>
+                <a href="#" class="flex items-center space-x-1 hover:text-orange-500">
+                    <span>Solutions</span><span class="icon-arrow-down text-xs"></span>
+                </a>
+                <a href="#" class="hover:text-orange-500">Pricing</a>
+                <a href="#" class="flex items-center space-x-1 hover:text-orange-500">
+                    <span>Resources</span><span class="icon-arrow-down text-xs"></span>
+                </a>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-4 mt-2 md:mt-0">
+            <button class="btn-orange">Get a demo</button>
+            <button class="border border-orange-500 text-orange-500 px-6 py-3 rounded-md font-semibold hover:bg-orange-50 hover:text-orange-600">Get started free</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hubspot-hero-bg h-screen flex flex-col justify-center items-center text-white px-4 text-center">
+        <p class="text-lg mb-4 text-gray-300">HUBSPOT AGENTIC CUSTOMER PLATFORM</p>
+        <h1 class="text-6xl font-bold mb-6 leading-tight max-w-4xl">Where go-to-market teams go to grow.</h1>
+        <p class="text-xl text-center max-w-2xl mb-8 text-gray-200">Unite marketing, sales, and customer service on one agentic customer platform that delivers results fast.</p>
+        <div class="flex space-x-4">
+            <button class="btn-orange">Get a demo</button>
+            <button class="btn-outline-white hover:bg-white hover:text-gray-900">Get started free</button>
+        </div>
+    </div>
+
+    <!-- Customer Showcase Section -->
+    <div class="bg-white py-16 text-center">
+        <p class="text-2xl mb-12 text-gray-700">299,000+ customers in over 135 countries grow their businesses with HubSpot.</p>
+        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 max-w-6xl mx-auto">
+            <div class="text-gray-800 text-3xl font-bold">ebay</div>
+            <div class="text-gray-800 text-3xl font-bold flex items-center"><span style="color:#FF5C35;">&#x25CF;</span> DoorDash</div>
+            <div class="text-gray-800 text-3xl font-bold flex items-center"><span style="color:#FF5C35;">&#x25CF;</span> reddit</div>
+            <div class="text-gray-800 text-3xl font-bold flex items-center"><span style="color:#FF5C35;">&#x25CF;</span> TripAdvisor</div>
+            <div class="text-gray-800 text-3xl font-bold flex items-center"><span style="color:#FF5C35;">&#x25CF;</span> eventbrite</div>
+        </div>
+    </div>
+
+    <!-- Agentic Customer Platform Section -->
+    <div class="bg-white py-20 px-6 text-center">
+        <h2 class="text-5xl font-bold mb-4 text-gray-900">HubSpot's Agentic Customer Platform</h2>
+        <p class="text-xl mb-16 max-w-3xl mx-auto text-gray-700">Connected data and tools make it easier to know, do, and connect everything across your business.</p>
+
+        <div class="agentic-platform-container mb-12">
+            <div class="main-crm-card">
+                A CRM that's really smart.
+            </div>
+            <div class="overlapping-card overlapping-card-1">
+                <div class="card-icon-circle bg-purple-600">S</div>
+                <div class="card-heading">Service Hub™</div>
+                <div class="card-description">Delight customers and scale service.</div>
+            </div>
+            <div class="overlapping-card overlapping-card-2">
+                <div class="card-icon-circle bg-green-600">S</div>
+                <div class="card-heading">Sales Hub™</div>
+                <div class="card-description">Drive sales productivity and growth.</div>
+            </div>
+            <div class="overlapping-card overlapping-card-3">
+                <div class="card-icon-circle bg-blue-600">M</div>
+                <div class="card-heading">Marketing Hub®</div>
+                <div class="card-description">Attract, engage, and delight customers.</div>
+            </div>
+            <div class="overlapping-card overlapping-card-4">
+                <div class="card-icon-circle bg-orange-600">D</div>
+                <div class="card-heading">Data Hub™</div>
+                <div class="card-description">Manage and unify customer data.</div>
+            </div>
+        </div>
+        <div class="flex justify-center space-x-2 mt-4">
+            <div class="w-2.5 h-2.5 bg-gray-900 rounded-full"></div>
+            <div class="w-2.5 h-2.5 bg-gray-300 rounded-full"></div>
+            <div class="w-2.5 h-2.5 bg-gray-300 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Growing a Business Section -->
+    <div class="bg-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="lg:sticky lg:top-8 self-start">
+                <span class="inline-flex items-center bg-gray-100 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
+                    <span class="icon-ai-star mr-1"></span> Powered by AI
+                </span>
+                <h2 class="text-6xl font-bold mt-4 mb-6 leading-tight text-gray-900">Growing a business is hard. HubSpot makes it easier.</h2>
+                <p class="text-lg text-gray-700 max-w-xl">Disconnected tools and data slow you down. HubSpot connects everything — and everyone — in one place to make growing a business easier than you think.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Marketing Hub -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-marketing text-2xl"></span><span>Marketing Hub®</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Attract and convert the right leads.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Run campaigns, personalize content, and track it all.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Sales Hub -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-sales text-2xl"></span><span>Sales Hub®</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Generate quality leads and close deals, faster.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Automate prospecting, manage pipeline, and accelerate revenue growth.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Service Hub -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-service text-2xl"></span><span>Service Hub®</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Streamline and scale support to serve customers faster.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Drive retention with actionable insights, customer health scores, and real-time usage data.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Content Hub -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-content text-2xl"></span><span>Content Hub™</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Create content that clicks with your audience.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Build pages, publish content across channels, and stay on brand.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Data Hub -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-data text-2xl"></span><span>Data Hub™</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Turn scattered data into unified intelligence.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Combine, clean, and activate your customer data across every team and tool.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Commerce Hub -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-commerce text-2xl"></span><span>Commerce Hub™</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Make it easy for customers to pay you.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Send quotes, collect payments, and manage subscriptions.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Smart CRM -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-smartcrm text-2xl"></span><span>Smart CRM</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>All your customer data in one place.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Keep your data clean, connected, and actionable.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Breeze -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-breeze text-2xl"></span><span>Breeze™</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>AI that works with you, and for you.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Agents & assistants everywhere you need them.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- Small Business Bundle -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-commerce text-2xl"></span><span>Small Business Bundle</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>The Starter edition of each product, at one low price.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+                <!-- AEO (Beta) -->
+                <div class="bg-white p-6 rounded-lg card-shadow border border-gray-100">
+                    <div class="flex items-center space-x-2 mb-3 text-lg font-semibold text-gray-900">
+                        <span class="icon-ai-star text-2xl"></span><span>AEO (Beta)</span>
+                    </div>
+                    <ul class="text-gray-700 text-base space-y-2 mb-4">
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>See where your brand shows up in AI results.</li>
+                        <li class="flex items-start"><span class="icon-check text-green-500 mr-2 mt-1"></span>Get recommendations to improve your visibility.</li>
+                    </ul>
+                    <a href="#" class="hubspot-orange-text font-semibold flex items-center space-x-1">Learn more <span class="icon-arrow-right text-base"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Built-in AI Agents Section -->
+    <div class="hubspot-gradient-bg py-20 px-6 text-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-16">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-5xl font-bold leading-tight max-w-xl">Built-in AI agents that work for you 24/7.</h2>
+                </div>
+                <div class="w-full md:w-1/2 flex flex-col items-end text-right">
+                    <p class="text-lg max-w-md mb-6">Breeze Agents are your always-on teammates. They can resolve over 65% of customer inquiries, accelerate your sales pipeline, and whip up quality content in no time.</p>
+                    <button class="bg-white text-orange-500 px-6 py-3 rounded-md font-semibold shadow-md hover:shadow-lg">Explore Breeze Agents</button>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden">
+                <div class="flex space-x-8 -mx-4 md:mx-0 overflow-x-auto snap-x snap-mandatory pb-4">
+                    <!-- Customer Agent Card -->
+                    <div class="min-w-[300px] flex-shrink-0 bg-white p-8 rounded-xl shadow-lg border border-gray-100 text-center snap-center">
+                        <div class="mockup-frame mockup-customer-agent relative">
+                            <div class="absolute top-2 left-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full flex items-center space-x-1">
+                                <span class="icon-ai-star"></span><span>HubBot</span>
+                            </div>
+                            <div class="absolute bottom-2 left-2 text-gray-700">Jane Doe</div>
+                            <div class="absolute bottom-2 right-2 flex space-x-1 text-gray-700">
+                                <span>B</span><span>I</span><span>U</span><span>More</span>
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center font-bold">
+                                Hello! I'm HubBot, an AI customer service agent.<br>How can I help you today?
+                            </div>
+                            <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 text-gray-400">Ask a question</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Customer Agent</h3>
+                        <p class="text-gray-700">Resolve 65% of your customer inquiries automatically.</p>
+                    </div>
+
+                    <!-- Prospecting Agent Card -->
+                    <div class="min-w-[300px] flex-shrink-0 bg-white p-8 rounded-xl shadow-lg border border-gray-100 text-center snap-center">
+                        <div class="mockup-frame mockup-prospecting-agent relative">
+                             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center font-bold">
+                                Hi, I'm your<br>prospecting agent
+                            </div>
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white text-orange-500 px-4 py-2 rounded-md font-semibold">
+                                View automations
+                            </div>
+                            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-400">
+                                I'm here to help put your prospecting efforts on auto-pilot
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Prospecting Agent</h3>
+                        <p class="text-gray-700">Spot buying signals, source contacts, and launch personalized outreach — instantly.</p>
+                        <a href="#" class="hubspot-orange-text font-semibold flex items-center justify-center space-x-1 mt-4">Learn more <span class="icon-arrow-right text-base"></span></a>
+                    </div>
+
+                    <!-- Data Agent Card -->
+                    <div class="min-w-[300px] flex-shrink-0 bg-white p-8 rounded-xl shadow-lg border border-gray-100 text-center snap-center">
+                        <div class="mockup-frame mockup-data-agent relative">
+                            <div class="absolute top-2 left-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full flex items-center space-x-1">
+                                <span class="icon-ai-star"></span><span>Create a Smart Property</span>
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center font-bold">
+                                Does this company sell Market?
+                            </div>
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-orange-600 text-white px-4 py-2 rounded-md font-semibold flex items-center space-x-2">
+                                <span class="icon-ai-star"></span><span>Generate property</span>
+                            </div>
+                            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 text-gray-400">
+                                I want this to be a yes or no an
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Data Agent</h3>
+                        <p class="text-gray-700">Get instant answers to custom questions about your customers.</p>
+                    </div>
+                </div>
+                <div class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md cursor-pointer hover:bg-gray-100">
+                    <span class="icon-arrow-left text-gray-700 text-xl">&#8249;</span>
+                </div>
+                <div class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md cursor-pointer hover:bg-gray-100">
+                    <span class="icon-arrow-right text-gray-700 text-xl">&#8250;</span>
+                </div>
+            </div>
+            <div class="flex justify-center space-x-2 mt-8">
+                <div class="w-2.5 h-2.5 bg-gray-900 rounded-full"></div>
+                <div class="w-2.5 h-2.5 bg-gray-300 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Works with Tools Section -->
+    <div class="bg-white py-16 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Works with the tools you already use.</h2>
+        <p class="text-xl mb-6 text-gray-700">2,000+ integrations.</p>
+        <a href="#" class="hubspot-orange-text underline text-lg font-semibold">See all app integrations</a>
+    </div>
+
+    <!-- Remarkable Results Section (Case Studies) -->
+    <div class="bg-white py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+                <span class="text-sm font-semibold text-gray-600 uppercase mb-4 md:mb-0">Case Studies</span>
+                <button class="border border-gray-300 text-gray-700 px-5 py-2 rounded-md font-medium hover:bg-gray-50">See all case studies</button>
+            </div>
+            <h2 class="text-5xl font-bold leading-tight mb-6 text-gray-900">Remarkable results for every size business.</h2>
+            <p class="text-xl max-w-2xl text-gray-700">Scale your business with HubSpot. The proof is in our customers' success.</p>
+
+            <div class="flex space-x-8 border-b border-gray-200 mt-16 mb-12 text-lg font-semibold text-gray-700">
+                <button class="pb-3 relative text-gray-900 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-orange-500">Enterprise</button>
+                <button class="pb-3 relative text-gray-500 hover:text-gray-700">Mid-Sized Business</button>
+                <button class="pb-3 relative text-gray-500 hover:text-gray-700">Small Business</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <blockquote class="text-2xl italic leading-relaxed text-gray-700">
+                    "HubSpot took the time to understand our business needs fully. The pre-sales and subsequent support really stood out from the start. They committed to engage with us deeply and work side-by-side with us on the implementation. They've since more than met this commitment."
+                    <p class="font-semibold text-gray-900 mt-6">Adam Jones</p>
+                    <p class="text-gray-600">Director of Business Development, Unipart</p>
+                    <a href="#" class="hubspot-orange-text underline mt-4 inline-block font-semibold">Read full case study</a>
+                </blockquote>
+                <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-12 space-y-8 md:space-y-0 text-center mt-8 md:mt-0">
+                    <div class="flex-1">
+                        <p class="text-5xl font-bold text-gray-900">12</p>
+                        <p class="text-lg text-gray-600 mt-2">months for the pipeline to grow from millions to billions</p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-5xl font-bold text-gray-900">5</p>
+                        <p class="text-lg text-gray-600 mt-2">point increase in net promoter score (NPS)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- G2 Reports Section -->
+    <div class="bg-white py-12 px-6 text-center">
+        <p class="text-2xl font-semibold text-gray-800">Voted #1 in 526 G2 Reports</p>
+    </div>
+
+    <!-- Bottom Call to Action Section -->
+    <div class="hubspot-dark-blue py-20 px-6 text-white text-center">
+        <h2 class="text-4xl font-bold mb-8">Make impossible growth feel impossibly easy, with HubSpot.</h2>
+        <div class="flex justify-center space-x-4">
+            <button class="btn-orange">Get a demo</button>
+            <button class="btn-outline-white hover:bg-white hover:text-gray-900">Get started free</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-900 text-gray-300 py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col space-y-12">
+            <div class="flex flex-col md:flex-row md:flex-wrap md:justify-between gap-8">
+                <!-- Popular Features -->
+                <div class="footer-link-group">
+                    <h3 class="text-xl font-bold text-white mb-4">Popular Features</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">All Products and Features <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">HubSpot AEO <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Meeting Scheduler App <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Breeze AI Tools <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Email Tracking Software <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">AI Content Writer <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">AI Website Generator <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Email Marketing Software <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Lead Management Software <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">AI Prospecting Agent <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Website Builder <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Landing Pages <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Online Form Builder <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Chatbot Builder <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Live Chat Software <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Marketing Analytics <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Landing Page Builder <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Web Hosting <span class="icon-arrow-right text-sm"></span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Free Tools -->
+                <div class="footer-link-group">
+                    <h3 class="text-xl font-bold text-white mb-4">Free Tools</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">See All Free Business Tools <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">AEO Grader <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">AEO Sensor <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Make My Persona <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Email Signature Generator <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Free Business Templates <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Software Comparisons Library <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Website Templates <span class="icon-arrow-right text-sm"></span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-link-group">
+                    <h3 class="text-xl font-bold text-white mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">About Us <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Careers <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Management Team <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Board of Directors <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Investor Relations <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Blog <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Sustainability <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Contact Us <span class="icon-arrow-right text-sm"></span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Customers -->
+                <div class="footer-link-group">
+                    <h3 class="text-xl font-bold text-white mb-4">Customers</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Customer Support <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Join a Local User Group <span class="icon-arrow-right text-sm"></span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners -->
+                <div class="footer-link-group">
+                    <h3 class="text-xl font-bold text-white mb-4">Partners</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">All Partner Programs <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Solutions Partner Program <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Technology Partner Program <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">HubSpot for Startups <span class="icon-arrow-right text-sm"></span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center justify-between">Affiliate Program <span class="icon-arrow-right text-sm"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-700 space-y-4 md:space-y-0">
+                <div class="flex space-x-4 text-2xl">
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-fb"></span></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-ig"></span></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-yt"></span></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-tw"></span></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-li"></span></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-re"></span></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><span class="icon-tk"></span></a>
+                </div>
+                <div class="text-sm text-gray-500 text-center md:text-right">
+                    <p>Copyright © 2026 HubSpot, Inc.</p>
+                    <div class="flex flex-wrap justify-center md:justify-end space-x-4 mt-2">
+                        <a href="#" class="hover:text-white">Legal Center</a>
+                        <a href="#" class="hover:text-white">Privacy Policy</a>
+                        <a href="#" class="hover:text-white">Security</a>
+                        <a href="#" class="hover:text-white">Website Accessibility</a>
+                        <a href="#" class="hover:text-white">Manage Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
