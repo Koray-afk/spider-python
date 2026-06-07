@@ -82,3 +82,4 @@ with sync_playwright() as p:
         f.write(text)
 
     browser.close()
+    
