@@ -2,84 +2,88 @@ from playwright.sync_api import sync_playwright
 import os
 
 os.makedirs("pages", exist_ok=True)
+start_url = "https://stripe.com"
+queue = [start_url]
+visited = set()
+max_pages = 5
+
 
 with sync_playwright() as p:
-
-    start_url = "https://google.com"
-    queue = [start_url]
-    visited = set()
-    max_pages = 5
-
-    print(queue)
-    print(visited)
-
-    current_url = queue.pop(0)
-    print("current_url")
-    print(current_url)
-
-    visited.add(current_url)
-    print("visited->", visited)
-    print("queue->", queue)
-
-
 
     browser = p.chromium.launch()
 
     page = browser.new_page()
 
-    page.goto(
-        start_url,
-        wait_until="domcontentloaded"
-    )
+    page_number = 1
 
-    links = page.eval_on_selector_all(
-    "a",
-    """
-    elements => elements.map(
-        el => el.href
-    )
-    """)
+    while queue and len(visited) < max_pages:
+        current_url = queue.pop(0)
 
-    for link in links:
-        if link not in visited:
-            queue.append(link)
+        if current_url in visited:
+            continue 
+        
+        print(f"\nVisiting: {current_url}")
 
-    print(len(links))
+        try:
+            page.goto(
+            current_url,
+            wait_until="domcontentloaded"
+            )
 
-    for link in links[:5]:
-        print(link)
+            visited.add(current_url)
 
-    print("Queue After Adding Links:")
-    print(queue[:5])
+            #now we have to take the screenshot
+            page.screenshot(
+                path=f"pages/page-{page_number}.png",
+                full_page=True
+            )
 
-    print("Queue Size:")
-    print(len(queue))
+            # HTML
+            html = page.content()
 
-    # Screenshot
-    page.screenshot(
-        path="pages/page-1.png",
-        full_page=True
-    )
+            with open(
+                f"pages/page-{page_number}.html",
+                "w",
+                encoding="utf-8"
+            ) as f:
+                f.write(html)
 
-    # HTML
-    html = page.content()
+            # text 
+            text = page.locator("body").inner_text()
 
-    with open(
-        "pages/page-1.html",
-        "w",
-        encoding="utf-8"
-    ) as f:
-        f.write(html)
+            with open(
+                f"pages/page-{page_number}.txt",
+                "w",
+                encoding="utf-8"
+            ) as f:
+                f.write(text)
 
-    # Visible Text
-    text = page.locator("body").inner_text()
+            
+            # now we have to extract the links from the page
+            links = page.eval_on_selector_all(
+                "a",
+                """
+                elements => elements.map(
+                    el => el.href
+                )
+                """) 
+               
+            # we have to add the links to the queue
+            for link in links:
+                if(
+                    link.startswith("http")
+                    and link not in visited
+                ):
+                    queue.append(link)
+            
+            print( f"Visited: {len(visited)} | Queue: {len(queue)}")
 
-    with open(
-        "pages/page-1.txt",
-        "w",
-        encoding="utf-8"
-    ) as f:
-        f.write(text)
+            page_number += 1
+        except Exception as e:
+            print(
+                f"Error visiting {current_url}"
+            )
 
+            print(e)
     browser.close()
-    
+
