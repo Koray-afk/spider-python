@@ -1,39 +1,41 @@
 # Spider Python
 
-Spider Python is a small web-crawling and page-analysis project built with Python, Playwright, and Gemini. It visits a webpage, captures its content, and then analyzes the page structure and intent using an LLM.
+Spider Python is a web-crawling and page-analysis project built with Python, Playwright, and Gemini. It crawls websites, captures page artifacts, analyzes structure and intent with an LLM, and can generate visual HTML replicas from screenshots.
 
 ## What it does
 
-The project currently focuses on a single-page crawl flow:
+The full pipeline:
 
-1. Opens a target website with Playwright.
-2. Collects the page HTML, visible text, and a screenshot.
-3. Saves the captured content locally.
-4. Sends the extracted text to Gemini for structured page analysis.
-5. Stores the analysis as JSON.
+1. Crawls a target website with Playwright (multi-page BFS crawl).
+2. Saves HTML, visible text, and full-page screenshots for each page.
+3. Analyzes pages with Gemini using text + screenshots (structured JSON output).
+4. Generates self-contained HTML replicas that visually match the screenshots.
 
 ## Features
 
-- Browser automation with Playwright.
-- HTML, text, and screenshot capture for webpages.
-- Gemini-powered page analysis.
-- Structured output through a Pydantic model.
-- Local file storage for raw page data and analysis results.
-- Simple service layer for text analysis reuse.
+- Multi-page browser crawling with Playwright (configurable `max_pages`).
+- HTML, text, and full-page screenshot capture.
+- Gemini-powered page analysis (text + image, structured via Pydantic).
+- Visual HTML replica generation from screenshots.
+- Local file storage for raw page data, analysis, and replicas.
+- Skip logic — re-running analysis or replica generation skips already-processed pages.
 
 ## Project Structure
 
-- `crawler.py` - Crawls a webpage and saves page artifacts.
-- `processors/analyze_page.py` - Analyzes saved page text and writes structured JSON output.
-- `services/gemini_service.py` - Helper service for sending prompts to Gemini.
-- `models/page_analysis.py` - Schema for the structured analysis response.
-- `pages/` - Saved page artifacts such as HTML, text, and screenshots.
-- `analysis/` - Saved analysis JSON files.
+- `crawler.py` — Crawls pages and saves artifacts to `pages/`.
+- `processors/analyse_all_pages.py` — Analyzes all saved pages (text + screenshot) via LangChain; writes JSON to `analysis/`.
+- `processors/analyze_page.py` — Alternative screenshot-only analyzer via `gemini_service`.
+- `replica_generator.py` — Generates visual HTML replicas from screenshots into `replicas/`.
+- `services/gemini_service.py` — Gemini client for screenshot analysis and HTML replica generation.
+- `models/page_analysis.py` — Pydantic schema for structured analysis output.
+- `pages/` — Saved page artifacts (HTML, text, screenshots).
+- `analysis/` — Saved analysis JSON files.
+- `replicas/` — Generated HTML replica files.
 
 ## Requirements
 
 - Python 3.10 or newer.
-- A valid `GEMINI_API_KEY` in your environment.
+- A valid `GEMINI_API_KEY` in your environment or `.env` file.
 - Playwright browser binaries installed locally.
 
 ## Installation
@@ -57,48 +59,70 @@ Install the Playwright browser runtime:
 playwright install
 ```
 
-Set your Gemini API key:
+Set your Gemini API key in a `.env` file at the project root:
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
+
+Or export it in your shell:
 
 ```bash
 export GEMINI_API_KEY="your_api_key_here"
 ```
 
-If you want this to persist between sessions, add it to your shell profile or place it in a `.env` file.
-
 ## How to Run
 
-### 1. Crawl a webpage
+Run these in order from the project root (with your venv activated):
 
-This script visits the configured URL in `crawler.py` and saves the results into `pages/`.
+### 1. Crawl pages
+
+Visits the configured start URL in `crawler.py` (default: `https://www.hubspot.com/`), follows discovered links, and saves up to `max_pages` pages into `pages/`.
 
 ```bash
 python crawler.py
 ```
 
-### 2. Analyze the saved page text
+### 2. Analyze all crawled pages
 
-This script reads `pages/page-1.txt`, sends it to Gemini, and writes the structured result to `analysis/page-1.json`.
+Reads every `pages/page-*.txt` file, sends text + screenshot to Gemini, and writes structured JSON to `analysis/`.
+
+```bash
+python -m processors.analyse_all_pages
+```
+
+### 3. Generate HTML replicas
+
+Reads every `pages/page-*.png` screenshot, sends it to Gemini, and writes a visual HTML replica to `replicas/`. Skips pages that already have a replica file.
+
+```bash
+python replica_generator.py
+```
+
+> **Note:** Replica generation calls Gemini once per page and can take several minutes per screenshot (especially for large full-page captures). The script prints progress but stays silent while waiting on each API response.
+
+### Alternative: screenshot-only analysis
+
+If you prefer analysis from screenshots only (without LangChain):
 
 ```bash
 python processors/analyze_page.py
 ```
 
-### 3. Test the Gemini service
-
-This script sends a sample prompt through the Gemini helper service.
-
-```bash
-python test_gemini.py
-```
-
 ## Output Files
 
-After running the crawler and analyzer, you should see files like these:
+After a full run you should see files like:
 
-- `pages/page-1.html`
-- `pages/page-1.txt`
-- `pages/page-1.png`
-- `analysis/page-1.json`
+**`pages/`**
+- `page-1.html` — raw page HTML
+- `page-1.txt` — visible text content
+- `page-1.png` — full-page screenshot
+
+**`analysis/`**
+- `page-1.json` — structured Gemini analysis
+
+**`replicas/`**
+- `page-1.html` — generated visual replica
 
 ## Environment Variables
 
@@ -106,11 +130,15 @@ After running the crawler and analyzer, you should see files like these:
 | --- | --- |
 | `GEMINI_API_KEY` | API key used to authenticate with Gemini. |
 
-## Notes
+## Configuration
 
-- The crawler currently targets `https://google.com` in `crawler.py`.
-- The analyzer currently reads from `pages/page-1.txt` and saves the result to `analysis/page-1.json`.
-- You can change the target URL and output file names directly in the scripts.
+Edit these directly in the scripts:
+
+| Setting | File | Default |
+| --- | --- | --- |
+| Start URL | `crawler.py` | `https://www.hubspot.com/` |
+| Max pages to crawl | `crawler.py` | `5` |
+| Gemini model | `services/gemini_service.py`, `processors/analyse_all_pages.py` | `gemini-2.5-flash` |
 
 ## Example Analysis Schema
 
@@ -121,6 +149,8 @@ The structured Gemini output follows the `PageAnalysis` model:
 - `mainCTA`
 - `importantSections`
 - `summary`
+- `visualLayout` (optional)
+- `colorScheme` (optional)
 
 ## License
 
