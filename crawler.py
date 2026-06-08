@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 import os
+from urllib.parse import urlparse, urljoin
 
 os.makedirs("pages", exist_ok=True)
 start_url = "https://www.hubspot.com/"

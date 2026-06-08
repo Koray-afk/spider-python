@@ -1,1 +1,14 @@
 .env
+
+analysis/*
+!analysis/.gitkeep
+
+pages/*
+!pages/.gitkeep
+
+replicas/*
+!replicas/.gitkeep
+
+__pycache__/
+*.pyc
+venv/
