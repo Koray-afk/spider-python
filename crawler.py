@@ -3,88 +3,66 @@ import os
 from urllib.parse import urlparse, urljoin
 
 os.makedirs("pages", exist_ok=True)
-start_url = "https://www.hubspot.com/"
-queue = [start_url]
-visited = set()
-max_pages = 5
-
+os.makedirs("analysis", exist_ok=True)
 
 with sync_playwright() as p:
 
+    start_url = "https://www.hubspot.com/"
+    queue = [start_url]
+    visited = set()
+    max_pages = 5                  # tune as needed
+    page_count = 0
+    base_domain = urlparse(start_url).netloc
+
     browser = p.chromium.launch()
 
-    page = browser.new_page()
-
-    page_number = 1
-
-    while queue and len(visited) < max_pages:
+    # ✅ LINE 43 ONWARDS — the crawl loop
+    while queue and page_count < max_pages:
         current_url = queue.pop(0)
 
         if current_url in visited:
-            continue 
-        
-        print(f"\nVisiting: {current_url}")
+            continue
+        visited.add(current_url)
+
+        print(f"[{page_count+1}] Crawling: {current_url}")
 
         try:
-            page.goto(
-            current_url,
-            wait_until="domcontentloaded"
-            )
+            page = browser.new_page()
+            page.goto(current_url, wait_until="domcontentloaded", timeout=15000)
 
-            visited.add(current_url)
+            # --- Collect same-domain links ---
+            links = page.eval_on_selector_all("a", "els => els.map(el => el.href)")
+            for link in links:
+                parsed = urlparse(link)
+                # Stay on same domain, skip anchors/mailto/tel
+                if (parsed.netloc == base_domain
+                        and parsed.scheme in ("http", "https")
+                        and link not in visited):
+                    queue.append(link)
 
-            #now we have to take the screenshot
-            page.screenshot(
-                path=f"pages/page-{page_number}.png",
-                full_page=True
-            )
+            # --- Save screenshot, HTML, text ---
+            slug = f"page-{page_count + 1}"
+            page.screenshot(path=f"pages/{slug}.png", full_page=True)
 
-            # HTML
             html = page.content()
-
-            with open(
-                f"pages/page-{page_number}.html",
-                "w",
-                encoding="utf-8"
-            ) as f:
+            with open(f"pages/{slug}.html", "w", encoding="utf-8") as f:
                 f.write(html)
 
-            # text 
             text = page.locator("body").inner_text()
-
-            with open(
-                f"pages/page-{page_number}.txt",
-                "w",
-                encoding="utf-8"
-            ) as f:
+            with open(f"pages/{slug}.txt", "w", encoding="utf-8") as f:
                 f.write(text)
 
-            
-            # now we have to extract the links from the page
-            links = page.eval_on_selector_all(
-                "a",
-                """
-                elements => elements.map(
-                    el => el.href
-                )
-                """) 
-               
-            # we have to add the links to the queue
-            for link in links:
-                if(
-                    link.startswith("http")
-                    and link not in visited
-                ):
-                    queue.append(link)
-            
-            print( f"Visited: {len(visited)} | Queue: {len(queue)}")
+            # --- Store metadata for next step ---
+            with open(f"pages/{slug}.meta", "w") as f:
+                f.write(current_url)
 
-            page_number += 1
+            page_count += 1
+            page.close()
+
         except Exception as e:
-            print(
-                f"Error visiting {current_url}"
-            )
+            print(f"  ⚠ Failed: {current_url} → {e}")
+            page.close()
+            continue
 
-            print(e)
     browser.close()
-
+    print(f"\n✅ Done. Crawled {page_count} pages.")
