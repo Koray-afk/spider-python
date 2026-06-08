@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 
 class PageAnalysis(BaseModel):
@@ -9,3 +9,5 @@ class PageAnalysis(BaseModel):
     importantSections: List[str]
 
     summary: str
+    visualLayout: Optional[str] = None
+    colorScheme: Optional[str] = None

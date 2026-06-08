@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import os
 
 os.makedirs("pages", exist_ok=True)
-start_url = "https://stripe.com"
+start_url = "https://www.hubspot.com/"
 queue = [start_url]
 visited = set()
 max_pages = 5
