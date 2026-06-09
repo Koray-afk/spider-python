@@ -1,7 +1,10 @@
 import os
 import base64
+# pyrefly: ignore [missing-import]
 from google import genai
+# pyrefly: ignore [missing-import]
 from google.genai import types
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 load_dotenv()
