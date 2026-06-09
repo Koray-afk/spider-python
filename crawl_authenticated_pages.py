@@ -42,6 +42,7 @@ CONTENT_IMAGE_PARTS = ("onboarding/", "/images/", "photo", "avatar", "attachment
 os.makedirs("pages", exist_ok=True)
 os.makedirs("assets/images", exist_ok=True)
 os.makedirs("assets/css", exist_ok=True)
+os.makedirs("assets/js", exist_ok=True)
 
 def abs_url(url, base):
     # Removed "#" from the ignore list so SPA routes are captured
@@ -211,22 +212,38 @@ def is_content_image_url(url):
         return any(part in lower for part in CONTENT_IMAGE_PARTS)
     return ext in {".png", ".jpg", ".jpeg", ".webp"}
 
-def attach_image_capture(page):
-    captured = set()
+def attach_asset_capture(page, request):
+    captured_images = set()
+    
     def on_response(response):
         try:
             url = response.url
-            content_type = response.headers.get("content-type", "")
+            content_type = response.headers.get("content-type", "").lower()
+            
+            # 1. Capture Images (Your existing logic)
             is_image = (
                 response.request.resource_type in ("image", "media")
                 or content_type.startswith("image/")
             )
             if is_image and is_content_image_url(url):
-                captured.add(url)
+                captured_images.add(url)
+                
+            # 2. NEW: Capture JavaScript
+            is_js = (
+                response.request.resource_type == "script" 
+                or "javascript" in content_type 
+                or url.endswith(".js")
+            )
+            # Only download scripts from Zoho, ignore third-party tracking junk
+            if is_js and ("zoho" in url or "zohostatic" in url):
+                # We pass .mjs just in case they use modern ES modules
+                save_asset(url, "assets/js", {".js", ".mjs"}, request)
+                
         except Exception:
             pass
+
     page.on("response", on_response)
-    return captured
+    return captured_images
 
 def collect_content_images(pg, page_url, request, network_urls):
     urls = set(network_urls)
@@ -244,8 +261,54 @@ def collect_content_images(pg, page_url, request, network_urls):
 
 def save_page(pg, request, url, slug):
     pg.screenshot(path=f"pages/{slug}.png", full_page=True)
+    
+    # 1. Localize assets (but DO NOT strip the <script> tags this time)
     html = localize_assets(pg.content(), url, request)
-    html = re.sub(r'<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>', '', html, flags=re.IGNORECASE)
+    
+    # 2. THE VACCINE: A script to hijack and mute all API calls
+    mute_network_script = """
+    <script>
+        // 1. Hijack the modern Fetch API
+        window.originalFetch = window.fetch;
+        window.fetch = async (...args) => {
+            console.log("Blocked Fetch API call to:", args[0]);
+            // Return a fake, empty success response
+            return new Response(JSON.stringify({}), { 
+                status: 200, 
+                headers: { "Content-Type": "application/json" } 
+            });
+        };
+
+        // 2. Hijack the older XMLHttpRequest (AJAX)
+        window.originalXHR = window.XMLHttpRequest;
+        window.XMLHttpRequest = function() {
+            const xhr = new window.originalXHR();
+            xhr.send = function() {
+                console.log("Blocked AJAX call");
+                // Force the browser to think the request succeeded instantly
+                Object.defineProperty(this, 'readyState', {get: () => 4});
+                Object.defineProperty(this, 'status', {get: () => 200});
+                Object.defineProperty(this, 'responseText', {get: () => "{}"});
+                
+                // Trigger the success callbacks
+                if (this.onload) this.onload();
+                if (this.onreadystatechange) this.onreadystatechange();
+            };
+            return xhr;
+        };
+        
+        // 3. Hijack WebSockets (used for live notifications)
+        window.WebSocket = function() {
+            this.send = () => {};
+            this.close = () => {};
+        };
+    </script>
+    """
+    
+    # 3. Inject the mute script right at the top of the HTML document
+    html = html.replace("<head>", f"<head>\n{mute_network_script}", 1)
+    
+    # 4. Save the files
     Path(f"pages/{slug}.html").write_text(html, encoding="utf-8")
     Path(f"pages/{slug}.txt").write_text(pg.locator("body").inner_text(), encoding="utf-8")
     Path(f"pages/{slug}.meta").write_text(url, encoding="utf-8")
@@ -282,7 +345,7 @@ def crawl():
             pg = None
             try:
                 pg = context.new_page()
-                captured = attach_image_capture(pg)
+                captured = attach_asset_capture(pg, request)
                 pg.goto(url, wait_until="networkidle", timeout=30000)
                 pg.wait_for_timeout(2000)
 
