@@ -1,6 +1,7 @@
+# pyrefly: ignore [missing-import]
 from playwright.sync_api import sync_playwright
 import os
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse
 
 os.makedirs("pages", exist_ok=True)
 os.makedirs("analysis", exist_ok=True)
