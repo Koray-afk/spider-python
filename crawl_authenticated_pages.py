@@ -8,6 +8,8 @@ import time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
+from page_stitch import _hash_route, stitch_pages
+
 # pyrefly: ignore [missing-import]
 from playwright.sync_api import sync_playwright
 
@@ -51,10 +53,17 @@ def abs_url(url, base):
 
 def get_slug(url):
     parsed = urlparse(url)
-    raw_path = f"{parsed.path}-{parsed.fragment}"
-    clean_path = re.sub(r'[^a-zA-Z0-9]', '-', raw_path)
-    clean_path = re.sub(r'-+', '-', clean_path).strip('-')
-    return clean_path or "home"
+    fragment = parsed.fragment.strip("/")
+    if fragment:
+        clean = re.sub(r"[^a-zA-Z0-9]", "-", fragment)
+        clean = re.sub(r"-+", "-", clean).strip("-")
+        return clean or "home"
+    if "/app/" in parsed.path:
+        return "home"
+    raw_path = parsed.path.strip("/")
+    clean = re.sub(r"[^a-zA-Z0-9]", "-", raw_path)
+    clean = re.sub(r"-+", "-", clean).strip("-")
+    return clean or "home"
 
 def resolve_auth_file():
     for name in (AUTH_FILE, SESSION_FILE):
@@ -103,37 +112,156 @@ def ensure_authenticated(p, auth_file=AUTH_FILE):
     chrome.terminate()
     return auth_file
 
-def resolve_start_url(auth_file):
+def get_workspace_context(auth_file):
+    """Books workspace is resolved from the live app URL after login redirect."""
+    ctx = {"books_origin": START_URL.rstrip("/"), "workspace_id": None, "app_base": None, "start_url": START_URL}
     if not auth_file or not Path(auth_file).exists():
-        return START_URL
+        return ctx
 
-    with open(auth_file, 'r', encoding="utf-8") as f:
+    with open(auth_file, encoding="utf-8") as f:
         json_data = json.load(f)
-
-    workspace_id = None
-    books_origin = None
 
     for origin in json_data.get("origins", []):
         if "books.zoho" in origin.get("origin", ""):
-            books_origin = origin.get("origin").rstrip("/")
-            
-            for item in origin.get("localStorage", []):
-                if item.get("name") == 'workspaceconf':
-                    try:
-                        workspaceconf = json.loads(item['value'])
-                        keys = list(workspaceconf.keys())
-                        workspace_id = keys[0] if keys else None
-                    except json.JSONDecodeError:
-                        continue
-                    break
+            ctx["books_origin"] = origin.get("origin", "").rstrip("/")
             break
 
-    if books_origin and workspace_id:
-        target = f"{books_origin}/app/{workspace_id}#/home/dashboard"
-        print(f"[*] Successfully extracted Workspace ID. Target: {target}")
-        return target
-    
-    return books_origin or START_URL
+    return ctx
+
+
+def resolve_app_base_from_browser(pg, ctx):
+    match = re.search(r"/app/(\d+)", pg.url)
+    if not match:
+        return ctx
+
+    workspace_id = match.group(1)
+    ctx["workspace_id"] = workspace_id
+    ctx["app_base"] = f"{ctx['books_origin']}/app/{workspace_id}"
+    ctx["start_url"] = f"{ctx['app_base']}#/home/dashboard"
+    print(f"[*] Resolved app base from browser: {ctx['app_base']}")
+    return ctx
+
+
+def bootstrap_books_app(pg, ctx):
+    pg.goto(ctx["books_origin"], wait_until="domcontentloaded", timeout=60000)
+    pg.wait_for_timeout(4000)
+    resolve_app_base_from_browser(pg, ctx)
+
+    if not ctx.get("app_base"):
+        pg.goto(f"{ctx['books_origin']}/home", wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_timeout(4000)
+        resolve_app_base_from_browser(pg, ctx)
+
+    if not ctx.get("app_base"):
+        raise RuntimeError(
+            "Could not resolve Books workspace URL. Delete auth.json and log in again."
+        )
+
+    if "/app/" not in pg.url:
+        pg.goto(ctx["app_base"], wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_timeout(3000)
+
+    pg.wait_for_selector("a.nav-link", timeout=60000)
+    pg.wait_for_timeout(1500)
+    return ctx
+
+
+def resolve_start_url(auth_file):
+    return get_workspace_context(auth_file)["start_url"]
+
+
+def normalize_crawl_url(url, ctx):
+    parsed = urlparse(url)
+    if parsed.netloc and ctx["books_origin"] not in parsed.netloc:
+        return url
+
+    fragment = parsed.fragment.strip("/")
+    if ctx.get("app_base"):
+        if fragment:
+            return f"{ctx['app_base']}#/{fragment}"
+        if "/app/" in parsed.path:
+            return url
+        return ctx["start_url"]
+
+    if fragment:
+        return f"{ctx['books_origin']}#/{fragment}"
+    return url
+
+
+def expand_sidebar_sections(pg):
+    for btn in pg.locator(".accordion-button.collapsed").all():
+        try:
+            btn.click(timeout=2000)
+            pg.wait_for_timeout(200)
+        except Exception:
+            pass
+
+
+def click_sidebar_link(pg, fragment):
+    href = f"#/{fragment.strip('/')}"
+    expand_sidebar_sections(pg)
+    link = pg.locator(f'a.nav-link[href="{href}"], a[href="{href}"]').first
+    try:
+        if link.count() and link.is_visible():
+            link.click(timeout=5000)
+            pg.wait_for_timeout(3000)
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def navigate_to_route(pg, url, ctx):
+    target = normalize_crawl_url(url, ctx)
+    parsed = urlparse(target)
+    fragment = parsed.fragment.strip("/")
+
+    if not ctx.get("app_base"):
+        pg.goto(ctx["books_origin"], wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_timeout(3000)
+        resolve_app_base_from_browser(pg, ctx)
+
+    if not ctx.get("app_base"):
+        raise RuntimeError("Books app URL not resolved — run bootstrap or re-login.")
+
+    if "/app/" not in pg.url:
+        pg.goto(ctx["app_base"], wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_selector("a.nav-link", timeout=30000)
+        pg.wait_for_timeout(2000)
+
+    if not fragment or fragment in ("home", "home/dashboard"):
+        pg.goto(f"{ctx['app_base']}#/home/dashboard", wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_timeout(2500)
+        return
+
+    pg.evaluate("(hash) => { window.location.hash = hash; }", f"#/{fragment}")
+    pg.wait_for_timeout(1500)
+
+    try:
+        pg.wait_for_function(
+            """(frag) => {
+                const current = window.location.hash.replace(/^#\\/?/, '').split('/')[0];
+                const want = frag.split('/')[0];
+                return current === want;
+            }""",
+            fragment,
+            timeout=15000,
+        )
+    except Exception:
+        pass
+
+    try:
+        pg.wait_for_load_state("networkidle", timeout=10000)
+    except Exception:
+        pass
+
+    pg.wait_for_timeout(2500)
+
+    body = pg.locator("body").inner_text()[:1000]
+    route_root = fragment.split("/")[0]
+    if route_root not in ("home", "") and "Hello, gauri" in body and "Dashboard" in body:
+        print(f"  ↻ hash nav stuck on dashboard — clicking sidebar for #/{fragment}")
+        click_sidebar_link(pg, fragment)
 
 def is_login_page(pg):
     parsed = urlparse(pg.url)
@@ -166,35 +294,44 @@ def localize_assets(html, page_url, request):
         full = abs_url(url, page_url)
         if not full:
             return match.group(0)
-
         ext = os.path.splitext(urlparse(full).path)[1].lower()
         if ext in CSS_EXTS:
             local = save_asset(full, "assets/css", CSS_EXTS, request)
         else:
             return match.group(0)
-
         return f'{attr}={quote}../{local}{quote}' if local else match.group(0)
-
     return re.sub(r'(src|href)=(["\'])([^"\']+)\2', replace, html)
 
-# --- FIX 2: Updated rewrite_links to handle SPA fragments and link to .html files ---
 def rewrite_links(html, url_slug_map):
+    fragment_map = {}
+    for original_url, slug in url_slug_map.items():
+        parsed = urlparse(original_url)
+        if parsed.fragment:
+            key = f"#/{parsed.fragment.split('?')[0].strip('/')}"
+            fragment_map[key] = f"{slug}.html"
+            fragment_map[key.rstrip("/")] = f"{slug}.html"
+
     def replace(match):
         attr, quote, url = match.group(1), match.group(2), match.group(3)
-        
-        # Cross-reference the URL against our saved pages
         for original_url, slug in url_slug_map.items():
             if url in original_url:
-                # Rewrite the link to safely point to the local .html file
                 return f'{attr}={quote}{slug}.html{quote}'
+
+        key = _hash_route(url) if url.startswith("#/") or "://" in url else None
+        if key and key in fragment_map:
+            return f'{attr}={quote}{fragment_map[key]}{quote}'
+        if key:
+            trimmed = key.rstrip("/")
+            if trimmed in fragment_map:
+                return f'{attr}={quote}{fragment_map[trimmed]}{quote}'
+
         return match.group(0)
 
-    # Capture both href and src attributes to rewrite accurately
     return re.sub(r'(href|src)=(["\'])([^"\']+)\2', replace, html)
 
 def collect_links(pg, page_url):
     links = []
-    pg.wait_for_timeout(2000) 
+    pg.wait_for_timeout(2000)
     for anchor in pg.locator("a").all():
         full = abs_url(anchor.get_attribute("href"), page_url)
         if full:
@@ -218,25 +355,21 @@ def attach_asset_capture(page, request):
         try:
             url = response.url
             content_type = response.headers.get("content-type", "").lower()
-            
             is_image = (
                 response.request.resource_type in ("image", "media")
                 or content_type.startswith("image/")
             )
             if is_image and is_content_image_url(url):
                 captured_images.add(url)
-                
             is_js = (
-                response.request.resource_type == "script" 
-                or "javascript" in content_type 
+                response.request.resource_type == "script"
+                or "javascript" in content_type
                 or url.endswith(".js")
             )
             if is_js and ("zoho" in url or "zohostatic" in url):
                 save_asset(url, "assets/js", {".js", ".mjs"}, request)
-                
         except Exception:
             pass
-
     page.on("response", on_response)
     return captured_images
 
@@ -246,7 +379,6 @@ def collect_content_images(pg, page_url, request, network_urls):
         src = abs_url(img.get_attribute("src") or img.get_attribute("data-src"), page_url)
         if src and is_content_image_url(src):
             urls.add(src)
-
     images = []
     for url in sorted(urls):
         local = save_asset(url, "assets/images", IMAGE_EXTS, request)
@@ -254,70 +386,22 @@ def collect_content_images(pg, page_url, request, network_urls):
             images.append({"src": url, "local_path": f"../{local}"})
     return images
 
+
 def save_page(pg, request, url, slug):
     pg.screenshot(path=f"pages/{slug}.png", full_page=True)
     html = localize_assets(pg.content(), url, request)
-    
-    # --- FIX 1: Updated Vaccine Script ---
-    mute_network_script = """
-    <script>
-        // 1. Hijack the modern Fetch API - return safe empty arrays
-        window.originalFetch = window.fetch;
-        window.fetch = async (...args) => {
-            console.log("Blocked Fetch API call to:", args[0]);
-            return new Response(JSON.stringify({ data: [], contacts: [], items: [], users: [], message: "success" }), { 
-                status: 200, 
-                headers: { "Content-Type": "application/json" } 
-            });
-        };
-
-        // 2. Hijack the older XMLHttpRequest (AJAX) - return safe empty arrays
-        window.originalXHR = window.XMLHttpRequest;
-        window.XMLHttpRequest = function() {
-            const xhr = new window.originalXHR();
-            xhr.send = function() {
-                console.log("Blocked AJAX call");
-                Object.defineProperty(this, 'readyState', {get: () => 4});
-                Object.defineProperty(this, 'status', {get: () => 200});
-                Object.defineProperty(this, 'responseText', {get: () => '{"data":[], "message":"success"}'});
-                
-                if (this.onload) this.onload();
-                if (this.onreadystatechange) this.onreadystatechange();
-            };
-            return xhr;
-        };
-        
-        // 3. Hijack WebSockets
-        window.WebSocket = function() {
-            this.send = () => {};
-            this.close = () => {};
-        };
-
-        // 4. Force Local Navigation - Prevent Ember router from hijacking your clicks
-        document.addEventListener('click', function(e) {
-            const link = e.target.closest('a');
-            // If the user clicks a rewritten link ending in .html
-            if (link && link.getAttribute('href') && link.getAttribute('href').endsWith('.html')) {
-                e.stopPropagation(); // Hide the click from Zoho's JavaScript
-            }
-        }, true);
-    </script>
-    """
-    
-    html = html.replace("<head>", f"<head>\n{mute_network_script}", 1)
-    
     Path(f"pages/{slug}.html").write_text(html, encoding="utf-8")
     Path(f"pages/{slug}.txt").write_text(pg.locator("body").inner_text(), encoding="utf-8")
     Path(f"pages/{slug}.meta").write_text(url, encoding="utf-8")
 
+
 def crawl():
-    visited, url_slug_map, sitemap = set(), {}, []
+    visited, url_slug_map, sitemap, saved_slugs = set(), {}, [], set()
 
     with sync_playwright() as p:
         auth_file = resolve_auth_file() or ensure_authenticated(p)
-        start_url = resolve_start_url(auth_file)
-        base_domain = urlparse(start_url).netloc
-        queue = [start_url]
+        ctx = get_workspace_context(auth_file)
+        base_domain = urlparse(ctx["books_origin"]).netloc
 
         browser = p.chromium.launch(headless=False, channel="chrome")
         context = browser.new_context(
@@ -329,44 +413,53 @@ def crawl():
         request = context.request
         print(f"[*] Loaded session from {auth_file} — crawling as authenticated user")
 
+        pg = context.new_page()
+        captured = attach_asset_capture(pg, request)
+        bootstrap_books_app(pg, ctx)
+        start_url = ctx["start_url"]
+        queue = [start_url]
+
         while queue and len(sitemap) < MAX_PAGES:
-            url = queue.pop(0)
+            raw_url = queue.pop(0)
+            url = normalize_crawl_url(raw_url, ctx)
             if url in visited or urlparse(url).netloc != base_domain:
                 continue
 
             visited.add(url)
             slug = get_slug(url)
+            if slug in saved_slugs:
+                continue
+
             url_slug_map[url] = slug
+            url_slug_map[raw_url] = slug
             print(f"[{len(sitemap) + 1}] {url}")
 
-            pg = None
             try:
-                pg = context.new_page()
-                captured = attach_asset_capture(pg, request)
-                pg.goto(url, wait_until="networkidle", timeout=30000)
-                pg.wait_for_timeout(2000)
+                navigate_to_route(pg, url, ctx)
 
                 if is_login_page(pg):
                     print(f"  ✗ hit login page at {pg.url}")
                     print(f"    Delete {AUTH_FILE} and run again to log in to Zoho Books.")
                     break
 
-                for link in collect_links(pg, url):
-                    if link not in visited and link not in queue and urlparse(link).netloc == base_domain:
-                        queue.append(link)
+                for link in collect_links(pg, pg.url):
+                    norm = normalize_crawl_url(link, ctx)
+                    if not norm or "/app/" not in norm:
+                        continue
+                    if norm not in visited and norm not in queue and urlparse(norm).netloc == base_domain:
+                        queue.append(norm)
 
-                image_index = collect_content_images(pg, url, request, captured)
+                image_index = collect_content_images(pg, pg.url, request, captured)
                 Path(f"pages/{slug}.images.json").write_text(json.dumps(image_index, indent=2), encoding="utf-8")
-                
+
                 save_page(pg, request, url, slug)
+                saved_slugs.add(slug)
                 sitemap.append({"slug": slug, "url": url, "title": pg.title()})
 
             except Exception as e:
                 print(f"  ✗ {e}")
-            finally:
-                if pg:
-                    pg.close()
 
+        pg.close()
         context.close()
         browser.close()
 
@@ -376,7 +469,14 @@ def crawl():
         path.write_text(rewrite_links(path.read_text(encoding="utf-8"), url_slug_map), encoding="utf-8")
 
     Path("pages/sitemap.json").write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
+
+    print("\n[*] Stitching pages for offline navigation...")
+    stitch_pages()
+
     print(f"\n✅ Done — {len(sitemap)} pages saved successfully!")
+    print("   Serve with: python3 -m http.server 8080")
+    print("   Then open:  http://localhost:8080/pages/home.html")
+
 
 if __name__ == "__main__":
     crawl()
