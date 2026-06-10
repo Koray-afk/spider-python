@@ -45,20 +45,15 @@ os.makedirs("assets/css", exist_ok=True)
 os.makedirs("assets/js", exist_ok=True)
 
 def abs_url(url, base):
-    # Removed "#" from the ignore list so SPA routes are captured
     if not url or url.startswith(("data:", "javascript:", "blob:")):
         return None
     return url if url.startswith("http") else urljoin(base, url)
 
 def get_slug(url):
     parsed = urlparse(url)
-    # Combine the main path and the SPA fragment
     raw_path = f"{parsed.path}-{parsed.fragment}"
-    
-    # Replace slashes and special characters with dashes for a clean filename
     clean_path = re.sub(r'[^a-zA-Z0-9]', '-', raw_path)
     clean_path = re.sub(r'-+', '-', clean_path).strip('-')
-    
     return clean_path or "home"
 
 def resolve_auth_file():
@@ -182,19 +177,24 @@ def localize_assets(html, page_url, request):
 
     return re.sub(r'(src|href)=(["\'])([^"\']+)\2', replace, html)
 
+# --- FIX 2: Updated rewrite_links to handle SPA fragments and link to .html files ---
 def rewrite_links(html, url_slug_map):
     def replace(match):
         attr, quote, url = match.group(1), match.group(2), match.group(3)
-        slug = url_slug_map.get(url)
-        return f'{attr}={quote}/{slug}{quote}' if slug else match.group(0)
+        
+        # Cross-reference the URL against our saved pages
+        for original_url, slug in url_slug_map.items():
+            if url in original_url:
+                # Rewrite the link to safely point to the local .html file
+                return f'{attr}={quote}{slug}.html{quote}'
+        return match.group(0)
 
-    return re.sub(r'(href)=(["\'])([^"\'#?]+)\2', replace, html)
+    # Capture both href and src attributes to rewrite accurately
+    return re.sub(r'(href|src)=(["\'])([^"\']+)\2', replace, html)
 
 def collect_links(pg, page_url):
     links = []
-    # Force the crawler to wait 2 seconds so the SPA sidebar can fully render
     pg.wait_for_timeout(2000) 
-    
     for anchor in pg.locator("a").all():
         full = abs_url(anchor.get_attribute("href"), page_url)
         if full:
@@ -214,13 +214,11 @@ def is_content_image_url(url):
 
 def attach_asset_capture(page, request):
     captured_images = set()
-    
     def on_response(response):
         try:
             url = response.url
             content_type = response.headers.get("content-type", "").lower()
             
-            # 1. Capture Images (Your existing logic)
             is_image = (
                 response.request.resource_type in ("image", "media")
                 or content_type.startswith("image/")
@@ -228,15 +226,12 @@ def attach_asset_capture(page, request):
             if is_image and is_content_image_url(url):
                 captured_images.add(url)
                 
-            # 2. NEW: Capture JavaScript
             is_js = (
                 response.request.resource_type == "script" 
                 or "javascript" in content_type 
                 or url.endswith(".js")
             )
-            # Only download scripts from Zoho, ignore third-party tracking junk
             if is_js and ("zoho" in url or "zohostatic" in url):
-                # We pass .mjs just in case they use modern ES modules
                 save_asset(url, "assets/js", {".js", ".mjs"}, request)
                 
         except Exception:
@@ -261,54 +256,56 @@ def collect_content_images(pg, page_url, request, network_urls):
 
 def save_page(pg, request, url, slug):
     pg.screenshot(path=f"pages/{slug}.png", full_page=True)
-    
-    # 1. Localize assets (but DO NOT strip the <script> tags this time)
     html = localize_assets(pg.content(), url, request)
     
-    # 2. THE VACCINE: A script to hijack and mute all API calls
+    # --- FIX 1: Updated Vaccine Script ---
     mute_network_script = """
     <script>
-        // 1. Hijack the modern Fetch API
+        // 1. Hijack the modern Fetch API - return safe empty arrays
         window.originalFetch = window.fetch;
         window.fetch = async (...args) => {
             console.log("Blocked Fetch API call to:", args[0]);
-            // Return a fake, empty success response
-            return new Response(JSON.stringify({}), { 
+            return new Response(JSON.stringify({ data: [], contacts: [], items: [], users: [], message: "success" }), { 
                 status: 200, 
                 headers: { "Content-Type": "application/json" } 
             });
         };
 
-        // 2. Hijack the older XMLHttpRequest (AJAX)
+        // 2. Hijack the older XMLHttpRequest (AJAX) - return safe empty arrays
         window.originalXHR = window.XMLHttpRequest;
         window.XMLHttpRequest = function() {
             const xhr = new window.originalXHR();
             xhr.send = function() {
                 console.log("Blocked AJAX call");
-                // Force the browser to think the request succeeded instantly
                 Object.defineProperty(this, 'readyState', {get: () => 4});
                 Object.defineProperty(this, 'status', {get: () => 200});
-                Object.defineProperty(this, 'responseText', {get: () => "{}"});
+                Object.defineProperty(this, 'responseText', {get: () => '{"data":[], "message":"success"}'});
                 
-                // Trigger the success callbacks
                 if (this.onload) this.onload();
                 if (this.onreadystatechange) this.onreadystatechange();
             };
             return xhr;
         };
         
-        // 3. Hijack WebSockets (used for live notifications)
+        // 3. Hijack WebSockets
         window.WebSocket = function() {
             this.send = () => {};
             this.close = () => {};
         };
+
+        // 4. Force Local Navigation - Prevent Ember router from hijacking your clicks
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            // If the user clicks a rewritten link ending in .html
+            if (link && link.getAttribute('href') && link.getAttribute('href').endsWith('.html')) {
+                e.stopPropagation(); // Hide the click from Zoho's JavaScript
+            }
+        }, true);
     </script>
     """
     
-    # 3. Inject the mute script right at the top of the HTML document
     html = html.replace("<head>", f"<head>\n{mute_network_script}", 1)
     
-    # 4. Save the files
     Path(f"pages/{slug}.html").write_text(html, encoding="utf-8")
     Path(f"pages/{slug}.txt").write_text(pg.locator("body").inner_text(), encoding="utf-8")
     Path(f"pages/{slug}.meta").write_text(url, encoding="utf-8")

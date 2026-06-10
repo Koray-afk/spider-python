@@ -2,13 +2,14 @@
 from playwright.sync_api import sync_playwright
 import os
 from urllib.parse import urlparse
+import re # <-- 1. ADDED IMPORT
 
 os.makedirs("pages", exist_ok=True)
 os.makedirs("analysis", exist_ok=True)
 
 with sync_playwright() as p:
 
-    start_url = "https://www.hubspot.com/"
+    start_url = "https://www.zoho.com/in/books/"
     queue = [start_url]
     visited = set()
     max_pages = 5                  # tune as needed
@@ -46,6 +47,12 @@ with sync_playwright() as p:
             page.screenshot(path=f"pages/{slug}.png", full_page=True)
 
             html = page.content()
+            
+            # --- 2. THE FIX: Inject <base> tag to fix broken CSS ---
+            base_tag = f'<base href="{current_url}">'
+            html = re.sub(r'(<head[^>]*>)', f'\\1\n{base_tag}', html, count=1, flags=re.IGNORECASE)
+            # -------------------------------------------------------
+
             with open(f"pages/{slug}.html", "w", encoding="utf-8") as f:
                 f.write(html)
 
