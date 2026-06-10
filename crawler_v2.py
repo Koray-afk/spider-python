@@ -19,7 +19,7 @@ LOGIN_URL = (
 POST_AUTH_HOME = "https://books.zoho.in"
 
 MAX_PAGES_PRE_AUTH = 5
-MAX_PAGES_POST_AUTH = 10
+MAX_PAGES_POST_AUTH = 20
 AUTH_FILE = "auth.json"
 SESSION_FILE = "session.json"
 
@@ -40,8 +40,15 @@ FONT_EXTS = {".woff", ".woff2", ".ttf", ".eot"}
 ASSET_EXTS = IMAGE_EXTS | CSS_EXTS | FONT_EXTS
 
 # ── 2. ENVIRONMENT SETUP ───────────────────────────────────────
+PAGES_DIR = Path("pages")
+SITEMAP_PATH = PAGES_DIR / "sitemap.json"
 os.makedirs("pages", exist_ok=True)
 os.makedirs("analysis", exist_ok=True)
+
+
+def save_sitemap(sitemap):
+    """Persist sitemap after each page so partial crawls still produce sitemap.json."""
+    SITEMAP_PATH.write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
 
 # ── 3. UTILITIES ───────────────────────────────────────────────
 def abs_url(url, base):
@@ -89,6 +96,9 @@ def make_assets_absolute(html, page_url, include_js=False):
 
     return re.sub(r'(src|href)=(["\'])([^"\']+)\2', replace, html)
 
+def remove_base_tag(html):
+    return re.sub(r"<base\b[^>]*>", "", html, flags=re.IGNORECASE)
+
 def strip_scripts(html):
     """Remove all JS so Ember/API code cannot run or hijack navigation."""
     html = re.sub(r"<script\b[^>]*>[\s\S]*?</script>", "", html, flags=re.IGNORECASE)
@@ -97,22 +107,29 @@ def strip_scripts(html):
     html = re.sub(r"\s+on\w+=([\"']).*?\1", "", html, flags=re.IGNORECASE)
     return html
 
+def hash_route_from_href(href):
+    if not href.startswith("#/"):
+        return None
+    route = href[2:].split("?")[0].strip("/")
+    return f"#/{route}" if route else "#/home"
+
 def build_href_index(url_slug_map):
     """Map every href variant (hash, path+hash, full URL) → local slug folder."""
     index = {}
     for original_url, slug in url_slug_map.items():
         parsed = urlparse(original_url)
-        fragment = parsed.fragment
+        fragment = parsed.fragment.split("?")[0] if parsed.fragment else ""
         path = parsed.path.rstrip("/") or "/"
         full = normalize_spa_url(original_url)
 
         index[full] = slug
         index[original_url] = slug
         if fragment:
+            index[f"#/{fragment}"] = slug
             index[f"#{fragment}"] = slug
             index[fragment] = slug
+            index[f"{path}#/{fragment}"] = slug
             index[f"{path}#{fragment}"] = slug
-            index[f"/{fragment.lstrip('/')}" if not fragment.startswith("/") else fragment] = slug
     return index
 
 def rewrite_links(html, url_slug_map):
@@ -121,26 +138,29 @@ def rewrite_links(html, url_slug_map):
     def local_path(slug):
         return f"../{slug}/index.html"
 
-    def resolve_slug(href, page_context=None):
+    def resolve_slug(href):
         if not href or href.startswith(("javascript:", "mailto:", "tel:", "data:")):
             return None
         candidates = [href.strip()]
+        route = hash_route_from_href(href)
+        if route:
+            candidates.extend([route, route.rstrip("/")])
+            parts = route[2:].split("/")
+            for i in range(len(parts), 0, -1):
+                candidates.append("#/" + "/".join(parts[:i]))
         if href.startswith("#"):
-            candidates.append(href)
+            candidates.append(href.split("?")[0])
         else:
-            abs_h = abs_url(href, page_context or "")
+            abs_h = abs_url(href, "")
             if abs_h:
                 candidates.append(abs_h)
                 candidates.append(normalize_spa_url(abs_h))
-                frag = urlparse(abs_h).fragment
+                frag = urlparse(abs_h).fragment.split("?")[0]
                 if frag:
-                    candidates.append(f"#{frag}")
+                    candidates.extend([f"#/{frag}", f"#{frag}"])
         for key in candidates:
             if key in href_index:
                 return href_index[key]
-        for key, slug in href_index.items():
-            if href == key or href.endswith(key) or key.endswith(href):
-                return slug
         return None
 
     def replace_href(match):
@@ -205,6 +225,7 @@ def save_page(pg, url, slug, is_authenticated=False):
     if is_authenticated:
         # Post-auth: view-only static replica — CSS/images from CDN, zero JS
         html = make_assets_absolute(html, url, include_js=False)
+        html = remove_base_tag(html)
         html = strip_scripts(html)
         html = re.sub(r"(<head[^>]*>)", rf"\1\n{STATIC_NAV_STYLE}", html, count=1, flags=re.IGNORECASE)
     else:
@@ -306,6 +327,7 @@ def run_spider(context, start_url, base_domain, max_pages, sitemap, url_slug_map
 
             save_page(pg, url, slug, is_authenticated=is_authenticated)
             sitemap.append({"slug": slug, "url": url, "title": pg.title()})
+            save_sitemap(sitemap)
         except Exception as e:
             print(f"    ✗ Capture failed: {e}")
         finally:
@@ -378,10 +400,31 @@ def main():
             rewritten += 1
         path.write_text(new_html, encoding="utf-8")
 
-    Path("pages/sitemap.json").write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
-    print(f"\n✅ Done — {len(sitemap)} pages saved, {rewritten} HTML files got local nav links.")
-    print("   Open any page:  open pages/<slug>/index.html")
-    print("   Sidebar links point to ../<other-slug>/index.html (no network, no Ember router).")
+    save_sitemap(sitemap)
+    print(f"\n✅ Crawl done — {len(sitemap)} pages saved, {rewritten} HTML files got local nav links.")
+
+    print("\n=== PHASE 4: STITCH OFFLINE NAV (page_stitch.py) ===")
+    stitched = 0
+    try:
+        from page_stitch import stitch_pages
+
+        stitched = stitch_pages()
+    except FileNotFoundError as e:
+        print(f"    ✗ Stitch skipped: {e}")
+    except ValueError as e:
+        print(f"    ✗ Stitch skipped: {e}")
+    except Exception as e:
+        print(f"    ✗ Stitch failed: {e}")
+
+    print(f"\n✅ All phases complete.")
+    print(f"   Sitemap:  pages/sitemap.json ({len(sitemap)} entries)")
+    if stitched:
+        print("   Open any crawled page via local server (NOT file://):")
+        print("   python3 -m http.server 8080")
+        print("   http://localhost:8080/pages/<slug>/index.html")
+    else:
+        print("   Run manually: python3 page_stitch.py")
+
 
 if __name__ == "__main__":
     main()
