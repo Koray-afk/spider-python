@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
-from page_stitch import stitch_pages
+from page_stitch import _hash_route, stitch_pages
 
 # pyrefly: ignore [missing-import]
 from playwright.sync_api import sync_playwright
@@ -303,12 +303,30 @@ def localize_assets(html, page_url, request):
     return re.sub(r'(src|href)=(["\'])([^"\']+)\2', replace, html)
 
 def rewrite_links(html, url_slug_map):
+    fragment_map = {}
+    for original_url, slug in url_slug_map.items():
+        parsed = urlparse(original_url)
+        if parsed.fragment:
+            key = f"#/{parsed.fragment.split('?')[0].strip('/')}"
+            fragment_map[key] = f"{slug}.html"
+            fragment_map[key.rstrip("/")] = f"{slug}.html"
+
     def replace(match):
         attr, quote, url = match.group(1), match.group(2), match.group(3)
         for original_url, slug in url_slug_map.items():
             if url in original_url:
                 return f'{attr}={quote}{slug}.html{quote}'
+
+        key = _hash_route(url) if url.startswith("#/") or "://" in url else None
+        if key and key in fragment_map:
+            return f'{attr}={quote}{fragment_map[key]}{quote}'
+        if key:
+            trimmed = key.rstrip("/")
+            if trimmed in fragment_map:
+                return f'{attr}={quote}{fragment_map[trimmed]}{quote}'
+
         return match.group(0)
+
     return re.sub(r'(href|src)=(["\'])([^"\']+)\2', replace, html)
 
 def collect_links(pg, page_url):

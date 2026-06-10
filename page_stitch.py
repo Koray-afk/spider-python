@@ -5,41 +5,15 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-STATIC_UI_SCRIPT = """<script>
-(function() {
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.accordion-button');
-    if (!btn) return;
-    e.preventDefault();
-    e.stopPropagation();
-    var expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    btn.classList.toggle('collapsed', expanded);
-    var panelId = btn.getAttribute('aria-controls');
-    if (!panelId) return;
-    var panel = document.getElementById(panelId);
-    if (!panel) return;
-    panel.hidden = expanded;
-    panel.classList.toggle('show', !expanded);
-  }, true);
-
-  var page = (location.pathname.split('/').pop() || 'home.html').split('?')[0];
-  document.querySelectorAll('a[href]').forEach(function(a) {
-    var href = a.getAttribute('href');
-    if (!href) return;
-    if (href === page) {
-      a.classList.add('active');
-    }
-    if (href.indexOf('#/') === 0) {
-      a.style.opacity = '0.45';
-      a.style.cursor = 'not-allowed';
-      a.addEventListener('click', function(ev) {
-        ev.preventDefault();
-      });
-    }
-  });
-})();
-</script>"""
+OVERLAY_HIDE_STYLE = """<style>
+#zcwindows, .zcoverlay, .zsiq_theme1, #zsiq_float, #zsiq_chat_wrap,
+iframe, #micsbackdrop, #wmstoolbar, #tooltip-popover-wrapper,
+#zgs20_globalsearch, .zgs19_gsOverlay, #zgs20_gsOverlay,
+.popover-container { display: none !important; pointer-events: none !important; }
+#main-nav-tab, .main-nav-lhs, .main-nav-lhs a, a.nav-link[href$=".html"] {
+  pointer-events: auto !important; cursor: pointer !important;
+}
+</style>"""
 
 
 def _fragment_key(fragment: str) -> str | None:
@@ -85,31 +59,45 @@ def build_route_map(sitemap: list, pages_dir: Path) -> dict[str, str]:
     return route_map
 
 
-def rewrite_route_links(html: str, route_map: dict[str, str]) -> str:
-    keys_by_len = sorted(route_map.keys(), key=len, reverse=True)
+def _hash_route(url: str) -> str | None:
+    """Extract #/route from hash links, ignoring query strings."""
+    if url.startswith("#/"):
+        path = url.split("?")[0].rstrip("/")
+        return path or "#/home"
+    if "://" in url:
+        fragment = urlparse(url).fragment
+        if fragment:
+            path = fragment.split("?")[0].strip("/")
+            return f"#/{path}" if path else "#/home"
+    return None
 
+
+def _lookup_route(url: str, route_map: dict[str, str]) -> str | None:
+    if url in route_map:
+        return route_map[url]
+
+    key = _hash_route(url)
+    if not key:
+        return None
+    if key in route_map:
+        return route_map[key]
+
+    trimmed = key.rstrip("/")
+    if trimmed in route_map:
+        return route_map[trimmed]
+
+    return None
+
+
+def rewrite_route_links(html: str, route_map: dict[str, str]) -> str:
     def replace_href(match):
         attr, quote, url = match.group(1), match.group(2), match.group(3)
         if url.endswith(".html") or url.startswith(("data:", "javascript:", "mailto:", "tel:", "../")):
             return match.group(0)
 
-        if url in route_map:
-            return f'{attr}={quote}{route_map[url]}{quote}'
-
-        if url.startswith("#/"):
-            trimmed = url.rstrip("/")
-            if trimmed in route_map:
-                return f'{attr}={quote}{route_map[trimmed]}{quote}'
-
-        if "://" in url:
-            parsed = urlparse(url)
-            key = _fragment_key(parsed.fragment)
-            if key and key in route_map:
-                return f'{attr}={quote}{route_map[key]}{quote}'
-
-        for key in keys_by_len:
-            if key.startswith("#/") and url == key:
-                return f'{attr}={quote}{route_map[key]}{quote}'
+        target = _lookup_route(url, route_map)
+        if target:
+            return f'{attr}={quote}{target}{quote}'
 
         return match.group(0)
 
@@ -132,10 +120,71 @@ def expand_sidebar(html: str) -> str:
     return html
 
 
+def cleanup_prior_stitch(html: str) -> str:
+    html = re.sub(
+        r"<style>\s*\n#zcwindows.*?</style>\s*",
+        "",
+        html,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    return html
+
+
+def enable_sidebar_clicks(html: str) -> str:
+    """Zoho freezes the sidebar with pointer-events:none during SPA transitions."""
+    return re.sub(
+        r'(<nav[^>]*id="main-nav-tab"[^>]*style="[^"]*)pointer-events:\s*none;?',
+        r"\1pointer-events: auto;",
+        html,
+        flags=re.IGNORECASE,
+    )
+
+
 def inject_static_ui(html: str) -> str:
+    if re.search(r"</head>", html, flags=re.IGNORECASE):
+        html = re.sub(r"</head>", OVERLAY_HIDE_STYLE + "\n</head>", html, count=1, flags=re.IGNORECASE)
+    else:
+        html = OVERLAY_HIDE_STYLE + html
+
+    static_script = """<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.accordion-button');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    btn.classList.toggle('collapsed', expanded);
+    var panelId = btn.getAttribute('aria-controls');
+    if (!panelId) return;
+    var panel = document.getElementById(panelId);
+    if (!panel) return;
+    panel.hidden = expanded;
+    panel.classList.toggle('show', !expanded);
+  }, true);
+
+  var page = (location.pathname.split('/').pop() || 'home.html').split('?')[0];
+  document.querySelectorAll('a[href]').forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (!href) return;
+    if (href === page) {
+      a.classList.add('active');
+    }
+    if (href.indexOf('#/') === 0) {
+      a.style.opacity = '0.45';
+      a.style.cursor = 'not-allowed';
+      a.addEventListener('click', function(ev) {
+        ev.preventDefault();
+      });
+    }
+  });
+})();
+</script>"""
+
     if re.search(r"</body>", html, flags=re.IGNORECASE):
-        return re.sub(r"</body>", STATIC_UI_SCRIPT + "\n</body>", html, count=1, flags=re.IGNORECASE)
-    return html + STATIC_UI_SCRIPT
+        return re.sub(r"</body>", static_script + "\n</body>", html, count=1, flags=re.IGNORECASE)
+    return html + static_script
 
 
 def build_index_html(sitemap: list) -> str:
@@ -172,8 +221,10 @@ def build_index_html(sitemap: list) -> str:
 
 
 def finalize_html(html: str, route_map: dict[str, str]) -> str:
+    html = cleanup_prior_stitch(html)
     html = strip_scripts(html)
     html = expand_sidebar(html)
+    html = enable_sidebar_clicks(html)
     html = rewrite_route_links(html, route_map)
     return inject_static_ui(html)
 
