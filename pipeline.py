@@ -7,8 +7,10 @@ from config.apps import get_app_config
 from crawler.crawler_v2 import crawl_application
 from stitcher.page_stitch import stitch_application
 from analyzer.html_cleaner import clean_application
+from analyzer.business_analyzer import analyze_application
 from storage.storage_manager import (
     create_app_storage,
+    get_business_json_dir,
     get_cleaned_html_dir,
     get_metadata_dir,
     get_raw_html_dir,
@@ -119,6 +121,26 @@ def run_clean_pipeline(app_name: str) -> dict:
     log_page_io_pairs(stitched_dir, cleaned_dir, layout="flat")
     save_pipeline_status(get_metadata_dir(app_name), clean_completed=True)
     return clean_result
+
+
+def run_analyze_pipeline(app_name: str) -> dict:
+    """Read cleaned_html only; write business_json. Requires GEMINI_API_KEY."""
+    create_app_storage(app_name)
+    cleaned_dir = get_cleaned_html_dir(app_name)
+    business_dir = get_business_json_dir(app_name)
+
+    log_stage("ANALYZE")
+    log_input(cleaned_dir / "<slug>.html")
+    log_output(business_dir / "<slug>.json")
+
+    if not cleaned_dir.is_dir() or not any(cleaned_dir.glob("*.html")):
+        raise FileNotFoundError(
+            f"No cleaned HTML at {cleaned_dir} — run clean before analyze"
+        )
+
+    analyze_result = analyze_application(app_name)
+    save_pipeline_status(get_metadata_dir(app_name), analyze_completed=True)
+    return analyze_result
 
 
 def run_full_pipeline(app_name: str) -> dict:

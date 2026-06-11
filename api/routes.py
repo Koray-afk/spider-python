@@ -2,7 +2,13 @@
 
 from fastapi import APIRouter
 
-from pipeline import run_clean_pipeline, run_crawl_pipeline, run_full_pipeline, run_stitch_pipeline
+from pipeline import (
+    run_analyze_pipeline,
+    run_clean_pipeline,
+    run_crawl_pipeline,
+    run_full_pipeline,
+    run_stitch_pipeline,
+)
 
 router = APIRouter()
 
@@ -20,6 +26,11 @@ def stitch_endpoint(app_name: str):
 @router.post("/clean/{app_name}")
 def clean_endpoint(app_name: str):
     return run_clean_pipeline(app_name)
+
+
+@router.post("/analyze/{app_name}")
+def analyze_endpoint(app_name: str):
+    return run_analyze_pipeline(app_name)
 
 
 @router.post("/pipeline/{app_name}")

@@ -39,7 +39,15 @@ On Linux, install Chromium/Chrome dependencies:
 playwright install-deps chrome
 ```
 
-### 5. First run
+### 5. (Optional) Gemini API key for business analysis
+
+Create a `.env` file at the project root if you want to run the analyze step:
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
+
+### 6. First run
 
 ```bash
 python main.py pipeline zoho
@@ -59,6 +67,7 @@ Every command requires an app name (`zoho`, `hubspot`, etc.).
 | `python main.py crawl <app>` | Crawl only → `raw_html/` |
 | `python main.py stitch <app>` | Stitch only → `stitched_html/` |
 | `python main.py clean <app>` | Clean only → `cleaned_html/` |
+| `python main.py analyze <app>` | Analyze only → `business_json/` (requires `GEMINI_API_KEY`) |
 | `python main.py preview <app>` | Serve `stitched_html/` locally |
 | `python main.py serve` | Start FastAPI API on port 8000 |
 
@@ -69,6 +78,7 @@ python main.py pipeline zoho
 python main.py crawl zoho
 python main.py stitch zoho
 python main.py clean zoho
+python main.py analyze zoho
 python main.py preview zoho
 ```
 
@@ -133,7 +143,7 @@ storage/apps/
 │   ├── assets/            # Downloaded assets (reserved)
 │   ├── stitched_html/     # Offline-viewable stitched pages ← preview here
 │   ├── cleaned_html/      # Flat simplified HTML for LLM analysis
-│   ├── business_json/     # Gemini business analysis output (reserved)
+│   ├── business_json/     # Gemini business analysis JSON per page
 │   └── metadata/
 │       ├── sitemap.json
 │       ├── auth.json
@@ -148,6 +158,7 @@ storage/apps/
 | `raw_html/` | Crawler | Original captured HTML |
 | `stitched_html/` | Stitcher | Sidebar nav wired, JS stripped (post-auth) |
 | `cleaned_html/` | Cleaner | Token-efficient HTML for LLMs |
+| `business_json/` | Analyzer | Per-page business analysis JSON from Gemini |
 | `metadata/` | Crawler / pipeline | Sitemap, auth, pipeline status |
 
 ---
@@ -210,10 +221,26 @@ Storage is created automatically at `storage/apps/hubspot/`.
 ## Pipeline stages
 
 ```
-[1/3] Crawl   → storage/apps/{app}/raw_html/
-[2/3] Stitch  → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
-[3/3] Clean   → storage/apps/{app}/cleaned_html/
+[1/3] Crawl    → storage/apps/{app}/raw_html/
+[2/3] Stitch   → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
+[3/3] Clean    → storage/apps/{app}/cleaned_html/
+[4/4] Analyze  → storage/apps/{app}/business_json/  (optional, run separately)
 ```
+
+Run analyze after clean:
+
+```bash
+python main.py analyze zoho
+```
+
+Output example:
+
+```
+storage/apps/zoho/business_json/contacts.json
+storage/apps/zoho/business_json/invoices.json
+```
+
+Each JSON file includes `businessPurpose`, `mainActions`, `businessEntities`, `userRoles`, and `shortSummary`. Already-analyzed pages are skipped on re-run.
 
 Check progress:
 

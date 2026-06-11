@@ -7,6 +7,7 @@ from fastapi import FastAPI
 from api.routes import router
 from config.apps import APPS
 from pipeline import (
+    run_analyze_pipeline,
     run_clean_pipeline,
     run_crawl_pipeline,
     run_full_pipeline,
@@ -17,7 +18,7 @@ from pipeline import (
 app = FastAPI(title="Spider Python", version="0.1.0")
 app.include_router(router)
 
-COMMANDS = frozenset({"crawl", "stitch", "clean", "pipeline", "preview"})
+COMMANDS = frozenset({"crawl", "stitch", "clean", "analyze", "pipeline", "preview"})
 
 
 def usage() -> None:
@@ -29,6 +30,7 @@ def usage() -> None:
     print("  crawl        Crawl only (writes raw_html)")
     print("  stitch       Stitch only (raw_html → stitched_html)")
     print("  clean        Clean only (stitched_html → cleaned_html)")
+    print("  analyze      Analyze only (cleaned_html → business_json, needs GEMINI_API_KEY)")
     print("  preview      Serve stitched_html via http.server")
     print("  serve        Start FastAPI on :8000")
     print()
@@ -72,6 +74,8 @@ def main() -> None:
         run_stitch_pipeline(app_name)
     elif command == "clean":
         run_clean_pipeline(app_name)
+    elif command == "analyze":
+        run_analyze_pipeline(app_name)
     elif command == "preview":
         run_preview_pipeline(app_name)
 
