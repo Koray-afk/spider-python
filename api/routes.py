@@ -11,6 +11,7 @@ from pipeline import (
     run_semantic_tree_pipeline,
     run_component_tree_pipeline,
     run_stitch_pipeline,
+    run_workflows_pipeline,
 )
 
 router = APIRouter()
@@ -49,6 +50,11 @@ def component_tree_endpoint(app_name: str):
 @router.post("/catalog/{app_name}")
 def catalog_endpoint(app_name: str):
     return run_catalog_pipeline(app_name)
+
+
+@router.post("/workflows/{app_name}")
+def workflows_endpoint(app_name: str):
+    return run_workflows_pipeline(app_name)
 
 
 @router.post("/pipeline/{app_name}")

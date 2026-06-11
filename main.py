@@ -16,6 +16,7 @@ from pipeline import (
     run_semantic_tree_pipeline,
     run_component_tree_pipeline,
     run_stitch_pipeline,
+    run_workflows_pipeline,
 )
 
 app = FastAPI(title="Spider Python", version="0.1.0")
@@ -29,6 +30,7 @@ COMMANDS = frozenset({
     "semantic_tree",
     "component_tree",
     "catalog",
+    "workflows",
     "pipeline",
     "preview",
 })
@@ -55,6 +57,10 @@ def usage() -> None:
     print(
         "  catalog        Application catalog "
         "(business_json + semantic_tree → app_catalog/catalog.json, needs GEMINI_API_KEY)"
+    )
+    print(
+        "  workflows      Business workflows "
+        "(catalog → app_catalog/workflows.json, needs GEMINI_API_KEY)"
     )
     print("  preview        Serve stitched_html via http.server")
     print("  serve        Start FastAPI on :8000")
@@ -107,6 +113,8 @@ def main() -> None:
         run_component_tree_pipeline(app_name)
     elif command == "catalog":
         run_catalog_pipeline(app_name)
+    elif command == "workflows":
+        run_workflows_pipeline(app_name)
     elif command == "preview":
         run_preview_pipeline(app_name)
 

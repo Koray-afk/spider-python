@@ -45,6 +45,7 @@ def load_pipeline_status(metadata_dir: Path) -> dict:
             "semantic_tree_completed": False,
             "component_tree_completed": False,
             "catalog_completed": False,
+            "workflows_completed": False,
             "last_run": None,
         }
     return json.loads(path.read_text(encoding="utf-8"))

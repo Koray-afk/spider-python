@@ -41,7 +41,7 @@ playwright install-deps chrome
 
 ### 5. (Optional) Gemini API key for analysis stages
 
-Create a `.env` file at the project root if you want to run `analyze`, `semantic_tree`, `component_tree`, or `catalog`:
+Create a `.env` file at the project root if you want to run `analyze`, `semantic_tree`, `component_tree`, `catalog`, or `workflows`:
 
 ```
 GEMINI_API_KEY=your_api_key_here
@@ -71,6 +71,7 @@ Every command requires an app name (`zoho`, `hubspot`, etc.).
 | `python main.py semantic_tree <app>` | Semantic UI tree → `semantic_tree/` (requires `GEMINI_API_KEY`) |
 | `python main.py component_tree <app>` | React component tree → `component_tree/` (requires `GEMINI_API_KEY`) |
 | `python main.py catalog <app>` | Application catalog → `app_catalog/catalog.json` (requires `GEMINI_API_KEY`) |
+| `python main.py workflows <app>` | Business workflows → `app_catalog/workflows.json` (requires `GEMINI_API_KEY`) |
 | `python main.py preview <app>` | Serve `stitched_html/` locally |
 | `python main.py serve` | Start FastAPI API on port 8000 |
 
@@ -85,6 +86,7 @@ python main.py analyze zoho
 python main.py semantic_tree zoho
 python main.py component_tree zoho
 python main.py catalog zoho
+python main.py workflows zoho
 python main.py preview zoho
 ```
 
@@ -239,7 +241,8 @@ Storage is created automatically at `storage/apps/hubspot/`.
 [4/7] Analyze        → storage/apps/{app}/business_json/        (optional, run separately)
 [5/7] Semantic tree  → storage/apps/{app}/semantic_tree/        (optional, run separately)
 [6/7] Component tree → storage/apps/{app}/component_tree/       (optional, run separately)
-[7/7] Catalog        → storage/apps/{app}/app_catalog/          (optional, run separately)
+[7/8] Catalog        → storage/apps/{app}/app_catalog/          (optional, run separately)
+[8/8] Workflows      → storage/apps/{app}/app_catalog/          (optional, run separately)
 ```
 
 Run analyze after clean:
@@ -300,6 +303,20 @@ storage/apps/zoho/app_catalog/catalog.json
 ```
 
 The catalog is a single JSON file with `pages`, `modules`, `relationships`, `sharedEntities`, and `workflows` — an application-level map for browser and React generator agents. Requires `semantic_tree/`; `business_json/` is optional per page. Re-run skips if `catalog.json` already exists.
+
+Run workflows after catalog:
+
+```bash
+python main.py workflows zoho
+```
+
+Output:
+
+```
+storage/apps/zoho/app_catalog/workflows.json
+```
+
+A JSON array of rich ERP business workflows — each with `id`, `name`, `purpose`, `entities`, `entryPage`, `exitPage`, and ordered `steps` (page + action + nextPage). Requires `catalog.json`; `business_json/` is optional. Re-run skips if `workflows.json` already exists.
 
 Check progress:
 
