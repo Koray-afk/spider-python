@@ -1,5 +1,8 @@
 """Orchestration only — no business logic."""
 
+import subprocess
+import sys
+
 from config.apps import get_app_config
 from crawler.crawler_v2 import crawl_application
 from stitcher.page_stitch import stitch_application
@@ -13,16 +16,19 @@ from storage.storage_manager import (
 )
 from pipeline_io import (
     assert_crawler_paths,
-    link_pages_dir_for_serving,
     load_sitemap,
     log_input,
     log_output,
     log_page_io_pairs,
     log_stage,
+    pick_preview_slug,
+    print_serve_instructions,
     save_pipeline_status,
     verify_no_double_stitch,
     verify_stitch_sources,
 )
+
+DEFAULT_PREVIEW_PORT = 8080
 
 
 def run_crawl_pipeline(app_name: str, *, auto_stitch: bool = True) -> dict:
@@ -88,13 +94,7 @@ def run_stitch_pipeline(app_name: str, *, from_crawl: bool = False) -> dict:
     sitemap = load_sitemap(metadata_dir)
     verify_stitch_sources(raw_dir, stitched_dir, sitemap)
     verify_no_double_stitch(stitched_dir, sitemap)
-    link_pages_dir_for_serving(stitched_dir)
-
-    print()
-    print("  Serve offline pages (NOT raw_html):")
-    print("    python3 -m http.server 8080")
-    print(f"    http://localhost:8080/pages/<slug>/index.html")
-    print(f"    (source: {stitched_dir})")
+    print_serve_instructions(app_name, metadata_dir, stitched_dir)
 
     save_pipeline_status(metadata_dir, stitch_completed=True)
     return stitch_result
@@ -140,3 +140,37 @@ def run_full_pipeline(app_name: str) -> dict:
     print(f"[✓] Cleaned {result['clean']['pages_cleaned']} pages")
 
     return result
+
+
+def run_preview_pipeline(app_name: str, port: int = DEFAULT_PREVIEW_PORT) -> None:
+    """Serve stitched HTML for one app from storage/apps/{app}/stitched_html."""
+    create_app_storage(app_name)
+    stitched_dir = get_stitched_html_dir(app_name)
+    metadata_dir = get_metadata_dir(app_name)
+
+    if not stitched_dir.is_dir() or not any(stitched_dir.glob("*/index.html")):
+        raise FileNotFoundError(
+            f"No stitched HTML at {stitched_dir}. "
+            f"Run: python main.py stitch {app_name}"
+        )
+
+    entry = pick_preview_slug(metadata_dir)
+    print(f"Previewing app: {app_name}")
+    print()
+    print("Serve:")
+    print(stitched_dir.resolve())
+    print()
+    print(f"cd {stitched_dir.resolve()}")
+    print(f"python3 -m http.server {port}")
+    print()
+    print("Open:")
+    print(f"http://localhost:{port}/{entry}/index.html")
+    print()
+    print("(Ctrl+C to stop)")
+    print()
+
+    subprocess.run(
+        [sys.executable, "-m", "http.server", str(port)],
+        cwd=stitched_dir,
+        check=False,
+    )
