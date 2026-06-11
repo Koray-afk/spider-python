@@ -17,27 +17,33 @@ load_dotenv()
 MODEL = "gemini-2.5-flash"
 NAV_TYPES = frozenset({"nav_item", "link", "navigation", "button"})
 
-PROMPT = """You are an expert software architect and application analyst.
+PROMPT = """You are an expert software architect building an application knowledge graph.
 
-Your task is to analyze ALL page business descriptions and semantic trees of an application and build a global catalog describing the application.
+Your task is to analyze ALL page business descriptions and semantic trees of an application and generate a GLOBAL APPLICATION CATALOG that represents the structure and workflows of the application.
 
-The catalog should explain:
-
-1. What pages exist.
-2. What each page is responsible for.
-3. How pages are connected.
-4. Which navigation elements connect pages.
-5. Which entities are shared between pages.
-6. Which workflows span multiple pages.
-7. Which pages belong to the same module.
-
-Do not reproduce HTML.
-
-Think like an architect building a map of the application.
+This catalog must represent how the application behaves as a system.
 
 ---
 
-INPUTS
+## PRIMARY GOAL
+
+Generate a SPARSE knowledge graph describing:
+
+• pages
+• navigation flows
+• shared entities
+• multi-page workflows
+• logical modules
+
+This is NOT a full connectivity graph of every page.
+
+DO NOT connect every page to every other page.
+
+Only include meaningful, real-world business relationships.
+
+---
+
+## INPUTS
 
 For every page, you are given a pre-summarized object (business context + navigation labels only — not full component trees):
 
@@ -47,62 +53,137 @@ Application name: {application_name}
 
 ---
 
-Build a catalog using the following schema:
+## MENTAL MODEL
+
+Think of the application as:
+
+pages → interactions → entities → workflows
+
+Examples of workflows:
+
+Quote to Cash:
+Quotes → Sales Orders → Invoices → Payments
+
+Vendor Payment:
+Bills → Payments → Vendor Credits
+
+Customer Refund:
+Credit Notes → Refunds
+
+Build workflows only when there is clear navigation or entity evidence.
+
+---
+
+## OUTPUT SCHEMA
+
+Return JSON using this structure:
 
 {{
-"applicationName": "",
-"pages": [
-{{
-"id": "",
-"title": "",
-"purpose": "",
-"module": "",
-"entities": [],
-"actions": []
-}}
-],
-"relationships": [
-{{
-"from": "",
-"to": "",
-"via": "",
-"type": "navigation"
-}}
-],
-"sharedEntities": [
-{{
-"entity": "",
-"usedBy": []
-}}
-],
-"workflows": [
-{{
-"name": "",
-"steps": []
-}}
-],
-"modules": [
-{{
-"name": "",
-"pages": []
-}}
-]
+  "applicationName": "",
+  "pages": [
+    {{
+      "id": "",
+      "title": "",
+      "purpose": ""
+    }}
+  ],
+  "relationships": [
+    {{
+      "from": "",
+      "to": "",
+      "type": ""
+    }}
+  ],
+  "sharedEntities": [
+    {{
+      "entity": "",
+      "usedBy": []
+    }}
+  ],
+  "workflows": [
+    {{
+      "name": "",
+      "steps": []
+    }}
+  ],
+  "modules": [
+    {{
+      "id": "",
+      "pages": []
+    }}
+  ]
 }}
 
 ---
 
-Rules:
+## RELATIONSHIP RULES
 
-1. Infer page relationships from navigation links and shared entities.
-2. Group pages into modules such as Sales, Purchases, Banking, Reports, etc.
-3. Discover workflows that span multiple pages.
-4. Use stable page IDs from the input (the "id" field of each page summary).
-5. Include only meaningful relationships.
-6. Ignore low-level UI details.
-7. Think at the application level, not the component level.
-8. Return ONLY valid JSON. No markdown. No backticks. No explanation.
+Include only meaningful relationships.
 
-Your output should represent a complete map of the application that can later be used by Browser Agents and React Generator Agents.
+Allowed relationship types include:
+
+navigation
+entity_reference
+workflow_step
+sibling_module
+reports_from
+
+Do NOT create relationships unless there is evidence.
+
+Example navigation:
+
+Quotes → Sales Orders
+Payments → Invoices
+
+Example entity_reference:
+
+Invoices → Customers
+Products referenced across inventory and sales pages
+
+---
+
+## MODULE RULES
+
+Group related pages into logical modules.
+
+Examples:
+
+sales
+purchases
+banking
+inventory
+reports
+configuration
+
+Each module must represent a business domain, not UI layout.
+
+---
+
+## WORKFLOW RULES
+
+Workflows must include ordered steps referencing page ids.
+
+Only include workflows that represent real business processes.
+
+---
+
+## OUTPUT RULES
+
+1. Use stable page IDs from input.
+2. Modules must group related pages.
+3. Shared entities should connect multiple pages.
+4. Relationships must be sparse and meaningful.
+5. Do NOT include HTML or UI components.
+6. Return ONLY valid JSON.
+7. No markdown.
+8. No backticks.
+9. No explanation.
+
+This catalog will later be used for:
+
+• Browser Agents navigation planning
+• React UI generation
+• workflow reasoning
 """
 
 
