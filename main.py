@@ -8,6 +8,7 @@ from api.routes import router
 from config.apps import APPS
 from pipeline import (
     run_analyze_pipeline,
+    run_catalog_pipeline,
     run_clean_pipeline,
     run_crawl_pipeline,
     run_full_pipeline,
@@ -25,6 +26,7 @@ COMMANDS = frozenset({
     "clean",
     "analyze",
     "semantic_tree",
+    "catalog",
     "pipeline",
     "preview",
 })
@@ -43,6 +45,10 @@ def usage() -> None:
     print(
         "  semantic_tree  Semantic UI tree "
         "(cleaned_html + business_json → semantic_tree, needs GEMINI_API_KEY)"
+    )
+    print(
+        "  catalog        Application catalog "
+        "(business_json + semantic_tree → app_catalog/catalog.json, needs GEMINI_API_KEY)"
     )
     print("  preview        Serve stitched_html via http.server")
     print("  serve        Start FastAPI on :8000")
@@ -91,6 +97,8 @@ def main() -> None:
         run_analyze_pipeline(app_name)
     elif command == "semantic_tree":
         run_semantic_tree_pipeline(app_name)
+    elif command == "catalog":
+        run_catalog_pipeline(app_name)
     elif command == "preview":
         run_preview_pipeline(app_name)
 

@@ -4,6 +4,7 @@ from fastapi import APIRouter
 
 from pipeline import (
     run_analyze_pipeline,
+    run_catalog_pipeline,
     run_clean_pipeline,
     run_crawl_pipeline,
     run_full_pipeline,
@@ -37,6 +38,11 @@ def analyze_endpoint(app_name: str):
 @router.post("/semantic_tree/{app_name}")
 def semantic_tree_endpoint(app_name: str):
     return run_semantic_tree_pipeline(app_name)
+
+
+@router.post("/catalog/{app_name}")
+def catalog_endpoint(app_name: str):
+    return run_catalog_pipeline(app_name)
 
 
 @router.post("/pipeline/{app_name}")

@@ -41,7 +41,7 @@ playwright install-deps chrome
 
 ### 5. (Optional) Gemini API key for analysis stages
 
-Create a `.env` file at the project root if you want to run `analyze` or `semantic_tree`:
+Create a `.env` file at the project root if you want to run `analyze`, `semantic_tree`, or `catalog`:
 
 ```
 GEMINI_API_KEY=your_api_key_here
@@ -69,6 +69,7 @@ Every command requires an app name (`zoho`, `hubspot`, etc.).
 | `python main.py clean <app>` | Clean only → `cleaned_html/` |
 | `python main.py analyze <app>` | Analyze only → `business_json/` (requires `GEMINI_API_KEY`) |
 | `python main.py semantic_tree <app>` | Semantic UI tree → `semantic_tree/` (requires `GEMINI_API_KEY`) |
+| `python main.py catalog <app>` | Application catalog → `app_catalog/catalog.json` (requires `GEMINI_API_KEY`) |
 | `python main.py preview <app>` | Serve `stitched_html/` locally |
 | `python main.py serve` | Start FastAPI API on port 8000 |
 
@@ -81,6 +82,7 @@ python main.py stitch zoho
 python main.py clean zoho
 python main.py analyze zoho
 python main.py semantic_tree zoho
+python main.py catalog zoho
 python main.py preview zoho
 ```
 
@@ -147,6 +149,7 @@ storage/apps/
 │   ├── cleaned_html/      # Flat simplified HTML for LLM analysis
 │   ├── business_json/     # Gemini business analysis JSON per page
 │   ├── semantic_tree/     # Semantic UI component tree JSON per page
+│   ├── app_catalog/       # Global application map (single catalog.json)
 │   └── metadata/
 │       ├── sitemap.json
 │       ├── auth.json
@@ -163,6 +166,7 @@ storage/apps/
 | `cleaned_html/` | Cleaner | Token-efficient HTML for LLMs |
 | `business_json/` | Analyzer | Per-page business analysis JSON from Gemini |
 | `semantic_tree/` | Semantic tree analyzer | Hierarchical UI component tree with semantic IDs |
+| `app_catalog/` | Catalog analyzer | Global app map: pages, modules, workflows, relationships |
 | `metadata/` | Crawler / pipeline | Sitemap, auth, pipeline status |
 
 ---
@@ -228,8 +232,9 @@ Storage is created automatically at `storage/apps/hubspot/`.
 [1/3] Crawl    → storage/apps/{app}/raw_html/
 [2/3] Stitch   → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
 [3/3] Clean    → storage/apps/{app}/cleaned_html/
-[4/5] Analyze        → storage/apps/{app}/business_json/   (optional, run separately)
-[5/5] Semantic tree  → storage/apps/{app}/semantic_tree/   (optional, run separately)
+[4/6] Analyze        → storage/apps/{app}/business_json/        (optional, run separately)
+[5/6] Semantic tree  → storage/apps/{app}/semantic_tree/        (optional, run separately)
+[6/6] Catalog        → storage/apps/{app}/app_catalog/          (optional, run separately)
 ```
 
 Run analyze after clean:
@@ -261,6 +266,20 @@ storage/apps/zoho/semantic_tree/creditnotes.json
 ```
 
 Each JSON file is a hierarchical component tree with `pageId`, `type`, `id`, `label`, and `children`. Pages without `business_json` still run (empty context). Already-built trees are skipped on re-run.
+
+Run catalog after semantic tree (and optionally after analyze for richer page context):
+
+```bash
+python main.py catalog zoho
+```
+
+Output:
+
+```
+storage/apps/zoho/app_catalog/catalog.json
+```
+
+The catalog is a single JSON file with `pages`, `modules`, `relationships`, `sharedEntities`, and `workflows` — an application-level map for browser and React generator agents. Requires `semantic_tree/`; `business_json/` is optional per page. Re-run skips if `catalog.json` already exists.
 
 Check progress:
 
