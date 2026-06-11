@@ -125,18 +125,37 @@ def log_page_io_pairs(
     return count
 
 
-def link_pages_dir_for_serving(stitched_dir: Path, pages_dir: Path | None = None) -> Path:
-    """Experiments served from pages/ — symlink to stitched_html for the same UX."""
-    target = pages_dir or Path("pages")
-    stitched = stitched_dir.resolve()
-    if target.is_symlink():
-        if target.resolve() == stitched:
-            return target
-        target.unlink()
-    elif target.exists():
-        print(f"  pages/ exists and is not a symlink — leaving it unchanged")
-        return target
+def pick_preview_slug(metadata_dir: Path) -> str:
+    from stitcher.page_stitch import pick_entry_slug
 
-    target.symlink_to(stitched, target_is_directory=True)
-    print(f"  linked {target} → {stitched}")
-    return target
+    sitemap = load_sitemap(metadata_dir)
+    if not sitemap:
+        return "<slug>"
+    return pick_entry_slug(sitemap) or sitemap[0]["slug"]
+
+
+def print_serve_instructions(
+    app_name: str,
+    metadata_dir: Path,
+    stitched_dir: Path,
+    *,
+    port: int = 8080,
+) -> None:
+    """Print app-specific preview instructions after stitching."""
+    entry = pick_preview_slug(metadata_dir)
+
+    print()
+    print("✅ Stitch complete")
+    print()
+    print("Preview:")
+    print(f"python main.py preview {app_name}")
+    print()
+    print("Or manually:")
+    print()
+    print(f"cd {stitched_dir.resolve()}")
+    print(f"python3 -m http.server {port}")
+    print()
+    print("Open:")
+    print(f"http://localhost:{port}/{entry}/index.html")
+    print()
+    print("(do not open file:// directly)")

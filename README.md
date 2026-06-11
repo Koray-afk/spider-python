@@ -1,157 +1,238 @@
 # Spider Python
 
-Spider Python is a web-crawling and page-analysis project built with Python, Playwright, and Gemini. It crawls websites, captures page artifacts, analyzes structure and intent with an LLM, and can generate visual HTML replicas from screenshots.
+Offline, high-fidelity static replicas of SaaS applications for design reference. Crawl pages with Playwright, stitch navigation between local HTML files, clean HTML for LLM analysis.
 
-## What it does
+Each application is isolated under `storage/apps/{app_name}/`.
 
-The full pipeline:
+## Setup
 
-1. Crawls a target website with Playwright (multi-page BFS crawl).
-2. Saves HTML, visible text, and full-page screenshots for each page.
-3. Analyzes pages with Gemini using text + screenshots (structured JSON output).
-4. Generates self-contained HTML replicas that visually match the screenshots.
-
-## Features
-
-- Multi-page browser crawling with Playwright (configurable `max_pages`).
-- HTML, text, and full-page screenshot capture.
-- Gemini-powered page analysis (text + image, structured via Pydantic).
-- Visual HTML replica generation from screenshots.
-- Local file storage for raw page data, analysis, and replicas.
-- Skip logic — re-running analysis or replica generation skips already-processed pages.
-
-## Project Structure
-
-- `crawler.py` — Crawls pages and saves artifacts to `pages/`.
-- `processors/analyse_all_pages.py` — Analyzes all saved pages (text + screenshot) via LangChain; writes JSON to `analysis/`.
-- `processors/analyze_page.py` — Alternative screenshot-only analyzer via `gemini_service`.
-- `replica_generator.py` — Generates visual HTML replicas from screenshots into `replicas/`.
-- `services/gemini_service.py` — Gemini client for screenshot analysis and HTML replica generation.
-- `models/page_analysis.py` — Pydantic schema for structured analysis output.
-- `pages/` — Saved page artifacts (HTML, text, screenshots).
-- `analysis/` — Saved analysis JSON files.
-- `replicas/` — Generated HTML replica files.
-
-## Requirements
-
-- Python 3.10 or newer.
-- A valid `GEMINI_API_KEY` in your environment or `.env` file.
-- Playwright browser binaries installed locally.
-
-## Installation
-
-Clone the repository and create a virtual environment:
+### 1. Create a virtual environment
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
 
-Install the dependencies:
+### 2. Install requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Install the Playwright browser runtime:
+### 3. Install Playwright browsers
 
 ```bash
-playwright install
+playwright install chrome
 ```
 
-Set your Gemini API key in a `.env` file at the project root:
+### 4. Install Chrome (if not already present)
+
+Playwright uses the system Chrome channel on macOS. Ensure Google Chrome is installed at:
 
 ```
-GEMINI_API_KEY=your_api_key_here
+/Applications/Google Chrome.app
 ```
 
-Or export it in your shell:
+On Linux, install Chromium/Chrome dependencies:
 
 ```bash
-export GEMINI_API_KEY="your_api_key_here"
+playwright install-deps chrome
 ```
 
-## How to Run
-
-Run these in order from the project root (with your venv activated):
-
-### 1. Crawl pages
-
-Visits the configured start URL in `crawler.py` (default: `https://www.hubspot.com/`), follows discovered links, and saves up to `max_pages` pages into `pages/`.
+### 5. First run
 
 ```bash
-python crawler.py
+python main.py pipeline zoho
 ```
 
-### 2. Analyze all crawled pages
+Post-auth crawl opens Chrome for manual login on the first run. Press Enter in the terminal after logging in.
 
-Reads every `pages/page-*.txt` file, sends text + screenshot to Gemini, and writes structured JSON to `analysis/`.
+---
+
+## Commands
+
+Every command requires an app name (`zoho`, `hubspot`, etc.).
+
+| Command | Description |
+|---------|-------------|
+| `python main.py pipeline <app>` | Full pipeline: crawl → stitch → clean |
+| `python main.py crawl <app>` | Crawl only → `raw_html/` |
+| `python main.py stitch <app>` | Stitch only → `stitched_html/` |
+| `python main.py clean <app>` | Clean only → `cleaned_html/` |
+| `python main.py preview <app>` | Serve `stitched_html/` locally |
+| `python main.py serve` | Start FastAPI API on port 8000 |
+
+### Examples
 
 ```bash
-python -m processors.analyse_all_pages
+python main.py pipeline zoho
+python main.py crawl zoho
+python main.py stitch zoho
+python main.py clean zoho
+python main.py preview zoho
 ```
 
-### 3. Generate HTML replicas
-
-Reads every `pages/page-*.png` screenshot, sends it to Gemini, and writes a visual HTML replica to `replicas/`. Skips pages that already have a replica file.
+Future apps:
 
 ```bash
-python replica_generator.py
+python main.py pipeline hubspot
+python main.py preview hubspot
 ```
 
-> **Note:** Replica generation calls Gemini once per page and can take several minutes per screenshot (especially for large full-page captures). The script prints progress but stays silent while waiting on each API response.
+---
 
-### Alternative: screenshot-only analysis
+## Preview
 
-If you prefer analysis from screenshots only (without LangChain):
+After stitching, preview the offline replica:
 
 ```bash
-python processors/analyze_page.py
+python main.py preview zoho
 ```
 
-## Output Files
+This serves **only** that app's stitched HTML:
 
-After a full run you should see files like:
+```
+storage/apps/zoho/stitched_html
+```
 
-**`pages/`**
-- `page-1.html` — raw page HTML
-- `page-1.txt` — visible text content
-- `page-1.png` — full-page screenshot
+Open (post-auth dashboard example):
 
-**`analysis/`**
-- `page-1.json` — structured Gemini analysis
+```
+http://localhost:8080/app-60073668069-home-dashboard/index.html
+```
 
-**`replicas/`**
-- `page-1.html` — generated visual replica
+Pre-auth marketing example:
 
-## Environment Variables
+```
+http://localhost:8080/in-books/index.html
+```
 
-| Variable | Description |
-| --- | --- |
-| `GEMINI_API_KEY` | API key used to authenticate with Gemini. |
+**Manual equivalent:**
 
-## Configuration
+```bash
+cd storage/apps/zoho/stitched_html
+python3 -m http.server 8080
+```
 
-Edit these directly in the scripts:
+Then open `http://localhost:8080/<slug>/index.html`.
 
-| Setting | File | Default |
-| --- | --- | --- |
-| Start URL | `crawler.py` | `https://www.hubspot.com/` |
-| Max pages to crawl | `crawler.py` | `5` |
-| Gemini model | `services/gemini_service.py`, `processors/analyse_all_pages.py` | `gemini-2.5-flash` |
+> Do not open `file://` URLs. Always use a local HTTP server.  
+> Do not preview from `raw_html/` — use `stitched_html/` only.
 
-## Example Analysis Schema
+Each app's preview is independent. Previewing `hubspot` does not affect `zoho`.
 
-The structured Gemini output follows the `PageAnalysis` model:
+---
 
-- `pageType`
-- `purpose`
-- `mainCTA`
-- `importantSections`
-- `summary`
-- `visualLayout` (optional)
-- `colorScheme` (optional)
+## Storage structure
 
-## License
+```
+storage/apps/
+├── zoho/
+│   ├── raw_html/          # Crawled HTML (with live JS on pre-auth pages)
+│   ├── screenshots/       # Full-page PNG per slug
+│   ├── assets/            # Downloaded assets (reserved)
+│   ├── stitched_html/     # Offline-viewable stitched pages ← preview here
+│   ├── cleaned_html/      # Flat simplified HTML for LLM analysis
+│   ├── business_json/     # Gemini business analysis output (reserved)
+│   └── metadata/
+│       ├── sitemap.json
+│       ├── auth.json
+│       ├── session.json
+│       └── pipeline_status.json
+├── hubspot/
+└── salesforce/
+```
 
-No license file is currently included in this repository.
+| Directory | Written by | Purpose |
+|-----------|------------|---------|
+| `raw_html/` | Crawler | Original captured HTML |
+| `stitched_html/` | Stitcher | Sidebar nav wired, JS stripped (post-auth) |
+| `cleaned_html/` | Cleaner | Token-efficient HTML for LLMs |
+| `metadata/` | Crawler / pipeline | Sitemap, auth, pipeline status |
+
+---
+
+## Authentication
+
+Auth state is stored per app under `metadata/`:
+
+```
+storage/apps/zoho/metadata/auth.json
+storage/apps/zoho/metadata/session.json
+```
+
+### How login works
+
+1. First post-auth crawl with no cached auth opens Chrome for manual login.
+2. After you log in and press Enter, Playwright saves `auth.json`.
+3. Future runs reuse `auth.json` automatically — login is skipped.
+
+### Reset auth (force re-login)
+
+```bash
+rm storage/apps/zoho/metadata/auth.json
+```
+
+Then run crawl or pipeline again.
+
+Each app has its own auth files. Deleting Zoho's auth does not affect HubSpot.
+
+---
+
+## Adding a new app
+
+Edit `config/apps.py`:
+
+```python
+APPS = {
+    "zoho": { ... },
+    "hubspot": {
+        "pre_auth_home": "https://www.hubspot.com/",
+        "login_url": "https://app.hubspot.com/login",
+        "post_auth_home": "https://app.hubspot.com",
+        "max_pages_pre_auth": 5,
+        "max_pages_post_auth": 20,
+    },
+}
+```
+
+Then run:
+
+```bash
+python main.py pipeline hubspot
+python main.py preview hubspot
+```
+
+Storage is created automatically at `storage/apps/hubspot/`.
+
+---
+
+## Pipeline stages
+
+```
+[1/3] Crawl   → storage/apps/{app}/raw_html/
+[2/3] Stitch  → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
+[3/3] Clean   → storage/apps/{app}/cleaned_html/
+```
+
+Check progress:
+
+```
+storage/apps/{app}/metadata/pipeline_status.json
+```
+
+---
+
+## API (optional)
+
+```bash
+python main.py serve
+```
+
+FastAPI runs on `http://localhost:8000`. See `api/routes.py` for endpoints.
+
+---
+
+## Experiments folder
+
+`experiments/` contains the original prototype. Do not modify it. Production code lives in `crawler/`, `stitcher/`, `analyzer/`, and `pipeline.py`.
