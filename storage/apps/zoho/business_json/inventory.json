@@ -1,0 +1,728 @@
+{
+  "pageInfo": {
+    "pageName": "Zoho Inventory Marketing Landing Page",
+    "pageCategory": "Marketing",
+    "pagePurpose": "To inform prospective customers, specifically Indian businesses, about the features, pricing, and benefits of Zoho Inventory software, and to persuade them to sign up, watch a demo, or contact sales.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Inventory",
+      "evidence": [
+        "Inventory management software designed for Indian businesses",
+        "New to Zoho Inventory?",
+        "Explore Zoho Inventory"
+      ]
+    },
+    {
+      "name": "Order",
+      "evidence": [
+        "Order management",
+        "Purchase orders",
+        "Sales order management",
+        "Manage and fulfill orders on the go"
+      ]
+    },
+    {
+      "name": "Warehouse",
+      "evidence": [
+        "Warehouse management",
+        "Multi-warehouse management"
+      ]
+    },
+    {
+      "name": "Invoice",
+      "evidence": [
+        "Generate GST-compliant invoices",
+        "E-Invoicing",
+        "Invoicing"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Here's what a few of our Indian customers have to say about us",
+        "Customers"
+      ]
+    },
+    {
+      "name": "Shipment",
+      "evidence": [
+        "We have partnered with the best shipping carriers",
+        "Shipping",
+        "Post-shipment tracking"
+      ]
+    },
+    {
+      "name": "Payment",
+      "evidence": [
+        "Vendor payments",
+        "Payment Services"
+      ]
+    },
+    {
+      "name": "Product",
+      "evidence": [
+        "Quick product updates",
+        "Item Groups & Composite Items"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "English",
+      "elementType": "button",
+      "businessIntent": "Change Language",
+      "expectedOutcome": "Displays a dropdown or modal to change the website's language.",
+      "confidence": "high",
+      "evidence": [
+        "English"
+      ]
+    },
+    {
+      "label": "Solutions",
+      "elementType": "button",
+      "businessIntent": "Navigate to Solutions",
+      "expectedOutcome": "Displays a menu of industry-specific solutions or use cases for the software.",
+      "confidence": "high",
+      "evidence": [
+        "Solutions"
+      ]
+    },
+    {
+      "label": "Watch the demo",
+      "elementType": "button",
+      "businessIntent": "Engage Prospect",
+      "expectedOutcome": "Plays a video demonstration of the Zoho Inventory software, likely in a modal window.",
+      "confidence": "high",
+      "evidence": [
+        "Watch the demo"
+      ]
+    },
+    {
+      "label": "GSTIN",
+      "elementType": "button",
+      "businessIntent": "Display Feature Information",
+      "expectedOutcome": "Shows information related to GSTIN management within the software.",
+      "confidence": "medium",
+      "evidence": [
+        "GSTIN"
+      ]
+    },
+    {
+      "label": "HSN/SAC CODES",
+      "elementType": "button",
+      "businessIntent": "Display Feature Information",
+      "expectedOutcome": "Shows information related to HSN/SAC code management for GST compliance.",
+      "confidence": "medium",
+      "evidence": [
+        "HSN/SAC CODES"
+      ]
+    },
+    {
+      "label": "INVOICES",
+      "elementType": "button",
+      "businessIntent": "Display Feature Information",
+      "expectedOutcome": "Shows information related to the invoicing features of the software.",
+      "confidence": "medium",
+      "evidence": [
+        "INVOICES"
+      ]
+    },
+    {
+      "label": "TAXES",
+      "elementType": "button",
+      "businessIntent": "Display Feature Information",
+      "expectedOutcome": "Shows information related to tax calculation and management features.",
+      "confidence": "medium",
+      "evidence": [
+        "TAXES"
+      ]
+    },
+    {
+      "label": "E-WAY BILLS",
+      "elementType": "button",
+      "businessIntent": "Display Feature Information",
+      "expectedOutcome": "Shows information about generating e-Way bills with the software.",
+      "confidence": "medium",
+      "evidence": [
+        "E-WAY BILLS"
+      ]
+    },
+    {
+      "label": "DELIVERY CHALLAN",
+      "elementType": "button",
+      "businessIntent": "Display Feature Information",
+      "expectedOutcome": "Shows information about creating Delivery Challans.",
+      "confidence": "medium",
+      "evidence": [
+        "DELIVERY CHALLAN"
+      ]
+    },
+    {
+      "label": "HELP & RESOURCES",
+      "elementType": "button",
+      "businessIntent": "Navigate to Help Section",
+      "expectedOutcome": "Displays a menu with links to help documentation, forums, and other support resources.",
+      "confidence": "high",
+      "evidence": [
+        "HELP & RESOURCES"
+      ]
+    },
+    {
+      "label": "Integrations",
+      "elementType": "button",
+      "businessIntent": "Navigate to Integrations",
+      "expectedOutcome": "Displays a menu or navigates to the page detailing third-party integrations.",
+      "confidence": "high",
+      "evidence": [
+        "Integrations"
+      ]
+    },
+    {
+      "label": "Free tools",
+      "elementType": "button",
+      "businessIntent": "Navigate to Free Tools",
+      "expectedOutcome": "Displays a menu or navigates to a page listing free tools offered by Zoho.",
+      "confidence": "high",
+      "evidence": [
+        "Free tools"
+      ]
+    },
+    {
+      "label": "Learn Hub",
+      "elementType": "button",
+      "businessIntent": "Navigate to Learning Resources",
+      "expectedOutcome": "Displays a menu or navigates to a central page for learning materials like guides and webinars.",
+      "confidence": "high",
+      "evidence": [
+        "Learn Hub"
+      ]
+    },
+    {
+      "label": "Available on Platforms",
+      "elementType": "button",
+      "businessIntent": "Display Platform Availability",
+      "expectedOutcome": "Shows which platforms (e.g., iOS, Android) the mobile app is available on.",
+      "confidence": "high",
+      "evidence": [
+        "Available on Platforms"
+      ]
+    },
+    {
+      "label": "Contact us on",
+      "elementType": "button",
+      "businessIntent": "Display Contact Information",
+      "expectedOutcome": "Shows contact details like phone numbers or email addresses.",
+      "confidence": "high",
+      "evidence": [
+        "Contact us on"
+      ]
+    },
+    {
+      "label": "India",
+      "elementType": "button",
+      "businessIntent": "Select Region",
+      "expectedOutcome": "Selects India as the region, potentially tailoring content or offerings.",
+      "confidence": "medium",
+      "evidence": [
+        "India"
+      ]
+    },
+    {
+      "label": "Global",
+      "elementType": "button",
+      "businessIntent": "Select Region",
+      "expectedOutcome": "Selects the Global version of the site, potentially tailoring content or offerings.",
+      "confidence": "medium",
+      "evidence": [
+        "Global"
+      ]
+    },
+    {
+      "label": "Submit",
+      "elementType": "button",
+      "businessIntent": "Submit Form Data",
+      "expectedOutcome": "Submits the data entered in the associated form (e.g., a contact or demo request form).",
+      "confidence": "high",
+      "evidence": [
+        "Submit"
+      ]
+    },
+    {
+      "label": "Manage Cookies",
+      "elementType": "button",
+      "businessIntent": "Manage Privacy Settings",
+      "expectedOutcome": "Opens a modal or settings panel for the user to configure their cookie preferences.",
+      "confidence": "high",
+      "evidence": [
+        "Manage Cookies"
+      ]
+    },
+    {
+      "label": "Accept All Cookies",
+      "elementType": "button",
+      "businessIntent": "Consent to Cookies",
+      "expectedOutcome": "Accepts all website cookies and closes the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Accept All Cookies"
+      ]
+    },
+    {
+      "label": "Reject Unnecessary Cookies",
+      "elementType": "button",
+      "businessIntent": "Decline Optional Cookies",
+      "expectedOutcome": "Rejects all non-essential cookies and closes the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Reject Unnecessary Cookies"
+      ]
+    },
+    {
+      "label": "close",
+      "elementType": "button",
+      "businessIntent": "Close UI Element",
+      "expectedOutcome": "Closes the current modal, banner, or pop-up.",
+      "confidence": "high",
+      "evidence": [
+        "close"
+      ]
+    },
+    {
+      "label": "Save & Exit",
+      "elementType": "button",
+      "businessIntent": "Save Cookie Preferences",
+      "expectedOutcome": "Saves the user's selected cookie settings and closes the management interface.",
+      "confidence": "high",
+      "evidence": [
+        "Save & Exit"
+      ]
+    },
+    {
+      "label": "Schedule a call",
+      "elementType": "link",
+      "businessIntent": "Lead Generation",
+      "expectedOutcome": "Navigates the user to a booking page to schedule a call with a product expert or sales representative.",
+      "confidence": "high",
+      "evidence": [
+        "Schedule a call"
+      ]
+    },
+    {
+      "label": "Explore demo account",
+      "elementType": "link",
+      "businessIntent": "Engage Prospect",
+      "expectedOutcome": "Navigates the user to a pre-configured demo environment of the Zoho Inventory application.",
+      "confidence": "high",
+      "evidence": [
+        "Explore demo account"
+      ]
+    },
+    {
+      "label": "Sign In",
+      "elementType": "link",
+      "businessIntent": "User Authentication",
+      "expectedOutcome": "Navigates the user to the login page for their Zoho account.",
+      "confidence": "high",
+      "evidence": [
+        "Sign In"
+      ]
+    },
+    {
+      "label": "Sign Up Now",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates the user to the registration page to create a new Zoho Inventory account.",
+      "confidence": "high",
+      "evidence": [
+        "Sign Up Now"
+      ]
+    },
+    {
+      "label": "EXPLORE ALL PRODUCTS",
+      "elementType": "link",
+      "businessIntent": "Cross-sell / Navigate",
+      "expectedOutcome": "Navigates to a page listing all available Zoho products.",
+      "confidence": "high",
+      "evidence": [
+        "EXPLORE ALL PRODUCTS"
+      ]
+    },
+    {
+      "label": "View all features",
+      "elementType": "link",
+      "businessIntent": "Provide Information",
+      "expectedOutcome": "Navigates to a detailed page listing all features of Zoho Inventory.",
+      "confidence": "high",
+      "evidence": [
+        "View all features"
+      ]
+    },
+    {
+      "label": "Download now",
+      "elementType": "link",
+      "businessIntent": "Lead Generation",
+      "expectedOutcome": "Opens a modal or form to download a resource, likely a PDF features guide, possibly requiring an email address.",
+      "confidence": "high",
+      "evidence": [
+        "Download now"
+      ]
+    },
+    {
+      "label": "Pricing",
+      "elementType": "link",
+      "businessIntent": "Provide Information",
+      "expectedOutcome": "Navigates the user to the pricing page for Zoho Inventory.",
+      "confidence": "high",
+      "evidence": [
+        "Pricing"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Provide Social Proof",
+      "expectedOutcome": "Navigates to a page showcasing customer testimonials and case studies.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Integrations",
+      "elementType": "link",
+      "businessIntent": "Provide Information",
+      "expectedOutcome": "Navigates to a page detailing available third-party integrations.",
+      "confidence": "high",
+      "evidence": [
+        "Integrations"
+      ]
+    },
+    {
+      "label": "View all integrations",
+      "elementType": "link",
+      "businessIntent": "Navigate to Integrations",
+      "expectedOutcome": "Navigates to the main integrations page, showing all available connections.",
+      "confidence": "high",
+      "evidence": [
+        "View all integrations"
+      ]
+    },
+    {
+      "label": "SIGN UP - IT'S FREE",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates the user to the registration page for a free Zoho Inventory account.",
+      "confidence": "high",
+      "evidence": [
+        "SIGN UP - IT'S FREE"
+      ]
+    },
+    {
+      "label": "EXPLORE DEMO ACCOUNT",
+      "elementType": "link",
+      "businessIntent": "Engage Prospect",
+      "expectedOutcome": "Navigates the user to a pre-configured demo environment of the application.",
+      "confidence": "high",
+      "evidence": [
+        "EXPLORE DEMO ACCOUNT"
+      ]
+    },
+    {
+      "label": "LEARN MORE",
+      "elementType": "link",
+      "businessIntent": "Provide Information",
+      "expectedOutcome": "Navigates the user to a page with more detailed information about the specific feature mentioned (e.g., E-Invoicing).",
+      "confidence": "high",
+      "evidence": [
+        "LEARN MORE"
+      ]
+    },
+    {
+      "label": "Get a complete overview of ourinventory management features›",
+      "elementType": "link",
+      "businessIntent": "Navigate to Features",
+      "expectedOutcome": "Navigates the user to the main features page.",
+      "confidence": "high",
+      "evidence": [
+        "Get a complete overview of ourinventory management features›"
+      ]
+    },
+    {
+      "label": "GET STARTED",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates the user to the sign-up page, potentially with a specific plan pre-selected.",
+      "confidence": "high",
+      "evidence": [
+        "GET STARTED"
+      ]
+    },
+    {
+      "label": "SIGN UP FOR FREE",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates the user to the registration page for a free Zoho Inventory account.",
+      "confidence": "high",
+      "evidence": [
+        "SIGN UP FOR FREE"
+      ]
+    },
+    {
+      "label": "support@zohoinventory.com",
+      "elementType": "link",
+      "businessIntent": "Provide Support Channel",
+      "expectedOutcome": "Opens the user's default email client with a new message addressed to the support team.",
+      "confidence": "high",
+      "evidence": [
+        "support@zohoinventory.com"
+      ]
+    }
+  ],
+  "tables": [],
+  "forms": [
+    {
+      "formName": "form",
+      "purpose": "To allow users to search the Zoho website for information about products, solutions, and resources.",
+      "fields": [
+        {
+          "fieldName": "query",
+          "fieldType": "text",
+          "businessMeaning": "The search term entered by the user."
+        }
+      ]
+    },
+    {
+      "formName": "zsWebToCase_4004824481767",
+      "purpose": "To capture user inquiries for sales or support, creating a 'case' in Zoho's system.",
+      "fields": [
+        {
+          "fieldName": "Contact Name",
+          "fieldType": "text",
+          "businessMeaning": "The user's full name."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "text",
+          "businessMeaning": "The user's email address for contact."
+        },
+        {
+          "fieldName": "Phone_No",
+          "fieldType": "text",
+          "businessMeaning": "The user's phone number for contact."
+        },
+        {
+          "fieldName": "Queries",
+          "fieldType": "textarea",
+          "businessMeaning": "The user's specific question or message."
+        }
+      ]
+    },
+    {
+      "formName": "WebToCases1034361000001565470",
+      "purpose": "To allow users to request a scheduled demonstration or consultation by submitting their contact information and availability.",
+      "fields": [
+        {
+          "fieldName": "Email",
+          "fieldType": "text",
+          "businessMeaning": "The user's email address for contact."
+        },
+        {
+          "fieldName": "Phone",
+          "fieldType": "text",
+          "businessMeaning": "The user's phone number for contact."
+        },
+        {
+          "fieldName": "Convenient Date & Time",
+          "fieldType": "text",
+          "businessMeaning": "The user's preferred date and time for a call or demo."
+        },
+        {
+          "fieldName": "Requirements",
+          "fieldType": "textarea",
+          "businessMeaning": "A description of the user's business needs or what they want to see in a demo."
+        },
+        {
+          "fieldName": "enterdigest",
+          "fieldType": "text",
+          "businessMeaning": "A CAPTCHA field to prevent spam submissions."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "User Sign-up",
+      "steps": [
+        "User clicks on a 'Sign Up Now', 'GET STARTED', or 'SIGN UP FOR FREE' link.",
+        "User is navigated to a registration page to create a new Zoho Inventory account."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign Up Now",
+        "GET STARTED",
+        "SIGN UP FOR FREE"
+      ]
+    },
+    {
+      "name": "Explore Demo Account",
+      "steps": [
+        "User clicks the 'Explore demo account' or 'EXPLORE DEMO ACCOUNT' link.",
+        "User is navigated to a live, pre-populated demo version of the Zoho Inventory application to explore its features."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Explore demo account",
+        "EXPLORE DEMO ACCOUNT"
+      ]
+    },
+    {
+      "name": "Request a Call or Demo",
+      "steps": [
+        "User clicks 'Schedule a call' or fills out the contact form with their name, email, phone, and requirements.",
+        "User clicks the 'Submit' button.",
+        "A case is created for the Zoho sales or support team to follow up with the user."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Schedule a call",
+        "formName: zsWebToCase_4004824481767",
+        "formName: WebToCases1034361000001565470",
+        "Submit"
+      ]
+    },
+    {
+      "name": "User Sign-in",
+      "steps": [
+        "An existing user clicks the 'Sign In' link.",
+        "The user is redirected to the Zoho account login page to enter their credentials."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign In"
+      ]
+    },
+    {
+      "name": "Manage Cookie Preferences",
+      "steps": [
+        "User is presented with a cookie banner.",
+        "User can choose to 'Accept All Cookies', 'Reject Unnecessary Cookies', or click 'Manage Cookies'.",
+        "If 'Manage Cookies' is clicked, a detailed preference center is shown.",
+        "User adjusts settings and clicks 'Save & Exit'."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Accept All Cookies",
+        "Reject Unnecessary Cookies",
+        "Manage Cookies",
+        "Save & Exit"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "name": "Evaluate the suitability of the software",
+      "goal": "I want to understand the features, integrations, and pricing of Zoho Inventory to see if it meets my business needs.",
+      "evidence": [
+        "h3: FEATURES",
+        "h3: INTEGRATIONS",
+        "h2: Simple pricing.No surprises.",
+        "h2: What makes Zoho Inventory GST Compliant"
+      ]
+    },
+    {
+      "name": "Sign up for the service",
+      "goal": "I want to create an account and start using Zoho Inventory, preferably for free initially.",
+      "evidence": [
+        "link: Sign Up Now",
+        "link: SIGN UP - IT'S FREE",
+        "link: GET STARTED"
+      ]
+    },
+    {
+      "name": "Try the software before committing",
+      "goal": "I want to see how the software works and looks without having to sign up for a full account yet.",
+      "evidence": [
+        "button: Watch the demo",
+        "link: Explore demo account"
+      ]
+    },
+    {
+      "name": "Get specific questions answered by a person",
+      "goal": "I have questions about the software and want to talk to a sales or support representative.",
+      "evidence": [
+        "link: Schedule a call",
+        "formName: zsWebToCase_4004824481767",
+        "h3: Contact us on :"
+      ]
+    },
+    {
+      "name": "Find learning and support resources",
+      "goal": "I want to find help documentation, guides, or tutorials on how to use the software.",
+      "evidence": [
+        "h3: HELP & RESOURCES",
+        "h3: LEARN",
+        "h3: FEATURED GUIDES",
+        "link: Help documentation"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Demo Video Player",
+      "reason": "The 'Watch the demo' button implies a video player will appear, likely in a modal, but no such element is described in the provided facts.",
+      "confidence": "high"
+    },
+    {
+      "element": "Sign-up Form",
+      "reason": "Multiple 'Sign Up' links point to a registration page, but the form itself is not on this page.",
+      "confidence": "high"
+    },
+    {
+      "element": "Sign-in Form",
+      "reason": "The 'Sign In' link points to a login page, but the login form is not on this page.",
+      "confidence": "high"
+    },
+    {
+      "element": "Form Submission Confirmation",
+      "reason": "After submitting one of the contact/demo forms, a user would expect a 'Thank you' or confirmation message, which is not part of this page's structure.",
+      "confidence": "medium"
+    },
+    {
+      "element": "Cookie Preference Center",
+      "reason": "The 'Manage Cookies' button implies a detailed interface with toggles for different cookie categories (Functional, Analytics, etc.), which is only partially described by the headings and buttons.",
+      "confidence": "medium"
+    }
+  ],
+  "pageNarrative": "This is a comprehensive marketing landing page for Zoho Inventory, specifically tailored for businesses in India. The page highlights key features such as GST compliance, order and warehouse management, integrations, and barcode scanning. It aims to build trust through customer testimonials and by listing partnered shipping carriers. The user's primary journey is to learn about the product through feature lists and demos, understand its value via pricing and customer stories, and ultimately convert by signing up for a free trial or paid plan or by contacting a sales representative.",
+  "_meta": {
+    "sourceFile": "inventory.html",
+    "pageFactsCounts": {
+      "buttons": 42,
+      "links": 443,
+      "forms": 3,
+      "tables": 0,
+      "headings": 270
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 485,
+        "tables": 0,
+        "forms": 3
+      },
+      "reported": {
+        "clickableElements": 41,
+        "tables": 0,
+        "forms": 3
+      },
+      "mismatches": {
+        "clickableElements": true,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": true
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

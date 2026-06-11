@@ -1,0 +1,1089 @@
+{
+  "pageInfo": {
+    "pageName": "New Customer",
+    "pageCategory": "Sales / Contacts",
+    "pagePurpose": "To create a new customer record by entering their primary contact information, company details, billing and shipping addresses, and other financial or custom data.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Customer",
+      "evidence": [
+        "New Customer",
+        "Customers",
+        "Allow portal access for this customer"
+      ]
+    },
+    {
+      "name": "Contact Person",
+      "evidence": [
+        "Contact Persons",
+        "Add Contact Person",
+        "Primary Contact"
+      ]
+    },
+    {
+      "name": "Address",
+      "evidence": [
+        "Address",
+        "Copy billing address",
+        "Shipping Address"
+      ]
+    },
+    {
+      "name": "Document",
+      "evidence": [
+        "Documents",
+        "Upload File"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To open a quick navigation menu or search bar.",
+      "expectedOutcome": "A search input or a list of navigation targets appears, allowing the user to quickly jump to another page.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Items' section of the main navigation menu.",
+      "expectedOutcome": "A dropdown or sub-menu appears showing links related to 'Items' and 'Price Lists'.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Inventory' section of the main navigation menu.",
+      "expectedOutcome": "A dropdown or sub-menu appears showing links related to 'Inventory Adjustments'.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Sales' section of the main navigation menu.",
+      "expectedOutcome": "A dropdown or sub-menu appears showing links like 'Customers', 'Quotes', 'Invoices', etc.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Purchases' section of the main navigation menu.",
+      "expectedOutcome": "A dropdown or sub-menu appears showing links like 'Vendors', 'Expenses', 'Bills', etc.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Time Tracking' section of the main navigation menu.",
+      "expectedOutcome": "A dropdown or sub-menu appears showing links like 'Projects' and 'Timesheet'.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Accountant' section of the main navigation menu.",
+      "expectedOutcome": "A dropdown or sub-menu appears showing links like 'Manual Journals' and 'Chart of Accounts'.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "Other Details",
+      "elementType": "button",
+      "businessIntent": "To display the form section for 'Other Details' like PAN, Currency, and Opening Balance.",
+      "expectedOutcome": "The UI scrolls to or displays the 'Other Details' section of the customer creation form.",
+      "confidence": "high",
+      "evidence": [
+        "Other Details"
+      ]
+    },
+    {
+      "label": "Address",
+      "elementType": "button",
+      "businessIntent": "To display the form section for customer addresses.",
+      "expectedOutcome": "The UI scrolls to or displays the 'Billing Address' and 'Shipping Address' sections of the form.",
+      "confidence": "high",
+      "evidence": [
+        "Address"
+      ]
+    },
+    {
+      "label": "Contact Persons",
+      "elementType": "button",
+      "businessIntent": "To display the section for adding and managing contact persons.",
+      "expectedOutcome": "The UI scrolls to or displays the table for adding contact persons.",
+      "confidence": "high",
+      "evidence": [
+        "Contact Persons"
+      ]
+    },
+    {
+      "label": "Custom Fields",
+      "elementType": "button",
+      "businessIntent": "To display the form section for custom fields related to the customer.",
+      "expectedOutcome": "The UI scrolls to or displays the custom fields section.",
+      "confidence": "high",
+      "evidence": [
+        "Custom Fields"
+      ]
+    },
+    {
+      "label": "Reporting Tags",
+      "elementType": "button",
+      "businessIntent": "To display the form section for reporting tags.",
+      "expectedOutcome": "The UI scrolls to or displays the reporting tags section.",
+      "confidence": "high",
+      "evidence": [
+        "Reporting Tags"
+      ]
+    },
+    {
+      "label": "Remarks",
+      "elementType": "button",
+      "businessIntent": "To display the form section for internal remarks.",
+      "expectedOutcome": "The UI scrolls to or displays the remarks text area.",
+      "confidence": "high",
+      "evidence": [
+        "Remarks"
+      ]
+    },
+    {
+      "label": "Learn More",
+      "elementType": "button",
+      "businessIntent": "To get more information about the 'Customer Owner' feature.",
+      "expectedOutcome": "A help tooltip, modal, or new documentation page is displayed explaining what a Customer Owner is.",
+      "confidence": "high",
+      "evidence": [
+        "Learn More",
+        "Customer Owner: Assign a user as the customer owner to provide access only to the data of this customer."
+      ]
+    },
+    {
+      "label": "Copy billing address",
+      "elementType": "button",
+      "businessIntent": "To streamline data entry by duplicating the billing address into the shipping address fields.",
+      "expectedOutcome": "The values from the 'Billing Address' fields are copied into the corresponding 'Shipping Address' fields.",
+      "confidence": "high",
+      "evidence": [
+        "Copy billing address"
+      ]
+    },
+    {
+      "label": "Add Contact Person",
+      "elementType": "button",
+      "businessIntent": "To add a new contact person associated with this customer.",
+      "expectedOutcome": "A new editable row is added to the contact persons table.",
+      "confidence": "high",
+      "evidence": [
+        "Add Contact Person"
+      ]
+    },
+    {
+      "label": "Save",
+      "elementType": "button",
+      "businessIntent": "To submit the form and create a new customer record.",
+      "expectedOutcome": "The form data is submitted, a new customer is created in the system, and the user is likely redirected to the customer's detail page or the main customer list.",
+      "confidence": "high",
+      "evidence": [
+        "Save"
+      ]
+    },
+    {
+      "label": "Cancel",
+      "elementType": "button",
+      "businessIntent": "To discard the entered information and abort the customer creation process.",
+      "expectedOutcome": "The form is cleared and the user is returned to the previous page, likely the main customer list.",
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "To navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of items or products.",
+      "expectedOutcome": "The user is taken to the items index page.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "New Item",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new item.",
+      "expectedOutcome": "The user is taken to the new item creation form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of price lists.",
+      "expectedOutcome": "The user is taken to the price lists index page.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "New Price List",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new price list.",
+      "expectedOutcome": "The user is taken to the new price list creation form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-pricelists-new/index.html"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of inventory adjustments.",
+      "expectedOutcome": "The user is taken to the inventory adjustments index page.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "New Adjustment",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new inventory adjustment.",
+      "expectedOutcome": "The user is taken to the new inventory adjustment creation form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-adjustments-new/index.html"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of customers.",
+      "expectedOutcome": "The user is taken to the customer index page.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "New Customer",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new customer.",
+      "expectedOutcome": "The user is taken to the new customer creation form (this page).",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-contacts-new/index.html"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of quotes.",
+      "expectedOutcome": "The user is taken to the quotes index page.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of sales orders.",
+      "expectedOutcome": "The user is taken to the sales orders index page.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "New Sales Order",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new sales order.",
+      "expectedOutcome": "The user is taken to the new sales order creation form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-salesorders-new/index.html"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of invoices.",
+      "expectedOutcome": "The user is taken to the invoices index page.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of recurring invoices.",
+      "expectedOutcome": "The user is taken to the recurring invoices index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "New Recurring Invoice",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new recurring invoice.",
+      "expectedOutcome": "The user is taken to the new recurring invoice creation form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-recurringinvoices-new/index.html"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of delivery challans.",
+      "expectedOutcome": "The user is taken to the delivery challans index page.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "New Delivery Challan",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new delivery challan.",
+      "expectedOutcome": "The user is taken to the new delivery challan creation form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-deliverychallans-new/index.html"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of payments received.",
+      "expectedOutcome": "The user is taken to the payments received index page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Record New Payment",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for recording a new payment received.",
+      "expectedOutcome": "The user is taken to the new payment received form.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-paymentsreceived-new/index.html"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of credit notes.",
+      "expectedOutcome": "The user is taken to the credit notes index page.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "New Credit Note",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new credit note.",
+      "expectedOutcome": "The user is taken to the new credit note creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/creditnotes/new"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of vendors.",
+      "expectedOutcome": "The user is taken to the vendors index page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "New Vendor",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new vendor.",
+      "expectedOutcome": "The user is taken to the new vendor creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/vendors/new"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of expenses.",
+      "expectedOutcome": "The user is taken to the expenses index page.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of recurring expenses.",
+      "expectedOutcome": "The user is taken to the recurring expenses index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "New Recurring Expense",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new recurring expense.",
+      "expectedOutcome": "The user is taken to the new recurring expense creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/recurringexpenses/new"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of purchase orders.",
+      "expectedOutcome": "The user is taken to the purchase orders index page.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "New Purchase Order",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new purchase order.",
+      "expectedOutcome": "The user is taken to the new purchase order creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/purchaseorders/new"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of bills.",
+      "expectedOutcome": "The user is taken to the bills index page.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "New Bill",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new bill.",
+      "expectedOutcome": "The user is taken to the new bill creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/bills/new"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of recurring bills.",
+      "expectedOutcome": "The user is taken to the recurring bills index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "New Recurring Bill",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new recurring bill.",
+      "expectedOutcome": "The user is taken to the new recurring bill creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/recurringbills/new"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of payments made.",
+      "expectedOutcome": "The user is taken to the payments made index page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Record Payment",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for recording a new payment made.",
+      "expectedOutcome": "The user is taken to the new payment made form.",
+      "confidence": "high",
+      "evidence": [
+        "#/paymentsmade/new"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of vendor credits.",
+      "expectedOutcome": "The user is taken to the vendor credits index page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "New Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new vendor credit.",
+      "expectedOutcome": "The user is taken to the new vendor credit creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/vendorcredits/new"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of projects.",
+      "expectedOutcome": "The user is taken to the projects index page.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "To navigate to the timesheet view.",
+      "expectedOutcome": "The user is taken to the timesheet page.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "To navigate to the banking section.",
+      "expectedOutcome": "The user is taken to the banking page.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of manual journals.",
+      "expectedOutcome": "The user is taken to the manual journals index page.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "New Journal",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new manual journal.",
+      "expectedOutcome": "The user is taken to the new journal creation form.",
+      "confidence": "high",
+      "evidence": [
+        "#/accountant/journals/new"
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "To navigate to the bulk update accounts tool.",
+      "expectedOutcome": "The user is taken to the bulk update accounts page.",
+      "confidence": "high",
+      "evidence": [
+        "Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of currency adjustments.",
+      "expectedOutcome": "The user is taken to the currency adjustments page.",
+      "confidence": "high",
+      "evidence": [
+        "Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "To navigate to the chart of accounts.",
+      "expectedOutcome": "The user is taken to the chart of accounts page.",
+      "confidence": "high",
+      "evidence": [
+        "Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "To navigate to the budgets section.",
+      "expectedOutcome": "The user is taken to the budgets page.",
+      "confidence": "high",
+      "evidence": [
+        "Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "To navigate to the transaction locking settings.",
+      "expectedOutcome": "The user is taken to the transaction locking page.",
+      "confidence": "high",
+      "evidence": [
+        "Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "To navigate to the reports section.",
+      "expectedOutcome": "The user is taken to the main reports page.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "To navigate to the document inbox.",
+      "expectedOutcome": "The user is taken to the documents page.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Zoho Payroll",
+      "elementType": "link",
+      "businessIntent": "To navigate to the Zoho Payroll integration.",
+      "expectedOutcome": "The user is taken to the Zoho Payroll page.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payroll"
+      ]
+    },
+    {
+      "label": "Zoho Payments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the Zoho Payments integration.",
+      "expectedOutcome": "The user is taken to the Zoho Payments page.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payments"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "To navigate to a settings page to configure application features.",
+      "expectedOutcome": "The user is taken to a configuration or settings page.",
+      "confidence": "high",
+      "evidence": [
+        "Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To register for a live webinar about the product.",
+      "expectedOutcome": "The user is taken to an external webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now",
+        "https://zoho.to/inlivewebinar"
+      ]
+    },
+    {
+      "label": "Prefill",
+      "elementType": "link",
+      "businessIntent": "To automatically populate customer details using their GSTIN.",
+      "expectedOutcome": "A modal or form appears asking for the customer's GSTIN. Upon entry, the form fields are populated with data from the GST portal.",
+      "confidence": "high",
+      "evidence": [
+        "Prefill",
+        "Prefill Customer details from the GST portal using the Customer's GSTIN."
+      ]
+    },
+    {
+      "label": "Add more details",
+      "elementType": "link",
+      "businessIntent": "To reveal additional, less common form fields for customer creation.",
+      "expectedOutcome": "More input fields are displayed on the form.",
+      "confidence": "medium",
+      "evidence": [
+        "Add more details"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "To create a new chat channel in the integrated chat application.",
+      "expectedOutcome": "The user is redirected to the chat application's channel creation interface.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel",
+        "https://cliq.zoho.in/officechat/index.do#createchannel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Contact Persons",
+      "purpose": "To list and manage individual contact people associated with the customer being created.",
+      "columns": [
+        {
+          "name": "Salutation",
+          "meaning": "The title for the contact person (e.g., Mr., Ms., Dr.).",
+          "businessPurpose": "To address the contact person formally."
+        },
+        {
+          "name": "First Name",
+          "meaning": "The first name of the contact person.",
+          "businessPurpose": "To identify the contact person."
+        },
+        {
+          "name": "Last Name",
+          "meaning": "The last name of the contact person.",
+          "businessPurpose": "To identify the contact person."
+        },
+        {
+          "name": "Email Address",
+          "meaning": "The email address of the contact person.",
+          "businessPurpose": "To communicate with the contact person electronically."
+        },
+        {
+          "name": "Work Phone",
+          "meaning": "The work phone number of the contact person.",
+          "businessPurpose": "To contact the person at their place of work."
+        },
+        {
+          "name": "Mobile",
+          "meaning": "The mobile phone number of the contact person.",
+          "businessPurpose": "To contact the person directly."
+        },
+        {
+          "name": "delete",
+          "meaning": "An action to remove the contact person row.",
+          "businessPurpose": "To remove an incorrectly added or obsolete contact person from the customer record."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "New Customer Form",
+      "purpose": "To capture all the necessary details for creating a new customer record.",
+      "fields": [
+        {
+          "fieldName": "Customer Type",
+          "fieldType": "radio",
+          "businessMeaning": "Specifies whether the customer is a Business or an Individual."
+        },
+        {
+          "fieldName": "Primary Contact Salutation",
+          "fieldType": "text",
+          "businessMeaning": "The title (e.g., Mr., Ms.) for the primary contact person."
+        },
+        {
+          "fieldName": "Primary Contact First Name",
+          "fieldType": "text",
+          "businessMeaning": "The first name of the main contact person for this customer."
+        },
+        {
+          "fieldName": "Primary Contact Last Name",
+          "fieldType": "text",
+          "businessMeaning": "The last name of the main contact person for this customer."
+        },
+        {
+          "fieldName": "Company Name",
+          "fieldType": "text",
+          "businessMeaning": "The legal name of the customer's company."
+        },
+        {
+          "fieldName": "Display Name",
+          "fieldType": "text",
+          "businessMeaning": "The name to be displayed for the customer throughout the application."
+        },
+        {
+          "fieldName": "Email Address",
+          "fieldType": "text",
+          "businessMeaning": "The primary email address for the customer."
+        },
+        {
+          "fieldName": "Work Phone",
+          "fieldType": "text",
+          "businessMeaning": "The primary work phone number for the customer."
+        },
+        {
+          "fieldName": "Mobile Phone",
+          "fieldType": "text",
+          "businessMeaning": "The primary mobile phone number for the customer."
+        },
+        {
+          "fieldName": "PAN",
+          "fieldType": "text",
+          "businessMeaning": "The customer's Permanent Account Number (PAN), a tax identification number."
+        },
+        {
+          "fieldName": "Opening Balance",
+          "fieldType": "text",
+          "businessMeaning": "The outstanding amount owed by the customer at the time of their creation in the system."
+        },
+        {
+          "fieldName": "Enable Portal?",
+          "fieldType": "checkbox",
+          "businessMeaning": "A flag to grant the customer access to a client portal."
+        },
+        {
+          "fieldName": "Documents",
+          "fieldType": "file",
+          "businessMeaning": "An attachment field to upload related documents for the customer."
+        },
+        {
+          "fieldName": "Billing Attention",
+          "fieldType": "text",
+          "businessMeaning": "The name of the person or department the billing address is directed to."
+        },
+        {
+          "fieldName": "Billing Address",
+          "fieldType": "textarea",
+          "businessMeaning": "The street address for billing purposes."
+        },
+        {
+          "fieldName": "Billing City",
+          "fieldType": "text",
+          "businessMeaning": "The city for the billing address."
+        },
+        {
+          "fieldName": "Billing State",
+          "fieldType": "text",
+          "businessMeaning": "The state for the billing address."
+        },
+        {
+          "fieldName": "Billing Pin Code",
+          "fieldType": "text",
+          "businessMeaning": "The postal code for the billing address."
+        },
+        {
+          "fieldName": "Billing Phone",
+          "fieldType": "text",
+          "businessMeaning": "The phone number associated with the billing address."
+        },
+        {
+          "fieldName": "Billing Fax Number",
+          "fieldType": "text",
+          "businessMeaning": "The fax number associated with the billing address."
+        },
+        {
+          "fieldName": "Shipping Attention",
+          "fieldType": "text",
+          "businessMeaning": "The name of the person or department the shipping address is directed to."
+        },
+        {
+          "fieldName": "Shipping Address",
+          "fieldType": "textarea",
+          "businessMeaning": "The street address for shipping purposes."
+        },
+        {
+          "fieldName": "Shipping City",
+          "fieldType": "text",
+          "businessMeaning": "The city for the shipping address."
+        },
+        {
+          "fieldName": "Shipping State",
+          "fieldType": "text",
+          "businessMeaning": "The state for the shipping address."
+        },
+        {
+          "fieldName": "Shipping Pin Code",
+          "fieldType": "text",
+          "businessMeaning": "The postal code for the shipping address."
+        },
+        {
+          "fieldName": "Shipping Phone",
+          "fieldType": "text",
+          "businessMeaning": "The phone number associated with the shipping address."
+        },
+        {
+          "fieldName": "Shipping Fax Number",
+          "fieldType": "text",
+          "businessMeaning": "The fax number associated with the shipping address."
+        },
+        {
+          "fieldName": "Remarks(For Internal Use)",
+          "fieldType": "textarea",
+          "businessMeaning": "Internal notes or comments about the customer, not visible to them."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Create a New Customer",
+      "steps": [
+        "User fills in the customer's details in the 'New Customer' form, including primary contact, company name, and addresses.",
+        "User optionally adds one or more contact persons using the 'Add Contact Person' button and table.",
+        "User clicks the 'Save' button to create the customer record."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Customer",
+        "Add Contact Person",
+        "Save"
+      ]
+    },
+    {
+      "name": "Cancel Customer Creation",
+      "steps": [
+        "User starts filling in the 'New Customer' form.",
+        "User decides not to proceed and clicks the 'Cancel' button.",
+        "The application discards the entered data and returns the user to the previous screen."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Customer",
+        "Cancel"
+      ]
+    },
+    {
+      "name": "Prefill Customer Data from GST Portal",
+      "steps": [
+        "User clicks the 'Prefill' link.",
+        "User enters the customer's GSTIN into a prompt.",
+        "The system fetches data from the GST portal and populates the relevant fields in the form."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Prefill",
+        "Prefill Customer details from the GST portal using the Customer's GSTIN."
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Onboard a new customer into the system",
+      "evidence": [
+        "The page heading is 'New Customer'.",
+        "The primary action buttons are 'Save' and 'Cancel'."
+      ]
+    },
+    {
+      "goal": "Capture comprehensive details for a customer",
+      "evidence": [
+        "The form includes sections for 'Primary Contact', 'Company Name', 'Address', 'Contact Persons', and 'Other Details' like 'Opening Balance' and 'PAN'."
+      ]
+    },
+    {
+      "goal": "Efficiently enter address information",
+      "evidence": [
+        "A 'Copy billing address' button is provided to avoid re-typing the same address for shipping."
+      ]
+    },
+    {
+      "goal": "Associate multiple contact points with a single customer",
+      "evidence": [
+        "The page includes a table and an 'Add Contact Person' button to manage a list of contacts for the customer."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Success/Error Notification",
+      "reason": "After clicking 'Save', the user needs feedback on whether the customer was created successfully or if there was an error.",
+      "confidence": "medium"
+    },
+    {
+      "element": "Form Field Validation Messages",
+      "reason": "Fields like 'Email Address' or 'Company Name' are likely required and should show an error if left blank or formatted incorrectly.",
+      "confidence": "medium"
+    },
+    {
+      "element": "GSTIN Input for Prefill",
+      "reason": "The 'Prefill' link implies that clicking it will reveal a modal or an input field to enter the GSTIN.",
+      "confidence": "high"
+    },
+    {
+      "element": "Cancel Confirmation Dialog",
+      "reason": "Clicking 'Cancel' after entering data typically prompts the user with an 'Are you sure?' dialog to prevent accidental data loss.",
+      "confidence": "low"
+    }
+  ],
+  "pageNarrative": "This page is a comprehensive form for creating a new customer. A user can specify if the customer is a business or individual, and enter primary contact, company, and financial details like opening balance and PAN. The interface provides distinct sections for billing and shipping addresses, with a convenience feature to copy the billing address to shipping. Users can also associate multiple contact persons with the customer via a dedicated table. Once all the necessary information is entered, the user can save the record to create the new customer or cancel the operation to discard the changes.",
+  "_meta": {
+    "sourceFile": "contacts-new.html",
+    "pageFactsCounts": {
+      "buttons": 18,
+      "links": 55,
+      "forms": 1,
+      "tables": 1,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 39,
+        "tables": 1,
+        "forms": 1
+      },
+      "reported": {
+        "clickableElements": 73,
+        "tables": 1,
+        "forms": 1
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

@@ -39,7 +39,17 @@ On Linux, install Chromium/Chrome dependencies:
 playwright install-deps chrome
 ```
 
-### 5. First run
+### 5. Set Gemini API key
+
+Create `.env` in the project root:
+
+```
+GEMINI_API_KEY=your_key_here
+```
+
+Required for the analyze step (`python main.py analyze <app>`).
+
+### 6. First run
 
 ```bash
 python main.py pipeline zoho
@@ -55,10 +65,11 @@ Every command requires an app name (`zoho`, `hubspot`, etc.).
 
 | Command | Description |
 |---------|-------------|
-| `python main.py pipeline <app>` | Full pipeline: crawl → stitch → clean |
+| `python main.py pipeline <app>` | Full pipeline: crawl → stitch → clean → analyze |
 | `python main.py crawl <app>` | Crawl only → `raw_html/` |
 | `python main.py stitch <app>` | Stitch only → `stitched_html/` |
 | `python main.py clean <app>` | Clean only → `cleaned_html/` |
+| `python main.py analyze <app>` | Analyze only → `business_json/` |
 | `python main.py preview <app>` | Serve `stitched_html/` locally |
 | `python main.py serve` | Start FastAPI API on port 8000 |
 
@@ -69,6 +80,7 @@ python main.py pipeline zoho
 python main.py crawl zoho
 python main.py stitch zoho
 python main.py clean zoho
+python main.py analyze zoho
 python main.py preview zoho
 ```
 
@@ -133,7 +145,7 @@ storage/apps/
 │   ├── assets/            # Downloaded assets (reserved)
 │   ├── stitched_html/     # Offline-viewable stitched pages ← preview here
 │   ├── cleaned_html/      # Flat simplified HTML for LLM analysis
-│   ├── business_json/     # Gemini business analysis output (reserved)
+│   ├── business_json/     # Page-level business JSON from Agent 1
 │   └── metadata/
 │       ├── sitemap.json
 │       ├── auth.json
@@ -148,7 +160,33 @@ storage/apps/
 | `raw_html/` | Crawler | Original captured HTML |
 | `stitched_html/` | Stitcher | Sidebar nav wired, JS stripped (post-auth) |
 | `cleaned_html/` | Cleaner | Token-efficient HTML for LLMs |
+| `business_json/` | Analyzer (Agent 1) | Evidence-backed business JSON per page |
 | `metadata/` | Crawler / pipeline | Sitemap, auth, pipeline status |
+
+---
+
+## Business analysis (Agent 1)
+
+Reads `cleaned_html/`, writes one JSON per page to `business_json/`:
+
+```bash
+python main.py analyze zoho
+```
+
+Example:
+
+```
+cleaned_html/inventory.html  →  business_json/inventory.json
+```
+
+Flow per page:
+
+1. **Deterministic extraction** — title, headings, buttons, links, forms, tables (PageFacts)
+2. **Gemini 2.5 Pro** — receives PageFacts + truncated HTML snippet (not full HTML blindly)
+3. **Validation** — compares extracted vs reported element counts; retries once on mismatch
+4. **Save** — structured JSON with evidence on every conclusion
+
+Requires `GEMINI_API_KEY` in `.env`.
 
 ---
 
@@ -210,9 +248,10 @@ Storage is created automatically at `storage/apps/hubspot/`.
 ## Pipeline stages
 
 ```
-[1/3] Crawl   → storage/apps/{app}/raw_html/
-[2/3] Stitch  → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
-[3/3] Clean   → storage/apps/{app}/cleaned_html/
+[1/4] Crawl    → storage/apps/{app}/raw_html/
+[2/4] Stitch   → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
+[3/4] Clean    → storage/apps/{app}/cleaned_html/
+[4/4] Analyze  → storage/apps/{app}/business_json/
 ```
 
 Check progress:

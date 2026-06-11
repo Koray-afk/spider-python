@@ -1,0 +1,603 @@
+{
+  "pageInfo": {
+    "pageName": "Zoho Payroll Product Page",
+    "pageCategory": "Marketing",
+    "pagePurpose": "To inform potential customers about the features and benefits of the Zoho Payroll software, and to generate leads by encouraging users to sign up for a free trial or request a product demonstration.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Payroll",
+      "evidence": [
+        "Payroll made easy, scalable, and compliant",
+        "Get to know Zoho Payroll.",
+        "Give your team a modern payroll experience"
+      ]
+    },
+    {
+      "name": "Employee",
+      "evidence": [
+        "Employee self-service portal",
+        "Interact with employees in real time",
+        "17,000+ employees get paid every month"
+      ]
+    },
+    {
+      "name": "Salary / Payslip",
+      "evidence": [
+        "Personalize salary components",
+        "Deliver salaries online",
+        "Instant Payslips"
+      ]
+    },
+    {
+      "name": "Compliance",
+      "evidence": [
+        "Stay compliant, without thinking about compliance",
+        "Simplified compliance",
+        "PF, ESI, LWF, PT, and IT"
+      ]
+    },
+    {
+      "name": "Leave and Attendance",
+      "evidence": [
+        "Leave and Attendance",
+        "Manage leave and attendance, built-in."
+      ]
+    },
+    {
+      "name": "Report",
+      "evidence": [
+        "Get instant insights with powerful reports",
+        "Ready-to-file reports",
+        "Reporting tags"
+      ]
+    },
+    {
+      "name": "Integration",
+      "evidence": [
+        "Integrations",
+        "Custom Integrations",
+        "Natively built. Deeply connected. Inherently collaborative"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Loved by India's famous startups and world renowned brands",
+        "Testimonials",
+        "Loved by both customers and critics"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Stay here",
+      "elementType": "button",
+      "businessIntent": "Dismiss a country/region redirection suggestion",
+      "expectedOutcome": "The user remains on the current page, and any banner suggesting a different regional site is closed.",
+      "confidence": "medium",
+      "evidence": [
+        "Stay here"
+      ]
+    },
+    {
+      "label": "English",
+      "elementType": "button",
+      "businessIntent": "Change the display language of the website",
+      "expectedOutcome": "Opens a dropdown or menu allowing the user to select a different language for the website content.",
+      "confidence": "high",
+      "evidence": [
+        "English"
+      ]
+    },
+    {
+      "label": "Request a demo",
+      "elementType": "button",
+      "businessIntent": "Initiate contact with the sales team for a product demonstration",
+      "expectedOutcome": "Opens a form or modal for the user to submit their contact information to schedule a demo.",
+      "confidence": "high",
+      "evidence": [
+        "Request a demo"
+      ]
+    },
+    {
+      "label": "Web and Mobile app",
+      "elementType": "button",
+      "businessIntent": "Learn about platform accessibility",
+      "expectedOutcome": "Likely scrolls or filters the view to show information about the product's availability on web and mobile platforms.",
+      "confidence": "medium",
+      "evidence": [
+        "Web and Mobile app"
+      ]
+    },
+    {
+      "label": "Instant Payslips",
+      "elementType": "button",
+      "businessIntent": "Learn about a specific product feature",
+      "expectedOutcome": "Scrolls or filters the view to display details about the 'Instant Payslips' feature.",
+      "confidence": "medium",
+      "evidence": [
+        "Instant Payslips"
+      ]
+    },
+    {
+      "label": "Digitisation",
+      "elementType": "button",
+      "businessIntent": "Learn about a specific product benefit",
+      "expectedOutcome": "Scrolls or filters the view to display details about how the product helps digitise payroll operations.",
+      "confidence": "medium",
+      "evidence": [
+        "Digitisation"
+      ]
+    },
+    {
+      "label": "Communication",
+      "elementType": "button",
+      "businessIntent": "Learn about a specific product feature",
+      "expectedOutcome": "Scrolls or filters the view to display details about communication features within the product.",
+      "confidence": "medium",
+      "evidence": [
+        "Communication"
+      ]
+    },
+    {
+      "label": "Go to Previous testimonial",
+      "elementType": "button",
+      "businessIntent": "Navigate through customer testimonials",
+      "expectedOutcome": "Displays the previous testimonial in a carousel or slider component.",
+      "confidence": "high",
+      "evidence": [
+        "Go to Previous testimonial"
+      ]
+    },
+    {
+      "label": "Go to Next testimonial",
+      "elementType": "button",
+      "businessIntent": "Navigate through customer testimonials",
+      "expectedOutcome": "Displays the next testimonial in a carousel or slider component.",
+      "confidence": "high",
+      "evidence": [
+        "Go to Next testimonial"
+      ]
+    },
+    {
+      "label": "Request Demo",
+      "elementType": "button",
+      "businessIntent": "Initiate contact with the sales team for a product demonstration",
+      "expectedOutcome": "Opens a form or modal for the user to submit their contact information to schedule a demo.",
+      "confidence": "high",
+      "evidence": [
+        "Request Demo"
+      ]
+    },
+    {
+      "label": "Submit My Request",
+      "elementType": "button",
+      "businessIntent": "Submit personal information for a sales inquiry",
+      "expectedOutcome": "Submits the filled-out demo request form and shows a confirmation message.",
+      "confidence": "high",
+      "evidence": [
+        "Submit My Request"
+      ]
+    },
+    {
+      "label": "Manage Cookies",
+      "elementType": "button",
+      "businessIntent": "Customize cookie preferences",
+      "expectedOutcome": "Opens a settings modal where the user can select which categories of cookies to allow or disallow.",
+      "confidence": "high",
+      "evidence": [
+        "Manage Cookies"
+      ]
+    },
+    {
+      "label": "Accept All Cookies",
+      "elementType": "button",
+      "businessIntent": "Consent to all website cookies",
+      "expectedOutcome": "Accepts all cookies and closes the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Accept All Cookies"
+      ]
+    },
+    {
+      "label": "Reject Unnecessary Cookies",
+      "elementType": "button",
+      "businessIntent": "Decline non-essential website cookies",
+      "expectedOutcome": "Rejects optional cookies and closes the cookie consent banner, keeping only essential ones active.",
+      "confidence": "high",
+      "evidence": [
+        "Reject Unnecessary Cookies"
+      ]
+    },
+    {
+      "label": "close",
+      "elementType": "button",
+      "businessIntent": "Close a modal or popup",
+      "expectedOutcome": "Closes the currently active modal dialog, such as a cookie settings panel.",
+      "confidence": "high",
+      "evidence": [
+        "close"
+      ]
+    },
+    {
+      "label": "Save & Exit",
+      "elementType": "button",
+      "businessIntent": "Save cookie preferences and close the settings modal",
+      "expectedOutcome": "Saves the user's selected cookie preferences and closes the modal.",
+      "confidence": "high",
+      "evidence": [
+        "Save & Exit"
+      ]
+    },
+    {
+      "label": "Zoho",
+      "elementType": "link",
+      "businessIntent": "Navigate to the main Zoho homepage",
+      "expectedOutcome": "Redirects the user to the homepage of the Zoho corporation website.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho"
+      ]
+    },
+    {
+      "label": "Sign In",
+      "elementType": "link",
+      "businessIntent": "Access an existing user account",
+      "expectedOutcome": "Redirects the user to the Zoho central login page to sign in to their account.",
+      "confidence": "high",
+      "evidence": [
+        "Sign In"
+      ]
+    },
+    {
+      "label": "Sign up now",
+      "elementType": "link",
+      "businessIntent": "Create a new user account",
+      "expectedOutcome": "Redirects the user to the Zoho Payroll signup page to begin the registration process.",
+      "confidence": "high",
+      "evidence": [
+        "Sign up now"
+      ]
+    },
+    {
+      "label": "EXPLORE ALL PRODUCTS",
+      "elementType": "link",
+      "businessIntent": "View the entire suite of Zoho products",
+      "expectedOutcome": "Navigates to a page that lists all available Zoho applications.",
+      "confidence": "high",
+      "evidence": [
+        "EXPLORE ALL PRODUCTS"
+      ]
+    },
+    {
+      "label": "Try now",
+      "elementType": "link",
+      "businessIntent": "Start a free trial for a specific Zoho product",
+      "expectedOutcome": "Navigates the user to the signup or trial page for the associated Zoho product.",
+      "confidence": "high",
+      "evidence": [
+        "Try now"
+      ]
+    },
+    {
+      "label": "Start My Free Trial",
+      "elementType": "link",
+      "businessIntent": "Create a new user account for a free trial",
+      "expectedOutcome": "Redirects the user to the Zoho Payroll signup page to begin a free trial.",
+      "confidence": "high",
+      "evidence": [
+        "Start My Free Trial"
+      ]
+    },
+    {
+      "label": "Learn how",
+      "elementType": "link",
+      "businessIntent": "Get more information about a specific topic",
+      "expectedOutcome": "Navigates to a page or article with more details, in this case about setting up payroll for a new fiscal year.",
+      "confidence": "high",
+      "evidence": [
+        "Learn how"
+      ]
+    },
+    {
+      "label": "Get in Touch",
+      "elementType": "link",
+      "businessIntent": "Contact customer support",
+      "expectedOutcome": "Navigates to the support contact page.",
+      "confidence": "high",
+      "evidence": [
+        "Get in Touch"
+      ]
+    },
+    {
+      "label": "Features",
+      "elementType": "link",
+      "businessIntent": "Navigate to the product features page",
+      "expectedOutcome": "Redirects the user to a page detailing all the features of Zoho Payroll.",
+      "confidence": "high",
+      "evidence": [
+        "Features"
+      ]
+    },
+    {
+      "label": "Pricing",
+      "elementType": "link",
+      "businessIntent": "Navigate to the pricing information page",
+      "expectedOutcome": "Redirects the user to a page showing the different pricing plans for Zoho Payroll.",
+      "confidence": "high",
+      "evidence": [
+        "Pricing"
+      ]
+    },
+    {
+      "label": "Integrations",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrations page",
+      "expectedOutcome": "Redirects the user to a page listing the other applications that Zoho Payroll integrates with.",
+      "confidence": "high",
+      "evidence": [
+        "Integrations"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "View customer case studies or testimonials",
+      "expectedOutcome": "Redirects the user to a page showcasing customer stories and testimonials.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Privacy Policy",
+      "elementType": "link",
+      "businessIntent": "View the company's privacy policy",
+      "expectedOutcome": "Navigates to the legal page detailing the company's data privacy policies.",
+      "confidence": "high",
+      "evidence": [
+        "Privacy Policy"
+      ]
+    },
+    {
+      "label": "Learn More",
+      "elementType": "link",
+      "businessIntent": "Get more information about cookie policies",
+      "expectedOutcome": "Navigates to the cookie policy page for more detailed information.",
+      "confidence": "high",
+      "evidence": [
+        "Learn More"
+      ]
+    }
+  ],
+  "tables": [],
+  "forms": [
+    {
+      "formName": "form",
+      "purpose": "To allow users to search the website for products, solutions, or resources.",
+      "fields": [
+        {
+          "fieldName": "query",
+          "fieldType": "text",
+          "businessMeaning": "The user's search term for finding information across the Zoho website."
+        }
+      ]
+    },
+    {
+      "formName": "WebToCases1034361000001565470",
+      "purpose": "To capture user information for a product demonstration request or a sales inquiry.",
+      "fields": [
+        {
+          "fieldName": "Reported By",
+          "fieldType": "text",
+          "businessMeaning": "The full name of the person requesting the demo."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "text",
+          "businessMeaning": "The email address of the person requesting the demo."
+        },
+        {
+          "fieldName": "Phone",
+          "fieldType": "text",
+          "businessMeaning": "The phone number of the person requesting the demo."
+        },
+        {
+          "fieldName": "CASECF7",
+          "fieldType": "select",
+          "businessMeaning": "The user's country or the product edition they are interested in. The options include various countries."
+        },
+        {
+          "fieldName": "CASECF13",
+          "fieldType": "select",
+          "businessMeaning": "The number of employees in the user's company, used for lead qualification."
+        },
+        {
+          "fieldName": "CASECF4",
+          "fieldType": "textarea",
+          "businessMeaning": "Information on how the user learned about Zoho Payroll, used for marketing attribution."
+        },
+        {
+          "fieldName": "How did you hear about Zoho Payroll?",
+          "fieldType": "textarea",
+          "businessMeaning": "A free-text field for the user to describe their specific business needs or questions."
+        },
+        {
+          "fieldName": "enterdigest",
+          "fieldType": "text",
+          "businessMeaning": "A CAPTCHA field to prevent spam submissions."
+        },
+        {
+          "fieldName": "xnQsjsdp",
+          "fieldType": "text",
+          "businessMeaning": "A hidden field likely used for security or anti-spam measures (e.g., a CSRF token)."
+        },
+        {
+          "fieldName": "zc_gad",
+          "fieldType": "hidden",
+          "businessMeaning": "A hidden field likely used for tracking marketing campaign data, possibly from Google Ads."
+        },
+        {
+          "fieldName": "returnURL",
+          "fieldType": "text",
+          "businessMeaning": "A hidden field specifying the URL to redirect the user to after form submission."
+        },
+        {
+          "fieldName": "Subject",
+          "fieldType": "hidden",
+          "businessMeaning": "A hidden field to pre-populate the subject line of the resulting sales case or email."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Request a Product Demonstration",
+      "steps": [
+        "User clicks the 'Request a demo' or 'Request Demo' button.",
+        "User fills in their contact details, company size, and requirements into the demo request form.",
+        "User clicks the 'Submit My Request' button to send the inquiry to the sales team."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Request a demo",
+        "Request Demo",
+        "Submit My Request",
+        "formName: WebToCases1034361000001565470"
+      ]
+    },
+    {
+      "name": "Sign Up for a Free Trial",
+      "steps": [
+        "User clicks the 'Sign up now' or 'Start My Free Trial' link.",
+        "User is navigated to the account creation page to begin the registration process."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign up now",
+        "Start My Free Trial",
+        "href: /in/payroll/signup/"
+      ]
+    },
+    {
+      "name": "Sign In to Existing Account",
+      "steps": [
+        "User clicks the 'Sign In' link.",
+        "User is navigated to the Zoho accounts login page to enter their credentials."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign In",
+        "href: https://accounts.zoho.com/signin?servicename=ZohoPayroll&signupurl=https://www.zoho.com/in/payroll/signup/index.html"
+      ]
+    },
+    {
+      "name": "Search Website Content",
+      "steps": [
+        "User types a search term into the search field.",
+        "User submits the search.",
+        "User is presented with search results."
+      ],
+      "confidence": "medium",
+      "evidence": [
+        "formName: form",
+        "fieldName: query",
+        "placeholder: Search for products, solutions, resources..."
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Evaluate Zoho Payroll for my business",
+      "evidence": [
+        "h2: Effortless payroll",
+        "h2: Simplified compliance",
+        "h2: Advanced Features",
+        "link text: Features"
+      ]
+    },
+    {
+      "goal": "Start a free trial of the software",
+      "evidence": [
+        "link text: Start My Free Trial",
+        "link text: Sign up now"
+      ]
+    },
+    {
+      "goal": "Contact the sales team for a guided demonstration",
+      "evidence": [
+        "button label: Request a demo",
+        "button label: Request Demo",
+        "formName: WebToCases1034361000001565470"
+      ]
+    },
+    {
+      "goal": "Understand the pricing and subscription plans",
+      "evidence": [
+        "link text: Pricing"
+      ]
+    },
+    {
+      "goal": "Check if it integrates with other software I use",
+      "evidence": [
+        "h2: Integrations",
+        "link text: Integrations"
+      ]
+    },
+    {
+      "goal": "Access my existing Zoho Payroll account",
+      "evidence": [
+        "link text: Sign In"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Testimonial Content",
+      "reason": "The page includes a 'Testimonials' heading and buttons labeled 'Go to Previous testimonial' and 'Go to Next testimonial', which strongly imply a carousel for displaying customer quotes and attributions that are not present in the extracted facts.",
+      "confidence": "high"
+    },
+    {
+      "element": "Search Submit Button/Icon",
+      "reason": "The search form with the 'query' field is present, but no corresponding submit button is listed in the facts. Search bars typically have a clickable button or icon to initiate the search.",
+      "confidence": "medium"
+    },
+    {
+      "element": "Demo Request Modal",
+      "reason": "The 'Request a demo' buttons exist, as does a detailed form. Typically, clicking such a button on a landing page opens the form in a modal window rather than navigating to a new page, to keep the user in context.",
+      "confidence": "low"
+    }
+  ],
+  "pageNarrative": "This page is a marketing landing page for Zoho's Payroll software, designed to attract and convert potential customers. It outlines the product's primary benefits, such as simplifying payroll, managing compliance, and offering an employee self-service portal. The page uses social proof like customer logos and testimonials to build trust. Key user actions are prominently featured, encouraging visitors to sign up for a free trial or request a personalized demo from the sales team.",
+  "_meta": {
+    "sourceFile": "payroll.html",
+    "pageFactsCounts": {
+      "buttons": 17,
+      "links": 283,
+      "forms": 2,
+      "tables": 0,
+      "headings": 227
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 300,
+        "tables": 0,
+        "forms": 2
+      },
+      "reported": {
+        "clickableElements": 30,
+        "tables": 0,
+        "forms": 2
+      },
+      "mismatches": {
+        "clickableElements": true,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": true
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

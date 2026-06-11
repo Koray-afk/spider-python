@@ -6,9 +6,11 @@ import sys
 from config.apps import get_app_config
 from crawler.crawler_v2 import crawl_application
 from stitcher.page_stitch import stitch_application
+from analyzer.business_agent import analyze_application
 from analyzer.html_cleaner import clean_application
 from storage.storage_manager import (
     create_app_storage,
+    get_business_json_dir,
     get_cleaned_html_dir,
     get_metadata_dir,
     get_raw_html_dir,
@@ -121,23 +123,47 @@ def run_clean_pipeline(app_name: str) -> dict:
     return clean_result
 
 
+def run_business_analysis_pipeline(app_name: str) -> dict:
+    """Read cleaned_html, write business_json. Never touches cleaned HTML."""
+    create_app_storage(app_name)
+    cleaned_dir = get_cleaned_html_dir(app_name)
+    business_dir = get_business_json_dir(app_name)
+
+    log_stage("ANALYZE")
+    log_input(cleaned_dir / "<page>.html")
+    log_output(business_dir / "<page>.json")
+
+    if not cleaned_dir.is_dir() or not any(cleaned_dir.glob("*.html")):
+        raise FileNotFoundError(
+            f"No cleaned HTML at {cleaned_dir} — run: python main.py clean {app_name}"
+        )
+
+    result = analyze_application(app_name)
+    save_pipeline_status(get_metadata_dir(app_name), analyze_completed=True)
+    return result
+
+
 def run_full_pipeline(app_name: str) -> dict:
     create_app_storage(app_name)
     result = {}
 
-    print("[1/3] Crawling...")
-    print("[2/3] Stitching... (auto after crawl, experiments Phase 4)")
+    print("[1/4] Crawling...")
+    print("[2/4] Stitching... (auto after crawl)")
     crawl_bundle = run_crawl_pipeline(app_name, auto_stitch=True)
     result["crawl"] = crawl_bundle["crawl"]
     result["stitch"] = crawl_bundle.get("stitch", {})
 
-    print("[3/3] Cleaning...")
+    print("[3/4] Cleaning...")
     result["clean"] = run_clean_pipeline(app_name)
+
+    print("[4/4] Analyzing...")
+    result["analyze"] = run_business_analysis_pipeline(app_name)
 
     print()
     print(f"[✓] Crawled {result['crawl']['pages_crawled']} pages")
     print(f"[✓] Stitched {result['stitch']['pages_stitched']} pages")
     print(f"[✓] Cleaned {result['clean']['pages_cleaned']} pages")
+    print(f"[✓] Analyzed {result['analyze']['pages_analyzed']} pages")
 
     return result
 

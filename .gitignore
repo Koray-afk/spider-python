@@ -1,8 +1,5 @@
 .env
 
-analysis/*
-!analysis/.gitkeep
-
 pages/*
 !pages/.gitkeep
 
@@ -14,8 +11,3 @@ __pycache__/
 venv/
 __pycache__/
 *.pyc
-
-auth.json
-
-storage/apps/*
-!storage/apps/.gitkeep

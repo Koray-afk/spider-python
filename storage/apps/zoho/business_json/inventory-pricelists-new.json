@@ -1,0 +1,646 @@
+{
+  "pageInfo": {
+    "pageName": "New Price List",
+    "pageCategory": "Inventory Management",
+    "pagePurpose": "To create a new price list that applies a markup or markdown percentage to item prices for sales or purchase transactions.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Price List",
+      "evidence": [
+        "New Price List",
+        "Price Lists"
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items",
+        "Mark up or mark down the rates of all items"
+      ]
+    },
+    {
+      "name": "Sales Transaction",
+      "evidence": [
+        "Sales",
+        "Transaction Type"
+      ]
+    },
+    {
+      "name": "Purchase Transaction",
+      "evidence": [
+        "Purchase",
+        "Transaction Type"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Open a quick navigation search or menu.",
+      "expectedOutcome": "A search bar or navigation modal appears, allowing the user to quickly jump to another page.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Items' category in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to 'Items', such as 'Items' and 'Price Lists', becomes visible.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Inventory' category in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to 'Inventory', such as 'Inventory Adjustments', becomes visible.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Sales' category in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to 'Sales' becomes visible.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Purchases' category in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to 'Purchases' becomes visible.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Time Tracking' category in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to 'Time Tracking' becomes visible.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Accountant' category in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to 'Accountant' functions becomes visible.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "Markup",
+      "elementType": "button",
+      "businessIntent": "Set the percentage type to 'Markup'.",
+      "expectedOutcome": "The percentage entered will be treated as a markup. This might toggle with a 'Markdown' option.",
+      "confidence": "medium",
+      "evidence": [
+        "Markup"
+      ]
+    },
+    {
+      "label": "View Examples",
+      "elementType": "button",
+      "businessIntent": "Display examples of how rounding works.",
+      "expectedOutcome": "A modal or tooltip appears, showing examples related to the 'Round Off To' setting.",
+      "confidence": "high",
+      "evidence": [
+        "View Examples",
+        "Round Off To"
+      ]
+    },
+    {
+      "label": "Save",
+      "elementType": "button",
+      "businessIntent": "Create and save the new price list.",
+      "expectedOutcome": "The form data is submitted, a new price list is created, and the user is likely redirected to the price lists page.",
+      "confidence": "high",
+      "evidence": [
+        "Save"
+      ]
+    },
+    {
+      "label": "Cancel",
+      "elementType": "button",
+      "businessIntent": "Discard the new price list and exit the creation form.",
+      "expectedOutcome": "The form is cleared, and the user is likely redirected to the previous page (e.g., the price lists index).",
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of all items.",
+      "expectedOutcome": "The user is taken to the items index page.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-product-product-creation/index.html",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new item.",
+      "expectedOutcome": "The user is taken to the new item creation page. The link label is a URL, suggesting a missing or un-extracted label.",
+      "confidence": "medium",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of all price lists.",
+      "expectedOutcome": "The user is taken to the price lists index page.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of inventory adjustments.",
+      "expectedOutcome": "The user is taken to the inventory adjustments index page.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of customers.",
+      "expectedOutcome": "The user is taken to the customers index page.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of quotes.",
+      "expectedOutcome": "The user is taken to the quotes index page.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of sales orders.",
+      "expectedOutcome": "The user is taken to the sales orders index page.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of invoices.",
+      "expectedOutcome": "The user is taken to the invoices index page.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of recurring invoices.",
+      "expectedOutcome": "The user is taken to the recurring invoices index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of delivery challans.",
+      "expectedOutcome": "The user is taken to the delivery challans index page.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of payments received.",
+      "expectedOutcome": "The user is taken to the payments received index page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of credit notes.",
+      "expectedOutcome": "The user is taken to the credit notes index page.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of vendors.",
+      "expectedOutcome": "The user is taken to the vendors index page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of expenses.",
+      "expectedOutcome": "The user is taken to the expenses index page.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of recurring expenses.",
+      "expectedOutcome": "The user is taken to the recurring expenses index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of purchase orders.",
+      "expectedOutcome": "The user is taken to the purchase orders index page.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of bills.",
+      "expectedOutcome": "The user is taken to the bills index page.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of recurring bills.",
+      "expectedOutcome": "The user is taken to the recurring bills index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of payments made.",
+      "expectedOutcome": "The user is taken to the payments made index page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of vendor credits.",
+      "expectedOutcome": "The user is taken to the vendor credits index page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Navigate to the projects page.",
+      "expectedOutcome": "The user is taken to the projects index page.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "Navigate to the timesheet page.",
+      "expectedOutcome": "The user is taken to the timesheet page.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the banking module.",
+      "expectedOutcome": "The user is taken to the main banking page.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "Navigate to the manual journals page.",
+      "expectedOutcome": "The user is taken to the manual journals page.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bulk update tool.",
+      "expectedOutcome": "The user is taken to a page for performing bulk updates on accounts.",
+      "confidence": "high",
+      "evidence": [
+        "Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the currency adjustments page.",
+      "expectedOutcome": "The user is taken to the currency adjustments page.",
+      "confidence": "high",
+      "evidence": [
+        "Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "Navigate to the chart of accounts.",
+      "expectedOutcome": "The user is taken to the chart of accounts page.",
+      "confidence": "high",
+      "evidence": [
+        "Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "Navigate to the budgets page.",
+      "expectedOutcome": "The user is taken to the budgets page.",
+      "confidence": "high",
+      "evidence": [
+        "Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the transaction locking settings.",
+      "expectedOutcome": "The user is taken to the transaction locking configuration page.",
+      "confidence": "high",
+      "evidence": [
+        "Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "Navigate to the reports module.",
+      "expectedOutcome": "The user is taken to the main reports page.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "Navigate to the document management/inbox page.",
+      "expectedOutcome": "The user is taken to their document inbox.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "Navigate to a settings page to configure application features.",
+      "expectedOutcome": "The user is taken to a configuration or settings page.",
+      "confidence": "high",
+      "evidence": [
+        "Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "Register for a live product tour webinar.",
+      "expectedOutcome": "The user is taken to an external webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now",
+        "https://zoho.to/inlivewebinar"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "Create a new channel in the integrated chat application.",
+      "expectedOutcome": "The user is taken to an external page to create a chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel",
+        "https://cliq.zoho.in/officechat/index.do#createchannel"
+      ]
+    }
+  ],
+  "tables": [],
+  "forms": [
+    {
+      "formName": "New Price List Form",
+      "purpose": "To collect the necessary details to create a new price list.",
+      "fields": [
+        {
+          "fieldName": "Name",
+          "fieldType": "text",
+          "businessMeaning": "The unique name for the new price list."
+        },
+        {
+          "fieldName": "e8caae35-aab6-4b2d-a4f1-e98b8a78a75a",
+          "fieldType": "radio",
+          "businessMeaning": "Specifies the transaction type the price list applies to, either 'Sales' or 'Purchase'."
+        },
+        {
+          "fieldName": "Description",
+          "fieldType": "textarea",
+          "businessMeaning": "An optional description for the price list, providing more context."
+        },
+        {
+          "fieldName": "Percentage",
+          "fieldType": "text",
+          "businessMeaning": "The percentage value to be used for the price adjustment (markup or markdown)."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Create a New Price List",
+      "steps": [
+        "User fills in the 'Name', 'Description', and 'Percentage' for the new price list.",
+        "User selects whether the price list applies to 'Sales' or 'Purchase' transactions.",
+        "User clicks the 'Save' button to create the price list."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "form",
+        "Name",
+        "Description",
+        "Percentage",
+        "Sales",
+        "Purchase",
+        "Save"
+      ]
+    },
+    {
+      "name": "Cancel Price List Creation",
+      "steps": [
+        "User is on the new price list form.",
+        "User clicks the 'Cancel' button."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "name": "Define a new pricing rule for items",
+      "evidence": [
+        "New Price List",
+        "Name",
+        "Percentage",
+        "Save"
+      ]
+    },
+    {
+      "name": "Apply a standard price adjustment for either sales or purchases",
+      "evidence": [
+        "Transaction Type",
+        "Sales",
+        "Purchase"
+      ]
+    },
+    {
+      "name": "Navigate to other financial and inventory management modules",
+      "evidence": [
+        "Items",
+        "Sales",
+        "Purchases",
+        "Accountant",
+        "Reports"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "description": "A success or failure notification message after clicking 'Save'.",
+      "confidence": "high",
+      "evidence": [
+        "Save"
+      ]
+    },
+    {
+      "description": "A selector for 'Price List Type' with options like 'All Items' and 'Individual Items', as suggested by the HTML but not captured in the form facts.",
+      "confidence": "high",
+      "evidence": [
+        "<div>All Items</div>",
+        "<div>Individual Items</div>"
+      ]
+    },
+    {
+      "description": "A dropdown or selector UI for the 'Round Off To' option.",
+      "confidence": "medium",
+      "evidence": [
+        "Round Off To"
+      ]
+    }
+  ],
+  "pageNarrative": "This page is a form for creating a new price list. A user can define the price list's name, specify whether it applies to sales or purchases, and set a percentage-based price adjustment. An optional description can also be added. After completing the form, the user can save the new price list or cancel the creation process. The page includes a comprehensive sidebar navigation menu, providing access to all major modules of the application, such as Items, Sales, Purchases, and Accounting.",
+  "_meta": {
+    "sourceFile": "inventory-pricelists-new.html",
+    "pageFactsCounts": {
+      "buttons": 11,
+      "links": 53,
+      "forms": 1,
+      "tables": 0,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 32,
+        "tables": 0,
+        "forms": 1
+      },
+      "reported": {
+        "clickableElements": 46,
+        "tables": 0,
+        "forms": 1
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

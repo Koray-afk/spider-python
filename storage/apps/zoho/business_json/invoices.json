@@ -1,0 +1,573 @@
+{
+  "pageInfo": {
+    "pageName": "Invoices",
+    "pageCategory": "Sales / Accounting",
+    "pagePurpose": "To list, view, and manage customer invoices. Users can also create new invoices and navigate to other financial modules of the application.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "entityName": "Invoice",
+      "evidence": [
+        "table column: Invoice#",
+        "table column: Due Date",
+        "table column: Amount",
+        "table column: Balance Due",
+        "button: All Invoices",
+        "link: INV-000024"
+      ]
+    },
+    {
+      "entityName": "Customer",
+      "evidence": [
+        "table column: Customer Name",
+        "navigation link: Customers"
+      ]
+    },
+    {
+      "entityName": "Sales Order",
+      "evidence": [
+        "table column: Order Number",
+        "navigation link: Sales Orders"
+      ]
+    },
+    {
+      "entityName": "Item",
+      "evidence": [
+        "navigation link: Items"
+      ]
+    },
+    {
+      "entityName": "Payment",
+      "evidence": [
+        "navigation link: Payments Received",
+        "navigation link: Payments Made"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To provide a quick navigation shortcut, possibly opening a search or a menu of common destinations.",
+      "expectedOutcome": "Opens a navigation modal or search interface.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Items' section in the main navigation menu.",
+      "expectedOutcome": "Reveals sub-menu links related to Items, such as 'Items' and 'Price Lists'.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Inventory' section in the main navigation menu.",
+      "expectedOutcome": "Reveals sub-menu links related to Inventory, such as 'Inventory Adjustments'.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Sales' section in the main navigation menu.",
+      "expectedOutcome": "Reveals sub-menu links related to Sales, such as 'Customers', 'Quotes', and 'Invoices'.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Purchases' section in the main navigation menu.",
+      "expectedOutcome": "Reveals sub-menu links related to Purchases, such as 'Vendors' and 'Bills'.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Time Tracking' section in the main navigation menu.",
+      "expectedOutcome": "Reveals sub-menu links related to Time Tracking, such as 'Projects' and 'Timesheet'.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Accountant' section in the main navigation menu.",
+      "expectedOutcome": "Reveals sub-menu links for accounting functions, such as 'Manual Journals' and 'Chart of Accounts'.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "All Invoices",
+      "elementType": "button",
+      "businessIntent": "To filter the list to show all invoices, likely acting as a view selector or filter reset.",
+      "expectedOutcome": "The table displays all invoices, clearing any active filters.",
+      "confidence": "high",
+      "evidence": [
+        "All Invoices"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "To create a new invoice.",
+      "expectedOutcome": "Opens a new page or modal with a form to create and save a new invoice.",
+      "confidence": "high",
+      "evidence": [
+        "New"
+      ]
+    },
+    {
+      "label": "Date",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by their issue date.",
+      "expectedOutcome": "The invoice table is re-sorted in ascending or descending order based on the 'Date' column.",
+      "confidence": "high",
+      "evidence": [
+        "Date"
+      ]
+    },
+    {
+      "label": "Invoice#",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by their invoice number.",
+      "expectedOutcome": "The invoice table is re-sorted in ascending or descending order based on the 'Invoice#' column.",
+      "confidence": "high",
+      "evidence": [
+        "Invoice#"
+      ]
+    },
+    {
+      "label": "Order Number",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by their associated order number.",
+      "expectedOutcome": "The invoice table is re-sorted in ascending or descending order based on the 'Order Number' column.",
+      "confidence": "high",
+      "evidence": [
+        "Order Number"
+      ]
+    },
+    {
+      "label": "Customer Name",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by the customer's name.",
+      "expectedOutcome": "The invoice table is re-sorted alphabetically based on the 'Customer Name' column.",
+      "confidence": "high",
+      "evidence": [
+        "Customer Name"
+      ]
+    },
+    {
+      "label": "Due Date",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by their payment due date.",
+      "expectedOutcome": "The invoice table is re-sorted in ascending or descending order based on the 'Due Date' column.",
+      "confidence": "high",
+      "evidence": [
+        "Due Date"
+      ]
+    },
+    {
+      "label": "Amount",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by their total amount.",
+      "expectedOutcome": "The invoice table is re-sorted in ascending or descending order based on the 'Amount' column.",
+      "confidence": "high",
+      "evidence": [
+        "Amount"
+      ]
+    },
+    {
+      "label": "Balance Due",
+      "elementType": "button",
+      "businessIntent": "To sort the list of invoices by their outstanding balance.",
+      "expectedOutcome": "The invoice table is re-sorted in ascending or descending order based on the 'Balance Due' column.",
+      "confidence": "high",
+      "evidence": [
+        "Balance Due"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "To navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "Redirects the user to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "To navigate to the items management page.",
+      "expectedOutcome": "Redirects the user to a page listing all items or products.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "New Item",
+      "elementType": "link",
+      "businessIntent": "To create a new item or product.",
+      "expectedOutcome": "Navigates to a form for creating a new item.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-inventory-product-product-creation/index.html\" title=\"New Item\">"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "To navigate to the price lists management page.",
+      "expectedOutcome": "Redirects the user to a page listing all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "New Price List",
+      "elementType": "link",
+      "businessIntent": "To create a new price list.",
+      "expectedOutcome": "Navigates to a form for creating a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-inventory-pricelists-new/index.html\" title=\"New Price List\">"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "To view and manage inventory adjustments.",
+      "expectedOutcome": "Redirects the user to a page listing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "New Adjustment",
+      "elementType": "link",
+      "businessIntent": "To create a new inventory adjustment.",
+      "expectedOutcome": "Navigates to a form for creating a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-inventory-adjustments-new/index.html\" title=\"New Adjustment\">"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "To navigate to the customer management page.",
+      "expectedOutcome": "Redirects the user to a page listing all customers.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "New Customer",
+      "elementType": "link",
+      "businessIntent": "To create a new customer.",
+      "expectedOutcome": "Navigates to a form for creating a new customer.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-contacts-new/index.html\" title=\"New Customer\">"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the quotes management page.",
+      "expectedOutcome": "Redirects the user to a page listing all quotes.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the sales orders management page.",
+      "expectedOutcome": "Redirects the user to a page listing all sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "New Sales Order",
+      "elementType": "link",
+      "businessIntent": "To create a new sales order.",
+      "expectedOutcome": "Navigates to a form for creating a new sales order.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-salesorders-new/index.html\" title=\"New Sales Order\">"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "To manage recurring invoice templates.",
+      "expectedOutcome": "Redirects the user to a page listing recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "To access the reporting section of the application.",
+      "expectedOutcome": "Redirects the user to the main reports page.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To register for a product webinar.",
+      "expectedOutcome": "Opens a new tab to an external registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now"
+      ]
+    },
+    {
+      "label": "INV-000024",
+      "elementType": "link",
+      "businessIntent": "To view the details of a specific invoice.",
+      "expectedOutcome": "Navigates the user to the detail view for invoice INV-000024.",
+      "confidence": "high",
+      "evidence": [
+        "INV-000024"
+      ]
+    },
+    {
+      "label": "INV-000019",
+      "elementType": "link",
+      "businessIntent": "To view the details of a specific invoice.",
+      "expectedOutcome": "Navigates the user to the detail view for invoice INV-000019.",
+      "confidence": "high",
+      "evidence": [
+        "INV-000019"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "To create a new chat channel in the integrated chat application.",
+      "expectedOutcome": "Navigates the user to an interface for creating a new chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Invoices List",
+      "purpose": "To display a list of all invoices with their key details, such as customer, status, amount, and balance due.",
+      "columns": [
+        {
+          "name": "Date",
+          "meaning": "The date the invoice was created or issued.",
+          "businessPurpose": "To know when the invoice was generated, for sorting and reference."
+        },
+        {
+          "name": "Invoice#",
+          "meaning": "The unique identifier for the invoice.",
+          "businessPurpose": "To provide a unique reference for each invoice for tracking and communication."
+        },
+        {
+          "name": "Order Number",
+          "meaning": "The related sales order number, if applicable.",
+          "businessPurpose": "To link the invoice back to its originating sales order."
+        },
+        {
+          "name": "Customer Name",
+          "meaning": "The name of the customer to whom the invoice was sent.",
+          "businessPurpose": "To identify which customer the invoice belongs to."
+        },
+        {
+          "name": "Status",
+          "meaning": "The current state of the invoice.",
+          "businessPurpose": "To track the invoice's lifecycle (e.g., Draft, Sent, Paid, Overdue)."
+        },
+        {
+          "name": "Due Date",
+          "meaning": "The date by which payment for the invoice is expected.",
+          "businessPurpose": "To manage accounts receivable and track overdue payments."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total value of the invoice.",
+          "businessPurpose": "To see the total billed amount for the invoice."
+        },
+        {
+          "name": "Balance Due",
+          "meaning": "The remaining amount to be paid on the invoice.",
+          "businessPurpose": "To track outstanding payments and manage collections."
+        }
+      ]
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create New Invoice",
+      "steps": [
+        "User clicks the 'New' button.",
+        "The application displays a form for entering invoice details.",
+        "User populates the form with customer, items, and pricing information and saves it."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button: New"
+      ]
+    },
+    {
+      "name": "View Invoice Details",
+      "steps": [
+        "User finds an invoice in the table.",
+        "User clicks the link in the 'Invoice#' column (e.g., 'INV-000024').",
+        "The application navigates to a detailed view of that specific invoice."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link: INV-000024",
+        "link: INV-000019"
+      ]
+    },
+    {
+      "name": "Sort Invoice List",
+      "steps": [
+        "User clicks on a column header button, such as 'Date' or 'Customer Name'.",
+        "The table of invoices re-sorts its rows based on the data in that column."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button: Date",
+        "button: Invoice#",
+        "button: Customer Name",
+        "button: Amount"
+      ]
+    },
+    {
+      "name": "Navigate to another module",
+      "steps": [
+        "User clicks a link in the left-hand navigation menu, such as 'Customers' or 'Reports'.",
+        "The application loads the corresponding page for that module."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "navigation: SalesCustomersQuotesSales OrdersInvoices...",
+        "link: Customers",
+        "link: Reports",
+        "link: Items"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Find a specific invoice or set of invoices.",
+      "evidence": [
+        "The page contains a table listing invoices with sortable columns like 'Invoice#', 'Customer Name', and 'Date'.",
+        "A search input with placeholder 'Search in Invoices ( / )' is visible in the HTML."
+      ]
+    },
+    {
+      "goal": "Create a new invoice for a customer.",
+      "evidence": [
+        "A prominent 'New' button is available, indicating a primary action is creation."
+      ]
+    },
+    {
+      "goal": "Check the status and outstanding balance of recent invoices.",
+      "evidence": [
+        "The main table includes 'Status', 'Amount', and 'Balance Due' columns, providing an at-a-glance view of invoice financial states."
+      ]
+    },
+    {
+      "goal": "Navigate to other parts of the accounting system.",
+      "evidence": [
+        "An extensive side navigation menu provides direct links to related areas like 'Customers', 'Sales Orders', 'Payments Received', 'Expenses', and 'Reports'."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "New Invoice Form/Modal",
+      "reasoning": "The 'New' button strongly implies the existence of a form or modal dialog for entering the details of a new invoice, which is not present on this list page.",
+      "confidence": "high"
+    },
+    {
+      "uiElementName": "Bulk Action Buttons",
+      "reasoning": "The presence of a checkbox in the table header and in each row suggests that users can select multiple invoices. This typically enables bulk actions (e.g., Delete, Send, Mark as Paid), but the buttons for these actions are not visible.",
+      "confidence": "medium"
+    },
+    {
+      "uiElementName": "Advanced Filtering Controls",
+      "reasoning": "The 'All Invoices' button and search bar suggest basic filtering. However, pages like this usually have more advanced filtering options (e.g., by status, date range, customer) which are not visible.",
+      "confidence": "medium"
+    },
+    {
+      "uiElementName": "Pagination Controls",
+      "reasoning": "The table lists invoices, but there are no visible controls for navigating between pages of results (e.g., 'Next', 'Previous', page numbers), which would be necessary for a large number of invoices.",
+      "confidence": "medium"
+    }
+  ],
+  "pageNarrative": "This page serves as the central hub for managing sales invoices within an accounting or business management application. Users can view a comprehensive list of invoices, with key details like customer name, status, amount, and balance due readily available. The primary actions are viewing the details of a specific invoice by clicking its number and creating a new one using the 'New' button. The page also features sortable columns for organizing the data and an extensive navigation sidebar for moving to other related financial modules like Sales, Purchases, and Reports.",
+  "_meta": {
+    "sourceFile": "invoices.html",
+    "pageFactsCounts": {
+      "buttons": 16,
+      "links": 55,
+      "forms": 0,
+      "tables": 1,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 39,
+        "tables": 1,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 34,
+        "tables": 1,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

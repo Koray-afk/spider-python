@@ -1,0 +1,864 @@
+{
+  "pageInfo": {
+    "pageName": "Payments Received",
+    "pageCategory": "Sales",
+    "pagePurpose": "To view, search, and manage a list of payments received from customers, and to initiate the creation of new payment records.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Payment",
+      "evidence": [
+        "All Received Payments",
+        "Payment #",
+        "Payments Received",
+        "Amount"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customer Name",
+        "Customers"
+      ]
+    },
+    {
+      "name": "Invoice",
+      "evidence": [
+        "Invoice#",
+        "Invoices",
+        "Recurring Invoices"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Open a quick navigation search or menu.",
+      "expectedOutcome": "A search bar or command palette appears, allowing the user to quickly jump to different pages or entities within the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Items' section in the navigation menu.",
+      "expectedOutcome": "The navigation menu under 'Items' expands to show related sub-pages like 'Items' and 'Price Lists'.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Inventory' section in the navigation menu.",
+      "expectedOutcome": "The navigation menu under 'Inventory' expands to show related sub-pages like 'Inventory Adjustments'.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Sales' section in the navigation menu.",
+      "expectedOutcome": "The navigation menu under 'Sales' expands to show related sub-pages like 'Customers', 'Invoices', and 'Payments Received'.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Purchases' section in the navigation menu.",
+      "expectedOutcome": "The navigation menu under 'Purchases' expands to show related sub-pages like 'Vendors', 'Bills', and 'Payments Made'.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Time Tracking' section in the navigation menu.",
+      "expectedOutcome": "The navigation menu under 'Time Tracking' expands to show related sub-pages like 'Projects' and 'Timesheet'.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Accountant' section in the navigation menu.",
+      "expectedOutcome": "The navigation menu under 'Accountant' expands to show related sub-pages like 'Manual Journals' and 'Chart of Accounts'.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "All Received Payments",
+      "elementType": "button",
+      "businessIntent": "View or filter the list to show all received payments.",
+      "expectedOutcome": "The table on the page displays all payment records. This might be a filter or a view selector.",
+      "confidence": "high",
+      "evidence": [
+        "All Received Payments"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "Create a new payment received record.",
+      "expectedOutcome": "The user is navigated to a new page or a modal is displayed to enter the details of a new payment.",
+      "confidence": "high",
+      "evidence": [
+        "New"
+      ]
+    },
+    {
+      "label": "Date",
+      "elementType": "button",
+      "businessIntent": "Sort the list of payments by date.",
+      "expectedOutcome": "The table of payments is re-sorted based on the 'Date' column, likely toggling between ascending and descending order.",
+      "confidence": "high",
+      "evidence": [
+        "Date"
+      ]
+    },
+    {
+      "label": "Payment #",
+      "elementType": "button",
+      "businessIntent": "Sort the list of payments by payment number.",
+      "expectedOutcome": "The table of payments is re-sorted based on the 'Payment #' column, likely toggling between ascending and descending order.",
+      "confidence": "high",
+      "evidence": [
+        "Payment #"
+      ]
+    },
+    {
+      "label": "Customer Name",
+      "elementType": "button",
+      "businessIntent": "Sort the list of payments by customer name.",
+      "expectedOutcome": "The table of payments is re-sorted based on the 'Customer Name' column, likely toggling between ascending and descending order.",
+      "confidence": "high",
+      "evidence": [
+        "Customer Name"
+      ]
+    },
+    {
+      "label": "Mode",
+      "elementType": "button",
+      "businessIntent": "Sort the list of payments by payment mode.",
+      "expectedOutcome": "The table of payments is re-sorted based on the 'Mode' column, likely toggling between ascending and descending order.",
+      "confidence": "high",
+      "evidence": [
+        "Mode"
+      ]
+    },
+    {
+      "label": "Amount",
+      "elementType": "button",
+      "businessIntent": "Sort the list of payments by amount.",
+      "expectedOutcome": "The table of payments is re-sorted based on the 'Amount' column, likely toggling between ascending and descending order.",
+      "confidence": "high",
+      "evidence": [
+        "Amount"
+      ]
+    },
+    {
+      "label": "Unused Amount",
+      "elementType": "button",
+      "businessIntent": "Sort the list of payments by unused amount.",
+      "expectedOutcome": "The table of payments is re-sorted based on the 'Unused Amount' column, likely toggling between ascending and descending order.",
+      "confidence": "high",
+      "evidence": [
+        "Unused Amount"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page of the application.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the items/products list page.",
+      "expectedOutcome": "The user is taken to a page listing all items or products.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Create New Item",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new item.",
+      "expectedOutcome": "The user is taken to a form for creating a new item/product.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html",
+        "title=\"New Item\""
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price lists page.",
+      "expectedOutcome": "The user is taken to a page that lists all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "Create New Price List",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new price list.",
+      "expectedOutcome": "The user is taken to a form for creating a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-pricelists-new/index.html",
+        "title=\"New Price List\""
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustments page.",
+      "expectedOutcome": "The user is taken to a page that lists all inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Create New Inventory Adjustment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new inventory adjustment.",
+      "expectedOutcome": "The user is taken to a form for creating a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-adjustments-new/index.html",
+        "title=\"New Adjustment\""
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the customer list page.",
+      "expectedOutcome": "The user is taken to a page listing all customers.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Create New Customer",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new customer.",
+      "expectedOutcome": "The user is taken to a form for creating a new customer record.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-contacts-new/index.html",
+        "title=\"New Customer\""
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the quotes list page.",
+      "expectedOutcome": "The user is taken to a page listing all quotes.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the sales orders list page.",
+      "expectedOutcome": "The user is taken to a page listing all sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Create New Sales Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new sales order.",
+      "expectedOutcome": "The user is taken to a form for creating a new sales order.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-salesorders-new/index.html",
+        "title=\"New Sales Order\""
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the invoices list page.",
+      "expectedOutcome": "The user is taken to a page listing all invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring invoices list page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "Create New Recurring Invoice",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new recurring invoice.",
+      "expectedOutcome": "The user is taken to a form for creating a new recurring invoice.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-recurringinvoices-new/index.html",
+        "title=\"New Recurring Invoice\""
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "Navigate to the delivery challans list page.",
+      "expectedOutcome": "The user is taken to a page listing all delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "Create New Delivery Challan",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new delivery challan.",
+      "expectedOutcome": "The user is taken to a form for creating a new delivery challan.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-deliverychallans-new/index.html",
+        "title=\"New Delivery Challan\""
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to the payments received list page.",
+      "expectedOutcome": "The user is taken to the current page, listing all received payments.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Record New Payment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new payment record.",
+      "expectedOutcome": "The user is taken to a form for creating a new payment received record.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-paymentsreceived-new/index.html",
+        "title=\"Record New Payment\""
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the credit notes list page.",
+      "expectedOutcome": "The user is taken to a page listing all credit notes.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "Create New Credit Note",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new credit note.",
+      "expectedOutcome": "The user is taken to a form for creating a new credit note.",
+      "confidence": "high",
+      "evidence": [
+        "#/creditnotes/new",
+        "title=\"New Credit Note\""
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendors list page.",
+      "expectedOutcome": "The user is taken to a page listing all vendors.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "Create New Vendor",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new vendor.",
+      "expectedOutcome": "The user is taken to a form for creating a new vendor.",
+      "confidence": "high",
+      "evidence": [
+        "#/vendors/new",
+        "title=\"New Vendor\""
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the expenses list page.",
+      "expectedOutcome": "The user is taken to a page listing all expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring expenses list page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "Create New Recurring Expense",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new recurring expense.",
+      "expectedOutcome": "The user is taken to a form for creating a new recurring expense.",
+      "confidence": "high",
+      "evidence": [
+        "#/recurringexpenses/new",
+        "title=\"New Recurring Expense\""
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the purchase orders list page.",
+      "expectedOutcome": "The user is taken to a page listing all purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "Create New Purchase Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new purchase order.",
+      "expectedOutcome": "The user is taken to a form for creating a new purchase order.",
+      "confidence": "high",
+      "evidence": [
+        "#/purchaseorders/new",
+        "title=\"New Purchase Order\""
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bills list page.",
+      "expectedOutcome": "The user is taken to a page listing all bills.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "Create New Bill",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new bill.",
+      "expectedOutcome": "The user is taken to a form for creating a new bill.",
+      "confidence": "high",
+      "evidence": [
+        "#/bills/new",
+        "title=\"New Bill\""
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring bills list page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring bills.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "Create New Recurring Bill",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new recurring bill.",
+      "expectedOutcome": "The user is taken to a form for creating a new recurring bill.",
+      "confidence": "high",
+      "evidence": [
+        "#/recurringbills/new",
+        "title=\"New Recurring Bill\""
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the payments made list page.",
+      "expectedOutcome": "The user is taken to a page listing all payments made to vendors.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Record New Payment Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for recording a new payment made.",
+      "expectedOutcome": "The user is taken to a form for recording a new payment made.",
+      "confidence": "high",
+      "evidence": [
+        "#/paymentsmade/new",
+        "title=\"Record Payment\""
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendor credits list page.",
+      "expectedOutcome": "The user is taken to a page listing all vendor credits.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "Create New Vendor Credit",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new vendor credit.",
+      "expectedOutcome": "The user is taken to a form for creating a new vendor credit.",
+      "confidence": "high",
+      "evidence": [
+        "#/vendorcredits/new",
+        "title=\"New Vendor Credits\""
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Navigate to the projects list page.",
+      "expectedOutcome": "The user is taken to a page listing all projects.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "Navigate to the timesheet page.",
+      "expectedOutcome": "The user is taken to a page for viewing or logging time entries.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the banking module.",
+      "expectedOutcome": "The user is taken to a page for managing bank accounts and transactions.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "Navigate to the manual journals page.",
+      "expectedOutcome": "The user is taken to a page listing manual journal entries.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "Create New Journal",
+      "elementType": "link",
+      "businessIntent": "Navigate to the page for creating a new manual journal.",
+      "expectedOutcome": "The user is taken to a form for creating a new manual journal entry.",
+      "confidence": "high",
+      "evidence": [
+        "#/accountant/journals/new",
+        "title=\"New Journal\""
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "Navigate to the reports section.",
+      "expectedOutcome": "The user is taken to a page listing available business and financial reports.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "Register for a promotional webinar.",
+      "expectedOutcome": "The user is taken to an external page to register for a webinar.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now",
+        "href=\"https://zoho.to/inlivewebinar\""
+      ]
+    },
+    {
+      "label": "PY-3",
+      "elementType": "link",
+      "businessIntent": "View the details of payment PY-3.",
+      "expectedOutcome": "The user is navigated to a page showing the detailed information for payment record PY-3.",
+      "confidence": "high",
+      "evidence": [
+        "PY-3"
+      ]
+    },
+    {
+      "label": "PY-2",
+      "elementType": "link",
+      "businessIntent": "View the details of payment PY-2.",
+      "expectedOutcome": "The user is navigated to a page showing the detailed information for payment record PY-2.",
+      "confidence": "high",
+      "evidence": [
+        "PY-2"
+      ]
+    },
+    {
+      "label": "PY-1",
+      "elementType": "link",
+      "businessIntent": "View the details of payment PY-1.",
+      "expectedOutcome": "The user is navigated to a page showing the detailed information for payment record PY-1.",
+      "confidence": "high",
+      "evidence": [
+        "PY-1"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Received Payments List",
+      "purpose": "To display a list of payments received from customers, with key details for each transaction.",
+      "columns": [
+        {
+          "name": "Date",
+          "meaning": "The date the payment was recorded.",
+          "businessPurpose": "Tracks when revenue was received for accounting and reconciliation purposes."
+        },
+        {
+          "name": "Payment #",
+          "meaning": "A unique identifier for the payment record.",
+          "businessPurpose": "Provides a unique reference for tracking and auditing individual payments."
+        },
+        {
+          "name": "Reference number",
+          "meaning": "An optional external reference number for the payment (e.g., check number).",
+          "businessPurpose": "Allows for cross-referencing payments with external systems or documents."
+        },
+        {
+          "name": "Customer Name",
+          "meaning": "The name of the customer who made the payment.",
+          "businessPurpose": "Identifies the source of the payment and links it to a customer account."
+        },
+        {
+          "name": "Invoice#",
+          "meaning": "The invoice number(s) to which the payment is applied.",
+          "businessPurpose": "Shows how customer payments are allocated to specific invoices, affecting accounts receivable."
+        },
+        {
+          "name": "Mode",
+          "meaning": "The method of payment (e.g., Cash, Bank Transfer).",
+          "businessPurpose": "Tracks how payments are received for financial reporting and reconciliation."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total amount of the payment received.",
+          "businessPurpose": "Records the value of the transaction for financial accounting."
+        },
+        {
+          "name": "Unused Amount",
+          "meaning": "The portion of the payment amount that has not been applied to any invoice.",
+          "businessPurpose": "Indicates customer credits or overpayments that can be applied to future invoices or refunded."
+        },
+        {
+          "name": "Status",
+          "meaning": "The current status of the payment (e.g., Paid).",
+          "businessPurpose": "Provides a quick overview of the payment's state in the accounting workflow."
+        }
+      ]
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create a New Payment Record",
+      "steps": [
+        "User clicks the 'New' button.",
+        "The application navigates to a form for entering payment details.",
+        "User fills in the customer, amount, date, and other relevant information.",
+        "User saves the form, creating a new payment record which then appears in the payments list."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New",
+        "../app-60073668069-paymentsreceived-new/index.html"
+      ]
+    },
+    {
+      "name": "View Payment Details",
+      "steps": [
+        "User identifies a payment of interest in the 'Received Payments List' table.",
+        "User clicks the link in the 'Payment #' column (e.g., 'PY-3').",
+        "The application navigates to a detailed view of the selected payment record."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "PY-3",
+        "PY-2",
+        "PY-1"
+      ]
+    },
+    {
+      "name": "Sort Payments List",
+      "steps": [
+        "User clicks on a column header button, such as 'Date' or 'Amount'.",
+        "The list of payments in the table is re-sorted according to the selected column.",
+        "Clicking the same header again may toggle the sort order (ascending/descending)."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Date",
+        "Amount",
+        "Customer Name"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "name": "Record a payment from a customer",
+      "evidence": [
+        "New",
+        "title=\"Record New Payment\""
+      ]
+    },
+    {
+      "name": "Review a list of recent payments",
+      "evidence": [
+        "All Received Payments",
+        "table_1"
+      ]
+    },
+    {
+      "name": "Find a specific payment",
+      "evidence": [
+        "<input placeholder=\"Search in Payments Received ( / )\" type=\"text\"/>",
+        "buttons for sorting columns like 'Date', 'Payment #', 'Customer Name'"
+      ]
+    },
+    {
+      "name": "Check how much of a payment is unapplied",
+      "evidence": [
+        "table column 'Unused Amount'"
+      ]
+    },
+    {
+      "name": "Navigate to other financial modules",
+      "evidence": [
+        "Links and buttons in navigation: 'Invoices', 'Customers', 'Bills', 'Reports'"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "New Payment Creation Form",
+      "purpose": "To enter details for a new payment received, such as customer, amount, date, and invoice to apply it to.",
+      "confidence": "high",
+      "evidence": [
+        "New",
+        "../app-60073668069-paymentsreceived-new/index.html"
+      ]
+    },
+    {
+      "uiElementName": "Payment Detail View",
+      "purpose": "To show all information related to a single payment record, potentially including options to edit, delete, or print it.",
+      "confidence": "high",
+      "evidence": [
+        "PY-3",
+        "PY-2",
+        "PY-1"
+      ]
+    },
+    {
+      "uiElementName": "Bulk Action Controls",
+      "purpose": "To perform actions like delete, export, or print on multiple selected payments at once.",
+      "confidence": "medium",
+      "evidence": [
+        "<input type=\"checkbox\"/> in table rows"
+      ]
+    },
+    {
+      "uiElementName": "Filtering Options",
+      "purpose": "To filter the list of payments by criteria such as date range, customer, or payment mode.",
+      "confidence": "medium",
+      "evidence": [
+        "All Received Payments"
+      ]
+    }
+  ],
+  "pageNarrative": "This page is a central hub for managing payments received from customers. It presents a detailed, sortable list of all payments, showing key information like the payment date, customer, amount, and any unapplied credit. The user can initiate the creation of a new payment record by clicking the 'New' button. They can also drill down into the specifics of any transaction by clicking on its unique payment number. Extensive side navigation provides quick access to all other related accounting modules, such as Invoices, Customers, and Purchases, indicating this is part of a larger financial management application.",
+  "_meta": {
+    "sourceFile": "paymentsreceived.html",
+    "pageFactsCounts": {
+      "buttons": 15,
+      "links": 56,
+      "forms": 0,
+      "tables": 1,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 39,
+        "tables": 1,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 61,
+        "tables": 1,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

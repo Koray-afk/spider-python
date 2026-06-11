@@ -1,0 +1,56 @@
+{
+  "pageInfo": {
+    "pageName": "",
+    "pageCategory": "",
+    "pagePurpose": "",
+    "confidence": ""
+  },
+  "businessEntities": [],
+  "clickableElements": [
+    {
+      "label": "",
+      "elementType": "",
+      "businessIntent": "",
+      "expectedOutcome": "",
+      "confidence": "",
+      "evidence": []
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "",
+      "purpose": "",
+      "columns": [
+        {
+          "name": "",
+          "meaning": "",
+          "businessPurpose": ""
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "",
+      "purpose": "",
+      "fields": [
+        {
+          "fieldName": "",
+          "fieldType": "",
+          "businessMeaning": ""
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "",
+      "steps": [],
+      "confidence": "",
+      "evidence": []
+    }
+  ],
+  "userGoals": [],
+  "predictedMissingUI": [],
+  "pageNarrative": ""
+}

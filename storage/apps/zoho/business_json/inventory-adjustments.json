@@ -1,0 +1,700 @@
+{
+  "pageInfo": {
+    "pageName": "Inventory Adjustments",
+    "pageCategory": "Inventory Management",
+    "pagePurpose": "This page is used to view, create, and manage adjustments to inventory levels. The current view is an empty state, prompting the user to create the first inventory adjustment to ensure inventory accuracy.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Inventory Adjustment",
+      "evidence": [
+        "Inventory Adjustments",
+        "Create Adjustment",
+        "Search in Inventory Adjustments ( / )"
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "name": "Inventory",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "name": "Price List",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "name": "Vendor",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "name": "FIFO Cost Lot",
+      "evidence": [
+        "FIFO Cost Lot Tracking Report"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To provide a quick navigation or search functionality across the application.",
+      "expectedOutcome": "Opens a search bar or navigation menu for quickly accessing different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "To navigate to the items management section of the application.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the 'Items' section.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "To navigate to the inventory management section of the application.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the 'Inventory' section.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "To navigate to the sales management section of the application.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the 'Sales' section.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "To navigate to the purchases management section of the application.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the 'Purchases' section.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "To navigate to the time tracking section of the application.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the 'Time Tracking' section.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "To navigate to the accountant-specific features of the application.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the 'Accountant' section.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "FIFO Cost Lot Tracking Report",
+      "elementType": "button",
+      "businessIntent": "To generate and view a report detailing inventory costs using the FIFO (First-In, First-Out) method.",
+      "expectedOutcome": "Navigates the user to a page displaying the FIFO Cost Lot Tracking Report.",
+      "confidence": "high",
+      "evidence": [
+        "FIFO Cost Lot Tracking Report"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "To initiate the creation of a new inventory adjustment.",
+      "expectedOutcome": "Navigates to a form page or opens a modal to create a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "New"
+      ]
+    },
+    {
+      "label": "Type:All",
+      "elementType": "button",
+      "businessIntent": "To filter the list of inventory adjustments by their type.",
+      "expectedOutcome": "Opens a dropdown or modal allowing the user to select a type to filter the (currently empty) list of adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Type:All"
+      ]
+    },
+    {
+      "label": "Period:All",
+      "elementType": "button",
+      "businessIntent": "To filter the list of inventory adjustments by a specific time period.",
+      "expectedOutcome": "Opens a dropdown or modal allowing the user to select a time period to filter the (currently empty) list of adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Period:All"
+      ]
+    },
+    {
+      "label": "Create Adjustment",
+      "elementType": "button",
+      "businessIntent": "To start the process of creating a new inventory adjustment.",
+      "expectedOutcome": "Navigates to a form page or opens a modal for entering the details of a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "Create Adjustment"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "To navigate to the main dashboard or home page of the application.",
+      "expectedOutcome": "User is taken to the application's home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of all items or products.",
+      "expectedOutcome": "User is taken to the items index page.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-product-product-creation/index.html",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new item.",
+      "expectedOutcome": "User is taken to a form to create a new item.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of price lists.",
+      "expectedOutcome": "User is taken to the price lists management page.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-pricelists-new/index.html",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new price list.",
+      "expectedOutcome": "User is taken to a form to create a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-pricelists-new/index.html"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of inventory adjustments (the current page).",
+      "expectedOutcome": "The current page is reloaded.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-adjustments-new/index.html",
+      "elementType": "link",
+      "businessIntent": "To navigate to the page for creating a new inventory adjustment.",
+      "expectedOutcome": "User is taken to a form to create a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-adjustments-new/index.html"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "To navigate to the customer management page.",
+      "expectedOutcome": "User is taken to the list of customers.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the sales quotes page.",
+      "expectedOutcome": "User is taken to the list of quotes.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the sales orders page.",
+      "expectedOutcome": "User is taken to the list of sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the invoices page.",
+      "expectedOutcome": "User is taken to the list of invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the recurring invoices page.",
+      "expectedOutcome": "User is taken to the list of recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "To navigate to the delivery challans page.",
+      "expectedOutcome": "User is taken to the list of delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "To navigate to the payments received page.",
+      "expectedOutcome": "User is taken to the list of payments received.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the credit notes page.",
+      "expectedOutcome": "User is taken to the list of credit notes.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "To navigate to the vendors page.",
+      "expectedOutcome": "User is taken to the list of vendors.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "To navigate to the expenses page.",
+      "expectedOutcome": "User is taken to the list of expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "To navigate to the recurring expenses page.",
+      "expectedOutcome": "User is taken to the list of recurring expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the purchase orders page.",
+      "expectedOutcome": "User is taken to the list of purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "To navigate to the bills page.",
+      "expectedOutcome": "User is taken to the list of bills.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "To navigate to the recurring bills page.",
+      "expectedOutcome": "User is taken to the list of recurring bills.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "To navigate to the payments made page.",
+      "expectedOutcome": "User is taken to the list of payments made.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "To navigate to the vendor credits page.",
+      "expectedOutcome": "User is taken to the list of vendor credits.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "To navigate to the projects page.",
+      "expectedOutcome": "User is taken to the list of projects.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "To navigate to the timesheet page.",
+      "expectedOutcome": "User is taken to the timesheet management area.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "To navigate to the banking/financials page.",
+      "expectedOutcome": "User is taken to the banking section.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "To navigate to the manual journal entries page.",
+      "expectedOutcome": "User is taken to the list of manual journal entries.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "To perform bulk updates on accounting records.",
+      "expectedOutcome": "User is taken to a page for performing bulk updates.",
+      "confidence": "high",
+      "evidence": [
+        "Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the currency adjustments page.",
+      "expectedOutcome": "User is taken to the list of currency adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "To navigate to the chart of accounts page.",
+      "expectedOutcome": "User is taken to view or manage the chart of accounts.",
+      "confidence": "high",
+      "evidence": [
+        "Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "To navigate to the budgeting page.",
+      "expectedOutcome": "User is taken to the budget management area.",
+      "confidence": "high",
+      "evidence": [
+        "Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "To navigate to the transaction locking settings page.",
+      "expectedOutcome": "User is taken to the transaction locking configuration page.",
+      "confidence": "high",
+      "evidence": [
+        "Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "To navigate to the reports section.",
+      "expectedOutcome": "User is taken to a page listing available reports.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "To navigate to the document management section.",
+      "expectedOutcome": "User is taken to their document inbox.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Zoho Payroll",
+      "elementType": "link",
+      "businessIntent": "To navigate to the integrated Zoho Payroll application.",
+      "expectedOutcome": "User is taken to the Zoho Payroll interface.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payroll"
+      ]
+    },
+    {
+      "label": "Zoho Payments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the integrated Zoho Payments application.",
+      "expectedOutcome": "User is taken to the Zoho Payments interface.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payments"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "To configure application features and settings.",
+      "expectedOutcome": "User is taken to a settings or configuration page.",
+      "confidence": "high",
+      "evidence": [
+        "Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To register for a product tour webinar.",
+      "expectedOutcome": "User is taken to an external webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now",
+        "Take a live product tour"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "To create a new channel in the integrated chat application.",
+      "expectedOutcome": "User is taken to an interface to create a new chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    }
+  ],
+  "tables": [],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create a New Inventory Adjustment",
+      "steps": [
+        "User clicks the 'Create Adjustment' button or the 'New' button.",
+        "The user is navigated to a new page or shown a modal containing a form.",
+        "User fills in the details of the inventory adjustment (e.g., items, quantities, reason).",
+        "User submits the form to record the new adjustment."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Create Adjustment",
+        "New",
+        "../app-60073668069-inventory-adjustments-new/index.html"
+      ]
+    },
+    {
+      "name": "Filter Inventory Adjustments",
+      "steps": [
+        "User clicks on a filter button such as 'Type:All' or 'Period:All'.",
+        "A list of options is displayed.",
+        "User selects a filter option.",
+        "The list of inventory adjustments is updated to reflect the selected filter."
+      ],
+      "confidence": "medium",
+      "evidence": [
+        "Type:All",
+        "Period:All"
+      ]
+    },
+    {
+      "name": "View FIFO Cost Report",
+      "steps": [
+        "User clicks the 'FIFO Cost Lot Tracking Report' button.",
+        "User is navigated to a new page displaying the requested report."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "FIFO Cost Lot Tracking Report"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Correct inventory stock levels",
+      "evidence": [
+        "Keep Your Inventory Accurate",
+        "Adjust your inventory to ensure accurate quantity and value.",
+        "Create Adjustment"
+      ]
+    },
+    {
+      "goal": "Find a specific past inventory adjustment",
+      "evidence": [
+        "input placeholder=\"Search in Inventory Adjustments ( / )\"",
+        "Type:All",
+        "Period:All"
+      ]
+    },
+    {
+      "goal": "Analyze inventory costs and tracking",
+      "evidence": [
+        "FIFO Cost Lot Tracking Report"
+      ]
+    },
+    {
+      "goal": "Create a new record for any business entity",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html",
+        "../app-60073668069-inventory-pricelists-new/index.html",
+        "../app-60073668069-contacts-new/index.html",
+        "../app-60073668069-salesorders-new/index.html"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "Inventory Adjustments Table",
+      "purpose": "To display a list of all existing inventory adjustments with columns for key details like date, reason, items, and status.",
+      "confidence": "high",
+      "evidence": [
+        "The page is titled 'Inventory Adjustments' and includes search and filter controls ('Type:All', 'Period:All'), which presuppose a list to be manipulated. The absence of a table suggests an empty state."
+      ]
+    },
+    {
+      "uiElementName": "Inventory Adjustment Creation Form",
+      "purpose": "A form with fields for date, reason, and a list of items with quantity adjustments. This would appear after clicking 'Create Adjustment'.",
+      "confidence": "high",
+      "evidence": [
+        "The 'Create Adjustment' and 'New' buttons, along with the link to '.../inventory-adjustments-new/index.html', strongly imply the existence of a creation form on a separate page or in a modal."
+      ]
+    },
+    {
+      "uiElementName": "Filter Options Dropdown",
+      "purpose": "A dropdown menu or similar UI that appears upon clicking 'Type:All' or 'Period:All', presenting the user with a list of options to choose from.",
+      "confidence": "high",
+      "evidence": [
+        "The labels 'Type:All' and 'Period:All' on buttons are a standard UI pattern for filter controls that reveal more options on click."
+      ]
+    }
+  ],
+  "pageNarrative": "This page, 'Inventory Adjustments', is a module within a comprehensive business management application. Its primary function is to allow users to maintain accurate inventory records by creating adjustments for events like spoilage or transfers. The user can create new adjustments, view a FIFO cost tracking report, and is provided with tools to search and filter a list of adjustments. The current screen represents an empty state, as no adjustments have been created yet, and prominently features a 'Create Adjustment' call-to-action to guide the user's first interaction.",
+  "_meta": {
+    "sourceFile": "inventory-adjustments.html",
+    "pageFactsCounts": {
+      "buttons": 12,
+      "links": 53,
+      "forms": 0,
+      "tables": 0,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 33,
+        "tables": 0,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 51,
+        "tables": 0,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "pageInfo": {
+    "pageName": "New Delivery Challan",
+    "pageCategory": "Sales",
+    "pagePurpose": "To create a new Delivery Challan, a document that records the items being dispatched to a customer.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Delivery Challan",
+      "evidence": [
+        "New Delivery Challan",
+        "Delivery Challan#",
+        "Delivery Challan Date"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customer Name",
+        "Use this in future for all delivery challans of all customers."
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items",
+        "Item Details",
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "name": "Price List",
+      "evidence": [
+        "Select Price List",
+        "Price Lists"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To open a quick navigation menu or search.",
+      "expectedOutcome": "A search bar or navigation modal appears, allowing the user to jump to different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Bulk Actions",
+      "elementType": "button",
+      "businessIntent": "To perform an action on multiple selected items in the table at once.",
+      "expectedOutcome": "A dropdown or menu appears with actions that can be applied to the selected items, such as 'Delete Selected'.",
+      "confidence": "medium",
+      "evidence": [
+        "Bulk Actions"
+      ]
+    },
+    {
+      "label": "Add New Row",
+      "elementType": "button",
+      "businessIntent": "To add an additional line item to the Delivery Challan.",
+      "expectedOutcome": "A new, empty row is added to the 'Item Details' table, allowing the user to enter another item.",
+      "confidence": "high",
+      "evidence": [
+        "Add New Row"
+      ]
+    },
+    {
+      "label": "Add Items in Bulk",
+      "elementType": "button",
+      "businessIntent": "To add multiple items to the Delivery Challan from a list.",
+      "expectedOutcome": "A modal or separate interface appears where the user can select multiple items to add to the challan simultaneously.",
+      "confidence": "high",
+      "evidence": [
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "label": "Save as Draft",
+      "elementType": "button",
+      "businessIntent": "To save the current state of the Delivery Challan without finalizing it.",
+      "expectedOutcome": "The form is submitted, a new Delivery Challan is created with a 'Draft' status, and the user is likely redirected to a list or view page.",
+      "confidence": "high",
+      "evidence": [
+        "Save as Draft"
+      ]
+    },
+    {
+      "label": "Cancel",
+      "elementType": "button",
+      "businessIntent": "To discard the new Delivery Challan and exit the creation process.",
+      "expectedOutcome": "The form data is discarded, and the user is redirected to the previous page, likely the Delivery Challans list.",
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "To navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page of the application.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of all items.",
+      "expectedOutcome": "The user is taken to a page listing all inventory items.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of price lists.",
+      "expectedOutcome": "The user is taken to a page listing all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of inventory adjustments.",
+      "expectedOutcome": "The user is taken to a page listing past inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of customers.",
+      "expectedOutcome": "The user is taken to the customer management page.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of sales quotes.",
+      "expectedOutcome": "The user is taken to the quotes management page.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of sales orders.",
+      "expectedOutcome": "The user is taken to the sales orders management page.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of invoices.",
+      "expectedOutcome": "The user is taken to the invoices management page.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of recurring invoices.",
+      "expectedOutcome": "The user is taken to the recurring invoices management page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of all Delivery Challans.",
+      "expectedOutcome": "The user is taken to the Delivery Challans list page.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of payments received from customers.",
+      "expectedOutcome": "The user is taken to the payments received management page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of credit notes.",
+      "expectedOutcome": "The user is taken to the credit notes management page.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of vendors.",
+      "expectedOutcome": "The user is taken to the vendor management page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of expenses.",
+      "expectedOutcome": "The user is taken to the expenses management page.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of purchase orders.",
+      "expectedOutcome": "The user is taken to the purchase orders management page.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of bills from vendors.",
+      "expectedOutcome": "The user is taken to the bills management page.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of payments made to vendors.",
+      "expectedOutcome": "The user is taken to the payments made management page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "To navigate to the projects management area.",
+      "expectedOutcome": "The user is taken to the projects page.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "To navigate to the reporting section of the application.",
+      "expectedOutcome": "The user is taken to a page with a list of available business reports.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To register for a product webinar.",
+      "expectedOutcome": "An external link is opened for webinar registration.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Item Table",
+      "purpose": "To list the individual items, quantities, and prices included in the Delivery Challan.",
+      "columns": [
+        {
+          "name": "Drag item up or down",
+          "meaning": "A control to reorder the line items.",
+          "businessPurpose": "Allows the user to change the display order of items on the final document."
+        },
+        {
+          "name": "Item Details",
+          "meaning": "The name or description of the product or service being delivered.",
+          "businessPurpose": "To identify the specific item being dispatched."
+        },
+        {
+          "name": "Quantity",
+          "meaning": "The number of units of the item being delivered.",
+          "businessPurpose": "To record the volume of goods for inventory and tracking purposes."
+        },
+        {
+          "name": "Rate",
+          "meaning": "The price per unit of the item.",
+          "businessPurpose": "To determine the value of the goods being delivered."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total value for the line item (Quantity x Rate).",
+          "businessPurpose": "To calculate the subtotal for the entire delivery."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "New Delivery Challan Form",
+      "purpose": "To collect all necessary information for creating a new Delivery Challan document.",
+      "fields": [
+        {
+          "fieldName": "Customer Name",
+          "fieldType": "select/search",
+          "businessMeaning": "The customer who will receive the items."
+        },
+        {
+          "fieldName": "Delivery Challan#",
+          "fieldType": "text",
+          "businessMeaning": "A unique identifier for the delivery challan, likely auto-generated."
+        },
+        {
+          "fieldName": "Reference#",
+          "fieldType": "text",
+          "businessMeaning": "An optional, user-defined reference number for internal tracking."
+        },
+        {
+          "fieldName": "Delivery Challan Date",
+          "fieldType": "text",
+          "businessMeaning": "The date the delivery challan is created or the goods are dispatched."
+        },
+        {
+          "fieldName": "Challan Type",
+          "fieldType": "select/dropdown",
+          "businessMeaning": "The category or type of the challan (e.g., Delivery, Return)."
+        },
+        {
+          "fieldName": "Select Price List",
+          "fieldType": "textarea",
+          "businessMeaning": "Allows selection of a specific price list to apply to the items in the challan."
+        },
+        {
+          "fieldName": "Discount",
+          "fieldType": "text",
+          "businessMeaning": "A discount to be applied to the subtotal of the challan."
+        },
+        {
+          "fieldName": "Customer Notes",
+          "fieldType": "textarea",
+          "businessMeaning": "Optional notes for the customer that will appear on the document."
+        },
+        {
+          "fieldName": "Terms & Conditions",
+          "fieldType": "textarea",
+          "businessMeaning": "The terms and conditions related to the delivery."
+        },
+        {
+          "fieldName": "Attach File(s)",
+          "fieldType": "file",
+          "businessMeaning": "Allows uploading of supporting documents related to the delivery."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Create a New Delivery Challan",
+      "steps": [
+        "User selects a Customer.",
+        "User enters the Delivery Challan Date and an optional Reference number.",
+        "User adds items to the item table using 'Add New Row' or 'Add Items in Bulk'.",
+        "For each item, the user specifies the Quantity and Rate.",
+        "User optionally adds notes, terms, and attaches files.",
+        "User clicks 'Save as Draft' to create the document."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Delivery Challan",
+        "Customer Name",
+        "Delivery Challan Date",
+        "Add New Row",
+        "Add Items in Bulk",
+        "Save as Draft"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Create a record of goods being delivered to a customer.",
+      "evidence": [
+        "The page is titled 'New Delivery Challan'",
+        "The form requires a 'Customer Name' and an 'Item Details' table."
+      ]
+    },
+    {
+      "goal": "Specify the exact items and quantities for a shipment.",
+      "evidence": [
+        "The item table includes columns for 'Item Details', 'Quantity', 'Rate', and 'Amount'."
+      ]
+    },
+    {
+      "goal": "Save an incomplete delivery record to finish later.",
+      "evidence": [
+        "The primary save action is a 'Save as Draft' button."
+      ]
+    },
+    {
+      "goal": "Attach supporting documents to a delivery record.",
+      "evidence": [
+        "The HTML snippet contains a file input under the heading 'Attach File(s) to Delivery Challan'."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "Save and Finalize Button",
+      "purpose": "To save the delivery challan and move it out of a draft state, making it an official record.",
+      "confidence": "medium",
+      "evidence": [
+        "The presence of a 'Save as Draft' button implies that a draft is an intermediate state, and there should be a separate action to finalize it."
+      ]
+    },
+    {
+      "uiElementName": "Add New Customer Link/Button",
+      "purpose": "To create a new customer record directly from the delivery challan form without navigating away.",
+      "confidence": "medium",
+      "evidence": [
+        "The form requires selecting a 'Customer Name', and it is common UX to provide a shortcut to create a new one if they don't exist yet."
+      ]
+    },
+    {
+      "uiElementName": "Delivery Challans List Page",
+      "purpose": "A page that lists all existing delivery challans, which the user would likely return to after clicking 'Cancel' or 'Save as Draft'.",
+      "confidence": "high",
+      "evidence": [
+        "The 'Cancel' button and the general workflow of creating a new record strongly imply the existence of a corresponding list view."
+      ]
+    }
+  ],
+  "pageNarrative": "This page enables a user to create a new 'Delivery Challan' to document goods being dispatched. The user must select a customer, set a date, and can add an optional reference number. The core of the page is a table where multiple line items can be added, each with a specified quantity and rate. The form also allows for adding customer notes, terms and conditions, and attaching files before being saved as a draft for future finalization.",
+  "_meta": {
+    "sourceFile": "deliverychallans-new.html",
+    "pageFactsCounts": {
+      "buttons": 12,
+      "links": 53,
+      "forms": 1,
+      "tables": 1,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 33,
+        "tables": 1,
+        "forms": 1
+      },
+      "reported": {
+        "clickableElements": 26,
+        "tables": 1,
+        "forms": 1
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

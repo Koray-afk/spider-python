@@ -1,0 +1,2639 @@
+{
+  "pageInfo": {
+    "pageName": "Zoho Books Landing Page",
+    "pageCategory": "Marketing",
+    "pagePurpose": "To market the Zoho Books accounting software to potential customers, detailing its features, pricing, and benefits, with the primary goal of driving user sign-ups, demo requests, and free trials.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Invoice",
+      "evidence": [
+        "Invoicing",
+        "E-Invoicing",
+        "Invoice"
+      ]
+    },
+    {
+      "name": "Quote",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "name": "Bill",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "name": "Purchase Order",
+      "evidence": [
+        "Purchase orders"
+      ]
+    },
+    {
+      "name": "Sales Order",
+      "evidence": [
+        "Sales orders"
+      ]
+    },
+    {
+      "name": "Inventory",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "name": "Project",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "name": "Expense",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "name": "Report",
+      "evidence": [
+        "Reports",
+        "Reporting"
+      ]
+    },
+    {
+      "name": "Accountant",
+      "evidence": [
+        "For accountants",
+        "Partner with us"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "name": "Payment",
+      "evidence": [
+        "Online Payments",
+        "Payments"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Stay here",
+      "elementType": "button",
+      "businessIntent": "User Retention",
+      "expectedOutcome": "Dismisses a prompt or banner that might suggest navigating to a different regional site, keeping the user on the current page.",
+      "confidence": "medium",
+      "evidence": [
+        "Stay here"
+      ]
+    },
+    {
+      "label": "English",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Sets or confirms the page language to English, or opens a menu of language options.",
+      "confidence": "high",
+      "evidence": [
+        "English"
+      ]
+    },
+    {
+      "label": "Features",
+      "elementType": "button",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Opens a dropdown menu or navigates to a section detailing the features of the software.",
+      "confidence": "high",
+      "evidence": [
+        "Features"
+      ]
+    },
+    {
+      "label": "Solutions",
+      "elementType": "button",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Opens a dropdown menu or navigates to a section detailing solutions for different business types or roles.",
+      "confidence": "high",
+      "evidence": [
+        "Solutions"
+      ]
+    },
+    {
+      "label": "Resources",
+      "elementType": "button",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Opens a dropdown menu or navigates to a section with help documents, webinars, and other resources.",
+      "confidence": "high",
+      "evidence": [
+        "Resources"
+      ]
+    },
+    {
+      "label": "العربية",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to Arabic.",
+      "confidence": "high",
+      "evidence": [
+        "العربية"
+      ]
+    },
+    {
+      "label": "French",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to French.",
+      "confidence": "high",
+      "evidence": [
+        "French"
+      ]
+    },
+    {
+      "label": "Deutsch",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to German.",
+      "confidence": "high",
+      "evidence": [
+        "Deutsch"
+      ]
+    },
+    {
+      "label": "Spanish",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to Spanish.",
+      "confidence": "high",
+      "evidence": [
+        "Spanish"
+      ]
+    },
+    {
+      "label": "Nederlands",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to Dutch.",
+      "confidence": "high",
+      "evidence": [
+        "Nederlands"
+      ]
+    },
+    {
+      "label": "Español",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to Spanish.",
+      "confidence": "high",
+      "evidence": [
+        "Español"
+      ]
+    },
+    {
+      "label": "Português",
+      "elementType": "button",
+      "businessIntent": "Localization",
+      "expectedOutcome": "Changes the page language to Portuguese.",
+      "confidence": "high",
+      "evidence": [
+        "Português"
+      ]
+    },
+    {
+      "label": "Request a demo",
+      "elementType": "button",
+      "businessIntent": "Lead Generation",
+      "expectedOutcome": "Opens a form or modal for the user to submit their details to schedule a product demonstration.",
+      "confidence": "high",
+      "evidence": [
+        "Request a demo"
+      ]
+    },
+    {
+      "label": "Contact us",
+      "elementType": "button",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates the user to a contact page or opens a contact form.",
+      "confidence": "high",
+      "evidence": [
+        "Contact us"
+      ]
+    },
+    {
+      "label": "Submit",
+      "elementType": "button",
+      "businessIntent": "Form Submission",
+      "expectedOutcome": "Submits the data entered in the associated form, likely for a demo request or contact inquiry.",
+      "confidence": "high",
+      "evidence": [
+        "Submit"
+      ]
+    },
+    {
+      "label": "Manage Cookies",
+      "elementType": "button",
+      "businessIntent": "Privacy Management",
+      "expectedOutcome": "Opens a settings modal to allow the user to configure their cookie preferences.",
+      "confidence": "high",
+      "evidence": [
+        "Manage Cookies"
+      ]
+    },
+    {
+      "label": "Accept All Cookies",
+      "elementType": "button",
+      "businessIntent": "Privacy Consent",
+      "expectedOutcome": "Accepts all cookies and closes the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Accept All Cookies"
+      ]
+    },
+    {
+      "label": "Reject Unnecessary Cookies",
+      "elementType": "button",
+      "businessIntent": "Privacy Management",
+      "expectedOutcome": "Rejects optional cookies and closes the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Reject Unnecessary Cookies"
+      ]
+    },
+    {
+      "label": "close",
+      "elementType": "button",
+      "businessIntent": "UI Interaction",
+      "expectedOutcome": "Closes a modal, banner, or other overlay element.",
+      "confidence": "high",
+      "evidence": [
+        "close"
+      ]
+    },
+    {
+      "label": "Save & Exit",
+      "elementType": "button",
+      "businessIntent": "Privacy Management",
+      "expectedOutcome": "Saves the selected cookie preferences and closes the settings modal.",
+      "confidence": "high",
+      "evidence": [
+        "Save & Exit"
+      ]
+    },
+    {
+      "label": "/books/",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to the Zoho Books homepage.",
+      "confidence": "high",
+      "evidence": [
+        "/books/"
+      ]
+    },
+    {
+      "label": "Zoho",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to the main Zoho corporate homepage.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Inventory.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Payroll",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Payroll.",
+      "confidence": "high",
+      "evidence": [
+        "Payroll"
+      ]
+    },
+    {
+      "label": "Expense",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Expense.",
+      "confidence": "high",
+      "evidence": [
+        "Expense"
+      ]
+    },
+    {
+      "label": "Procurement",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Procurement.",
+      "confidence": "high",
+      "evidence": [
+        "Procurement"
+      ]
+    },
+    {
+      "label": "Mail",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Mail.",
+      "confidence": "high",
+      "evidence": [
+        "Mail"
+      ]
+    },
+    {
+      "label": "ERP",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho ERP.",
+      "confidence": "high",
+      "evidence": [
+        "ERP"
+      ]
+    },
+    {
+      "label": "Sign in",
+      "elementType": "link",
+      "businessIntent": "User Authentication",
+      "expectedOutcome": "Navigates the user to the login page for their Zoho account.",
+      "confidence": "high",
+      "evidence": [
+        "Sign in"
+      ]
+    },
+    {
+      "label": "Sign Up Now",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates the user to the signup page to create a new Zoho Books account.",
+      "confidence": "high",
+      "evidence": [
+        "Sign Up Now"
+      ]
+    },
+    {
+      "label": "EXPLORE ALL PRODUCTS",
+      "elementType": "link",
+      "businessIntent": "Product Discovery",
+      "expectedOutcome": "Navigates to a page listing all available Zoho products.",
+      "confidence": "high",
+      "evidence": [
+        "EXPLORE ALL PRODUCTS"
+      ]
+    },
+    {
+      "label": "Connect with us",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates the user to a general contact page for Zoho.",
+      "confidence": "high",
+      "evidence": [
+        "Connect with us"
+      ]
+    },
+    {
+      "label": "Try now",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates to a signup or trial start page for a specific Zoho product.",
+      "confidence": "high",
+      "evidence": [
+        "Try now"
+      ]
+    },
+    {
+      "label": "CRM",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho CRM.",
+      "confidence": "high",
+      "evidence": [
+        "CRM"
+      ]
+    },
+    {
+      "label": "Bigin",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Bigin by Zoho CRM.",
+      "confidence": "high",
+      "evidence": [
+        "Bigin"
+      ]
+    },
+    {
+      "label": "Sign",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Sign.",
+      "confidence": "high",
+      "evidence": [
+        "Sign"
+      ]
+    },
+    {
+      "label": "SalesIQ",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho SalesIQ.",
+      "confidence": "high",
+      "evidence": [
+        "SalesIQ"
+      ]
+    },
+    {
+      "label": "Forms",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Forms.",
+      "confidence": "high",
+      "evidence": [
+        "Forms"
+      ]
+    },
+    {
+      "label": "RouteIQ",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho RouteIQ.",
+      "confidence": "high",
+      "evidence": [
+        "RouteIQ"
+      ]
+    },
+    {
+      "label": "Bookings",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Bookings.",
+      "confidence": "high",
+      "evidence": [
+        "Bookings"
+      ]
+    },
+    {
+      "label": "Thrive",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Thrive.",
+      "confidence": "high",
+      "evidence": [
+        "Thrive"
+      ]
+    },
+    {
+      "label": "POS",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho POS.",
+      "confidence": "high",
+      "evidence": [
+        "POS"
+      ]
+    },
+    {
+      "label": "DAP",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho DAP.",
+      "confidence": "high",
+      "evidence": [
+        "DAP"
+      ]
+    },
+    {
+      "label": "CRM Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho CRM Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "CRM Plus"
+      ]
+    },
+    {
+      "label": "Campaigns",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Campaigns.",
+      "confidence": "high",
+      "evidence": [
+        "Campaigns"
+      ]
+    },
+    {
+      "label": "Social",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Social.",
+      "confidence": "high",
+      "evidence": [
+        "Social"
+      ]
+    },
+    {
+      "label": "Backstage",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Backstage.",
+      "confidence": "high",
+      "evidence": [
+        "Backstage"
+      ]
+    },
+    {
+      "label": "Survey",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Survey.",
+      "confidence": "high",
+      "evidence": [
+        "Survey"
+      ]
+    },
+    {
+      "label": "Marketing Automation",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Marketing Automation.",
+      "confidence": "high",
+      "evidence": [
+        "Marketing Automation"
+      ]
+    },
+    {
+      "label": "Sites",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Sites.",
+      "confidence": "high",
+      "evidence": [
+        "Sites"
+      ]
+    },
+    {
+      "label": "Webinar",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to a page about Zoho's webinar software or a list of upcoming webinars.",
+      "confidence": "high",
+      "evidence": [
+        "Webinar"
+      ]
+    },
+    {
+      "label": "PageSense",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho PageSense.",
+      "confidence": "high",
+      "evidence": [
+        "PageSense"
+      ]
+    },
+    {
+      "label": "LandingPage",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho LandingPage.",
+      "confidence": "high",
+      "evidence": [
+        "LandingPage"
+      ]
+    },
+    {
+      "label": "LeadChain",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho LeadChain.",
+      "confidence": "high",
+      "evidence": [
+        "LeadChain"
+      ]
+    },
+    {
+      "label": "Domains",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Domains.",
+      "confidence": "high",
+      "evidence": [
+        "Domains"
+      ]
+    },
+    {
+      "label": "CommunitySpaces",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho CommunitySpaces.",
+      "confidence": "high",
+      "evidence": [
+        "CommunitySpaces"
+      ]
+    },
+    {
+      "label": "Publish",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Publish.",
+      "confidence": "high",
+      "evidence": [
+        "Publish"
+      ]
+    },
+    {
+      "label": "Marketing Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Marketing Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "Marketing Plus"
+      ]
+    },
+    {
+      "label": "Commerce",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Commerce.",
+      "confidence": "high",
+      "evidence": [
+        "Commerce"
+      ]
+    },
+    {
+      "label": "Zoho Corporation",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to the Zoho Corporation corporate website.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Corporation"
+      ]
+    },
+    {
+      "label": "Vikra",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Vikra.",
+      "confidence": "high",
+      "evidence": [
+        "Vikra"
+      ]
+    },
+    {
+      "label": "Desk",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Desk.",
+      "confidence": "high",
+      "evidence": [
+        "Desk"
+      ]
+    },
+    {
+      "label": "Assist",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Assist.",
+      "confidence": "high",
+      "evidence": [
+        "Assist"
+      ]
+    },
+    {
+      "label": "FSM",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho FSM (Field Service Management).",
+      "confidence": "high",
+      "evidence": [
+        "FSM"
+      ]
+    },
+    {
+      "label": "Lens",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Lens.",
+      "confidence": "high",
+      "evidence": [
+        "Lens"
+      ]
+    },
+    {
+      "label": "Service Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Service Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "Service Plus"
+      ]
+    },
+    {
+      "label": "Books",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to the Zoho Books product page.",
+      "confidence": "high",
+      "evidence": [
+        "Books"
+      ]
+    },
+    {
+      "label": "Billing",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Billing.",
+      "confidence": "high",
+      "evidence": [
+        "Billing"
+      ]
+    },
+    {
+      "label": "Invoice",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Invoice.",
+      "confidence": "high",
+      "evidence": [
+        "Invoice"
+      ]
+    },
+    {
+      "label": "Practice",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Practice.",
+      "confidence": "high",
+      "evidence": [
+        "Practice"
+      ]
+    },
+    {
+      "label": "Checkout",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Checkout.",
+      "confidence": "high",
+      "evidence": [
+        "Checkout"
+      ]
+    },
+    {
+      "label": "Payments",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Payments.",
+      "confidence": "high",
+      "evidence": [
+        "Payments"
+      ]
+    },
+    {
+      "label": "Spend",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Spend.",
+      "confidence": "high",
+      "evidence": [
+        "Spend"
+      ]
+    },
+    {
+      "label": "Finance Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Finance Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "Finance Plus"
+      ]
+    },
+    {
+      "label": "WorkDrive",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho WorkDrive.",
+      "confidence": "high",
+      "evidence": [
+        "WorkDrive"
+      ]
+    },
+    {
+      "label": "Connect",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Connect.",
+      "confidence": "high",
+      "evidence": [
+        "Connect"
+      ]
+    },
+    {
+      "label": "Cliq",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Cliq.",
+      "confidence": "high",
+      "evidence": [
+        "Cliq"
+      ]
+    },
+    {
+      "label": "ZeptoMail",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho ZeptoMail.",
+      "confidence": "high",
+      "evidence": [
+        "ZeptoMail"
+      ]
+    },
+    {
+      "label": "Meeting",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Meeting.",
+      "confidence": "high",
+      "evidence": [
+        "Meeting"
+      ]
+    },
+    {
+      "label": "Learn",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Learn.",
+      "confidence": "high",
+      "evidence": [
+        "Learn"
+      ]
+    },
+    {
+      "label": "TeamInbox",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho TeamInbox.",
+      "confidence": "high",
+      "evidence": [
+        "TeamInbox"
+      ]
+    },
+    {
+      "label": "Office Integrator",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Office Integrator.",
+      "confidence": "high",
+      "evidence": [
+        "Office Integrator"
+      ]
+    },
+    {
+      "label": "Writer",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Writer.",
+      "confidence": "high",
+      "evidence": [
+        "Writer"
+      ]
+    },
+    {
+      "label": "Tables",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Tables.",
+      "confidence": "high",
+      "evidence": [
+        "Tables"
+      ]
+    },
+    {
+      "label": "Notebook",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Notebook.",
+      "confidence": "high",
+      "evidence": [
+        "Notebook"
+      ]
+    },
+    {
+      "label": "Show",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Show.",
+      "confidence": "high",
+      "evidence": [
+        "Show"
+      ]
+    },
+    {
+      "label": "Sheet",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Sheet.",
+      "confidence": "high",
+      "evidence": [
+        "Sheet"
+      ]
+    },
+    {
+      "label": "Office Suite",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Office Suite.",
+      "confidence": "high",
+      "evidence": [
+        "Office Suite"
+      ]
+    },
+    {
+      "label": "Calendar",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Calendar.",
+      "confidence": "high",
+      "evidence": [
+        "Calendar"
+      ]
+    },
+    {
+      "label": "ToDo",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho ToDo.",
+      "confidence": "high",
+      "evidence": [
+        "ToDo"
+      ]
+    },
+    {
+      "label": "PDF Editor",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho PDF Editor.",
+      "confidence": "high",
+      "evidence": [
+        "PDF Editor"
+      ]
+    },
+    {
+      "label": "Workplace",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Workplace suite.",
+      "confidence": "high",
+      "evidence": [
+        "Workplace"
+      ]
+    },
+    {
+      "label": "Vani",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Vani.",
+      "confidence": "high",
+      "evidence": [
+        "Vani"
+      ]
+    },
+    {
+      "label": "People",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho People.",
+      "confidence": "high",
+      "evidence": [
+        "People"
+      ]
+    },
+    {
+      "label": "Recruit",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Recruit.",
+      "confidence": "high",
+      "evidence": [
+        "Recruit"
+      ]
+    },
+    {
+      "label": "Workerly",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Workerly.",
+      "confidence": "high",
+      "evidence": [
+        "Workerly"
+      ]
+    },
+    {
+      "label": "Shifts",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Shifts.",
+      "confidence": "high",
+      "evidence": [
+        "Shifts"
+      ]
+    },
+    {
+      "label": "People Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho People Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "People Plus"
+      ]
+    },
+    {
+      "label": "TrainerCentral",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for TrainerCentral.",
+      "confidence": "high",
+      "evidence": [
+        "TrainerCentral"
+      ]
+    },
+    {
+      "label": "Contracts",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Contracts.",
+      "confidence": "high",
+      "evidence": [
+        "Contracts"
+      ]
+    },
+    {
+      "label": "Vault",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Vault.",
+      "confidence": "high",
+      "evidence": [
+        "Vault"
+      ]
+    },
+    {
+      "label": "Directory",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Directory.",
+      "confidence": "high",
+      "evidence": [
+        "Directory"
+      ]
+    },
+    {
+      "label": "Creator",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Creator.",
+      "confidence": "high",
+      "evidence": [
+        "Creator"
+      ]
+    },
+    {
+      "label": "eProtect",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho eProtect.",
+      "confidence": "high",
+      "evidence": [
+        "eProtect"
+      ]
+    },
+    {
+      "label": "Catalyst",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Catalyst.",
+      "confidence": "high",
+      "evidence": [
+        "Catalyst"
+      ]
+    },
+    {
+      "label": "RPA",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho RPA.",
+      "confidence": "high",
+      "evidence": [
+        "RPA"
+      ]
+    },
+    {
+      "label": "QEngine",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho QEngine.",
+      "confidence": "high",
+      "evidence": [
+        "QEngine"
+      ]
+    },
+    {
+      "label": "OneAuth",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho OneAuth.",
+      "confidence": "high",
+      "evidence": [
+        "OneAuth"
+      ]
+    },
+    {
+      "label": "Toolkit",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Toolkit.",
+      "confidence": "high",
+      "evidence": [
+        "Toolkit"
+      ]
+    },
+    {
+      "label": "Ulaa",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Ulaa browser.",
+      "confidence": "high",
+      "evidence": [
+        "Ulaa"
+      ]
+    },
+    {
+      "label": "ManageEngine",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the website for ManageEngine, a division of Zoho.",
+      "confidence": "high",
+      "evidence": [
+        "ManageEngine"
+      ]
+    },
+    {
+      "label": "Endpoint Central",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Endpoint Central.",
+      "confidence": "high",
+      "evidence": [
+        "Endpoint Central"
+      ]
+    },
+    {
+      "label": "ServiceDesk Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho ServiceDesk Plus.",
+      "confidence": "high",
+      "evidence": [
+        "ServiceDesk Plus"
+      ]
+    },
+    {
+      "label": "Site24x7",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the website for Site24x7.",
+      "confidence": "high",
+      "evidence": [
+        "Site24x7"
+      ]
+    },
+    {
+      "label": "Mobile Device Manager Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Mobile Device Manager Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Mobile Device Manager Plus"
+      ]
+    },
+    {
+      "label": "Patch Manager Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine Patch Manager Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Patch Manager Plus"
+      ]
+    },
+    {
+      "label": "Analytics Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine Analytics Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Analytics Plus"
+      ]
+    },
+    {
+      "label": "Log360 Cloud",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Log360 Cloud.",
+      "confidence": "high",
+      "evidence": [
+        "Log360 Cloud"
+      ]
+    },
+    {
+      "label": "Remote Access Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Remote Access Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Remote Access Plus"
+      ]
+    },
+    {
+      "label": "StatusIQ",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Site24x7 StatusIQ.",
+      "confidence": "high",
+      "evidence": [
+        "StatusIQ"
+      ]
+    },
+    {
+      "label": "Identity360",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine Identity360.",
+      "confidence": "high",
+      "evidence": [
+        "Identity360"
+      ]
+    },
+    {
+      "label": "AlarmsOne",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine AlarmsOne.",
+      "confidence": "high",
+      "evidence": [
+        "AlarmsOne"
+      ]
+    },
+    {
+      "label": "CloudDNS",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine CloudDNS.",
+      "confidence": "high",
+      "evidence": [
+        "CloudDNS"
+      ]
+    },
+    {
+      "label": "Saas Manager Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine Saas Manager Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Saas Manager Plus"
+      ]
+    },
+    {
+      "label": "CloudSpend",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine CloudSpend.",
+      "confidence": "high",
+      "evidence": [
+        "CloudSpend"
+      ]
+    },
+    {
+      "label": "Digital Risk Analyzer",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Site24x7 Digital Risk Analyzer.",
+      "confidence": "high",
+      "evidence": [
+        "Digital Risk Analyzer"
+      ]
+    },
+    {
+      "label": "DEX Manager Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine DEX Manager Plus.",
+      "confidence": "high",
+      "evidence": [
+        "DEX Manager Plus"
+      ]
+    },
+    {
+      "label": "Key Manager Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine Key Manager Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Key Manager Plus"
+      ]
+    },
+    {
+      "label": "Vulnerability Manager Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for ManageEngine Vulnerability Manager Plus.",
+      "confidence": "high",
+      "evidence": [
+        "Vulnerability Manager Plus"
+      ]
+    },
+    {
+      "label": "Zoho Corporation.",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to the Zoho Corporation corporate website.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Corporation."
+      ]
+    },
+    {
+      "label": "Analytics",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Analytics.",
+      "confidence": "high",
+      "evidence": [
+        "Analytics"
+      ]
+    },
+    {
+      "label": "DataPrep",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho DataPrep.",
+      "confidence": "high",
+      "evidence": [
+        "DataPrep"
+      ]
+    },
+    {
+      "label": "Embedded BI",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Embedded BI.",
+      "confidence": "high",
+      "evidence": [
+        "Embedded BI"
+      ]
+    },
+    {
+      "label": "AI Dashboard Generator",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho AI Dashboard Generator.",
+      "confidence": "high",
+      "evidence": [
+        "AI Dashboard Generator"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the project management features of Zoho Books or the Zoho Projects product page.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Sprints",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Sprints.",
+      "confidence": "high",
+      "evidence": [
+        "Sprints"
+      ]
+    },
+    {
+      "label": "BugTracker",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho BugTracker.",
+      "confidence": "high",
+      "evidence": [
+        "BugTracker"
+      ]
+    },
+    {
+      "label": "Projects Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Projects Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "Projects Plus"
+      ]
+    },
+    {
+      "label": "IoT",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho IoT.",
+      "confidence": "high",
+      "evidence": [
+        "IoT"
+      ]
+    },
+    {
+      "label": "Flow",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Flow.",
+      "confidence": "high",
+      "evidence": [
+        "Flow"
+      ]
+    },
+    {
+      "label": "Apptics",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Apptics.",
+      "confidence": "high",
+      "evidence": [
+        "Apptics"
+      ]
+    },
+    {
+      "label": "MCP",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho MCP.",
+      "confidence": "high",
+      "evidence": [
+        "MCP"
+      ]
+    },
+    {
+      "label": "Vertical Studio",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Zoho Vertical Studio.",
+      "confidence": "high",
+      "evidence": [
+        "Vertical Studio"
+      ]
+    },
+    {
+      "label": "Creator Plus",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for the Zoho Creator Plus suite.",
+      "confidence": "high",
+      "evidence": [
+        "Creator Plus"
+      ]
+    },
+    {
+      "label": "Qntrl",
+      "elementType": "link",
+      "businessIntent": "Cross-selling",
+      "expectedOutcome": "Navigates to the product page for Qntrl.",
+      "confidence": "high",
+      "evidence": [
+        "Qntrl"
+      ]
+    },
+    {
+      "label": "TRY ZOHO ONE",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates to the signup/trial page for the Zoho One suite.",
+      "confidence": "high",
+      "evidence": [
+        "TRY ZOHO ONE"
+      ]
+    },
+    {
+      "label": "EXPLORE MARKETPLACE",
+      "elementType": "link",
+      "businessIntent": "Product Discovery",
+      "expectedOutcome": "Navigates to the Zoho Marketplace to discover third-party integrations.",
+      "confidence": "high",
+      "evidence": [
+        "EXPLORE MARKETPLACE"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the quote management feature.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Invoicing",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the invoicing feature.",
+      "confidence": "high",
+      "evidence": [
+        "Invoicing"
+      ]
+    },
+    {
+      "label": "Sales orders",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the sales order feature.",
+      "confidence": "high",
+      "evidence": [
+        "Sales orders"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the bill management feature.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "Purchase orders",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the purchase order feature.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase orders"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the bank reconciliation feature.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the expense management feature.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the document management feature.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Reporting",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the reporting feature.",
+      "confidence": "high",
+      "evidence": [
+        "Reporting"
+      ]
+    },
+    {
+      "label": "Online Payments",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the online payments feature.",
+      "confidence": "high",
+      "evidence": [
+        "Online Payments"
+      ]
+    },
+    {
+      "label": "GST Filing",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the GST filing feature.",
+      "confidence": "high",
+      "evidence": [
+        "GST Filing"
+      ]
+    },
+    {
+      "label": "E-Invoicing",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the e-invoicing feature.",
+      "confidence": "high",
+      "evidence": [
+        "E-Invoicing"
+      ]
+    },
+    {
+      "label": "Audit Trail",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the audit trail feature.",
+      "confidence": "high",
+      "evidence": [
+        "Audit Trail"
+      ]
+    },
+    {
+      "label": "Document management",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the document management feature.",
+      "confidence": "high",
+      "evidence": [
+        "Document management"
+      ]
+    },
+    {
+      "label": "Mobile accounting",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the mobile accounting apps.",
+      "confidence": "high",
+      "evidence": [
+        "Mobile accounting"
+      ]
+    },
+    {
+      "label": "Zoho Ecosystem",
+      "elementType": "link",
+      "businessIntent": "Product Discovery",
+      "expectedOutcome": "Navigates to a section detailing integrations with other Zoho apps.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Ecosystem"
+      ]
+    },
+    {
+      "label": "Collaboration & Portal Management",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the customer portal and collaboration features.",
+      "confidence": "high",
+      "evidence": [
+        "Collaboration & Portal Management"
+      ]
+    },
+    {
+      "label": "Smart automations",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page detailing the automation features.",
+      "confidence": "high",
+      "evidence": [
+        "Smart automations"
+      ]
+    },
+    {
+      "label": "See all features",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a comprehensive list of all Zoho Books features.",
+      "confidence": "high",
+      "evidence": [
+        "See all features"
+      ]
+    },
+    {
+      "label": "Pricing",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to the pricing page for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Pricing"
+      ]
+    },
+    {
+      "label": "Learn More",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to a page with more details about a specific feature, integration, or resource.",
+      "confidence": "high",
+      "evidence": [
+        "Learn More"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Social Proof",
+      "expectedOutcome": "Navigates to a page featuring customer testimonials or case studies.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Partner with us",
+      "elementType": "link",
+      "businessIntent": "Partner Acquisition",
+      "expectedOutcome": "Navigates to a page for accountants or partners to join the Zoho partner program.",
+      "confidence": "high",
+      "evidence": [
+        "Partner with us"
+      ]
+    },
+    {
+      "label": "Help Document",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates to the online help documentation for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Help Document"
+      ]
+    },
+    {
+      "label": "FAQ",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates to a frequently asked questions page.",
+      "confidence": "high",
+      "evidence": [
+        "FAQ"
+      ]
+    },
+    {
+      "label": "Extensions",
+      "elementType": "link",
+      "businessIntent": "Product Discovery",
+      "expectedOutcome": "Navigates to a page for developers about creating extensions for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Extensions"
+      ]
+    },
+    {
+      "label": "Product Videos",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to a gallery of product demonstration videos.",
+      "confidence": "high",
+      "evidence": [
+        "Product Videos"
+      ]
+    },
+    {
+      "label": "Migration Doc",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates to a help document explaining how to migrate from other software to Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Migration Doc"
+      ]
+    },
+    {
+      "label": "API Documentation",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates to the developer API documentation.",
+      "confidence": "high",
+      "evidence": [
+        "API Documentation"
+      ]
+    },
+    {
+      "label": "Forum",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Navigates to the community support forum.",
+      "confidence": "high",
+      "evidence": [
+        "Forum"
+      ]
+    },
+    {
+      "label": "Product Blogs",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to the Zoho Books product blog.",
+      "confidence": "high",
+      "evidence": [
+        "Product Blogs"
+      ]
+    },
+    {
+      "label": "What’s new",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to a page listing recent product updates and new features.",
+      "confidence": "high",
+      "evidence": [
+        "What’s new"
+      ]
+    },
+    {
+      "label": "Upcoming Webinar",
+      "elementType": "link",
+      "businessIntent": "Lead Generation",
+      "expectedOutcome": "Navigates to a page listing upcoming webinars with options to register.",
+      "confidence": "high",
+      "evidence": [
+        "Upcoming Webinar"
+      ]
+    },
+    {
+      "label": "Training and Certification",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to a page about training and certification programs for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Training and Certification"
+      ]
+    },
+    {
+      "label": "Partners / Accountant",
+      "elementType": "link",
+      "businessIntent": "Partner Acquisition",
+      "expectedOutcome": "Navigates to the accountant partner program page.",
+      "confidence": "high",
+      "evidence": [
+        "Partners / Accountant"
+      ]
+    },
+    {
+      "label": "Mobile Apps",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page about the Zoho Books mobile applications.",
+      "confidence": "high",
+      "evidence": [
+        "Mobile Apps"
+      ]
+    },
+    {
+      "label": "Desktop App",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a page about the Zoho Books Windows desktop application.",
+      "confidence": "high",
+      "evidence": [
+        "Desktop App"
+      ]
+    },
+    {
+      "label": "See all Resources",
+      "elementType": "link",
+      "businessIntent": "Navigation",
+      "expectedOutcome": "Navigates to a central page containing all support and learning resources.",
+      "confidence": "high",
+      "evidence": [
+        "See all Resources"
+      ]
+    },
+    {
+      "label": "Explore now",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to the Zoho Books Academy, a learning resource.",
+      "confidence": "high",
+      "evidence": [
+        "Explore now"
+      ]
+    },
+    {
+      "label": "Available on IOS",
+      "elementType": "link",
+      "businessIntent": "Application Download",
+      "expectedOutcome": "Opens the Apple App Store page for the Zoho Books iOS application.",
+      "confidence": "high",
+      "evidence": [
+        "Available on IOS"
+      ]
+    },
+    {
+      "label": "Available on Android",
+      "elementType": "link",
+      "businessIntent": "Application Download",
+      "expectedOutcome": "Opens the Google Play Store page for the Zoho Books Android application.",
+      "confidence": "high",
+      "evidence": [
+        "Available on Android"
+      ]
+    },
+    {
+      "label": "Start my free trial",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates the user to the signup page to begin a free trial.",
+      "confidence": "high",
+      "evidence": [
+        "Start my free trial"
+      ]
+    },
+    {
+      "label": "Explore Demo Account",
+      "elementType": "link",
+      "businessIntent": "Product Evaluation",
+      "expectedOutcome": "Navigates the user to a pre-populated demo version of the Zoho Books application.",
+      "confidence": "high",
+      "evidence": [
+        "Explore Demo Account"
+      ]
+    },
+    {
+      "label": "Visit our wall of love",
+      "elementType": "link",
+      "businessIntent": "Social Proof",
+      "expectedOutcome": "Navigates to a page displaying customer testimonials.",
+      "confidence": "high",
+      "evidence": [
+        "Visit our wall of love"
+      ]
+    },
+    {
+      "label": "Explore Features",
+      "elementType": "link",
+      "businessIntent": "Feature Exploration",
+      "expectedOutcome": "Navigates to a comprehensive features page.",
+      "confidence": "high",
+      "evidence": [
+        "Explore Features"
+      ]
+    },
+    {
+      "label": "Get started for free",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates to the signup page, pre-selecting the free plan.",
+      "confidence": "high",
+      "evidence": [
+        "Get started for free"
+      ]
+    },
+    {
+      "label": "Explore all plans",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to the pricing page.",
+      "confidence": "high",
+      "evidence": [
+        "Explore all plans"
+      ]
+    },
+    {
+      "label": "More Integrations",
+      "elementType": "link",
+      "businessIntent": "Product Discovery",
+      "expectedOutcome": "Navigates to the integrations or add-ons page.",
+      "confidence": "high",
+      "evidence": [
+        "More Integrations"
+      ]
+    },
+    {
+      "label": "Start Trial",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates to the signup page to start a free trial.",
+      "confidence": "high",
+      "evidence": [
+        "Start Trial"
+      ]
+    },
+    {
+      "label": "View all plans",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to the pricing page.",
+      "confidence": "high",
+      "evidence": [
+        "View all plans"
+      ]
+    },
+    {
+      "label": "Show All Webinars",
+      "elementType": "link",
+      "businessIntent": "Lead Generation",
+      "expectedOutcome": "Navigates to a page listing all available webinars.",
+      "confidence": "high",
+      "evidence": [
+        "Show All Webinars"
+      ]
+    },
+    {
+      "label": "Privacy Policy",
+      "elementType": "link",
+      "businessIntent": "Legal",
+      "expectedOutcome": "Navigates to the company's privacy policy page.",
+      "confidence": "high",
+      "evidence": [
+        "Privacy Policy"
+      ]
+    },
+    {
+      "label": "Join a free webinar",
+      "elementType": "link",
+      "businessIntent": "Lead Generation",
+      "expectedOutcome": "Navigates to the webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Join a free webinar"
+      ]
+    },
+    {
+      "label": "Start 14-Day Free Trial",
+      "elementType": "link",
+      "businessIntent": "User Acquisition",
+      "expectedOutcome": "Navigates to the signup page for a 14-day free trial.",
+      "confidence": "high",
+      "evidence": [
+        "Start 14-Day Free Trial"
+      ]
+    },
+    {
+      "label": "Compare plans",
+      "elementType": "link",
+      "businessIntent": "Information",
+      "expectedOutcome": "Navigates to a page that shows a detailed comparison of all available pricing plans.",
+      "confidence": "high",
+      "evidence": [
+        "Compare plans"
+      ]
+    },
+    {
+      "label": "Refresh",
+      "elementType": "link",
+      "businessIntent": "UI Interaction",
+      "expectedOutcome": "Executes a JavaScript action, likely to refresh a component on the page, such as a CAPTCHA image.",
+      "confidence": "medium",
+      "evidence": [
+        "Refresh"
+      ]
+    },
+    {
+      "label": "support.india@zohobooks.com",
+      "elementType": "link",
+      "businessIntent": "Support",
+      "expectedOutcome": "Opens the user's default email client with a new message addressed to 'support.india@zohobooks.com'.",
+      "confidence": "high",
+      "evidence": [
+        "support.india@zohobooks.com"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "table_1",
+      "purpose": "To visually illustrate an invoice number within a product feature demonstration graphic.",
+      "columns": [
+        {
+          "name": "Inv. no:",
+          "meaning": "Invoice Number Label",
+          "businessPurpose": "Identifies the field as an invoice number."
+        },
+        {
+          "name": "123",
+          "meaning": "Example Invoice Number",
+          "businessPurpose": "Provides a sample value for an invoice number."
+        }
+      ]
+    },
+    {
+      "tableName": "table_2",
+      "purpose": "To visually illustrate the line items of an invoice within a product feature demonstration graphic.",
+      "columns": [
+        {
+          "name": "#",
+          "meaning": "Line Item Number",
+          "businessPurpose": "Represents the number of the item in the list."
+        },
+        {
+          "name": "Item name",
+          "meaning": "Item Name",
+          "businessPurpose": "Represents the name of the product or service being billed."
+        },
+        {
+          "name": "QTY",
+          "meaning": "Quantity",
+          "businessPurpose": "Represents the quantity of the item being billed."
+        },
+        {
+          "name": "Price",
+          "meaning": "Price",
+          "businessPurpose": "Represents the price per unit of the item."
+        }
+      ]
+    },
+    {
+      "tableName": "table_3",
+      "purpose": "Unclear due to lack of columns, likely a structural element in a UI mockup.",
+      "columns": []
+    },
+    {
+      "tableName": "table_4",
+      "purpose": "To visually illustrate an inventory metric within a product feature demonstration graphic.",
+      "columns": [
+        {
+          "name": "Opening-stock",
+          "meaning": "Opening Stock Label",
+          "businessPurpose": "Identifies an inventory metric."
+        },
+        {
+          "name": "210.00",
+          "meaning": "Example Stock Value",
+          "businessPurpose": "Provides a sample value for the opening stock."
+        }
+      ]
+    },
+    {
+      "tableName": "table_5",
+      "purpose": "To visually illustrate an invoice number within a product feature demonstration graphic (duplicate of table_1).",
+      "columns": [
+        {
+          "name": "Inv. no:",
+          "meaning": "Invoice Number Label",
+          "businessPurpose": "Identifies the field as an invoice number."
+        },
+        {
+          "name": "123",
+          "meaning": "Example Invoice Number",
+          "businessPurpose": "Provides a sample value for an invoice number."
+        }
+      ]
+    },
+    {
+      "tableName": "table_6",
+      "purpose": "To visually illustrate the line items of an invoice within a product feature demonstration graphic (duplicate of table_2).",
+      "columns": [
+        {
+          "name": "#",
+          "meaning": "Line Item Number",
+          "businessPurpose": "Represents the number of the item in the list."
+        },
+        {
+          "name": "Item name",
+          "meaning": "Item Name",
+          "businessPurpose": "Represents the name of the product or service being billed."
+        },
+        {
+          "name": "QTY",
+          "meaning": "Quantity",
+          "businessPurpose": "Represents the quantity of the item being billed."
+        },
+        {
+          "name": "Price",
+          "meaning": "Price",
+          "businessPurpose": "Represents the price per unit of the item."
+        }
+      ]
+    },
+    {
+      "tableName": "table_7",
+      "purpose": "Unclear due to lack of columns, likely a structural element in a UI mockup.",
+      "columns": []
+    },
+    {
+      "tableName": "table_8",
+      "purpose": "To visually illustrate an inventory metric within a product feature demonstration graphic (duplicate of table_4).",
+      "columns": [
+        {
+          "name": "Opening-stock",
+          "meaning": "Opening Stock Label",
+          "businessPurpose": "Identifies an inventory metric."
+        },
+        {
+          "name": "210.00",
+          "meaning": "Example Stock Value",
+          "businessPurpose": "Provides a sample value for the opening stock."
+        }
+      ]
+    },
+    {
+      "tableName": "table_9",
+      "purpose": "To visually illustrate an income category within a financial report demonstration graphic.",
+      "columns": [
+        {
+          "name": "Income",
+          "meaning": "Income Category",
+          "businessPurpose": "Represents the income section of a financial report."
+        }
+      ]
+    },
+    {
+      "tableName": "table_10",
+      "purpose": "To visually illustrate an expenses category within a financial report demonstration graphic.",
+      "columns": [
+        {
+          "name": "Expenses",
+          "meaning": "Expenses Category",
+          "businessPurpose": "Represents the expenses section of a financial report."
+        }
+      ]
+    },
+    {
+      "tableName": "table_11",
+      "purpose": "To visually illustrate the date on a financial report demonstration graphic.",
+      "columns": [
+        {
+          "name": "Date:",
+          "meaning": "Date Label",
+          "businessPurpose": "Identifies the date field."
+        },
+        {
+          "name": "12/05/2024",
+          "meaning": "Example Date",
+          "businessPurpose": "Provides a sample value for the date."
+        }
+      ]
+    },
+    {
+      "tableName": "table_12",
+      "purpose": "To visually illustrate an income category within a financial report demonstration graphic (duplicate of table_9).",
+      "columns": [
+        {
+          "name": "Income",
+          "meaning": "Income Category",
+          "businessPurpose": "Represents the income section of a financial report."
+        }
+      ]
+    },
+    {
+      "tableName": "table_13",
+      "purpose": "To visually illustrate an expenses category within a financial report demonstration graphic (duplicate of table_10).",
+      "columns": [
+        {
+          "name": "Expenses",
+          "meaning": "Expenses Category",
+          "businessPurpose": "Represents the expenses section of a financial report."
+        }
+      ]
+    },
+    {
+      "tableName": "table_14",
+      "purpose": "To visually illustrate the date on a financial report demonstration graphic (duplicate of table_11).",
+      "columns": [
+        {
+          "name": "Date:",
+          "meaning": "Date Label",
+          "businessPurpose": "Identifies the date field."
+        },
+        {
+          "name": "12/05/2024",
+          "meaning": "Example Date",
+          "businessPurpose": "Provides a sample value for the date."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "form",
+      "purpose": "To allow users to search the Zoho website for products, solutions, or resources.",
+      "fields": [
+        {
+          "fieldName": "query",
+          "fieldType": "text",
+          "businessMeaning": "User's search term or question."
+        }
+      ]
+    },
+    {
+      "formName": "WebToCases1034361000001565470",
+      "purpose": "To capture user information for a product demonstration request. The form submits data to a CRM system as a 'Case'.",
+      "fields": [
+        {
+          "fieldName": "Reported By",
+          "fieldType": "text",
+          "businessMeaning": "The full name of the person requesting the demo."
+        },
+        {
+          "fieldName": "CASECF9",
+          "fieldType": "text",
+          "businessMeaning": "The name of the company the requester represents."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "email",
+          "businessMeaning": "The work email address of the requester."
+        },
+        {
+          "fieldName": "Phone",
+          "fieldType": "text",
+          "businessMeaning": "The contact phone number of the requester."
+        },
+        {
+          "fieldName": "CASECF2",
+          "fieldType": "hidden",
+          "businessMeaning": "The user's current accounting software, likely populated from a dropdown or search field."
+        },
+        {
+          "fieldName": "CASECF33",
+          "fieldType": "hidden",
+          "businessMeaning": "A field to indicate if a demo is needed, likely a boolean 'yes/no' from a radio button."
+        },
+        {
+          "fieldName": "CASECF27",
+          "fieldType": "text",
+          "businessMeaning": "The user's preferred date and time for the demo."
+        },
+        {
+          "fieldName": "enterdigest",
+          "fieldType": "text",
+          "businessMeaning": "A CAPTCHA field for spam prevention."
+        }
+      ]
+    },
+    {
+      "formName": "zsWebToCase_205219001288351118",
+      "purpose": "A general contact or feedback form, potentially for requesting new video content.",
+      "fields": [
+        {
+          "fieldName": "Contact Name",
+          "fieldType": "text",
+          "businessMeaning": "The full name of the person submitting the form."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "text",
+          "businessMeaning": "The email address of the person submitting the form."
+        },
+        {
+          "fieldName": "Contact Number",
+          "fieldType": "text",
+          "businessMeaning": "The phone number of the person submitting the form."
+        },
+        {
+          "fieldName": "Subject",
+          "fieldType": "text",
+          "businessMeaning": "The subject of the inquiry, pre-filled with 'Request for new videos'."
+        },
+        {
+          "fieldName": "Description",
+          "fieldType": "textarea",
+          "businessMeaning": "The main message or details of the request."
+        },
+        {
+          "fieldName": "zsWebFormCaptchaWord",
+          "fieldType": "text",
+          "businessMeaning": "A CAPTCHA field for spam prevention."
+        }
+      ]
+    },
+    {
+      "formName": "WebToCases1034361000001565470",
+      "purpose": "To capture user information for a product demonstration request (a different version from the one above). The form submits data to a CRM system as a 'Case'.",
+      "fields": [
+        {
+          "fieldName": "Reported By",
+          "fieldType": "text",
+          "businessMeaning": "The full name of the person requesting the demo."
+        },
+        {
+          "fieldName": "CASECF9",
+          "fieldType": "text",
+          "businessMeaning": "The name of the company the requester represents."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "email",
+          "businessMeaning": "The work email address of the requester."
+        },
+        {
+          "fieldName": "Phone",
+          "fieldType": "text",
+          "businessMeaning": "The contact phone number of the requester."
+        },
+        {
+          "fieldName": "CASECF7",
+          "fieldType": "hidden",
+          "businessMeaning": "The country of the requester."
+        },
+        {
+          "fieldName": "CASECF8",
+          "fieldType": "hidden",
+          "businessMeaning": "The state/province of the requester."
+        },
+        {
+          "fieldName": "CASECF15",
+          "fieldType": "text",
+          "businessMeaning": "The user's preferred date and time for the demo."
+        },
+        {
+          "fieldName": "CASECF30",
+          "fieldType": "hidden",
+          "businessMeaning": "The language preference for the demo."
+        },
+        {
+          "fieldName": "Description",
+          "fieldType": "textarea",
+          "businessMeaning": "A field for the user to describe their requirements."
+        },
+        {
+          "fieldName": "enterdigest",
+          "fieldType": "text",
+          "businessMeaning": "A CAPTCHA field for spam prevention."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "User Signup (Free Trial)",
+      "steps": [
+        "User clicks a 'Sign Up Now', 'Start my free trial', or 'Start 14-Day Free Trial' link.",
+        "User is redirected to a dedicated signup page to create a new account."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign Up Now",
+        "Start my free trial",
+        "Start 14-Day Free Trial"
+      ]
+    },
+    {
+      "name": "Request a Demo",
+      "steps": [
+        "User clicks the 'Request a demo' button.",
+        "User fills in the demo request form with their name, company, email, and other details.",
+        "User clicks the 'Submit' button.",
+        "The information is sent to the company's sales team."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Request a demo",
+        "Submit",
+        "formName: WebToCases1034361000001565470"
+      ]
+    },
+    {
+      "name": "Explore Demo Account",
+      "steps": [
+        "User clicks the 'Explore Demo Account' link.",
+        "User is redirected to a pre-populated, interactive demo version of the Zoho Books application."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Explore Demo Account"
+      ]
+    },
+    {
+      "name": "User Sign-In",
+      "steps": [
+        "User clicks the 'Sign in' link.",
+        "User is redirected to the Zoho accounts login page."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign in"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Evaluate the suitability of Zoho Books for my business.",
+      "evidence": [
+        "Comprehensiveaccounting platform for growing businesses",
+        "The perfect balance of features and affordability",
+        "An accounting solution for every need and every business"
+      ]
+    },
+    {
+      "goal": "Understand the specific features and capabilities of the software.",
+      "evidence": [
+        "Features",
+        "Do it all,and then some more!",
+        "See all features",
+        "Explore Features"
+      ]
+    },
+    {
+      "goal": "Compare pricing and choose a plan.",
+      "evidence": [
+        "Plans and pricing",
+        "Free Plan",
+        "STANDARD",
+        "PROFESSIONAL",
+        "PREMIUM",
+        "ELITE",
+        "ULTIMATE",
+        "Explore all plans"
+      ]
+    },
+    {
+      "goal": "Sign up for a free account or trial.",
+      "evidence": [
+        "Sign Up Now",
+        "Start my free trial",
+        "Get started for free",
+        "Start 14-Day Free Trial"
+      ]
+    },
+    {
+      "goal": "See the software in action without signing up.",
+      "evidence": [
+        "Explore Demo Account",
+        "Request a demo"
+      ]
+    },
+    {
+      "goal": "Find answers to specific questions about the software (e.g., GST, bank integration).",
+      "evidence": [
+        "Frequently Asked Questions",
+        "Does Zoho Books support GST accounting in India?",
+        "Can Zoho Books integrate with Indian banks and payment gateways?"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "User Registration/Signup Page",
+      "reason": "The page has numerous 'Sign Up Now' and 'Start free trial' links that navigate to a signup URL, implying a separate page exists for account creation.",
+      "confidence": "high"
+    },
+    {
+      "element": "Form Submission Confirmation",
+      "reason": "After submitting the 'Request a demo' form, a user would expect a confirmation message or a 'Thank You' page to acknowledge the submission.",
+      "confidence": "high"
+    },
+    {
+      "element": "Login Page",
+      "reason": "The 'Sign in' link implies the existence of a login page for existing users to access their accounts.",
+      "confidence": "high"
+    }
+  ],
+  "pageNarrative": "This is a comprehensive marketing landing page for Zoho Books, an accounting software platform. It aims to attract new customers by showcasing a wide range of features, from core accounting functions like invoicing and banking to compliance tools for GST and e-invoicing. The page targets various audiences, including different business sizes and roles like accountants, by presenting tailored solutions and multiple pricing tiers. Key user actions are heavily promoted through numerous calls-to-action, encouraging visitors to sign up for a free trial, explore an interactive demo, or request a personalized demonstration from the sales team.",
+  "_meta": {
+    "sourceFile": "books.html",
+    "pageFactsCounts": {
+      "buttons": 46,
+      "links": 369,
+      "forms": 4,
+      "tables": 14,
+      "headings": 249
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 415,
+        "tables": 14,
+        "forms": 4
+      },
+      "reported": {
+        "clickableElements": 204,
+        "tables": 14,
+        "forms": 4
+      },
+      "mismatches": {
+        "clickableElements": true,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": true
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

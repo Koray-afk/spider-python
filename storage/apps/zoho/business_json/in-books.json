@@ -1,0 +1,805 @@
+{
+  "pageInfo": {
+    "pageName": "Zoho Books - Accounting Platform",
+    "pageCategory": "Marketing Landing Page",
+    "pagePurpose": "To market the Zoho Books accounting software to potential customers, detailing its features, pricing, and benefits, with the primary goal of driving user sign-ups, demo requests, and free trials.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Quote",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "name": "Invoice",
+      "evidence": [
+        "Invoicing",
+        "E-Invoicing",
+        "Invoice",
+        "Invoice Generator"
+      ]
+    },
+    {
+      "name": "Sales Order",
+      "evidence": [
+        "Sales orders"
+      ]
+    },
+    {
+      "name": "Bill",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "name": "Purchase Order",
+      "evidence": [
+        "Purchase orders"
+      ]
+    },
+    {
+      "name": "Project",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "name": "Inventory",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "name": "Expense",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "name": "Document",
+      "evidence": [
+        "Documents",
+        "Document management"
+      ]
+    },
+    {
+      "name": "Report",
+      "evidence": [
+        "Reports",
+        "Reporting"
+      ]
+    },
+    {
+      "name": "Payment",
+      "evidence": [
+        "Online Payments",
+        "Payments"
+      ]
+    },
+    {
+      "name": "GST",
+      "evidence": [
+        "GST compliance",
+        "GST Filing",
+        "Does Zoho Books support GST accounting in India?",
+        "GST Calculator"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "name": "Accountant",
+      "evidence": [
+        "For accountants",
+        "Find an Accountant"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Stay here",
+      "elementType": "button",
+      "businessIntent": "Dismiss a location-based redirection suggestion.",
+      "expectedOutcome": "Keep the user on the current page (India-specific version) without redirecting.",
+      "confidence": "high",
+      "evidence": [
+        "Stay here"
+      ]
+    },
+    {
+      "label": "English",
+      "elementType": "button",
+      "businessIntent": "Select or confirm the display language for the website.",
+      "expectedOutcome": "Set the website's language to English or open a language selection menu.",
+      "confidence": "high",
+      "evidence": [
+        "English"
+      ]
+    },
+    {
+      "label": "Features",
+      "elementType": "button",
+      "businessIntent": "Explore the features of the Zoho Books software.",
+      "expectedOutcome": "Display a dropdown menu or navigate to a section detailing the product features.",
+      "confidence": "high",
+      "evidence": [
+        "Features"
+      ]
+    },
+    {
+      "label": "Solutions",
+      "elementType": "button",
+      "businessIntent": "Explore solutions tailored for different business types or needs.",
+      "expectedOutcome": "Display a dropdown menu or navigate to a section detailing various business solutions.",
+      "confidence": "high",
+      "evidence": [
+        "Solutions"
+      ]
+    },
+    {
+      "label": "Resources",
+      "elementType": "button",
+      "businessIntent": "Access help materials, documentation, and support.",
+      "expectedOutcome": "Display a dropdown menu or navigate to a page with support resources like FAQs, videos, and documentation.",
+      "confidence": "high",
+      "evidence": [
+        "Resources"
+      ]
+    },
+    {
+      "label": "العربية",
+      "elementType": "button",
+      "businessIntent": "Change the website language to Arabic.",
+      "expectedOutcome": "Reload the page with content displayed in Arabic.",
+      "confidence": "high",
+      "evidence": [
+        "العربية"
+      ]
+    },
+    {
+      "label": "French",
+      "elementType": "button",
+      "businessIntent": "Change the website language to French.",
+      "expectedOutcome": "Reload the page with content displayed in French.",
+      "confidence": "high",
+      "evidence": [
+        "French"
+      ]
+    },
+    {
+      "label": "Deutsch",
+      "elementType": "button",
+      "businessIntent": "Change the website language to German.",
+      "expectedOutcome": "Reload the page with content displayed in German.",
+      "confidence": "high",
+      "evidence": [
+        "Deutsch"
+      ]
+    },
+    {
+      "label": "Spanish",
+      "elementType": "button",
+      "businessIntent": "Change the website language to Spanish.",
+      "expectedOutcome": "Reload the page with content displayed in Spanish.",
+      "confidence": "high",
+      "evidence": [
+        "Spanish"
+      ]
+    },
+    {
+      "label": "Nederlands",
+      "elementType": "button",
+      "businessIntent": "Change the website language to Dutch.",
+      "expectedOutcome": "Reload the page with content displayed in Dutch.",
+      "confidence": "high",
+      "evidence": [
+        "Nederlands"
+      ]
+    },
+    {
+      "label": "Español",
+      "elementType": "button",
+      "businessIntent": "Change the website language to Spanish.",
+      "expectedOutcome": "Reload the page with content displayed in Spanish.",
+      "confidence": "high",
+      "evidence": [
+        "Español"
+      ]
+    },
+    {
+      "label": "Português",
+      "elementType": "button",
+      "businessIntent": "Change the website language to Portuguese.",
+      "expectedOutcome": "Reload the page with content displayed in Portuguese.",
+      "confidence": "high",
+      "evidence": [
+        "Português"
+      ]
+    },
+    {
+      "label": "Request a demo",
+      "elementType": "button",
+      "businessIntent": "Initiate the process of scheduling a product demonstration.",
+      "expectedOutcome": "Display a form or modal for the user to enter their details to request a demo.",
+      "confidence": "high",
+      "evidence": [
+        "Request a demo"
+      ]
+    },
+    {
+      "label": "Contact us",
+      "elementType": "button",
+      "businessIntent": "Initiate contact with the company.",
+      "expectedOutcome": "Navigate to a contact page or display a contact form.",
+      "confidence": "high",
+      "evidence": [
+        "Contact us"
+      ]
+    },
+    {
+      "label": "Submit",
+      "elementType": "button",
+      "businessIntent": "Submit the data entered in a form.",
+      "expectedOutcome": "Send the form data (e.g., demo request, contact information) to the server for processing.",
+      "confidence": "high",
+      "evidence": [
+        "Submit"
+      ]
+    },
+    {
+      "label": "Manage Cookies",
+      "elementType": "button",
+      "businessIntent": "Customize cookie preferences.",
+      "expectedOutcome": "Open a modal or navigate to a page where the user can manage their cookie settings.",
+      "confidence": "high",
+      "evidence": [
+        "Manage Cookies"
+      ]
+    },
+    {
+      "label": "Accept All Cookies",
+      "elementType": "button",
+      "businessIntent": "Consent to the use of all cookies.",
+      "expectedOutcome": "Accept all cookies and dismiss the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Accept All Cookies"
+      ]
+    },
+    {
+      "label": "Reject Unnecessary Cookies",
+      "elementType": "button",
+      "businessIntent": "Decline consent for non-essential cookies.",
+      "expectedOutcome": "Reject optional cookies and dismiss the cookie consent banner.",
+      "confidence": "high",
+      "evidence": [
+        "Reject Unnecessary Cookies"
+      ]
+    },
+    {
+      "label": "close",
+      "elementType": "button",
+      "businessIntent": "Close a modal, popup, or banner.",
+      "expectedOutcome": "Dismiss the UI element, such as a cookie settings dialog.",
+      "confidence": "high",
+      "evidence": [
+        "close"
+      ]
+    },
+    {
+      "label": "Save & Exit",
+      "elementType": "button",
+      "businessIntent": "Save the current settings and close the dialog.",
+      "expectedOutcome": "Persist the chosen cookie preferences and close the settings modal.",
+      "confidence": "high",
+      "evidence": [
+        "Save & Exit"
+      ]
+    },
+    {
+      "label": "Sign in",
+      "elementType": "link",
+      "businessIntent": "Access an existing user account.",
+      "expectedOutcome": "Navigate to the login page for the Zoho Books application.",
+      "confidence": "high",
+      "evidence": [
+        "Sign in"
+      ]
+    },
+    {
+      "label": "Sign Up Now",
+      "elementType": "link",
+      "businessIntent": "Start the new user registration process.",
+      "expectedOutcome": "Navigate to the sign-up page for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Sign Up Now"
+      ]
+    },
+    {
+      "label": "EXPLORE ALL PRODUCTS",
+      "elementType": "link",
+      "businessIntent": "Discover the full range of Zoho products.",
+      "expectedOutcome": "Navigate to a page listing all software products offered by Zoho.",
+      "confidence": "high",
+      "evidence": [
+        "EXPLORE ALL PRODUCTS"
+      ]
+    },
+    {
+      "label": "Try now",
+      "elementType": "link",
+      "businessIntent": "Start a trial or begin using a specific Zoho product.",
+      "expectedOutcome": "Navigate to the product page or sign-up page for the associated application.",
+      "confidence": "high",
+      "evidence": [
+        "Try now"
+      ]
+    },
+    {
+      "label": "Start my free trial",
+      "elementType": "link",
+      "businessIntent": "Begin a free trial period for a specific subscription plan.",
+      "expectedOutcome": "Navigate to the sign-up page, potentially with the selected plan pre-filled.",
+      "confidence": "high",
+      "evidence": [
+        "Start my free trial"
+      ]
+    },
+    {
+      "label": "Explore Demo Account",
+      "elementType": "link",
+      "businessIntent": "Access a pre-configured demonstration version of the application.",
+      "expectedOutcome": "Navigate to a live demo environment of the Zoho Books application.",
+      "confidence": "high",
+      "evidence": [
+        "Explore Demo Account"
+      ]
+    },
+    {
+      "label": "Get started for free",
+      "elementType": "link",
+      "businessIntent": "Sign up for the free plan of Zoho Books.",
+      "expectedOutcome": "Navigate to the sign-up page for the free tier of the service.",
+      "confidence": "high",
+      "evidence": [
+        "Get started for free"
+      ]
+    },
+    {
+      "label": "Explore all plans",
+      "elementType": "link",
+      "businessIntent": "View and compare all available subscription plans.",
+      "expectedOutcome": "Navigate to the detailed pricing page.",
+      "confidence": "high",
+      "evidence": [
+        "Explore all plans"
+      ]
+    },
+    {
+      "label": "More Integrations",
+      "elementType": "link",
+      "businessIntent": "Discover other applications that connect with Zoho Books.",
+      "expectedOutcome": "Navigate to the integrations or add-ons page.",
+      "confidence": "high",
+      "evidence": [
+        "More Integrations"
+      ]
+    },
+    {
+      "label": "Start Trial",
+      "elementType": "link",
+      "businessIntent": "Initiate a trial of the software.",
+      "expectedOutcome": "Navigate to the signup page to begin a free trial.",
+      "confidence": "high",
+      "evidence": [
+        "Start Trial"
+      ]
+    },
+    {
+      "label": "View all plans",
+      "elementType": "link",
+      "businessIntent": "See a comprehensive list of all pricing plans.",
+      "expectedOutcome": "Navigate to the pricing page.",
+      "confidence": "high",
+      "evidence": [
+        "View all plans"
+      ]
+    },
+    {
+      "label": "Join a free webinar",
+      "elementType": "link",
+      "businessIntent": "Register for an online informational session.",
+      "expectedOutcome": "Navigate to the webinars page to sign up for a session.",
+      "confidence": "high",
+      "evidence": [
+        "Join a free webinar"
+      ]
+    },
+    {
+      "label": "Start 14-Day Free Trial",
+      "elementType": "link",
+      "businessIntent": "Begin a 14-day free trial of the software.",
+      "expectedOutcome": "Navigate to the signup page to start the trial period.",
+      "confidence": "high",
+      "evidence": [
+        "Start 14-Day Free Trial"
+      ]
+    },
+    {
+      "label": "Compare plans",
+      "elementType": "link",
+      "businessIntent": "See a side-by-side comparison of subscription plans.",
+      "expectedOutcome": "Navigate to a page that details the differences between each pricing plan.",
+      "confidence": "high",
+      "evidence": [
+        "Compare plans"
+      ]
+    },
+    {
+      "label": "Invoicing",
+      "elementType": "link",
+      "businessIntent": "Learn about the invoicing features.",
+      "expectedOutcome": "Navigate to a page detailing the invoice management capabilities of the software.",
+      "confidence": "high",
+      "evidence": [
+        "Invoicing"
+      ]
+    },
+    {
+      "label": "Pricing",
+      "elementType": "link",
+      "businessIntent": "View the cost of the software.",
+      "expectedOutcome": "Navigate to the pricing page for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "Pricing"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "View customer testimonials or case studies.",
+      "expectedOutcome": "Navigate to a page showcasing customer stories or logos.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Partner with us",
+      "elementType": "link",
+      "businessIntent": "Explore the accountant partner program.",
+      "expectedOutcome": "Navigate to a page with information for accountants who want to partner with Zoho.",
+      "confidence": "high",
+      "evidence": [
+        "Partner with us"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "table_1",
+      "purpose": "To display a sample invoice number as part of an illustrative UI example.",
+      "columns": [
+        {
+          "name": "Inv. no:",
+          "meaning": "Invoice Number Label",
+          "businessPurpose": "Identifies the field for the invoice number."
+        },
+        {
+          "name": "123",
+          "meaning": "Example Invoice Number",
+          "businessPurpose": "Provides a sample unique identifier for an invoice."
+        }
+      ]
+    },
+    {
+      "tableName": "table_2",
+      "purpose": "To display sample line items for an invoice or order, illustrating the software's capability.",
+      "columns": [
+        {
+          "name": "#",
+          "meaning": "Line Item Number",
+          "businessPurpose": "Sequentially numbers items in a transaction."
+        },
+        {
+          "name": "Item name",
+          "meaning": "Product or Service Name",
+          "businessPurpose": "Describes the product or service being sold."
+        },
+        {
+          "name": "QTY",
+          "meaning": "Quantity",
+          "businessPurpose": "Specifies the number of units for the item."
+        },
+        {
+          "name": "Price",
+          "meaning": "Unit Price",
+          "businessPurpose": "Indicates the cost per unit of the item."
+        }
+      ]
+    },
+    {
+      "tableName": "table_4",
+      "purpose": "To display a sample inventory value as part of an illustrative UI example.",
+      "columns": [
+        {
+          "name": "Opening-stock",
+          "meaning": "Opening Stock Value",
+          "businessPurpose": "Represents the value of inventory at the beginning of an accounting period."
+        },
+        {
+          "name": "210.00",
+          "meaning": "Example Stock Value",
+          "businessPurpose": "Provides a sample monetary value for the opening stock."
+        }
+      ]
+    },
+    {
+      "tableName": "table_9",
+      "purpose": "To display an 'Income' category as part of a sample financial report (e.g., Profit & Loss).",
+      "columns": [
+        {
+          "name": "Income",
+          "meaning": "Income Category",
+          "businessPurpose": "Labels the section of a report that summarizes revenue."
+        }
+      ]
+    },
+    {
+      "tableName": "table_10",
+      "purpose": "To display an 'Expenses' category as part of a sample financial report (e.g., Profit & Loss).",
+      "columns": [
+        {
+          "name": "Expenses",
+          "meaning": "Expenses Category",
+          "businessPurpose": "Labels the section of a report that summarizes costs."
+        }
+      ]
+    },
+    {
+      "tableName": "table_11",
+      "purpose": "To display a sample date for a report or transaction in an illustrative UI example.",
+      "columns": [
+        {
+          "name": "Date:",
+          "meaning": "Date Label",
+          "businessPurpose": "Identifies the field for the transaction or report date."
+        },
+        {
+          "name": "12/05/2024",
+          "meaning": "Example Date",
+          "businessPurpose": "Provides a sample date."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "form",
+      "purpose": "To allow users to search the Zoho website for information about products, solutions, and resources.",
+      "fields": [
+        {
+          "fieldName": "query",
+          "fieldType": "text",
+          "businessMeaning": "The user's search term or keyword."
+        }
+      ]
+    },
+    {
+      "formName": "WebToCases1034361000001565470",
+      "purpose": "To capture lead information from users requesting a product demonstration or contacting sales. The name suggests it creates a 'Case' in a CRM system.",
+      "fields": [
+        {
+          "fieldName": "Reported By",
+          "fieldType": "text",
+          "businessMeaning": "The full name of the person requesting the demo."
+        },
+        {
+          "fieldName": "CASECF9",
+          "fieldType": "text",
+          "businessMeaning": "The name of the company the requester represents."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "email",
+          "businessMeaning": "The business email address of the requester."
+        },
+        {
+          "fieldName": "Phone",
+          "fieldType": "text",
+          "businessMeaning": "The contact phone number for the requester."
+        },
+        {
+          "fieldName": "CASECF27",
+          "fieldType": "text",
+          "businessMeaning": "The user's preferred date and time for a demonstration."
+        },
+        {
+          "fieldName": "enterdigest",
+          "fieldType": "text",
+          "businessMeaning": "A captcha field to prevent automated submissions."
+        }
+      ]
+    },
+    {
+      "formName": "zsWebToCase_205219001288351118",
+      "purpose": "A general contact or feedback form, possibly for requesting specific content like videos.",
+      "fields": [
+        {
+          "fieldName": "Contact Name",
+          "fieldType": "text",
+          "businessMeaning": "The full name of the person submitting the form."
+        },
+        {
+          "fieldName": "Email",
+          "fieldType": "text",
+          "businessMeaning": "The email address of the person submitting the form."
+        },
+        {
+          "fieldName": "Contact Number",
+          "fieldType": "text",
+          "businessMeaning": "The phone number of the person submitting the form."
+        },
+        {
+          "fieldName": "Subject",
+          "fieldType": "text",
+          "businessMeaning": "The subject of the inquiry, pre-filled as 'Request for new videos'."
+        },
+        {
+          "fieldName": "Description",
+          "fieldType": "textarea",
+          "businessMeaning": "The detailed message or request from the user."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "User Sign-up / Free Trial Registration",
+      "steps": [
+        "User clicks on a call-to-action such as 'Sign Up Now', 'Start my free trial', or 'Get started for free'.",
+        "User is navigated to a dedicated registration page to create a new Zoho Books account."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Sign Up Now",
+        "Start my free trial",
+        "/in/books/signup/"
+      ]
+    },
+    {
+      "name": "Request a Product Demonstration",
+      "steps": [
+        "User navigates to the 'Request a demo' section.",
+        "User fills in personal and company details in the provided form.",
+        "User clicks the 'Submit' button to send the request to the sales team."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "h4: Request a demo",
+        "formName: WebToCases1034361000001565470",
+        "button: Submit"
+      ]
+    },
+    {
+      "name": "Explore Product Features",
+      "steps": [
+        "User clicks on the 'Features' button or a specific feature link like 'Invoicing' or 'Inventory'.",
+        "User is shown a detailed list of features or navigated to a page explaining the specific feature."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button: Features",
+        "link: Invoicing",
+        "link: Inventory",
+        "link: See all features"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Evaluate the software's capabilities for my business needs.",
+      "evidence": [
+        "button: Features",
+        "h2: Do it all,and then some more!",
+        "h3: Receivables",
+        "h3: Payables",
+        "h3: Inventory"
+      ]
+    },
+    {
+      "goal": "Determine the cost and choose a suitable subscription plan.",
+      "evidence": [
+        "link: Pricing",
+        "h2: The perfect balance of features and affordability",
+        "h3: FREE",
+        "h3: STANDARD",
+        "h3: PROFESSIONAL"
+      ]
+    },
+    {
+      "goal": "Create an account and start using the software.",
+      "evidence": [
+        "link: Sign Up Now",
+        "link: Start my free trial",
+        "link: Start 14-Day Free Trial"
+      ]
+    },
+    {
+      "goal": "See the software in action before committing.",
+      "evidence": [
+        "link: Explore Demo Account",
+        "button: Request a demo",
+        "link: Product Videos"
+      ]
+    },
+    {
+      "goal": "Find answers to specific questions about the software and its compliance with local regulations (GST).",
+      "evidence": [
+        "h2: Frequently Asked Questions",
+        "h3: Does Zoho Books support GST accounting in India?",
+        "h3: Can Zoho Books integrate with Indian banks and payment gateways?"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "User Registration Form",
+      "reason": "The numerous 'Sign Up Now' and 'Start Trial' links navigate to a sign-up URL, implying a form on that page for users to enter credentials and create an account.",
+      "confidence": "high"
+    },
+    {
+      "element": "Login Form",
+      "reason": "The 'Sign in' link implies the existence of a separate page or modal with fields for username/password for existing users to log in.",
+      "confidence": "high"
+    },
+    {
+      "element": "Form Submission Confirmation",
+      "reason": "After submitting the 'Request a demo' or contact forms, a 'Thank You' message or confirmation page is expected standard UI, but is not visible here.",
+      "confidence": "high"
+    },
+    {
+      "element": "Detailed Pricing Comparison Table",
+      "reason": "The page lists plan names and has links to 'Compare plans' and 'Explore all plans', strongly suggesting a more detailed, feature-by-feature comparison table exists on another page.",
+      "confidence": "high"
+    }
+  ],
+  "pageNarrative": "This is a comprehensive marketing landing page for the Zoho Books accounting software, specifically tailored for the Indian market. It allows a potential customer to understand the product's core capabilities, such as invoicing, inventory, and GST compliance, through feature highlights and illustrative examples. The user can evaluate various pricing tiers, from a free plan to ultimate, and explore solutions for different business sizes. The page's primary goal is lead generation and conversion, driving users to 'Sign Up' for a free trial, 'Explore a Demo Account', or 'Request a Demo' via a contact form.",
+  "_meta": {
+    "sourceFile": "in-books.html",
+    "pageFactsCounts": {
+      "buttons": 46,
+      "links": 369,
+      "forms": 4,
+      "tables": 14,
+      "headings": 249
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 415,
+        "tables": 14,
+        "forms": 4
+      },
+      "reported": {
+        "clickableElements": 38,
+        "tables": 6,
+        "forms": 3
+      },
+      "mismatches": {
+        "clickableElements": true,
+        "tables": true,
+        "forms": false
+      },
+      "needsRetry": true
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

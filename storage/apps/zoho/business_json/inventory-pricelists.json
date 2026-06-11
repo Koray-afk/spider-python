@@ -1,0 +1,707 @@
+{
+  "pageInfo": {
+    "pageName": "Price Lists",
+    "pageCategory": "Inventory",
+    "pagePurpose": "Allows a user to view, create, and manage different price lists for items. The page displays a table of existing price lists and provides actions to create new ones or edit existing ones.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Price List",
+      "evidence": [
+        "All Price Lists",
+        "Price Lists",
+        "Festive Markdown List",
+        "table_1"
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "name": "Vendor",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "name": "Invoice",
+      "evidence": [
+        "Invoices",
+        "Recurring Invoices"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To open a quick navigation or search menu.",
+      "expectedOutcome": "A search bar or menu appears, allowing the user to quickly jump to different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Items' section in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to items (like 'Items' and 'Price Lists') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Inventory' section in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to inventory (like 'Inventory Adjustments') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Sales' section in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to sales (like 'Customers', 'Quotes', 'Invoices') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Purchases' section in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to purchases (like 'Vendors', 'Bills') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Time Tracking' section in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to time tracking (like 'Projects', 'Timesheet') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Accountant' section in the navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to accounting functions is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "All Price Lists",
+      "elementType": "button",
+      "businessIntent": "To view or filter by all price lists.",
+      "expectedOutcome": "The table on the page is populated with all available price lists. This is likely the default view.",
+      "confidence": "high",
+      "evidence": [
+        "All Price Lists"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "To create a new price list.",
+      "expectedOutcome": "The user is taken to a new page or a modal is displayed to enter the details of a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "New"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "To navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is redirected to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "To navigate to the items management page.",
+      "expectedOutcome": "The user is redirected to a page listing all items.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "To navigate to the price lists management page.",
+      "expectedOutcome": "The user is redirected to the page listing all price lists (the current page).",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the inventory adjustments page.",
+      "expectedOutcome": "The user is redirected to a page for managing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "To navigate to the customer management page.",
+      "expectedOutcome": "The user is redirected to a page listing all customers.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the quotes management page.",
+      "expectedOutcome": "The user is redirected to a page listing all quotes.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the sales orders management page.",
+      "expectedOutcome": "The user is redirected to a page listing all sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the invoices management page.",
+      "expectedOutcome": "The user is redirected to a page listing all invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "To manage templates for invoices that are sent out on a recurring basis.",
+      "expectedOutcome": "The user is redirected to a page listing all recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "To manage delivery challans (delivery notes).",
+      "expectedOutcome": "The user is redirected to a page listing all delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "To view and manage payments received from customers.",
+      "expectedOutcome": "The user is redirected to a page listing all received payments.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "To manage credit notes issued to customers.",
+      "expectedOutcome": "The user is redirected to a page listing all credit notes.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "To navigate to the vendor management page.",
+      "expectedOutcome": "The user is redirected to a page listing all vendors.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "To manage business expenses.",
+      "expectedOutcome": "The user is redirected to a page listing all expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "To manage expenses that occur on a recurring basis.",
+      "expectedOutcome": "The user is redirected to a page listing all recurring expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "To manage purchase orders sent to vendors.",
+      "expectedOutcome": "The user is redirected to a page listing all purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "To manage bills received from vendors.",
+      "expectedOutcome": "The user is redirected to a page listing all bills.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "To manage bills that are received on a recurring basis.",
+      "expectedOutcome": "The user is redirected to a page listing all recurring bills.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "To view and manage payments made to vendors.",
+      "expectedOutcome": "The user is redirected to a page listing all payments made.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "To manage credits received from vendors.",
+      "expectedOutcome": "The user is redirected to a page listing all vendor credits.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "To navigate to the project management page.",
+      "expectedOutcome": "The user is redirected to a page listing all projects.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "To manage time entries and timesheets.",
+      "expectedOutcome": "The user is redirected to the timesheet page.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "To manage banking transactions and connections.",
+      "expectedOutcome": "The user is redirected to the banking module.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "To manage manual accounting journal entries.",
+      "expectedOutcome": "The user is redirected to the manual journals page.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "To perform bulk updates on accounting data.",
+      "expectedOutcome": "The user is redirected to a page for bulk update operations.",
+      "confidence": "high",
+      "evidence": [
+        "Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "To manage currency adjustments for accounting.",
+      "expectedOutcome": "The user is redirected to the currency adjustments page.",
+      "confidence": "high",
+      "evidence": [
+        "Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "To view and manage the chart of accounts.",
+      "expectedOutcome": "The user is redirected to the chart of accounts page.",
+      "confidence": "high",
+      "evidence": [
+        "Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "To manage financial budgets.",
+      "expectedOutcome": "The user is redirected to the budgets page.",
+      "confidence": "high",
+      "evidence": [
+        "Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "To lock financial transactions to prevent editing.",
+      "expectedOutcome": "The user is redirected to the transaction locking settings page.",
+      "confidence": "high",
+      "evidence": [
+        "Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "To access and generate business reports.",
+      "expectedOutcome": "The user is redirected to the reports module.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "To manage uploaded documents.",
+      "expectedOutcome": "The user is redirected to the document management inbox.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "To configure application settings and features.",
+      "expectedOutcome": "The user is taken to a settings or configuration page.",
+      "confidence": "high",
+      "evidence": [
+        "Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To sign up for a product webinar.",
+      "expectedOutcome": "The user is taken to an external registration page in a new tab.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now",
+        "Join us for a free webinar and get an in-depth overview of books."
+      ]
+    },
+    {
+      "label": "Festive Markdown List",
+      "elementType": "link",
+      "businessIntent": "To view the details of the 'Festive Markdown List' price list.",
+      "expectedOutcome": "The user is navigated to a page showing the details of this specific price list.",
+      "confidence": "high",
+      "evidence": [
+        "Festive Markdown List"
+      ]
+    },
+    {
+      "label": "Edit",
+      "elementType": "link",
+      "businessIntent": "To modify an existing price list.",
+      "expectedOutcome": "The user is taken to a page to edit the details of the price list in the same row.",
+      "confidence": "high",
+      "evidence": [
+        "Edit"
+      ]
+    },
+    {
+      "label": "Festive offer price list",
+      "elementType": "link",
+      "businessIntent": "To view the details of the 'Festive offer price list'.",
+      "expectedOutcome": "The user is navigated to a page showing the details of this specific price list.",
+      "confidence": "high",
+      "evidence": [
+        "Festive offer price list"
+      ]
+    },
+    {
+      "label": "Privileged customers price list",
+      "elementType": "link",
+      "businessIntent": "To view the details of the 'Privileged customers price list'.",
+      "expectedOutcome": "The user is navigated to a page showing the details of this specific price list.",
+      "confidence": "high",
+      "evidence": [
+        "Privileged customers price list"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "To create a new chat channel in an integrated chat application.",
+      "expectedOutcome": "User is taken to an external page to create a new chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Price Lists",
+      "purpose": "To display a list of all configured price lists, providing key details and management actions for each.",
+      "columns": [
+        {
+          "name": "Name and Description",
+          "meaning": "The unique name and a short description of the price list.",
+          "businessPurpose": "To identify and understand the purpose of a specific price list."
+        },
+        {
+          "name": "Currency",
+          "meaning": "The currency in which the prices in this list are defined.",
+          "businessPurpose": "To support multi-currency pricing for different markets or customers."
+        },
+        {
+          "name": "Details",
+          "meaning": "Specifics about how the price is calculated, such as a percentage markdown.",
+          "businessPurpose": "To quickly understand the pricing rule applied by the list."
+        },
+        {
+          "name": "Pricing Scheme",
+          "meaning": "The method used to determine the price, such as per-unit pricing.",
+          "businessPurpose": "To define the overall pricing model for the list."
+        },
+        {
+          "name": "Round Off Preference",
+          "meaning": "The rule for how final prices should be rounded.",
+          "businessPurpose": "To control the precision of final pricing and avoid complex decimals."
+        },
+        {
+          "name": "Actions",
+          "meaning": "A set of operations that can be performed on the price list.",
+          "businessPurpose": "To allow users to manage the lifecycle of a price list (e.g., edit, delete, deactivate)."
+        }
+      ]
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create a new price list",
+      "steps": [
+        "User clicks the 'New' button.",
+        "User is redirected to a form or a modal appears to enter the details of the new price list."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New"
+      ]
+    },
+    {
+      "name": "Edit an existing price list",
+      "steps": [
+        "User finds the desired price list in the table.",
+        "User clicks the 'Edit' link in the 'Actions' column for that price list.",
+        "User is redirected to a form to modify the price list's details."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Edit",
+        "table_1"
+      ]
+    },
+    {
+      "name": "View price list details",
+      "steps": [
+        "User clicks on the name of a price list in the 'Name and Description' column.",
+        "User is navigated to a page showing the detailed configuration of that price list."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Festive Markdown List",
+        "Festive offer price list",
+        "Privileged customers price list"
+      ]
+    },
+    {
+      "name": "Navigate to other application modules",
+      "steps": [
+        "User clicks on a category in the main navigation menu (e.g., 'Sales').",
+        "User clicks on a sub-item in the expanded menu (e.g., 'Invoices').",
+        "The application navigates to the selected page."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Navigation menu with categories like 'Items', 'Sales', 'Purchases', 'Accountant'."
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "View all available pricing rules at a glance.",
+      "evidence": [
+        "The page prominently features a table listing all price lists.",
+        "All Price Lists"
+      ]
+    },
+    {
+      "goal": "Create a new pricing structure for a promotion or customer segment.",
+      "evidence": [
+        "New",
+        "The table shows examples like 'Festive Markdown List' and 'Privileged customers price list', suggesting segmentation."
+      ]
+    },
+    {
+      "goal": "Modify an existing price list.",
+      "evidence": [
+        "Edit"
+      ]
+    },
+    {
+      "goal": "Quickly navigate to other core business functions.",
+      "evidence": [
+        "The extensive side navigation menu provides direct links to 'Customers', 'Invoices', 'Bills', 'Reports', etc."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "New Price List Form/Modal",
+      "purpose": "To input the details (name, currency, pricing rules, etc.) for a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "The 'New' button implies a subsequent data entry interface."
+      ]
+    },
+    {
+      "uiElementName": "Edit Price List Form/Page",
+      "purpose": "To modify the details of a selected price list.",
+      "confidence": "high",
+      "evidence": [
+        "The 'Edit' link for each row in the table implies a dedicated editing interface."
+      ]
+    },
+    {
+      "uiElementName": "Delete Price List Action",
+      "purpose": "To permanently remove a price list.",
+      "confidence": "medium",
+      "evidence": [
+        "The htmlSnippet shows '<span> Delete </span>' text within the 'Actions' column, but it was not extracted as a clickable link or button."
+      ]
+    },
+    {
+      "uiElementName": "Mark as Inactive Action",
+      "purpose": "To disable a price list without deleting it.",
+      "confidence": "medium",
+      "evidence": [
+        "The htmlSnippet shows '<span>Mark as Inactive </span>' text within the 'Actions' column, suggesting this functionality exists."
+      ]
+    },
+    {
+      "uiElementName": "Search Functionality",
+      "purpose": "To filter the list of price lists.",
+      "confidence": "high",
+      "evidence": [
+        "The htmlSnippet contains an input field: '<input placeholder=\"Search in Price Lists ( / )\" type=\"text\"/>'."
+      ]
+    }
+  ],
+  "pageNarrative": "This page serves as a central dashboard for managing Price Lists within an inventory or accounting system. A user can view all existing price lists in a detailed table, which outlines attributes like currency, pricing scheme, and rounding preferences. The primary actions available are creating a new price list via the 'New' button and modifying existing ones using the 'Edit' link in the table. The page includes a comprehensive sidebar navigation menu, allowing the user to easily switch to other core business functions like Sales, Purchases, and Time Tracking.",
+  "_meta": {
+    "sourceFile": "inventory-pricelists.html",
+    "pageFactsCounts": {
+      "buttons": 9,
+      "links": 59,
+      "forms": 0,
+      "tables": 1,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 36,
+        "tables": 1,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 47,
+        "tables": 1,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

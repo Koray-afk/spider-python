@@ -1,0 +1,942 @@
+{
+  "pageInfo": {
+    "pageName": "New Recurring Invoice",
+    "pageCategory": "Sales",
+    "pagePurpose": "To create a new, automated, recurring invoice for a customer by defining a schedule, adding line items, and specifying payment terms.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "entity": "Recurring Invoice",
+      "evidence": [
+        "New Recurring Invoice"
+      ]
+    },
+    {
+      "entity": "Customer",
+      "evidence": [
+        "Customer Name",
+        "Customers"
+      ]
+    },
+    {
+      "entity": "Item",
+      "evidence": [
+        "Items",
+        "Item Details",
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "entity": "Price List",
+      "evidence": [
+        "Price Lists",
+        "Select Price List"
+      ]
+    },
+    {
+      "entity": "Salesperson",
+      "evidence": [
+        "Salesperson"
+      ]
+    },
+    {
+      "entity": "Project",
+      "evidence": [
+        "Projects",
+        "Associate Project(s) Hours"
+      ]
+    },
+    {
+      "entity": "Invoice",
+      "evidence": [
+        "Invoices",
+        "Recurring Invoices"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Access a quick navigation menu or command palette.",
+      "expectedOutcome": "A search bar or menu appears, allowing the user to quickly jump to different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Items' section in the main navigation menu.",
+      "expectedOutcome": "A submenu with links to 'Items' and 'Price Lists' is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Inventory' section in the main navigation menu.",
+      "expectedOutcome": "A submenu with a link to 'Inventory Adjustments' is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Sales' section in the main navigation menu.",
+      "expectedOutcome": "A submenu with links related to sales (Customers, Quotes, Invoices, etc.) is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Purchases' section in the main navigation menu.",
+      "expectedOutcome": "A submenu with links related to purchases (Vendors, Expenses, Bills, etc.) is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Time Tracking' section in the main navigation menu.",
+      "expectedOutcome": "A submenu with links to 'Projects' and 'Timesheet' is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Accountant' section in the main navigation menu.",
+      "expectedOutcome": "A submenu with links to accounting features (Manual Journals, Chart of Accounts, etc.) is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "Bulk Actions",
+      "elementType": "button",
+      "businessIntent": "Perform an action on multiple selected items in the item table.",
+      "expectedOutcome": "A dropdown menu with bulk actions (e.g., Delete Selected Items, Modify Rate) appears.",
+      "confidence": "medium",
+      "evidence": [
+        "Bulk Actions"
+      ]
+    },
+    {
+      "label": "Add Items in Bulk",
+      "elementType": "button",
+      "businessIntent": "Add multiple line items to the invoice at once.",
+      "expectedOutcome": "A modal or separate interface opens, allowing the user to select and add multiple items to the invoice table.",
+      "confidence": "high",
+      "evidence": [
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "label": "Set Up Now",
+      "elementType": "button",
+      "businessIntent": "Configure a payment gateway to accept online payments.",
+      "expectedOutcome": "The user is taken to a settings page to configure Zoho Payments or another payment gateway.",
+      "confidence": "high",
+      "evidence": [
+        "Set Up Now"
+      ]
+    },
+    {
+      "label": "Save",
+      "elementType": "button",
+      "businessIntent": "Save the new recurring invoice with the entered details.",
+      "expectedOutcome": "The form data is submitted, the recurring invoice is created, and the user is likely redirected to a list of recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Save"
+      ]
+    },
+    {
+      "label": "Cancel",
+      "elementType": "button",
+      "businessIntent": "Discard the new recurring invoice and exit the creation form.",
+      "expectedOutcome": "The form is cleared, and the user is returned to the previous page, likely the recurring invoices list.",
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of all items.",
+      "expectedOutcome": "The user is taken to the items index page.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "New Item",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new item.",
+      "expectedOutcome": "The user is taken to the new item creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-inventory-product-product-creation/index.html\" title=\"New Item\">"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of price lists.",
+      "expectedOutcome": "The user is taken to the price lists index page.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "New Price List",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new price list.",
+      "expectedOutcome": "The user is taken to the new price list creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-inventory-pricelists-new/index.html\" title=\"New Price List\">"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of inventory adjustments.",
+      "expectedOutcome": "The user is taken to the inventory adjustments index page.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "New Adjustment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new inventory adjustment.",
+      "expectedOutcome": "The user is taken to the new inventory adjustment creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-inventory-adjustments-new/index.html\" title=\"New Adjustment\">"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of customers.",
+      "expectedOutcome": "The user is taken to the customers index page.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "New Customer",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new customer.",
+      "expectedOutcome": "The user is taken to the new customer creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-contacts-new/index.html\" title=\"New Customer\">"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of quotes.",
+      "expectedOutcome": "The user is taken to the quotes index page.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of sales orders.",
+      "expectedOutcome": "The user is taken to the sales orders index page.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "New Sales Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new sales order.",
+      "expectedOutcome": "The user is taken to the new sales order creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-salesorders-new/index.html\" title=\"New Sales Order\">"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of invoices.",
+      "expectedOutcome": "The user is taken to the invoices index page.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of recurring invoices.",
+      "expectedOutcome": "The user is taken to the recurring invoices index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "New Recurring Invoice",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new recurring invoice.",
+      "expectedOutcome": "The user is taken to the new recurring invoice creation page (the current page).",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-recurringinvoices-new/index.html\" title=\"New Recurring Invoice\">"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of delivery challans.",
+      "expectedOutcome": "The user is taken to the delivery challans index page.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "New Delivery Challan",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new delivery challan.",
+      "expectedOutcome": "The user is taken to the new delivery challan creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-deliverychallans-new/index.html\" title=\"New Delivery Challan\">"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of payments received.",
+      "expectedOutcome": "The user is taken to the payments received index page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "Record New Payment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for recording a new payment.",
+      "expectedOutcome": "The user is taken to the new payment received creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"../app-60073668069-paymentsreceived-new/index.html\" title=\"Record New Payment\">"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of credit notes.",
+      "expectedOutcome": "The user is taken to the credit notes index page.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "New Credit Note",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new credit note.",
+      "expectedOutcome": "The user is taken to the new credit note creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/creditnotes/new\" title=\"New Credit Note\">"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of vendors.",
+      "expectedOutcome": "The user is taken to the vendors index page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "New Vendor",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new vendor.",
+      "expectedOutcome": "The user is taken to the new vendor creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/vendors/new\" title=\"New Vendor\">"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of expenses.",
+      "expectedOutcome": "The user is taken to the expenses index page.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of recurring expenses.",
+      "expectedOutcome": "The user is taken to the recurring expenses index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "New Recurring Expense",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new recurring expense.",
+      "expectedOutcome": "The user is taken to the new recurring expense creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/recurringexpenses/new\" title=\"New Recurring Expense\">"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of purchase orders.",
+      "expectedOutcome": "The user is taken to the purchase orders index page.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "New Purchase Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new purchase order.",
+      "expectedOutcome": "The user is taken to the new purchase order creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/purchaseorders/new\" title=\"New Purchase Order\">"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of bills.",
+      "expectedOutcome": "The user is taken to the bills index page.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "New Bill",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new bill.",
+      "expectedOutcome": "The user is taken to the new bill creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/bills/new\" title=\"New Bill\">"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of recurring bills.",
+      "expectedOutcome": "The user is taken to the recurring bills index page.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "New Recurring Bill",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new recurring bill.",
+      "expectedOutcome": "The user is taken to the new recurring bill creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/recurringbills/new\" title=\"New Recurring Bill\">"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of payments made.",
+      "expectedOutcome": "The user is taken to the payments made index page.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "Record Payment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for recording a new payment made.",
+      "expectedOutcome": "The user is taken to the new payment made creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/paymentsmade/new\" title=\"Record Payment\">"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of vendor credits.",
+      "expectedOutcome": "The user is taken to the vendor credits index page.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "New Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating new vendor credits.",
+      "expectedOutcome": "The user is taken to the new vendor credit creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/vendorcredits/new\" title=\"New Vendor Credits\">"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of projects.",
+      "expectedOutcome": "The user is taken to the projects index page.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "Navigate to the timesheet view.",
+      "expectedOutcome": "The user is taken to the timesheet page to view or log time.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the banking module.",
+      "expectedOutcome": "The user is taken to the banking dashboard or list of accounts.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of manual journals.",
+      "expectedOutcome": "The user is taken to the manual journals index page.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "New Journal",
+      "elementType": "link",
+      "businessIntent": "Navigate to the form for creating a new manual journal.",
+      "expectedOutcome": "The user is taken to the new journal creation page.",
+      "confidence": "high",
+      "evidence": [
+        "<a href=\"#/accountant/journals/new\" title=\"New Journal\">"
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bulk update tool.",
+      "expectedOutcome": "The user is taken to a page for performing bulk updates on accounts or transactions.",
+      "confidence": "high",
+      "evidence": [
+        "Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of currency adjustments.",
+      "expectedOutcome": "The user is taken to the currency adjustments page.",
+      "confidence": "high",
+      "evidence": [
+        "Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Chart of Accounts.",
+      "expectedOutcome": "The user is taken to the Chart of Accounts page.",
+      "confidence": "high",
+      "evidence": [
+        "Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "Navigate to the budgets module.",
+      "expectedOutcome": "The user is taken to the budgets page.",
+      "confidence": "high",
+      "evidence": [
+        "Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the transaction locking settings.",
+      "expectedOutcome": "The user is taken to the page for configuring transaction locking.",
+      "confidence": "high",
+      "evidence": [
+        "Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "Navigate to the reports module.",
+      "expectedOutcome": "The user is taken to the main reports dashboard.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "Navigate to the document management system.",
+      "expectedOutcome": "The user is taken to their document inbox.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Zoho Payroll",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrated Zoho Payroll application.",
+      "expectedOutcome": "The user is taken to the Zoho Payroll interface.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payroll"
+      ]
+    },
+    {
+      "label": "Zoho Payments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrated Zoho Payments application.",
+      "expectedOutcome": "The user is taken to the Zoho Payments interface.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payments"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "Navigate to a settings page to enable or disable application features.",
+      "expectedOutcome": "The user is taken to a feature configuration or preferences page.",
+      "confidence": "high",
+      "evidence": [
+        "Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "Register for a live product webinar.",
+      "expectedOutcome": "A new browser tab opens to the webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now"
+      ]
+    },
+    {
+      "label": "Add New Row",
+      "elementType": "link",
+      "businessIntent": "Add a new, empty row to the item details table.",
+      "expectedOutcome": "A new row appears in the table, allowing the user to add another line item to the invoice.",
+      "confidence": "high",
+      "evidence": [
+        "Add New Row"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "Create a new chat channel in the integrated chat application.",
+      "expectedOutcome": "The user is taken to the interface for creating a new chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Item Details Table",
+      "purpose": "To list the products or services that will be included on the recurring invoice, along with their quantities, rates, and total amounts.",
+      "columns": [
+        {
+          "name": "Drag item up or down",
+          "meaning": "A handle to reorder the line items on the invoice.",
+          "businessPurpose": "Allows the user to control the presentation order of items on the final invoice document."
+        },
+        {
+          "name": "Item Details",
+          "meaning": "The name and description of the product or service being billed.",
+          "businessPurpose": "Identifies the specific good or service for which the customer is being charged."
+        },
+        {
+          "name": "Quantity",
+          "meaning": "The number of units of the item being billed.",
+          "businessPurpose": "Specifies the volume of the product or service sold, used to calculate the total amount."
+        },
+        {
+          "name": "Rate",
+          "meaning": "The price per unit of the item.",
+          "businessPurpose": "Defines the unit cost, used in conjunction with quantity to calculate the line item total."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total calculated charge for the line item (Quantity x Rate).",
+          "businessPurpose": "Shows the subtotal for each line item before taxes and discounts."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "New Recurring Invoice Form",
+      "purpose": "To capture all the necessary information to create a new recurring invoice profile, including customer details, schedule, line items, and notes.",
+      "fields": [
+        {
+          "fieldName": "Customer Name",
+          "fieldType": "custom_select",
+          "businessMeaning": "The customer who will receive the recurring invoice."
+        },
+        {
+          "fieldName": "Profile Name",
+          "fieldType": "text",
+          "businessMeaning": "An internal name or identifier for this recurring invoice schedule."
+        },
+        {
+          "fieldName": "Order Number",
+          "fieldType": "text",
+          "businessMeaning": "A reference number, such as a customer's Purchase Order number."
+        },
+        {
+          "fieldName": "Repeat Every",
+          "fieldType": "custom_select",
+          "businessMeaning": "The frequency at which the invoice should be generated (e.g., weekly, monthly)."
+        },
+        {
+          "fieldName": "Start On",
+          "fieldType": "text",
+          "businessMeaning": "The date on which the first invoice of this recurring series should be generated."
+        },
+        {
+          "fieldName": "Ends On",
+          "fieldType": "text",
+          "businessMeaning": "The date after which no more invoices should be generated for this schedule. Can be left blank if it never expires."
+        },
+        {
+          "fieldName": "Ends On",
+          "fieldType": "checkbox",
+          "businessMeaning": "A checkbox likely labeled 'Never Expires' to disable the 'Ends On' date field."
+        },
+        {
+          "fieldName": "Payment Terms",
+          "fieldType": "custom_select",
+          "businessMeaning": "The conditions under which payment is due (e.g., Due on Receipt, Net 30)."
+        },
+        {
+          "fieldName": "Salesperson",
+          "fieldType": "custom_select",
+          "businessMeaning": "The salesperson associated with this sale or customer."
+        },
+        {
+          "fieldName": "Subject",
+          "fieldType": "textarea",
+          "businessMeaning": "A brief description or subject line that will appear on the invoice."
+        },
+        {
+          "fieldName": "Select Price List",
+          "fieldType": "textarea",
+          "businessMeaning": "A field to select a specific price list to apply to the items on this invoice."
+        },
+        {
+          "fieldName": "Customer Notes",
+          "fieldType": "textarea",
+          "businessMeaning": "Notes or comments that will be visible to the customer on the invoice."
+        },
+        {
+          "fieldName": "Customer Notes",
+          "fieldType": "checkbox",
+          "businessMeaning": "A preference to save these notes for all future recurring invoices for all customers."
+        },
+        {
+          "fieldName": "Discount",
+          "fieldType": "text",
+          "businessMeaning": "The overall discount to be applied to the invoice subtotal, likely as a percentage or fixed amount."
+        },
+        {
+          "fieldName": "Terms & Conditions",
+          "fieldType": "textarea",
+          "businessMeaning": "The full terms and conditions of the sale that will be displayed on the invoice."
+        },
+        {
+          "fieldName": "Terms & Conditions",
+          "fieldType": "checkbox",
+          "businessMeaning": "A preference to save these terms for all future recurring invoices for all customers."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Create New Recurring Invoice",
+      "steps": [
+        "User selects a customer and fills in the profile details like name and order number.",
+        "User defines the recurrence schedule including frequency, start date, and end date.",
+        "User adds one or more line items to the item table, specifying the item, quantity, and rate.",
+        "User customizes the invoice with a subject, customer notes, and terms & conditions.",
+        "User applies an overall discount if applicable.",
+        "User clicks the 'Save' button to create the recurring invoice profile."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Recurring Invoice",
+        "Customer Name",
+        "Start On",
+        "Item Details",
+        "Customer Notes",
+        "Save"
+      ]
+    },
+    {
+      "name": "Cancel Recurring Invoice Creation",
+      "steps": [
+        "User starts creating a new recurring invoice.",
+        "User decides to discard the changes and clicks the 'Cancel' button."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Cancel",
+        "New Recurring Invoice"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Automate routine billing for a client to save time and ensure consistent invoicing.",
+      "evidence": [
+        "The page is titled 'New Recurring Invoice' and includes fields like 'Repeat Every', 'Start On', and 'Ends On' to define a schedule."
+      ]
+    },
+    {
+      "goal": "Create a detailed template for future invoices to a specific customer.",
+      "evidence": [
+        "The form allows the user to specify line items, 'Subject', 'Customer Notes', and 'Terms & Conditions', which constitute a complete invoice template."
+      ]
+    },
+    {
+      "goal": "Ensure accurate and standardized pricing for recurring services.",
+      "evidence": [
+        "The user can add specific items from a list and select a 'Price List', which helps maintain pricing consistency across invoices."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Customer selection dropdown/modal",
+      "reason": "The label 'Customer Name' exists, but there is no standard input field. The HTML shows a custom element, suggesting a dropdown or modal is used to search for and select an existing customer.",
+      "confidence": "high"
+    },
+    {
+      "element": "Success notification",
+      "reason": "After clicking 'Save', the user needs feedback that the recurring invoice was created successfully. A toast or banner message is a standard UI pattern for this.",
+      "confidence": "medium"
+    },
+    {
+      "element": "Cancel confirmation modal",
+      "reason": "Clicking 'Cancel' on a form with data typically triggers a confirmation dialog (e.g., 'Are you sure you want to discard your changes?') to prevent accidental data loss.",
+      "confidence": "medium"
+    }
+  ],
+  "pageNarrative": "This page is a form for creating a new recurring invoice. Users can select a customer, define a profile name, and set a recurrence schedule with start and end dates. They can add multiple line items to an item table, specifying quantity and rate for each. The page also allows for customization through customer notes, terms and conditions, and an overall discount. Upon completion, the user can save the recurring invoice profile to automate future billing or cancel the process to discard the entry.",
+  "_meta": {
+    "sourceFile": "recurringinvoices-new.html",
+    "pageFactsCounts": {
+      "buttons": 12,
+      "links": 54,
+      "forms": 1,
+      "tables": 1,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 33,
+        "tables": 1,
+        "forms": 1
+      },
+      "reported": {
+        "clickableElements": 66,
+        "tables": 1,
+        "forms": 1
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

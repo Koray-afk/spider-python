@@ -1,0 +1,823 @@
+{
+  "pageInfo": {
+    "pageName": "Delivery Challans",
+    "pageCategory": "Sales",
+    "pagePurpose": "This page serves as an entry point or an empty state for the Delivery Challans feature. It educates the user on the purpose and lifecycle of a delivery challan and provides primary actions to create a new one or view an existing list.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Delivery Challan",
+      "evidence": [
+        "All Delivery Challans",
+        "Create Delivery Challan",
+        "Life cycle of a Delivery Challan",
+        "In theDelivery Challanmodule, you can:"
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "name": "Sales Order",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "name": "Invoice",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "name": "Vendor",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "name": "Purchase Order",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Provides a keyboard shortcut for quick navigation within the application.",
+      "expectedOutcome": "Opens a navigation menu or search bar to allow the user to quickly jump to another page or feature.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Items module.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the main page for managing Items.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Inventory module.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the main page for managing Inventory.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Sales module.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the main page for managing Sales-related entities.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Purchases module.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the main page for managing Purchases.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Time Tracking module.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the main page for Time Tracking.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Accountant module.",
+      "expectedOutcome": "Expands a sub-menu or navigates the user to the main page for accounting features.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "All Delivery Challans",
+      "elementType": "button",
+      "businessIntent": "View a list of all existing delivery challans.",
+      "expectedOutcome": "Navigates the user to a page that displays a list or table of all created delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "All Delivery Challans"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "Initiate the creation of a new delivery challan.",
+      "expectedOutcome": "Opens a new page or a modal with a form to create a new delivery challan.",
+      "confidence": "high",
+      "evidence": [
+        "New"
+      ]
+    },
+    {
+      "label": "Create Delivery Challan",
+      "elementType": "button",
+      "businessIntent": "Initiate the creation of a new delivery challan.",
+      "expectedOutcome": "Opens a new page or a modal with a form to create a new delivery challan.",
+      "confidence": "high",
+      "evidence": [
+        "Create Delivery Challan"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page of the application.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the items list page.",
+      "expectedOutcome": "The user is taken to a page listing all items.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "New Item",
+      "elementType": "link",
+      "businessIntent": "Navigate to the item creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new item.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price lists page.",
+      "expectedOutcome": "The user is taken to a page listing all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "New Price List",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price list creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-pricelists-new/index.html"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustments list.",
+      "expectedOutcome": "The user is taken to a page listing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "New Inventory Adjustment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustment creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-adjustments-new/index.html"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the customers list.",
+      "expectedOutcome": "The user is taken to a page listing all customers.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "New Customer",
+      "elementType": "link",
+      "businessIntent": "Navigate to the customer creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new customer.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-contacts-new/index.html"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the quotes list.",
+      "expectedOutcome": "The user is taken to a page listing all quotes.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the sales orders list.",
+      "expectedOutcome": "The user is taken to a page listing all sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "New Sales Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the sales order creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new sales order.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-salesorders-new/index.html"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the invoices list.",
+      "expectedOutcome": "The user is taken to a page listing all invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring invoices list.",
+      "expectedOutcome": "The user is taken to a page listing all recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "New Recurring Invoice",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring invoice creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new recurring invoice.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-recurringinvoices-new/index.html"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "Navigate to the delivery challans list.",
+      "expectedOutcome": "The user is taken to a page listing all delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "Delivery Challans"
+      ]
+    },
+    {
+      "label": "New Delivery Challan",
+      "elementType": "link",
+      "businessIntent": "Navigate to the delivery challan creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new delivery challan.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-deliverychallans-new/index.html"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of payments received.",
+      "expectedOutcome": "The user is taken to a page listing all payments received.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Received"
+      ]
+    },
+    {
+      "label": "New Payment Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to a page to record a new payment.",
+      "expectedOutcome": "The user is taken to a form to record a new received payment.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-paymentsreceived-new/index.html"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the credit notes list.",
+      "expectedOutcome": "The user is taken to a page listing all credit notes.",
+      "confidence": "high",
+      "evidence": [
+        "Credit Notes"
+      ]
+    },
+    {
+      "label": "New Credit Note",
+      "elementType": "link",
+      "businessIntent": "Navigate to the credit note creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new credit note.",
+      "confidence": "high",
+      "evidence": [
+        "#/creditnotes/new"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendors list.",
+      "expectedOutcome": "The user is taken to a page listing all vendors.",
+      "confidence": "high",
+      "evidence": [
+        "Vendors"
+      ]
+    },
+    {
+      "label": "New Vendor",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendor creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new vendor.",
+      "confidence": "high",
+      "evidence": [
+        "#/vendors/new"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the expenses list.",
+      "expectedOutcome": "The user is taken to a page listing all expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring expenses list.",
+      "expectedOutcome": "The user is taken to a page listing all recurring expenses.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Expenses"
+      ]
+    },
+    {
+      "label": "New Recurring Expense",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring expense creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new recurring expense.",
+      "confidence": "high",
+      "evidence": [
+        "#/recurringexpenses/new"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the purchase orders list.",
+      "expectedOutcome": "The user is taken to a page listing all purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "Purchase Orders"
+      ]
+    },
+    {
+      "label": "New Purchase Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the purchase order creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new purchase order.",
+      "confidence": "high",
+      "evidence": [
+        "#/purchaseorders/new"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bills list.",
+      "expectedOutcome": "The user is taken to a page listing all bills.",
+      "confidence": "high",
+      "evidence": [
+        "Bills"
+      ]
+    },
+    {
+      "label": "New Bill",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bill creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new bill.",
+      "confidence": "high",
+      "evidence": [
+        "#/bills/new"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring bills list.",
+      "expectedOutcome": "The user is taken to a page listing all recurring bills.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Bills"
+      ]
+    },
+    {
+      "label": "New Recurring Bill",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring bill creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new recurring bill.",
+      "confidence": "high",
+      "evidence": [
+        "#/recurringbills/new"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of payments made.",
+      "expectedOutcome": "The user is taken to a page listing all payments made.",
+      "confidence": "high",
+      "evidence": [
+        "Payments Made"
+      ]
+    },
+    {
+      "label": "New Payment Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to a page to record a new payment made.",
+      "expectedOutcome": "The user is taken to a form to record a new payment made.",
+      "confidence": "high",
+      "evidence": [
+        "#/paymentsmade/new"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendor credits list.",
+      "expectedOutcome": "The user is taken to a page listing all vendor credits.",
+      "confidence": "high",
+      "evidence": [
+        "Vendor Credits"
+      ]
+    },
+    {
+      "label": "New Vendor Credit",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendor credit creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new vendor credit.",
+      "confidence": "high",
+      "evidence": [
+        "#/vendorcredits/new"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Navigate to the projects list.",
+      "expectedOutcome": "The user is taken to a page listing all projects.",
+      "confidence": "high",
+      "evidence": [
+        "Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "Navigate to the timesheet page.",
+      "expectedOutcome": "The user is taken to the timesheet management page.",
+      "confidence": "high",
+      "evidence": [
+        "Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the banking module.",
+      "expectedOutcome": "The user is taken to the banking management page.",
+      "confidence": "high",
+      "evidence": [
+        "Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "Navigate to the manual journals list.",
+      "expectedOutcome": "The user is taken to a page listing manual journals.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Journals"
+      ]
+    },
+    {
+      "label": "New Manual Journal",
+      "elementType": "link",
+      "businessIntent": "Navigate to the manual journal creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new manual journal.",
+      "confidence": "high",
+      "evidence": [
+        "#/accountant/journals/new"
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bulk update feature.",
+      "expectedOutcome": "The user is taken to a page for performing bulk updates on accounts.",
+      "confidence": "high",
+      "evidence": [
+        "Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the currency adjustments list.",
+      "expectedOutcome": "The user is taken to a page listing currency adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "Navigate to the chart of accounts.",
+      "expectedOutcome": "The user is taken to a page displaying the chart of accounts.",
+      "confidence": "high",
+      "evidence": [
+        "Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "Navigate to the budgets feature.",
+      "expectedOutcome": "The user is taken to the budget management page.",
+      "confidence": "high",
+      "evidence": [
+        "Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the transaction locking settings.",
+      "expectedOutcome": "The user is taken to a page to configure transaction locking.",
+      "confidence": "high",
+      "evidence": [
+        "Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "Navigate to the reports module.",
+      "expectedOutcome": "The user is taken to the main reports page.",
+      "confidence": "high",
+      "evidence": [
+        "Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "Navigate to the documents inbox.",
+      "expectedOutcome": "The user is taken to the documents management page, likely an inbox.",
+      "confidence": "high",
+      "evidence": [
+        "Documents"
+      ]
+    },
+    {
+      "label": "Zoho Payroll",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrated Zoho Payroll application.",
+      "expectedOutcome": "The user is taken to the Zoho Payroll application.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payroll"
+      ]
+    },
+    {
+      "label": "Zoho Payments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrated Zoho Payments application.",
+      "expectedOutcome": "The user is taken to the Zoho Payments application.",
+      "confidence": "high",
+      "evidence": [
+        "Zoho Payments"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "Navigate to a settings page to configure application features.",
+      "expectedOutcome": "The user is taken to a settings or configuration page.",
+      "confidence": "high",
+      "evidence": [
+        "Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "Register for a product webinar.",
+      "expectedOutcome": "Opens a new tab to an external registration page for a webinar.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "Create a new chat channel in the integrated chat application.",
+      "expectedOutcome": "Opens a new tab or modal to create a chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    },
+    {
+      "label": "Manual Translation",
+      "elementType": "dropdown",
+      "businessIntent": "Select the manual translation option for language settings.",
+      "expectedOutcome": "Sets the language translation preference to 'manual'.",
+      "confidence": "high",
+      "evidence": [
+        "Manual Translation"
+      ]
+    },
+    {
+      "label": "Automated Translation",
+      "elementType": "dropdown",
+      "businessIntent": "Select the automated translation option for language settings.",
+      "expectedOutcome": "Sets the language translation preference to 'automated'.",
+      "confidence": "high",
+      "evidence": [
+        "Automated Translation"
+      ]
+    }
+  ],
+  "tables": [],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create a new Delivery Challan",
+      "steps": [
+        "User clicks the 'New' or 'Create Delivery Challan' button.",
+        "The application is expected to display a form for entering the details of a new delivery challan."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New",
+        "Create Delivery Challan"
+      ]
+    },
+    {
+      "name": "View all Delivery Challans",
+      "steps": [
+        "User clicks the 'All Delivery Challans' button.",
+        "The application is expected to navigate to a page listing all existing delivery challans."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "All Delivery Challans"
+      ]
+    },
+    {
+      "name": "Navigate to a different application module",
+      "steps": [
+        "User clicks a link in the main navigation sidebar (e.g., 'Invoices', 'Customers', 'Items').",
+        "The user is navigated to the corresponding module's main page."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Home",
+        "Items",
+        "Sales",
+        "Purchases",
+        "Reports"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Create a delivery challan for goods being shipped.",
+      "evidence": [
+        "Create Delivery Challan",
+        "Deliver Goods effectively!",
+        "Create, customize and print professional Delivery Challans"
+      ]
+    },
+    {
+      "goal": "View and manage all existing delivery challans.",
+      "evidence": [
+        "All Delivery Challans"
+      ]
+    },
+    {
+      "goal": "Understand the workflow and purpose of delivery challans within the system.",
+      "evidence": [
+        "Life cycle of a Delivery Challan",
+        "In theDelivery Challanmodule, you can:"
+      ]
+    },
+    {
+      "goal": "Access other related parts of the application, such as Sales, Inventory, or Purchases.",
+      "evidence": [
+        "Sales",
+        "Inventory",
+        "Purchases",
+        "Navigation menu"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Delivery Challan creation form/modal",
+      "reason": "The 'New' and 'Create Delivery Challan' buttons directly imply the existence of a form to input data for a new challan, but this form is not visible on the current page.",
+      "confidence": "high"
+    },
+    {
+      "element": "List/Table of existing Delivery Challans",
+      "reason": "The 'All Delivery Challans' button implies a view to display all existing records, which is not present on this introductory page.",
+      "confidence": "high"
+    }
+  ],
+  "pageNarrative": "This page is the main landing area for the 'Delivery Challans' module within a comprehensive business management application. It serves as an empty state, guiding the user on how to start using the feature with prominent 'Create Delivery Challan' and 'New' buttons. The page also provides educational content, including a diagram of the 'Life cycle of a Delivery Challan' to explain its function. Through a persistent side navigation bar, the user can easily access other related modules like Sales, Purchases, and Inventory, positioning this feature within the broader context of the application's sales workflow.",
+  "_meta": {
+    "sourceFile": "deliverychallans.html",
+    "pageFactsCounts": {
+      "buttons": 10,
+      "links": 53,
+      "forms": 0,
+      "tables": 0,
+      "headings": 9
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 31,
+        "tables": 0,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 65,
+        "tables": 0,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

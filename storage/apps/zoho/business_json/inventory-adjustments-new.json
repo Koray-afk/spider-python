@@ -1,0 +1,376 @@
+{
+  "pageInfo": {
+    "pageName": "New Inventory Adjustment",
+    "pageCategory": "Inventory Management",
+    "pagePurpose": "To create a new record that modifies the quantity of inventory items. This is used to account for changes outside of normal sales and purchases, such as stock damage, loss, or corrections from a physical count.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Inventory Adjustment",
+      "evidence": [
+        "New Adjustment",
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items",
+        "Item Details",
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "name": "Account",
+      "evidence": [
+        "Account",
+        "Chart of Accounts"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To open a quick navigation or search menu.",
+      "expectedOutcome": "A search bar or command palette appears, allowing the user to quickly jump to different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "To navigate to the Items section.",
+      "expectedOutcome": "The user is taken to the main page for managing Items.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "To navigate to the Inventory section.",
+      "expectedOutcome": "The user is taken to the main page for managing Inventory.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "To navigate to the Sales section.",
+      "expectedOutcome": "The user is taken to the main page for managing Sales.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "To navigate to the Purchases section.",
+      "expectedOutcome": "The user is taken to the main page for managing Purchases.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "To navigate to the Time Tracking section.",
+      "expectedOutcome": "The user is taken to the main page for Time Tracking.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "To navigate to the Accountant section.",
+      "expectedOutcome": "The user is taken to the main page for Accountant-related features.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "Bulk Actions",
+      "elementType": "button",
+      "businessIntent": "To perform an action on multiple selected items in the adjustments table at once.",
+      "expectedOutcome": "A dropdown menu with actions like 'Delete selected rows' appears.",
+      "confidence": "medium",
+      "evidence": [
+        "Bulk Actions"
+      ]
+    },
+    {
+      "label": "Add New Row",
+      "elementType": "button",
+      "businessIntent": "To add a new, blank row to the item adjustment table.",
+      "expectedOutcome": "A new row appears in the table, allowing the user to specify another item to adjust.",
+      "confidence": "high",
+      "evidence": [
+        "Add New Row"
+      ]
+    },
+    {
+      "label": "Add Items in Bulk",
+      "elementType": "button",
+      "businessIntent": "To add multiple items to the adjustment table simultaneously.",
+      "expectedOutcome": "A modal or a new interface appears where the user can select multiple items from a list to add to the adjustment form.",
+      "confidence": "high",
+      "evidence": [
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "label": "Save as Draft",
+      "elementType": "button",
+      "businessIntent": "To save the current inventory adjustment form without finalizing it.",
+      "expectedOutcome": "The adjustment is saved in a 'draft' state, and the user is likely redirected to a list of inventory adjustments. Inventory levels are not yet changed.",
+      "confidence": "high",
+      "evidence": [
+        "Save as Draft"
+      ]
+    },
+    {
+      "label": "Convert to Adjusted",
+      "elementType": "button",
+      "businessIntent": "To finalize the inventory adjustment and apply the changes to the inventory records.",
+      "expectedOutcome": "The adjustment is saved and marked as 'Adjusted'. The system updates the inventory quantities for the specified items. The user is likely redirected to the adjustment's detail view or a list view.",
+      "confidence": "high",
+      "evidence": [
+        "Convert to Adjusted"
+      ]
+    },
+    {
+      "label": "Cancel",
+      "elementType": "button",
+      "businessIntent": "To discard the new inventory adjustment.",
+      "expectedOutcome": "All data entered in the form is discarded, and the user is redirected to the previous page, likely the list of inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's home page or dashboard.",
+      "expectedOutcome": "The user is taken to the main dashboard of the application.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of inventory adjustments.",
+      "expectedOutcome": "The user is taken to a page listing all existing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "To create a new chat channel in the integrated chat application.",
+      "expectedOutcome": "The user is taken to an interface within the chat application to create a new channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Item Adjustment Table",
+      "purpose": "To specify which inventory items are being adjusted and by what quantity.",
+      "columns": [
+        {
+          "name": "Item Details",
+          "meaning": "The name or SKU of the item being adjusted.",
+          "businessPurpose": "To identify the specific product whose stock level is changing."
+        },
+        {
+          "name": "Quantity Available",
+          "meaning": "The current quantity of the item in stock.",
+          "businessPurpose": "To provide context for the user about the current stock level before adjustment."
+        },
+        {
+          "name": "New Quantity on hand",
+          "meaning": "The calculated quantity after the adjustment is applied.",
+          "businessPurpose": "To show the user the final resulting stock quantity for confirmation."
+        },
+        {
+          "name": "Quantity Adjusted",
+          "meaning": "The amount by which the quantity is changing (e.g., +10 or -10).",
+          "businessPurpose": "To capture the core data of the adjustment: the change in stock level."
+        },
+        {
+          "name": "More Actions",
+          "meaning": "A placeholder for row-level actions.",
+          "businessPurpose": "To allow users to perform actions on a single item row, such as deleting it from the adjustment."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "New Adjustment Form",
+      "purpose": "To create a record of an inventory adjustment, detailing the reason, date, and items involved.",
+      "fields": [
+        {
+          "fieldName": "Mode of adjustment",
+          "fieldType": "radio",
+          "businessMeaning": "Determines if the adjustment is for the quantity of items or their monetary value. Options are 'Quantity Adjustment' and 'Value Adjustment'."
+        },
+        {
+          "fieldName": "Reference Number",
+          "fieldType": "text",
+          "businessMeaning": "A unique identifier for the adjustment transaction, used for tracking and auditing."
+        },
+        {
+          "fieldName": "Date",
+          "fieldType": "text",
+          "businessMeaning": "The date on which the inventory adjustment is being recorded."
+        },
+        {
+          "fieldName": "Account",
+          "fieldType": "dropdown",
+          "businessMeaning": "The accounting ledger account affected by this inventory change (e.g., 'Cost of Goods Sold')."
+        },
+        {
+          "fieldName": "Reason",
+          "fieldType": "dropdown",
+          "businessMeaning": "The reason for the inventory adjustment (e.g., 'Damaged Goods', 'Stocktake Correction')."
+        },
+        {
+          "fieldName": "Description",
+          "fieldType": "textarea",
+          "businessMeaning": "A free-text field for additional notes or details about the adjustment."
+        },
+        {
+          "fieldName": "Attach File(s)",
+          "fieldType": "file",
+          "businessMeaning": "Allows uploading of supporting documents, such as a photo of damaged goods or a stock count sheet."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Create a New Inventory Adjustment",
+      "steps": [
+        "User selects an adjustment mode ('Quantity Adjustment' or 'Value Adjustment').",
+        "User enters a Reference Number, Date, and Description.",
+        "User selects an Account and a Reason for the adjustment.",
+        "User adds one or more items to the items table using 'Add New Row' or 'Add Items in Bulk'.",
+        "For each item, user enters the 'Quantity Adjusted'.",
+        "Optionally, user attaches relevant files.",
+        "User saves the form as a draft using 'Save as Draft' or finalizes it with 'Convert to Adjusted'."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Adjustment",
+        "Quantity Adjustment",
+        "Reference Number",
+        "Date",
+        "Add New Row",
+        "Quantity Adjusted",
+        "Save as Draft",
+        "Convert to Adjusted"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "name": "Correct inventory discrepancies",
+      "evidence": [
+        "Inventory Adjustments",
+        "Reason",
+        "Quantity Adjusted",
+        "The existence of a dedicated page to modify inventory outside of sales/purchases implies a need to correct stock counts."
+      ]
+    },
+    {
+      "name": "Record stock changes for auditing",
+      "evidence": [
+        "Reference Number",
+        "Date",
+        "Reason",
+        "Description",
+        "Attach File(s) to inventory adjustment"
+      ]
+    },
+    {
+      "name": "Account for lost or damaged goods",
+      "evidence": [
+        "The 'Reason' field implies structured logging of why inventory is changing.",
+        "The 'Quantity Adjusted' field allows for negative adjustments (e.g., '-10').",
+        "Account label indicates financial tracking of the adjustment."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Modal or interface for 'Add Items in Bulk'",
+      "reason": "The button 'Add Items in Bulk' exists, which implies a user interface for selecting multiple items must be triggered by it, but that UI is not visible on the current page.",
+      "confidence": "high"
+    },
+    {
+      "element": "Dropdown list for 'Reason' field",
+      "reason": "The htmlSnippet contains the text 'Select a reason', strongly suggesting that this is a dropdown or searchable select field with predefined options, not a free text input.",
+      "confidence": "high"
+    },
+    {
+      "element": "Dropdown list for 'Account' field",
+      "reason": "Similar to 'Reason', the UI for selecting an 'Account' is expected to be a dropdown or searchable list, but only the selected value is shown.",
+      "confidence": "high"
+    },
+    {
+      "element": "Confirmation or status message",
+      "reason": "After clicking 'Save as Draft' or 'Convert to Adjusted', there is no visible confirmation message (e.g., 'Adjustment saved successfully'). This is a standard and expected UI pattern.",
+      "confidence": "high"
+    }
+  ],
+  "pageNarrative": "This page is a form for creating a new inventory adjustment. A user can specify the mode of adjustment (quantity or value), a reference number, date, and reason. The core of the page is a table where the user adds items and specifies the exact quantity being adjusted for each. The user can add items one by one or in bulk, attach supporting files, and then either save the adjustment as a draft or finalize it to update live inventory levels.",
+  "_meta": {
+    "sourceFile": "inventory-adjustments-new.html",
+    "pageFactsCounts": {
+      "buttons": 13,
+      "links": 53,
+      "forms": 1,
+      "tables": 1,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 34,
+        "tables": 1,
+        "forms": 1
+      },
+      "reported": {
+        "clickableElements": 16,
+        "tables": 1,
+        "forms": 1
+      },
+      "mismatches": {
+        "clickableElements": true,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": true
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

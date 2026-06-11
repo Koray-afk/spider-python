@@ -1,0 +1,949 @@
+{
+  "pageInfo": {
+    "pageName": "Quotes",
+    "pageCategory": "Sales",
+    "pagePurpose": "To display, manage, and create sales quotes. The page features a main table listing existing quotes with key details and provides navigation to other related business functions.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "entity": "Quote",
+      "evidence": [
+        "pageFileName: quotes.html",
+        "link: Quotes",
+        "button: All Quotes",
+        "table column: Quote Number",
+        "link: QT-000005"
+      ]
+    },
+    {
+      "entity": "Customer",
+      "evidence": [
+        "table column: Customer Name",
+        "link: Customers"
+      ]
+    },
+    {
+      "entity": "Item",
+      "evidence": [
+        "heading: Items",
+        "link: Items"
+      ]
+    },
+    {
+      "entity": "Sales Order",
+      "evidence": [
+        "link: Sales Orders"
+      ]
+    },
+    {
+      "entity": "Invoice",
+      "evidence": [
+        "link: Invoices"
+      ]
+    },
+    {
+      "entity": "Vendor",
+      "evidence": [
+        "link: Vendors"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Open a global search or quick navigation menu.",
+      "expectedOutcome": "A search bar or modal appears, allowing the user to quickly jump to different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "button: Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items (nav button)",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Items' section in the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to items (like 'Items' and 'Price Lists') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Items",
+        "heading: Items"
+      ]
+    },
+    {
+      "label": "Inventory (nav button)",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Inventory' section in the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to inventory (like 'Inventory Adjustments') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Inventory",
+        "heading: Inventory"
+      ]
+    },
+    {
+      "label": "Sales (nav button)",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Sales' section in the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to sales (like 'Customers' and 'Quotes') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Sales",
+        "heading: Sales"
+      ]
+    },
+    {
+      "label": "Purchases (nav button)",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Purchases' section in the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to purchases (like 'Vendors' and 'Bills') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Purchases",
+        "heading: Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking (nav button)",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Time Tracking' section in the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to time tracking (like 'Projects' and 'Timesheet') is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Time Tracking",
+        "heading: Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant (nav button)",
+      "elementType": "button",
+      "businessIntent": "Expand the 'Accountant' section in the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to accounting functions is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Accountant",
+        "heading: Accountant"
+      ]
+    },
+    {
+      "label": "All Quotes",
+      "elementType": "button",
+      "businessIntent": "View all quotes, potentially resetting any active filters.",
+      "expectedOutcome": "The table displays a list of all quotes available in the system.",
+      "confidence": "high",
+      "evidence": [
+        "button: All Quotes"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "Create a new sales quote.",
+      "expectedOutcome": "The user is navigated to a new page or a modal appears to enter the details for a new quote.",
+      "confidence": "high",
+      "evidence": [
+        "button: New"
+      ]
+    },
+    {
+      "label": "Date",
+      "elementType": "button",
+      "businessIntent": "Sort the list of quotes by their creation date.",
+      "expectedOutcome": "The table of quotes is re-sorted in either ascending or descending order by date.",
+      "confidence": "high",
+      "evidence": [
+        "button: Date"
+      ]
+    },
+    {
+      "label": "Quote Number",
+      "elementType": "button",
+      "businessIntent": "Sort the list of quotes by their quote number.",
+      "expectedOutcome": "The table of quotes is re-sorted in either ascending or descending order by quote number.",
+      "confidence": "high",
+      "evidence": [
+        "button: Quote Number"
+      ]
+    },
+    {
+      "label": "Customer Name",
+      "elementType": "button",
+      "businessIntent": "Sort the list of quotes by customer name.",
+      "expectedOutcome": "The table of quotes is re-sorted alphabetically by customer name.",
+      "confidence": "high",
+      "evidence": [
+        "button: Customer Name"
+      ]
+    },
+    {
+      "label": "Amount",
+      "elementType": "button",
+      "businessIntent": "Sort the list of quotes by their total amount.",
+      "expectedOutcome": "The table of quotes is re-sorted in either ascending or descending order by amount.",
+      "confidence": "high",
+      "evidence": [
+        "button: Amount"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's main dashboard or home screen.",
+      "expectedOutcome": "The user is taken to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the list of all items or products.",
+      "expectedOutcome": "The user is taken to the items index page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Items"
+      ]
+    },
+    {
+      "label": "New Item",
+      "elementType": "link",
+      "businessIntent": "Create a new item or product.",
+      "expectedOutcome": "Navigates to a form for creating a new item.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-inventory-product-product-creation/index.html",
+        "htmlSnippet: title=\"New Item\""
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price lists management page.",
+      "expectedOutcome": "The user is taken to the page listing all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "link: Price Lists"
+      ]
+    },
+    {
+      "label": "New Price List",
+      "elementType": "link",
+      "businessIntent": "Create a new price list.",
+      "expectedOutcome": "Navigates to a form for creating a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-inventory-pricelists-new/index.html",
+        "htmlSnippet: title=\"New Price List\""
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustments page.",
+      "expectedOutcome": "The user is taken to the page listing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "link: Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "New Adjustment",
+      "elementType": "link",
+      "businessIntent": "Create a new inventory adjustment record.",
+      "expectedOutcome": "Navigates to a form for creating a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-inventory-adjustments-new/index.html",
+        "htmlSnippet: title=\"New Adjustment\""
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the customer management page.",
+      "expectedOutcome": "The user is taken to the page listing all customers.",
+      "confidence": "high",
+      "evidence": [
+        "link: Customers"
+      ]
+    },
+    {
+      "label": "New Customer",
+      "elementType": "link",
+      "businessIntent": "Create a new customer record.",
+      "expectedOutcome": "Navigates to a form for creating a new customer.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-contacts-new/index.html",
+        "htmlSnippet: title=\"New Customer\""
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the quotes list page (the current page).",
+      "expectedOutcome": "The quotes list page is loaded or refreshed.",
+      "confidence": "high",
+      "evidence": [
+        "link: Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the sales orders management page.",
+      "expectedOutcome": "The user is taken to the page listing all sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "link: Sales Orders"
+      ]
+    },
+    {
+      "label": "New Sales Order",
+      "elementType": "link",
+      "businessIntent": "Create a new sales order.",
+      "expectedOutcome": "Navigates to a form for creating a new sales order.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-salesorders-new/index.html",
+        "htmlSnippet: title=\"New Sales Order\""
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the invoices management page.",
+      "expectedOutcome": "The user is taken to the page listing all invoices.",
+      "confidence": "high",
+      "evidence": [
+        "link: Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring invoices management page.",
+      "expectedOutcome": "The user is taken to the page listing all recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "link: Recurring Invoices"
+      ]
+    },
+    {
+      "label": "New Recurring Invoice",
+      "elementType": "link",
+      "businessIntent": "Create a new recurring invoice.",
+      "expectedOutcome": "Navigates to a form for creating a new recurring invoice.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-recurringinvoices-new/index.html",
+        "htmlSnippet: title=\"New Recurring Invoice\""
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "Navigate to the delivery challans page.",
+      "expectedOutcome": "The user is taken to a page listing delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "link: Delivery Challans"
+      ]
+    },
+    {
+      "label": "New Delivery Challan",
+      "elementType": "link",
+      "businessIntent": "Create a new delivery challan.",
+      "expectedOutcome": "Navigates to a form for creating a new delivery challan.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-deliverychallans-new/index.html",
+        "htmlSnippet: title=\"New Delivery Challan\""
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to the payments received page.",
+      "expectedOutcome": "The user is taken to a page listing all payments received from customers.",
+      "confidence": "high",
+      "evidence": [
+        "link: Payments Received"
+      ]
+    },
+    {
+      "label": "Record New Payment",
+      "elementType": "link",
+      "businessIntent": "Record a new payment received.",
+      "expectedOutcome": "Navigates to a form for recording a new payment.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-paymentsreceived-new/index.html",
+        "htmlSnippet: title=\"Record New Payment\""
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the credit notes page.",
+      "expectedOutcome": "The user is taken to a page listing credit notes.",
+      "confidence": "high",
+      "evidence": [
+        "link: Credit Notes"
+      ]
+    },
+    {
+      "label": "New Credit Note",
+      "elementType": "link",
+      "businessIntent": "Create a new credit note.",
+      "expectedOutcome": "Navigates to a form for creating a new credit note.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/creditnotes/new",
+        "htmlSnippet: title=\"New Credit Note\""
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendor management page.",
+      "expectedOutcome": "The user is taken to a page listing all vendors.",
+      "confidence": "high",
+      "evidence": [
+        "link: Vendors"
+      ]
+    },
+    {
+      "label": "New Vendor",
+      "elementType": "link",
+      "businessIntent": "Create a new vendor record.",
+      "expectedOutcome": "Navigates to a form for creating a new vendor.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/vendors/new",
+        "htmlSnippet: title=\"New Vendor\""
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the expenses page.",
+      "expectedOutcome": "The user is taken to a page listing all expenses.",
+      "confidence": "high",
+      "evidence": [
+        "link: Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring expenses page.",
+      "expectedOutcome": "The user is taken to a page listing recurring expenses.",
+      "confidence": "high",
+      "evidence": [
+        "link: Recurring Expenses"
+      ]
+    },
+    {
+      "label": "New Recurring Expense",
+      "elementType": "link",
+      "businessIntent": "Create a new recurring expense.",
+      "expectedOutcome": "Navigates to a form for creating a new recurring expense.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/recurringexpenses/new",
+        "htmlSnippet: title=\"New Recurring Expense\""
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the purchase orders page.",
+      "expectedOutcome": "The user is taken to a page listing purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "link: Purchase Orders"
+      ]
+    },
+    {
+      "label": "New Purchase Order",
+      "elementType": "link",
+      "businessIntent": "Create a new purchase order.",
+      "expectedOutcome": "Navigates to a form for creating a new purchase order.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/purchaseorders/new",
+        "htmlSnippet: title=\"New Purchase Order\""
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the bills page.",
+      "expectedOutcome": "The user is taken to a page listing bills from vendors.",
+      "confidence": "high",
+      "evidence": [
+        "link: Bills"
+      ]
+    },
+    {
+      "label": "New Bill",
+      "elementType": "link",
+      "businessIntent": "Create a new bill.",
+      "expectedOutcome": "Navigates to a form for creating a new bill.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/bills/new",
+        "htmlSnippet: title=\"New Bill\""
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring bills page.",
+      "expectedOutcome": "The user is taken to a page listing recurring bills.",
+      "confidence": "high",
+      "evidence": [
+        "link: Recurring Bills"
+      ]
+    },
+    {
+      "label": "New Recurring Bill",
+      "elementType": "link",
+      "businessIntent": "Create a new recurring bill.",
+      "expectedOutcome": "Navigates to a form for creating a new recurring bill.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/recurringbills/new",
+        "htmlSnippet: title=\"New Recurring Bill\""
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the payments made page.",
+      "expectedOutcome": "The user is taken to a page listing payments made to vendors.",
+      "confidence": "high",
+      "evidence": [
+        "link: Payments Made"
+      ]
+    },
+    {
+      "label": "Record Payment",
+      "elementType": "link",
+      "businessIntent": "Record a payment made to a vendor.",
+      "expectedOutcome": "Navigates to a form for recording a payment.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/paymentsmade/new",
+        "htmlSnippet: title=\"Record Payment\""
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the vendor credits page.",
+      "expectedOutcome": "The user is taken to a page listing credits from vendors.",
+      "confidence": "high",
+      "evidence": [
+        "link: Vendor Credits"
+      ]
+    },
+    {
+      "label": "New Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Create a new vendor credit.",
+      "expectedOutcome": "Navigates to a form for creating a new vendor credit.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/vendorcredits/new",
+        "htmlSnippet: title=\"New Vendor Credits\""
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Navigate to the projects management page.",
+      "expectedOutcome": "The user is taken to a page listing all projects.",
+      "confidence": "high",
+      "evidence": [
+        "link: Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "Navigate to the timesheet page to view and log time.",
+      "expectedOutcome": "The user is taken to the main timesheet page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the banking and reconciliation section.",
+      "expectedOutcome": "The user is taken to the banking module page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "Navigate to the manual journal entries page.",
+      "expectedOutcome": "The user is taken to a page listing manual journal entries.",
+      "confidence": "high",
+      "evidence": [
+        "link: Manual Journals"
+      ]
+    },
+    {
+      "label": "New Journal",
+      "elementType": "link",
+      "businessIntent": "Create a new manual journal entry.",
+      "expectedOutcome": "Navigates to a form for creating a new journal entry.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/accountant/journals/new",
+        "htmlSnippet: title=\"New Journal\""
+      ]
+    },
+    {
+      "label": "Bulk Update",
+      "elementType": "link",
+      "businessIntent": "Navigate to a feature for bulk updating accounts or transactions.",
+      "expectedOutcome": "The user is taken to the bulk update page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Bulk Update"
+      ]
+    },
+    {
+      "label": "Currency Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the currency adjustments page.",
+      "expectedOutcome": "The user is taken to a page for managing currency adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "link: Currency Adjustments"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "Navigate to the chart of accounts.",
+      "expectedOutcome": "The user is taken to the page displaying the chart of accounts.",
+      "confidence": "high",
+      "evidence": [
+        "link: Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Budgets",
+      "elementType": "link",
+      "businessIntent": "Navigate to the budgeting feature.",
+      "expectedOutcome": "The user is taken to the budget management page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Budgets"
+      ]
+    },
+    {
+      "label": "Transaction Locking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the transaction locking settings.",
+      "expectedOutcome": "The user is taken to a page to configure transaction locking.",
+      "confidence": "high",
+      "evidence": [
+        "link: Transaction Locking"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "Navigate to the reporting section.",
+      "expectedOutcome": "The user is taken to the main reports dashboard.",
+      "confidence": "high",
+      "evidence": [
+        "link: Reports"
+      ]
+    },
+    {
+      "label": "Documents",
+      "elementType": "link",
+      "businessIntent": "Navigate to the document management system.",
+      "expectedOutcome": "The user is taken to their document inbox.",
+      "confidence": "high",
+      "evidence": [
+        "link: Documents"
+      ]
+    },
+    {
+      "label": "Zoho Payroll",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrated Zoho Payroll application.",
+      "expectedOutcome": "The user is taken to the Zoho Payroll module.",
+      "confidence": "high",
+      "evidence": [
+        "link: Zoho Payroll"
+      ]
+    },
+    {
+      "label": "Zoho Payments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the integrated Zoho Payments application.",
+      "expectedOutcome": "The user is taken to the Zoho Payments module.",
+      "confidence": "high",
+      "evidence": [
+        "link: Zoho Payments"
+      ]
+    },
+    {
+      "label": "Configure Features",
+      "elementType": "link",
+      "businessIntent": "Navigate to a settings page to configure application features.",
+      "expectedOutcome": "The user is taken to a configuration or settings page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Configure Features"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "Register for a product webinar.",
+      "expectedOutcome": "The user is taken to an external webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Register Now"
+      ]
+    },
+    {
+      "label": "QT-000005",
+      "elementType": "link",
+      "businessIntent": "View the details of quote QT-000005.",
+      "expectedOutcome": "The user is navigated to the detailed view page for this specific quote.",
+      "confidence": "high",
+      "evidence": [
+        "link: QT-000005"
+      ]
+    },
+    {
+      "label": "QT-000002",
+      "elementType": "link",
+      "businessIntent": "View the details of quote QT-000002.",
+      "expectedOutcome": "The user is navigated to the detailed view page for this specific quote.",
+      "confidence": "high",
+      "evidence": [
+        "link: QT-000002"
+      ]
+    },
+    {
+      "label": "QT-000001",
+      "elementType": "link",
+      "businessIntent": "View the details of quote QT-000001.",
+      "expectedOutcome": "The user is navigated to the detailed view page for this specific quote.",
+      "confidence": "high",
+      "evidence": [
+        "link: QT-000001"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "Create a new chat channel in the integrated chat application.",
+      "expectedOutcome": "The user is taken to an interface for creating a new chat channel.",
+      "confidence": "high",
+      "evidence": [
+        "link: Create a channel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Quotes List",
+      "purpose": "To display a summary of all sales quotes, allowing users to quickly see their status, amount, and other key details.",
+      "columns": [
+        {
+          "name": "Date",
+          "meaning": "The date the quote was created or issued.",
+          "businessPurpose": "To track the age of quotes and for chronological sorting."
+        },
+        {
+          "name": "Quote Number",
+          "meaning": "The unique identifier for the quote.",
+          "businessPurpose": "For internal and external reference and to access the quote's details."
+        },
+        {
+          "name": "Reference number",
+          "meaning": "An additional reference number, possibly provided by the customer (e.g., PO number).",
+          "businessPurpose": "To cross-reference the quote with customer's own tracking systems."
+        },
+        {
+          "name": "Customer Name",
+          "meaning": "The name of the customer to whom the quote was issued.",
+          "businessPurpose": "To identify the recipient of the quote."
+        },
+        {
+          "name": "Status",
+          "meaning": "The current stage of the quote in its lifecycle (e.g., Draft, Declined).",
+          "businessPurpose": "To track the progress and outcome of sales quotes."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total monetary value of the quote.",
+          "businessPurpose": "To understand the potential revenue value of each quote."
+        }
+      ]
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create New Quote",
+      "steps": [
+        "User clicks the 'New' button.",
+        "User is directed to a form or page to enter details for a new quote.",
+        "User fills out and saves the new quote."
+      ],
+      "confidence": "medium",
+      "evidence": [
+        "button: New",
+        "htmlSnippet: <button title=\"New Quote\" type=\"button\"></button>"
+      ]
+    },
+    {
+      "name": "View Quote Details",
+      "steps": [
+        "User finds a quote in the table.",
+        "User clicks on the link in the 'Quote Number' column (e.g., 'QT-000005').",
+        "User is navigated to a page showing the full details of that quote."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link: QT-000005",
+        "link: QT-000002",
+        "link: QT-000001"
+      ]
+    },
+    {
+      "name": "Sort Quotes List",
+      "steps": [
+        "User clicks on a column header button such as 'Date', 'Quote Number', 'Customer Name', or 'Amount'.",
+        "The table re-sorts its data based on the selected column."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button: Date",
+        "button: Quote Number",
+        "button: Customer Name",
+        "button: Amount"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Create a new sales quote for a customer.",
+      "evidence": [
+        "button: New"
+      ]
+    },
+    {
+      "goal": "Review the status and details of existing quotes.",
+      "evidence": [
+        "table: table_1",
+        "table columns: Date, Quote Number, Customer Name, Status, Amount"
+      ]
+    },
+    {
+      "goal": "Find a specific quote.",
+      "evidence": [
+        "htmlSnippet: <input placeholder=\"Search in Quotes ( / )\" type=\"text\"/>",
+        "buttons for sorting: Date, Quote Number"
+      ]
+    },
+    {
+      "goal": "Access a detailed view of a single quote.",
+      "evidence": [
+        "link: QT-000005",
+        "link: QT-000002",
+        "link: QT-000001"
+      ]
+    },
+    {
+      "goal": "Navigate to other related business areas like Customers or Invoices.",
+      "evidence": [
+        "navigation links: Customers, Invoices, Sales Orders, Items"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "Quote Creation Form",
+      "reasoning": "The 'New' button implies the existence of a form or a dedicated page for inputting the details of a new quote, which is not present on this list view.",
+      "confidence": "high",
+      "evidence": [
+        "button: New"
+      ]
+    },
+    {
+      "uiElementName": "Quote Detail View",
+      "reasoning": "The clickable quote number links (e.g., 'QT-000005') strongly suggest that a separate page or view exists to display the complete information for a single quote.",
+      "confidence": "high",
+      "evidence": [
+        "link: QT-000005"
+      ]
+    },
+    {
+      "uiElementName": "Filtering Controls",
+      "reasoning": "The 'All Quotes' button suggests that other filtered views might be possible (e.g., by status, date range). The UI elements to select and apply these filters (like dropdowns or date pickers) are not visible.",
+      "confidence": "medium",
+      "evidence": [
+        "button: All Quotes"
+      ]
+    },
+    {
+      "uiElementName": "Bulk Action Controls",
+      "reasoning": "The table includes checkboxes for each row, which typically indicates the ability to perform bulk actions (e.g., delete, update status) on selected items. The buttons to trigger these actions are not visible.",
+      "confidence": "medium",
+      "evidence": [
+        "htmlSnippet: <td><input type=\"checkbox\"/></td>"
+      ]
+    }
+  ],
+  "pageNarrative": "This page serves as a central hub for managing sales quotes. A user can view a list of all quotes in a table, with key information such as the quote number, customer name, status, and total amount readily visible. The primary user actions are creating a new quote using the 'New' button, sorting the list by clicking on column headers, and drilling down into the specifics of a single quote by clicking its unique number. The page also features a comprehensive side navigation menu, allowing the user to easily switch to other related business modules like Customers, Sales Orders, and Invoices.",
+  "_meta": {
+    "sourceFile": "quotes.html",
+    "pageFactsCounts": {
+      "buttons": 13,
+      "links": 56,
+      "forms": 0,
+      "tables": 1,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 37,
+        "tables": 1,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 69,
+        "tables": 1,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

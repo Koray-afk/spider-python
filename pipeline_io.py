@@ -41,6 +41,7 @@ def load_pipeline_status(metadata_dir: Path) -> dict:
             "crawl_completed": False,
             "stitch_completed": False,
             "clean_completed": False,
+            "analyze_completed": False,
             "last_run": None,
         }
     return json.loads(path.read_text(encoding="utf-8"))

@@ -1,0 +1,532 @@
+{
+  "pageInfo": {
+    "pageName": "New Sales Order",
+    "pageCategory": "Sales",
+    "pagePurpose": "To create a new sales order by entering customer information, item details, and other relevant sales information.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Sales Order",
+      "evidence": [
+        "New Sales Order",
+        "Sales Order#",
+        "Sales Order Date"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "Customer Name",
+        "Customers",
+        "Customer Notes"
+      ]
+    },
+    {
+      "name": "Item",
+      "evidence": [
+        "Items",
+        "Item Details",
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "name": "Price List",
+      "evidence": [
+        "Price Lists",
+        "Select Price List"
+      ]
+    },
+    {
+      "name": "Salesperson",
+      "evidence": [
+        "Salesperson"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To open a quick navigation or search menu for accessing different parts of the application.",
+      "expectedOutcome": "A search bar or navigation modal appears on the screen.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Items' section of the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to items and price lists is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Inventory' section of the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to inventory is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Sales' section of the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to sales activities like customers, quotes, and invoices is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Purchases' section of the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to purchasing activities is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Time Tracking' section of the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to projects and timesheets is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "To expand the 'Accountant' section of the main navigation menu.",
+      "expectedOutcome": "A sub-menu with links related to accounting functions is displayed.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "Bulk Actions",
+      "elementType": "button",
+      "businessIntent": "To perform an action on multiple selected line items in the sales order.",
+      "expectedOutcome": "A dropdown or menu with available bulk actions appears.",
+      "confidence": "medium",
+      "evidence": [
+        "Bulk Actions"
+      ]
+    },
+    {
+      "label": "Add Items in Bulk",
+      "elementType": "button",
+      "businessIntent": "To add multiple items to the sales order at once.",
+      "expectedOutcome": "A modal or a new interface opens, allowing the user to select multiple items to add to the order.",
+      "confidence": "high",
+      "evidence": [
+        "Add Items in Bulk"
+      ]
+    },
+    {
+      "label": "Save as Draft",
+      "elementType": "button",
+      "businessIntent": "To save the current sales order without finalizing or sending it.",
+      "expectedOutcome": "The sales order data is saved in a draft state, and the user is likely redirected to the sales order list page.",
+      "confidence": "high",
+      "evidence": [
+        "Save as Draft"
+      ]
+    },
+    {
+      "label": "Save and Send",
+      "elementType": "button",
+      "businessIntent": "To finalize the sales order and send it to the customer.",
+      "expectedOutcome": "The sales order is saved and a workflow to send it (likely via email) is initiated. The user may be shown a confirmation or redirected.",
+      "confidence": "high",
+      "evidence": [
+        "Save and Send"
+      ]
+    },
+    {
+      "label": "Cancel",
+      "elementType": "button",
+      "businessIntent": "To discard the new sales order and exit the creation form.",
+      "expectedOutcome": "The form is cleared, and the user is redirected to the previous page, likely the sales order list.",
+      "confidence": "high",
+      "evidence": [
+        "Cancel"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "To navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of all items.",
+      "expectedOutcome": "The user is taken to the items index page.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of price lists.",
+      "expectedOutcome": "The user is taken to the price lists page.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of inventory adjustments.",
+      "expectedOutcome": "The user is taken to the inventory adjustments page.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of customers.",
+      "expectedOutcome": "The user is taken to the customer contacts page.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of quotes.",
+      "expectedOutcome": "The user is taken to the quotes list page.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of sales orders.",
+      "expectedOutcome": "The user is taken to the sales orders list page.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "To navigate to the list of invoices.",
+      "expectedOutcome": "The user is taken to the invoices list page.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Add New Row",
+      "elementType": "link",
+      "businessIntent": "To add a new empty line item to the items table in the sales order.",
+      "expectedOutcome": "A new row appears in the item details table, allowing the user to add another product or service.",
+      "confidence": "high",
+      "evidence": [
+        "Add New Row"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To register for a product webinar.",
+      "expectedOutcome": "The user is taken to an external webinar registration page.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now"
+      ]
+    },
+    {
+      "label": "Create a channel",
+      "elementType": "link",
+      "businessIntent": "To create a new channel in an integrated chat application.",
+      "expectedOutcome": "The user is taken to an external chat application page to create a channel.",
+      "confidence": "high",
+      "evidence": [
+        "Create a channel"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Item Table",
+      "purpose": "To list the products or services being sold in the sales order, including their quantities, rates, and total amounts.",
+      "columns": [
+        {
+          "name": "Drag item up or down",
+          "meaning": "A control to reorder the line items.",
+          "businessPurpose": "Allows the user to change the sequence in which items appear on the sales order document."
+        },
+        {
+          "name": "Item Details",
+          "meaning": "The name or description of the product or service.",
+          "businessPurpose": "To identify the specific item being sold."
+        },
+        {
+          "name": "Quantity",
+          "meaning": "The number of units of the item being sold.",
+          "businessPurpose": "To specify the volume of the item for pricing and inventory tracking."
+        },
+        {
+          "name": "Rate",
+          "meaning": "The price per single unit of the item.",
+          "businessPurpose": "To define the unit cost for calculating the total amount."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total cost for the line item (Quantity x Rate).",
+          "businessPurpose": "To show the subtotal for each line item on the sales order."
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "formName": "New Sales Order Form",
+      "purpose": "To capture all the necessary details to create a new sales order.",
+      "fields": [
+        {
+          "fieldName": "Customer Name",
+          "fieldType": "text",
+          "businessMeaning": "The name of the customer for whom the sales order is being created."
+        },
+        {
+          "fieldName": "Sales Order#",
+          "fieldType": "text",
+          "businessMeaning": "A unique identifier for the sales order, likely auto-generated."
+        },
+        {
+          "fieldName": "Reference#",
+          "fieldType": "text",
+          "businessMeaning": "An optional reference number, such as a customer's purchase order number."
+        },
+        {
+          "fieldName": "Sales Order Date",
+          "fieldType": "text",
+          "businessMeaning": "The date the sales order was created."
+        },
+        {
+          "fieldName": "Expected Shipment Date",
+          "fieldType": "text",
+          "businessMeaning": "The date when the items are expected to be shipped to the customer."
+        },
+        {
+          "fieldName": "Payment Terms",
+          "fieldType": "text",
+          "businessMeaning": "The agreed-upon terms for payment (e.g., Due on Receipt, Net 30)."
+        },
+        {
+          "fieldName": "Delivery Method",
+          "fieldType": "text",
+          "businessMeaning": "The method by which the goods will be delivered to the customer."
+        },
+        {
+          "fieldName": "Salesperson",
+          "fieldType": "text",
+          "businessMeaning": "The name of the salesperson associated with this sale."
+        },
+        {
+          "fieldName": "Select Price List",
+          "fieldType": "textarea",
+          "businessMeaning": "A field to select a specific price list to apply to the items in this sales order."
+        },
+        {
+          "fieldName": "Customer Notes",
+          "fieldType": "textarea",
+          "businessMeaning": "A field for entering notes that will be visible to the customer on the sales order document."
+        },
+        {
+          "fieldName": "Discount",
+          "fieldType": "text",
+          "businessMeaning": "The discount amount or percentage to be applied to the subtotal of the sales order."
+        },
+        {
+          "fieldName": "TDS",
+          "fieldType": "radio",
+          "businessMeaning": "An option to apply Tax Deducted at Source (TDS) to the total amount."
+        },
+        {
+          "fieldName": "TCS",
+          "fieldType": "radio",
+          "businessMeaning": "An option to apply Tax Collected at Source (TCS) to the total amount."
+        },
+        {
+          "fieldName": "Terms & Conditions",
+          "fieldType": "textarea",
+          "businessMeaning": "A field for specifying the terms and conditions of the sale, to be displayed on the sales order."
+        },
+        {
+          "fieldName": "Attach File(s)",
+          "fieldType": "file",
+          "businessMeaning": "An input to upload and attach files (e.g., contracts, specifications) to the sales order."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Create and Save Sales Order Draft",
+      "steps": [
+        "User fills in customer and sales order details.",
+        "User adds one or more line items to the item table.",
+        "User clicks the 'Save as Draft' button."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Sales Order",
+        "Save as Draft",
+        "Item Details"
+      ]
+    },
+    {
+      "name": "Create and Send Sales Order",
+      "steps": [
+        "User fills in all required customer and sales order details.",
+        "User adds one or more line items to the item table.",
+        "User clicks the 'Save and Send' button."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "New Sales Order",
+        "Save and Send",
+        "Item Details"
+      ]
+    },
+    {
+      "name": "Add Items to Sales Order",
+      "steps": [
+        "User clicks in the 'Item Details' field or clicks 'Add New Row'.",
+        "User selects an item from a list.",
+        "User enters quantity and confirms the rate.",
+        "The system calculates the line item amount."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "Add New Row",
+        "Item Details",
+        "Quantity",
+        "Rate",
+        "Amount"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "name": "Create a formal sales order",
+      "description": "To create a new sales order document for a customer transaction.",
+      "evidence": [
+        "New Sales Order",
+        "Customer Name",
+        "Save and Send"
+      ]
+    },
+    {
+      "name": "Define items and pricing for a sale",
+      "description": "To specify the exact products or services, quantities, and prices for a particular sale.",
+      "evidence": [
+        "Item Details",
+        "Quantity",
+        "Rate",
+        "Amount"
+      ]
+    },
+    {
+      "name": "Save an incomplete order for later",
+      "description": "To save a partially completed sales order as a draft to be finished at a later time.",
+      "evidence": [
+        "Save as Draft"
+      ]
+    },
+    {
+      "name": "Quickly navigate to other related business functions",
+      "description": "To move from creating a sales order to other areas like customer management, inventory, or invoicing.",
+      "evidence": [
+        "Home",
+        "Items",
+        "Customers",
+        "Invoices"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Customer selection dropdown/modal",
+      "reason": "The 'Customer Name' label and 'Select or add a customer' text in the HTML imply a mechanism to search for and select an existing customer or add a new one, which is not fully detailed in the facts.",
+      "confidence": "high"
+    },
+    {
+      "element": "Item selection dropdown/modal",
+      "reason": "The 'Item Details' field in the table with the placeholder 'Type or click to select an item.' indicates an interactive element for searching and selecting products from a catalog.",
+      "confidence": "high"
+    },
+    {
+      "element": "Bulk item selection interface",
+      "reason": "The 'Add Items in Bulk' button strongly suggests a corresponding modal or screen where users can view a list of items and select multiple to add to the order simultaneously.",
+      "confidence": "high"
+    },
+    {
+      "element": "Send confirmation modal",
+      "reason": "The 'Save and Send' button typically precedes a confirmation step in SaaS applications, where the user can review the recipient's email and a message before finalizing the send action.",
+      "confidence": "medium"
+    }
+  ],
+  "pageNarrative": "This page is a form for creating a 'New Sales Order'. A user can specify the customer, dates, and reference numbers for the order. The core of the page is a table for adding line items, where the user selects products or services and defines their quantity and rate. The form automatically calculates subtotals and a final total, accounting for discounts and taxes. Upon completion, the user has the option to save the order as a draft or to save and send it directly to the customer.",
+  "_meta": {
+    "sourceFile": "salesorders-new.html",
+    "pageFactsCounts": {
+      "buttons": 12,
+      "links": 54,
+      "forms": 1,
+      "tables": 1,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 33,
+        "tables": 1,
+        "forms": 1
+      },
+      "reported": {
+        "clickableElements": 23,
+        "tables": 1,
+        "forms": 1
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

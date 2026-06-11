@@ -1,0 +1,911 @@
+{
+  "pageInfo": {
+    "pageName": "Dashboard",
+    "pageCategory": "Accounting",
+    "pagePurpose": "To provide a high-level overview of the business's financial health and serve as a central navigation hub for all application modules.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Item",
+      "evidence": [
+        "heading: Items",
+        "link: Items"
+      ]
+    },
+    {
+      "name": "Price List",
+      "evidence": [
+        "link: Price Lists"
+      ]
+    },
+    {
+      "name": "Inventory Adjustment",
+      "evidence": [
+        "link: Inventory Adjustments"
+      ]
+    },
+    {
+      "name": "Customer",
+      "evidence": [
+        "link: Customers"
+      ]
+    },
+    {
+      "name": "Quote",
+      "evidence": [
+        "link: Quotes"
+      ]
+    },
+    {
+      "name": "Sales Order",
+      "evidence": [
+        "link: Sales Orders"
+      ]
+    },
+    {
+      "name": "Invoice",
+      "evidence": [
+        "link: Invoices",
+        "table column: Total Unpaid Invoices₹3,000.00"
+      ]
+    },
+    {
+      "name": "Bill",
+      "evidence": [
+        "link: Bills",
+        "table column: Total Unpaid Bills₹2,979.00"
+      ]
+    },
+    {
+      "name": "Project",
+      "evidence": [
+        "link: Projects"
+      ]
+    },
+    {
+      "name": "Vendor",
+      "evidence": [
+        "link: Vendors"
+      ]
+    },
+    {
+      "name": "Expense",
+      "evidence": [
+        "link: Expenses"
+      ]
+    },
+    {
+      "name": "Purchase Order",
+      "evidence": [
+        "link: Purchase Orders"
+      ]
+    },
+    {
+      "name": "Payment",
+      "evidence": [
+        "link: Payments Received",
+        "link: Payments Made"
+      ]
+    },
+    {
+      "name": "Bank",
+      "evidence": [
+        "table column: Citi Bank"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Provides a keyboard shortcut for quick navigation within the application.",
+      "expectedOutcome": "Opens a navigation search or menu.",
+      "confidence": "medium",
+      "evidence": [
+        "button: Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Items management section.",
+      "expectedOutcome": "The user is taken to a page listing all items.",
+      "confidence": "high",
+      "evidence": [
+        "button: Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Inventory management section.",
+      "expectedOutcome": "The user is taken to a page showing inventory-related features.",
+      "confidence": "high",
+      "evidence": [
+        "button: Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Sales management section.",
+      "expectedOutcome": "The user is taken to a page showing sales-related features like invoices and quotes.",
+      "confidence": "high",
+      "evidence": [
+        "button: Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Purchases management section.",
+      "expectedOutcome": "The user is taken to a page showing purchase-related features like bills and purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "button: Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Time Tracking section.",
+      "expectedOutcome": "The user is taken to a page for managing projects and timesheets.",
+      "confidence": "high",
+      "evidence": [
+        "button: Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Accountant tools section.",
+      "expectedOutcome": "The user is taken to a page with advanced accounting tools like manual journals and chart of accounts.",
+      "confidence": "high",
+      "evidence": [
+        "button: Accountant"
+      ]
+    },
+    {
+      "label": "Dashboard",
+      "elementType": "button",
+      "businessIntent": "Navigate to the main dashboard view.",
+      "expectedOutcome": "The current dashboard page is reloaded or displayed.",
+      "confidence": "high",
+      "evidence": [
+        "button: Dashboard"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "Create a new receivable entity, likely an invoice or quote.",
+      "expectedOutcome": "Opens a dropdown or modal to select a new entity to create within the 'Total Receivables' context.",
+      "confidence": "medium",
+      "evidence": [
+        "button: New"
+      ]
+    },
+    {
+      "label": ": ₹3,000.00",
+      "elementType": "button",
+      "businessIntent": "View details of overdue receivables.",
+      "expectedOutcome": "Navigates to a filtered list of overdue invoices totaling ₹3,000.00.",
+      "confidence": "high",
+      "evidence": [
+        "button: : ₹3,000.00",
+        "badge: Overdue: ₹3,000.00"
+      ]
+    },
+    {
+      "label": ": ₹2,979.00",
+      "elementType": "button",
+      "businessIntent": "View details of overdue payables.",
+      "expectedOutcome": "Navigates to a filtered list of overdue bills totaling ₹2,979.00.",
+      "confidence": "high",
+      "evidence": [
+        "button: : ₹2,979.00",
+        "badge: Overdue: ₹2,979.00"
+      ]
+    },
+    {
+      "label": "This Fiscal Year",
+      "elementType": "button",
+      "businessIntent": "Change the date range for a dashboard widget.",
+      "expectedOutcome": "Opens a dropdown to select a different time period for the 'Cash Flow', 'Income and Expense', or 'Top Expenses' widget.",
+      "confidence": "high",
+      "evidence": [
+        "button: This Fiscal Year"
+      ]
+    },
+    {
+      "label": "Accrual",
+      "elementType": "button",
+      "businessIntent": "Change the accounting method for a dashboard widget.",
+      "expectedOutcome": "Opens a dropdown to switch between 'Accrual' and 'Cash' accounting methods for the displayed data.",
+      "confidence": "high",
+      "evidence": [
+        "button: Accrual"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the main home/dashboard page.",
+      "expectedOutcome": "The user is returned to the main dashboard.",
+      "confidence": "high",
+      "evidence": [
+        "link: Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Items list page.",
+      "expectedOutcome": "The user is taken to a page that lists all inventory/service items.",
+      "confidence": "high",
+      "evidence": [
+        "link: Items"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-product-product-creation/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new item.",
+      "expectedOutcome": "The user is taken to a form to create a new item.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-inventory-product-product-creation/index.html",
+        "html snippet: <a href=\"../app-60073668069-inventory-product-product-creation/index.html\" title=\"New Item\">"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Price Lists page.",
+      "expectedOutcome": "The user is taken to a page that lists all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "link: Price Lists"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-pricelists-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new price list.",
+      "expectedOutcome": "The user is taken to a form to create a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-inventory-pricelists-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-inventory-pricelists-new/index.html\" title=\"New Price List\">"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Inventory Adjustments page.",
+      "expectedOutcome": "The user is taken to a page listing past inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "link: Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-adjustments-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new inventory adjustment.",
+      "expectedOutcome": "The user is taken to a form to create a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-inventory-adjustments-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-inventory-adjustments-new/index.html\" title=\"New Adjustment\">"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Customers list page.",
+      "expectedOutcome": "The user is taken to a page listing all customers.",
+      "confidence": "high",
+      "evidence": [
+        "link: Customers"
+      ]
+    },
+    {
+      "label": "../app-60073668069-contacts-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new customer.",
+      "expectedOutcome": "The user is taken to a form to create a new customer.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-contacts-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-contacts-new/index.html\" title=\"New Customer\">"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Quotes list page.",
+      "expectedOutcome": "The user is taken to a page listing all quotes.",
+      "confidence": "high",
+      "evidence": [
+        "link: Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Sales Orders list page.",
+      "expectedOutcome": "The user is taken to a page listing all sales orders.",
+      "confidence": "high",
+      "evidence": [
+        "link: Sales Orders"
+      ]
+    },
+    {
+      "label": "../app-60073668069-salesorders-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new sales order.",
+      "expectedOutcome": "The user is taken to a form to create a new sales order.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-salesorders-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-salesorders-new/index.html\" title=\"New Sales Order\">"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Invoices list page.",
+      "expectedOutcome": "The user is taken to a page listing all invoices.",
+      "confidence": "high",
+      "evidence": [
+        "link: Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Recurring Invoices list page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring invoice templates.",
+      "confidence": "high",
+      "evidence": [
+        "link: Recurring Invoices"
+      ]
+    },
+    {
+      "label": "../app-60073668069-recurringinvoices-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new recurring invoice.",
+      "expectedOutcome": "The user is taken to a form to create a new recurring invoice.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-recurringinvoices-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-recurringinvoices-new/index.html\" title=\"New Recurring Invoice\">"
+      ]
+    },
+    {
+      "label": "Delivery Challans",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Delivery Challans page.",
+      "expectedOutcome": "The user is taken to a page listing all delivery challans.",
+      "confidence": "high",
+      "evidence": [
+        "link: Delivery Challans"
+      ]
+    },
+    {
+      "label": "../app-60073668069-deliverychallans-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new delivery challan.",
+      "expectedOutcome": "The user is taken to a form to create a new delivery challan.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-deliverychallans-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-deliverychallans-new/index.html\" title=\"New Delivery Challan\">"
+      ]
+    },
+    {
+      "label": "Payments Received",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Payments Received page.",
+      "expectedOutcome": "The user is taken to a page listing all received payments.",
+      "confidence": "high",
+      "evidence": [
+        "link: Payments Received"
+      ]
+    },
+    {
+      "label": "../app-60073668069-paymentsreceived-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Record a new payment received.",
+      "expectedOutcome": "The user is taken to a form to record a new payment.",
+      "confidence": "high",
+      "evidence": [
+        "link: ../app-60073668069-paymentsreceived-new/index.html",
+        "html snippet: <a href=\"../app-60073668069-paymentsreceived-new/index.html\" title=\"Record New Payment\">"
+      ]
+    },
+    {
+      "label": "Credit Notes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Credit Notes page.",
+      "expectedOutcome": "The user is taken to a page listing all credit notes.",
+      "confidence": "high",
+      "evidence": [
+        "link: Credit Notes"
+      ]
+    },
+    {
+      "label": "#/creditnotes/new",
+      "elementType": "link",
+      "businessIntent": "Create a new credit note.",
+      "expectedOutcome": "The user is taken to a form to create a new credit note.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/creditnotes/new",
+        "html snippet: <a href=\"#/creditnotes/new\" title=\"New Credit Note\">"
+      ]
+    },
+    {
+      "label": "Vendors",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Vendors list page.",
+      "expectedOutcome": "The user is taken to a page listing all vendors.",
+      "confidence": "high",
+      "evidence": [
+        "link: Vendors"
+      ]
+    },
+    {
+      "label": "#/vendors/new",
+      "elementType": "link",
+      "businessIntent": "Create a new vendor.",
+      "expectedOutcome": "The user is taken to a form to create a new vendor.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/vendors/new",
+        "html snippet: <a href=\"#/vendors/new\" title=\"New Vendor\">"
+      ]
+    },
+    {
+      "label": "Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Expenses list page.",
+      "expectedOutcome": "The user is taken to a page listing all expenses.",
+      "confidence": "high",
+      "evidence": [
+        "link: Expenses"
+      ]
+    },
+    {
+      "label": "Recurring Expenses",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Recurring Expenses page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring expense templates.",
+      "confidence": "high",
+      "evidence": [
+        "link: Recurring Expenses"
+      ]
+    },
+    {
+      "label": "#/recurringexpenses/new",
+      "elementType": "link",
+      "businessIntent": "Create a new recurring expense.",
+      "expectedOutcome": "The user is taken to a form to create a new recurring expense.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/recurringexpenses/new",
+        "html snippet: <a href=\"#/recurringexpenses/new\" title=\"New Recurring Expense\">"
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Purchase Orders list page.",
+      "expectedOutcome": "The user is taken to a page listing all purchase orders.",
+      "confidence": "high",
+      "evidence": [
+        "link: Purchase Orders"
+      ]
+    },
+    {
+      "label": "#/purchaseorders/new",
+      "elementType": "link",
+      "businessIntent": "Create a new purchase order.",
+      "expectedOutcome": "The user is taken to a form to create a new purchase order.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/purchaseorders/new",
+        "html snippet: <a href=\"#/purchaseorders/new\" title=\"New Purchase Order\">"
+      ]
+    },
+    {
+      "label": "Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Bills list page.",
+      "expectedOutcome": "The user is taken to a page listing all bills.",
+      "confidence": "high",
+      "evidence": [
+        "link: Bills"
+      ]
+    },
+    {
+      "label": "#/bills/new",
+      "elementType": "link",
+      "businessIntent": "Create a new bill.",
+      "expectedOutcome": "The user is taken to a form to create a new bill.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/bills/new",
+        "html snippet: <a href=\"#/bills/new\" title=\"New Bill\">"
+      ]
+    },
+    {
+      "label": "Recurring Bills",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Recurring Bills page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring bill templates.",
+      "confidence": "high",
+      "evidence": [
+        "link: Recurring Bills"
+      ]
+    },
+    {
+      "label": "#/recurringbills/new",
+      "elementType": "link",
+      "businessIntent": "Create a new recurring bill.",
+      "expectedOutcome": "The user is taken to a form to create a new recurring bill.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/recurringbills/new",
+        "html snippet: <a href=\"#/recurringbills/new\" title=\"New Recurring Bill\">"
+      ]
+    },
+    {
+      "label": "Payments Made",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Payments Made page.",
+      "expectedOutcome": "The user is taken to a page listing all outgoing payments.",
+      "confidence": "high",
+      "evidence": [
+        "link: Payments Made"
+      ]
+    },
+    {
+      "label": "#/paymentsmade/new",
+      "elementType": "link",
+      "businessIntent": "Record a new payment made.",
+      "expectedOutcome": "The user is taken to a form to record a new outgoing payment.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/paymentsmade/new",
+        "html snippet: <a href=\"#/paymentsmade/new\" title=\"Record Payment\">"
+      ]
+    },
+    {
+      "label": "Vendor Credits",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Vendor Credits page.",
+      "expectedOutcome": "The user is taken to a page listing all vendor credits.",
+      "confidence": "high",
+      "evidence": [
+        "link: Vendor Credits"
+      ]
+    },
+    {
+      "label": "#/vendorcredits/new",
+      "elementType": "link",
+      "businessIntent": "Create a new vendor credit.",
+      "expectedOutcome": "The user is taken to a form to create a new vendor credit.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/vendorcredits/new",
+        "html snippet: <a href=\"#/vendorcredits/new\" title=\"New Vendor Credits\">"
+      ]
+    },
+    {
+      "label": "Projects",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Projects list page.",
+      "expectedOutcome": "The user is taken to a page listing all projects.",
+      "confidence": "high",
+      "evidence": [
+        "link: Projects"
+      ]
+    },
+    {
+      "label": "Timesheet",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Timesheet page.",
+      "expectedOutcome": "The user is taken to a page for viewing or logging time entries.",
+      "confidence": "high",
+      "evidence": [
+        "link: Timesheet"
+      ]
+    },
+    {
+      "label": "Banking",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Banking module.",
+      "expectedOutcome": "The user is taken to a page for managing bank accounts and transactions.",
+      "confidence": "high",
+      "evidence": [
+        "link: Banking"
+      ]
+    },
+    {
+      "label": "Manual Journals",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Manual Journals page.",
+      "expectedOutcome": "The user is taken to a page listing all manual journal entries.",
+      "confidence": "high",
+      "evidence": [
+        "link: Manual Journals"
+      ]
+    },
+    {
+      "label": "#/accountant/journals/new",
+      "elementType": "link",
+      "businessIntent": "Create a new manual journal entry.",
+      "expectedOutcome": "The user is taken to a form to create a new manual journal entry.",
+      "confidence": "high",
+      "evidence": [
+        "link: #/accountant/journals/new",
+        "html snippet: <a href=\"#/accountant/journals/new\" title=\"New Journal\">"
+      ]
+    },
+    {
+      "label": "Chart of Accounts",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Chart of Accounts.",
+      "expectedOutcome": "The user is taken to a page listing all accounts in the general ledger.",
+      "confidence": "high",
+      "evidence": [
+        "link: Chart of Accounts"
+      ]
+    },
+    {
+      "label": "Reports",
+      "elementType": "link",
+      "businessIntent": "Navigate to the Reports section.",
+      "expectedOutcome": "The user is taken to a page where they can generate and view various financial reports.",
+      "confidence": "high",
+      "evidence": [
+        "link: Reports"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "Register for a product webinar.",
+      "expectedOutcome": "The user is taken to an external page to register for a webinar.",
+      "confidence": "high",
+      "evidence": [
+        "link: Register Now"
+      ]
+    },
+    {
+      "label": "Add Project(s) to this watchlist",
+      "elementType": "link",
+      "businessIntent": "Add projects to the dashboard watchlist for quick monitoring.",
+      "expectedOutcome": "The user is navigated to the projects page to select which projects to add to the watchlist.",
+      "confidence": "high",
+      "evidence": [
+        "link: Add Project(s) to this watchlist"
+      ]
+    },
+    {
+      "label": "₹0.00",
+      "elementType": "link",
+      "businessIntent": "View transactions for the Citi Bank account.",
+      "expectedOutcome": "The user is navigated to the transaction list for the Citi Bank account.",
+      "confidence": "high",
+      "evidence": [
+        "link: ₹0.00",
+        "table column: Citi Bank"
+      ]
+    },
+    {
+      "label": "Learn More",
+      "elementType": "link",
+      "businessIntent": "Learn about the mobile application.",
+      "expectedOutcome": "The user is taken to a marketing page about the mobile app.",
+      "confidence": "high",
+      "evidence": [
+        "link: Learn More"
+      ]
+    },
+    {
+      "label": "Contact Support",
+      "elementType": "link",
+      "businessIntent": "Get help from customer support.",
+      "expectedOutcome": "Opens a support channel, such as a contact form, chat, or help modal.",
+      "confidence": "high",
+      "evidence": [
+        "link: Contact Support"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "table_1",
+      "purpose": "Displays a summary of total receivables, specifically focusing on unpaid invoices.",
+      "columns": [
+        {
+          "name": "Total Unpaid Invoices₹3,000.00",
+          "meaning": "A metric showing the total value of all invoices that have not yet been paid.",
+          "businessPurpose": "To give the user a quick view of outstanding revenue they are owed."
+        }
+      ]
+    },
+    {
+      "tableName": "table_2",
+      "purpose": "Displays a summary of total payables, specifically focusing on unpaid bills.",
+      "columns": [
+        {
+          "name": "Total Unpaid Bills₹2,979.00",
+          "meaning": "A metric showing the total value of all bills from vendors that have not yet been paid.",
+          "businessPurpose": "To give the user a quick view of outstanding debt they owe."
+        }
+      ]
+    },
+    {
+      "tableName": "table_3",
+      "purpose": "Acts as a placeholder and call-to-action for the Projects watchlist widget on the dashboard.",
+      "columns": [
+        {
+          "name": "Add Project(s) to this watchlist",
+          "meaning": "A link that allows the user to select projects to monitor on the dashboard.",
+          "businessPurpose": "To encourage users to utilize the project tracking feature and monitor project status from the dashboard."
+        }
+      ]
+    },
+    {
+      "tableName": "table_4",
+      "purpose": "Lists bank accounts and their current balances.",
+      "columns": [
+        {
+          "name": "Citi Bank",
+          "meaning": "The name of the bank account.",
+          "businessPurpose": "To identify the financial institution."
+        },
+        {
+          "name": "₹0.00",
+          "meaning": "The current balance of the bank account.",
+          "businessPurpose": "To provide a quick view of cash on hand in a specific account."
+        }
+      ]
+    },
+    {
+      "tableName": "table_5",
+      "purpose": "Appears to be a placeholder for an 'Account Watchlist' widget, which currently has no accounts to display.",
+      "columns": []
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Navigate to a Module",
+      "steps": [
+        "User clicks on a main category in the left navigation bar (e.g., 'Sales').",
+        "A sub-menu of related pages appears (e.g., 'Customers', 'Invoices').",
+        "User clicks on a specific page link (e.g., 'Invoices').",
+        "The application navigates to the selected page."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "navigation: SalesCustomersQuotesSales OrdersInvoicesRecurring InvoicesDelivery ChallansPayments ReceivedCredit Notes"
+      ]
+    },
+    {
+      "name": "Create a New Business Entity",
+      "steps": [
+        "User hovers over or clicks a module in the left navigation (e.g., 'Sales').",
+        "User clicks the 'New' icon or link next to a business entity (e.g., 'Invoices' or 'Customers').",
+        "The application navigates to a new page or opens a modal with a form to create that entity."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link: Invoices",
+        "html snippet: <button title=\"New Invoice\" type=\"button\"></button>",
+        "link: Customers",
+        "link: ../app-60073668069-contacts-new/index.html"
+      ]
+    },
+    {
+      "name": "Review Financial Summaries",
+      "steps": [
+        "User lands on the dashboard.",
+        "User views key metrics in widgets like 'Total Receivables', 'Total Payables', and 'Cash Flow'.",
+        "User can click on amounts (e.g., 'Overdue') to see the detailed list of transactions that make up that summary."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "table column: Total Unpaid Invoices₹3,000.00",
+        "table column: Total Unpaid Bills₹2,979.00",
+        "button: : ₹3,000.00"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Get a quick overview of the business's financial status.",
+      "evidence": [
+        "table: Total Unpaid Invoices₹3,000.00",
+        "table: Total Unpaid Bills₹2,979.00",
+        "html snippet: <span><span>Cash Flow</span></span>",
+        "html snippet: <span><span>Income and Expense</span></span>"
+      ]
+    },
+    {
+      "goal": "Quickly navigate to any part of the accounting system.",
+      "evidence": [
+        "navigation: Home, Items, Inventory, Sales, Purchases, Time Tracking, Accountant, Reports, etc."
+      ]
+    },
+    {
+      "goal": "Create a new financial document or record.",
+      "evidence": [
+        "button: New",
+        "link: ../app-60073668069-inventory-product-product-creation/index.html",
+        "html snippet: <a href=\"#/bills/new\" title=\"New Bill\">"
+      ]
+    },
+    {
+      "goal": "Monitor bank account balances.",
+      "evidence": [
+        "html snippet: <span><span>Bank and Credit Cards</span></span>",
+        "table column: Citi Bank",
+        "table column: ₹0.00"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "element": "Creation forms/modals for business entities",
+      "reason": "The page has numerous 'New' buttons and links (e.g., for Items, Invoices, Customers), which imply the existence of forms to create these entities on other pages or in modals.",
+      "confidence": "high"
+    },
+    {
+      "element": "Detailed list pages for business entities",
+      "reason": "The navigation contains links like 'Invoices', 'Customers', and 'Bills', which strongly suggest that dedicated pages exist to display lists of these records.",
+      "confidence": "high"
+    },
+    {
+      "element": "Detailed financial reports",
+      "reason": "A 'Reports' link in the main navigation implies a separate section for viewing and generating detailed financial reports, which are not present on this dashboard.",
+      "confidence": "high"
+    }
+  ],
+  "pageNarrative": "This page is a central dashboard for a business accounting application. It provides a high-level, at-a-glance overview of key financial metrics such as total receivables, payables, and cash flow. The user can quickly navigate to any module in the application, including sales, purchases, inventory, and time tracking, using the comprehensive side navigation bar. The dashboard also provides shortcuts to create new business records like invoices, bills, and customers, making it the primary starting point for most user workflows.",
+  "_meta": {
+    "sourceFile": "home-dashboard.html",
+    "pageFactsCounts": {
+      "buttons": 16,
+      "links": 73,
+      "forms": 0,
+      "tables": 5,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 54,
+        "tables": 5,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 61,
+        "tables": 5,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

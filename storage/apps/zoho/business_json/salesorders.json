@@ -1,0 +1,560 @@
+{
+  "pageInfo": {
+    "pageName": "Sales Orders",
+    "pageCategory": "Sales",
+    "pagePurpose": "This page allows users to view a list of existing Sales Orders. Users can sort the list, navigate to view the details of a specific order, and initiate the creation of a new Sales Order.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "entityName": "Sales Order",
+      "evidence": [
+        "All Sales Orders",
+        "Sales Orders",
+        "Sales Order#",
+        "htmlSnippet: <input placeholder=\"Search in Sales Orders ( / )\" type=\"text\"/>"
+      ]
+    },
+    {
+      "entityName": "Customer",
+      "evidence": [
+        "Customer Name",
+        "Customers"
+      ]
+    },
+    {
+      "entityName": "Item",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "entityName": "Invoice",
+      "evidence": [
+        "Invoices",
+        "Invoiced"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "To provide a keyboard shortcut for navigation within the application.",
+      "expectedOutcome": "Opens a navigation menu or search bar to quickly jump to different parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "Navigate To (Opt+0)"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Items management section.",
+      "expectedOutcome": "The main navigation menu for 'Items' expands or navigates the user to the Items page.",
+      "confidence": "high",
+      "evidence": [
+        "Items"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Inventory management section.",
+      "expectedOutcome": "The main navigation menu for 'Inventory' expands or navigates the user to the Inventory page.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Sales management section.",
+      "expectedOutcome": "The main navigation menu for 'Sales' expands or navigates the user to the Sales page.",
+      "confidence": "high",
+      "evidence": [
+        "Sales"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Purchases management section.",
+      "expectedOutcome": "The main navigation menu for 'Purchases' expands or navigates the user to the Purchases page.",
+      "confidence": "high",
+      "evidence": [
+        "Purchases"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Time Tracking management section.",
+      "expectedOutcome": "The main navigation menu for 'Time Tracking' expands or navigates the user to the Time Tracking page.",
+      "confidence": "high",
+      "evidence": [
+        "Time Tracking"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Accountant tools section.",
+      "expectedOutcome": "The main navigation menu for 'Accountant' expands or navigates the user to the Accountant page.",
+      "confidence": "high",
+      "evidence": [
+        "Accountant"
+      ]
+    },
+    {
+      "label": "All Sales Orders",
+      "elementType": "button",
+      "businessIntent": "To view or filter the list of sales orders.",
+      "expectedOutcome": "Displays a list of all sales orders, or opens a dropdown with different pre-defined filters for the list (e.g., Draft, Invoiced).",
+      "confidence": "medium",
+      "evidence": [
+        "All Sales Orders"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "To create a new Sales Order.",
+      "expectedOutcome": "Navigates the user to a new page or opens a modal with a form to create a new Sales Order.",
+      "confidence": "high",
+      "evidence": [
+        "New",
+        "../app-60073668069-salesorders-new/index.html"
+      ]
+    },
+    {
+      "label": "Date",
+      "elementType": "button",
+      "businessIntent": "To sort the list of sales orders by their creation date.",
+      "expectedOutcome": "The table of sales orders is re-sorted in ascending or descending order based on the 'Date' column.",
+      "confidence": "high",
+      "evidence": [
+        "Date"
+      ]
+    },
+    {
+      "label": "Sales Order#",
+      "elementType": "button",
+      "businessIntent": "To sort the list of sales orders by their unique identifier number.",
+      "expectedOutcome": "The table of sales orders is re-sorted in ascending or descending order based on the 'Sales Order#' column.",
+      "confidence": "high",
+      "evidence": [
+        "Sales Order#"
+      ]
+    },
+    {
+      "label": "Reference#",
+      "elementType": "button",
+      "businessIntent": "To sort the list of sales orders by their reference number.",
+      "expectedOutcome": "The table of sales orders is re-sorted in ascending or descending order based on the 'Reference#' column.",
+      "confidence": "high",
+      "evidence": [
+        "Reference#"
+      ]
+    },
+    {
+      "label": "Customer Name",
+      "elementType": "button",
+      "businessIntent": "To sort the list of sales orders by the customer's name.",
+      "expectedOutcome": "The table of sales orders is re-sorted alphabetically based on the 'Customer Name' column.",
+      "confidence": "high",
+      "evidence": [
+        "Customer Name"
+      ]
+    },
+    {
+      "label": "Amount",
+      "elementType": "button",
+      "businessIntent": "To sort the list of sales orders by their total amount.",
+      "expectedOutcome": "The table of sales orders is re-sorted in ascending or descending order based on the 'Amount' column.",
+      "confidence": "high",
+      "evidence": [
+        "Amount"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's main dashboard or home page.",
+      "expectedOutcome": "The user is taken to the home page of the application.",
+      "confidence": "high",
+      "evidence": [
+        "Home"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "link",
+      "businessIntent": "Navigate to the items/products list page.",
+      "expectedOutcome": "The user is taken to the page that lists all items or products.",
+      "confidence": "high",
+      "evidence": [
+        "Items",
+        "../app-60073668069-inventory-product-index/index.html"
+      ]
+    },
+    {
+      "label": "Create New Item",
+      "elementType": "link",
+      "businessIntent": "Navigate to the item creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new item or product.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-product-product-creation/index.html",
+        "htmlSnippet: <a href=\"../app-60073668069-inventory-product-product-creation/index.html\" title=\"New Item\">"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price lists management page.",
+      "expectedOutcome": "The user is taken to a page that lists all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "Price Lists"
+      ]
+    },
+    {
+      "label": "Create New Price List",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price list creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new price list.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-pricelists-new/index.html",
+        "htmlSnippet: <a href=\"../app-60073668069-inventory-pricelists-new/index.html\" title=\"New Price List\">"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustments page.",
+      "expectedOutcome": "The user is taken to a page listing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "Inventory Adjustments"
+      ]
+    },
+    {
+      "label": "Create New Inventory Adjustment",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustment creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new inventory adjustment.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-inventory-adjustments-new/index.html",
+        "htmlSnippet: <a href=\"../app-60073668069-inventory-adjustments-new/index.html\" title=\"New Adjustment\">"
+      ]
+    },
+    {
+      "label": "Customers",
+      "elementType": "link",
+      "businessIntent": "Navigate to the customer list page.",
+      "expectedOutcome": "The user is taken to a page that lists all customers.",
+      "confidence": "high",
+      "evidence": [
+        "Customers"
+      ]
+    },
+    {
+      "label": "Create New Customer",
+      "elementType": "link",
+      "businessIntent": "Navigate to the customer creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new customer.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-contacts-new/index.html",
+        "htmlSnippet: <a href=\"../app-60073668069-contacts-new/index.html\" title=\"New Customer\">"
+      ]
+    },
+    {
+      "label": "Quotes",
+      "elementType": "link",
+      "businessIntent": "Navigate to the quotes list page.",
+      "expectedOutcome": "The user is taken to a page listing all quotes.",
+      "confidence": "high",
+      "evidence": [
+        "Quotes"
+      ]
+    },
+    {
+      "label": "Sales Orders",
+      "elementType": "link",
+      "businessIntent": "Navigate to the sales orders list page.",
+      "expectedOutcome": "The user is taken to a page listing all sales orders (this page).",
+      "confidence": "high",
+      "evidence": [
+        "Sales Orders"
+      ]
+    },
+    {
+      "label": "Create New Sales Order",
+      "elementType": "link",
+      "businessIntent": "Navigate to the sales order creation page.",
+      "expectedOutcome": "The user is taken to a form to create a new sales order.",
+      "confidence": "high",
+      "evidence": [
+        "../app-60073668069-salesorders-new/index.html",
+        "htmlSnippet: <a href=\"../app-60073668069-salesorders-new/index.html\" title=\"New Sales Order\">"
+      ]
+    },
+    {
+      "label": "Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the invoices list page.",
+      "expectedOutcome": "The user is taken to a page listing all invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Invoices"
+      ]
+    },
+    {
+      "label": "Recurring Invoices",
+      "elementType": "link",
+      "businessIntent": "Navigate to the recurring invoices list page.",
+      "expectedOutcome": "The user is taken to a page listing all recurring invoices.",
+      "confidence": "high",
+      "evidence": [
+        "Recurring Invoices"
+      ]
+    },
+    {
+      "label": "SO-00005",
+      "elementType": "link",
+      "businessIntent": "To view the details of a specific sales order.",
+      "expectedOutcome": "The user is navigated to a page displaying the detailed information for Sales Order SO-00005.",
+      "confidence": "high",
+      "evidence": [
+        "SO-00005"
+      ]
+    },
+    {
+      "label": "Register Now",
+      "elementType": "link",
+      "businessIntent": "To sign up for a product webinar.",
+      "expectedOutcome": "Opens a new tab to an external registration page for a Zoho Books webinar.",
+      "confidence": "high",
+      "evidence": [
+        "Register Now",
+        "https://zoho.to/inlivewebinar"
+      ]
+    },
+    {
+      "label": "Learn More",
+      "elementType": "link",
+      "businessIntent": "To learn more about a related product, Zoho Commerce.",
+      "expectedOutcome": "Opens a new tab to an external Zoho Commerce product page.",
+      "confidence": "high",
+      "evidence": [
+        "Learn More",
+        "https://www.zoho.com/store/?utm_source=zb_so_inapp_commerce"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Sales Orders List",
+      "purpose": "To display a list of all sales orders with their key details, status, and financial information.",
+      "columns": [
+        {
+          "name": "Date",
+          "meaning": "The date the sales order was created.",
+          "businessPurpose": "For tracking when an order was placed and for sorting/filtering."
+        },
+        {
+          "name": "Sales Order#",
+          "meaning": "The unique identifier for the sales order.",
+          "businessPurpose": "To uniquely identify and reference each sales order in the system."
+        },
+        {
+          "name": "Reference#",
+          "meaning": "A customer-provided or internal reference number (e.g., a customer PO number).",
+          "businessPurpose": "To cross-reference the sales order with external or other internal documents."
+        },
+        {
+          "name": "Customer Name",
+          "meaning": "The name of the customer who placed the order.",
+          "businessPurpose": "To identify which customer the order belongs to."
+        },
+        {
+          "name": "Status",
+          "meaning": "The current workflow status of the sales order (e.g., Draft, Confirmed).",
+          "businessPurpose": "To track the progress of the sales order through the fulfillment process."
+        },
+        {
+          "name": "Invoiced",
+          "meaning": "The status of invoicing for this order (e.g., Not Invoiced, Partially Invoiced, Invoiced).",
+          "businessPurpose": "To track whether the customer has been billed for the order."
+        },
+        {
+          "name": "Payment",
+          "meaning": "The payment status of the related invoice (e.g., Unpaid, Paid).",
+          "businessPurpose": "To track if the customer has paid for the order."
+        },
+        {
+          "name": "Amount",
+          "meaning": "The total monetary value of the sales order.",
+          "businessPurpose": "For financial reporting and understanding the value of open orders."
+        },
+        {
+          "name": "Expected Shipment Date",
+          "meaning": "The date when the items on the order are expected to be shipped.",
+          "businessPurpose": "To manage customer expectations and coordinate logistics."
+        },
+        {
+          "name": "Order Status",
+          "meaning": "The fulfillment status of the order (e.g., Draft).",
+          "businessPurpose": "To provide a high-level view of where the order is in the fulfillment process."
+        },
+        {
+          "name": "Delivery Method",
+          "meaning": "The method of delivery for the order.",
+          "businessPurpose": "To inform logistics and the customer how the order will be delivered."
+        }
+      ]
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create a New Sales Order",
+      "steps": [
+        "User clicks the 'New' button.",
+        "User is navigated to a dedicated page to fill out the details of the new sales order.",
+        "User saves the new sales order."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button: New",
+        "link: ../app-60073668069-salesorders-new/index.html"
+      ]
+    },
+    {
+      "name": "View Sales Order Details",
+      "steps": [
+        "User finds a specific sales order in the table.",
+        "User clicks the link in the 'Sales Order#' column (e.g., 'SO-00005').",
+        "User is navigated to a page showing all details for that specific sales order."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link: SO-00005"
+      ]
+    },
+    {
+      "name": "Sort Sales Order List",
+      "steps": [
+        "User clicks on a clickable column header in the table (e.g., 'Date', 'Amount').",
+        "The list of sales orders in the table re-sorts based on the values in that column."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button: Date",
+        "button: Sales Order#",
+        "button: Customer Name",
+        "button: Amount"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "Create a new sales order for a customer.",
+      "evidence": [
+        "button: New"
+      ]
+    },
+    {
+      "goal": "Review all existing sales orders.",
+      "evidence": [
+        "tableName: Sales Orders List",
+        "button: All Sales Orders"
+      ]
+    },
+    {
+      "goal": "Find a specific sales order.",
+      "evidence": [
+        "htmlSnippet: <input placeholder=\"Search in Sales Orders ( / )\" type=\"text\"/>",
+        "button: Sales Order#"
+      ]
+    },
+    {
+      "goal": "Check the status of an order.",
+      "evidence": [
+        "table column: Status",
+        "table column: Invoiced",
+        "table column: Payment",
+        "table column: Order Status"
+      ]
+    },
+    {
+      "goal": "Sort orders to find the most recent or highest value ones.",
+      "evidence": [
+        "button: Date",
+        "button: Amount"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "Sales Order Creation Form",
+      "purpose": "A form or modal is required to input details for a new sales order after clicking the 'New' button.",
+      "confidence": "high",
+      "evidence": [
+        "button: New",
+        "link: ../app-60073668069-salesorders-new/index.html"
+      ]
+    },
+    {
+      "uiElementName": "Advanced Filtering Options",
+      "purpose": "Controls to filter the sales order list by date range, status, customer, or other attributes are typically present on such pages but are not visible here.",
+      "confidence": "medium",
+      "evidence": [
+        "The button 'All Sales Orders' suggests other filtered views might exist, but the controls themselves are not present."
+      ]
+    },
+    {
+      "uiElementName": "Bulk Action Controls",
+      "purpose": "Checkboxes exist in the table, which usually implies actions that can be performed on multiple selected orders at once (e.g., Bulk Update Status, Print, Delete), but the action buttons are not visible.",
+      "confidence": "medium",
+      "evidence": [
+        "htmlSnippet: <span><input type=\"checkbox\"/></span>"
+      ]
+    }
+  ],
+  "pageNarrative": "This page serves as a central dashboard for managing Sales Orders. A user can see a comprehensive list of all sales orders in a table, which includes key information such as the customer's name, order amount, and various status indicators like payment and fulfillment. From this list, the user can navigate to a detailed view of a specific order by clicking its number. The page also provides the primary action to initiate the creation of a new sales order via the 'New' button, and allows sorting the list by various criteria to facilitate analysis.",
+  "_meta": {
+    "sourceFile": "salesorders.html",
+    "pageFactsCounts": {
+      "buttons": 14,
+      "links": 55,
+      "forms": 0,
+      "tables": 1,
+      "headings": 7
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 37,
+        "tables": 1,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 31,
+        "tables": 1,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

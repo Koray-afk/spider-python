@@ -1,0 +1,652 @@
+{
+  "pageInfo": {
+    "pageName": "Zoho Home Page",
+    "pageCategory": "Marketing Homepage",
+    "pagePurpose": "To introduce the Zoho brand, showcase its extensive suite of business software products, build user trust, and serve as the primary entry point for users to explore products, sign up for services, or sign into their accounts.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "App",
+      "description": "Represents an individual software application offered by Zoho.",
+      "evidence": [
+        "h2: Featured apps",
+        "link: Apps"
+      ]
+    },
+    {
+      "name": "Suite",
+      "description": "A collection of bundled Zoho applications that serve a broader business function.",
+      "evidence": [
+        "link: Suites",
+        "h5: CRM Plus",
+        "h5: Finance Plus"
+      ]
+    },
+    {
+      "name": "Product Category",
+      "description": "A business function that groups related applications, such as Sales, Marketing, or Finance.",
+      "evidence": [
+        "h4: Sales",
+        "h4: Marketing",
+        "h4: Finance",
+        "h4: Human Resources"
+      ]
+    },
+    {
+      "name": "Customer",
+      "description": "Represents the businesses and users who use Zoho's products.",
+      "evidence": [
+        "link: Customer Stories",
+        "h3: Customer-first philosophy"
+      ]
+    },
+    {
+      "name": "Partner",
+      "description": "Represents third-party companies or individuals who work with Zoho to sell or implement its products.",
+      "evidence": [
+        "link: Work With a Partner",
+        "link: Become a Partner"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "English",
+      "elementType": "button",
+      "businessIntent": "Change website language",
+      "expectedOutcome": "Opens a menu or dropdown with a list of available languages for the user to select.",
+      "confidence": "high",
+      "evidence": [
+        "button: English"
+      ]
+    },
+    {
+      "label": "Previous",
+      "elementType": "button",
+      "businessIntent": "Navigate a carousel or slider",
+      "expectedOutcome": "Shows the previous item in a sequence of content, likely customer testimonials or featured products.",
+      "confidence": "medium",
+      "evidence": [
+        "button: Previous"
+      ]
+    },
+    {
+      "label": "Next",
+      "elementType": "button",
+      "businessIntent": "Navigate a carousel or slider",
+      "expectedOutcome": "Shows the next item in a sequence of content, likely customer testimonials or featured products.",
+      "confidence": "medium",
+      "evidence": [
+        "button: Next"
+      ]
+    },
+    {
+      "label": "search",
+      "elementType": "button",
+      "businessIntent": "Execute a search query",
+      "expectedOutcome": "Submits the text entered in the search form and navigates the user to a search results page.",
+      "confidence": "high",
+      "evidence": [
+        "button: search"
+      ]
+    },
+    {
+      "label": "Skip to main content",
+      "elementType": "link",
+      "businessIntent": "Improve accessibility",
+      "expectedOutcome": "Moves the user's focus from the header to the main content area of the page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Skip to main content"
+      ]
+    },
+    {
+      "label": "Zoho.com",
+      "elementType": "link",
+      "businessIntent": "Navigate to homepage",
+      "expectedOutcome": "Reloads the homepage or navigates to the root domain.",
+      "confidence": "high",
+      "evidence": [
+        "link: Zoho.com"
+      ]
+    },
+    {
+      "label": "Enterprise",
+      "elementType": "link",
+      "businessIntent": "Learn about enterprise solutions",
+      "expectedOutcome": "Navigates to a page detailing Zoho's offerings for large businesses.",
+      "confidence": "high",
+      "evidence": [
+        "link: Enterprise"
+      ]
+    },
+    {
+      "label": "Customer Stories",
+      "elementType": "link",
+      "businessIntent": "View customer testimonials",
+      "expectedOutcome": "Navigates to a page showcasing case studies and stories from Zoho's customers.",
+      "confidence": "high",
+      "evidence": [
+        "link: Customer Stories"
+      ]
+    },
+    {
+      "label": "User Community",
+      "elementType": "link",
+      "businessIntent": "Access user forums",
+      "expectedOutcome": "Navigates to the Zoho community forums where users can ask questions and share information.",
+      "confidence": "high",
+      "evidence": [
+        "link: User Community"
+      ]
+    },
+    {
+      "label": "Training and Certification",
+      "elementType": "link",
+      "businessIntent": "Find training materials",
+      "expectedOutcome": "Navigates to a portal for user training, courses, and certification programs.",
+      "confidence": "high",
+      "evidence": [
+        "link: Training and Certification"
+      ]
+    },
+    {
+      "label": "Affiliate Program",
+      "elementType": "link",
+      "businessIntent": "Learn about affiliate program",
+      "expectedOutcome": "Navigates to a page with information on how to become a Zoho affiliate partner.",
+      "confidence": "high",
+      "evidence": [
+        "link: Affiliate Program"
+      ]
+    },
+    {
+      "label": "Work With a Partner",
+      "elementType": "link",
+      "businessIntent": "Find a Zoho implementation partner",
+      "expectedOutcome": "Navigates to a page to search for or connect with official Zoho partners.",
+      "confidence": "high",
+      "evidence": [
+        "link: Work With a Partner"
+      ]
+    },
+    {
+      "label": "Become a Partner",
+      "elementType": "link",
+      "businessIntent": "Join the Zoho partner program",
+      "expectedOutcome": "Navigates to a page with information on the benefits and requirements of becoming a Zoho partner.",
+      "confidence": "high",
+      "evidence": [
+        "link: Become a Partner"
+      ]
+    },
+    {
+      "label": "Developer Center",
+      "elementType": "link",
+      "businessIntent": "Access developer resources",
+      "expectedOutcome": "Navigates to the developer portal with APIs, SDKs, and documentation.",
+      "confidence": "high",
+      "evidence": [
+        "link: Developer Center"
+      ]
+    },
+    {
+      "label": "Blog",
+      "elementType": "link",
+      "businessIntent": "Read company blog",
+      "expectedOutcome": "Navigates to the official Zoho blog.",
+      "confidence": "high",
+      "evidence": [
+        "link: Blog"
+      ]
+    },
+    {
+      "label": "Knowledge Base",
+      "elementType": "link",
+      "businessIntent": "Access help documentation",
+      "expectedOutcome": "Navigates to the help and support documentation portal.",
+      "confidence": "high",
+      "evidence": [
+        "link: Knowledge Base"
+      ]
+    },
+    {
+      "label": "Contact Us",
+      "elementType": "link",
+      "businessIntent": "Find contact information",
+      "expectedOutcome": "Navigates to a page with contact details for sales, support, and other departments.",
+      "confidence": "high",
+      "evidence": [
+        "link: Contact Us"
+      ]
+    },
+    {
+      "label": "Español",
+      "elementType": "link",
+      "businessIntent": "Change website language to Spanish",
+      "expectedOutcome": "Reloads the website in the Spanish language.",
+      "confidence": "high",
+      "evidence": [
+        "link: Español"
+      ]
+    },
+    {
+      "label": "Sign In",
+      "elementType": "link",
+      "businessIntent": "Access user account",
+      "expectedOutcome": "Navigates the user to the login page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Sign In"
+      ]
+    },
+    {
+      "label": "Sign Up",
+      "elementType": "link",
+      "businessIntent": "Create a new user account",
+      "expectedOutcome": "Navigates the user to the account registration page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Sign Up"
+      ]
+    },
+    {
+      "label": "Get Started",
+      "elementType": "link",
+      "businessIntent": "Create a new user account or start a trial",
+      "expectedOutcome": "Navigates the user to the account registration or product selection page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Get Started"
+      ]
+    },
+    {
+      "label": "Apps",
+      "elementType": "link",
+      "businessIntent": "View all individual applications",
+      "expectedOutcome": "Navigates to a section or page listing all of Zoho's individual software applications.",
+      "confidence": "high",
+      "evidence": [
+        "link: Apps"
+      ]
+    },
+    {
+      "label": "Suites",
+      "elementType": "link",
+      "businessIntent": "View all application suites",
+      "expectedOutcome": "Navigates to a section or page listing all of Zoho's bundled software suites.",
+      "confidence": "high",
+      "evidence": [
+        "link: Suites"
+      ]
+    },
+    {
+      "label": "Platforms",
+      "elementType": "link",
+      "businessIntent": "View all developer or business platforms",
+      "expectedOutcome": "Navigates to a section or page listing Zoho's platform offerings like Zoho One.",
+      "confidence": "high",
+      "evidence": [
+        "link: Platforms"
+      ]
+    },
+    {
+      "label": "EXPLORE ALL PRODUCTS",
+      "elementType": "link",
+      "businessIntent": "Navigate to the main product listing page",
+      "expectedOutcome": "Takes the user to a comprehensive page that lists all available Zoho products.",
+      "confidence": "high",
+      "evidence": [
+        "link: EXPLORE ALL PRODUCTS"
+      ]
+    },
+    {
+      "label": "Try now",
+      "elementType": "link",
+      "businessIntent": "Start a trial for a specific product",
+      "expectedOutcome": "Navigates to a sign-up page to start a trial for the associated product (e.g., Vertical Studio, ERP).",
+      "confidence": "high",
+      "evidence": [
+        "link: Try now"
+      ]
+    },
+    {
+      "label": "CRM",
+      "elementType": "link",
+      "businessIntent": "Learn about the CRM product",
+      "expectedOutcome": "Navigates to the product detail page for Zoho CRM.",
+      "confidence": "high",
+      "evidence": [
+        "link: CRM"
+      ]
+    },
+    {
+      "label": "Books",
+      "elementType": "link",
+      "businessIntent": "Learn about the Books accounting product",
+      "expectedOutcome": "Navigates to the product detail page for Zoho Books.",
+      "confidence": "high",
+      "evidence": [
+        "link: Books"
+      ]
+    },
+    {
+      "label": "Mail",
+      "elementType": "link",
+      "businessIntent": "Learn about the Mail product",
+      "expectedOutcome": "Navigates to the product detail page for Zoho Mail.",
+      "confidence": "high",
+      "evidence": [
+        "link: Mail"
+      ]
+    },
+    {
+      "label": "TRY ZOHO ONE",
+      "elementType": "link",
+      "businessIntent": "Start a trial for the Zoho One suite",
+      "expectedOutcome": "Navigates to the sign-up or detail page for the Zoho One platform.",
+      "confidence": "high",
+      "evidence": [
+        "link: TRY ZOHO ONE"
+      ]
+    },
+    {
+      "label": "EXPLORE MARKETPLACE",
+      "elementType": "link",
+      "businessIntent": "Browse third-party integrations",
+      "expectedOutcome": "Navigates to the Zoho Marketplace to find apps and extensions.",
+      "confidence": "high",
+      "evidence": [
+        "link: EXPLORE MARKETPLACE"
+      ]
+    },
+    {
+      "label": "Sign Up Now",
+      "elementType": "link",
+      "businessIntent": "Create a new user account",
+      "expectedOutcome": "Navigates the user to the account registration page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Sign Up Now"
+      ]
+    },
+    {
+      "label": "READ THE STORY",
+      "elementType": "link",
+      "businessIntent": "Read a customer case study",
+      "expectedOutcome": "Navigates to a detailed page about a specific customer's success story.",
+      "confidence": "high",
+      "evidence": [
+        "link: READ THE STORY"
+      ]
+    },
+    {
+      "label": "Learn more",
+      "elementType": "link",
+      "businessIntent": "Get more information on a topic",
+      "expectedOutcome": "Navigates to a page with more details, in this case about enterprise solutions.",
+      "confidence": "high",
+      "evidence": [
+        "link: Learn more"
+      ]
+    },
+    {
+      "label": "Read our story",
+      "elementType": "link",
+      "businessIntent": "Learn about the company's history",
+      "expectedOutcome": "Navigates to a page detailing the history and mission of Zoho.",
+      "confidence": "high",
+      "evidence": [
+        "link: Read our story"
+      ]
+    },
+    {
+      "label": "sales@zohocorp.com",
+      "elementType": "link",
+      "businessIntent": "Contact the sales team via email",
+      "expectedOutcome": "Opens the user's default email client with a new message addressed to sales@zohocorp.com.",
+      "confidence": "high",
+      "evidence": [
+        "link: sales@zohocorp.com"
+      ]
+    },
+    {
+      "label": "Support",
+      "elementType": "link",
+      "businessIntent": "Access support resources",
+      "expectedOutcome": "Navigates to the main support portal.",
+      "confidence": "high",
+      "evidence": [
+        "link: Support"
+      ]
+    },
+    {
+      "label": "Privacy Policy",
+      "elementType": "link",
+      "businessIntent": "View the privacy policy",
+      "expectedOutcome": "Navigates to the legal page detailing the company's privacy policy.",
+      "confidence": "high",
+      "evidence": [
+        "link: Privacy Policy"
+      ]
+    },
+    {
+      "label": "Terms of Service",
+      "elementType": "link",
+      "businessIntent": "View the terms of service",
+      "expectedOutcome": "Navigates to the legal page detailing the company's terms of service.",
+      "confidence": "high",
+      "evidence": [
+        "link: Terms of Service"
+      ]
+    },
+    {
+      "label": "Sign Up for Free",
+      "elementType": "link",
+      "businessIntent": "Create a new free account",
+      "expectedOutcome": "Navigates the user to the account registration page.",
+      "confidence": "high",
+      "evidence": [
+        "link: Sign Up for Free"
+      ]
+    }
+  ],
+  "tables": [],
+  "forms": [
+    {
+      "formName": "Header Search Form",
+      "purpose": "To allow users to search the Zoho website for information about products, FAQs, and other content.",
+      "fields": [
+        {
+          "fieldName": "query",
+          "fieldType": "text",
+          "businessMeaning": "The user's search term or question."
+        }
+      ]
+    },
+    {
+      "formName": "Header Search Form (Alternate)",
+      "purpose": "To allow users to search the Zoho website for information about products, FAQs, and other content.",
+      "fields": [
+        {
+          "fieldName": "Search for product overviews, FAQs, and more...",
+          "fieldType": "text",
+          "businessMeaning": "The user's search term or question. The field name appears to be incorrectly extracted from the placeholder text."
+        }
+      ]
+    },
+    {
+      "formName": "Mobile Search Form",
+      "purpose": "To allow users to search the Zoho website for information, likely in a mobile or secondary view.",
+      "fields": [
+        {
+          "fieldName": "Search zoho.com",
+          "fieldType": "text",
+          "businessMeaning": "The user's search term or question. The field name appears to be incorrectly extracted from the placeholder text."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "New User Registration",
+      "steps": [
+        "User clicks a 'Sign Up', 'Get Started', or 'Try now' link.",
+        "User is navigated to a dedicated registration page (not visible).",
+        "User fills in their details and submits the form to create a Zoho account."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link: Sign Up",
+        "link: Get Started",
+        "link: Try now",
+        "link: Sign Up Now",
+        "link: Get Started For Free",
+        "link: Sign Up for Free"
+      ]
+    },
+    {
+      "name": "Existing User Login",
+      "steps": [
+        "User clicks the 'Sign In' link.",
+        "User is navigated to a login page (not visible).",
+        "User enters their credentials and submits to access their account."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link: Sign In",
+        "link: SIGN IN"
+      ]
+    },
+    {
+      "name": "Product Discovery and Exploration",
+      "steps": [
+        "User browses the list of products under categories like 'Sales', 'Marketing', etc.",
+        "User clicks on a specific product link (e.g., 'CRM', 'Books') to learn more.",
+        "User is navigated to a detailed product information page (not visible)."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "h4: Sales",
+        "h4: Marketing",
+        "link: EXPLORE ALL PRODUCTS",
+        "link: CRM",
+        "link: Books",
+        "link: Mail"
+      ]
+    },
+    {
+      "name": "Site Search",
+      "steps": [
+        "User types a search term into one of the search input fields.",
+        "User clicks the 'search' submit button.",
+        "User is navigated to a search results page (not visible) displaying relevant content."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "form field with placeholder: Search for product overviews, FAQs, and more...",
+        "button: search"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "name": "Find a specific software solution",
+      "description": "To identify and learn about a software application that meets a particular business need (e.g., CRM, accounting, project management).",
+      "evidence": [
+        "The page is structured with product categories like 'Sales', 'Marketing', 'Finance', and 'Human Resources'."
+      ]
+    },
+    {
+      "name": "Evaluate Zoho as a software vendor",
+      "description": "To understand the company's values, reputation, and scope of offerings to determine if they are a suitable vendor.",
+      "evidence": [
+        "h2: BRANDS THAT TRUST US",
+        "h2: The core values and principles that drive us",
+        "link: Customer Stories",
+        "link: Read our story"
+      ]
+    },
+    {
+      "name": "Start a free trial or sign up",
+      "description": "To create a new account and begin using one or more of Zoho's applications, often for free.",
+      "evidence": [
+        "Multiple prominent links and buttons like 'Sign Up', 'Get Started For Free', and 'Try now'."
+      ]
+    },
+    {
+      "name": "Access an existing account or support",
+      "description": "For returning users to log in to their account or find help and documentation.",
+      "evidence": [
+        "link: Sign In",
+        "link: Knowledge Base",
+        "link: Support"
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "elementName": "User Registration Page/Modal",
+      "purpose": "To allow new users to create an account after clicking 'Sign Up' or 'Get Started'.",
+      "confidence": "high",
+      "evidence": [
+        "The existence of multiple 'Sign Up', 'Get Started', and 'Try now' links strongly implies a dedicated page or modal for account creation."
+      ]
+    },
+    {
+      "elementName": "User Login Page/Modal",
+      "purpose": "To allow existing users to authenticate and access their accounts after clicking 'Sign In'.",
+      "confidence": "high",
+      "evidence": [
+        "The existence of 'Sign In' links implies a dedicated page or modal for authentication."
+      ]
+    },
+    {
+      "elementName": "Search Results Page",
+      "purpose": "To display the results of a user's query submitted through the search form.",
+      "confidence": "high",
+      "evidence": [
+        "The presence of a search form and submit button implies that a results page must exist to show the outcome of the search."
+      ]
+    },
+    {
+      "elementName": "Product Detail Pages",
+      "purpose": "To provide detailed information, features, and pricing for each individual Zoho application.",
+      "confidence": "high",
+      "evidence": [
+        "The page contains hundreds of links to specific products (e.g., 'CRM', 'Books', 'Mail'); each of these must lead to a dedicated page for that product."
+      ]
+    }
+  ],
+  "pageNarrative": "This page is the main marketing and entry portal for Zoho, a comprehensive business software provider. It presents the company's value proposition and builds trust by highlighting its core principles and showcasing customer stories. The page allows users to explore a vast catalog of over 50 applications, which are neatly organized by business functions such as Sales, Marketing, and Finance. Key user actions are to discover specific products, sign in to an existing account, or sign up for a new account or product trial via numerous calls-to-action. The page also serves as a hub for accessing company information, support resources, and the developer center.",
+  "_meta": {
+    "sourceFile": "home.html",
+    "pageFactsCounts": {
+      "buttons": 5,
+      "links": 376,
+      "forms": 3,
+      "tables": 0,
+      "headings": 200
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 379,
+        "tables": 0,
+        "forms": 3
+      },
+      "reported": {
+        "clickableElements": 40,
+        "tables": 0,
+        "forms": 3
+      },
+      "mismatches": {
+        "clickableElements": true,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": true
+    },
+    "model": "gemini-2.5-pro"
+  }
+}

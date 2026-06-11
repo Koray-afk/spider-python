@@ -1,0 +1,653 @@
+{
+  "pageInfo": {
+    "pageName": "Inventory Items List",
+    "pageCategory": "Inventory Management",
+    "pagePurpose": "To display a comprehensive list of all inventory items, allowing users to view key details, sort the list, navigate to individual item details, and create new items.",
+    "confidence": "high"
+  },
+  "businessEntities": [
+    {
+      "name": "Item",
+      "evidence": [
+        "h3 heading: 'Items'",
+        "button: 'All Items'",
+        "table_1 columns: 'Name', 'Purchase Description', 'Purchase Rate', 'Description', 'Rate', 'Stock On Hand', 'Usage Unit'"
+      ]
+    },
+    {
+      "name": "Inventory",
+      "evidence": [
+        "h3 heading: 'Inventory'",
+        "pageFileName: 'inventory-product-index.html'"
+      ]
+    },
+    {
+      "name": "Sale",
+      "evidence": [
+        "h3 heading: 'Sales'",
+        "navigation section: 'Sales'"
+      ]
+    },
+    {
+      "name": "Purchase",
+      "evidence": [
+        "h3 heading: 'Purchases'",
+        "table_1 column: 'Purchase Rate'"
+      ]
+    }
+  ],
+  "clickableElements": [
+    {
+      "label": "Navigate To (Opt+0)",
+      "elementType": "button",
+      "businessIntent": "Access a global navigation or search feature.",
+      "expectedOutcome": "Opens a search bar or navigation menu to quickly jump to other parts of the application.",
+      "confidence": "medium",
+      "evidence": [
+        "button label: 'Navigate To (Opt+0)'"
+      ]
+    },
+    {
+      "label": "Items",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Items module.",
+      "expectedOutcome": "Displays a menu or view related to Items.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Items'"
+      ]
+    },
+    {
+      "label": "Inventory",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Inventory module.",
+      "expectedOutcome": "Displays a menu or view related to Inventory.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Inventory'"
+      ]
+    },
+    {
+      "label": "Sales",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Sales module.",
+      "expectedOutcome": "Displays a menu or view related to Sales.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Sales'"
+      ]
+    },
+    {
+      "label": "Purchases",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Purchases module.",
+      "expectedOutcome": "Displays a menu or view related to Purchases.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Purchases'"
+      ]
+    },
+    {
+      "label": "Time Tracking",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Time Tracking module.",
+      "expectedOutcome": "Displays a menu or view related to Time Tracking.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Time Tracking'"
+      ]
+    },
+    {
+      "label": "Accountant",
+      "elementType": "button",
+      "businessIntent": "Navigate to the Accountant module.",
+      "expectedOutcome": "Displays a menu or view related to Accountant features.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Accountant'"
+      ]
+    },
+    {
+      "label": "All Items",
+      "elementType": "button",
+      "businessIntent": "Filter the list to show all items.",
+      "expectedOutcome": "The table displays all items, which is likely the default view.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'All Items'"
+      ]
+    },
+    {
+      "label": "New",
+      "elementType": "button",
+      "businessIntent": "Create a new inventory item.",
+      "expectedOutcome": "Navigates the user to a new page or opens a modal to enter details for a new item.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'New'",
+        "link href: '../app-60073668069-inventory-product-product-creation/index.html'"
+      ]
+    },
+    {
+      "label": "Name",
+      "elementType": "button",
+      "businessIntent": "Sort the item list by name.",
+      "expectedOutcome": "The table of items is re-sorted alphabetically (or reverse-alphabetically) by the item name.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Name'",
+        "Table column header 'Name' is a button."
+      ]
+    },
+    {
+      "label": "Purchase Rate",
+      "elementType": "button",
+      "businessIntent": "Sort the item list by purchase rate.",
+      "expectedOutcome": "The table of items is re-sorted numerically by the purchase rate.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Purchase Rate'",
+        "Table column header 'Purchase Rate' is a button."
+      ]
+    },
+    {
+      "label": "Rate",
+      "elementType": "button",
+      "businessIntent": "Sort the item list by sale rate.",
+      "expectedOutcome": "The table of items is re-sorted numerically by the sale rate.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Rate'",
+        "Table column header 'Rate' is a button."
+      ]
+    },
+    {
+      "label": "Stock On Hand",
+      "elementType": "button",
+      "businessIntent": "Sort the item list by stock on hand.",
+      "expectedOutcome": "The table of items is re-sorted numerically by the stock on hand.",
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Stock On Hand'",
+        "Table column header 'Stock On Hand' is a button."
+      ]
+    },
+    {
+      "label": "View",
+      "elementType": "button",
+      "businessIntent": "Refresh or view details about the total count of items.",
+      "expectedOutcome": "The total count of items is displayed or updated.",
+      "confidence": "low",
+      "evidence": [
+        "button label: 'View'",
+        "html snippet: '<div><span>Total Count: </span> <button>View</button></div>'"
+      ]
+    },
+    {
+      "label": "Home",
+      "elementType": "link",
+      "businessIntent": "Navigate to the application's home page.",
+      "expectedOutcome": "User is taken to the main dashboard or home screen.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Home'"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-product-product-creation/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new Item.",
+      "expectedOutcome": "Navigates to the item creation page.",
+      "confidence": "high",
+      "evidence": [
+        "link text: '../app-60073668069-inventory-product-product-creation/index.html'",
+        "html snippet: <a href=\"../app-60073668069-inventory-product-product-creation/index.html\" title=\"New Item\">"
+      ]
+    },
+    {
+      "label": "Price Lists",
+      "elementType": "link",
+      "businessIntent": "Navigate to the price lists page.",
+      "expectedOutcome": "User is taken to a page listing all price lists.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Price Lists'"
+      ]
+    },
+    {
+      "label": "../app-60073668069-inventory-pricelists-new/index.html",
+      "elementType": "link",
+      "businessIntent": "Create a new Price List.",
+      "expectedOutcome": "Navigates to the price list creation page.",
+      "confidence": "high",
+      "evidence": [
+        "link text: '../app-60073668069-inventory-pricelists-new/index.html'",
+        "html snippet: <a href=\"../app-60073668069-inventory-pricelists-new/index.html\" title=\"New Price List\">"
+      ]
+    },
+    {
+      "label": "Inventory Adjustments",
+      "elementType": "link",
+      "businessIntent": "Navigate to the inventory adjustments page.",
+      "expectedOutcome": "User is taken to a page listing inventory adjustments.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Inventory Adjustments'"
+      ]
+    },
+    {
+      "label": "14” Monitor",
+      "elementType": "link",
+      "businessIntent": "View the details of the '14” Monitor' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the '14” Monitor' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: '14” Monitor'"
+      ]
+    },
+    {
+      "label": "24 Port Switch",
+      "elementType": "link",
+      "businessIntent": "View the details of the '24 Port Switch' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the '24 Port Switch' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: '24 Port Switch'"
+      ]
+    },
+    {
+      "label": "A4 Printer Paper",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'A4 Printer Paper' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'A4 Printer Paper' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'A4 Printer Paper'"
+      ]
+    },
+    {
+      "label": "AC Service",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'AC Service' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'AC Service' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'AC Service'"
+      ]
+    },
+    {
+      "label": "Cloud Backup Subscription",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Cloud Backup Subscription' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Cloud Backup Subscription' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Cloud Backup Subscription'"
+      ]
+    },
+    {
+      "label": "Dell Latitude 5450",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Dell Latitude 5450' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Dell Latitude 5450' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Dell Latitude 5450'"
+      ]
+    },
+    {
+      "label": "Exempt Goods",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Exempt Goods' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Exempt Goods' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Exempt Goods'"
+      ]
+    },
+    {
+      "label": "External SSD 1TB",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'External SSD 1TB' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'External SSD 1TB' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'External SSD 1TB'"
+      ]
+    },
+    {
+      "label": "Goods",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Goods' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Goods' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Goods'"
+      ]
+    },
+    {
+      "label": "IT Support Retainer",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'IT Support Retainer' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'IT Support Retainer' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'IT Support Retainer'"
+      ]
+    },
+    {
+      "label": "Laser Printer",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Laser Printer' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Laser Printer' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Laser Printer'"
+      ]
+    },
+    {
+      "label": "LG 27 Inch Monitor",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'LG 27 Inch Monitor' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'LG 27 Inch Monitor' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'LG 27 Inch Monitor'"
+      ]
+    },
+    {
+      "label": "Logitech Wireless Mouse",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Logitech Wireless Mouse' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Logitech Wireless Mouse' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Logitech Wireless Mouse'"
+      ]
+    },
+    {
+      "label": "Mechanical Keyboard",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Mechanical Keyboard' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Mechanical Keyboard' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Mechanical Keyboard'"
+      ]
+    },
+    {
+      "label": "Note Pad",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Note Pad' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Note Pad' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Note Pad'"
+      ]
+    },
+    {
+      "label": "Office Chair",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Office Chair' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Office Chair' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Office Chair'"
+      ]
+    },
+    {
+      "label": "Paper Clip",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Paper Clip' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Paper Clip' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Paper Clip'"
+      ]
+    },
+    {
+      "label": "Premium plan",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Premium plan' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Premium plan' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Premium plan'"
+      ]
+    },
+    {
+      "label": "Printer Toner",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Printer Toner' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Printer Toner' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Printer Toner'"
+      ]
+    },
+    {
+      "label": "Room Spray",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Room Spray' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Room Spray' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Room Spray'"
+      ]
+    },
+    {
+      "label": "Samsung A30",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Samsung A30' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Samsung A30' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Samsung A30'"
+      ]
+    },
+    {
+      "label": "Samsung Galaxy S10 Plus",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Samsung Galaxy S10 Plus' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Samsung Galaxy S10 Plus' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Samsung Galaxy S10 Plus'"
+      ]
+    },
+    {
+      "label": "Samsung Galaxy S10 Plus Hard Case",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Samsung Galaxy S10 Plus Hard Case' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Samsung Galaxy S10 Plus Hard Case' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Samsung Galaxy S10 Plus Hard Case'"
+      ]
+    },
+    {
+      "label": "Software License",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Software License' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Software License' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Software License'"
+      ]
+    },
+    {
+      "label": "Stamp Pad",
+      "elementType": "link",
+      "businessIntent": "View the details of the 'Stamp Pad' item.",
+      "expectedOutcome": "Navigates to a page showing detailed information about the 'Stamp Pad' item.",
+      "confidence": "high",
+      "evidence": [
+        "link text: 'Stamp Pad'"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "tableName": "Items List",
+      "purpose": "To display a list of all inventory items and services with their key attributes such as name, cost, price, and stock levels.",
+      "columns": [
+        {
+          "name": "Name",
+          "meaning": "The name of the inventory item or service.",
+          "businessPurpose": "To uniquely identify each item or service."
+        },
+        {
+          "name": "Purchase Description",
+          "meaning": "A description of the item used for purchasing purposes.",
+          "businessPurpose": "To provide details for purchase orders and bills."
+        },
+        {
+          "name": "Purchase Rate",
+          "meaning": "The cost of acquiring one unit of the item.",
+          "businessPurpose": "To track cost of goods sold and manage procurement budgets."
+        },
+        {
+          "name": "Description",
+          "meaning": "A description of the item used for sales purposes.",
+          "businessPurpose": "To provide details on quotes, sales orders, and invoices."
+        },
+        {
+          "name": "Rate",
+          "meaning": "The selling price of one unit of the item.",
+          "businessPurpose": "To determine revenue and price sales transactions."
+        },
+        {
+          "name": "Stock On Hand",
+          "meaning": "The current quantity of the item available in inventory.",
+          "businessPurpose": "To manage stock levels, prevent stockouts, and trigger reordering."
+        },
+        {
+          "name": "Usage Unit",
+          "meaning": "The unit of measure for the item (e.g., pcs, count, hrs).",
+          "businessPurpose": "To ensure accurate tracking and transaction processing for items sold in different units."
+        }
+      ]
+    }
+  ],
+  "forms": [],
+  "workflows": [
+    {
+      "name": "Create New Item",
+      "steps": [
+        "User clicks the 'New' button.",
+        "The application navigates to a dedicated page for creating a new item."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button label: 'New'",
+        "link href: '../app-60073668069-inventory-product-product-creation/index.html'"
+      ]
+    },
+    {
+      "name": "View Item Details",
+      "steps": [
+        "User clicks on the name of an item in the 'Items List' table.",
+        "The application navigates to a detailed view of the selected item."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "link text: '14” Monitor'",
+        "link href: '#/inventory/product/variantslist/3869248000000044376?filter_by=Status.All&per_page=25&sort_column=name&sort_order=A'"
+      ]
+    },
+    {
+      "name": "Sort Item List",
+      "steps": [
+        "User clicks on a sortable column header, such as 'Name', 'Rate', or 'Stock On Hand'.",
+        "The item list in the table re-sorts based on the data in that column."
+      ],
+      "confidence": "high",
+      "evidence": [
+        "button label: 'Name'",
+        "button label: 'Purchase Rate'",
+        "button label: 'Rate'",
+        "button label: 'Stock On Hand'"
+      ]
+    }
+  ],
+  "userGoals": [
+    {
+      "goal": "View a list of all available products and services.",
+      "evidence": [
+        "The page is dominated by a table titled 'Items List' with columns like 'Name', 'Rate', and 'Stock On Hand'."
+      ]
+    },
+    {
+      "goal": "Create a new product or service item.",
+      "evidence": [
+        "A prominent 'New' button is available above the items list."
+      ]
+    },
+    {
+      "goal": "Check the current stock level for an item.",
+      "evidence": [
+        "The table includes a 'Stock On Hand' column."
+      ]
+    },
+    {
+      "goal": "Find the purchase cost and selling price of an item.",
+      "evidence": [
+        "The table includes 'Purchase Rate' and 'Rate' columns."
+      ]
+    },
+    {
+      "goal": "Find a specific item to view its details.",
+      "evidence": [
+        "Each item name in the table is a link, suggesting a detail view. The HTML also shows a search input: '<input placeholder=\"Search in Items ( / )\" type=\"text\"/>'."
+      ]
+    }
+  ],
+  "predictedMissingUI": [
+    {
+      "uiElementName": "Bulk Action Buttons",
+      "purpose": "To perform actions (e.g., delete, edit, deactivate) on multiple selected items at once.",
+      "confidence": "high",
+      "evidence": [
+        "The table contains a checkbox in each row and a select-all checkbox in the header, which strongly implies that bulk actions should be possible, but no corresponding action buttons are visible."
+      ]
+    },
+    {
+      "uiElementName": "Filter Controls",
+      "purpose": "To filter the item list based on criteria like status (active/inactive), type (goods/service), or stock level.",
+      "confidence": "medium",
+      "evidence": [
+        "The 'All Items' button suggests other filtered views could exist, but there are no visible dropdowns or controls to apply other filters."
+      ]
+    }
+  ],
+  "pageNarrative": "This page serves as the central index for managing inventory items. It presents a detailed table listing all products and services, including their names, descriptions, purchase/sale rates, and current stock levels. A user can sort the list by clicking on column headers and can navigate to a detailed view for any specific item by clicking its name. The primary action available is creating a new item via the 'New' button, which directs the user to a separate creation page.",
+  "_meta": {
+    "sourceFile": "inventory-product-index.html",
+    "pageFactsCounts": {
+      "buttons": 14,
+      "links": 78,
+      "forms": 0,
+      "tables": 1,
+      "headings": 6
+    },
+    "validation": {
+      "extracted": {
+        "clickableActions": 35,
+        "tables": 1,
+        "forms": 0
+      },
+      "reported": {
+        "clickableElements": 44,
+        "tables": 1,
+        "forms": 0
+      },
+      "mismatches": {
+        "clickableElements": false,
+        "tables": false,
+        "forms": false
+      },
+      "needsRetry": false
+    },
+    "model": "gemini-2.5-pro"
+  }
+}
