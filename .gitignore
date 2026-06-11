@@ -16,3 +16,6 @@ __pycache__/
 *.pyc
 
 auth.json
+
+storage/apps/*
+!storage/apps/.gitkeep
