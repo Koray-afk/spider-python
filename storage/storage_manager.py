@@ -11,6 +11,7 @@ SUBDIRS = (
     "stitched_html",
     "cleaned_html",
     "business_json",
+    "semantic_tree",
     "metadata",
     "logs",
 )
@@ -49,6 +50,10 @@ def get_cleaned_html_dir(app_name: str) -> Path:
 
 def get_business_json_dir(app_name: str) -> Path:
     return get_app_root(app_name) / "business_json"
+
+
+def get_semantic_tree_dir(app_name: str) -> Path:
+    return get_app_root(app_name) / "semantic_tree"
 
 
 def get_metadata_dir(app_name: str) -> Path:

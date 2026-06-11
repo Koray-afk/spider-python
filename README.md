@@ -39,9 +39,9 @@ On Linux, install Chromium/Chrome dependencies:
 playwright install-deps chrome
 ```
 
-### 5. (Optional) Gemini API key for business analysis
+### 5. (Optional) Gemini API key for analysis stages
 
-Create a `.env` file at the project root if you want to run the analyze step:
+Create a `.env` file at the project root if you want to run `analyze` or `semantic_tree`:
 
 ```
 GEMINI_API_KEY=your_api_key_here
@@ -68,6 +68,7 @@ Every command requires an app name (`zoho`, `hubspot`, etc.).
 | `python main.py stitch <app>` | Stitch only → `stitched_html/` |
 | `python main.py clean <app>` | Clean only → `cleaned_html/` |
 | `python main.py analyze <app>` | Analyze only → `business_json/` (requires `GEMINI_API_KEY`) |
+| `python main.py semantic_tree <app>` | Semantic UI tree → `semantic_tree/` (requires `GEMINI_API_KEY`) |
 | `python main.py preview <app>` | Serve `stitched_html/` locally |
 | `python main.py serve` | Start FastAPI API on port 8000 |
 
@@ -79,6 +80,7 @@ python main.py crawl zoho
 python main.py stitch zoho
 python main.py clean zoho
 python main.py analyze zoho
+python main.py semantic_tree zoho
 python main.py preview zoho
 ```
 
@@ -144,6 +146,7 @@ storage/apps/
 │   ├── stitched_html/     # Offline-viewable stitched pages ← preview here
 │   ├── cleaned_html/      # Flat simplified HTML for LLM analysis
 │   ├── business_json/     # Gemini business analysis JSON per page
+│   ├── semantic_tree/     # Semantic UI component tree JSON per page
 │   └── metadata/
 │       ├── sitemap.json
 │       ├── auth.json
@@ -159,6 +162,7 @@ storage/apps/
 | `stitched_html/` | Stitcher | Sidebar nav wired, JS stripped (post-auth) |
 | `cleaned_html/` | Cleaner | Token-efficient HTML for LLMs |
 | `business_json/` | Analyzer | Per-page business analysis JSON from Gemini |
+| `semantic_tree/` | Semantic tree analyzer | Hierarchical UI component tree with semantic IDs |
 | `metadata/` | Crawler / pipeline | Sitemap, auth, pipeline status |
 
 ---
@@ -224,7 +228,8 @@ Storage is created automatically at `storage/apps/hubspot/`.
 [1/3] Crawl    → storage/apps/{app}/raw_html/
 [2/3] Stitch   → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
 [3/3] Clean    → storage/apps/{app}/cleaned_html/
-[4/4] Analyze  → storage/apps/{app}/business_json/  (optional, run separately)
+[4/5] Analyze        → storage/apps/{app}/business_json/   (optional, run separately)
+[5/5] Semantic tree  → storage/apps/{app}/semantic_tree/   (optional, run separately)
 ```
 
 Run analyze after clean:
@@ -241,6 +246,21 @@ storage/apps/zoho/business_json/invoices.json
 ```
 
 Each JSON file includes `businessPurpose`, `mainActions`, `businessEntities`, `userRoles`, and `shortSummary`. Already-analyzed pages are skipped on re-run.
+
+Run semantic tree after clean (and optionally after analyze for better context):
+
+```bash
+python main.py semantic_tree zoho
+```
+
+Output example:
+
+```
+storage/apps/zoho/semantic_tree/contacts.json
+storage/apps/zoho/semantic_tree/creditnotes.json
+```
+
+Each JSON file is a hierarchical component tree with `pageId`, `type`, `id`, `label`, and `children`. Pages without `business_json` still run (empty context). Already-built trees are skipped on re-run.
 
 Check progress:
 

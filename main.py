@@ -12,13 +12,22 @@ from pipeline import (
     run_crawl_pipeline,
     run_full_pipeline,
     run_preview_pipeline,
+    run_semantic_tree_pipeline,
     run_stitch_pipeline,
 )
 
 app = FastAPI(title="Spider Python", version="0.1.0")
 app.include_router(router)
 
-COMMANDS = frozenset({"crawl", "stitch", "clean", "analyze", "pipeline", "preview"})
+COMMANDS = frozenset({
+    "crawl",
+    "stitch",
+    "clean",
+    "analyze",
+    "semantic_tree",
+    "pipeline",
+    "preview",
+})
 
 
 def usage() -> None:
@@ -30,8 +39,12 @@ def usage() -> None:
     print("  crawl        Crawl only (writes raw_html)")
     print("  stitch       Stitch only (raw_html → stitched_html)")
     print("  clean        Clean only (stitched_html → cleaned_html)")
-    print("  analyze      Analyze only (cleaned_html → business_json, needs GEMINI_API_KEY)")
-    print("  preview      Serve stitched_html via http.server")
+    print("  analyze        Analyze only (cleaned_html → business_json, needs GEMINI_API_KEY)")
+    print(
+        "  semantic_tree  Semantic UI tree "
+        "(cleaned_html + business_json → semantic_tree, needs GEMINI_API_KEY)"
+    )
+    print("  preview        Serve stitched_html via http.server")
     print("  serve        Start FastAPI on :8000")
     print()
     print(f"Apps: {apps}")
@@ -76,6 +89,8 @@ def main() -> None:
         run_clean_pipeline(app_name)
     elif command == "analyze":
         run_analyze_pipeline(app_name)
+    elif command == "semantic_tree":
+        run_semantic_tree_pipeline(app_name)
     elif command == "preview":
         run_preview_pipeline(app_name)
 

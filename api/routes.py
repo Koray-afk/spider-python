@@ -7,6 +7,7 @@ from pipeline import (
     run_clean_pipeline,
     run_crawl_pipeline,
     run_full_pipeline,
+    run_semantic_tree_pipeline,
     run_stitch_pipeline,
 )
 
@@ -31,6 +32,11 @@ def clean_endpoint(app_name: str):
 @router.post("/analyze/{app_name}")
 def analyze_endpoint(app_name: str):
     return run_analyze_pipeline(app_name)
+
+
+@router.post("/semantic_tree/{app_name}")
+def semantic_tree_endpoint(app_name: str):
+    return run_semantic_tree_pipeline(app_name)
 
 
 @router.post("/pipeline/{app_name}")
