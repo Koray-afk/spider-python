@@ -14,6 +14,7 @@ from pipeline import (
     run_full_pipeline,
     run_preview_pipeline,
     run_semantic_tree_pipeline,
+    run_component_tree_pipeline,
     run_stitch_pipeline,
 )
 
@@ -26,6 +27,7 @@ COMMANDS = frozenset({
     "clean",
     "analyze",
     "semantic_tree",
+    "component_tree",
     "catalog",
     "pipeline",
     "preview",
@@ -45,6 +47,10 @@ def usage() -> None:
     print(
         "  semantic_tree  Semantic UI tree "
         "(cleaned_html + business_json → semantic_tree, needs GEMINI_API_KEY)"
+    )
+    print(
+        "  component_tree React component tree "
+        "(semantic_tree → component_tree, needs GEMINI_API_KEY)"
     )
     print(
         "  catalog        Application catalog "
@@ -97,6 +103,8 @@ def main() -> None:
         run_analyze_pipeline(app_name)
     elif command == "semantic_tree":
         run_semantic_tree_pipeline(app_name)
+    elif command == "component_tree":
+        run_component_tree_pipeline(app_name)
     elif command == "catalog":
         run_catalog_pipeline(app_name)
     elif command == "preview":

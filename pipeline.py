@@ -10,11 +10,13 @@ from analyzer.html_cleaner import clean_application
 from analyzer.business_analyzer import analyze_application
 from analyzer.app_catalog_analyzer import build_catalog_application
 from analyzer.semantic_tree_analyzer import analyze_semantic_tree_application
+from analyzer.component_tree_analyzer import compress_component_tree_application
 from storage.storage_manager import (
     create_app_storage,
     get_app_catalog_dir,
     get_business_json_dir,
     get_cleaned_html_dir,
+    get_component_tree_dir,
     get_metadata_dir,
     get_raw_html_dir,
     get_semantic_tree_dir,
@@ -167,6 +169,26 @@ def run_semantic_tree_pipeline(app_name: str) -> dict:
     semantic_result = analyze_semantic_tree_application(app_name)
     save_pipeline_status(get_metadata_dir(app_name), semantic_tree_completed=True)
     return semantic_result
+
+
+def run_component_tree_pipeline(app_name: str) -> dict:
+    """Read semantic_tree; write component_tree. Requires GEMINI_API_KEY."""
+    create_app_storage(app_name)
+    semantic_tree_dir = get_semantic_tree_dir(app_name)
+    component_tree_dir = get_component_tree_dir(app_name)
+
+    log_stage("COMPONENT_TREE")
+    log_input(semantic_tree_dir / "<slug>.json")
+    log_output(component_tree_dir / "<slug>.json")
+
+    if not semantic_tree_dir.is_dir() or not any(semantic_tree_dir.glob("*.json")):
+        raise FileNotFoundError(
+            f"No semantic trees at {semantic_tree_dir} — run semantic_tree first"
+        )
+
+    component_result = compress_component_tree_application(app_name)
+    save_pipeline_status(get_metadata_dir(app_name), component_tree_completed=True)
+    return component_result
 
 
 def run_catalog_pipeline(app_name: str) -> dict:

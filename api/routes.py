@@ -9,6 +9,7 @@ from pipeline import (
     run_crawl_pipeline,
     run_full_pipeline,
     run_semantic_tree_pipeline,
+    run_component_tree_pipeline,
     run_stitch_pipeline,
 )
 
@@ -38,6 +39,11 @@ def analyze_endpoint(app_name: str):
 @router.post("/semantic_tree/{app_name}")
 def semantic_tree_endpoint(app_name: str):
     return run_semantic_tree_pipeline(app_name)
+
+
+@router.post("/component_tree/{app_name}")
+def component_tree_endpoint(app_name: str):
+    return run_component_tree_pipeline(app_name)
 
 
 @router.post("/catalog/{app_name}")
