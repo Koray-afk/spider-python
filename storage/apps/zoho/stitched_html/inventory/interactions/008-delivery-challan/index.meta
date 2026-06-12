@@ -1,0 +1,10 @@
+{
+  "sourcePage": "inventory",
+  "sourceUrl": "https://www.zoho.com/inventory",
+  "triggerText": "DELIVERY CHALLAN",
+  "triggerSelector": "[data-sr-trigger=\"id-8\"]",
+  "triggerToken": "id-8",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/inventory/",
+  "htmlFile": "interactions/008-delivery-challan/fragment.html"
+}

@@ -8,6 +8,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 # pyrefly: ignore [missing-import]
+from bs4 import BeautifulSoup, Tag
 from playwright.sync_api import sync_playwright
 
 # ── 1. RUNTIME CONFIG (injected by crawl_application) ───────────
@@ -126,6 +127,23 @@ def strip_scripts(html):
     html = re.sub(r"\s+on\w+=([\"']).*?\1", "", html, flags=re.IGNORECASE)
     return html
 
+
+def purge_application_environment(html):
+    """Remove Ember/Zoho boot config so offline pages cannot re-hydrate the SPA."""
+    html = re.sub(
+        r'<meta\b[^>]*name=["\']zb/config/environment["\'][^>]*/?>',
+        "",
+        html,
+        flags=re.IGNORECASE,
+    )
+    html = re.sub(
+        r'<meta\b[^>]*name=["\'][^"\']+/config/environment["\'][^>]*/?>',
+        "",
+        html,
+        flags=re.IGNORECASE,
+    )
+    return html
+
 def hash_route_from_href(href):
     if not href.startswith("#/"):
         return None
@@ -233,6 +251,376 @@ def is_login_page(pg):
         return True
     return any(part in parsed.path.lower() for part in ("/signin", "/login", "/sign-in"))
 
+# ── 4a. INTERACTION DISCOVERY ───────────────────────────────────
+INTERACTION_DOM_MIN_DELTA = 300
+INTERACTION_DOM_MIN_RATIO = 0.02
+MAX_INTERACTIONS_PER_PAGE = 40
+
+COLLECT_INTERACTION_CANDIDATES_JS = """
+() => {
+  function isVisible(el) {
+    const r = el.getBoundingClientRect();
+    const style = window.getComputedStyle(el);
+    return r.width > 0 && r.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
+  }
+  function textOf(el) {
+    return (el.innerText || el.getAttribute('aria-label') || el.getAttribute('title') || '').trim().slice(0, 120);
+  }
+  document.querySelectorAll('[data-sr-trigger]').forEach(function(el) {
+    el.removeAttribute('data-sr-trigger');
+  });
+  const seen = new Set();
+  const out = [];
+  let index = 0;
+  const specs = [
+    { type: 'button', sel: 'button' },
+    { type: 'role_button', sel: '[role="button"]' },
+    { type: 'aria_haspopup', sel: '[aria-haspopup]' },
+    { type: 'dropdown_trigger', sel: '.dropdown-trigger, .dropdown-toggle, .dropdown-trigger-btn, [data-toggle="dropdown"], [aria-haspopup="listbox"]' },
+    { type: 'menu_trigger', sel: '[aria-haspopup="menu"], .menu-trigger, .navbar-dropdown-trigger, .dropdown-trigger-container > button' },
+  ];
+  for (const { type, sel } of specs) {
+    for (const el of document.querySelectorAll(sel)) {
+      if (!isVisible(el)) continue;
+      const dedupeKey = el.tagName + '|' + (el.getAttribute('class') || '') + '|' + textOf(el);
+      if (seen.has(dedupeKey)) continue;
+      seen.add(dedupeKey);
+      if (!textOf(el) && type === 'button') continue;
+      index += 1;
+      const token = 'id-' + index;
+      el.setAttribute('data-sr-trigger', token);
+      out.push({
+        interactionType: type,
+        triggerToken: token,
+        triggerSelector: '[data-sr-trigger="' + token + '"]',
+        triggerText: textOf(el) || token,
+      });
+    }
+  }
+  return out;
+}
+"""
+
+DOM_FINGERPRINT_JS = """
+() => ({
+  bodyLength: document.body ? document.body.innerHTML.length : 0,
+  overlayCount: document.querySelectorAll(
+    '.modal, .dropdown-menu, .dropdown-menu-list, [role="dialog"], [role="menu"], .drawer, .popover, .offcanvas'
+  ).length,
+})
+"""
+
+CLASSIFY_CAPTURED_INTERACTION_JS = """
+() => {
+  function visible(el) {
+    if (!el) return false;
+    const r = el.getBoundingClientRect();
+    const s = window.getComputedStyle(el);
+    return r.width > 0 && r.height > 0 && s.display !== 'none' && s.visibility !== 'hidden' && !el.hidden;
+  }
+  function first(sels) {
+    for (const sel of sels) {
+      for (const el of document.querySelectorAll(sel)) {
+        if (visible(el)) return el;
+      }
+    }
+    return null;
+  }
+  if (first(['.modal.show', '.modal.in', '[role="dialog"]', '.modal-backdrop.show', '.modal-backdrop.in'])) return 'modal';
+  if (first(['.offcanvas.show', '.drawer.open', '.drawer.show', '[class*="drawer"][class*="open"]'])) return 'drawer';
+  if (first(['.sidebar.open', '.side-panel.open', 'aside.sidebar-panel'])) return 'sidebar';
+  if (first(['.recent-activity-menu', '.dropdown-menu.show', '.dropdown-menu.open', '[role="menu"]', '[role="listbox"]', '.dropdown-menu-list'])) return 'dropdown';
+  if (first(['.popover.show', '.popover.in', '[role="tooltip"]'])) return 'popover';
+  if (first(['.wizard-step.active', '.step-wizard .step.active', '[class*="wizard"] .active'])) return 'wizard';
+  return 'page';
+}
+"""
+
+ZOHO_ROOT_WRAPPERS = ["#overlay-wrapper", "#modal-wrapper"]
+
+FLOATING_OVERLAY_SELECTORS = [
+    ".recent-activity-menu",
+    ".dropdown-menu.show",
+    ".dropdown-menu.open",
+    ".dropdown-menu-list",
+    ".dropdown-menu",
+    ".modal.show",
+    ".modal.in",
+    ".modal",
+    '[role="dialog"]',
+    '[role="menu"]',
+    '[role="listbox"]',
+    ".popover.show",
+    ".popover",
+    ".offcanvas.show",
+    ".drawer.open",
+    ".drawer",
+    ".sidebar.open",
+    ".side-panel.open",
+]
+
+TYPE_FRAGMENT_SELECTORS: dict[str, list[str]] = {
+    "modal": [".modal.show", ".modal.in", '[role="dialog"]', ".modal"],
+    "drawer": [".offcanvas.show", ".drawer.open", ".drawer.show", ".offcanvas", ".drawer"],
+    "sidebar": [".sidebar.open", ".side-panel.open", "aside.sidebar-panel", ".side-panel"],
+    "dropdown": [
+        ".recent-activity-menu",
+        ".dropdown-menu.show",
+        ".dropdown-menu.open",
+        '[role="menu"]',
+        '[role="listbox"]',
+        ".dropdown-menu-list",
+        ".dropdown-menu",
+    ],
+    "popover": [".popover.show", ".popover.in", '[role="tooltip"]', ".popover"],
+    "wizard": [".wizard-step.active", ".step-wizard .step.active", '[class*="wizard"] .active'],
+    "page": [],
+}
+
+VALID_INTERACTION_TYPES = frozenset(
+    {"modal", "dropdown", "popover", "sidebar", "drawer", "wizard", "page"}
+)
+
+
+def _slugify_interaction(text: str, fallback: str) -> str:
+    base = re.sub(r"[^a-zA-Z0-9]+", "-", (text or fallback).lower()).strip("-")
+    return (base[:48] or "interaction").strip("-")
+
+
+def _dom_changed(before: dict, after: dict) -> bool:
+    b_len = before.get("bodyLength", 0)
+    a_len = after.get("bodyLength", 0)
+    delta = abs(a_len - b_len)
+    if after.get("overlayCount", 0) > before.get("overlayCount", 0):
+        return True
+    if b_len == 0:
+        return a_len > 0 and delta >= INTERACTION_DOM_MIN_DELTA
+    return delta >= INTERACTION_DOM_MIN_DELTA or (delta / b_len) >= INTERACTION_DOM_MIN_RATIO
+
+
+def _prepare_overlay_element(el: Tag, interaction_type: str) -> None:
+    el.attrs.pop("hidden", None)
+    el.attrs.pop("aria-hidden", None)
+    style = el.get("style", "")
+    if style:
+        el["style"] = re.sub(r"display\s*:\s*none", "display:block", style, flags=re.IGNORECASE)
+
+    classes = el.get("class") or []
+    if isinstance(classes, str):
+        classes = classes.split()
+    classes = [c for c in classes if c not in {"hidden", "collapse"}]
+    if interaction_type == "modal" and "modal" in classes and "show" not in classes:
+        classes.append("show")
+    if interaction_type == "dropdown" and "dropdown-menu" in " ".join(classes) and "show" not in classes:
+        classes.append("show")
+    if classes:
+        el["class"] = classes
+
+
+def _extract_floating_overlay(html: str, interaction_type: str) -> str:
+    """Extract only the floating overlay snippet, not the full body layout."""
+    soup = BeautifulSoup(html, "html.parser")
+    parts: list[str] = []
+    seen: set[int] = set()
+
+    for wrapper_sel in ZOHO_ROOT_WRAPPERS:
+        wrapper = soup.select_one(wrapper_sel)
+        if not wrapper:
+            continue
+        for child in wrapper.find_all(recursive=False):
+            if id(child) in seen:
+                continue
+            classes = " ".join(child.get("class") or [])
+            if "backdrop" in classes:
+                continue
+            seen.add(id(child))
+            _prepare_overlay_element(child, interaction_type)
+            parts.append(str(child))
+        if parts:
+            return "\n".join(parts)
+
+    selectors = TYPE_FRAGMENT_SELECTORS.get(interaction_type, [])
+    if interaction_type == "page":
+        selectors = FLOATING_OVERLAY_SELECTORS
+
+    for sel in selectors:
+        for el in soup.select(sel):
+            if id(el) in seen:
+                continue
+            classes = " ".join(el.get("class") or [])
+            if interaction_type in ("modal", "drawer", "sidebar") and "backdrop" in classes:
+                continue
+            seen.add(id(el))
+            _prepare_overlay_element(el, interaction_type)
+            parts.append(str(el))
+
+    if not parts:
+        for sel in FLOATING_OVERLAY_SELECTORS:
+            for el in soup.select(sel):
+                if id(el) in seen or el.get("hidden") is not None:
+                    continue
+                seen.add(id(el))
+                _prepare_overlay_element(el, interaction_type)
+                parts.append(str(el))
+
+    return "\n".join(parts)
+
+
+def _process_interaction_html(html: str, page_url: str, is_authenticated: bool) -> str:
+    if is_authenticated:
+        html = make_assets_absolute(html, page_url, include_js=False)
+        html = remove_base_tag(html)
+        html = strip_scripts(html)
+        html = purge_application_environment(html)
+        html = re.sub(r"(<head[^>]*>)", rf"\1\n{STATIC_NAV_STYLE}", html, count=1, flags=re.IGNORECASE)
+    else:
+        html = make_assets_absolute(html, page_url, include_js=True)
+    return html
+
+
+def _save_interaction_capture(
+    pg,
+    page_url: str,
+    slug: str,
+    interaction_dir: Path,
+    candidate: dict,
+    interaction_type: str,
+    is_authenticated: bool,
+) -> None:
+    interaction_dir.mkdir(parents=True, exist_ok=True)
+    raw_html = pg.content()
+    processed = _process_interaction_html(raw_html, page_url, is_authenticated)
+    fragment = _extract_floating_overlay(processed, interaction_type)
+    if not fragment.strip():
+        fragment = _extract_floating_overlay(processed, "page")
+
+    Path(interaction_dir / "fragment.html").write_text(fragment, encoding="utf-8")
+    pg.screenshot(path=str(interaction_dir / "index.png"), full_page=True)
+    meta = {
+        "sourcePage": slug,
+        "sourceUrl": page_url,
+        "triggerText": candidate.get("triggerText", ""),
+        "triggerSelector": candidate.get("triggerSelector", ""),
+        "triggerToken": candidate.get("triggerToken", ""),
+        "interactionType": interaction_type,
+        "capturedUrl": pg.url,
+        "htmlFile": f"interactions/{interaction_dir.name}/fragment.html",
+    }
+    Path(interaction_dir / "index.meta").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+
+
+def _stamp_and_resave_page(pg, page_url: str, slug: str, is_authenticated: bool) -> None:
+    """Re-stamp trigger tokens on the base page so offline HTML matches interaction_map selectors."""
+    pg.goto(page_url, wait_until="networkidle", timeout=60000)
+    pg.wait_for_timeout(1200)
+    try:
+        pg.evaluate(COLLECT_INTERACTION_CANDIDATES_JS)
+    except Exception:
+        return
+
+    html_dir = _paths()["raw_html_dir"] / slug
+    html = pg.content()
+    if is_authenticated:
+        html = make_assets_absolute(html, page_url, include_js=False)
+        html = remove_base_tag(html)
+        html = strip_scripts(html)
+        html = purge_application_environment(html)
+        html = re.sub(r"(<head[^>]*>)", rf"\1\n{STATIC_NAV_STYLE}", html, count=1, flags=re.IGNORECASE)
+    else:
+        html = make_assets_absolute(html, page_url, include_js=True)
+    Path(html_dir / "index.html").write_text(html, encoding="utf-8")
+
+
+def discover_interactions(pg, page_url: str, slug: str, is_authenticated: bool) -> list[dict]:
+    """Click each stamped UI trigger once; save overlay fragment when DOM changes."""
+    interactions_root = _paths()["raw_html_dir"] / slug / "interactions"
+    interactions_root.mkdir(parents=True, exist_ok=True)
+
+    try:
+        pg.goto(page_url, wait_until="networkidle", timeout=60000)
+        pg.wait_for_timeout(1200)
+        initial_candidates = pg.evaluate(COLLECT_INTERACTION_CANDIDATES_JS)
+    except Exception as exc:
+        print(f"    ✗ interaction discovery skipped: {exc}")
+        return []
+
+    total = min(len(initial_candidates), MAX_INTERACTIONS_PER_PAGE)
+    if not total:
+        return []
+
+    interaction_map: list[dict] = []
+    saved = 0
+
+    for idx in range(1, total + 1):
+        selector = f'[data-sr-trigger="id-{idx}"]'
+        try:
+            pg.goto(page_url, wait_until="networkidle", timeout=60000)
+            pg.wait_for_timeout(1200)
+            candidates = pg.evaluate(COLLECT_INTERACTION_CANDIDATES_JS)
+            if idx > len(candidates):
+                continue
+
+            candidate = candidates[idx - 1]
+            selector = candidate.get("triggerSelector") or selector
+
+            before_url = normalize_spa_url(pg.url)
+            before_fp = pg.evaluate(DOM_FINGERPRINT_JS)
+
+            locator = pg.locator(selector).first
+            if locator.count() == 0 or not locator.is_visible():
+                continue
+
+            locator.click(timeout=5000)
+            pg.wait_for_timeout(900)
+
+            after_url = normalize_spa_url(pg.url)
+            if after_url != before_url:
+                continue
+
+            after_fp = pg.evaluate(DOM_FINGERPRINT_JS)
+            if not _dom_changed(before_fp, after_fp):
+                continue
+
+            try:
+                interaction_type = pg.evaluate(CLASSIFY_CAPTURED_INTERACTION_JS)
+            except Exception:
+                interaction_type = "page"
+            if interaction_type not in VALID_INTERACTION_TYPES:
+                interaction_type = "page"
+
+            label = _slugify_interaction(candidate.get("triggerText", ""), interaction_type)
+            folder_name = f"{idx:03d}-{label}"
+            interaction_dir = interactions_root / folder_name
+
+            capture_meta = {
+                **candidate,
+                "interactionType": interaction_type,
+            }
+            _save_interaction_capture(
+                pg, page_url, slug, interaction_dir, capture_meta, interaction_type, is_authenticated
+            )
+            interaction_map.append(
+                {
+                    "triggerText": candidate.get("triggerText", ""),
+                    "triggerSelector": selector,
+                    "triggerToken": candidate.get("triggerToken", f"id-{idx}"),
+                    "interactionType": interaction_type,
+                    "sourcePage": slug,
+                    "htmlFile": f"interactions/{folder_name}/fragment.html",
+                }
+            )
+            saved += 1
+            print(f"    + interaction {saved}: {candidate.get('triggerText') or selector}")
+        except Exception:
+            continue
+
+    map_path = interactions_root / "interaction_map.json"
+    map_path.write_text(json.dumps(interaction_map, indent=2), encoding="utf-8")
+    if saved:
+        print(f"    ✓ {saved} interactions → {map_path.relative_to(_paths()['raw_html_dir'])}")
+        _stamp_and_resave_page(pg, page_url, slug, is_authenticated)
+    return interaction_map
+
 # ── 4. PAGE SAVE ───────────────────────────────────────────────
 def save_page(pg, url, slug, is_authenticated=False):
     paths = _paths()
@@ -249,6 +637,7 @@ def save_page(pg, url, slug, is_authenticated=False):
         html = make_assets_absolute(html, url, include_js=False)
         html = remove_base_tag(html)
         html = strip_scripts(html)
+        html = purge_application_environment(html)
         html = re.sub(r"(<head[^>]*>)", rf"\1\n{STATIC_NAV_STYLE}", html, count=1, flags=re.IGNORECASE)
     else:
         # Pre-auth marketing: keep live CDN assets including JS for animations
@@ -362,6 +751,7 @@ def run_spider(context, start_url, base_domain, max_pages, sitemap, url_slug_map
                     queue.append(link)
 
             save_page(pg, url, slug, is_authenticated=is_authenticated)
+            discover_interactions(pg, url, slug, is_authenticated=is_authenticated)
             sitemap.append({"slug": slug, "url": url, "title": pg.title()})
             save_sitemap(sitemap)
         except Exception as e:

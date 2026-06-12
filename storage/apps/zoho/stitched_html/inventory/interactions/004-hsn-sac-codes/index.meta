@@ -1,0 +1,10 @@
+{
+  "sourcePage": "inventory",
+  "sourceUrl": "https://www.zoho.com/inventory",
+  "triggerText": "HSN/SAC CODES",
+  "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+  "triggerToken": "id-4",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/inventory/",
+  "htmlFile": "interactions/004-hsn-sac-codes/fragment.html"
+}

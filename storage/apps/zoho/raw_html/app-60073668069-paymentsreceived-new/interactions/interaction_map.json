@@ -1,0 +1,42 @@
+[
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-paymentsreceived-new",
+    "htmlFile": "interactions/002-show-dropdown-menu/fragment.html"
+  },
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-paymentsreceived-new",
+    "htmlFile": "interactions/003-show-dropdown-menu/fragment.html"
+  },
+  {
+    "triggerText": "Inventory Adjustments",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-paymentsreceived-new",
+    "htmlFile": "interactions/004-inventory-adjustments/fragment.html"
+  },
+  {
+    "triggerText": "Subscribe",
+    "triggerSelector": "[data-sr-trigger=\"id-21\"]",
+    "triggerToken": "id-21",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-paymentsreceived-new",
+    "htmlFile": "interactions/021-subscribe/fragment.html"
+  },
+  {
+    "triggerText": "Switch to the Free Plan",
+    "triggerSelector": "[data-sr-trigger=\"id-22\"]",
+    "triggerToken": "id-22",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-paymentsreceived-new",
+    "htmlFile": "interactions/022-switch-to-the-free-plan/fragment.html"
+  }
+]

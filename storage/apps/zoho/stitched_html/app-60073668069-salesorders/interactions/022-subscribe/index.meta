@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-salesorders",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/salesorders",
+  "triggerText": "Subscribe",
+  "triggerSelector": "[data-sr-trigger=\"id-22\"]",
+  "triggerToken": "id-22",
+  "interactionType": "modal",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/salesorders?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "htmlFile": "interactions/022-subscribe/fragment.html"
+}

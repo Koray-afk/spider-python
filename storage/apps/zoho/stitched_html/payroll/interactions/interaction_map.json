@@ -1,0 +1,110 @@
+[
+  {
+    "triggerText": "Zoho Search",
+    "triggerSelector": "[data-sr-trigger=\"id-1\"]",
+    "triggerToken": "id-1",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/001-zoho-search/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Request a demo",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/002-request-a-demo/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "Web and Mobile app",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/003-web-and-mobile-app/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "Instant Payslips",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/004-instant-payslips/fragment.html",
+    "templateId": "sr-int-3"
+  },
+  {
+    "triggerText": "Digitisation",
+    "triggerSelector": "[data-sr-trigger=\"id-5\"]",
+    "triggerToken": "id-5",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/005-digitisation/fragment.html",
+    "templateId": "sr-int-4"
+  },
+  {
+    "triggerText": "Communication",
+    "triggerSelector": "[data-sr-trigger=\"id-6\"]",
+    "triggerToken": "id-6",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/006-communication/fragment.html",
+    "templateId": "sr-int-5"
+  },
+  {
+    "triggerText": "Go to Next testimonial",
+    "triggerSelector": "[data-sr-trigger=\"id-8\"]",
+    "triggerToken": "id-8",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/008-go-to-next-testimonial/fragment.html",
+    "templateId": "sr-int-6"
+  },
+  {
+    "triggerText": "Request Demo",
+    "triggerSelector": "[data-sr-trigger=\"id-9\"]",
+    "triggerToken": "id-9",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/009-request-demo/fragment.html",
+    "templateId": "sr-int-7"
+  },
+  {
+    "triggerText": "Request a demo",
+    "triggerSelector": "[data-sr-trigger=\"id-10\"]",
+    "triggerToken": "id-10",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/010-request-a-demo/fragment.html",
+    "templateId": "sr-int-8"
+  },
+  {
+    "triggerText": "Resources",
+    "triggerSelector": "[data-sr-trigger=\"id-11\"]",
+    "triggerToken": "id-11",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/011-resources/fragment.html",
+    "templateId": "sr-int-9"
+  },
+  {
+    "triggerText": "IN-EN",
+    "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+    "triggerToken": "id-12",
+    "interactionType": "dropdown",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/012-in-en/fragment.html",
+    "templateId": "sr-int-10"
+  },
+  {
+    "triggerText": "All Products",
+    "triggerSelector": "[data-sr-trigger=\"id-13\"]",
+    "triggerToken": "id-13",
+    "interactionType": "page",
+    "sourcePage": "payroll",
+    "htmlFile": "interactions/013-all-products/fragment.html",
+    "templateId": "sr-int-11"
+  }
+]

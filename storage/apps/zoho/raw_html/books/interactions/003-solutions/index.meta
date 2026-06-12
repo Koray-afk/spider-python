@@ -1,0 +1,10 @@
+{
+  "sourcePage": "books",
+  "sourceUrl": "https://www.zoho.com/books",
+  "triggerText": "Solutions",
+  "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+  "triggerToken": "id-3",
+  "interactionType": "dropdown",
+  "capturedUrl": "https://www.zoho.com/in/books/",
+  "htmlFile": "interactions/003-solutions/fragment.html"
+}

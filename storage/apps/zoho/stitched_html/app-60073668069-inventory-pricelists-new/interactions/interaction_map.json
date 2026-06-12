@@ -1,0 +1,65 @@
+[
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/002-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/003-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "Inventory Adjustments",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/004-inventory-adjustments/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "Markup",
+    "triggerSelector": "[data-sr-trigger=\"id-13\"]",
+    "triggerToken": "id-13",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/013-markup/fragment.html",
+    "templateId": "sr-int-3"
+  },
+  {
+    "triggerText": "Close this page",
+    "triggerSelector": "[data-sr-trigger=\"id-14\"]",
+    "triggerToken": "id-14",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/014-close-this-page/fragment.html",
+    "templateId": "sr-int-4"
+  },
+  {
+    "triggerText": "Save",
+    "triggerSelector": "[data-sr-trigger=\"id-15\"]",
+    "triggerToken": "id-15",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/015-save/fragment.html",
+    "templateId": "sr-int-5"
+  },
+  {
+    "triggerText": "testing",
+    "triggerSelector": "[data-sr-trigger=\"id-18\"]",
+    "triggerToken": "id-18",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-inventory-pricelists-new",
+    "htmlFile": "interactions/018-testing/fragment.html",
+    "templateId": "sr-int-6"
+  }
+]

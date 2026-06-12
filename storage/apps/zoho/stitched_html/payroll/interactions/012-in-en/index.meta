@@ -1,0 +1,10 @@
+{
+  "sourcePage": "payroll",
+  "sourceUrl": "https://www.zoho.com/payroll",
+  "triggerText": "IN-EN",
+  "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+  "triggerToken": "id-12",
+  "interactionType": "dropdown",
+  "capturedUrl": "https://www.zoho.com/in/payroll/",
+  "htmlFile": "interactions/012-in-en/fragment.html"
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "triggerText": "Zoho Search",
+    "triggerSelector": "[data-sr-trigger=\"id-1\"]",
+    "triggerToken": "id-1",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/001-zoho-search/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Watch the demo",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/002-watch-the-demo/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "GSTIN",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/003-gstin/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "HSN/SAC CODES",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/004-hsn-sac-codes/fragment.html",
+    "templateId": "sr-int-3"
+  },
+  {
+    "triggerText": "INVOICES",
+    "triggerSelector": "[data-sr-trigger=\"id-5\"]",
+    "triggerToken": "id-5",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/005-invoices/fragment.html",
+    "templateId": "sr-int-4"
+  },
+  {
+    "triggerText": "TAXES",
+    "triggerSelector": "[data-sr-trigger=\"id-6\"]",
+    "triggerToken": "id-6",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/006-taxes/fragment.html",
+    "templateId": "sr-int-5"
+  },
+  {
+    "triggerText": "E-WAY BILLS",
+    "triggerSelector": "[data-sr-trigger=\"id-7\"]",
+    "triggerToken": "id-7",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/007-e-way-bills/fragment.html",
+    "templateId": "sr-int-6"
+  },
+  {
+    "triggerText": "DELIVERY CHALLAN",
+    "triggerSelector": "[data-sr-trigger=\"id-8\"]",
+    "triggerToken": "id-8",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/008-delivery-challan/fragment.html",
+    "templateId": "sr-int-7"
+  },
+  {
+    "triggerText": "slide to first",
+    "triggerSelector": "[data-sr-trigger=\"id-9\"]",
+    "triggerToken": "id-9",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/009-slide-to-first/fragment.html",
+    "templateId": "sr-int-8"
+  },
+  {
+    "triggerText": "slide to second",
+    "triggerSelector": "[data-sr-trigger=\"id-10\"]",
+    "triggerToken": "id-10",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/010-slide-to-second/fragment.html",
+    "templateId": "sr-int-9"
+  },
+  {
+    "triggerText": "slide to third",
+    "triggerSelector": "[data-sr-trigger=\"id-11\"]",
+    "triggerToken": "id-11",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/011-slide-to-third/fragment.html",
+    "templateId": "sr-int-10"
+  },
+  {
+    "triggerText": "slide to fourth",
+    "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+    "triggerToken": "id-12",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/012-slide-to-fourth/fragment.html",
+    "templateId": "sr-int-11"
+  },
+  {
+    "triggerText": "slide to fifth",
+    "triggerSelector": "[data-sr-trigger=\"id-13\"]",
+    "triggerToken": "id-13",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/013-slide-to-fifth/fragment.html",
+    "templateId": "sr-int-12"
+  },
+  {
+    "triggerText": "India",
+    "triggerSelector": "[data-sr-trigger=\"id-14\"]",
+    "triggerToken": "id-14",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/014-india/fragment.html",
+    "templateId": "sr-int-13"
+  },
+  {
+    "triggerText": "All Products",
+    "triggerSelector": "[data-sr-trigger=\"id-15\"]",
+    "triggerToken": "id-15",
+    "interactionType": "page",
+    "sourcePage": "inventory",
+    "htmlFile": "interactions/015-all-products/fragment.html",
+    "templateId": "sr-int-14"
+  }
+]

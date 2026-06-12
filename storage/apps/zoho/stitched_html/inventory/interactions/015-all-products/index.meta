@@ -1,0 +1,10 @@
+{
+  "sourcePage": "inventory",
+  "sourceUrl": "https://www.zoho.com/inventory",
+  "triggerText": "All Products",
+  "triggerSelector": "[data-sr-trigger=\"id-15\"]",
+  "triggerToken": "id-15",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/inventory/",
+  "htmlFile": "interactions/015-all-products/fragment.html"
+}

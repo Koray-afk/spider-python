@@ -1,0 +1,10 @@
+{
+  "sourcePage": "books",
+  "sourceUrl": "https://www.zoho.com/books",
+  "triggerText": "Yearly pricing now active. Switch to monthly pricing",
+  "triggerSelector": "[data-sr-trigger=\"id-7\"]",
+  "triggerToken": "id-7",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/books/",
+  "htmlFile": "interactions/007-yearly-pricing-now-active-switch-to-monthly-pric/fragment.html"
+}

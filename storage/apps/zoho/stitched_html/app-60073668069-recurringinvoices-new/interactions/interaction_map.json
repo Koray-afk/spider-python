@@ -1,0 +1,56 @@
+[
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-recurringinvoices-new",
+    "htmlFile": "interactions/002-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-recurringinvoices-new",
+    "htmlFile": "interactions/003-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "Inventory Adjustments",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-recurringinvoices-new",
+    "htmlFile": "interactions/004-inventory-adjustments/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "Bulk Actions",
+    "triggerSelector": "[data-sr-trigger=\"id-15\"]",
+    "triggerToken": "id-15",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-recurringinvoices-new",
+    "htmlFile": "interactions/015-bulk-actions/fragment.html",
+    "templateId": "sr-int-3"
+  },
+  {
+    "triggerText": "Bulk Actions",
+    "triggerSelector": "[data-sr-trigger=\"id-16\"]",
+    "triggerToken": "id-16",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-recurringinvoices-new",
+    "htmlFile": "interactions/016-bulk-actions/fragment.html",
+    "templateId": "sr-int-4"
+  },
+  {
+    "triggerText": "Add Items in Bulk",
+    "triggerSelector": "[data-sr-trigger=\"id-17\"]",
+    "triggerToken": "id-17",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-recurringinvoices-new",
+    "htmlFile": "interactions/017-add-items-in-bulk/fragment.html",
+    "templateId": "sr-int-5"
+  }
+]

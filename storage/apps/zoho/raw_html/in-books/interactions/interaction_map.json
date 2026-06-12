@@ -1,0 +1,130 @@
+[
+  {
+    "triggerText": "Zoho Search",
+    "triggerSelector": "[data-sr-trigger=\"id-1\"]",
+    "triggerToken": "id-1",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/001-zoho-search/fragment.html"
+  },
+  {
+    "triggerText": "Features",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/002-features/fragment.html"
+  },
+  {
+    "triggerText": "Resources",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "dropdown",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/004-resources/fragment.html"
+  },
+  {
+    "triggerText": "Contact us",
+    "triggerSelector": "[data-sr-trigger=\"id-6\"]",
+    "triggerToken": "id-6",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/006-contact-us/fragment.html"
+  },
+  {
+    "triggerText": "Yearly pricing now active. Switch to monthly pricing",
+    "triggerSelector": "[data-sr-trigger=\"id-7\"]",
+    "triggerToken": "id-7",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/007-yearly-pricing-now-active-switch-to-monthly-pric/fragment.html"
+  },
+  {
+    "triggerText": "IN-EN",
+    "triggerSelector": "[data-sr-trigger=\"id-8\"]",
+    "triggerToken": "id-8",
+    "interactionType": "dropdown",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/008-in-en/fragment.html"
+  },
+  {
+    "triggerText": "What is cloud accounting software and why should I choose it?",
+    "triggerSelector": "[data-sr-trigger=\"id-9\"]",
+    "triggerToken": "id-9",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/009-what-is-cloud-accounting-software-and-why-should/fragment.html"
+  },
+  {
+    "triggerText": "What features should I expect from top accounting software in India?",
+    "triggerSelector": "[data-sr-trigger=\"id-10\"]",
+    "triggerToken": "id-10",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/010-what-features-should-i-expect-from-top-accountin/fragment.html"
+  },
+  {
+    "triggerText": "Does Zoho Books support GST accounting in India?",
+    "triggerSelector": "[data-sr-trigger=\"id-11\"]",
+    "triggerToken": "id-11",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/011-does-zoho-books-support-gst-accounting-in-india/fragment.html"
+  },
+  {
+    "triggerText": "Why should I use accounting software like Zoho Books?",
+    "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+    "triggerToken": "id-12",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/012-why-should-i-use-accounting-software-like-zoho-b/fragment.html"
+  },
+  {
+    "triggerText": "Does Zoho Books support e-invoicing in India?",
+    "triggerSelector": "[data-sr-trigger=\"id-13\"]",
+    "triggerToken": "id-13",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/013-does-zoho-books-support-e-invoicing-in-india/fragment.html"
+  },
+  {
+    "triggerText": "Can Zoho Books integrate with Indian banks and payment gateways?",
+    "triggerSelector": "[data-sr-trigger=\"id-14\"]",
+    "triggerToken": "id-14",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/014-can-zoho-books-integrate-with-indian-banks-and-p/fragment.html"
+  },
+  {
+    "triggerText": "Is there a free version of Zoho Books for small businesses?",
+    "triggerSelector": "[data-sr-trigger=\"id-15\"]",
+    "triggerToken": "id-15",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/015-is-there-a-free-version-of-zoho-books-for-small/fragment.html"
+  },
+  {
+    "triggerText": "Does Zoho Books provide onboarding, support, or help with migration?",
+    "triggerSelector": "[data-sr-trigger=\"id-16\"]",
+    "triggerToken": "id-16",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/016-does-zoho-books-provide-onboarding-support-or-he/fragment.html"
+  },
+  {
+    "triggerText": "How does Zoho Books handle updates to GST laws or slab changes?",
+    "triggerSelector": "[data-sr-trigger=\"id-17\"]",
+    "triggerToken": "id-17",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/017-how-does-zoho-books-handle-updates-to-gst-laws-o/fragment.html"
+  },
+  {
+    "triggerText": "All Products",
+    "triggerSelector": "[data-sr-trigger=\"id-18\"]",
+    "triggerToken": "id-18",
+    "interactionType": "page",
+    "sourcePage": "in-books",
+    "htmlFile": "interactions/018-all-products/fragment.html"
+  }
+]

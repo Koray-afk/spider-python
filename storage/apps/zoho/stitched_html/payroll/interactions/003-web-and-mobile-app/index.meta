@@ -1,0 +1,10 @@
+{
+  "sourcePage": "payroll",
+  "sourceUrl": "https://www.zoho.com/payroll",
+  "triggerText": "Web and Mobile app",
+  "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+  "triggerToken": "id-3",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/payroll/",
+  "htmlFile": "interactions/003-web-and-mobile-app/fragment.html"
+}

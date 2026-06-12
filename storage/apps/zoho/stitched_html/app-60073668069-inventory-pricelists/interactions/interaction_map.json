@@ -1,0 +1,83 @@
+[
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/002-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/003-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "Inventory Adjustments",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/004-inventory-adjustments/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "All Price Lists",
+    "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+    "triggerToken": "id-12",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/012-all-price-lists/fragment.html",
+    "templateId": "sr-int-3"
+  },
+  {
+    "triggerText": "Collapse/Expand",
+    "triggerSelector": "[data-sr-trigger=\"id-14\"]",
+    "triggerToken": "id-14",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/014-collapse-expand/fragment.html",
+    "templateId": "sr-int-4"
+  },
+  {
+    "triggerText": "Advanced Search",
+    "triggerSelector": "[data-sr-trigger=\"id-15\"]",
+    "triggerToken": "id-15",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/015-advanced-search/fragment.html",
+    "templateId": "sr-int-5"
+  },
+  {
+    "triggerText": "\u00d7",
+    "triggerSelector": "[data-sr-trigger=\"id-16\"]",
+    "triggerToken": "id-16",
+    "interactionType": "popover",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/016-interaction/fragment.html",
+    "templateId": "sr-int-6"
+  },
+  {
+    "triggerText": "testing",
+    "triggerSelector": "[data-sr-trigger=\"id-17\"]",
+    "triggerToken": "id-17",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/017-testing/fragment.html",
+    "templateId": "sr-int-7"
+  },
+  {
+    "triggerText": "Subscribe",
+    "triggerSelector": "[data-sr-trigger=\"id-19\"]",
+    "triggerToken": "id-19",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-inventory-pricelists",
+    "htmlFile": "interactions/019-subscribe/fragment.html",
+    "templateId": "sr-int-8"
+  }
+]

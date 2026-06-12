@@ -1,0 +1,10 @@
+{
+  "sourcePage": "payroll",
+  "sourceUrl": "https://www.zoho.com/payroll",
+  "triggerText": "Request a demo",
+  "triggerSelector": "[data-sr-trigger=\"id-10\"]",
+  "triggerToken": "id-10",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/payroll/",
+  "htmlFile": "interactions/010-request-a-demo/fragment.html"
+}

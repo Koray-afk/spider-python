@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-paymentsreceived",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/paymentsreceived",
+  "triggerText": "testing",
+  "triggerSelector": "[data-sr-trigger=\"id-24\"]",
+  "triggerToken": "id-24",
+  "interactionType": "modal",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/paymentsreceived?filter_by=PaymentMode.All&per_page=25&sort_column=unused_amount&sort_order=A",
+  "htmlFile": "interactions/024-testing/fragment.html"
+}

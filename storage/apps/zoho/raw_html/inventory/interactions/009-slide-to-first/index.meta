@@ -1,0 +1,10 @@
+{
+  "sourcePage": "inventory",
+  "sourceUrl": "https://www.zoho.com/inventory",
+  "triggerText": "slide to first",
+  "triggerSelector": "[data-sr-trigger=\"id-9\"]",
+  "triggerToken": "id-9",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/inventory/",
+  "htmlFile": "interactions/009-slide-to-first/fragment.html"
+}

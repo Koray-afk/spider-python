@@ -1,0 +1,10 @@
+{
+  "sourcePage": "books",
+  "sourceUrl": "https://www.zoho.com/books",
+  "triggerText": "Does Zoho Books support GST accounting in India?",
+  "triggerSelector": "[data-sr-trigger=\"id-11\"]",
+  "triggerToken": "id-11",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/books/",
+  "htmlFile": "interactions/011-does-zoho-books-support-gst-accounting-in-india/fragment.html"
+}

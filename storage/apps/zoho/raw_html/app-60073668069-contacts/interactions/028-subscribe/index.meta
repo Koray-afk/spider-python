@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-contacts",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/contacts",
+  "triggerText": "Subscribe",
+  "triggerSelector": "[data-sr-trigger=\"id-28\"]",
+  "triggerToken": "id-28",
+  "interactionType": "modal",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/contacts?filter_by=Status.All&per_page=25&sort_column=outstanding_receivable_amount_bcy&sort_order=A",
+  "htmlFile": "interactions/028-subscribe/fragment.html"
+}

@@ -1,0 +1,10 @@
+{
+  "sourcePage": "inventory",
+  "sourceUrl": "https://www.zoho.com/inventory",
+  "triggerText": "TAXES",
+  "triggerSelector": "[data-sr-trigger=\"id-6\"]",
+  "triggerToken": "id-6",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/inventory/",
+  "htmlFile": "interactions/006-taxes/fragment.html"
+}

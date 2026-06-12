@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-inventory-product-index",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/inventory/product/index",
+  "triggerText": "Subscribe",
+  "triggerSelector": "[data-sr-trigger=\"id-27\"]",
+  "triggerToken": "id-27",
+  "interactionType": "modal",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&page=2&per_page=25&sort_column=stock_on_hand&sort_order=A",
+  "htmlFile": "interactions/027-subscribe/fragment.html"
+}

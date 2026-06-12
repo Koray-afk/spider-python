@@ -1,0 +1,10 @@
+{
+  "sourcePage": "home",
+  "sourceUrl": "https://www.zoho.com/",
+  "triggerText": "Zoho Search",
+  "triggerSelector": "[data-sr-trigger=\"id-1\"]",
+  "triggerToken": "id-1",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/",
+  "htmlFile": "interactions/001-zoho-search/fragment.html"
+}

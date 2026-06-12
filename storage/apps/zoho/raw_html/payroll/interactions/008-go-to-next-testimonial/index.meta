@@ -1,0 +1,10 @@
+{
+  "sourcePage": "payroll",
+  "sourceUrl": "https://www.zoho.com/payroll",
+  "triggerText": "Go to Next testimonial",
+  "triggerSelector": "[data-sr-trigger=\"id-8\"]",
+  "triggerToken": "id-8",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/payroll/",
+  "htmlFile": "interactions/008-go-to-next-testimonial/fragment.html"
+}

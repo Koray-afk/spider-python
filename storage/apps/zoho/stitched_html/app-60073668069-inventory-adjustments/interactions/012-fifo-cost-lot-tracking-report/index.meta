@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-inventory-adjustments",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/inventory/adjustments",
+  "triggerText": "FIFO Cost Lot Tracking Report",
+  "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+  "triggerToken": "id-12",
+  "interactionType": "page",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/reports/fifocostlottracking?from_date=2026-06-01&to_date=2026-06-30",
+  "htmlFile": "interactions/012-fifo-cost-lot-tracking-report/fragment.html"
+}

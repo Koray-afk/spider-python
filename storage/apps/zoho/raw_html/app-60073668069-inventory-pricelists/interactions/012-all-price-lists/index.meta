@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-inventory-pricelists",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+  "triggerText": "All Price Lists",
+  "triggerSelector": "[data-sr-trigger=\"id-12\"]",
+  "triggerToken": "id-12",
+  "interactionType": "dropdown",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+  "htmlFile": "interactions/012-all-price-lists/fragment.html"
+}

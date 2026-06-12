@@ -1,0 +1,10 @@
+{
+  "sourcePage": "inventory",
+  "sourceUrl": "https://www.zoho.com/inventory",
+  "triggerText": "GSTIN",
+  "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+  "triggerToken": "id-3",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/inventory/",
+  "htmlFile": "interactions/003-gstin/fragment.html"
+}

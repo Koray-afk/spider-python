@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-inventory-product-index",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/inventory/product/index",
+  "triggerText": "Advanced Search",
+  "triggerSelector": "[data-sr-trigger=\"id-20\"]",
+  "triggerToken": "id-20",
+  "interactionType": "modal",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=stock_on_hand&sort_order=A",
+  "htmlFile": "interactions/020-advanced-search/fragment.html"
+}

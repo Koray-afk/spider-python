@@ -1,0 +1,10 @@
+{
+  "sourcePage": "payroll",
+  "sourceUrl": "https://www.zoho.com/payroll",
+  "triggerText": "Instant Payslips",
+  "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+  "triggerToken": "id-4",
+  "interactionType": "page",
+  "capturedUrl": "https://www.zoho.com/in/payroll/",
+  "htmlFile": "interactions/004-instant-payslips/fragment.html"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "triggerText": "Zoho Search",
+    "triggerSelector": "[data-sr-trigger=\"id-1\"]",
+    "triggerToken": "id-1",
+    "interactionType": "page",
+    "sourcePage": "home",
+    "htmlFile": "interactions/001-zoho-search/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Previous",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "page",
+    "sourcePage": "home",
+    "htmlFile": "interactions/003-previous/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "Next",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "home",
+    "htmlFile": "interactions/004-next/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "Customers",
+    "triggerSelector": "[data-sr-trigger=\"id-5\"]",
+    "triggerToken": "id-5",
+    "interactionType": "page",
+    "sourcePage": "home",
+    "htmlFile": "interactions/005-customers/fragment.html",
+    "templateId": "sr-int-3"
+  }
+]

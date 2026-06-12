@@ -1,0 +1,83 @@
+[
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/002-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-0"
+  },
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/003-show-dropdown-menu/fragment.html",
+    "templateId": "sr-int-1"
+  },
+  {
+    "triggerText": "Inventory Adjustments",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/004-inventory-adjustments/fragment.html",
+    "templateId": "sr-int-2"
+  },
+  {
+    "triggerText": "All Received Payments",
+    "triggerSelector": "[data-sr-trigger=\"id-14\"]",
+    "triggerToken": "id-14",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/014-all-received-payments/fragment.html",
+    "templateId": "sr-int-3"
+  },
+  {
+    "triggerText": "Collapse/Expand",
+    "triggerSelector": "[data-sr-trigger=\"id-16\"]",
+    "triggerToken": "id-16",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/016-collapse-expand/fragment.html",
+    "templateId": "sr-int-4"
+  },
+  {
+    "triggerText": "Advanced Search",
+    "triggerSelector": "[data-sr-trigger=\"id-22\"]",
+    "triggerToken": "id-22",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/022-advanced-search/fragment.html",
+    "templateId": "sr-int-5"
+  },
+  {
+    "triggerText": "Subscribe",
+    "triggerSelector": "[data-sr-trigger=\"id-23\"]",
+    "triggerToken": "id-23",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/023-subscribe/fragment.html",
+    "templateId": "sr-int-6"
+  },
+  {
+    "triggerText": "testing",
+    "triggerSelector": "[data-sr-trigger=\"id-24\"]",
+    "triggerToken": "id-24",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/024-testing/fragment.html",
+    "templateId": "sr-int-7"
+  },
+  {
+    "triggerText": "Subscribe",
+    "triggerSelector": "[data-sr-trigger=\"id-26\"]",
+    "triggerToken": "id-26",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-paymentsreceived",
+    "htmlFile": "interactions/026-subscribe/fragment.html",
+    "templateId": "sr-int-8"
+  }
+]

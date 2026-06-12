@@ -1,0 +1,74 @@
+[
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-2\"]",
+    "triggerToken": "id-2",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/002-show-dropdown-menu/fragment.html"
+  },
+  {
+    "triggerText": "Show dropdown menu",
+    "triggerSelector": "[data-sr-trigger=\"id-3\"]",
+    "triggerToken": "id-3",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/003-show-dropdown-menu/fragment.html"
+  },
+  {
+    "triggerText": "Inventory Adjustments",
+    "triggerSelector": "[data-sr-trigger=\"id-4\"]",
+    "triggerToken": "id-4",
+    "interactionType": "page",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/004-inventory-adjustments/fragment.html"
+  },
+  {
+    "triggerText": "New",
+    "triggerSelector": "[data-sr-trigger=\"id-13\"]",
+    "triggerToken": "id-13",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/013-new/fragment.html"
+  },
+  {
+    "triggerText": ":\u00a0\u20b93,000.00",
+    "triggerSelector": "[data-sr-trigger=\"id-14\"]",
+    "triggerToken": "id-14",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/014-3-000-00/fragment.html"
+  },
+  {
+    "triggerText": "This Fiscal Year",
+    "triggerSelector": "[data-sr-trigger=\"id-16\"]",
+    "triggerToken": "id-16",
+    "interactionType": "dropdown",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/016-this-fiscal-year/fragment.html"
+  },
+  {
+    "triggerText": ":\u00a0\u20b93,000.00",
+    "triggerSelector": "[data-sr-trigger=\"id-17\"]",
+    "triggerToken": "id-17",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/017-3-000-00/fragment.html"
+  },
+  {
+    "triggerText": "testing",
+    "triggerSelector": "[data-sr-trigger=\"id-19\"]",
+    "triggerToken": "id-19",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/019-testing/fragment.html"
+  },
+  {
+    "triggerText": "Subscribe",
+    "triggerSelector": "[data-sr-trigger=\"id-21\"]",
+    "triggerToken": "id-21",
+    "interactionType": "modal",
+    "sourcePage": "app-60073668069-home-dashboard",
+    "htmlFile": "interactions/021-subscribe/fragment.html"
+  }
+]

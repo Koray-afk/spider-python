@@ -1,0 +1,10 @@
+{
+  "sourcePage": "app-60073668069-invoices",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/invoices",
+  "triggerText": "All Invoices",
+  "triggerSelector": "[data-sr-trigger=\"id-20\"]",
+  "triggerToken": "id-20",
+  "interactionType": "dropdown",
+  "capturedUrl": "https://books.zoho.in/app/60073668069#/invoices",
+  "htmlFile": "interactions/020-all-invoices/fragment.html"
+}
