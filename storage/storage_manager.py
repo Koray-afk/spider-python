@@ -70,6 +70,10 @@ def get_workflows_path(app_name: str) -> Path:
     return get_app_catalog_dir(app_name) / "workflows.json"
 
 
+def get_modules_path(app_name: str) -> Path:
+    return get_app_catalog_dir(app_name) / "modules.json"
+
+
 def get_metadata_dir(app_name: str) -> Path:
     return get_app_root(app_name) / "metadata"
 

@@ -12,6 +12,7 @@ from pipeline import (
     run_component_tree_pipeline,
     run_stitch_pipeline,
     run_workflows_pipeline,
+    run_modules_pipeline,
 )
 
 router = APIRouter()
@@ -55,6 +56,11 @@ def catalog_endpoint(app_name: str):
 @router.post("/workflows/{app_name}")
 def workflows_endpoint(app_name: str):
     return run_workflows_pipeline(app_name)
+
+
+@router.post("/modules/{app_name}")
+def modules_endpoint(app_name: str):
+    return run_modules_pipeline(app_name)
 
 
 @router.post("/pipeline/{app_name}")

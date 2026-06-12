@@ -41,7 +41,7 @@ playwright install-deps chrome
 
 ### 5. (Optional) Gemini API key for analysis stages
 
-Create a `.env` file at the project root if you want to run `analyze`, `semantic_tree`, `component_tree`, `catalog`, or `workflows`:
+Create a `.env` file at the project root if you want to run `analyze`, `semantic_tree`, `component_tree`, `catalog`, `workflows`, or `modules`:
 
 ```
 GEMINI_API_KEY=your_api_key_here
@@ -72,6 +72,7 @@ Every command requires an app name (`zoho`, `hubspot`, etc.).
 | `python main.py component_tree <app>` | React component tree → `component_tree/` (requires `GEMINI_API_KEY`) |
 | `python main.py catalog <app>` | Application catalog → `app_catalog/catalog.json` (requires `GEMINI_API_KEY`) |
 | `python main.py workflows <app>` | Business workflows → `app_catalog/workflows.json` (requires `GEMINI_API_KEY`) |
+| `python main.py modules <app>` | Business modules → `app_catalog/modules.json` (requires `GEMINI_API_KEY`) |
 | `python main.py preview <app>` | Serve `stitched_html/` locally |
 | `python main.py serve` | Start FastAPI API on port 8000 |
 
@@ -87,6 +88,7 @@ python main.py semantic_tree zoho
 python main.py component_tree zoho
 python main.py catalog zoho
 python main.py workflows zoho
+python main.py modules zoho
 python main.py preview zoho
 ```
 
@@ -238,11 +240,12 @@ Storage is created automatically at `storage/apps/hubspot/`.
 [1/3] Crawl    → storage/apps/{app}/raw_html/
 [2/3] Stitch   → storage/apps/{app}/stitched_html/   (auto after crawl in pipeline)
 [3/3] Clean    → storage/apps/{app}/cleaned_html/
-[4/7] Analyze        → storage/apps/{app}/business_json/        (optional, run separately)
-[5/7] Semantic tree  → storage/apps/{app}/semantic_tree/        (optional, run separately)
-[6/7] Component tree → storage/apps/{app}/component_tree/       (optional, run separately)
-[7/8] Catalog        → storage/apps/{app}/app_catalog/          (optional, run separately)
-[8/8] Workflows      → storage/apps/{app}/app_catalog/          (optional, run separately)
+[4/9] Analyze        → storage/apps/{app}/business_json/        (optional, run separately)
+[5/9] Semantic tree  → storage/apps/{app}/semantic_tree/        (optional, run separately)
+[6/9] Component tree → storage/apps/{app}/component_tree/       (optional, run separately)
+[7/9] Catalog        → storage/apps/{app}/app_catalog/          (optional, run separately)
+[8/9] Workflows      → storage/apps/{app}/app_catalog/          (optional, run separately)
+[9/9] Modules        → storage/apps/{app}/app_catalog/          (optional, run separately)
 ```
 
 Run analyze after clean:
@@ -317,6 +320,20 @@ storage/apps/zoho/app_catalog/workflows.json
 ```
 
 A JSON array of rich ERP business workflows — each with `id`, `name`, `purpose`, `entities`, `entryPage`, `exitPage`, and ordered `steps` (page + action + nextPage). Requires `catalog.json`; `business_json/` is optional. Re-run skips if `workflows.json` already exists.
+
+Run modules after workflows:
+
+```bash
+python main.py modules zoho
+```
+
+Output:
+
+```
+storage/apps/zoho/app_catalog/modules.json
+```
+
+A JSON object with `applicationName` and a `modules` array — each module has `id`, `name`, `purpose`, `entities`, `pages`, `workflows`, `dependsOnModules`, and `providesCapabilities`. Organizes the application into 5–15 business-domain modules (e.g. Sales, Purchases, Inventory). Requires `catalog.json`; `workflows.json` is optional. Re-run skips if `modules.json` already exists.
 
 Check progress:
 

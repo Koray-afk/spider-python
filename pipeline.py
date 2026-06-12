@@ -12,6 +12,7 @@ from analyzer.app_catalog_analyzer import build_catalog_application
 from analyzer.semantic_tree_analyzer import analyze_semantic_tree_application
 from analyzer.component_tree_analyzer import compress_component_tree_application
 from analyzer.workflow_analyzer import build_workflows_application
+from analyzer.module_analyzer import build_modules_application
 from storage.storage_manager import (
     create_app_storage,
     get_app_catalog_dir,
@@ -19,6 +20,7 @@ from storage.storage_manager import (
     get_cleaned_html_dir,
     get_component_tree_dir,
     get_metadata_dir,
+    get_modules_path,
     get_raw_html_dir,
     get_semantic_tree_dir,
     get_stitched_html_dir,
@@ -233,6 +235,27 @@ def run_workflows_pipeline(app_name: str) -> dict:
     workflows_result = build_workflows_application(app_name)
     save_pipeline_status(get_metadata_dir(app_name), workflows_completed=True)
     return workflows_result
+
+
+def run_modules_pipeline(app_name: str) -> dict:
+    """Read catalog.json + workflows.json; write app_catalog/modules.json. Requires GEMINI_API_KEY."""
+    create_app_storage(app_name)
+    catalog_dir = get_app_catalog_dir(app_name)
+    modules_path = get_modules_path(app_name)
+
+    log_stage("MODULES")
+    log_input(catalog_dir / "catalog.json")
+    log_input(catalog_dir / "workflows.json")
+    log_output(modules_path)
+
+    if not (catalog_dir / "catalog.json").exists():
+        raise FileNotFoundError(
+            f"catalog.json not found at {catalog_dir} — run catalog first"
+        )
+
+    modules_result = build_modules_application(app_name)
+    save_pipeline_status(get_metadata_dir(app_name), modules_completed=True)
+    return modules_result
 
 
 def run_full_pipeline(app_name: str) -> dict:

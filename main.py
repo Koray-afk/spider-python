@@ -17,6 +17,7 @@ from pipeline import (
     run_component_tree_pipeline,
     run_stitch_pipeline,
     run_workflows_pipeline,
+    run_modules_pipeline,
 )
 
 app = FastAPI(title="Spider Python", version="0.1.0")
@@ -31,6 +32,7 @@ COMMANDS = frozenset({
     "component_tree",
     "catalog",
     "workflows",
+    "modules",
     "pipeline",
     "preview",
 })
@@ -61,6 +63,10 @@ def usage() -> None:
     print(
         "  workflows      Business workflows "
         "(catalog → app_catalog/workflows.json, needs GEMINI_API_KEY)"
+    )
+    print(
+        "  modules        Business modules "
+        "(catalog + workflows → app_catalog/modules.json, needs GEMINI_API_KEY)"
     )
     print("  preview        Serve stitched_html via http.server")
     print("  serve        Start FastAPI on :8000")
@@ -115,6 +121,8 @@ def main() -> None:
         run_catalog_pipeline(app_name)
     elif command == "workflows":
         run_workflows_pipeline(app_name)
+    elif command == "modules":
+        run_modules_pipeline(app_name)
     elif command == "preview":
         run_preview_pipeline(app_name)
 
