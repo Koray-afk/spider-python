@@ -1,8 +1,11 @@
 """CLI entrypoint and FastAPI server."""
 
+import os
 import sys
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from api.routes import router
 from config.apps import APPS
@@ -21,6 +24,26 @@ from pipeline import (
 )
 
 app = FastAPI(title="Spider Python", version="0.1.0")
+
+# CORS — allow React dev server
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Mount stitched HTML as static files
+STORAGE = "storage/apps"
+for app_name in os.listdir(STORAGE):
+    stitched = f"{STORAGE}/{app_name}/stitched_html"
+    if os.path.isdir(stitched):
+        app.mount(
+            f"/static/{app_name}",
+            StaticFiles(directory=stitched),
+            name=f"static_{app_name}",
+        )
+
 app.include_router(router)
 
 COMMANDS = frozenset({

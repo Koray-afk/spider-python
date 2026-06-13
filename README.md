@@ -353,6 +353,125 @@ FastAPI runs on `http://localhost:8000`. See `api/routes.py` for endpoints.
 
 ---
 
+## Architecture
+
+The repo has two related tracks:
+
+| Track | Purpose |
+|-------|---------|
+| **Offline pipeline** | Crawl → stitch → clean → analyze → catalog (static replicas + knowledge JSON) |
+| **Live demo platform** | Run a real browser session, navigate the live app, capture screenshots |
+
+```
+Knowledge layer (storage/apps/{app}/)
+  app_catalog/, business_json/, semantic_tree/, metadata/auth.json
+        ↓
+Agent layer (agents/)
+  BrowserAgent — maps natural-language goals → catalog page IDs → navigation
+        ↓
+Service layer (services/)
+  BrowserService — async goto/click/fill/screenshot; uniform ActionResult
+        ↓
+Sandbox layer (sandbox/)
+  SandboxManager → BrowserSession → SessionStore (disk)
+        ↓
+Playwright (Chrome)
+```
+
+### Sandbox layer (`sandbox/`)
+
+Isolated Playwright browser sessions with per-session disk storage.
+
+| Module | Role |
+|--------|------|
+| `sandbox_manager.py` | Create, restore, query, and close sessions |
+| `browser_session.py` | One browser + page; navigation, screenshots, state save/restore |
+| `session_store.py` | File I/O for a session (metadata, cookies, screenshots) |
+
+Each session gets its own folder:
+
+```
+sandbox/sessions/{session_id}/
+├── metadata.json       # current URL, page title, timestamps
+├── storage_state.json  # Playwright cookies/localStorage snapshot
+├── cookies.json
+└── screenshots/        # YYYY-MM-DD_HH-MM-SS.png
+```
+
+Sessions are independent. Closing one does not affect others.
+
+### Service layer (`services/`)
+
+Thin async API over the sandbox — the “hands” of the demo platform.
+
+`BrowserService` wraps one `BrowserSession` and exposes:
+
+- **Navigation:** `goto`, `back`, `forward`, `current_url`, `title`
+- **Interaction:** `click`, `fill`, `press`, `select_option`
+- **Observation:** `screenshot`, `screenshot_stream` (background captures every N seconds)
+- **Lifecycle:** `create`, `close`, `save_state`
+
+Every method returns an `ActionResult` (`ok`, `action`, `data`, `error`) so failures do not crash the browser.
+
+`BrowserService.create()` accepts an optional `storage_state_path` — pass the app’s crawl auth file to start logged in:
+
+```
+storage/apps/zoho/metadata/auth.json
+```
+
+### Agent layer (`agents/`)
+
+`BrowserAgent` connects the knowledge layer to `BrowserService`.
+
+- Loads `app_catalog/catalog.json` and `modules.json` for page IDs and URLs
+- Resolves natural-language goals via a synonym table (e.g. “show invoices” → `invoices`)
+- Navigates the live app (sidebar clicks, hash routes)
+
+No LLM in V1 — deterministic phrase → page ID → navigation.
+
+---
+
+## Browser agent (live demo)
+
+After crawl + catalog (or at minimum crawl + auth), run the interactive agent:
+
+```bash
+python run_agent.py
+```
+
+Chrome opens (reusing Zoho auth if present). Type goals at the prompt:
+
+```
+> show invoices
+> show customers
+> show credit notes
+> quit
+```
+
+Requires `storage/apps/zoho/metadata/auth.json` from a prior crawl. Without it, the browser opens unauthenticated and app navigation may fail.
+
+### Smoke test
+
+```bash
+python test_sandbox.py
+```
+
+Exercises `BrowserService` (navigation, screenshots, stream, metadata) and `BrowserAgent` (phrase → page navigation).
+
+---
+
 ## Experiments folder
 
-`experiments/` contains the original prototype (crawler, page analysis, HTML replica generation). Do not modify it. Production code lives in `crawler/`, `stitcher/`, `analyzer/`, and `pipeline.py`.
+`experiments/` contains the original prototype (crawler, page analysis, HTML replica generation). Do not modify it.
+
+Production code:
+
+| Directory | Role |
+|-----------|------|
+| `crawler/` | Playwright crawl |
+| `stitcher/` | Offline link stitching |
+| `analyzer/` | HTML clean + Gemini analysis |
+| `pipeline.py` | CLI pipeline orchestration |
+| `sandbox/` | Isolated browser sessions |
+| `services/` | Browser execution API |
+| `agents/` | Catalog-driven navigation agent |

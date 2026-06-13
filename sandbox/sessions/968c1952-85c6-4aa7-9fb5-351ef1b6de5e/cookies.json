@@ -1,0 +1,818 @@
+[
+  {
+    "name": "BuildCookie_60073808761",
+    "value": "1",
+    "domain": "books.zoho.in",
+    "path": "/api/v3/zohopayout/integration",
+    "expires": 1781270289.351513,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "BuildCookie_60073808761",
+    "value": "1",
+    "domain": "books.zoho.in",
+    "path": "/api/v3/bbps",
+    "expires": 1781270289.37915,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "COMPASS",
+    "value": "gmail_chat=CrMBAAlriVc9dqGsL77ClTy1X_2GP4Pf-sM6TpFvxXJmc2-lruRXX5Lo77lLN4ma_umkp5pN7GY0JaiUvW_iPRtYwY-lhcLZpl5afmcqB4S5kBb3YD4Ba3UaB4jWREEKWCIKnqBXKzGMMoLAa1iCG0u2MUOsDpvrYLTn8gnzHiEHwb95_xDbtocmi1rXZncv4mp5iVLko16kHppMA3rahvTtTInN-2Gfoj856kMtjBlb49ibxlwQsLWr0QYa6wEACWuJVz1jPtNRgmEZqxJLrxzJ00gfaDso544SJydBMU8vMZV6CcGqS14c6-yr4C8jMsa8jtNcE1po2jbVk1V-taQnu240FOk3x5i_DcNEceXSCsZIq7o2dmqSTdQaUeawRd9EQieWZgxp6X_Fd8bMIO2j4-pHyCOkqGeHr4o4vH0QLe3s497h8JX9AkmquxYJn6bYDtbi4CNVGkqy3hnswMTXxJm-0_AZosgGI10zSLCCdJfIpVMOk1CIPfuX3uFdelfiFSK_FMXJxW4t3mI7Rfwe2JuglRGKAt9_W6BLH6303n4eKb7m1fs8MAE",
+    "domain": "mail.google.com",
+    "path": "/chat/u/0",
+    "expires": 1781970779.998673,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "BuildCookie_60073808761",
+    "value": "1",
+    "domain": "books.zoho.in",
+    "path": "/api/v3",
+    "expires": 1781270289.432351,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_zxor",
+    "value": "\"https://books.zoho.in\"",
+    "domain": "tipengine.zoho.in",
+    "path": "/jsp",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://zoho.in",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "BuildCookie_60073808761",
+    "value": "1",
+    "domain": "books.zoho.in",
+    "path": "/app",
+    "expires": 1781270285.828699,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExSwAHVHqcgzouLg5gGqtmhwACgYKAa0SARUSFQHGX2MiT4Io_FjhHyr1s4aIbqpYYRoVAUF8yKrdpjZs4p5X5kVeKgPpbw7L0076",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561918,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PSID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExYLsnvyJIpqu7F4N9mlhpvAACgYKAVASARUSFQHGX2MiW3Bfo42QnHmR4b4dBuYTNBoVAUF8yKoHZCntYs__o5N8aUxW7y8c0076",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.56193,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PSID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExlbFNJ9ygjLR3wPhazSnhWwACgYKAdISARUSFQHGX2MiVidRICO8s4R1lW0AekGtUBoVAUF8yKrzIiKvkuSDqs1WtHm2YWFe0076",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561932,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "HSID",
+    "value": "AAi_5Hj3f0YUh3G8E",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561934,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SSID",
+    "value": "AxmPvQhGr6gBrJnIK",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561935,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "APISID",
+    "value": "9BpAecy26tL9Y8s-/AOa-miBGJ25BFxfb6",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561938,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.56194,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561941,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".google.co.in",
+    "path": "/",
+    "expires": 1815665702.561942,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExSwAHVHqcgzouLg5gGqtmhwACgYKAa0SARUSFQHGX2MiT4Io_FjhHyr1s4aIbqpYYRoVAUF8yKrdpjZs4p5X5kVeKgPpbw7L0076",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561943,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PSID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExYLsnvyJIpqu7F4N9mlhpvAACgYKAVASARUSFQHGX2MiW3Bfo42QnHmR4b4dBuYTNBoVAUF8yKoHZCntYs__o5N8aUxW7y8c0076",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561945,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PSID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExlbFNJ9ygjLR3wPhazSnhWwACgYKAdISARUSFQHGX2MiVidRICO8s4R1lW0AekGtUBoVAUF8yKrzIiKvkuSDqs1WtHm2YWFe0076",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561946,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "HSID",
+    "value": "AAi_5Hj3f0YUh3G8E",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561946,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SSID",
+    "value": "AxmPvQhGr6gBrJnIK",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561947,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "APISID",
+    "value": "9BpAecy26tL9Y8s-/AOa-miBGJ25BFxfb6",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561949,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561949,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.56195,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1815665702.561956,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExSwAHVHqcgzouLg5gGqtmhwACgYKAa0SARUSFQHGX2MiT4Io_FjhHyr1s4aIbqpYYRoVAUF8yKrdpjZs4p5X5kVeKgPpbw7L0076",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561957,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PSID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExYLsnvyJIpqu7F4N9mlhpvAACgYKAVASARUSFQHGX2MiW3Bfo42QnHmR4b4dBuYTNBoVAUF8yKoHZCntYs__o5N8aUxW7y8c0076",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561957,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PSID",
+    "value": "g.a000-wjxZ7jPwDeKL08IeElZJ4XoPD8WAgeEeVRrZ8i2PBxcvQExlbFNJ9ygjLR3wPhazSnhWwACgYKAdISARUSFQHGX2MiVidRICO8s4R1lW0AekGtUBoVAUF8yKrzIiKvkuSDqs1WtHm2YWFe0076",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.56196,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "APISID",
+    "value": "9BpAecy26tL9Y8s-/AOa-miBGJ25BFxfb6",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561967,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "HSID",
+    "value": "Awngl2FsDTyphW9CO",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561967,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SSID",
+    "value": "AV0LSfK7JcmF6hxBv",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561967,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561969,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.56197,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PAPISID",
+    "value": "UcA7a8IPxE8G7vRT/AODXvUDaMrr7CU3SV",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1815665702.561981,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ACCOUNT_CHOOSER",
+    "value": "AFx_qI7xyUkL4YCDXrIFEPz4y6Q5wYBP5trkMxOe0tY1FykenBnw_q59REX1RvM16jpWnsOWpTNOmSPGhPrdjWm4vacIYj9o8IohiqFIyoyNLZ6u9ZW7AsLjF44cixNts5UHN1fBct3mUX0PcZIpTyfjifBlfw1YMA",
+    "domain": "accounts.google.com",
+    "path": "/",
+    "expires": 1815665702.561982,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Host-GAPS",
+    "value": "1:AeBNSc8Hdt9bM_A4_DsP14YQ0h89gaGot-7C3SesqaSJKlwy6AQhCk6PrBM21dpSHI_TCpDGawtr_-kp913pVgAeKw_-WA:A6F0XROCTtuNo3xP",
+    "domain": "accounts.google.com",
+    "path": "/",
+    "expires": 1815665702.561984,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "OTZ",
+    "value": "8646698_34_34__34_",
+    "domain": "ogs.google.com",
+    "path": "/",
+    "expires": 1783697856,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "OTZ",
+    "value": "8646698_34_34__34_",
+    "domain": "accounts.google.com",
+    "path": "/",
+    "expires": 1783697876,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-iamsdt",
+    "value": "0.EnQSMFLIhblYqWWHcss3ASl0MxbaiUE-cjdGj2Mo9WgKFxakpT8SGAwGgUJhpq9hSgNEIhpAB6S7CCKNAJRI97zqrjxceU0pjUxCvFCe4T8c9REMYqZBRXykrLYpYtlmmFpKayoswH0XzDLc91aXT9WPz0-3qCDC-sDU3_6_-L0BKnQSMFLIhblYqWWHcss3ASl0MxbaiUE-cjdGj2Mo9WgKFxakpT8SGAwGgUJhpq9hSgNEIhpAB6S7CCKNAJRI97zqrjxceU0pjUxCvFCe4T8c9REMYqZBRXykrLYpYtlmmFpKayoswH0XzDLc91aXT9WPz0-3qA",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1784208067.385985,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_iamadt",
+    "value": "52c885b958a9658772cb370129743316da89413e7237468f6328f5680a1716a4a53f12180c06814261a6af614a034422",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1784208067.386047,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_iambdt",
+    "value": "07a4bb08228d009448f7bceaae3c5c794d298d4c42bc509ee13f1cf5110c62a641457ca4acb62962d966985a4a6b2a2cc07d17cc32dcf756974fd58fcf4fb7a8",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1784208067.386146,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "siq1.zohocares-_zldp",
+    "value": "dMx6e5HtWrXpPcpLqIT0tZU0sQVva3yqrz557%2BkTmPsFbQeA3yXUPKMvN%2F%2Bwr2qErx9dPJvNwXs%3D",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1815829991.147956,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "siq1.zohocares-_zldt",
+    "value": "68a9860f-5de3-4f9e-b9f7-554c43024030-2",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1815829991.148169,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "LSID",
+    "value": "o.mail.google.com|s.IN|s.youtube:g.a000-wjxZ07HNTjMCVualqfXVA24JaX7gCw6opWzYRl8peKkkwjUUBHwxefKxmmP5kWtojT1QQACgYKAS4SARUSFQHGX2Mi09rPaLYMSNBmtFDjKc6nwBoVAUF8yKrzN0Fk62BcdA1vOPMJp_WT0076",
+    "domain": "accounts.google.com",
+    "path": "/",
+    "expires": 1815666778.012018,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Host-1PLSID",
+    "value": "o.mail.google.com|s.IN|s.youtube:g.a000-wjxZ07HNTjMCVualqfXVA24JaX7gCw6opWzYRl8peKkkwjUA6jM4GlgzFjhJTI7tw_JYAACgYKARcSARUSFQHGX2MiFzs4y3o7oiI8ZEUabemkMxoVAUF8yKo0wRGA4VD11N47_Aqh03M20076",
+    "domain": "accounts.google.com",
+    "path": "/",
+    "expires": 1815666778.012189,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Host-3PLSID",
+    "value": "o.mail.google.com|s.IN|s.youtube:g.a000-wjxZ07HNTjMCVualqfXVA24JaX7gCw6opWzYRl8peKkkwjUnrvq4YbWV0C3rSRZte4nYgACgYKAc4SARUSFQHGX2Mi9vzkyFDsBfFOao3d7KlJyhoVAUF8yKpAZ358ni-tX4_9Vuv7hKbA0076",
+    "domain": "accounts.google.com",
+    "path": "/",
+    "expires": 1815666778.012415,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "OSID",
+    "value": "g.a000-wjxZyJhL_UHutTDV71T4Fn5rG542FoqLVrU-S5lbSLBqp2aZ3QHgedfMAx8w7r26L5C6AACgYKAc4SARUSFQHGX2MiLkWEm0kUrw45cTbGxHez1xoVAUF8yKo9HllMaiWjWyDLpZnzSo4_0076",
+    "domain": "mail.google.com",
+    "path": "/",
+    "expires": 1815666778.155577,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-OSID",
+    "value": "g.a000-wjxZyJhL_UHutTDV71T4Fn5rG542FoqLVrU-S5lbSLBqp2aKuAld8L5IiONg7fNzm_aNwACgYKAVwSARUSFQHGX2MiXWM9q5m8N97CEa41Mhe9tBoVAUF8yKqYpTo3A4iCB1nPbePSa7E00076",
+    "domain": "mail.google.com",
+    "path": "/",
+    "expires": 1815666778.155771,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "NID",
+    "value": "532=tofcpJELPBZAcnt143ZamTneLCQILq8-ToePFui7Fd2NsESH9moPMGKuC8eAsSPvF29Sjr2gEpVi8LkdG07-NVTg1BfIGMo9SyZu2nee_2HLl6A1a2--Te1vuwGPA203g0Cohl9ttShrDVjCBCAUhpYjRfAbEUxppkOpoN1MIv0Gevp-b-nTFC5HHWKSmLhtPQafUbbj5oHK_9INXah3RIhOKYmQ86HkafvpzrT5dtWGLg",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1796917006.666799,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "zalb_e188bc05fe",
+    "value": "8ce881a5e14f2ce27e2c9ab0f3be9595",
+    "domain": "accounts.zoho.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "stk",
+    "value": "5ddbf74838134acaebf8b1102338b1db",
+    "domain": "accounts.zoho.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "iamcsr",
+    "value": "ce5e0248-6634-47bf-9f9a-7e6bfeed410c",
+    "domain": "accounts.zoho.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "zalb_6e73717622",
+    "value": "cb69139f2b568dd90a2d2ea66b6b9727",
+    "domain": "accounts.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "iamcsr",
+    "value": "64520e4a6315274ff6ed810c8634f9b02c94c26292f287079ff39a2158eb4ccb5a804473467ac602850e69823fc82262fcd062657f0b7b3d05d4eb732cfa6beb",
+    "domain": "accounts.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "zalb_54900d29bf",
+    "value": "98a8456731675c36d17cceacdbbb72dd",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "zbcscook",
+    "value": "b34a65dac123082a006e297f0f66ec5e7c7e90fd1cf2a5e8c1d03c06f56dfd91c16726960f959212cdb7c1dc8b45592cbaa22db0fca501205d71984d209aee21",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MU",
+    "value": "2-4ae3f9a3f5f7e86030af60db9f2b7c9fdf1e023380ca9891",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "zalb_zid",
+    "value": "60073808761",
+    "domain": ".books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "SIDCC",
+    "value": "AKEyXzW58VCuQ1FwnOLUO4hfhylyEWsoYnDf4CTYkLHc_R2vwxljHaz45oHJWnC4Z_wySLnMGw",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1812720067.988576,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-1PSIDCC",
+    "value": "AKEyXzWjs1TIEOIz5BUWiV_1DKyxfGjVX6-3phQNlnesFQM5c17V-eHilPqnV3RXbajwmH9Xug",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1812720067.988699,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__Secure-3PSIDCC",
+    "value": "AKEyXzUe0ZpS4pD3DqvyRQC_spkq6STEG6nrcFxnGtJpdzzfBwkGA6-qdm4yZNpamyERRZdBmA",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1812720067.98876,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "zalb_bc5826c95a",
+    "value": "26fc132dc822958add8467cd5d313210",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "CT_CSRF_TOKEN",
+    "value": "b34a65dac123082a006e297f0f66ec5e7c7e90fd1cf2a5e8c1d03c06f56dfd91c16726960f959212cdb7c1dc8b45592cbaa22db0fca501205d71984d209aee21",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "wms-tkp-token",
+    "value": "60073808123-169eaf81-7d75f4c784e6e094534fafac258e8707",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "LS_CSRF_TOKEN",
+    "value": "c370f1f8-94d0-4d2b-8cdb-d7b9845f5452",
+    "domain": "salesiq.zohopublic.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "zalb_67614bec5d",
+    "value": "2022b25bc8c81ccb3dfe6f433d13584f",
+    "domain": "contacts.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "concsr",
+    "value": "99166244209e4ecad6a33c592c6c8ee24001b01597f2a2e03a0a0de7a4baa6142dda97dd2cf8e64b1d12486151a7f42666840855ef0964cde8f6ada1c53ebb6a",
+    "domain": "contacts.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "zalb_814af6c8e8",
+    "value": "9220b2319bc16ad1fc456a2ccc44375b",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "CSRF_TOKEN",
+    "value": "b34a65dac123082a006e297f0f66ec5e7c7e90fd1cf2a5e8c1d03c06f56dfd91c16726960f959212cdb7c1dc8b45592cbaa22db0fca501205d71984d209aee21",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "zalb_67614bec5d",
+    "value": "21fcbafa8286f5d4d79ba7c2cd4b732d",
+    "domain": "profile.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "concsr",
+    "value": "da6b0b42755a31c8e4db9d170908ea8dfd55e33af34fb340c04d5936d1062ef4fad4adcdb7072c4d13a3cc83c4481792479933bc3f372085278b7acd14a97baa",
+    "domain": "profile.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "zalb_cfe4c4f844",
+    "value": "6e527d4c80624071756fabfb2576bd52",
+    "domain": "tipengine.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "iamcsr",
+    "value": "ef5bbd89aa615d181d009d7e801be05ab98362dab6641358f785c91de22308cb4db706d10f8d58f045b13d0581ac152f40edce8725a89fda2c4e114c88d3c477",
+    "domain": "tipengine.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "zalb_915f7dcb48",
+    "value": "3109374bf14b5857772af4612974c7d6",
+    "domain": "avcliq.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "CT_CSRF_TOKEN",
+    "value": "f16a125ba0b7e732eed99df2b716ffb475bb83008d585288fb450982bc71c73023453bbea3107021a403193e2dad6356f52ae20e1b441d8b809caccae65b04fc",
+    "domain": "avcliq.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "_zxor",
+    "value": "\"https://books.zoho.in\"",
+    "domain": "avcliq.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://zoho.in",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "_zxor",
+    "value": "\"https://books.zoho.in\"",
+    "domain": "tipengine.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://zoho.in",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "JSESSIONID",
+    "value": "E21812E4548392819B543D5A31876806",
+    "domain": "books.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "com_chat_owner",
+    "value": "1781269989796",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1781270094,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "com_avcliq_owner",
+    "value": "1781269989796",
+    "domain": ".zoho.in",
+    "path": "/",
+    "expires": 1781270094,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "JSESSIONID",
+    "value": "E5DB4A250C37B4FEB70D9792DFA853C1",
+    "domain": "tipengine.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "JSESSIONID",
+    "value": "1B7A85C5CCE7EAD28A22D156CDEB43CB",
+    "domain": "avcliq.zoho.in",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  }
+]

@@ -1,6 +1,11 @@
 """FastAPI routes — delegate to pipeline only."""
 
+import json
+import os
+import re
+
 from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 
 from pipeline import (
     run_analyze_pipeline,
@@ -16,6 +21,84 @@ from pipeline import (
 )
 
 router = APIRouter()
+
+BASE = "storage/apps"
+
+
+def _flat_slug(slug: str) -> str:
+    return re.sub(r"^app-\d+-", "", slug)
+
+
+def resolve_stitched_slug(app_name: str, page_id: str) -> str | None:
+    """Map catalog page id (e.g. home-dashboard) to stitched_html folder name."""
+    stitched_dir = os.path.join(BASE, app_name, "stitched_html")
+    if not os.path.isdir(stitched_dir):
+        return None
+
+    direct = os.path.join(stitched_dir, page_id)
+    if os.path.isdir(direct) and os.path.exists(os.path.join(direct, "index.html")):
+        return page_id
+
+    pattern = re.compile(rf"^app-\d+-{re.escape(page_id)}$")
+    for name in os.listdir(stitched_dir):
+        if pattern.match(name) and os.path.exists(os.path.join(stitched_dir, name, "index.html")):
+            return name
+
+    sitemap_path = os.path.join(BASE, app_name, "metadata", "sitemap.json")
+    if os.path.exists(sitemap_path):
+        with open(sitemap_path) as f:
+            sitemap = json.load(f)
+        for item in sitemap:
+            if _flat_slug(item["slug"]) == page_id:
+                slug = item["slug"]
+                if os.path.exists(os.path.join(stitched_dir, slug, "index.html")):
+                    return slug
+
+    return None
+
+
+@router.get("/apps/{app_name}/page_url/{page_id}")
+def get_page_url(app_name: str, page_id: str):
+    slug = resolve_stitched_slug(app_name, page_id)
+    if not slug:
+        return JSONResponse({"error": "page not found"}, status_code=404)
+    return JSONResponse({"url": f"/static/{app_name}/{slug}/index.html"})
+
+
+@router.get("/apps/{app_name}/catalog")
+def get_catalog(app_name: str):
+    path = f"{BASE}/{app_name}/app_catalog/catalog.json"
+    if not os.path.exists(path):
+        return JSONResponse({"error": "catalog not found"}, status_code=404)
+    with open(path) as f:
+        return JSONResponse(json.load(f))
+
+
+@router.get("/apps/{app_name}/business/{page_id}")
+def get_business_json(app_name: str, page_id: str):
+    path = f"{BASE}/{app_name}/business_json/{page_id}.json"
+    if not os.path.exists(path):
+        return JSONResponse({}, status_code=404)
+    with open(path) as f:
+        return JSONResponse(json.load(f))
+
+
+@router.get("/apps/{app_name}/component_tree/{page_id}")
+def get_component_tree(app_name: str, page_id: str):
+    path = f"{BASE}/{app_name}/component_tree/{page_id}.json"
+    if not os.path.exists(path):
+        return JSONResponse({}, status_code=404)
+    with open(path) as f:
+        return JSONResponse(json.load(f))
+
+
+@router.get("/apps/{app_name}/semantic_tree/{page_id}")
+def get_semantic_tree(app_name: str, page_id: str):
+    path = f"{BASE}/{app_name}/semantic_tree/{page_id}.json"
+    if not os.path.exists(path):
+        return JSONResponse({}, status_code=404)
+    with open(path) as f:
+        return JSONResponse(json.load(f))
 
 
 @router.post("/crawl/{app_name}")
