@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "More Actions",
+  "triggerId": "d2fb1292-f241-46bd-81ed-020a9b5e50b8",
+  "triggerClass": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+  "selector": "[data-crawl-id=\"17\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-inventory-product-index",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/inventory/product/index",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+  "beforeTitle": "Items | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+  "title": "Items | Zoho Books",
+  "resultPagePath": "app-60073668069-inventory-product-index/interactions/017-more-actions",
+  "captured_at": "2026-06-15T13:56:22.321671+00:00"
+}
