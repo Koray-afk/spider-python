@@ -1,0 +1,167 @@
+
+============================================================
+STEP 1 — Crawl
+============================================================
+  ⏩ skipped (pages/ already populated)
+
+============================================================
+STEP 2 — Clean HTML for LLM
+============================================================
+  [1/10] contacts-new.html → contacts-new.cleaned.html
+  [2/10] contacts.html → contacts.cleaned.html
+  [3/10] home-dashboard.html → home-dashboard.cleaned.html
+  [4/10] home.html → home.cleaned.html
+  [5/10] inventory-product-index.html → inventory-product-index.cleaned.html
+  [6/10] inventory-product-product-creation.html → inventory-product-product-creation.cleaned.html
+  [7/10] invoices.html → invoices.cleaned.html
+  [8/10] quotes.html → quotes.cleaned.html
+  [9/10] salesorders-new.html → salesorders-new.cleaned.html
+  [10/10] salesorders.html → salesorders.cleaned.html
+
+✅ Cleaned 10 pages → analysis/cleaned/
+  ✅ Cleaned 10 pages
+
+============================================================
+STEP 3 — Catalog elements + screenshots
+============================================================
+  Mode: heuristic (fast)
+  [1/10] 📋 Cataloging contacts-new
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/contacts-new.json
+  [2/10] 📋 Cataloging contacts
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/contacts.json
+  [3/10] 📋 Cataloging home-dashboard
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/home-dashboard.json
+  [4/10] 📋 Cataloging home
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/home.json
+  [5/10] 📋 Cataloging inventory-product-index
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/inventory-product-index.json
+  [6/10] 📋 Cataloging inventory-product-product-creation
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/inventory-product-product-creation.json
+  [7/10] 📋 Cataloging invoices
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/invoices.json
+  [8/10] 📋 Cataloging quotes
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/quotes.json
+  [9/10] 📋 Cataloging salesorders-new
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/salesorders-new.json
+  [10/10] 📋 Cataloging salesorders
+       ⚠ Gemini summary skipped: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+       heuristic catalog: 0 elements
+       ✅ 0 elements → analysis/specs/salesorders.json
+
+✅ Cataloged 10 pages → analysis/specs/
+
+============================================================
+STEP 4 — Generate JS + validate state changes
+============================================================
+
+==================================================
+JS Agent: contacts-new
+==================================================
+  [contacts-new] generate JS (round 1)…
+  [contacts-new] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [contacts-new] validate clicks…
+  [contacts-new] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: contacts
+==================================================
+  [contacts] generate JS (round 1)…
+  [contacts] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [contacts] validate clicks…
+  [contacts] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: home-dashboard
+==================================================
+  [home-dashboard] generate JS (round 1)…
+  [home-dashboard] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [home-dashboard] validate clicks…
+  [home-dashboard] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: home
+==================================================
+  [home] generate JS (round 1)…
+  [home] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [home] validate clicks…
+  [home] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: inventory-product-index
+==================================================
+  [inventory-product-index] generate JS (round 1)…
+  [inventory-product-index] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [inventory-product-index] validate clicks…
+  [inventory-product-index] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: inventory-product-product-creation
+==================================================
+  [inventory-product-product-creation] generate JS (round 1)…
+  [inventory-product-product-creation] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [inventory-product-product-creation] validate clicks…
+  [inventory-product-product-creation] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: invoices
+==================================================
+  [invoices] generate JS (round 1)…
+  [invoices] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [invoices] validate clicks…
+  [invoices] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: quotes
+==================================================
+  [quotes] generate JS (round 1)…
+  [quotes] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [quotes] validate clicks…
+  [quotes] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: salesorders-new
+==================================================
+  [salesorders-new] generate JS (round 1)…
+  [salesorders-new] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [salesorders-new] validate clicks…
+  [salesorders-new] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+==================================================
+JS Agent: salesorders
+==================================================
+  [salesorders] generate JS (round 1)…
+  [salesorders] Gemini skipped (400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}) — using built-in JS
+  [salesorders] validate clicks…
+  [salesorders] → passed=0, failed=0
+  Final: passed=0, failed=0
+
+🎉 Pipeline complete.
+   Serve:  cd pages && python3 -m http.server 8080
+   Open:   http://localhost:8080/contacts.html

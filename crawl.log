@@ -1,0 +1,31 @@
+[*] Loaded session from auth.json — crawling as authenticated user
+[*] Resolved app base from browser: https://books.zoho.in/app/60073691807
+[1] https://books.zoho.in/app/60073691807#/home/dashboard
+[2] https://books.zoho.in/app/60073691807#/home
+[3] https://books.zoho.in/app/60073691807#/inventory/product/index
+[4] https://books.zoho.in/app/60073691807#/inventory/product/product-creation
+[5] https://books.zoho.in/app/60073691807#/contacts
+[6] https://books.zoho.in/app/60073691807#/contacts/new
+[7] https://books.zoho.in/app/60073691807#/quotes
+[8] https://books.zoho.in/app/60073691807#/salesorders
+[9] https://books.zoho.in/app/60073691807#/salesorders/new
+[10] https://books.zoho.in/app/60073691807#/invoices
+
+[*] Rewriting internal links...
+
+[*] Stitching pages for offline navigation...
+  stitched contacts-new.html
+  stitched contacts.html
+  stitched home-dashboard.html
+  stitched home.html
+  stitched inventory-product-index.html
+  stitched inventory-product-product-creation.html
+  stitched invoices.html
+  stitched quotes.html
+  stitched salesorders-new.html
+  stitched salesorders.html
+  wrote pages/index.html
+
+✅ Done — 10 pages saved successfully!
+   Serve with: python3 -m http.server 8080
+   Then open:  http://localhost:8080/pages/home.html

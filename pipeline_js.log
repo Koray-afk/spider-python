@@ -1,0 +1,118 @@
+
+============================================================
+STEP 1 — Crawl
+============================================================
+  ⏩ skipped (pages/ already populated)
+
+============================================================
+STEP 2 — Clean HTML for LLM
+============================================================
+  ⏩ skipped
+
+============================================================
+STEP 3 — Catalog elements + screenshots
+============================================================
+  ⏩ skipped
+
+============================================================
+STEP 4 — Generate JS + validate state changes
+============================================================
+
+==================================================
+JS Agent: contacts-new
+==================================================
+  [contacts-new] generate JS (round 1)…
+  [contacts-new] validate clicks…
+  [contacts-new] → passed=17, failed=3
+  [contacts-new] generate JS (round 2)…
+  [contacts-new] validate clicks…
+  [contacts-new] → passed=13, failed=7
+  Final: passed=13, failed=7
+
+==================================================
+JS Agent: contacts
+==================================================
+  [contacts] generate JS (round 1)…
+  [contacts] validate clicks…
+  [contacts] → passed=16, failed=4
+  [contacts] generate JS (round 2)…
+  [contacts] validate clicks…
+  [contacts] → passed=20, failed=0
+  Final: passed=20, failed=0
+
+==================================================
+JS Agent: home-dashboard
+==================================================
+  [home-dashboard] generate JS (round 1)…
+  [home-dashboard] validate clicks…
+  [home-dashboard] → passed=13, failed=7
+  [home-dashboard] generate JS (round 2)…
+  [home-dashboard] validate clicks…
+  [home-dashboard] → passed=18, failed=2
+  Final: passed=18, failed=2
+
+==================================================
+JS Agent: home
+==================================================
+  [home] generate JS (round 1)…
+  [home] validate clicks…
+  [home] → passed=20, failed=0
+  Final: passed=20, failed=0
+
+==================================================
+JS Agent: inventory-product-index
+==================================================
+  [inventory-product-index] generate JS (round 1)…
+  [inventory-product-index] validate clicks…
+  [inventory-product-index] → passed=17, failed=3
+  [inventory-product-index] generate JS (round 2)…
+  [inventory-product-index] validate clicks…
+  [inventory-product-index] → passed=15, failed=5
+  Final: passed=15, failed=5
+
+==================================================
+JS Agent: inventory-product-product-creation
+==================================================
+  [inventory-product-product-creation] generate JS (round 1)…
+  [inventory-product-product-creation] validate clicks…
+  [inventory-product-product-creation] → passed=16, failed=4
+  [inventory-product-product-creation] generate JS (round 2)…
+  [inventory-product-product-creation] validate clicks…
+  [inventory-product-product-creation] → passed=9, failed=11
+  Final: passed=9, failed=11
+
+==================================================
+JS Agent: invoices
+==================================================
+  [invoices] generate JS (round 1)…
+  [invoices] validate clicks…
+  [invoices] → passed=20, failed=0
+  Final: passed=20, failed=0
+
+==================================================
+JS Agent: quotes
+==================================================
+  [quotes] generate JS (round 1)…
+  [quotes] validate clicks…
+  [quotes] → passed=20, failed=0
+  Final: passed=20, failed=0
+
+==================================================
+JS Agent: salesorders-new
+==================================================
+  [salesorders-new] generate JS (round 1)…
+  [salesorders-new] validate clicks…
+  [salesorders-new] → passed=20, failed=0
+  Final: passed=20, failed=0
+
+==================================================
+JS Agent: salesorders
+==================================================
+  [salesorders] generate JS (round 1)…
+  [salesorders] validate clicks…
+  [salesorders] → passed=20, failed=0
+  Final: passed=20, failed=0
+
+🎉 Pipeline complete.
+   Serve:  cd pages && python3 -m http.server 8080
+   Open:   http://localhost:8080/contacts.html

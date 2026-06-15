@@ -159,6 +159,62 @@ Include every id listed. No markdown."""
     return response.text
 
 
+def ask_with_tools(messages: list, tools: list) -> Any:
+    """Multi-turn Gemini call with function-calling tools."""
+    return _get_client().models.generate_content(
+        model=MODEL,
+        contents=messages,
+        config=types.GenerateContentConfig(tools=tools),
+    )
+
+
+def generate_interaction_js(
+    page_slug: str,
+    cleaned_html: str,
+    interactive_elements: list[dict],
+    png_path: str | None = None,
+    failures: list[dict] | None = None,
+) -> str:
+    """Generate vanilla JS IIFE to make offline page interactive."""
+    elements_json = json.dumps(interactive_elements[:40], indent=2)
+    fail_text = ""
+    if failures:
+        fail_text = (
+            "\n\nThese elements FAILED validation — fix them:\n"
+            + json.dumps(failures, indent=2)
+        )
+
+    prompt = f"""You are an expert frontend engineer. Write ONE vanilla JavaScript IIFE for offline page "{page_slug}".
+
+RULES (violating breaks the site):
+1. NEVER use addEventListener with capture=true (third arg must be false or omitted).
+2. NEVER call preventDefault/stopPropagation when e.target.closest('a[href$=".html"]') is truthy — let browser navigate.
+3. For a[href$=".html"] links: do NOTHING — stitched href already works.
+4. For a[href^="#/"]: preventDefault + show a toast "not recorded yet".
+5. [role=tab]: switch active tab + show/hide tabpanel (aria-controls / *-panel id).
+6. .dropdown-toggle: toggle .show on .dropdown and .dropdown-menu.
+7. .accordion-button / [aria-expanded][aria-controls]: toggle submenu visibility.
+8. .btn-primary / buttons with "New|Create|Add": show a simple modal overlay.
+9. Use event delegation on document (bubble phase, NOT capture).
+10. Output ONLY the IIFE code — no markdown, no explanation.
+
+Interactive elements (data-agent-id):
+{elements_json}
+
+Cleaned HTML (context):
+{cleaned_html[:50000]}
+{fail_text}
+
+Output the complete IIFE starting with (function() {{ and ending with }})();"""
+
+    parts: list[Any] = [prompt]
+    if png_path and os.path.isfile(png_path):
+        parts.insert(0, _image_part(png_path))
+
+    response = _get_client().models.generate_content(model=MODEL, contents=parts)
+    return response.text
+
+
 def generate_replica(png_path: str, url: str) -> str:
     """
     Send a screenshot to Gemini.

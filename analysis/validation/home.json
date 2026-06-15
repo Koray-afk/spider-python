@@ -1,0 +1,146 @@
+{
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "id": "el-002",
+      "action": "toggle",
+      "ok": true,
+      "note": "1 mutations, state_changed=False",
+      "text": "Verify Account"
+    },
+    {
+      "id": "el-003",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": "Navigate To (Opt+0)"
+    },
+    {
+      "id": "el-006",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": ""
+    },
+    {
+      "id": "el-008",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": ""
+    },
+    {
+      "id": "el-015",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": ""
+    },
+    {
+      "id": "el-023",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": "Home Items Items Sales Customers Quotes "
+    },
+    {
+      "id": "el-024",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": "Home Items Items Sales Customers Quotes "
+    },
+    {
+      "id": "el-025",
+      "action": "toggle",
+      "ok": true,
+      "note": "0 mutations, state_changed=True",
+      "text": "Home"
+    },
+    {
+      "id": "el-026",
+      "action": "navigate",
+      "ok": true,
+      "note": "nav \u2192 home-dashboard.html",
+      "text": "Home"
+    },
+    {
+      "id": "el-029",
+      "action": "toggle",
+      "ok": true,
+      "note": "0 mutations, state_changed=True",
+      "text": "Items Items"
+    },
+    {
+      "id": "el-030",
+      "action": "toggle",
+      "ok": true,
+      "note": "1 mutations, state_changed=True",
+      "text": "Items"
+    },
+    {
+      "id": "el-031",
+      "action": "toggle",
+      "ok": true,
+      "note": "1 mutations, state_changed=False",
+      "text": "Items"
+    },
+    {
+      "id": "el-036",
+      "action": "toggle",
+      "ok": true,
+      "note": "0 mutations, state_changed=True",
+      "text": "Items"
+    },
+    {
+      "id": "el-037",
+      "action": "toggle",
+      "ok": true,
+      "note": "0 mutations, state_changed=True",
+      "text": "Items"
+    },
+    {
+      "id": "el-038",
+      "action": "navigate",
+      "ok": true,
+      "note": "nav \u2192 inventory-product-index.html",
+      "text": "Items"
+    },
+    {
+      "id": "el-040",
+      "action": "navigate",
+      "ok": true,
+      "note": "nav \u2192 inventory-product-product-creation.html",
+      "text": ""
+    },
+    {
+      "id": "el-042",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": "Sales Customers Quotes Sales Orders Invo"
+    },
+    {
+      "id": "el-043",
+      "action": "toggle",
+      "ok": true,
+      "note": "1 mutations, state_changed=True",
+      "text": "Sales"
+    },
+    {
+      "id": "el-044",
+      "action": "toggle",
+      "ok": true,
+      "note": "1 mutations, state_changed=False",
+      "text": "Sales"
+    },
+    {
+      "id": "el-049",
+      "action": "toggle",
+      "ok": true,
+      "note": "2 mutations, state_changed=False",
+      "text": "Customers Quotes Sales Orders Invoices R"
+    }
+  ]
+}

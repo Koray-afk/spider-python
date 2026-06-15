@@ -55,7 +55,17 @@ def assign_element_ids(html: str, prefix: str = "el") -> tuple[str, list[Element
     for tag in soup.find_all(True):
         if not isinstance(tag, Tag):
             continue
-        if tag.get("data-agent-id"):
+        existing_id = tag.get("data-agent-id")
+        if existing_id:
+            if _is_meaningful(tag):
+                records.append(
+                    ElementRecord(
+                        id=existing_id,
+                        tag=tag.name,
+                        text=_visible_text(tag),
+                        href=tag.get("href"),
+                    )
+                )
             continue
         if not _is_meaningful(tag):
             continue

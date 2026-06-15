@@ -5,6 +5,9 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
+from home_pages import generate_home_subpages, merge_sitemap
+from offline_ui import HASH_NEW_ROUTES, HASH_PREFIX_ROUTES, build_interaction_js
+
 OVERLAY_HIDE_STYLE = """<style>
 #zcwindows, .zcoverlay, .zsiq_theme1, #zsiq_float, #zsiq_chat_wrap,
 iframe, #micsbackdrop, #wmstoolbar, #tooltip-popover-wrapper,
@@ -13,6 +16,23 @@ iframe, #micsbackdrop, #wmstoolbar, #tooltip-popover-wrapper,
 #main-nav-tab, .main-nav-lhs, .main-nav-lhs a, a.nav-link[href$=".html"] {
   pointer-events: auto !important; cursor: pointer !important;
 }
+.dropdown, button.dropdown, .orglist-topband { position: relative !important; }
+.dropdown-menu {
+  list-style: none; margin: 0; padding: 4px 0;
+  background: #fff; border: 1px solid rgba(0,0,0,.12); border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12); min-width: 160px;
+  display: none !important;
+}
+.dropdown-menu .dropdown-item {
+  display: block; padding: 8px 16px; color: #212529;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+}
+.dropdown-menu .dropdown-item:hover { background: #f5f7fa; }
+.dropdown.show > .dropdown-menu,
+.dropdown-menu.show { display: block !important; z-index: 9990; }
+.ac-dropdown .dropdown-menu { position: absolute; top: 100%; left: 0; width: 100%; }
+#main-nav-tab .nav-main-module a,
+#main-nav-tab .dropdown-item.nav-link { pointer-events: auto !important; }
 </style>"""
 
 
@@ -53,8 +73,14 @@ def build_route_map(sitemap: list, pages_dir: Path) -> dict[str, str]:
         if key:
             route_map[key] = target
             route_map[key.rstrip("/")] = target
+        elif url.startswith("#/"):
+            route_map[url.split("?")[0]] = target
+            route_map[url.split("?")[0].rstrip("/")] = target
         else:
             route_map["#/home"] = target
+
+    route_map.setdefault("#/home/gettingstarted", "home-gettingstarted.html")
+    route_map.setdefault("#/home/recentupdates", "home-recentupdates.html")
 
     return route_map
 
@@ -85,6 +111,22 @@ def _lookup_route(url: str, route_map: dict[str, str]) -> str | None:
     trimmed = key.rstrip("/")
     if trimmed in route_map:
         return route_map[trimmed]
+
+    if not key.startswith("#/"):
+        return None
+
+    path = key[2:]
+    if path.endswith("/new"):
+        base = path[:-4]
+        if base in HASH_NEW_ROUTES:
+            return HASH_NEW_ROUTES[base]
+        for prefix, target in sorted(HASH_NEW_ROUTES.items(), key=lambda x: -len(x[0])):
+            if path == prefix + "/new" or path.startswith(prefix + "/"):
+                return target
+
+    for prefix, target in sorted(HASH_PREFIX_ROUTES.items(), key=lambda x: -len(x[0])):
+        if path == prefix or path.startswith(prefix + "/"):
+            return target
 
     return None
 
@@ -140,47 +182,20 @@ def enable_sidebar_clicks(html: str) -> str:
     )
 
 
-def inject_static_ui(html: str) -> str:
+def inject_static_ui(html: str, route_map: dict[str, str]) -> str:
     if re.search(r"</head>", html, flags=re.IGNORECASE):
         html = re.sub(r"</head>", OVERLAY_HIDE_STYLE + "\n</head>", html, count=1, flags=re.IGNORECASE)
     else:
         html = OVERLAY_HIDE_STYLE + html
 
-    static_script = """<script>
-(function() {
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.accordion-button');
-    if (!btn) return;
-    e.preventDefault();
-    e.stopPropagation();
-    var expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    btn.classList.toggle('collapsed', expanded);
-    var panelId = btn.getAttribute('aria-controls');
-    if (!panelId) return;
-    var panel = document.getElementById(panelId);
-    if (!panel) return;
-    panel.hidden = expanded;
-    panel.classList.toggle('show', !expanded);
-  }, true);
+    html = re.sub(
+        r'<script[^>]*data-offline-ui[^>]*>[\s\S]*?</script>\s*',
+        "",
+        html,
+        flags=re.IGNORECASE,
+    )
 
-  var page = (location.pathname.split('/').pop() || 'home.html').split('?')[0];
-  document.querySelectorAll('a[href]').forEach(function(a) {
-    var href = a.getAttribute('href');
-    if (!href) return;
-    if (href === page) {
-      a.classList.add('active');
-    }
-    if (href.indexOf('#/') === 0) {
-      a.style.opacity = '0.45';
-      a.style.cursor = 'not-allowed';
-      a.addEventListener('click', function(ev) {
-        ev.preventDefault();
-      });
-    }
-  });
-})();
-</script>"""
+    static_script = build_interaction_js(route_map)
 
     if re.search(r"</body>", html, flags=re.IGNORECASE):
         return re.sub(r"</body>", static_script + "\n</body>", html, count=1, flags=re.IGNORECASE)
@@ -226,7 +241,7 @@ def finalize_html(html: str, route_map: dict[str, str]) -> str:
     html = expand_sidebar(html)
     html = enable_sidebar_clicks(html)
     html = rewrite_route_links(html, route_map)
-    return inject_static_ui(html)
+    return inject_static_ui(html, route_map)
 
 
 def stitch_pages(pages_dir: str = "pages") -> int:
@@ -236,6 +251,17 @@ def stitch_pages(pages_dir: str = "pages") -> int:
         raise FileNotFoundError(f"Missing {sitemap_path} — run the crawler first.")
 
     sitemap = json.loads(sitemap_path.read_text(encoding="utf-8"))
+    app_base = ""
+    for item in sitemap:
+        url = item.get("url", "")
+        if "/app/" in url:
+            app_base = url.split("#")[0]
+            break
+
+    home_entries = generate_home_subpages(pages_path, app_base)
+    merge_sitemap(pages_path, home_entries)
+    sitemap = json.loads(sitemap_path.read_text(encoding="utf-8"))
+
     route_map = build_route_map(sitemap, pages_path)
     count = 0
 

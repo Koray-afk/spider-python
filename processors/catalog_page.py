@@ -9,12 +9,17 @@ from dotenv import load_dotenv
 
 from html_cleaner import clean_html_for_llm, discover_page_html_files
 from models.page_spec import ElementSpec, PageSpec
+from processors.action_infer import infer_from_record
 from processors.element_ids import assign_element_ids
 from services.gemini_service import catalog_element_batch, catalog_page_summary
 
 load_dotenv()
 
-BATCH_SIZE = 25
+VALID_ACTIONS = {"navigate", "submit", "toggle", "open_modal", "filter", "display", "unknown", "none"}
+
+
+def _safe_action(val: str | None) -> str:
+    return val if val in VALID_ACTIONS else "unknown"
 
 
 def _slug_from_html_path(html_path: Path, pages_dir: Path) -> str:
@@ -42,6 +47,7 @@ def catalog_one_page(
     pages_dir: Path,
     output_dir: Path,
     png_path: Path | None = None,
+    heuristic: bool = True,
 ) -> PageSpec:
     slug = _slug_from_html_path(html_path, pages_dir)
     meta_path = pages_dir / f"{slug}.meta"
@@ -55,40 +61,61 @@ def catalog_one_page(
     annotated_dir.mkdir(parents=True, exist_ok=True)
     annotated_path = annotated_dir / f"{slug}.html"
     annotated_path.write_text(annotated_full, encoding="utf-8")
+    html_path.write_text(annotated_full, encoding="utf-8")
 
     if png_path is None:
         candidate = pages_dir / f"{slug}.png"
         png_path = candidate if candidate.exists() else None
 
     png_str = str(png_path) if png_path else None
-    summary_raw = catalog_page_summary(
-        page_slug=slug,
-        page_url=page_url,
-        element_count=len(records),
-        html_snippet=cleaned,
-        png_path=png_str,
-    )
-    page_data = _parse_json(summary_raw)
-
-    cataloged_items: list[dict] = []
-    record_dicts = [r.__dict__ for r in records]
-    total_batches = (len(record_dicts) + BATCH_SIZE - 1) // BATCH_SIZE
-    for batch_idx in range(0, len(record_dicts), BATCH_SIZE):
-        batch = record_dicts[batch_idx : batch_idx + BATCH_SIZE]
-        batch_num = batch_idx // BATCH_SIZE + 1
-        print(f"       batch {batch_num}/{total_batches} ({len(batch)} elements)", flush=True)
-        raw_spec = catalog_element_batch(
-            annotated_html=cleaned,
-            element_records=batch,
+    try:
+        summary_raw = catalog_page_summary(
             page_slug=slug,
             page_url=page_url,
-            png_path=png_str if batch_idx == 0 else None,
+            element_count=len(records),
+            html_snippet=cleaned,
+            png_path=png_str,
         )
-        batch_data = _parse_json(raw_spec)
-        if isinstance(batch_data, list):
-            cataloged_items.extend(batch_data)
-        else:
-            cataloged_items.extend(batch_data.get("elements", []))
+        page_data = _parse_json(summary_raw)
+    except Exception as exc:
+        print(f"       ⚠ Gemini summary skipped: {exc}", flush=True)
+        page_data = {
+            "page_name": _page_name(slug),
+            "page_purpose": f"Offline clone of {slug}",
+            "summary": f"Page {slug} with {len(records)} interactive elements.",
+        }
+
+    record_dicts = [r.__dict__ for r in records]
+    cataloged_items: list[dict] = []
+    if heuristic:
+        for rec in record_dicts:
+            inferred = infer_from_record(rec, annotated_full)
+            cataloged_items.append({
+                "id": rec["id"],
+                "tag": rec["tag"],
+                "text": rec["text"],
+                "href": rec.get("href"),
+                **inferred,
+            })
+        print(f"       heuristic catalog: {len(cataloged_items)} elements", flush=True)
+    else:
+        total_batches = (len(record_dicts) + BATCH_SIZE - 1) // BATCH_SIZE
+        for batch_idx in range(0, len(record_dicts), BATCH_SIZE):
+            batch = record_dicts[batch_idx : batch_idx + BATCH_SIZE]
+            batch_num = batch_idx // BATCH_SIZE + 1
+            print(f"       batch {batch_num}/{total_batches} ({len(batch)} elements)", flush=True)
+            raw_spec = catalog_element_batch(
+                annotated_html=cleaned,
+                element_records=batch,
+                page_slug=slug,
+                page_url=page_url,
+                png_path=png_str if batch_idx == 0 else None,
+            )
+            batch_data = _parse_json(raw_spec)
+            if isinstance(batch_data, list):
+                cataloged_items.extend(batch_data)
+            else:
+                cataloged_items.extend(batch_data.get("elements", []))
 
     elements = []
     by_id = {r.id: r for r in records}
@@ -102,7 +129,7 @@ def catalog_one_page(
                 text=item.get("text") or (rec.text if rec else ""),
                 role=item.get("role", "unknown"),
                 purpose=item.get("purpose", "Unknown purpose"),
-                expected_action=item.get("expected_action", "unknown"),
+                expected_action=_safe_action(item.get("expected_action")),
                 expected_target=item.get("expected_target"),
                 href=item.get("href") or (rec.href if rec else None),
             )
@@ -143,6 +170,7 @@ def catalog_all_pages(
     pages_dir: str = "pages",
     output_dir: str = "analysis",
     skip_existing: bool = True,
+    heuristic: bool = True,
 ) -> list[PageSpec]:
     pages_path = Path(pages_dir)
     out_path = Path(output_dir)
@@ -161,7 +189,7 @@ def catalog_all_pages(
 
         print(f"  [{i}/{len(html_files)}] 📋 Cataloging {slug}", flush=True)
         try:
-            spec = catalog_one_page(html_file, pages_path, out_path)
+            spec = catalog_one_page(html_file, pages_path, out_path, heuristic=heuristic)
             specs.append(spec)
             print(f"       ✅ {len(spec.elements)} elements → {spec_file}", flush=True)
         except Exception as exc:

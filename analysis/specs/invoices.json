@@ -1,0 +1,3239 @@
+{
+  "page_slug": "invoices",
+  "page_name": "Invoices",
+  "page_url": "https://books.zoho.in/app/60073691807#/invoices",
+  "page_purpose": "To enable users to manage all aspects of their customer invoices, from creation and tracking to payments and related settings.",
+  "summary": "This is the main Invoices page within Zoho Books, designed for managing all customer invoices. Users can create new invoices, set up recurring invoices, or import existing ones. The page also provides an overview of the invoice lifecycle and access to features like branding, online payment collection, and customer portals.",
+  "elements": [
+    {
+      "id": "el-001",
+      "tag": "a",
+      "text": "Don't show again",
+      "role": "unknown",
+      "purpose": "Don't show again",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-002",
+      "tag": "button",
+      "text": "Verify Account",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-003",
+      "tag": "button",
+      "text": "Navigate To (Opt+0)",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-004",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-005",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-006",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-007",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-008",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-009",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-010",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-011",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-012",
+      "tag": "span",
+      "text": "Subscribe",
+      "role": "unknown",
+      "purpose": "Subscribe",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-013",
+      "tag": "div",
+      "text": "self",
+      "role": "unknown",
+      "purpose": "self",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-014",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-015",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-016",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-017",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-018",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-019",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-020",
+      "tag": "span",
+      "text": "",
+      "role": "unknown",
+      "purpose": "span element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-021",
+      "tag": "img",
+      "text": "",
+      "role": "unknown",
+      "purpose": "img element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-022",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-023",
+      "tag": "nav",
+      "text": "Home Items Items Sales Customers Quotes Sales Orders Invoices Recurring Invoices Delivery Challans Payments Received Credit Notes Purchases Vendors Expenses Recurring Expenses Purchase Orders Bills Re",
+      "role": "menu",
+      "purpose": "Home Items Items Sales Customers Quotes Sales Orders Invoices Recurring Invoices",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-024",
+      "tag": "ul",
+      "text": "Home Items Items Sales Customers Quotes Sales Orders Invoices Recurring Invoices Delivery Challans Payments Received Credit Notes Purchases Vendors Expenses Recurring Expenses Purchase Orders Bills Re",
+      "role": "menu",
+      "purpose": "Home Items Items Sales Customers Quotes Sales Orders Invoices Recurring Invoices",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-025",
+      "tag": "li",
+      "text": "Home",
+      "role": "menu",
+      "purpose": "Home",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-026",
+      "tag": "a",
+      "text": "Home",
+      "role": "navigation",
+      "purpose": "Navigate to home-dashboard.html",
+      "expected_action": "navigate",
+      "expected_target": "home-dashboard.html",
+      "href": "home-dashboard.html"
+    },
+    {
+      "id": "el-027",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-028",
+      "tag": "span",
+      "text": "Home",
+      "role": "unknown",
+      "purpose": "Home",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-029",
+      "tag": "li",
+      "text": "Items Items",
+      "role": "menu",
+      "purpose": "Items Items",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-030",
+      "tag": "h3",
+      "text": "Items",
+      "role": "menu",
+      "purpose": "Items",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-031",
+      "tag": "button",
+      "text": "Items",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-032",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-033",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-034",
+      "tag": "span",
+      "text": "Items",
+      "role": "unknown",
+      "purpose": "Items",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-035",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-036",
+      "tag": "ul",
+      "text": "Items",
+      "role": "menu",
+      "purpose": "Items",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-037",
+      "tag": "li",
+      "text": "Items",
+      "role": "menu",
+      "purpose": "Items",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-038",
+      "tag": "a",
+      "text": "Items",
+      "role": "navigation",
+      "purpose": "Navigate to inventory-product-index.html",
+      "expected_action": "navigate",
+      "expected_target": "inventory-product-index.html",
+      "href": "inventory-product-index.html"
+    },
+    {
+      "id": "el-039",
+      "tag": "span",
+      "text": "Items",
+      "role": "unknown",
+      "purpose": "Items",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-040",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Navigate to inventory-product-product-creation.html",
+      "expected_action": "navigate",
+      "expected_target": "inventory-product-product-creation.html",
+      "href": "inventory-product-product-creation.html"
+    },
+    {
+      "id": "el-041",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-042",
+      "tag": "li",
+      "text": "Sales Customers Quotes Sales Orders Invoices Recurring Invoices Delivery Challans Payments Received Credit Notes",
+      "role": "menu",
+      "purpose": "Sales Customers Quotes Sales Orders Invoices Recurring Invoices Delivery Challan",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-043",
+      "tag": "h3",
+      "text": "Sales",
+      "role": "menu",
+      "purpose": "Sales",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-044",
+      "tag": "button",
+      "text": "Sales",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-045",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-046",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-047",
+      "tag": "span",
+      "text": "Sales",
+      "role": "unknown",
+      "purpose": "Sales",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-048",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-049",
+      "tag": "ul",
+      "text": "Customers Quotes Sales Orders Invoices Recurring Invoices Delivery Challans Payments Received Credit Notes",
+      "role": "menu",
+      "purpose": "Customers Quotes Sales Orders Invoices Recurring Invoices Delivery Challans Paym",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-050",
+      "tag": "li",
+      "text": "Customers",
+      "role": "menu",
+      "purpose": "Customers",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-051",
+      "tag": "a",
+      "text": "Customers",
+      "role": "navigation",
+      "purpose": "Navigate to contacts.html",
+      "expected_action": "navigate",
+      "expected_target": "contacts.html",
+      "href": "contacts.html"
+    },
+    {
+      "id": "el-052",
+      "tag": "span",
+      "text": "Customers",
+      "role": "unknown",
+      "purpose": "Customers",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-053",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Navigate to contacts-new.html",
+      "expected_action": "navigate",
+      "expected_target": "contacts-new.html",
+      "href": "contacts-new.html"
+    },
+    {
+      "id": "el-054",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-055",
+      "tag": "li",
+      "text": "Quotes",
+      "role": "menu",
+      "purpose": "Quotes",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-056",
+      "tag": "a",
+      "text": "Quotes",
+      "role": "navigation",
+      "purpose": "Navigate to quotes.html",
+      "expected_action": "navigate",
+      "expected_target": "quotes.html",
+      "href": "quotes.html"
+    },
+    {
+      "id": "el-057",
+      "tag": "span",
+      "text": "Quotes",
+      "role": "unknown",
+      "purpose": "Quotes",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-058",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-059",
+      "tag": "li",
+      "text": "Sales Orders",
+      "role": "menu",
+      "purpose": "Sales Orders",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-060",
+      "tag": "a",
+      "text": "Sales Orders",
+      "role": "navigation",
+      "purpose": "Navigate to salesorders.html",
+      "expected_action": "navigate",
+      "expected_target": "salesorders.html",
+      "href": "salesorders.html"
+    },
+    {
+      "id": "el-061",
+      "tag": "span",
+      "text": "Sales Orders",
+      "role": "unknown",
+      "purpose": "Sales Orders",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-062",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Navigate to salesorders-new.html",
+      "expected_action": "navigate",
+      "expected_target": "salesorders-new.html",
+      "href": "salesorders-new.html"
+    },
+    {
+      "id": "el-063",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-064",
+      "tag": "li",
+      "text": "Invoices",
+      "role": "menu",
+      "purpose": "Invoices",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-065",
+      "tag": "a",
+      "text": "Invoices",
+      "role": "navigation",
+      "purpose": "Navigate to invoices.html",
+      "expected_action": "navigate",
+      "expected_target": "invoices.html",
+      "href": "invoices.html"
+    },
+    {
+      "id": "el-066",
+      "tag": "span",
+      "text": "Invoices",
+      "role": "unknown",
+      "purpose": "Invoices",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-067",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-068",
+      "tag": "li",
+      "text": "Recurring Invoices",
+      "role": "menu",
+      "purpose": "Recurring Invoices",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-069",
+      "tag": "a",
+      "text": "Recurring Invoices",
+      "role": "navigation",
+      "purpose": "Route #/recurringinvoices",
+      "expected_action": "navigate",
+      "expected_target": "#/recurringinvoices",
+      "href": "#/recurringinvoices"
+    },
+    {
+      "id": "el-070",
+      "tag": "span",
+      "text": "Recurring Invoices",
+      "role": "unknown",
+      "purpose": "Recurring Invoices",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-071",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/recurringinvoices/new",
+      "expected_action": "navigate",
+      "expected_target": "#/recurringinvoices/new",
+      "href": "#/recurringinvoices/new"
+    },
+    {
+      "id": "el-072",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-073",
+      "tag": "li",
+      "text": "Delivery Challans",
+      "role": "menu",
+      "purpose": "Delivery Challans",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-074",
+      "tag": "a",
+      "text": "Delivery Challans",
+      "role": "navigation",
+      "purpose": "Route #/deliverychallans",
+      "expected_action": "navigate",
+      "expected_target": "#/deliverychallans",
+      "href": "#/deliverychallans"
+    },
+    {
+      "id": "el-075",
+      "tag": "span",
+      "text": "Delivery Challans",
+      "role": "unknown",
+      "purpose": "Delivery Challans",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-076",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/deliverychallans/new",
+      "expected_action": "navigate",
+      "expected_target": "#/deliverychallans/new",
+      "href": "#/deliverychallans/new"
+    },
+    {
+      "id": "el-077",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-078",
+      "tag": "li",
+      "text": "Payments Received",
+      "role": "menu",
+      "purpose": "Payments Received",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-079",
+      "tag": "a",
+      "text": "Payments Received",
+      "role": "navigation",
+      "purpose": "Route #/paymentsreceived",
+      "expected_action": "navigate",
+      "expected_target": "#/paymentsreceived",
+      "href": "#/paymentsreceived"
+    },
+    {
+      "id": "el-080",
+      "tag": "span",
+      "text": "Payments Received",
+      "role": "unknown",
+      "purpose": "Payments Received",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-081",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/paymentsreceived/new",
+      "expected_action": "navigate",
+      "expected_target": "#/paymentsreceived/new",
+      "href": "#/paymentsreceived/new"
+    },
+    {
+      "id": "el-082",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-083",
+      "tag": "li",
+      "text": "Credit Notes",
+      "role": "menu",
+      "purpose": "Credit Notes",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-084",
+      "tag": "a",
+      "text": "Credit Notes",
+      "role": "navigation",
+      "purpose": "Route #/creditnotes",
+      "expected_action": "navigate",
+      "expected_target": "#/creditnotes",
+      "href": "#/creditnotes"
+    },
+    {
+      "id": "el-085",
+      "tag": "span",
+      "text": "Credit Notes",
+      "role": "unknown",
+      "purpose": "Credit Notes",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-086",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/creditnotes/new",
+      "expected_action": "navigate",
+      "expected_target": "#/creditnotes/new",
+      "href": "#/creditnotes/new"
+    },
+    {
+      "id": "el-087",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-088",
+      "tag": "li",
+      "text": "Purchases Vendors Expenses Recurring Expenses Purchase Orders Bills Recurring Bills Payments Made Vendor Credits",
+      "role": "menu",
+      "purpose": "Purchases Vendors Expenses Recurring Expenses Purchase Orders Bills Recurring Bi",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-089",
+      "tag": "h3",
+      "text": "Purchases",
+      "role": "menu",
+      "purpose": "Purchases",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-090",
+      "tag": "button",
+      "text": "Purchases",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-091",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-092",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-093",
+      "tag": "span",
+      "text": "Purchases",
+      "role": "unknown",
+      "purpose": "Purchases",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-094",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-095",
+      "tag": "ul",
+      "text": "Vendors Expenses Recurring Expenses Purchase Orders Bills Recurring Bills Payments Made Vendor Credits",
+      "role": "menu",
+      "purpose": "Vendors Expenses Recurring Expenses Purchase Orders Bills Recurring Bills Paymen",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-096",
+      "tag": "li",
+      "text": "Vendors",
+      "role": "menu",
+      "purpose": "Vendors",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-097",
+      "tag": "a",
+      "text": "Vendors",
+      "role": "navigation",
+      "purpose": "Route #/vendors",
+      "expected_action": "navigate",
+      "expected_target": "#/vendors",
+      "href": "#/vendors"
+    },
+    {
+      "id": "el-098",
+      "tag": "span",
+      "text": "Vendors",
+      "role": "unknown",
+      "purpose": "Vendors",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-099",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/vendors/new",
+      "expected_action": "navigate",
+      "expected_target": "#/vendors/new",
+      "href": "#/vendors/new"
+    },
+    {
+      "id": "el-100",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-101",
+      "tag": "li",
+      "text": "Expenses",
+      "role": "menu",
+      "purpose": "Expenses",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-102",
+      "tag": "a",
+      "text": "Expenses",
+      "role": "navigation",
+      "purpose": "Route #/expenses",
+      "expected_action": "navigate",
+      "expected_target": "#/expenses",
+      "href": "#/expenses"
+    },
+    {
+      "id": "el-103",
+      "tag": "span",
+      "text": "Expenses",
+      "role": "unknown",
+      "purpose": "Expenses",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-104",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-105",
+      "tag": "li",
+      "text": "Recurring Expenses",
+      "role": "menu",
+      "purpose": "Recurring Expenses",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-106",
+      "tag": "a",
+      "text": "Recurring Expenses",
+      "role": "navigation",
+      "purpose": "Route #/recurringexpenses",
+      "expected_action": "navigate",
+      "expected_target": "#/recurringexpenses",
+      "href": "#/recurringexpenses"
+    },
+    {
+      "id": "el-107",
+      "tag": "span",
+      "text": "Recurring Expenses",
+      "role": "unknown",
+      "purpose": "Recurring Expenses",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-108",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/recurringexpenses/new",
+      "expected_action": "navigate",
+      "expected_target": "#/recurringexpenses/new",
+      "href": "#/recurringexpenses/new"
+    },
+    {
+      "id": "el-109",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-110",
+      "tag": "li",
+      "text": "Purchase Orders",
+      "role": "menu",
+      "purpose": "Purchase Orders",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-111",
+      "tag": "a",
+      "text": "Purchase Orders",
+      "role": "navigation",
+      "purpose": "Route #/purchaseorders",
+      "expected_action": "navigate",
+      "expected_target": "#/purchaseorders",
+      "href": "#/purchaseorders"
+    },
+    {
+      "id": "el-112",
+      "tag": "span",
+      "text": "Purchase Orders",
+      "role": "unknown",
+      "purpose": "Purchase Orders",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-113",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/purchaseorders/new",
+      "expected_action": "navigate",
+      "expected_target": "#/purchaseorders/new",
+      "href": "#/purchaseorders/new"
+    },
+    {
+      "id": "el-114",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-115",
+      "tag": "li",
+      "text": "Bills",
+      "role": "menu",
+      "purpose": "Bills",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-116",
+      "tag": "a",
+      "text": "Bills",
+      "role": "navigation",
+      "purpose": "Route #/bills",
+      "expected_action": "navigate",
+      "expected_target": "#/bills",
+      "href": "#/bills"
+    },
+    {
+      "id": "el-117",
+      "tag": "span",
+      "text": "Bills",
+      "role": "unknown",
+      "purpose": "Bills",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-118",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/bills/new",
+      "expected_action": "navigate",
+      "expected_target": "#/bills/new",
+      "href": "#/bills/new"
+    },
+    {
+      "id": "el-119",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-120",
+      "tag": "li",
+      "text": "Recurring Bills",
+      "role": "menu",
+      "purpose": "Recurring Bills",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-121",
+      "tag": "a",
+      "text": "Recurring Bills",
+      "role": "navigation",
+      "purpose": "Route #/recurringbills",
+      "expected_action": "navigate",
+      "expected_target": "#/recurringbills",
+      "href": "#/recurringbills"
+    },
+    {
+      "id": "el-122",
+      "tag": "span",
+      "text": "Recurring Bills",
+      "role": "unknown",
+      "purpose": "Recurring Bills",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-123",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/recurringbills/new",
+      "expected_action": "navigate",
+      "expected_target": "#/recurringbills/new",
+      "href": "#/recurringbills/new"
+    },
+    {
+      "id": "el-124",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-125",
+      "tag": "li",
+      "text": "Payments Made",
+      "role": "menu",
+      "purpose": "Payments Made",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-126",
+      "tag": "a",
+      "text": "Payments Made",
+      "role": "navigation",
+      "purpose": "Route #/paymentsmade",
+      "expected_action": "navigate",
+      "expected_target": "#/paymentsmade",
+      "href": "#/paymentsmade"
+    },
+    {
+      "id": "el-127",
+      "tag": "span",
+      "text": "Payments Made",
+      "role": "unknown",
+      "purpose": "Payments Made",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-128",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/paymentsmade/new",
+      "expected_action": "navigate",
+      "expected_target": "#/paymentsmade/new",
+      "href": "#/paymentsmade/new"
+    },
+    {
+      "id": "el-129",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-130",
+      "tag": "li",
+      "text": "Vendor Credits",
+      "role": "menu",
+      "purpose": "Vendor Credits",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-131",
+      "tag": "a",
+      "text": "Vendor Credits",
+      "role": "navigation",
+      "purpose": "Route #/vendorcredits",
+      "expected_action": "navigate",
+      "expected_target": "#/vendorcredits",
+      "href": "#/vendorcredits"
+    },
+    {
+      "id": "el-132",
+      "tag": "span",
+      "text": "Vendor Credits",
+      "role": "unknown",
+      "purpose": "Vendor Credits",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-133",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/vendorcredits/new",
+      "expected_action": "navigate",
+      "expected_target": "#/vendorcredits/new",
+      "href": "#/vendorcredits/new"
+    },
+    {
+      "id": "el-134",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-135",
+      "tag": "li",
+      "text": "Time Tracking Projects Timesheet",
+      "role": "menu",
+      "purpose": "Time Tracking Projects Timesheet",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-136",
+      "tag": "h3",
+      "text": "Time Tracking",
+      "role": "menu",
+      "purpose": "Time Tracking",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-137",
+      "tag": "button",
+      "text": "Time Tracking",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-138",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-139",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-140",
+      "tag": "span",
+      "text": "Time Tracking",
+      "role": "unknown",
+      "purpose": "Time Tracking",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-141",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-142",
+      "tag": "ul",
+      "text": "Projects Timesheet",
+      "role": "menu",
+      "purpose": "Projects Timesheet",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-143",
+      "tag": "li",
+      "text": "Projects",
+      "role": "menu",
+      "purpose": "Projects",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-144",
+      "tag": "a",
+      "text": "Projects",
+      "role": "navigation",
+      "purpose": "Route #/timesheet/projects",
+      "expected_action": "navigate",
+      "expected_target": "#/timesheet/projects",
+      "href": "#/timesheet/projects"
+    },
+    {
+      "id": "el-145",
+      "tag": "span",
+      "text": "Projects",
+      "role": "menu",
+      "purpose": "Projects",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-146",
+      "tag": "li",
+      "text": "Timesheet",
+      "role": "menu",
+      "purpose": "Timesheet",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-147",
+      "tag": "a",
+      "text": "Timesheet",
+      "role": "navigation",
+      "purpose": "Route #/timesheet/alltimeentries",
+      "expected_action": "navigate",
+      "expected_target": "#/timesheet/alltimeentries",
+      "href": "#/timesheet/alltimeentries"
+    },
+    {
+      "id": "el-148",
+      "tag": "span",
+      "text": "Timesheet",
+      "role": "unknown",
+      "purpose": "Timesheet",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-149",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-150",
+      "tag": "li",
+      "text": "",
+      "role": "menu",
+      "purpose": "li element",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-151",
+      "tag": "li",
+      "text": "Banking",
+      "role": "menu",
+      "purpose": "Banking",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-152",
+      "tag": "a",
+      "text": "Banking",
+      "role": "navigation",
+      "purpose": "Route #/banking",
+      "expected_action": "navigate",
+      "expected_target": "#/banking",
+      "href": "#/banking"
+    },
+    {
+      "id": "el-153",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-154",
+      "tag": "span",
+      "text": "Banking",
+      "role": "unknown",
+      "purpose": "Banking",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-155",
+      "tag": "li",
+      "text": "Accountant Manual Journals Bulk Update Currency Adjustments Chart of Accounts Budgets Transaction Locking",
+      "role": "menu",
+      "purpose": "Accountant Manual Journals Bulk Update Currency Adjustments Chart of Accounts Bu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-156",
+      "tag": "h3",
+      "text": "Accountant",
+      "role": "menu",
+      "purpose": "Accountant",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-157",
+      "tag": "button",
+      "text": "Accountant",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-158",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-159",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-160",
+      "tag": "span",
+      "text": "Accountant",
+      "role": "unknown",
+      "purpose": "Accountant",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-161",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-162",
+      "tag": "ul",
+      "text": "Manual Journals Bulk Update Currency Adjustments Chart of Accounts Budgets Transaction Locking",
+      "role": "menu",
+      "purpose": "Manual Journals Bulk Update Currency Adjustments Chart of Accounts Budgets Trans",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-163",
+      "tag": "li",
+      "text": "Manual Journals",
+      "role": "menu",
+      "purpose": "Manual Journals",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-164",
+      "tag": "a",
+      "text": "Manual Journals",
+      "role": "navigation",
+      "purpose": "Route #/accountant/journals",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/journals",
+      "href": "#/accountant/journals"
+    },
+    {
+      "id": "el-165",
+      "tag": "span",
+      "text": "Manual Journals",
+      "role": "unknown",
+      "purpose": "Manual Journals",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-166",
+      "tag": "a",
+      "text": "",
+      "role": "navigation",
+      "purpose": "Route #/accountant/journals/new",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/journals/new",
+      "href": "#/accountant/journals/new"
+    },
+    {
+      "id": "el-167",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-168",
+      "tag": "li",
+      "text": "Bulk Update",
+      "role": "menu",
+      "purpose": "Bulk Update",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-169",
+      "tag": "a",
+      "text": "Bulk Update",
+      "role": "navigation",
+      "purpose": "Route #/accountant/bulkupdateaccounts",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/bulkupdateaccounts",
+      "href": "#/accountant/bulkupdateaccounts"
+    },
+    {
+      "id": "el-170",
+      "tag": "span",
+      "text": "Bulk Update",
+      "role": "menu",
+      "purpose": "Bulk Update",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-171",
+      "tag": "li",
+      "text": "Currency Adjustments",
+      "role": "menu",
+      "purpose": "Currency Adjustments",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-172",
+      "tag": "a",
+      "text": "Currency Adjustments",
+      "role": "navigation",
+      "purpose": "Route #/accountant/bcyadjustment/list",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/bcyadjustment/list",
+      "href": "#/accountant/bcyadjustment/list"
+    },
+    {
+      "id": "el-173",
+      "tag": "span",
+      "text": "Currency Adjustments",
+      "role": "menu",
+      "purpose": "Currency Adjustments",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-174",
+      "tag": "li",
+      "text": "Chart of Accounts",
+      "role": "menu",
+      "purpose": "Chart of Accounts",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-175",
+      "tag": "a",
+      "text": "Chart of Accounts",
+      "role": "navigation",
+      "purpose": "Route #/accountant/chartofaccounts",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/chartofaccounts",
+      "href": "#/accountant/chartofaccounts"
+    },
+    {
+      "id": "el-176",
+      "tag": "span",
+      "text": "Chart of Accounts",
+      "role": "menu",
+      "purpose": "Chart of Accounts",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-177",
+      "tag": "li",
+      "text": "Budgets",
+      "role": "menu",
+      "purpose": "Budgets",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-178",
+      "tag": "a",
+      "text": "Budgets",
+      "role": "navigation",
+      "purpose": "Route #/accountant/budgets",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/budgets",
+      "href": "#/accountant/budgets"
+    },
+    {
+      "id": "el-179",
+      "tag": "span",
+      "text": "Budgets",
+      "role": "menu",
+      "purpose": "Budgets",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-180",
+      "tag": "li",
+      "text": "Transaction Locking",
+      "role": "menu",
+      "purpose": "Transaction Locking",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-181",
+      "tag": "a",
+      "text": "Transaction Locking",
+      "role": "navigation",
+      "purpose": "Route #/accountant/transactionlock",
+      "expected_action": "navigate",
+      "expected_target": "#/accountant/transactionlock",
+      "href": "#/accountant/transactionlock"
+    },
+    {
+      "id": "el-182",
+      "tag": "span",
+      "text": "Transaction Locking",
+      "role": "unknown",
+      "purpose": "Transaction Locking",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-183",
+      "tag": "li",
+      "text": "Reports",
+      "role": "menu",
+      "purpose": "Reports",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-184",
+      "tag": "a",
+      "text": "Reports",
+      "role": "navigation",
+      "purpose": "Route #/reports",
+      "expected_action": "navigate",
+      "expected_target": "#/reports",
+      "href": "#/reports"
+    },
+    {
+      "id": "el-185",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-186",
+      "tag": "span",
+      "text": "Reports",
+      "role": "menu",
+      "purpose": "Reports",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-187",
+      "tag": "li",
+      "text": "Documents",
+      "role": "menu",
+      "purpose": "Documents",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-188",
+      "tag": "a",
+      "text": "Documents",
+      "role": "navigation",
+      "purpose": "Route #/documents/inbox",
+      "expected_action": "navigate",
+      "expected_target": "#/documents/inbox",
+      "href": "#/documents/inbox"
+    },
+    {
+      "id": "el-189",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-190",
+      "tag": "span",
+      "text": "Documents",
+      "role": "unknown",
+      "purpose": "Documents",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-191",
+      "tag": "li",
+      "text": "",
+      "role": "menu",
+      "purpose": "li element",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-192",
+      "tag": "li",
+      "text": "",
+      "role": "menu",
+      "purpose": "li element",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-193",
+      "tag": "li",
+      "text": "Apps",
+      "role": "menu",
+      "purpose": "Apps",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-194",
+      "tag": "li",
+      "text": "Zoho Payroll",
+      "role": "menu",
+      "purpose": "Zoho Payroll",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-195",
+      "tag": "a",
+      "text": "Zoho Payroll",
+      "role": "navigation",
+      "purpose": "Route #/payroll",
+      "expected_action": "navigate",
+      "expected_target": "#/payroll",
+      "href": "#/payroll"
+    },
+    {
+      "id": "el-196",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-197",
+      "tag": "span",
+      "text": "Zoho Payroll",
+      "role": "menu",
+      "purpose": "Zoho Payroll",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-198",
+      "tag": "li",
+      "text": "Zoho Payments",
+      "role": "menu",
+      "purpose": "Zoho Payments",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-199",
+      "tag": "a",
+      "text": "Zoho Payments",
+      "role": "navigation",
+      "purpose": "Route #/payments",
+      "expected_action": "navigate",
+      "expected_target": "#/payments",
+      "href": "#/payments"
+    },
+    {
+      "id": "el-200",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-201",
+      "tag": "span",
+      "text": "Zoho Payments",
+      "role": "menu",
+      "purpose": "Zoho Payments",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-202",
+      "tag": "li",
+      "text": "",
+      "role": "menu",
+      "purpose": "li element",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-203",
+      "tag": "li",
+      "text": "Configure Features",
+      "role": "menu",
+      "purpose": "Configure Features",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-204",
+      "tag": "a",
+      "text": "Configure Features",
+      "role": "navigation",
+      "purpose": "Navigate to home-dashboard.html",
+      "expected_action": "navigate",
+      "expected_target": "home-dashboard.html",
+      "href": "home-dashboard.html"
+    },
+    {
+      "id": "el-205",
+      "tag": "span",
+      "text": "Configure Features",
+      "role": "unknown",
+      "purpose": "Configure Features",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-206",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-207",
+      "tag": "li",
+      "text": "Take a live product tour",
+      "role": "unknown",
+      "purpose": "Take a live product tour",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-208",
+      "tag": "button",
+      "text": "Take a live product tour",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-209",
+      "tag": "span",
+      "text": "Take a live product tour",
+      "role": "unknown",
+      "purpose": "Take a live product tour",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-210",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-211",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-212",
+      "tag": "button",
+      "text": "All Invoices",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-213",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-214",
+      "tag": "button",
+      "text": "New",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-215",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-216",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-217",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-218",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-219",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-220",
+      "tag": "img",
+      "text": "",
+      "role": "unknown",
+      "purpose": "img element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-221",
+      "tag": "a",
+      "text": "Learn how to create your first invoice",
+      "role": "navigation",
+      "purpose": "Navigate to home-dashboard.html",
+      "expected_action": "navigate",
+      "expected_target": "home-dashboard.html",
+      "href": "home-dashboard.html"
+    },
+    {
+      "id": "el-222",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-223",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-224",
+      "tag": "h3",
+      "text": "It's time to get paid!",
+      "role": "unknown",
+      "purpose": "It's time to get paid!",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-225",
+      "tag": "button",
+      "text": "New Invoice",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-226",
+      "tag": "button",
+      "text": "New Recurring Invoice",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-227",
+      "tag": "a",
+      "text": "Import Invoices",
+      "role": "navigation",
+      "purpose": "Route #/invoices/import",
+      "expected_action": "navigate",
+      "expected_target": "#/invoices/import",
+      "href": "#/invoices/import"
+    },
+    {
+      "id": "el-228",
+      "tag": "h4",
+      "text": "Life cycle of an Invoice",
+      "role": "unknown",
+      "purpose": "Life cycle of an Invoice",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-229",
+      "tag": "img",
+      "text": "",
+      "role": "unknown",
+      "purpose": "img element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-230",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-231",
+      "tag": "h4",
+      "text": "Brand Your Invoices",
+      "role": "unknown",
+      "purpose": "Brand Your Invoices",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-232",
+      "tag": "a",
+      "text": "Learn More",
+      "role": "navigation",
+      "purpose": "Navigate to https://www.zoho.com/in/books/help/settings/templates.html",
+      "expected_action": "navigate",
+      "expected_target": "https://www.zoho.com/in/books/help/settings/templates.html",
+      "href": "https://www.zoho.com/in/books/help/settings/templates.html"
+    },
+    {
+      "id": "el-233",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-234",
+      "tag": "h4",
+      "text": "Collect Online Payments",
+      "role": "unknown",
+      "purpose": "Collect Online Payments",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-235",
+      "tag": "a",
+      "text": "Learn More",
+      "role": "navigation",
+      "purpose": "Learn More",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": "https://www.zoho.com/in/books/help/online-payments/"
+    },
+    {
+      "id": "el-236",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-237",
+      "tag": "h4",
+      "text": "Customer Portal",
+      "role": "unknown",
+      "purpose": "Customer Portal",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-238",
+      "tag": "a",
+      "text": "Learn More",
+      "role": "navigation",
+      "purpose": "Navigate to https://www.zoho.com/in/books/help/customer-portal/index.html",
+      "expected_action": "navigate",
+      "expected_target": "https://www.zoho.com/in/books/help/customer-portal/index.html",
+      "href": "https://www.zoho.com/in/books/help/customer-portal/index.html"
+    },
+    {
+      "id": "el-239",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-240",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-241",
+      "tag": "button",
+      "text": "",
+      "role": "menu",
+      "purpose": "Open dropdown menu",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-242",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-243",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-244",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-245",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-246",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-247",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-248",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-249",
+      "tag": "svg",
+      "text": "",
+      "role": "unknown",
+      "purpose": "svg element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-250",
+      "tag": "img",
+      "text": "",
+      "role": "unknown",
+      "purpose": "img element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-251",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-252",
+      "tag": "label",
+      "text": "Pause chat here",
+      "role": "unknown",
+      "purpose": "Pause chat here",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-253",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-254",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-255",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-256",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-257",
+      "tag": "label",
+      "text": "One - One Chats",
+      "role": "unknown",
+      "purpose": "One - One Chats",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-258",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-259",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-260",
+      "tag": "label",
+      "text": "Mention",
+      "role": "unknown",
+      "purpose": "Mention",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-261",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-262",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-263",
+      "tag": "label",
+      "text": "Group Chats",
+      "role": "unknown",
+      "purpose": "Group Chats",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-264",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-265",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-266",
+      "tag": "label",
+      "text": "Channels",
+      "role": "unknown",
+      "purpose": "Channels",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-267",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-268",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-269",
+      "tag": "label",
+      "text": "Pinned Chats",
+      "role": "unknown",
+      "purpose": "Pinned Chats",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-270",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-271",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-272",
+      "tag": "label",
+      "text": "Reminder Messages",
+      "role": "unknown",
+      "purpose": "Reminder Messages",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-273",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-274",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-275",
+      "tag": "label",
+      "text": "Bot Messages",
+      "role": "unknown",
+      "purpose": "Bot Messages",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-276",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-277",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-278",
+      "tag": "label",
+      "text": "Audio & Video Calls",
+      "role": "unknown",
+      "purpose": "Audio & Video Calls",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-279",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-280",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-281",
+      "tag": "label",
+      "text": "Screen Share",
+      "role": "unknown",
+      "purpose": "Screen Share",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-282",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-283",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-284",
+      "tag": "label",
+      "text": "One - One Chats",
+      "role": "unknown",
+      "purpose": "One - One Chats",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-285",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-286",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-287",
+      "tag": "label",
+      "text": "Mention",
+      "role": "unknown",
+      "purpose": "Mention",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-288",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-289",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-290",
+      "tag": "label",
+      "text": "Group Chats",
+      "role": "unknown",
+      "purpose": "Group Chats",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-291",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-292",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-293",
+      "tag": "label",
+      "text": "Channels",
+      "role": "unknown",
+      "purpose": "Channels",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-294",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-295",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-296",
+      "tag": "label",
+      "text": "Pinned Chats",
+      "role": "unknown",
+      "purpose": "Pinned Chats",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-297",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-298",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-299",
+      "tag": "label",
+      "text": "Reminder Messages",
+      "role": "unknown",
+      "purpose": "Reminder Messages",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-300",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-301",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-302",
+      "tag": "label",
+      "text": "Bot Messages",
+      "role": "unknown",
+      "purpose": "Bot Messages",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-303",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-304",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-305",
+      "tag": "label",
+      "text": "Change of user status",
+      "role": "unknown",
+      "purpose": "Change of user status",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-306",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-307",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-308",
+      "tag": "label",
+      "text": "Enable read receipt for conversations",
+      "role": "unknown",
+      "purpose": "Enable read receipt for conversations",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-309",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-310",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-311",
+      "tag": "label",
+      "text": "If disabled, you'll not be able to see the last seen of any of your contacts.",
+      "role": "unknown",
+      "purpose": "If disabled, you'll not be able to see the last seen of any of your contacts.",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-312",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-313",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-314",
+      "tag": "label",
+      "text": "",
+      "role": "unknown",
+      "purpose": "label element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-315",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-316",
+      "tag": "select",
+      "text": "Manual Translation Automated Translation",
+      "role": "input",
+      "purpose": "Form field: Manual Translation Automated Translation",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-317",
+      "tag": "a",
+      "text": "Create a channel",
+      "role": "navigation",
+      "purpose": "Create a channel",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": "https://cliq.zoho.in/officechat/index.do#createchannel"
+    },
+    {
+      "id": "el-318",
+      "tag": "a",
+      "text": "Click to unpause",
+      "role": "unknown",
+      "purpose": "Click to unpause",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-319",
+      "tag": "img",
+      "text": "",
+      "role": "unknown",
+      "purpose": "img element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-320",
+      "tag": "span",
+      "text": "",
+      "role": "unknown",
+      "purpose": "span element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-321",
+      "tag": "input",
+      "text": "",
+      "role": "input",
+      "purpose": "Form field: input",
+      "expected_action": "none",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-322",
+      "tag": "span",
+      "text": "",
+      "role": "menu",
+      "purpose": "span element",
+      "expected_action": "toggle",
+      "expected_target": null,
+      "href": null
+    },
+    {
+      "id": "el-323",
+      "tag": "div",
+      "text": "",
+      "role": "unknown",
+      "purpose": "div element",
+      "expected_action": "unknown",
+      "expected_target": null,
+      "href": null
+    }
+  ]
+}
