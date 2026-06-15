@@ -14,7 +14,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-3.1-pro"
 MAX_HTML_CHARS = 120_000
 
 PROMPT = """You are analyzing a single page from a SaaS application.

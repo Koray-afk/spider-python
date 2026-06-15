@@ -12,7 +12,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-3.1-pro"
 CLEANED_DIR = Path("analysis")
 OUTPUT_DIR = Path("analysis/page_knowledge")
 
