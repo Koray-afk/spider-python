@@ -8,9 +8,9 @@ APPS = {
             "&signupurl=https://www.zoho.com%2fin%2fbooks%2fsignup%2f"
         ),
         "post_auth_home": "https://books.zoho.in",
-        "max_pages_pre_auth": 5,
-        "max_pages_post_auth": 5,
-        "max_interactions_per_page": 50,
+        "max_pages_pre_auth": 2,
+        "max_pages_post_auth": 10,
+        "max_interactions_per_page": 10,
     },
 }
 

@@ -4,16 +4,6 @@ import sys
 
 from config import APPS, get_app_config
 from crawler_v2 import crawl_application, crawl_postauth, crawl_preauth
-from pipeline import (
-    run_analyze_pipeline,
-    run_catalog_pipeline,
-    run_clean_pipeline,
-    run_component_tree_pipeline,
-    run_modules_pipeline,
-    run_preview_pipeline,
-    run_semantic_tree_pipeline,
-    run_workflows_pipeline,
-)
 from reconciler import reconcile_app
 from src.runtime.server import DEFAULT_PORT, serve_app
 from stitcher_v1 import stitch_app
@@ -154,20 +144,36 @@ def main() -> None:
     elif command == "clean":
         cmd_clean(app_name)
     elif command == "html-clean":
+        from pipeline import run_clean_pipeline
+
         run_clean_pipeline(app_name)
     elif command == "analyze":
+        from pipeline import run_analyze_pipeline
+
         run_analyze_pipeline(app_name)
     elif command == "semantic_tree":
+        from pipeline import run_semantic_tree_pipeline
+
         run_semantic_tree_pipeline(app_name)
     elif command == "component_tree":
+        from pipeline import run_component_tree_pipeline
+
         run_component_tree_pipeline(app_name)
     elif command == "catalog":
+        from pipeline import run_catalog_pipeline
+
         run_catalog_pipeline(app_name)
     elif command == "workflows":
+        from pipeline import run_workflows_pipeline
+
         run_workflows_pipeline(app_name)
     elif command == "modules":
+        from pipeline import run_modules_pipeline
+
         run_modules_pipeline(app_name)
     elif command == "preview":
+        from pipeline import run_preview_pipeline
+
         run_preview_pipeline(app_name)
     else:
         usage()
