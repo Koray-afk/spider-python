@@ -132,7 +132,7 @@ def log_page_io_pairs(
 
 
 def pick_preview_slug(metadata_dir: Path) -> str:
-    from stitcher.page_stitch import pick_entry_slug
+    from page_stitch import pick_entry_slug
 
     sitemap = load_sitemap(metadata_dir)
     if not sitemap:

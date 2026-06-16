@@ -1,0 +1,601 @@
+{
+  "app-60073668069-home": {
+    "title": "Dashboard | Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/home",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "button",
+        "type": "overlay",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/006-button/page.html"
+      },
+      {
+        "label": "Collapse/Expand",
+        "type": "unknown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/014-collapse-expand/page.html"
+      },
+      {
+        "label": "New",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/016-new/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b93,000.00",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/017-3-000-00/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b92,979.00",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/018-2-979-00/page.html"
+      },
+      {
+        "label": "This Fiscal Year",
+        "type": "dropdown",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/019-this-fiscal-year/page.html"
+      },
+      {
+        "label": "Accrual",
+        "type": "dropdown",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/020-accrual/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/021-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/022-button/page.html"
+      },
+      {
+        "label": "Subscribe",
+        "type": "modal",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/023-subscribe/page.html"
+      },
+      {
+        "label": "testing",
+        "type": "overlay",
+        "ui_id": "interaction_15",
+        "has_ui": true,
+        "fallback": "interactions/024-testing/page.html"
+      },
+      {
+        "label": "div",
+        "type": "unknown",
+        "ui_id": "interaction_16",
+        "has_ui": true,
+        "fallback": "interactions/027-div/page.html"
+      }
+    ]
+  },
+  "app-60073668069-home-dashboard": {
+    "title": "Dashboard | Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "button",
+        "type": "overlay",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/006-button/page.html"
+      },
+      {
+        "label": "New",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/016-new/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b93,000.00",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/017-3-000-00/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b92,979.00",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/018-2-979-00/page.html"
+      },
+      {
+        "label": "This Fiscal Year",
+        "type": "dropdown",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/019-this-fiscal-year/page.html"
+      },
+      {
+        "label": "Accrual",
+        "type": "dropdown",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/020-accrual/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/021-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/022-button/page.html"
+      },
+      {
+        "label": "Subscribe",
+        "type": "modal",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/023-subscribe/page.html"
+      },
+      {
+        "label": "testing",
+        "type": "overlay",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/024-testing/page.html"
+      },
+      {
+        "label": "div",
+        "type": "unknown",
+        "ui_id": "interaction_15",
+        "has_ui": true,
+        "fallback": "interactions/027-div/page.html"
+      }
+    ]
+  },
+  "app-60073668069-inventory-pricelists": {
+    "title": "Price Lists | Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "button",
+        "type": "overlay",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/006-button/page.html"
+      },
+      {
+        "label": "Collapse/Expand",
+        "type": "unknown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/014-collapse-expand/page.html"
+      },
+      {
+        "label": "All Price Lists",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/015-all-price-lists/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/017-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/018-advanced-search/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/019-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/020-button/page.html"
+      },
+      {
+        "label": "Subscribe",
+        "type": "modal",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/021-subscribe/page.html"
+      },
+      {
+        "label": "testing",
+        "type": "overlay",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/022-testing/page.html"
+      },
+      {
+        "label": "Default Price List for Retail Transactions",
+        "type": "modal",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/023-default-price-list-for-retail-transactions/page.html"
+      },
+      {
+        "label": "Delete",
+        "type": "modal",
+        "ui_id": "interaction_15",
+        "has_ui": true,
+        "fallback": "interactions/025-delete/page.html"
+      }
+    ]
+  },
+  "app-60073668069-inventory-product-index": {
+    "title": "Items | Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/inventory/product/index",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "button",
+        "type": "overlay",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/006-button/page.html"
+      },
+      {
+        "label": "Collapse/Expand",
+        "type": "unknown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/014-collapse-expand/page.html"
+      },
+      {
+        "label": "All Items",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/015-all-items/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/017-more-actions/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/018-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/023-advanced-search/page.html"
+      },
+      {
+        "label": "Next Page",
+        "type": "unknown",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/026-next-page/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/027-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/028-button/page.html"
+      },
+      {
+        "label": "25 per page",
+        "type": "dropdown",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/029-25-per-page/page.html"
+      },
+      {
+        "label": "Subscribe",
+        "type": "modal",
+        "ui_id": "interaction_15",
+        "has_ui": true,
+        "fallback": "interactions/030-subscribe/page.html"
+      },
+      {
+        "label": "testing",
+        "type": "overlay",
+        "ui_id": "interaction_16",
+        "has_ui": true,
+        "fallback": "interactions/031-testing/page.html"
+      }
+    ]
+  },
+  "app-60073668069-inventory-product-product-creation": {
+    "title": "Add New Item | Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/inventory/product/product-creation",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "button",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/006-button/page.html"
+      },
+      {
+        "label": "TAKE A LIVE PRODUCT TOUR",
+        "type": "unknown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/013-take-a-live-product-tour/page.html"
+      },
+      {
+        "label": "Collapse/Expand",
+        "type": "unknown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/014-collapse-expand/page.html"
+      },
+      {
+        "label": "Save",
+        "type": "unknown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/016-save/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/018-button/page.html"
+      },
+      {
+        "label": "button",
+        "type": "tooltip",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/019-button/page.html"
+      },
+      {
+        "label": "Sales",
+        "type": "dropdown",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/020-sales/page.html"
+      },
+      {
+        "label": "Cost of Goods Sold",
+        "type": "dropdown",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/021-cost-of-goods-sold/page.html"
+      },
+      {
+        "label": "div",
+        "type": "dropdown",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/022-div/page.html"
+      },
+      {
+        "label": "Subscribe",
+        "type": "modal",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/023-subscribe/page.html"
+      },
+      {
+        "label": "testing",
+        "type": "overlay",
+        "ui_id": "interaction_15",
+        "has_ui": true,
+        "fallback": "interactions/024-testing/page.html"
+      }
+    ]
+  }
+}

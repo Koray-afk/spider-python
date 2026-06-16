@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-home-dashboard",
+  "source_url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+  "source_title": "Dashboard | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Show dropdown menu",
+    "selector": "#dd-eca299ed-c2a7-4edf-91e5-6bf2fa82549a > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"4\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/header[1]/div[5]/div[1]/div[1]/button[1]",
+    "outer_html": "<button for=\"eca299ed-c2a7-4edf-91e5-6bf2fa82549a\" aria-controls=\"eca299ed-c2a7-4edf-91e5-6bf2fa82549a\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"4\"><span id=\"quick-create\"><span id=\"df1d9762-61b6-47d6-a13f-ee138a455fcc\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+    "slug": "app-60073668069-home-dashboard",
+    "title": "Dashboard | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"eca299ed-c2a7-4edf-91e5-6bf2fa82549a\" aria-controls=\"eca299ed-c2a7-4edf-91e5-6bf2fa82549a\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"4\"><span id=\"quick-create\"><span id=\"df1d9762-61b6-47d6-a13f-ee138a455fcc\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>",
+  "trigger_label": "Show dropdown menu",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
+  "target_url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+  "target_slug": "app-60073668069-home-dashboard",
+  "target_title": "Dashboard | Zoho Books"
+}

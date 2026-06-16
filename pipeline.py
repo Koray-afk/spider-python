@@ -3,9 +3,9 @@
 import subprocess
 import sys
 
-from config.apps import get_app_config
-from crawler.crawler_v2 import crawl_application
-from stitcher.page_stitch import stitch_application
+from config import get_app_config
+from crawler_v2 import crawl_application
+from page_stitch import stitch_application
 from analyzer.html_cleaner import clean_application
 from analyzer.business_analyzer import analyze_application
 from analyzer.app_catalog_analyzer import build_catalog_application
