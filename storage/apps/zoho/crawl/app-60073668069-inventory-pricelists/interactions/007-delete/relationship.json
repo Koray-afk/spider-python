@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-pricelists",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+  "source_title": "Price Lists | Zoho Books",
+  "trigger": {
+    "tag_name": "span",
+    "text": "Delete",
+    "id": "",
+    "class_name": "text-red",
+    "name": "",
+    "role": "button",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember318 > td:nth-of-type(6) > div:nth-of-type(1) > span:nth-of-type(4)",
+    "crawl_selector": "[data-crawl-id=\"26\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/span[4]",
+    "outer_html": "<span class=\"text-red\" data-ember-action=\"\" data-ember-action-322=\"322\" tabindex=\"0\" role=\"button\" data-crawl-id=\"26\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 418 512\" class=\"icon icon-sm align-middle icon-trash\"><path d=\"M397.98 80.58H302.24V53.83C302.24 24.15 278.07 0 248.37 0h-78.75c-29.71 0-53.88 24.15-53.88 53.83v26.75H20.02C8.96 80.58 0 89.53 0 100.58s8.96 20 20.02 20H37.4l17.4 310.45c2.54 45.4 40.19 80.97 85.71 80.97h137c45.52 0 83.16-35.57 85.71-80.97l17.4-310.45H398c11.06 0 20.02-8.95 20.02-20s-8.96-20-20.02-20zm-242.2-26.75c0-7.63 6.21-13.83 13.84-13.83h78.75c7.63 0 13.83 6.2 13.83 13.83v26.75H155.77V53.83zM323.23 428.8c-1.36 24.23-21.45 43.2-45.73 43.2h-137c-24.29 0-44.38-18.98-45.73-43.2L77.5 120.58h263.01L323.24 428.8z\" id=\"Layer_1-2\"></path></svg> Delete <!----></span>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+    "slug": "app-60073668069-inventory-pricelists",
+    "title": "Price Lists | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<span class=\"text-red\" data-ember-action=\"\" data-ember-action-322=\"322\" tabindex=\"0\" role=\"button\" data-crawl-id=\"26\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 418 512\" class=\"icon icon-sm align-middle icon-trash\"><path d=\"M397.98 80.58H302.24V53.83C302.24 24.15 278.07 0 248.37 0h-78.75c-29.71 0-53.88 24.15-53.88 53.83v26.75H20.02C8.96 80.58 0 89.53 0 100.58s8.96 20 20.02 20H37.4l17.4 310.45c2.54 45.4 40.19 80.97 85.71 80.97h137c45.52 0 83.16-35.57 85.71-80.97l17.4-310.45H398c11.06 0 20.02-8.95 20.02-20s-8.96-20-20.02-20zm-242.2-26.75c0-7.63 6.21-13.83 13.84-13.83h78.75c7.63 0 13.83 6.2 13.83 13.83v26.75H155.77V53.83zM323.23 428.8c-1.36 24.23-21.45 43.2-45.73 43.2h-137c-24.29 0-44.38-18.98-45.73-43.2L77.5 120.58h263.01L323.24 428.8z\" id=\"Layer_1-2\"></path></svg> Delete <!----></span>",
+  "trigger_label": "Delete",
+  "trigger_id": "",
+  "trigger_class": "text-red",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+  "target_slug": "app-60073668069-inventory-pricelists",
+  "target_title": "Price Lists | Zoho Books"
+}

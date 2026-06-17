@@ -1,0 +1,18 @@
+{
+  "trigger": {
+    "label": "This Fiscal Year",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle      criteriadashbadge db-po-label fw-light   no-caret",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button for=\"e6daa20e-b8a9-4829-81fe-28f631a6e14c\" aria-controls=\"e6daa20e-b8a9-4829-81fe-28f631a6e14c\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle      criteriadashbadge db-po-label fw-light   no-caret\" type=\"button\" data-crawl-id=\"19\"><!----><span>This Fiscal Year</span> <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"fill-dropdown-blue icon icon-xxs align-middle mb-1 ms-1\" width=\"8px\" height=\"8px\"><path d=\"M492.9 211.6c-25.5-25.7-67.1-25.8-92.8-.3L256 354.2l-144.1-143c-25.7-25.5-67.3-25.4-92.8.3s-25.4 67.2.3 92.7L209.8 493c25.6 25.4 66.9 25.4 92.5 0l190.4-188.8c12.9-12.8 19.4-29.7 19.4-46.5-.1-16.6-6.5-33.4-19.2-46.1z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<div tabindex=\"0\"></div>\n<div class=\"dropdown-menu scrollmenu listview-filter show\" data-popper-placement=\"bottom-end\" id=\"e6daa20e-b8a9-4829-81fe-28f631a6e14c\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-701px, 476.938px);\"><!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-729=\"729\" type=\"button\">This Fiscal Year</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-730=\"730\" type=\"button\">Previous Fiscal Year</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-731=\"731\" type=\"button\">Last 12 Months</button></div>\n<div tabindex=\"0\"></div>\n<div class=\"dropdown open ember-view clearfix list-title\" id=\"dd-e6daa20e-b8a9-4829-81fe-28f631a6e14c\"><button aria-controls=\"e6daa20e-b8a9-4829-81fe-28f631a6e14c\" aria-expanded=\"true\" aria-haspopup=\"true\" class=\"dropdown-toggle criteriadashbadge db-po-label fw-light no-caret\" data-crawl-id=\"19\" for=\"e6daa20e-b8a9-4829-81fe-28f631a6e14c\" type=\"button\"><!-- --><span>This Fiscal Year</span> <svg class=\"fill-dropdown-blue icon icon-xxs align-middle mb-1 ms-1\" height=\"8px\" id=\"Layer_1\" version=\"1.1\" viewbox=\"0 0 512 512\" width=\"8px\" x=\"0\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\"><path d=\"M492.9 211.6c-25.5-25.7-67.1-25.8-92.8-.3L256 354.2l-144.1-143c-25.7-25.5-67.3-25.4-92.8.3s-25.4 67.2.3 92.7L209.8 493c25.6 25.4 66.9 25.4 92.5 0l190.4-188.8c12.9-12.8 19.4-29.7 19.4-46.5-.1-16.6-6.5-33.4-19.2-46.1z\"></path></svg></button> <!-- --> <!-- --></div>",
+  "backdrop_html": ""
+}

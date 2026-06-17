@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   input-group-text",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "FIFO Cost Lot Tracking Report",
+    "id": "",
+    "className": "btn btn-link",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New",
+    "id": "",
+    "className": "btn btn-primary d-flex align-items-center ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More Actions",
+    "id": "fdf2b67c-04ea-450b-a927-3208daa639ec",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Type:\u00a0\nAll",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger filter-pill  icon-position list-view-select w-100",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Period:\u00a0\nAll",
+    "id": "",
+    "className": "dropdown-toggle   filter-pill      no-caret",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "CREATE ADJUSTMENT",
+    "id": "",
+    "className": "btn btn-primary uppercase ",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "1",
+    "id": "efcbf5d2-8d22-4cad-b95e-cb4fb6529f1f",
+    "className": "d-flex icon-button position-relative justify-content-center ",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  }
+]

@@ -149,7 +149,34 @@
         return;
       }
 
-      // 3. Non-anchor page navigation discovered during crawl.
+      // 3. Tab switch — replace content region in-place.
+      var tabTrigger = t.closest("[data-stitch-tab-id]");
+      if (tabTrigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        var tabId = tabTrigger.getAttribute("data-stitch-tab-id");
+        var tabCfg = (window.__STITCH_TABS__ || {})[tabId];
+        if (tabCfg && tabCfg.contentSelector && tabCfg.contentHtml) {
+          var panel = document.querySelector(tabCfg.contentSelector);
+          if (panel) panel.innerHTML = tabCfg.contentHtml;
+          var par = tabTrigger.parentElement;
+          if (par) {
+            Array.prototype.forEach.call(
+              par.querySelectorAll("[data-stitch-tab-id]"),
+              function (sib) {
+                sib.classList.remove("active", "selected");
+                sib.setAttribute("aria-selected", "false");
+              }
+            );
+          }
+          tabTrigger.classList.add("active");
+          tabTrigger.setAttribute("aria-selected", "true");
+          console.log("[STITCH] Tab Switch", tabId, "→", tabCfg.contentSelector);
+        }
+        return;
+      }
+
+      // 4. Non-anchor page navigation discovered during crawl.
       var goTrigger = t.closest("[data-stitch-go]");
       if (goTrigger) {
         e.preventDefault();
@@ -158,7 +185,7 @@
         return;
       }
 
-      // 4. Page navigation: local rewritten anchors work natively. Block any
+      // 5. Page navigation: local rewritten anchors work natively. Block any
       //    leftover production/external link so nothing escapes the clone.
       var a = t.closest("a[href]");
       if (a) {

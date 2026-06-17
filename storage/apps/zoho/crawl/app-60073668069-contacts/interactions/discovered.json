@@ -1,0 +1,66 @@
+[
+  {
+    "label": "New",
+    "id": "",
+    "className": "btn btn-primary d-flex align-items-center ",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "View",
+    "id": "",
+    "className": "btn btn-link p-0 align-baseline",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "More Actions",
+    "id": "c6509e80-8e22-49a8-b506-9e8c3823d538",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced Search",
+    "id": "",
+    "className": "icon-button",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Customers",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "NAME",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,98 +1,32 @@
 [
   {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"2\"]",
-    "interaction_path": "interactions/002-show-dropdown-menu",
-    "relationship_file": "interactions/002-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"3\"]",
-    "interaction_path": "interactions/003-show-dropdown-menu",
-    "relationship_file": "interactions/003-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"4\"]",
-    "interaction_path": "interactions/004-show-dropdown-menu",
-    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"5\"]",
-    "interaction_path": "interactions/005-button",
-    "relationship_file": "interactions/005-button/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"6\"]",
-    "interaction_path": "interactions/006-button",
-    "relationship_file": "interactions/006-button/relationship.json"
-  },
-  {
-    "label": "Collapse/Expand",
-    "selector": "[data-crawl-id=\"14\"]",
-    "interaction_path": "interactions/014-collapse-expand",
-    "relationship_file": "interactions/014-collapse-expand/relationship.json"
-  },
-  {
     "label": "New",
     "selector": "[data-crawl-id=\"16\"]",
-    "interaction_path": "interactions/016-new",
-    "relationship_file": "interactions/016-new/relationship.json"
+    "interaction_path": "interactions/002-new",
+    "relationship_file": "interactions/002-new/relationship.json"
   },
   {
     "label": ":\u00a0\u20b93,000.00",
     "selector": "[data-crawl-id=\"17\"]",
-    "interaction_path": "interactions/017-3-000-00",
-    "relationship_file": "interactions/017-3-000-00/relationship.json"
+    "interaction_path": "interactions/003-3-000-00",
+    "relationship_file": "interactions/003-3-000-00/relationship.json"
   },
   {
     "label": ":\u00a0\u20b92,979.00",
     "selector": "[data-crawl-id=\"18\"]",
-    "interaction_path": "interactions/018-2-979-00",
-    "relationship_file": "interactions/018-2-979-00/relationship.json"
+    "interaction_path": "interactions/004-2-979-00",
+    "relationship_file": "interactions/004-2-979-00/relationship.json"
   },
   {
     "label": "This Fiscal Year",
     "selector": "[data-crawl-id=\"19\"]",
-    "interaction_path": "interactions/019-this-fiscal-year",
-    "relationship_file": "interactions/019-this-fiscal-year/relationship.json"
+    "interaction_path": "interactions/005-this-fiscal-year",
+    "relationship_file": "interactions/005-this-fiscal-year/relationship.json"
   },
   {
     "label": "Accrual",
     "selector": "[data-crawl-id=\"20\"]",
-    "interaction_path": "interactions/020-accrual",
-    "relationship_file": "interactions/020-accrual/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"21\"]",
-    "interaction_path": "interactions/021-button",
-    "relationship_file": "interactions/021-button/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"22\"]",
-    "interaction_path": "interactions/022-button",
-    "relationship_file": "interactions/022-button/relationship.json"
-  },
-  {
-    "label": "Subscribe",
-    "selector": "[data-crawl-id=\"23\"]",
-    "interaction_path": "interactions/023-subscribe",
-    "relationship_file": "interactions/023-subscribe/relationship.json"
-  },
-  {
-    "label": "testing",
-    "selector": "[data-crawl-id=\"24\"]",
-    "interaction_path": "interactions/024-testing",
-    "relationship_file": "interactions/024-testing/relationship.json"
-  },
-  {
-    "label": "div",
-    "selector": "[data-crawl-id=\"27\"]",
-    "interaction_path": "interactions/027-div",
-    "relationship_file": "interactions/027-div/relationship.json"
+    "interaction_path": "interactions/006-accrual",
+    "relationship_file": "interactions/006-accrual/relationship.json"
   }
 ]

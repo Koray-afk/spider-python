@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Save",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/004-save",
+    "relationship_file": "interactions/004-save/relationship.json"
+  },
+  {
+    "label": "INR- Indian Rupee",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/006-inr-indian-rupee",
+    "relationship_file": "interactions/006-inr-indian-rupee/relationship.json"
+  },
+  {
+    "label": "Select an account",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/007-select-an-account",
+    "relationship_file": "interactions/007-select-an-account/relationship.json"
+  },
+  {
+    "label": "Due on Receipt",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/008-due-on-receipt",
+    "relationship_file": "interactions/008-due-on-receipt/relationship.json"
+  }
+]

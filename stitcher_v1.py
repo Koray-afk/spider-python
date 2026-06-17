@@ -190,7 +190,34 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         return;
       }
 
-      // 3. Non-anchor page navigation discovered during crawl.
+      // 3. Tab switch — replace content region in-place.
+      var tabTrigger = t.closest("[data-stitch-tab-id]");
+      if (tabTrigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        var tabId = tabTrigger.getAttribute("data-stitch-tab-id");
+        var tabCfg = (window.__STITCH_TABS__ || {})[tabId];
+        if (tabCfg && tabCfg.contentSelector && tabCfg.contentHtml) {
+          var panel = document.querySelector(tabCfg.contentSelector);
+          if (panel) panel.innerHTML = tabCfg.contentHtml;
+          var par = tabTrigger.parentElement;
+          if (par) {
+            Array.prototype.forEach.call(
+              par.querySelectorAll("[data-stitch-tab-id]"),
+              function (sib) {
+                sib.classList.remove("active", "selected");
+                sib.setAttribute("aria-selected", "false");
+              }
+            );
+          }
+          tabTrigger.classList.add("active");
+          tabTrigger.setAttribute("aria-selected", "true");
+          console.log("[STITCH] Tab Switch", tabId, "→", tabCfg.contentSelector);
+        }
+        return;
+      }
+
+      // 4. Non-anchor page navigation discovered during crawl.
       var goTrigger = t.closest("[data-stitch-go]");
       if (goTrigger) {
         e.preventDefault();
@@ -199,7 +226,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         return;
       }
 
-      // 4. Page navigation: local rewritten anchors work natively. Block any
+      // 5. Page navigation: local rewritten anchors work natively. Block any
       //    leftover production/external link so nothing escapes the clone.
       var a = t.closest("a[href]");
       if (a) {
@@ -692,7 +719,63 @@ def _wire_interactions(
     return manifest, configs
 
 
-def _inject_runtime(soup: BeautifulSoup, to_root: str, configs: dict[str, dict] | None = None) -> None:
+def _wire_tabs(
+    soup: BeautifulSoup,
+    page_dir: Path,
+    interactions: list[dict],
+    used: set[int],
+) -> dict[str, dict]:
+    """Match tab-switch triggers and tag them with `data-stitch-tab-id`.
+
+    For each interaction whose relationship.json has ``interaction_type ==
+    "tab-switch"`` and a ``tab_content`` block, reads ``tab-content.html``
+    and builds an entry in the returned ``tabs_configs`` map.  Matched
+    elements are added to *used* so ``_wire_interactions`` skips them.
+    """
+    tabs_configs: dict[str, dict] = {}
+    counter = 0
+    for item in interactions:
+        ipath = item.get("interaction_path", "")
+        if not ipath:
+            continue
+        rel_path = page_dir / item.get("relationship_file", f"{ipath}/relationship.json")
+        if not rel_path.exists():
+            continue
+        try:
+            rel = json.loads(rel_path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if rel.get("interaction_type") != "tab-switch":
+            continue
+        tab_content = rel.get("tab_content") or {}
+        content_selector = tab_content.get("selector", "")
+        if not content_selector:
+            continue
+        content_path = page_dir / ipath / tab_content.get("file", "tab-content.html")
+        if not content_path.exists():
+            continue
+        content_html = content_path.read_text(encoding="utf-8")
+        match_trigger = rel.get("trigger", {}) or {}
+        el = _find_trigger(soup, match_trigger, used) if match_trigger else None
+        if el is None:
+            continue
+        used.add(id(el))
+        counter += 1
+        tab_id = f"tab_{counter}"
+        el["data-stitch-tab-id"] = tab_id
+        tabs_configs[tab_id] = {
+            "contentSelector": content_selector,
+            "contentHtml": content_html,
+        }
+    return tabs_configs
+
+
+def _inject_runtime(
+    soup: BeautifulSoup,
+    to_root: str,
+    configs: dict[str, dict] | None = None,
+    tabs_configs: dict[str, dict] | None = None,
+) -> None:
     body = soup.body or soup
     if configs:
         # Escape `</` so a literal "</script>" inside ui_html can't terminate the
@@ -701,6 +784,11 @@ def _inject_runtime(soup: BeautifulSoup, to_root: str, configs: dict[str, dict] 
         cfg_tag = soup.new_tag("script")
         cfg_tag.string = f"window.__STITCH_INTERACTIONS__ = {data};"
         body.append(cfg_tag)
+    if tabs_configs:
+        data = json.dumps(tabs_configs, ensure_ascii=True).replace("</", "<\\/")
+        tab_tag = soup.new_tag("script")
+        tab_tag.string = f"window.__STITCH_TABS__ = {data};"
+        body.append(tab_tag)
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
 
 
@@ -768,13 +856,16 @@ def _process_html(
         page_links.update(_wire_navigations(soup, navigations, valid_slugs, to_root, used))
     inter_manifest: list[dict] = []
     configs: dict[str, dict] = {}
+    tabs_configs: dict[str, dict] = {}
     if interactions and page_dir is not None:
+        # Wire tabs first: claims tab-switch triggers so _wire_interactions skips them.
+        tabs_configs = _wire_tabs(soup, page_dir, interactions, used)
         inter_manifest, configs = _wire_interactions(
             soup, page_dir, interactions, used, route_index, to_root
         )
     # Final pass: undo any temporary disabled/loading state before writing.
     fixes = _neutralize_disabled_state(soup)
-    _inject_runtime(soup, to_root, configs)
+    _inject_runtime(soup, to_root, configs, tabs_configs)
     return str(soup), page_links, inter_manifest, accordions, fixes
 
 

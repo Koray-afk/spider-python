@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-pricelists",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+  "source_title": "Price Lists | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "ded6a799-e501-4809-bd62-d1c15823acc8",
+    "class_name": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "More Actions",
+    "selector": "#ded6a799-e501-4809-bd62-d1c15823acc8",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "//*[@id=\"ded6a799-e501-4809-bd62-d1c15823acc8\"]",
+    "outer_html": "<button for=\"edfedd83-90aa-481b-a737-dacf81d45a9e\" aria-controls=\"edfedd83-90aa-481b-a737-dacf81d45a9e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-secondary d-flex\" id=\"ded6a799-e501-4809-bd62-d1c15823acc8\" aria-label=\"More Actions\" style=\"padding: 8px;\" type=\"button\" tabindex=\"0\" data-crawl-id=\"17\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+    "slug": "app-60073668069-inventory-pricelists",
+    "title": "Price Lists | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"edfedd83-90aa-481b-a737-dacf81d45a9e\" aria-controls=\"edfedd83-90aa-481b-a737-dacf81d45a9e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-secondary d-flex\" id=\"ded6a799-e501-4809-bd62-d1c15823acc8\" aria-label=\"More Actions\" style=\"padding: 8px;\" type=\"button\" tabindex=\"0\" data-crawl-id=\"17\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>",
+  "trigger_label": "More Actions",
+  "trigger_id": "cfcf2a4b-8cd1-4918-87d2-5ca0ca2e1be9",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+  "target_slug": "app-60073668069-inventory-pricelists",
+  "target_title": "Price Lists | Zoho Books"
+}

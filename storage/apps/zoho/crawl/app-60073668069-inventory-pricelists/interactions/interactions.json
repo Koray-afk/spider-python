@@ -1,92 +1,38 @@
 [
   {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"2\"]",
-    "interaction_path": "interactions/002-show-dropdown-menu",
-    "relationship_file": "interactions/002-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"3\"]",
-    "interaction_path": "interactions/003-show-dropdown-menu",
-    "relationship_file": "interactions/003-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"4\"]",
-    "interaction_path": "interactions/004-show-dropdown-menu",
-    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"5\"]",
-    "interaction_path": "interactions/005-button",
-    "relationship_file": "interactions/005-button/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"6\"]",
-    "interaction_path": "interactions/006-button",
-    "relationship_file": "interactions/006-button/relationship.json"
-  },
-  {
-    "label": "Collapse/Expand",
-    "selector": "[data-crawl-id=\"14\"]",
-    "interaction_path": "interactions/014-collapse-expand",
-    "relationship_file": "interactions/014-collapse-expand/relationship.json"
-  },
-  {
     "label": "All Price Lists",
     "selector": "[data-crawl-id=\"15\"]",
-    "interaction_path": "interactions/015-all-price-lists",
-    "relationship_file": "interactions/015-all-price-lists/relationship.json"
+    "interaction_path": "interactions/001-all-price-lists",
+    "relationship_file": "interactions/001-all-price-lists/relationship.json"
   },
   {
     "label": "More Actions",
     "selector": "[data-crawl-id=\"17\"]",
-    "interaction_path": "interactions/017-more-actions",
-    "relationship_file": "interactions/017-more-actions/relationship.json"
+    "interaction_path": "interactions/003-more-actions",
+    "relationship_file": "interactions/003-more-actions/relationship.json"
   },
   {
     "label": "Advanced Search",
     "selector": "[data-crawl-id=\"18\"]",
-    "interaction_path": "interactions/018-advanced-search",
-    "relationship_file": "interactions/018-advanced-search/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"19\"]",
-    "interaction_path": "interactions/019-button",
-    "relationship_file": "interactions/019-button/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"20\"]",
-    "interaction_path": "interactions/020-button",
-    "relationship_file": "interactions/020-button/relationship.json"
-  },
-  {
-    "label": "Subscribe",
-    "selector": "[data-crawl-id=\"21\"]",
-    "interaction_path": "interactions/021-subscribe",
-    "relationship_file": "interactions/021-subscribe/relationship.json"
-  },
-  {
-    "label": "testing",
-    "selector": "[data-crawl-id=\"22\"]",
-    "interaction_path": "interactions/022-testing",
-    "relationship_file": "interactions/022-testing/relationship.json"
+    "interaction_path": "interactions/004-advanced-search",
+    "relationship_file": "interactions/004-advanced-search/relationship.json"
   },
   {
     "label": "Default Price List for Retail Transactions",
-    "selector": "[data-crawl-id=\"23\"]",
-    "interaction_path": "interactions/023-default-price-list-for-retail-transactions",
-    "relationship_file": "interactions/023-default-price-list-for-retail-transactions/relationship.json"
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/005-default-price-list-for-retail-transactions",
+    "relationship_file": "interactions/005-default-price-list-for-retail-transactions/relationship.json"
+  },
+  {
+    "label": "Mark as Active",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/006-mark-as-active",
+    "relationship_file": "interactions/006-mark-as-active/relationship.json"
   },
   {
     "label": "Delete",
-    "selector": "[data-crawl-id=\"25\"]",
-    "interaction_path": "interactions/025-delete",
-    "relationship_file": "interactions/025-delete/relationship.json"
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/007-delete",
+    "relationship_file": "interactions/007-delete/relationship.json"
   }
 ]

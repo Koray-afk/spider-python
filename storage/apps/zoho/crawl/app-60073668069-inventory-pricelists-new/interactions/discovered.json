@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Close this page",
+    "id": "",
+    "className": "icon-button close-details py-2 ms-4 ",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Markup",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-secondary border-dark-grey",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "View Examples",
+    "id": "fc73a8a4-dd27-4701-b373-9cb912a4ba71",
+    "className": "popover-trigger text-blue",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save",
+    "id": "ember310",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-secondary",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "1",
+    "id": "fef6411f-41de-47ad-b732-104a92c86539",
+    "className": "d-flex icon-button position-relative justify-content-center ",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Never mind",
+    "id": "ac-ember309",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  }
+]

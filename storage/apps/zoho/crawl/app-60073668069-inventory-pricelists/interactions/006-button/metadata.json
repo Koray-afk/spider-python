@@ -1,9 +1,9 @@
 {
   "triggerLabel": "button",
-  "triggerId": "d39b505e-ce9c-40ae-8df4-4c9d2de97e43",
+  "triggerId": "c037a5ec-c01a-4fd0-93ec-d6d294c63d29",
   "triggerClass": "icon-button cursor-pointer float-end dropdown top-item-icon-spaced  user-notification",
   "selector": "[data-crawl-id=\"6\"]",
-  "interactionType": "tooltip",
+  "interactionType": "tab-switch",
   "sourcePage": "app-60073668069-inventory-pricelists",
   "sourceUrl": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
   "beforeUrl": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
@@ -11,5 +11,5 @@
   "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
   "title": "Price Lists | Zoho Books",
   "resultPagePath": "app-60073668069-inventory-pricelists/interactions/006-button",
-  "captured_at": "2026-06-15T14:06:39.019455+00:00"
+  "captured_at": "2026-06-16T13:03:14.417972+00:00"
 }

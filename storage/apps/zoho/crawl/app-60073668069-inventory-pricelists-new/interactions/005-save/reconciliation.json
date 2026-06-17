@@ -1,0 +1,18 @@
+{
+  "trigger": {
+    "label": "Save",
+    "tagName": "button",
+    "id": "ember310",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"18\"]",
+    "outerHTML": "<button form=\"pricebooks-new\" id=\"ember310\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"18\"><!----> Save<!----></button>"
+  },
+  "interaction_type": "tooltip",
+  "location": {
+    "parentSelector": "#ember304",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"alert alert-danger\"><button aria-label=\"Close Error Message(s)\" class=\"icon-button btn-close\" data-ember-action=\"\" data-ember-action-438=\"438\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon icon-xs\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\" fill=\"#fe4242\"></path></svg></button><!-- --> <ul style=\"padding-left:16px\"><li class=\"pe-4\">Enter a name for the price list</li><li class=\"pe-4\">Please enter the percentage value</li></ul> <!-- --></div>\n<span class=\"wms_menu_userstatusiconwrapper wms_badge_statusicon_available\" id=\"wms_menu_userstatusiconwrapper\"><img src=\"https://profile.zoho.in/file?fs=thumb&amp;nocache=1781624002185\"/></span>\n<div aria-label=\"Live chat widget\" class=\"zsiq_theme1\" data-id=\"zsalesiq\" position=\"right-bottom\" role=\"complementary\" theme=\"pattern\"><div class=\"chat-iframe-wrap zsiq-medium-size\" id=\"zsiq_chat_wrap\"><span class=\"seasonal-cw-bg\"></span></div><div class=\"zsiq-float zsiq-flexM zsiq_cnt zsiq-hide\" id=\"zsiq_float\"><span class=\"seasonal-float-img zsiq-hide\"></span><span aria-label=\"Chat Widget\" class=\"siqico-chat zsiq-chat-icn\" id=\"zs_fl_chat\" role=\"button\" tabindex=\"0\"></span><div aria-label=\"Live chat status\" class=\"zsiq-float-tooltip\" id=\"zs-fl-tip\" role=\"tooltip\"><div aria-label=\"We're Online!\" class=\"zsiq-clr3 zsiq-elips\" data-zsqa=\"title\">We're Online!</div><p aria-label=\"How may I help you today?\" class=\"zsiq-clr6 zsiq-m0 zsiq-mT3 zsiq-elips zsiq-tultip-desc\" data-zsqa=\"subtitle\">How may I help you today?</p><em aria-label=\"Close tooltip\" class=\"siqico-close zsiq-tultip-close\" id=\"zs-tip-close\" role=\"button\" tabindex=\"0\"></em> </div></div></div>\n<link href=\"https://static.zohocdn.com/chat/source/officechat/styles/media/avcliq-mediacomponents-util-min.8bb3ee0bd8275082842f05fe0b4532d8.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<link href=\"https://static.zohocdn.com/chat/source/officechat/styles/media/avcliq-cliqmini-extension-min.fca67abcd7bd844fa705a8f6559608f6.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<div class=\"zcoverlay\" id=\"zcwindows\" style=\"z-index: 1001;\"></div>\n<iframe class=\"zc-av-dN\" id=\"avcliqiframe\" src=\"https://avcliq.zoho.in/avcliq?frameorigin=https://books.zoho.in\"></iframe>",
+  "backdrop_html": ""
+}

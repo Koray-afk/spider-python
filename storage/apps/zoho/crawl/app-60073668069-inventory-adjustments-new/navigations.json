@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Cancel",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "target_url": "about:blank",
+    "target_slug": "blank",
+    "target_page": "../blank/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Cancel",
+      "id": "",
+      "class_name": "btn btn-secondary",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]",
+      "outer_html": "<button class=\"btn btn-secondary\" type=\"button\" data-ember-action=\"\" data-ember-action-461=\"461\" data-crawl-id=\"22\">Cancel</button>"
+    }
+  }
+]

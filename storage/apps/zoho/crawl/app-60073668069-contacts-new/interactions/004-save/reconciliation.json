@@ -1,0 +1,18 @@
+{
+  "trigger": {
+    "label": "Save",
+    "tagName": "button",
+    "id": "ember496",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"25\"]",
+    "outerHTML": "<button id=\"ember496\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"25\"><!----> Save<!----></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#ember431",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"alert alert-danger\"><button aria-label=\"Close Error Message(s)\" class=\"icon-button btn-close\" data-ember-action=\"\" data-ember-action-498=\"498\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon icon-xs\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\" fill=\"#fe4242\"></path></svg></button><!-- --> <ul style=\"padding-left:16px\"><li class=\"pe-4\">Enter the Display Name of your customer.</li></ul> <!-- --></div>\n<input ac-toggler=\"\" aria-activedescendant=\"\" aria-autocomplete=\"list\" aria-controls=\"ac-listbox\" aria-describedby=\"error-msg-ember438\" aria-expanded=\"false\" aria-invalid=\"true\" aria-labelledby=\"a74ef3d12\" aria-required=\"false\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"off\" class=\"ember-text-field form-control ac-search-txt ember-view is-invalid\" id=\"ember440\" placeholder=\"Select or type to add\" role=\"combobox\" spellcheck=\"false\" type=\"text\"/>\n<div class=\"invalid-feedback d-block font-xs\" id=\"error-msg-ember438\"><span class=\"visually-hidden\">Error: </span> <svg class=\"icon icon-sm align-text-top fill-delete\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M459.5 349.8L386.3 223 313.1 96.2c-25.4-44-88.9-44-114.3 0L125.7 223 52.5 349.8c-25.4 44 6.3 99 57.1 99h292.8c50.8 0 82.5-55 57.1-99zM256 393.7c-10 0-18.1-8.1-18.1-18.1 0-10 8.1-18.1 18.1-18.1 10 0 18.1 8.1 18.1 18.1 0 10-8.1 18.1-18.1 18.1zm20.2-216.2l-6.4 134c-1.4 17.4-26.1 17.4-27.5 0l-6.4-134c-.5-11.2 8.1-20.6 19.2-21.2s20.6 8.1 21.2 19.2c-.1.7-.1 1.4-.1 2z\"></path></svg> Enter the Display Name of your customer.</div>",
+  "backdrop_html": ""
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Address",
+    "id": "address-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Contact Persons",
+    "id": "persons-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Custom Fields",
+    "id": "customfields-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Save",
+    "id": "ember496",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cancel",
+    "id": "ember497",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "INR- Indian Rupee",
+    "id": "ac-ember448",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select an account",
+    "id": "ac-ember450",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Due on Receipt",
+    "id": "ac-ember452",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  }
+]

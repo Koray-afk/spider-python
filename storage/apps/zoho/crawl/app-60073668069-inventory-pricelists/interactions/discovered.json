@@ -1,177 +1,66 @@
 [
   {
-    "label": "Navigate To (Opt+0)",
-    "id": "",
-    "className": "dropdown-toggle   btn",
-    "selector": "[data-crawl-id=\"1\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Show dropdown menu",
-    "id": "",
-    "className": "dropdown-toggle no-caret ",
-    "selector": "[data-crawl-id=\"2\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Show dropdown menu",
-    "id": "",
-    "className": "dropdown-toggle   input-group-text",
-    "selector": "[data-crawl-id=\"3\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Show dropdown menu",
-    "id": "",
-    "className": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
-    "selector": "[data-crawl-id=\"4\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "button",
-    "id": "e9fd4b0f-f287-4810-a0fc-21250449342c",
-    "className": "icon-button dropdown top-item-icon-spaced",
-    "selector": "[data-crawl-id=\"5\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "button",
-    "id": "d39b505e-ce9c-40ae-8df4-4c9d2de97e43",
-    "className": "icon-button cursor-pointer float-end dropdown top-item-icon-spaced  user-notification",
-    "selector": "[data-crawl-id=\"6\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Items",
-    "id": "a11b1725a",
-    "className": "accordion-button ",
-    "selector": "[data-crawl-id=\"7\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Inventory",
-    "id": "a73dd8815",
-    "className": "accordion-button ",
-    "selector": "[data-crawl-id=\"8\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Sales",
-    "id": "aa0a48647",
-    "className": "accordion-button ",
-    "selector": "[data-crawl-id=\"9\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Purchases",
-    "id": "a2667caed",
-    "className": "accordion-button ",
-    "selector": "[data-crawl-id=\"10\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Time Tracking",
-    "id": "a6609f30a",
-    "className": "accordion-button ",
-    "selector": "[data-crawl-id=\"11\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Accountant",
-    "id": "a1826ad67",
-    "className": "accordion-button ",
-    "selector": "[data-crawl-id=\"12\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "TAKE A LIVE PRODUCT TOUR",
-    "id": "",
-    "className": "badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray",
-    "selector": "[data-crawl-id=\"13\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Collapse/Expand",
-    "id": "",
-    "className": "icon-button collapse-expand z-index-1 ",
-    "selector": "[data-crawl-id=\"14\"]",
-    "elementType": "button"
-  },
-  {
     "label": "All Price Lists",
     "id": "",
     "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
     "selector": "[data-crawl-id=\"15\"]",
-    "elementType": "button"
+    "elementType": "button",
+    "llm_type": "interaction"
   },
   {
     "label": "New",
     "id": "",
     "className": "btn btn-primary d-flex align-items-center ",
     "selector": "[data-crawl-id=\"16\"]",
-    "elementType": "button"
+    "elementType": "button",
+    "llm_type": "interaction"
   },
   {
     "label": "More Actions",
-    "id": "e425536f-06b7-4d56-b474-e4a1385fb74f",
+    "id": "cfcf2a4b-8cd1-4918-87d2-5ca0ca2e1be9",
     "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
     "selector": "[data-crawl-id=\"17\"]",
-    "elementType": "button"
+    "elementType": "button",
+    "llm_type": "interaction"
   },
   {
     "label": "Advanced Search",
     "id": "",
     "className": "icon-button",
     "selector": "[data-crawl-id=\"18\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "button",
-    "id": "cd3ae939-a683-4278-b3fa-ef7f847b774b",
-    "className": "d-flex icon-button position-relative justify-content-center ",
-    "selector": "[data-crawl-id=\"19\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "button",
-    "id": "de7505ad-4ef1-4598-a4ee-469087933cf0",
-    "className": "icon-button rhs-panel-toggle d-print-none mb-2 d-flex align-items-center justify-content-center opened",
-    "selector": "[data-crawl-id=\"20\"]",
-    "elementType": "button"
-  },
-  {
-    "label": "Subscribe",
-    "id": "",
-    "className": "top-upgrade-button-item top-item-spaced mx-0 font-xs text-blue mt-1 cursor-pointer",
-    "selector": "[data-crawl-id=\"21\"]",
-    "elementType": "span"
-  },
-  {
-    "label": "testing",
-    "id": "",
-    "className": "d-flex align-items-center cursor-pointer",
-    "selector": "[data-crawl-id=\"22\"]",
-    "elementType": "div"
+    "elementType": "button",
+    "llm_type": "interaction"
   },
   {
     "label": "Default Price List for Retail Transactions",
     "id": "",
     "className": "text-blue font-small cursor-pointer mt-2 me-5",
-    "selector": "[data-crawl-id=\"23\"]",
-    "elementType": "span"
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "span",
+    "llm_type": "navigation"
   },
   {
-    "label": "Mark as Inactive",
+    "label": "Mark as Active",
     "id": "",
     "className": "text-blue",
-    "selector": "[data-crawl-id=\"24\"]",
-    "elementType": "span"
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
   },
   {
     "label": "Delete",
     "id": "",
     "className": "text-red",
-    "selector": "[data-crawl-id=\"25\"]",
-    "elementType": "span"
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Mark as Inactive",
+    "id": "",
+    "className": "text-blue",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
   }
 ]

@@ -13,22 +13,22 @@
     "src": "",
     "data_testid": "",
     "aria_label": "Show dropdown menu",
-    "selector": "#dd-f495dc78-99b5-471b-b6e0-61cb0d365f65 > button:nth-of-type(1)",
+    "selector": "#dd-f0c13758-22d3-4160-87f2-f1d180e73528 > button:nth-of-type(1)",
     "crawl_selector": "[data-crawl-id=\"4\"]",
     "xpath": "/html[1]/body[1]/div[6]/div[6]/header[1]/div[5]/div[1]/div[1]/button[1]",
-    "outer_html": "<button for=\"f495dc78-99b5-471b-b6e0-61cb0d365f65\" aria-controls=\"f495dc78-99b5-471b-b6e0-61cb0d365f65\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"4\"><span id=\"quick-create\"><span id=\"d87ecd27-ac5f-47d2-89b2-ebd329858d90\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>"
+    "outer_html": "<button for=\"f0c13758-22d3-4160-87f2-f1d180e73528\" aria-controls=\"f0c13758-22d3-4160-87f2-f1d180e73528\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"4\"><span id=\"quick-create\"><span id=\"fd1c367c-4e95-4719-9c0a-22649bfba5ed\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>"
   },
   "target": {
-    "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
-    "slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+    "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=stock_on_hand&sort_order=A",
+    "slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-stock-on-hand-sort-order-A",
     "title": "Items | Zoho Books"
   },
   "interaction_type": "dropdown",
-  "original_element_html": "<button for=\"f495dc78-99b5-471b-b6e0-61cb0d365f65\" aria-controls=\"f495dc78-99b5-471b-b6e0-61cb0d365f65\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"4\"><span id=\"quick-create\"><span id=\"d87ecd27-ac5f-47d2-89b2-ebd329858d90\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>",
+  "original_element_html": "<button for=\"f0c13758-22d3-4160-87f2-f1d180e73528\" aria-controls=\"f0c13758-22d3-4160-87f2-f1d180e73528\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"4\"><span id=\"quick-create\"><span id=\"fd1c367c-4e95-4719-9c0a-22649bfba5ed\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>",
   "trigger_label": "Show dropdown menu",
   "trigger_id": "",
   "trigger_class": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
-  "target_url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
-  "target_slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=stock_on_hand&sort_order=A",
+  "target_slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-stock-on-hand-sort-order-A",
   "target_title": "Items | Zoho Books"
 }

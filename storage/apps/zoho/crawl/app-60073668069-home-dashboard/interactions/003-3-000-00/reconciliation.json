@@ -1,0 +1,18 @@
+{
+  "trigger": {
+    "label": ":\u00a0\u20b93,000.00",
+    "tagName": "button",
+    "id": "e539ac88-bb25-4951-8cc8-1b345de7e998",
+    "className": "popover-trigger",
+    "selector": "[data-crawl-id=\"17\"]",
+    "outerHTML": "<button class=\"popover-trigger\" id=\"e539ac88-bb25-4951-8cc8-1b345de7e998\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"17\"><span class=\"font-medium text-medium cursor-pointer over-flow\"> :&nbsp;\u20b93,000.00 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-middle\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg></span></button>"
+  },
+  "interaction_type": "modal",
+  "location": {
+    "parentSelector": "#tooltip-popover-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<div tabindex=\"0\"></div>\n<div class=\"popover popper popover-container\" data-popper-placement=\"bottom\" for=\"e539ac88-bb25-4951-8cc8-1b345de7e998\" style=\"position: absolute; left: 0px; top: 0px; margin: 0px; display: block; transform: translate(401px, 397px);\"><div class=\"arrow\" data-popper-arrow=\"\" style=\"position: absolute; left: 0px; transform: translate(121px, 0px);\"></div> <div aria-labelledby=\"e539ac88-bb25-4951-8cc8-1b345de7e998\" id=\"popover-wrapper\" role=\"dialog\" tabindex=\"-1\"><!-- --> <div class=\"popover-body dashboard-popover-content\"><!-- --> <div class=\"text-end p-3 overdueslist\" data-ember-action=\"\" data-ember-action-729=\"729\" role=\"button\" tabindex=\"0\"><div class=\"float-start text-muted\">1-15 Days</div> <div><span class=\"btn btn-link p-0\">\u20b90.00</span></div></div> <div class=\"text-end p-3 overdueslist\" data-ember-action=\"\" data-ember-action-730=\"730\" role=\"button\" tabindex=\"0\"><div class=\"float-start text-muted\">16-30 Days</div> <div><span class=\"btn btn-link p-0\">\u20b90.00</span></div></div> <div class=\"text-end p-3 overdueslist\" data-ember-action=\"\" data-ember-action-731=\"731\" role=\"button\" tabindex=\"0\"><div class=\"float-start text-muted\">31-45 Days</div> <div><span class=\"btn btn-link p-0\">\u20b90.00</span></div></div> <div class=\"text-end p-3 overdueslist\" data-ember-action=\"\" data-ember-action-732=\"732\" role=\"button\" tabindex=\"0\"><div class=\"float-start text-muted\">Above 45 days</div> <div><span class=\"btn btn-link p-0\">\u20b93,000.00</span></div></div></div></div></div>\n<div tabindex=\"0\"></div>",
+  "backdrop_html": ""
+}

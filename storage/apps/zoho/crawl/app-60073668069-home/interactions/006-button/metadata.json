@@ -1,9 +1,9 @@
 {
   "triggerLabel": "button",
-  "triggerId": "d201d903-c537-4724-a558-bf800f8f8046",
+  "triggerId": "df9938b8-cf44-4213-95a0-1545aec300ea",
   "triggerClass": "icon-button cursor-pointer float-end dropdown top-item-icon-spaced  user-notification",
   "selector": "[data-crawl-id=\"6\"]",
-  "interactionType": "tooltip",
+  "interactionType": "tab-switch",
   "sourcePage": "app-60073668069-home",
   "sourceUrl": "https://books.zoho.in/app/60073668069#/home",
   "beforeUrl": "https://books.zoho.in/app/60073668069#/home/dashboard",
@@ -11,5 +11,5 @@
   "url": "https://books.zoho.in/app/60073668069#/home/dashboard",
   "title": "Dashboard | Zoho Books",
   "resultPagePath": "app-60073668069-home/interactions/006-button",
-  "captured_at": "2026-06-15T13:48:39.332299+00:00"
+  "captured_at": "2026-06-16T15:15:19.028739+00:00"
 }

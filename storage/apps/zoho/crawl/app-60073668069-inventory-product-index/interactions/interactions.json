@@ -1,98 +1,32 @@
 [
   {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"2\"]",
-    "interaction_path": "interactions/002-show-dropdown-menu",
-    "relationship_file": "interactions/002-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"3\"]",
-    "interaction_path": "interactions/003-show-dropdown-menu",
-    "relationship_file": "interactions/003-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"4\"]",
-    "interaction_path": "interactions/004-show-dropdown-menu",
-    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"5\"]",
-    "interaction_path": "interactions/005-button",
-    "relationship_file": "interactions/005-button/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"6\"]",
-    "interaction_path": "interactions/006-button",
-    "relationship_file": "interactions/006-button/relationship.json"
-  },
-  {
-    "label": "Collapse/Expand",
-    "selector": "[data-crawl-id=\"14\"]",
-    "interaction_path": "interactions/014-collapse-expand",
-    "relationship_file": "interactions/014-collapse-expand/relationship.json"
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/002-more-actions",
+    "relationship_file": "interactions/002-more-actions/relationship.json"
   },
   {
     "label": "All Items",
     "selector": "[data-crawl-id=\"15\"]",
-    "interaction_path": "interactions/015-all-items",
-    "relationship_file": "interactions/015-all-items/relationship.json"
-  },
-  {
-    "label": "More Actions",
-    "selector": "[data-crawl-id=\"17\"]",
-    "interaction_path": "interactions/017-more-actions",
-    "relationship_file": "interactions/017-more-actions/relationship.json"
-  },
-  {
-    "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"18\"]",
-    "interaction_path": "interactions/018-show-dropdown-menu",
-    "relationship_file": "interactions/018-show-dropdown-menu/relationship.json"
+    "interaction_path": "interactions/003-all-items",
+    "relationship_file": "interactions/003-all-items/relationship.json"
   },
   {
     "label": "Advanced Search",
     "selector": "[data-crawl-id=\"23\"]",
-    "interaction_path": "interactions/023-advanced-search",
-    "relationship_file": "interactions/023-advanced-search/relationship.json"
+    "interaction_path": "interactions/004-advanced-search",
+    "relationship_file": "interactions/004-advanced-search/relationship.json"
   },
   {
-    "label": "Next Page",
-    "selector": "[data-crawl-id=\"26\"]",
-    "interaction_path": "interactions/026-next-page",
-    "relationship_file": "interactions/026-next-page/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"27\"]",
-    "interaction_path": "interactions/027-button",
-    "relationship_file": "interactions/027-button/relationship.json"
-  },
-  {
-    "label": "button",
-    "selector": "[data-crawl-id=\"28\"]",
-    "interaction_path": "interactions/028-button",
-    "relationship_file": "interactions/028-button/relationship.json"
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
   },
   {
     "label": "25 per page",
-    "selector": "[data-crawl-id=\"29\"]",
-    "interaction_path": "interactions/029-25-per-page",
-    "relationship_file": "interactions/029-25-per-page/relationship.json"
-  },
-  {
-    "label": "Subscribe",
     "selector": "[data-crawl-id=\"30\"]",
-    "interaction_path": "interactions/030-subscribe",
-    "relationship_file": "interactions/030-subscribe/relationship.json"
-  },
-  {
-    "label": "testing",
-    "selector": "[data-crawl-id=\"31\"]",
-    "interaction_path": "interactions/031-testing",
-    "relationship_file": "interactions/031-testing/relationship.json"
+    "interaction_path": "interactions/008-25-per-page",
+    "relationship_file": "interactions/008-25-per-page/relationship.json"
   }
 ]

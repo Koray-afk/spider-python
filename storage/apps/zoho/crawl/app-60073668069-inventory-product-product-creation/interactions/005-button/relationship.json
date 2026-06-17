@@ -5,7 +5,7 @@
   "trigger": {
     "tag_name": "button",
     "text": "",
-    "id": "e3483170-7258-46e9-a5ec-a306c846194c",
+    "id": "cff5e664-53d0-410a-81ed-723c833c2de5",
     "class_name": "icon-button dropdown top-item-icon-spaced",
     "name": "",
     "role": "",
@@ -13,20 +13,20 @@
     "src": "",
     "data_testid": "",
     "aria_label": "",
-    "selector": "#e3483170-7258-46e9-a5ec-a306c846194c",
+    "selector": "#cff5e664-53d0-410a-81ed-723c833c2de5",
     "crawl_selector": "[data-crawl-id=\"5\"]",
-    "xpath": "//*[@id=\"e3483170-7258-46e9-a5ec-a306c846194c\"]",
-    "outer_html": "<button class=\"icon-button dropdown top-item-icon-spaced\" id=\"e3483170-7258-46e9-a5ec-a306c846194c\" type=\"button\" tabindex=\"0\" data-crawl-id=\"5\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon align-text-top unified-icon-fill\"><path d=\"M6 7c1.5 0 2.7-1.2 2.7-2.7S7.5 1.5 6 1.5 3.2 2.8 3.2 4.3 4.5 7 6 7zm0-4.5c1 0 1.7.8 1.7 1.7S6.9 6 6 6c-1 0-1.8-.8-1.8-1.7S5 2.5 6 2.5zm5.8 5c1.1 0 1.9-.9 1.9-1.9s-.9-1.9-1.9-1.9c-1.1 0-1.9.9-1.9 1.9s.8 1.9 1.9 1.9zm0-2.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm.8 4H4C2 8.6.4 10.2.4 12.2v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1.4 1.2-2.6 2.6-2.6h4c1.4 0 2.6 1.2 2.6 2.6v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1-.4-2-1.1-2.6h2.1c1.2 0 2.2 1 2.2 2.2V13c0 .3.2.5.5.5s.5-.2.5-.5v-1.2c0-1.8-1.5-3.2-3.2-3.2z\"></path></svg> <!----></button>"
+    "xpath": "//*[@id=\"cff5e664-53d0-410a-81ed-723c833c2de5\"]",
+    "outer_html": "<button class=\"icon-button dropdown top-item-icon-spaced\" id=\"cff5e664-53d0-410a-81ed-723c833c2de5\" type=\"button\" tabindex=\"0\" data-crawl-id=\"5\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon align-text-top unified-icon-fill\"><path d=\"M6 7c1.5 0 2.7-1.2 2.7-2.7S7.5 1.5 6 1.5 3.2 2.8 3.2 4.3 4.5 7 6 7zm0-4.5c1 0 1.7.8 1.7 1.7S6.9 6 6 6c-1 0-1.8-.8-1.8-1.7S5 2.5 6 2.5zm5.8 5c1.1 0 1.9-.9 1.9-1.9s-.9-1.9-1.9-1.9c-1.1 0-1.9.9-1.9 1.9s.8 1.9 1.9 1.9zm0-2.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm.8 4H4C2 8.6.4 10.2.4 12.2v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1.4 1.2-2.6 2.6-2.6h4c1.4 0 2.6 1.2 2.6 2.6v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1-.4-2-1.1-2.6h2.1c1.2 0 2.2 1 2.2 2.2V13c0 .3.2.5.5.5s.5-.2.5-.5v-1.2c0-1.8-1.5-3.2-3.2-3.2z\"></path></svg> <!----></button>"
   },
   "target": {
     "url": "https://books.zoho.in/app/60073668069#/inventory/product/product-creation",
     "slug": "app-60073668069-inventory-product-product-creation",
     "title": "Add New Item | Zoho Books"
   },
-  "interaction_type": "dropdown",
-  "original_element_html": "<button class=\"icon-button dropdown top-item-icon-spaced\" id=\"e3483170-7258-46e9-a5ec-a306c846194c\" type=\"button\" tabindex=\"0\" data-crawl-id=\"5\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon align-text-top unified-icon-fill\"><path d=\"M6 7c1.5 0 2.7-1.2 2.7-2.7S7.5 1.5 6 1.5 3.2 2.8 3.2 4.3 4.5 7 6 7zm0-4.5c1 0 1.7.8 1.7 1.7S6.9 6 6 6c-1 0-1.8-.8-1.8-1.7S5 2.5 6 2.5zm5.8 5c1.1 0 1.9-.9 1.9-1.9s-.9-1.9-1.9-1.9c-1.1 0-1.9.9-1.9 1.9s.8 1.9 1.9 1.9zm0-2.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm.8 4H4C2 8.6.4 10.2.4 12.2v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1.4 1.2-2.6 2.6-2.6h4c1.4 0 2.6 1.2 2.6 2.6v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1-.4-2-1.1-2.6h2.1c1.2 0 2.2 1 2.2 2.2V13c0 .3.2.5.5.5s.5-.2.5-.5v-1.2c0-1.8-1.5-3.2-3.2-3.2z\"></path></svg> <!----></button>",
+  "interaction_type": "overlay",
+  "original_element_html": "<button class=\"icon-button dropdown top-item-icon-spaced\" id=\"cff5e664-53d0-410a-81ed-723c833c2de5\" type=\"button\" tabindex=\"0\" data-crawl-id=\"5\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon align-text-top unified-icon-fill\"><path d=\"M6 7c1.5 0 2.7-1.2 2.7-2.7S7.5 1.5 6 1.5 3.2 2.8 3.2 4.3 4.5 7 6 7zm0-4.5c1 0 1.7.8 1.7 1.7S6.9 6 6 6c-1 0-1.8-.8-1.8-1.7S5 2.5 6 2.5zm5.8 5c1.1 0 1.9-.9 1.9-1.9s-.9-1.9-1.9-1.9c-1.1 0-1.9.9-1.9 1.9s.8 1.9 1.9 1.9zm0-2.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm.8 4H4C2 8.6.4 10.2.4 12.2v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1.4 1.2-2.6 2.6-2.6h4c1.4 0 2.6 1.2 2.6 2.6v1.4c0 .3.2.5.5.5s.5-.2.5-.5v-1.4c0-1-.4-2-1.1-2.6h2.1c1.2 0 2.2 1 2.2 2.2V13c0 .3.2.5.5.5s.5-.2.5-.5v-1.2c0-1.8-1.5-3.2-3.2-3.2z\"></path></svg> <!----></button>",
   "trigger_label": "button",
-  "trigger_id": "f4d07039-cdf1-48e2-9d85-770de80f8076",
+  "trigger_id": "f2e10738-8f72-48de-bb21-0551d47f2959",
   "trigger_class": "icon-button dropdown top-item-icon-spaced",
   "target_url": "https://books.zoho.in/app/60073668069#/inventory/product/product-creation",
   "target_slug": "app-60073668069-inventory-product-product-creation",

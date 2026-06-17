@@ -10,7 +10,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
+from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
+
+load_dotenv()
 
 from storage.storage_manager import (
     ensure_app_dirs,
@@ -24,6 +27,8 @@ DISCOVER_JS = _SCRIPTS["discover"]
 CLASSIFY_JS = _SCRIPTS["classify"]
 DOM_FINGERPRINT_JS = _SCRIPTS["fingerprint"]
 EXTRACT_ELEMENT_JS = _SCRIPTS["extract_element"]
+ACTIVE_TABS_JS = _SCRIPTS["active_tabs"]
+ACTIVE_TAB_PANEL_JS = _SCRIPTS["active_tab_panel"]
 
 CHROME_MAC_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DEBUG_PORT = 9222
@@ -227,6 +232,7 @@ def save_interaction_capture(
     itype: str,
     crawl_root: Path,
     element: dict | None = None,
+    tab_panel: dict | None = None,
 ) -> None:
     folder.mkdir(parents=True, exist_ok=True)
     element = element or {}
@@ -306,9 +312,18 @@ def save_interaction_capture(
         "target_slug": page_slug(after_url),
         "target_title": after_title,
     }
+    if tab_panel and tab_panel.get("selector"):
+        relationship["tab_content"] = {
+            "selector": tab_panel["selector"],
+            "file": "tab-content.html",
+        }
     (folder / "relationship.json").write_text(
         json.dumps(relationship, indent=2), encoding="utf-8"
     )
+    if tab_panel and tab_panel.get("outerHTML"):
+        (folder / "tab-content.html").write_text(
+            tab_panel["outerHTML"], encoding="utf-8"
+        )
 
 
 def collect_links(page, page_url: str, base_domain: str) -> list[str]:
@@ -339,6 +354,36 @@ def dom_changed(before: dict, after: dict) -> bool:
     if b == 0:
         return a > 300
     return abs(a - b) >= 300 or (b and abs(a - b) / b >= 0.02)
+
+
+def detect_tab_switch(
+    before_fp: dict,
+    after_fp: dict,
+    before_tabs: list,
+    after_tabs: list,
+) -> bool:
+    """Return True if click switched an active tab rather than opening an overlay."""
+    if after_fp.get("overlays", 0) > before_fp.get("overlays", 0):
+        return False
+
+    def _key(t: dict) -> str:
+        return t.get("text", "") + "|" + t.get("id", "")
+
+    return {_key(t) for t in before_tabs} != {_key(t) for t in after_tabs}
+
+
+def discover_with_scroll(page) -> list[dict]:
+    """Scroll through the page to trigger lazy rendering, then discover all triggers."""
+    try:
+        h = page.evaluate("() => document.body.scrollHeight") or 0
+        for pct in [0.3, 0.6, 1.0]:
+            page.evaluate(f"() => window.scrollTo(0, {int(h * pct)})")
+            page.wait_for_timeout(500)
+        page.evaluate("() => window.scrollTo(0, 0)")
+        page.wait_for_timeout(500)
+    except Exception:
+        pass
+    return page.evaluate(DISCOVER_JS)
 
 
 def crawl_interactions(
@@ -394,6 +439,7 @@ def crawl_interactions(
             before_url = ipage.url
             before_title = ipage.title()
             before_fp = ipage.evaluate(DOM_FINGERPRINT_JS)
+            before_tabs = ipage.evaluate(ACTIVE_TABS_JS)
 
             # Capture the complete trigger element BEFORE clicking — after a
             # navigation/DOM mutation the element may detach and outerHTML is lost.
@@ -434,7 +480,19 @@ def crawl_interactions(
             # No DOM change means no UI state appeared — nothing to capture.
             if not dom_changed(before_fp, after_fp):
                 continue
-            itype = ipage.evaluate(CLASSIFY_JS)
+
+            after_tabs = ipage.evaluate(ACTIVE_TABS_JS)
+            if detect_tab_switch(before_fp, after_fp, before_tabs, after_tabs):
+                itype = "tab-switch"
+            else:
+                itype = ipage.evaluate(CLASSIFY_JS)
+
+            tab_panel = None
+            if itype == "tab-switch":
+                try:
+                    tab_panel = ipage.evaluate(ACTIVE_TAB_PANEL_JS)
+                except Exception:
+                    tab_panel = None
 
             folder_name = f"{idx:03d}-{slugify_label(item.get('label', ''))}"
             folder = interactions_dir / folder_name
@@ -451,6 +509,7 @@ def crawl_interactions(
                 itype=itype,
                 crawl_root=crawl_root,
                 element=element_meta,
+                tab_panel=tab_panel,
             )
 
             rel_path = f"interactions/{folder_name}"
@@ -495,7 +554,7 @@ def bfs_crawl(
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
     check_login: bool = False,
 ) -> dict:
-    queue = [start_url]
+    queue: list[tuple[str, int]] = [(start_url, 0)]
     visited: set[str] = set()
     pages = 0
     interactions_found = 0
@@ -503,7 +562,7 @@ def bfs_crawl(
     sitemap: list[dict] = []
 
     while queue and pages < max_pages:
-        url = queue.pop(0)
+        url, depth = queue.pop(0)
         norm = normalize_url(url)
         if norm in visited:
             continue
@@ -516,6 +575,7 @@ def bfs_crawl(
 
         print(f"[BFS] Queue Size: {len(queue)}")
         print(f"[BFS] Current URL: {url}")
+        print(f"[BFS] Depth: {depth}")
         print(f"[BFS] Pages Visited: {pages}")
 
         page = None
@@ -544,7 +604,7 @@ def bfs_crawl(
 
             # 3. Discover triggers and links from the untouched page, then close it.
             try:
-                candidates = page.evaluate(DISCOVER_JS)
+                candidates = discover_with_scroll(page)
             except Exception as exc:
                 print(f"[BFS] Interaction discovery failed: {exc}")
                 candidates = []
@@ -553,30 +613,48 @@ def bfs_crawl(
             print(f"[BFS] Links Found: {len(links)}")
             for link in links:
                 link_norm = normalize_url(link)
-                if link_norm not in visited and link_norm not in {normalize_url(q) for q in queue}:
-                    queue.append(link)
+                if link_norm not in visited and link_norm not in {normalize_url(q) for q, _ in queue}:
+                    queue.append((link, depth + 1))
 
             page.close()
             page = None
 
-            # 4. Run each interaction in its own isolated tab.
-            ix = crawl_interactions(
-                context, url, slug, page_dir, crawl_root, candidates, max_interactions
-            )
-            interactions_found += ix["found"]
-            interactions_saved += ix["saved"]
-            print(f"[BFS] Interactions Found: {ix['found']}")
-            print(f"[BFS] Interactions Saved: {ix['saved']}")
+            # 3b. Pre-filter: drop accordion-button and icon-only noise before LLM/click.
+            _SKIP_CLASSES = {"accordion-button", "accordion-title"}
+            _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing"}
+            candidates = [
+                c for c in candidates
+                if not any(cls in (c.get("className") or "") for cls in _SKIP_CLASSES)
+                and (c.get("label") or "").strip() not in _SKIP_LABELS
+            ]
 
-            # Non-anchor navigations discovered via clicks feed back into BFS so
-            # their destination pages get crawled too.
-            nav_targets = ix.get("nav_targets", [])
-            if nav_targets:
-                print(f"[BFS] Navigations Found: {len(nav_targets)}")
-            for link in nav_targets:
-                link_norm = normalize_url(link)
-                if link_norm not in visited and link_norm not in {normalize_url(q) for q in queue}:
-                    queue.append(link)
+            # 3c. LLM-rank candidates (depth < 3 only, silently skips if no API key).
+            if depth < 3 and candidates and os.getenv("GEMINI_API_KEY"):
+                from ranker.interaction_ranker import rank_candidates
+                candidates = rank_candidates(page_title, url, candidates)
+                print(f"[BFS] Ranked Candidates: {len(candidates)}")
+
+            # 4. Run each interaction in its own isolated tab (depth < 3 only).
+            if depth < 3:
+                ix = crawl_interactions(
+                    context, url, slug, page_dir, crawl_root, candidates, max_interactions
+                )
+                interactions_found += ix["found"]
+                interactions_saved += ix["saved"]
+                print(f"[BFS] Interactions Found: {ix['found']}")
+                print(f"[BFS] Interactions Saved: {ix['saved']}")
+
+                # Non-anchor navigations discovered via clicks feed back into BFS so
+                # their destination pages get crawled too.
+                nav_targets = ix.get("nav_targets", [])
+                if nav_targets:
+                    print(f"[BFS] Navigations Found: {len(nav_targets)}")
+                for link in nav_targets:
+                    link_norm = normalize_url(link)
+                    if link_norm not in visited and link_norm not in {normalize_url(q) for q, _ in queue}:
+                        queue.append((link, depth + 1))
+            else:
+                print(f"[BFS] Depth {depth} — interactions skipped")
 
             sitemap.append({"slug": slug, "url": url, "title": page_title, "page_type": page_type})
             get_sitemap_path(app_name).write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
