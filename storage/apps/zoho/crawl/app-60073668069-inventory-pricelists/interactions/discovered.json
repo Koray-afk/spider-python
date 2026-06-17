@@ -1,13 +1,5 @@
 [
   {
-    "label": "All Price Lists",
-    "id": "",
-    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
-    "selector": "[data-crawl-id=\"15\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
     "label": "New",
     "id": "",
     "className": "btn btn-primary d-flex align-items-center ",
@@ -16,8 +8,16 @@
     "llm_type": "interaction"
   },
   {
+    "label": "All Price Lists",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
     "label": "More Actions",
-    "id": "cfcf2a4b-8cd1-4918-87d2-5ca0ca2e1be9",
+    "id": "d2d489e8-647d-4594-abfc-755973515700",
     "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
     "selector": "[data-crawl-id=\"17\"]",
     "elementType": "button",

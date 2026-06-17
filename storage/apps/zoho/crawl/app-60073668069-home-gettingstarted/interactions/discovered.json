@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Dashboard",
+    "id": "",
+    "className": "nav-link  border-0 bg-transparent",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Add Organisation Details",
+    "id": "",
+    "className": "nav-link gs-link  active",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create your first invoice",
+    "id": "",
+    "className": "nav-link gs-link  text-muted",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create your first bill and expense",
+    "id": "",
+    "className": "nav-link gs-link  text-muted",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Set up banking and journals",
+    "id": "",
+    "className": "nav-link gs-link  text-blue",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Add Address",
+    "id": "",
+    "className": "btn btn-link  me-2",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Join Now",
+    "id": "ember354",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New",
+    "id": "",
+    "className": "btn btn-primary d-flex align-items-center rounded-end-0",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Invoices",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More Actions",
+    "id": "c8de2eab-a9f5-4522-bfe0-3eefaa2de322",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced Search",
+    "id": "",
+    "className": "icon-button",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-primary btn-left-border",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

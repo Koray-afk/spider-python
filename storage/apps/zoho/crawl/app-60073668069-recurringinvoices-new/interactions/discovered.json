@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Add Items in Bulk",
+    "id": "",
+    "className": "btn btn-md add-line-item-btn ms-3 align-self-start ",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save",
+    "id": "ember489",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-secondary",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Go Back",
+    "id": "",
+    "className": "icon-button close-details py-2 pe-3 me-3",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Select Customer",
+    "id": "ac-ember430",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  }
+]

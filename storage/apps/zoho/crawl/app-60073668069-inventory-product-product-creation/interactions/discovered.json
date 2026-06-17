@@ -1,37 +1,5 @@
 [
   {
-    "label": "Back",
-    "id": "",
-    "className": "icon-button close-details close-details-header float-end",
-    "selector": "[data-crawl-id=\"15\"]",
-    "elementType": "button",
-    "llm_type": "navigation"
-  },
-  {
-    "label": "Save",
-    "id": "ember321",
-    "className": "btn btn-primary ember-view me-2",
-    "selector": "[data-crawl-id=\"16\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "Cancel",
-    "id": "",
-    "className": "btn btn-secondary",
-    "selector": "[data-crawl-id=\"17\"]",
-    "elementType": "button",
-    "llm_type": "navigation"
-  },
-  {
-    "label": "1",
-    "id": "f8d2f249-3936-4604-8168-c9dddda4a25a",
-    "className": "d-flex icon-button position-relative justify-content-center ",
-    "selector": "[data-crawl-id=\"19\"]",
-    "elementType": "button",
-    "llm_type": "tab_switch"
-  },
-  {
     "label": "Sales",
     "id": "ac-ember312",
     "className": "ac-box ",
@@ -46,5 +14,53 @@
     "selector": "[data-crawl-id=\"22\"]",
     "elementType": "div",
     "llm_type": "tab_switch"
+  },
+  {
+    "label": "Save",
+    "id": "ember321",
+    "className": "btn btn-primary ember-view me-2",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Back",
+    "id": "",
+    "className": "icon-button close-details close-details-header float-end",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-secondary",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
   }
 ]

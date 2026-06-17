@@ -1,32 +1,38 @@
 [
   {
+    "label": "Dashboard",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/001-dashboard",
+    "relationship_file": "interactions/001-dashboard/relationship.json"
+  },
+  {
     "label": "New",
     "selector": "[data-crawl-id=\"16\"]",
-    "interaction_path": "interactions/002-new",
-    "relationship_file": "interactions/002-new/relationship.json"
-  },
-  {
-    "label": ":\u00a0\u20b93,000.00",
-    "selector": "[data-crawl-id=\"17\"]",
-    "interaction_path": "interactions/003-3-000-00",
-    "relationship_file": "interactions/003-3-000-00/relationship.json"
-  },
-  {
-    "label": ":\u00a0\u20b92,979.00",
-    "selector": "[data-crawl-id=\"18\"]",
-    "interaction_path": "interactions/004-2-979-00",
-    "relationship_file": "interactions/004-2-979-00/relationship.json"
+    "interaction_path": "interactions/003-new",
+    "relationship_file": "interactions/003-new/relationship.json"
   },
   {
     "label": "This Fiscal Year",
     "selector": "[data-crawl-id=\"19\"]",
-    "interaction_path": "interactions/005-this-fiscal-year",
-    "relationship_file": "interactions/005-this-fiscal-year/relationship.json"
+    "interaction_path": "interactions/004-this-fiscal-year",
+    "relationship_file": "interactions/004-this-fiscal-year/relationship.json"
   },
   {
     "label": "Accrual",
     "selector": "[data-crawl-id=\"20\"]",
-    "interaction_path": "interactions/006-accrual",
-    "relationship_file": "interactions/006-accrual/relationship.json"
+    "interaction_path": "interactions/005-accrual",
+    "relationship_file": "interactions/005-accrual/relationship.json"
+  },
+  {
+    "label": ":\u00a0\u20b93,000.00",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/006-3-000-00",
+    "relationship_file": "interactions/006-3-000-00/relationship.json"
+  },
+  {
+    "label": ":\u00a0\u20b92,979.00",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/007-2-979-00",
+    "relationship_file": "interactions/007-2-979-00/relationship.json"
   }
 ]

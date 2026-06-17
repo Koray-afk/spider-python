@@ -320,10 +320,9 @@ def save_interaction_capture(
     (folder / "relationship.json").write_text(
         json.dumps(relationship, indent=2), encoding="utf-8"
     )
-    if tab_panel and tab_panel.get("outerHTML"):
-        (folder / "tab-content.html").write_text(
-            tab_panel["outerHTML"], encoding="utf-8"
-        )
+    tab_html = (tab_panel.get("innerHTML") or tab_panel.get("outerHTML") or "") if tab_panel else ""
+    if tab_html:
+        (folder / "tab-content.html").write_text(tab_html, encoding="utf-8")
 
 
 def collect_links(page, page_url: str, base_domain: str) -> list[str]:
@@ -412,7 +411,14 @@ def crawl_interactions(
     navigations: list[dict] = []
     nav_targets: list[str] = []
 
-    for idx, item in enumerate(candidates[:max_interactions], start=1):
+    # Always process every llm_type="tab_switch" item — tab panels can be missed
+    # if they fall outside the max_interactions budget. Non-tab items fill the
+    # remaining budget in their original order.
+    tab_items = [c for c in candidates if c.get("llm_type") == "tab_switch"]
+    other_items = [c for c in candidates if c.get("llm_type") != "tab_switch"]
+    to_process = tab_items + other_items[:max(0, max_interactions - len(tab_items))]
+
+    for idx, item in enumerate(to_process, start=1):
         selector = item.get("selector", "")
         if not selector:
             continue
@@ -448,6 +454,15 @@ def crawl_interactions(
             except Exception:
                 element_meta = {}
 
+            # For tab_switch elements, read aria-controls before clicking so we
+            # can look up the exact panel by ID after the click.
+            aria_controls_val = ""
+            if item.get("llm_type") == "tab_switch":
+                try:
+                    aria_controls_val = locator.get_attribute("aria-controls") or ""
+                except Exception:
+                    aria_controls_val = ""
+
             locator.click(timeout=5000)
             ipage.wait_for_timeout(WAIT_AFTER_CLICK_MS)
             try:
@@ -478,21 +493,37 @@ def crawl_interactions(
                 print(f"    -> navigation: {item.get('label') or selector} → {target_slug}")
                 continue
             # No DOM change means no UI state appeared — nothing to capture.
-            if not dom_changed(before_fp, after_fp):
+            # Tab-switch panels often swap equally-sized content so dom_changed
+            # may return False; never skip them on that basis.
+            if not dom_changed(before_fp, after_fp) and item.get("llm_type") != "tab_switch":
                 continue
 
-            after_tabs = ipage.evaluate(ACTIVE_TABS_JS)
-            if detect_tab_switch(before_fp, after_fp, before_tabs, after_tabs):
-                itype = "tab-switch"
-            else:
-                itype = ipage.evaluate(CLASSIFY_JS)
-
             tab_panel = None
-            if itype == "tab-switch":
-                try:
-                    tab_panel = ipage.evaluate(ACTIVE_TAB_PANEL_JS)
-                except Exception:
-                    tab_panel = None
+            if item.get("llm_type") == "tab_switch":
+                # Force the type — don't let CLASSIFY_JS re-label it as dropdown/modal.
+                itype = "tab-switch"
+                if aria_controls_val:
+                    try:
+                        tab_panel = ipage.evaluate(
+                            "(panelId) => {"
+                            "  const el = document.getElementById(panelId);"
+                            "  if (!el) return null;"
+                            "  return { selector: '#' + CSS.escape(panelId), innerHTML: el.innerHTML };"
+                            "}",
+                            aria_controls_val,
+                        )
+                    except Exception:
+                        tab_panel = None
+            else:
+                after_tabs = ipage.evaluate(ACTIVE_TABS_JS)
+                if detect_tab_switch(before_fp, after_fp, before_tabs, after_tabs):
+                    itype = "tab-switch"
+                    try:
+                        tab_panel = ipage.evaluate(ACTIVE_TAB_PANEL_JS)
+                    except Exception:
+                        tab_panel = None
+                else:
+                    itype = ipage.evaluate(CLASSIFY_JS)
 
             folder_name = f"{idx:03d}-{slugify_label(item.get('label', ''))}"
             folder = interactions_dir / folder_name
@@ -551,6 +582,7 @@ def bfs_crawl(
     crawl_root: Path,
     app_name: str,
     *,
+    priority_url_patterns: list[str] | None = None,
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
     check_login: bool = False,
 ) -> dict:
@@ -611,10 +643,22 @@ def bfs_crawl(
 
             links = collect_links(page, page.url, base_domain)
             print(f"[BFS] Links Found: {len(links)}")
+            queued_norms = {normalize_url(q) for q, _ in queue}
+            priority_links: list[tuple[str, int]] = []
+            normal_links: list[tuple[str, int]] = []
             for link in links:
                 link_norm = normalize_url(link)
-                if link_norm not in visited and link_norm not in {normalize_url(q) for q, _ in queue}:
-                    queue.append((link, depth + 1))
+                if link_norm in visited or link_norm in queued_norms:
+                    continue
+                queued_norms.add(link_norm)
+                if any(pat in link for pat in (priority_url_patterns or [])):
+                    priority_links.append((link, depth + 1))
+                else:
+                    normal_links.append((link, depth + 1))
+            # Priority links go to the front of the queue so they are visited
+            # before sidebar module pages consume the page budget.
+            queue[0:0] = priority_links
+            queue.extend(normal_links)
 
             page.close()
             page = None
@@ -708,6 +752,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             ctx_kwargs["storage_state"] = auth_file
         context = browser.new_context(**ctx_kwargs)
         prepare_context(context)
+        priority_url_patterns = cfg.get("priority_url_patterns") or []
         result = bfs_crawl(
             context,
             start,
@@ -716,6 +761,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             page_type,
             crawl_root,
             app_name,
+            priority_url_patterns=priority_url_patterns,
             max_interactions=max_interactions,
             check_login=post_auth,
         )

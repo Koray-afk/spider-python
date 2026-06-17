@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-adjustments-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+  "source_title": "New Adjustment | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Convert to Adjusted",
+    "id": "aac95de3d",
+    "class_name": "btn btn-secondary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#aac95de3d",
+    "crawl_selector": "[data-crawl-id=\"21\"]",
+    "xpath": "//*[@id=\"aac95de3d\"]",
+    "outer_html": "<button id=\"aac95de3d\" class=\"btn btn-secondary ember-view\" type=\"button\" data-crawl-id=\"21\"><!----> Convert to Adjusted<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+    "slug": "app-60073668069-inventory-adjustments-new",
+    "title": "New Adjustment | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button id=\"aac95de3d\" class=\"btn btn-secondary ember-view\" type=\"button\" data-crawl-id=\"21\"><!----> Convert to Adjusted<!----></button>",
+  "trigger_label": "Convert to Adjusted",
+  "trigger_id": "ab4c378c1",
+  "trigger_class": "btn btn-secondary ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+  "target_slug": "app-60073668069-inventory-adjustments-new",
+  "target_title": "New Adjustment | Zoho Books"
+}

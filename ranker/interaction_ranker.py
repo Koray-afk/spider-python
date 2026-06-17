@@ -21,35 +21,38 @@ MODEL = "gemini-2.5-flash"
 PROMPT = """Page: "{page_title}"
 URL:  "{page_url}"
 
+You are selecting interactive elements for a sales demo prototype.
+
 Below is a numbered list of clickable UI elements discovered on this page.
 Each entry shows: index, label, HTML tag, and CSS classes.
 
 {numbered_candidates}
 
-Task:
-Select the top {top_n} most important elements a user would interact with during
-a sales demo of this SaaS application.
+MANDATORY — always include these regardless of the limit:
+- Any element that is a tab switch (role="tab", or className contains "nav-link",
+  or it toggles/reveals a section within the current page) → ALWAYS include ALL of them
+- Any element whose label contains: "Getting Started", "Recent Updates",
+  "Dashboard", "Overview", "Summary"
 
-Exclusion rules (never pick these):
-- Duplicate header chrome: "Navigate To", "Show dropdown menu" appearing more than once
-- Notification bells, user avatars, icon-only buttons with no label
-- Sidebar accordion toggles (label matches a module name like "Items", "Sales", "Purchases", etc.)
-- Collapse/Expand buttons
-- Labels exactly matching: "Subscribe", "testing", "TAKE A LIVE PRODUCT TOUR", "button", "div"
+THEN fill the remaining slots (up to {top_n} total) with, in this priority order:
+1. Primary CTA buttons: "New", "Create", "Add", "Import"
+2. Dropdown filters: date range, fiscal year, status
+3. Popover triggers: amount breakdowns, charts
+4. Everything else
 
-Preference rules (pick these first):
-- Primary CTAs: "New", "Save", "Create", "Add"
-- Filter dropdowns: fiscal year, date range, status, category pickers
-- Modal triggers: "Delete", "More Actions", "Advanced Search"
-- Tab switches that reveal page sections (role="tab" or className contains "nav-link")
-- Table action menus: per-row action buttons
+NEVER include:
+- Settings, Help, Notifications, Profile
+- Search bars
+- Pagination controls
+- Language/theme toggles
 
 For each selected element, classify its interaction type:
 - "navigation": clicking will navigate the browser to a different page
 - "tab_switch": toggles or reveals a section within the current page
 - "interaction": opens a popup, modal, dropdown, or drawer without navigating
 
-Return ONLY a valid JSON array — no markdown, no backticks, no explanation:
+Return ONLY a valid JSON array — no markdown, no backticks, no explanation.
+Order the array by priority, and ALL "tab_switch" elements MUST appear first:
 [
   {{"index": <original_index>, "type": "navigation|tab_switch|interaction"}},
   ...

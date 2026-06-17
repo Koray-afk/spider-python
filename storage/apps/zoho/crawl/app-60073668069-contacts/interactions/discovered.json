@@ -1,5 +1,13 @@
 [
   {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
     "label": "New",
     "id": "",
     "className": "btn btn-primary d-flex align-items-center ",
@@ -8,16 +16,32 @@
     "llm_type": "interaction"
   },
   {
-    "label": "View",
+    "label": "New Quote",
     "id": "",
-    "className": "btn btn-link p-0 align-baseline",
-    "selector": "[data-crawl-id=\"25\"]",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
     "elementType": "button",
     "llm_type": "navigation"
   },
   {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "All Customers",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
     "label": "More Actions",
-    "id": "c6509e80-8e22-49a8-b506-9e8c3823d538",
+    "id": "eab6c537-795e-4dcc-a5d8-4d3e51c4fad2",
     "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
     "selector": "[data-crawl-id=\"19\"]",
     "elementType": "button",
@@ -32,35 +56,11 @@
     "llm_type": "interaction"
   },
   {
-    "label": "All Customers",
+    "label": "View",
     "id": "",
-    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
-    "selector": "[data-crawl-id=\"17\"]",
+    "className": "btn btn-link p-0 align-baseline",
+    "selector": "[data-crawl-id=\"25\"]",
     "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "New Quote",
-    "id": "",
-    "className": "icon-button add-new tab-element-right",
-    "selector": "[data-crawl-id=\"10\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "New Invoice",
-    "id": "",
-    "className": "icon-button add-new tab-element-right",
-    "selector": "[data-crawl-id=\"11\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "NAME",
-    "id": "",
-    "className": "btn srt-btn bg-transparent",
-    "selector": "[data-crawl-id=\"21\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
+    "llm_type": "navigation"
   }
 ]

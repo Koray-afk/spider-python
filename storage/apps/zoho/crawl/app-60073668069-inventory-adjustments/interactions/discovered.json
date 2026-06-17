@@ -1,19 +1,11 @@
 [
   {
-    "label": "Show dropdown menu",
+    "label": "Collapse/Expand",
     "id": "",
-    "className": "dropdown-toggle   input-group-text",
-    "selector": "[data-crawl-id=\"3\"]",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"14\"]",
     "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "FIFO Cost Lot Tracking Report",
-    "id": "",
-    "className": "btn btn-link",
-    "selector": "[data-crawl-id=\"15\"]",
-    "elementType": "button",
-    "llm_type": "navigation"
+    "llm_type": "tab_switch"
   },
   {
     "label": "New",
@@ -24,10 +16,10 @@
     "llm_type": "interaction"
   },
   {
-    "label": "More Actions",
-    "id": "fdf2b67c-04ea-450b-a927-3208daa639ec",
-    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
-    "selector": "[data-crawl-id=\"17\"]",
+    "label": "CREATE ADJUSTMENT",
+    "id": "",
+    "className": "btn btn-primary uppercase ",
+    "selector": "[data-crawl-id=\"20\"]",
     "elementType": "button",
     "llm_type": "interaction"
   },
@@ -48,19 +40,27 @@
     "llm_type": "interaction"
   },
   {
-    "label": "CREATE ADJUSTMENT",
+    "label": "Navigate To (Opt+0)",
     "id": "",
-    "className": "btn btn-primary uppercase ",
-    "selector": "[data-crawl-id=\"20\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "1",
-    "id": "efcbf5d2-8d22-4cad-b95e-cb4fb6529f1f",
-    "className": "d-flex icon-button position-relative justify-content-center ",
-    "selector": "[data-crawl-id=\"22\"]",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
     "elementType": "button",
     "llm_type": "navigation"
+  },
+  {
+    "label": "FIFO Cost Lot Tracking Report",
+    "id": "",
+    "className": "btn btn-link",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "More Actions",
+    "id": "c7772909-cb51-492a-bc2f-d4e608733391",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
   }
 ]

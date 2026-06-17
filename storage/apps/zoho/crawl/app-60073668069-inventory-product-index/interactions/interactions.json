@@ -1,32 +1,26 @@
 [
   {
-    "label": "More Actions",
-    "selector": "[data-crawl-id=\"17\"]",
-    "interaction_path": "interactions/002-more-actions",
-    "relationship_file": "interactions/002-more-actions/relationship.json"
-  },
-  {
     "label": "All Items",
     "selector": "[data-crawl-id=\"15\"]",
     "interaction_path": "interactions/003-all-items",
     "relationship_file": "interactions/003-all-items/relationship.json"
   },
   {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/004-more-actions",
+    "relationship_file": "interactions/004-more-actions/relationship.json"
+  },
+  {
     "label": "Advanced Search",
     "selector": "[data-crawl-id=\"23\"]",
-    "interaction_path": "interactions/004-advanced-search",
-    "relationship_file": "interactions/004-advanced-search/relationship.json"
+    "interaction_path": "interactions/006-advanced-search",
+    "relationship_file": "interactions/006-advanced-search/relationship.json"
   },
   {
     "label": "Show dropdown menu",
-    "selector": "[data-crawl-id=\"18\"]",
-    "interaction_path": "interactions/006-show-dropdown-menu",
-    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
-  },
-  {
-    "label": "25 per page",
-    "selector": "[data-crawl-id=\"30\"]",
-    "interaction_path": "interactions/008-25-per-page",
-    "relationship_file": "interactions/008-25-per-page/relationship.json"
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/008-show-dropdown-menu",
+    "relationship_file": "interactions/008-show-dropdown-menu/relationship.json"
   }
 ]

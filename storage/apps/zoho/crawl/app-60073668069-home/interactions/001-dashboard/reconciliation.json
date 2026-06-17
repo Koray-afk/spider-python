@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Dashboard",
+    "tagName": "button",
+    "id": "",
+    "className": "nav-link active border-0 bg-transparent",
+    "selector": "[data-crawl-id=\"15\"]",
+    "outerHTML": "<button class=\"nav-link active border-0 bg-transparent\" type=\"button\" data-ember-action=\"\" data-ember-action-174=\"174\" data-crawl-id=\"15\"><div class=\"d-flex max-w-200\"><span class=\"text-ellipsis\">Dashboard</span> <!----></div></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

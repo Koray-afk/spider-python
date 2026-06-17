@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-home",
+  "source_url": "https://books.zoho.in/app/60073668069#/home",
+  "source_title": "Dashboard | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "New",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret ",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dd-d360ded6-5d1a-4f40-af0b-d89069307845 > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"16\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button for=\"d360ded6-5d1a-4f40-af0b-d89069307845\" aria-controls=\"d360ded6-5d1a-4f40-af0b-d89069307845\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret \" type=\"button\" data-crawl-id=\"16\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-sm align-middle\" style=\"color: #188dfa\"><path d=\"M256 15C122.9 15 15 122.9 15 256s107.9 241 241 241 241-107.9 241-241S389.1 15 256 15zm122 263H278v100c0 12.2-9.8 22-22 22s-22-9.8-22-22V278H134c-12.2 0-22-9.8-22-22s9.8-22 22-22h100V134c0-12.2 9.8-22 22-22s22 9.8 22 22v100h100c12.2 0 22 9.8 22 22s-9.8 22-22 22z\"></path><path fill=\"#FFF\" d=\"M378 234H278V134c0-12.2-9.8-22-22-22s-22 9.8-22 22v100H134c-12.2 0-22 9.8-22 22s9.8 22 22 22h100v100c0 12.2 9.8 22 22 22s22-9.8 22-22V278h100c12.2 0 22-9.8 22-22s-9.8-22-22-22z\"></path></svg> <span class=\"font-small\">New</span></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+    "slug": "app-60073668069-home-dashboard",
+    "title": "Dashboard | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"d360ded6-5d1a-4f40-af0b-d89069307845\" aria-controls=\"d360ded6-5d1a-4f40-af0b-d89069307845\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret \" type=\"button\" data-crawl-id=\"16\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-sm align-middle\" style=\"color: #188dfa\"><path d=\"M256 15C122.9 15 15 122.9 15 256s107.9 241 241 241 241-107.9 241-241S389.1 15 256 15zm122 263H278v100c0 12.2-9.8 22-22 22s-22-9.8-22-22V278H134c-12.2 0-22-9.8-22-22s9.8-22 22-22h100V134c0-12.2 9.8-22 22-22s22 9.8 22 22v100h100c12.2 0 22 9.8 22 22s-9.8 22-22 22z\"></path><path fill=\"#FFF\" d=\"M378 234H278V134c0-12.2-9.8-22-22-22s-22 9.8-22 22v100H134c-12.2 0-22 9.8-22 22s9.8 22 22 22h100v100c0 12.2 9.8 22 22 22s22-9.8 22-22V278h100c12.2 0 22-9.8 22-22s-9.8-22-22-22z\"></path></svg> <span class=\"font-small\">New</span></button>",
+  "trigger_label": "New",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret ",
+  "target_url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+  "target_slug": "app-60073668069-home-dashboard",
+  "target_title": "Dashboard | Zoho Books"
+}

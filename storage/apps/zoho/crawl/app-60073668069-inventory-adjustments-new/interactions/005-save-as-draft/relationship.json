@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-adjustments-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+  "source_title": "New Adjustment | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Save as Draft",
+    "id": "ember458",
+    "class_name": "btn btn-primary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember458",
+    "crawl_selector": "[data-crawl-id=\"20\"]",
+    "xpath": "//*[@id=\"ember458\"]",
+    "outer_html": "<button form=\"inventory-adjustments-new\" id=\"ember458\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"20\"><!----> Save as Draft<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+    "slug": "app-60073668069-inventory-adjustments-new",
+    "title": "New Adjustment | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button form=\"inventory-adjustments-new\" id=\"ember458\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"20\"><!----> Save as Draft<!----></button>",
+  "trigger_label": "Save as Draft",
+  "trigger_id": "ember332",
+  "trigger_class": "btn btn-primary ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+  "target_slug": "app-60073668069-inventory-adjustments-new",
+  "target_title": "New Adjustment | Zoho Books"
+}

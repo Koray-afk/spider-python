@@ -1,26 +1,20 @@
 [
   {
-    "label": "More Actions",
-    "selector": "[data-crawl-id=\"19\"]",
-    "interaction_path": "interactions/003-more-actions",
-    "relationship_file": "interactions/003-more-actions/relationship.json"
-  },
-  {
-    "label": "Advanced Search",
-    "selector": "[data-crawl-id=\"24\"]",
-    "interaction_path": "interactions/004-advanced-search",
-    "relationship_file": "interactions/004-advanced-search/relationship.json"
-  },
-  {
     "label": "All Customers",
     "selector": "[data-crawl-id=\"17\"]",
     "interaction_path": "interactions/005-all-customers",
     "relationship_file": "interactions/005-all-customers/relationship.json"
   },
   {
-    "label": "NAME",
-    "selector": "[data-crawl-id=\"21\"]",
-    "interaction_path": "interactions/008-name",
-    "relationship_file": "interactions/008-name/relationship.json"
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/006-more-actions",
+    "relationship_file": "interactions/006-more-actions/relationship.json"
+  },
+  {
+    "label": "Advanced Search",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/007-advanced-search",
+    "relationship_file": "interactions/007-advanced-search/relationship.json"
   }
 ]

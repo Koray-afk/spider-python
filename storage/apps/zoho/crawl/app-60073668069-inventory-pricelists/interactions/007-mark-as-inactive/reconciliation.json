@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Mark as Inactive",
+    "tagName": "span",
+    "id": "",
+    "className": "text-blue",
+    "selector": "[data-crawl-id=\"25\"]",
+    "outerHTML": "<span class=\"text-blue\" data-ember-action=\"\" data-ember-action-321=\"321\" tabindex=\"0\" role=\"button\" data-crawl-id=\"25\">Mark as Inactive <!----></span>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#ember173",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[9]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div align=\"center\"><div class=\"message-container success p-3\"><div class=\"warning-icon p-2 success\"><svg aria-label=\"Success\" viewbox=\"0 0 429.3 429.3\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M214.6 0C96.1 0 0 96.1 0 214.7s96.1 214.6 214.6 214.6 214.7-96.1 214.7-214.6S333.2 0 214.6 0zm112 163.4L192.4 297.6c-4.5 4.5-10.5 6.8-16.5 6.8s-11.9-2.3-16.5-6.8l-55.7-55.7c-9.1-9.1-9.1-23.8 0-32.9 9.1-9.1 23.8-9.1 32.9 0l39.3 39.3 117.8-117.8c9.1-9.1 23.8-9.1 32.9 0 9.1 9.1 9.1 23.8 0 32.9z\" fill=\"#fff\"></path></svg></div> <div class=\"text-black align-self-center d-flex\"><span class=\"msg\">The price list has been marked inactive.</span> <!-- --></div></div></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

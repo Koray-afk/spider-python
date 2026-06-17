@@ -90,13 +90,15 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         ev.target !== trigger &&
         !(trigger && trigger.contains && trigger.contains(ev.target))
       ) {
+        if (container.__stitchRemoving) return;
+        container.__stitchRemoving = true;
         removeUI(container);
       }
     }
     container.__stitchOutside = outside;
     // Defer so the click that opened the UI doesn't immediately close it.
     setTimeout(function () {
-      document.addEventListener("click", outside, true);
+      document.addEventListener("click", outside, false);
     }, 0);
     // ESC closes too (generic, framework-agnostic).
     function onKey(ev) {
@@ -635,6 +637,158 @@ def _rewrite_fragment_anchors(html: str, route_index: dict[str, str], to_root: s
     return str(frag)
 
 
+def _build_interactions_index(interactions: list[dict]) -> dict[str, dict]:
+    """Map [data-crawl-id="N"] selector → interactions.json item.
+
+    Both discovered.json and interactions.json use the same selector format,
+    so an exact string match is the reliable JOIN key.
+    """
+    return {item["selector"]: item for item in interactions if item.get("selector")}
+
+
+def _build_nav_crawl_index(navigations: list[dict]) -> dict[str, dict]:
+    """Map [data-crawl-id="N"] selector → navigations.json item.
+
+    navigations.json stores the crawl-id inside trigger.outer_html rather than
+    as a top-level selector, so we extract it with a regex.
+    """
+    index: dict[str, dict] = {}
+    for nav in navigations:
+        outer = (nav.get("trigger") or {}).get("outer_html", "")
+        m = re.search(r'data-crawl-id=["\'](\d+)["\']', outer)
+        if m:
+            key = f'[data-crawl-id="{m.group(1)}"]'
+            index.setdefault(key, nav)
+    return index
+
+
+def _wire_from_discovered(
+    soup: BeautifulSoup,
+    page_dir: Path,
+    discovered: list[dict],
+    inter_idx: dict[str, dict],
+    nav_idx: dict[str, dict],
+    valid_slugs: set[str],
+    to_root: str,
+    used: set[int],
+    route_index: dict[str, str],
+) -> tuple[list[dict], dict[str, dict], dict[str, dict]]:
+    """Primary wiring pass driven by discovered.json llm_type classifications.
+
+    For each entry in discovered.json:
+      - navigation  → data-stitch-go pointing at the target page
+      - interaction → data-stitch-ui-id + __STITCH_INTERACTIONS__ config
+      - tab_switch  → data-stitch-tab-id + __STITCH_TABS__ config
+
+    Element matching falls back to attribute scoring (_find_trigger) because
+    page.html is saved before DISCOVER_JS stamps data-crawl-id on the live DOM.
+
+    Elements claimed here are added to `used`; subsequent fallback wiring
+    functions (_wire_navigations, _wire_tabs, _wire_interactions) skip them.
+    """
+    inter_manifest: list[dict] = []
+    configs: dict[str, dict] = {}
+    tabs_configs: dict[str, dict] = {}
+    inter_counter = 0
+    tab_counter = 0
+
+    for entry in discovered:
+        llm_type = entry.get("llm_type", "")
+        selector = entry.get("selector", "")
+
+        trigger_dict = {
+            "tag_name": entry.get("elementType", ""),
+            "id": entry.get("id", ""),
+            "class_name": entry.get("className", ""),
+            "text": entry.get("label", ""),
+        }
+        el = _find_trigger(soup, trigger_dict, used)
+        if el is None:
+            continue
+
+        if llm_type == "navigation":
+            nav = nav_idx.get(selector)
+            if not nav:
+                continue
+            slug = nav.get("target_slug", "")
+            if not slug or slug not in valid_slugs:
+                continue
+            used.add(id(el))
+            rel = f"{to_root}{slug}/page.html"
+            el["data-stitch-go"] = rel
+            el["data-stitch-page"] = slug
+
+        elif llm_type == "interaction":
+            item = inter_idx.get(selector)
+            if not item:
+                continue
+            ipath = item.get("interaction_path", "")
+            if not ipath:
+                continue
+            recon: dict = {}
+            recon_path = page_dir / ipath / "reconciliation.json"
+            if recon_path.exists():
+                try:
+                    recon = json.loads(recon_path.read_text(encoding="utf-8")) or {}
+                except Exception:
+                    recon = {}
+            itype = recon.get("interaction_type", "unknown") or "unknown"
+            loc = recon.get("location", {}) or {}
+            ui_html = recon.get("ui_html", "") or ""
+            backdrop_html = recon.get("backdrop_html", "") or ""
+            fallback = f"{ipath}/page.html"
+            used.add(id(el))
+            inter_counter += 1
+            ui_id = f"interaction_{inter_counter}"
+            el["data-stitch-ui-id"] = ui_id
+            configs[ui_id] = {
+                "type": itype,
+                "parentSelector": loc.get("parentSelector", "") or "",
+                "parentXPath": loc.get("parentXPath", "") or "",
+                "insertMethod": loc.get("insertMethod", "append") or "append",
+                "uiHtml": _rewrite_fragment_anchors(ui_html, route_index, to_root),
+                "backdropHtml": _rewrite_fragment_anchors(backdrop_html, route_index, to_root),
+                "fallback": fallback,
+            }
+            inter_manifest.append({
+                "label": entry.get("label", ""),
+                "type": itype,
+                "path": fallback,
+                "ui_id": ui_id,
+                "has_ui": bool(ui_html),
+                "bound": True,
+            })
+
+        elif llm_type == "tab_switch":
+            item = inter_idx.get(selector)
+            if not item:
+                continue
+            ipath = item.get("interaction_path", "")
+            if not ipath:
+                continue
+            recon = {}
+            recon_path = page_dir / ipath / "reconciliation.json"
+            if recon_path.exists():
+                try:
+                    recon = json.loads(recon_path.read_text(encoding="utf-8")) or {}
+                except Exception:
+                    recon = {}
+            content_html = recon.get("tab_content_html", "") or ""
+            content_selector = recon.get("tab_content_selector", "") or ""
+            if not content_html or not content_selector:
+                continue
+            used.add(id(el))
+            tab_counter += 1
+            tab_id = f"tab_{tab_counter}"
+            el["data-stitch-tab-id"] = tab_id
+            tabs_configs[tab_id] = {
+                "contentSelector": content_selector,
+                "contentHtml": content_html,
+            }
+
+    return inter_manifest, configs, tabs_configs
+
+
 def _wire_interactions(
     soup: BeautifulSoup,
     page_dir: Path,
@@ -642,6 +796,7 @@ def _wire_interactions(
     used: set[int],
     route_index: dict[str, str],
     to_root: str,
+    counter_start: int = 0,
 ) -> tuple[list[dict], dict[str, dict]]:
     """Match each interaction trigger and tag it with `data-stitch-ui-id`. Build
     a per-page config map (→ window.__STITCH_INTERACTIONS__) carrying the
@@ -650,7 +805,7 @@ def _wire_interactions(
     only. Returns (manifest, configs)."""
     manifest: list[dict] = []
     configs: dict[str, dict] = {}
-    counter = 0
+    counter = counter_start
 
     for item in interactions:
         ipath = item.get("interaction_path", "")
@@ -724,6 +879,7 @@ def _wire_tabs(
     page_dir: Path,
     interactions: list[dict],
     used: set[int],
+    counter_start: int = 0,
 ) -> dict[str, dict]:
     """Match tab-switch triggers and tag them with `data-stitch-tab-id`.
 
@@ -733,7 +889,7 @@ def _wire_tabs(
     elements are added to *used* so ``_wire_interactions`` skips them.
     """
     tabs_configs: dict[str, dict] = {}
-    counter = 0
+    counter = counter_start
     for item in interactions:
         ipath = item.get("interaction_path", "")
         if not ipath:
@@ -844,6 +1000,7 @@ def _process_html(
     page_dir: Path | None = None,
     interactions: list[dict] | None = None,
     navigations: list[dict] | None = None,
+    discovered: list[dict] | None = None,
     expand_sidebars: bool = True,
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
@@ -852,17 +1009,39 @@ def _process_html(
     # Accordions first: claim sidebar toggles so interaction wiring never
     # rebinds them to a snapshot, and rewritten submenu anchors stay reachable.
     accordions = _wire_accordions(soup, used, expand_sidebars)
-    if navigations and valid_slugs is not None:
-        page_links.update(_wire_navigations(soup, navigations, valid_slugs, to_root, used))
+
     inter_manifest: list[dict] = []
     configs: dict[str, dict] = {}
     tabs_configs: dict[str, dict] = {}
-    if interactions and page_dir is not None:
-        # Wire tabs first: claims tab-switch triggers so _wire_interactions skips them.
-        tabs_configs = _wire_tabs(soup, page_dir, interactions, used)
-        inter_manifest, configs = _wire_interactions(
-            soup, page_dir, interactions, used, route_index, to_root
+
+    # Primary wiring: discovered.json drives element tagging using llm_type.
+    # Elements claimed here are added to `used`; fallback passes skip them.
+    if discovered and page_dir is not None and valid_slugs is not None:
+        inter_idx = _build_interactions_index(interactions or [])
+        nav_idx = _build_nav_crawl_index(navigations or [])
+        d_manifest, d_configs, d_tabs = _wire_from_discovered(
+            soup, page_dir, discovered, inter_idx, nav_idx,
+            valid_slugs, to_root, used, route_index,
         )
+        inter_manifest.extend(d_manifest)
+        configs.update(d_configs)
+        tabs_configs.update(d_tabs)
+
+    # Fallback wiring: handles any elements not already claimed above.
+    if navigations and valid_slugs is not None:
+        page_links.update(_wire_navigations(soup, navigations, valid_slugs, to_root, used))
+    if interactions and page_dir is not None:
+        # Wire tabs first (fallback): claims remaining tab-switch triggers.
+        tabs_configs.update(
+            _wire_tabs(soup, page_dir, interactions, used, counter_start=len(tabs_configs))
+        )
+        fb_manifest, fb_configs = _wire_interactions(
+            soup, page_dir, interactions, used, route_index, to_root,
+            counter_start=len(configs),
+        )
+        inter_manifest.extend(fb_manifest)
+        configs.update(fb_configs)
+
     # Final pass: undo any temporary disabled/loading state before writing.
     fixes = _neutralize_disabled_state(soup)
     _inject_runtime(soup, to_root, configs, tabs_configs)
@@ -924,6 +1103,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
 
         interactions = _load_interactions(page_dir)
         navigations = _load_json_list(page_dir / "navigations.json")
+        discovered = _load_json_list(page_dir / "interactions" / "discovered.json")
         html = (page_dir / "page.html").read_text(encoding="utf-8")
         new_html, page_links, inter_manifest, accordions, fixes = _process_html(
             html,
@@ -933,6 +1113,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             page_dir=page_dir,
             interactions=interactions,
             navigations=navigations,
+            discovered=discovered,
             expand_sidebars=expand_sidebars,
         )
         (out_dir / "page.html").write_text(new_html, encoding="utf-8")

@@ -1,19 +1,11 @@
 [
   {
-    "label": "Convert to Adjusted",
-    "id": "af6afaedf",
-    "className": "btn btn-secondary ember-view",
-    "selector": "[data-crawl-id=\"21\"]",
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"14\"]",
     "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": "Save as Draft",
-    "id": "ember458",
-    "className": "btn btn-primary ember-view",
-    "selector": "[data-crawl-id=\"20\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
+    "llm_type": "tab_switch"
   },
   {
     "label": "Add New Row",
@@ -32,14 +24,6 @@
     "llm_type": "interaction"
   },
   {
-    "label": "Select a reason",
-    "id": "ac-ember435",
-    "className": "ac-box ",
-    "selector": "[data-crawl-id=\"27\"]",
-    "elementType": "div",
-    "llm_type": "interaction"
-  },
-  {
     "label": "Cost of Goods Sold",
     "id": "ac-ember434",
     "className": "ac-box ",
@@ -48,12 +32,28 @@
     "llm_type": "interaction"
   },
   {
-    "label": "Bulk Actions",
-    "id": "",
-    "className": "dropdown-toggle   btn btn-link no-caret",
-    "selector": "[data-crawl-id=\"16\"]",
-    "elementType": "button",
+    "label": "Select a reason",
+    "id": "ac-ember435",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "div",
     "llm_type": "interaction"
+  },
+  {
+    "label": "Save as Draft",
+    "id": "ember458",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Convert to Adjusted",
+    "id": "ab60c69f4",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
   },
   {
     "label": "Cancel",

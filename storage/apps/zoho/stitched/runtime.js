@@ -49,13 +49,15 @@
         ev.target !== trigger &&
         !(trigger && trigger.contains && trigger.contains(ev.target))
       ) {
+        if (container.__stitchRemoving) return;
+        container.__stitchRemoving = true;
         removeUI(container);
       }
     }
     container.__stitchOutside = outside;
     // Defer so the click that opened the UI doesn't immediately close it.
     setTimeout(function () {
-      document.addEventListener("click", outside, true);
+      document.addEventListener("click", outside, false);
     }, 0);
     // ESC closes too (generic, framework-agnostic).
     function onKey(ev) {

@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-pricelists-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+  "source_title": "New Price List | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "View Examples",
+    "id": "e074554e-30aa-4c86-a688-884e6bf818ee",
+    "class_name": "popover-trigger text-blue",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#e074554e-30aa-4c86-a688-884e6bf818ee",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "//*[@id=\"e074554e-30aa-4c86-a688-884e6bf818ee\"]",
+    "outer_html": "<button class=\"popover-trigger text-blue\" id=\"e074554e-30aa-4c86-a688-884e6bf818ee\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"17\">View Examples</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+    "slug": "app-60073668069-inventory-pricelists-new",
+    "title": "New Price List | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button class=\"popover-trigger text-blue\" id=\"e074554e-30aa-4c86-a688-884e6bf818ee\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"17\">View Examples</button>",
+  "trigger_label": "View Examples",
+  "trigger_id": "d661ad77-7bd0-4c25-bcf3-53b39ff19e02",
+  "trigger_class": "popover-trigger text-blue",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+  "target_slug": "app-60073668069-inventory-pricelists-new",
+  "target_title": "New Price List | Zoho Books"
+}

@@ -8,26 +8,18 @@
     "llm_type": "tab_switch"
   },
   {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
     "label": "New",
     "id": "",
     "className": "dropdown-toggle no-caret ",
     "selector": "[data-crawl-id=\"16\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": ":\u00a0\u20b93,000.00",
-    "id": "d5eab0a5-f95e-4770-9a2e-171444e5103d",
-    "className": "popover-trigger",
-    "selector": "[data-crawl-id=\"17\"]",
-    "elementType": "button",
-    "llm_type": "interaction"
-  },
-  {
-    "label": ":\u00a0\u20b92,979.00",
-    "id": "cc9ab89c-292c-4c6c-b6c1-8686611bab36",
-    "className": "popover-trigger",
-    "selector": "[data-crawl-id=\"18\"]",
     "elementType": "button",
     "llm_type": "interaction"
   },
@@ -48,19 +40,27 @@
     "llm_type": "interaction"
   },
   {
+    "label": ":\u00a0\u20b93,000.00",
+    "id": "f79f8b25-38e0-4957-9d0b-76d00a7840df",
+    "className": "popover-trigger",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": ":\u00a0\u20b92,979.00",
+    "id": "d29e6baa-b28a-4e40-b5a1-5687122c75d7",
+    "className": "popover-trigger",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
     "label": "Cash as on 01/04/2026\n\u20b95,700.00",
     "id": "",
     "className": "cursor-pointer",
     "selector": "[data-crawl-id=\"26\"]",
     "elementType": "div",
-    "llm_type": "navigation"
-  },
-  {
-    "label": "Cash as on 31/03/2027\n\u20b90.00 ( = )",
-    "id": "",
-    "className": "cursor-pointer",
-    "selector": "[data-crawl-id=\"27\"]",
-    "elementType": "div",
-    "llm_type": "navigation"
+    "llm_type": "interaction"
   }
 ]

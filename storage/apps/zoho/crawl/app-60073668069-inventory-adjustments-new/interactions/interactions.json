@@ -1,27 +1,21 @@
 [
   {
-    "label": "Convert to Adjusted",
-    "selector": "[data-crawl-id=\"21\"]",
-    "interaction_path": "interactions/001-convert-to-adjusted",
-    "relationship_file": "interactions/001-convert-to-adjusted/relationship.json"
-  },
-  {
-    "label": "Save as Draft",
-    "selector": "[data-crawl-id=\"20\"]",
-    "interaction_path": "interactions/002-save-as-draft",
-    "relationship_file": "interactions/002-save-as-draft/relationship.json"
-  },
-  {
     "label": "Add New Row",
     "selector": "[data-crawl-id=\"17\"]",
-    "interaction_path": "interactions/003-add-new-row",
-    "relationship_file": "interactions/003-add-new-row/relationship.json"
+    "interaction_path": "interactions/002-add-new-row",
+    "relationship_file": "interactions/002-add-new-row/relationship.json"
   },
   {
     "label": "Add Items in Bulk",
     "selector": "[data-crawl-id=\"18\"]",
-    "interaction_path": "interactions/004-add-items-in-bulk",
-    "relationship_file": "interactions/004-add-items-in-bulk/relationship.json"
+    "interaction_path": "interactions/003-add-items-in-bulk",
+    "relationship_file": "interactions/003-add-items-in-bulk/relationship.json"
+  },
+  {
+    "label": "Cost of Goods Sold",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/004-cost-of-goods-sold",
+    "relationship_file": "interactions/004-cost-of-goods-sold/relationship.json"
   },
   {
     "label": "Select a reason",
@@ -30,15 +24,15 @@
     "relationship_file": "interactions/005-select-a-reason/relationship.json"
   },
   {
-    "label": "Cost of Goods Sold",
-    "selector": "[data-crawl-id=\"26\"]",
-    "interaction_path": "interactions/006-cost-of-goods-sold",
-    "relationship_file": "interactions/006-cost-of-goods-sold/relationship.json"
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/006-save-as-draft",
+    "relationship_file": "interactions/006-save-as-draft/relationship.json"
   },
   {
-    "label": "Bulk Actions",
-    "selector": "[data-crawl-id=\"16\"]",
-    "interaction_path": "interactions/007-bulk-actions",
-    "relationship_file": "interactions/007-bulk-actions/relationship.json"
+    "label": "Convert to Adjusted",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/007-convert-to-adjusted",
+    "relationship_file": "interactions/007-convert-to-adjusted/relationship.json"
   }
 ]

@@ -11,6 +11,10 @@ APPS = {
         "max_pages_pre_auth": 2,
         "max_pages_post_auth": 10,
         "max_interactions_per_page": 10,
+        "priority_url_patterns": [
+            "#/home/recentupdates",
+            "#/home/gettingstarted",
+        ],
     },
 }
 

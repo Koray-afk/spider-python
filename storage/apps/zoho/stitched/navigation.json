@@ -1,7 +1,7 @@
 {
   "app-60073668069-contacts": {
-    "title": "Contacts | Zoho Books",
-    "url": "https://books.zoho.in/app/60073668069#/contacts",
+    "title": "",
+    "url": "",
     "pages": {
       "app-60073668069-home": "../app-60073668069-home/page.html",
       "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
@@ -11,42 +11,64 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "More Actions",
-        "type": "dropdown",
-        "ui_id": "interaction_1",
-        "has_ui": true,
-        "fallback": "interactions/003-more-actions/page.html"
-      },
-      {
-        "label": "Advanced Search",
-        "type": "modal",
-        "ui_id": "interaction_2",
-        "has_ui": true,
-        "fallback": "interactions/004-advanced-search/page.html"
-      },
-      {
         "label": "All Customers",
         "type": "dropdown",
-        "ui_id": "interaction_3",
+        "ui_id": "interaction_1",
         "has_ui": true,
         "fallback": "interactions/005-all-customers/page.html"
       },
       {
-        "label": "NAME",
-        "type": "unknown",
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/006-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/007-advanced-search/page.html"
+      },
+      {
+        "label": "All Customers",
+        "type": "dropdown",
         "ui_id": "interaction_4",
         "has_ui": true,
-        "fallback": "interactions/008-name/page.html"
+        "fallback": "interactions/005-all-customers/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/006-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/007-advanced-search/page.html"
       }
     ]
   },
   "app-60073668069-contacts-new": {
-    "title": "New Contact | Contacts | Zoho Books",
-    "url": "https://books.zoho.in/app/60073668069#/contacts/new",
+    "title": "",
+    "url": "",
     "pages": {
       "app-60073668069-home": "../app-60073668069-home/page.html",
       "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
@@ -56,38 +78,130 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "Save",
-        "type": "unknown",
+        "label": "Other Details",
+        "type": "tab-switch",
         "ui_id": "interaction_1",
-        "has_ui": true,
-        "fallback": "interactions/004-save/page.html"
+        "has_ui": false,
+        "fallback": "interactions/001-other-details/page.html"
       },
       {
-        "label": "INR- Indian Rupee",
+        "label": "Address",
+        "type": "tab-switch",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-address/page.html"
+      },
+      {
+        "label": "Contact Persons",
+        "type": "tab-switch",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-contact-persons/page.html"
+      },
+      {
+        "label": "Custom Fields",
+        "type": "tab-switch",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-custom-fields/page.html"
+      },
+      {
+        "label": "Reporting Tags",
+        "type": "tab-switch",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/005-reporting-tags/page.html"
+      },
+      {
+        "label": "Remarks",
+        "type": "tab-switch",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/006-remarks/page.html"
+      }
+    ]
+  },
+  "app-60073668069-deliverychallans": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "All Delivery Challans",
         "type": "dropdown",
         "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/006-inr-indian-rupee/page.html"
+        "fallback": "interactions/002-all-delivery-challans/page.html"
       },
       {
-        "label": "Select an account",
+        "label": "Show dropdown menu",
         "type": "dropdown",
         "ui_id": "interaction_3",
         "has_ui": true,
-        "fallback": "interactions/007-select-an-account/page.html"
-      },
-      {
-        "label": "Due on Receipt",
-        "type": "dropdown",
-        "ui_id": "interaction_4",
-        "has_ui": true,
-        "fallback": "interactions/008-due-on-receipt/page.html"
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
       }
     ]
+  },
+  "app-60073668069-deliverychallans-new": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": []
   },
   "app-60073668069-home": {
     "title": "Dashboard | Zoho Books",
@@ -101,7 +215,17 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html",
+      "app-60073668069-home-gettingstarted": "../app-60073668069-home-gettingstarted/page.html",
+      "app-60073668069-home-recentupdates": "../app-60073668069-home-recentupdates/page.html"
     },
     "interactions": [
       {
@@ -109,35 +233,77 @@
         "type": "dropdown",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/002-new/page.html"
-      },
-      {
-        "label": ":\u00a0\u20b93,000.00",
-        "type": "modal",
-        "ui_id": "interaction_2",
-        "has_ui": true,
-        "fallback": "interactions/003-3-000-00/page.html"
-      },
-      {
-        "label": ":\u00a0\u20b92,979.00",
-        "type": "modal",
-        "ui_id": "interaction_3",
-        "has_ui": true,
-        "fallback": "interactions/004-2-979-00/page.html"
+        "fallback": "interactions/003-new/page.html"
       },
       {
         "label": "This Fiscal Year",
         "type": "dropdown",
-        "ui_id": "interaction_4",
+        "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/005-this-fiscal-year/page.html"
+        "fallback": "interactions/004-this-fiscal-year/page.html"
       },
       {
         "label": "Accrual",
         "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/005-accrual/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b93,000.00",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/006-3-000-00/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b92,979.00",
+        "type": "modal",
         "ui_id": "interaction_5",
         "has_ui": true,
-        "fallback": "interactions/006-accrual/page.html"
+        "fallback": "interactions/007-2-979-00/page.html"
+      },
+      {
+        "label": "Dashboard",
+        "type": "tab-switch",
+        "ui_id": "interaction_6",
+        "has_ui": false,
+        "fallback": "interactions/001-dashboard/page.html"
+      },
+      {
+        "label": "New",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/003-new/page.html"
+      },
+      {
+        "label": "This Fiscal Year",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-this-fiscal-year/page.html"
+      },
+      {
+        "label": "Accrual",
+        "type": "dropdown",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/005-accrual/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b93,000.00",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/006-3-000-00/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b92,979.00",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/007-2-979-00/page.html"
       }
     ]
   },
@@ -153,7 +319,17 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html",
+      "app-60073668069-home-gettingstarted": "../app-60073668069-home-gettingstarted/page.html",
+      "app-60073668069-home-recentupdates": "../app-60073668069-home-recentupdates/page.html"
     },
     "interactions": [
       {
@@ -161,35 +337,222 @@
         "type": "dropdown",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/002-new/page.html"
-      },
-      {
-        "label": ":\u00a0\u20b93,000.00",
-        "type": "modal",
-        "ui_id": "interaction_2",
-        "has_ui": true,
-        "fallback": "interactions/003-3-000-00/page.html"
-      },
-      {
-        "label": ":\u00a0\u20b92,979.00",
-        "type": "modal",
-        "ui_id": "interaction_3",
-        "has_ui": true,
-        "fallback": "interactions/004-2-979-00/page.html"
+        "fallback": "interactions/003-new/page.html"
       },
       {
         "label": "This Fiscal Year",
         "type": "dropdown",
-        "ui_id": "interaction_4",
+        "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/005-this-fiscal-year/page.html"
+        "fallback": "interactions/004-this-fiscal-year/page.html"
       },
       {
         "label": "Accrual",
         "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/005-accrual/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b93,000.00",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/006-3-000-00/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b92,979.00",
+        "type": "modal",
         "ui_id": "interaction_5",
         "has_ui": true,
-        "fallback": "interactions/006-accrual/page.html"
+        "fallback": "interactions/007-2-979-00/page.html"
+      },
+      {
+        "label": "Dashboard",
+        "type": "tab-switch",
+        "ui_id": "interaction_6",
+        "has_ui": false,
+        "fallback": "interactions/001-dashboard/page.html"
+      },
+      {
+        "label": "New",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/003-new/page.html"
+      },
+      {
+        "label": "This Fiscal Year",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-this-fiscal-year/page.html"
+      },
+      {
+        "label": "Accrual",
+        "type": "dropdown",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/005-accrual/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b93,000.00",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/006-3-000-00/page.html"
+      },
+      {
+        "label": ":\u00a0\u20b92,979.00",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/007-2-979-00/page.html"
+      }
+    ]
+  },
+  "app-60073668069-home-gettingstarted": {
+    "title": "Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html",
+      "app-60073668069-home-gettingstarted": "../app-60073668069-home-gettingstarted/page.html",
+      "app-60073668069-home-recentupdates": "../app-60073668069-home-recentupdates/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Add Organisation Details",
+        "type": "tab-switch",
+        "ui_id": "interaction_1",
+        "has_ui": false,
+        "fallback": "interactions/003-add-organisation-details/page.html"
+      },
+      {
+        "label": "Create your first invoice",
+        "type": "tab-switch",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-create-your-first-invoice/page.html"
+      },
+      {
+        "label": "Create your first bill and expense",
+        "type": "tab-switch",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/005-create-your-first-bill-and-expense/page.html"
+      },
+      {
+        "label": "Set up banking and journals",
+        "type": "tab-switch",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/006-set-up-banking-and-journals/page.html"
+      }
+    ]
+  },
+  "app-60073668069-home-recentupdates": {
+    "title": "Zoho Books",
+    "url": "https://books.zoho.in/app/60073668069#/home/recentupdates",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html",
+      "app-60073668069-home-gettingstarted": "../app-60073668069-home-gettingstarted/page.html",
+      "app-60073668069-home-recentupdates": "../app-60073668069-home-recentupdates/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "1",
+        "type": "tooltip",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-1/page.html"
+      },
+      {
+        "label": "Collapse/Expand",
+        "type": "tab-switch",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/002-collapse-expand/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/004-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/005-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/006-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "1",
+        "type": "tooltip",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/007-1/page.html"
       }
     ]
   },
@@ -205,43 +568,58 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "Show dropdown menu",
+        "label": "Type:\u00a0\nAll",
         "type": "dropdown",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/001-show-dropdown-menu/page.html"
-      },
-      {
-        "label": "More Actions",
-        "type": "dropdown",
-        "ui_id": "interaction_2",
-        "has_ui": true,
-        "fallback": "interactions/004-more-actions/page.html"
-      },
-      {
-        "label": "Type:\u00a0\nAll",
-        "type": "dropdown",
-        "ui_id": "interaction_3",
-        "has_ui": true,
-        "fallback": "interactions/005-type-all/page.html"
+        "fallback": "interactions/004-type-all/page.html"
       },
       {
         "label": "Period:\u00a0\nAll",
         "type": "dropdown",
-        "ui_id": "interaction_4",
+        "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/006-period-all/page.html"
+        "fallback": "interactions/005-period-all/page.html"
       },
       {
-        "label": "1",
-        "type": "tooltip",
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/008-more-actions/page.html"
+      },
+      {
+        "label": "Type:\u00a0\nAll",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-type-all/page.html"
+      },
+      {
+        "label": "Period:\u00a0\nAll",
+        "type": "dropdown",
         "ui_id": "interaction_5",
         "has_ui": true,
-        "fallback": "interactions/008-1/page.html"
+        "fallback": "interactions/005-period-all/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/008-more-actions/page.html"
       }
     ]
   },
@@ -257,57 +635,86 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "Convert to Adjusted",
-        "type": "unknown",
+        "label": "Add New Row",
+        "type": "tooltip",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/001-convert-to-adjusted/page.html"
-      },
-      {
-        "label": "Save as Draft",
-        "type": "unknown",
-        "ui_id": "interaction_2",
-        "has_ui": true,
-        "fallback": "interactions/002-save-as-draft/page.html"
-      },
-      {
-        "label": "Add New Row",
-        "type": "unknown",
-        "ui_id": "interaction_3",
-        "has_ui": true,
-        "fallback": "interactions/003-add-new-row/page.html"
+        "fallback": "interactions/002-add-new-row/page.html"
       },
       {
         "label": "Add Items in Bulk",
         "type": "modal",
-        "ui_id": "interaction_4",
+        "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/004-add-items-in-bulk/page.html"
-      },
-      {
-        "label": "Select a reason",
-        "type": "dropdown",
-        "ui_id": "interaction_5",
-        "has_ui": true,
-        "fallback": "interactions/005-select-a-reason/page.html"
+        "fallback": "interactions/003-add-items-in-bulk/page.html"
       },
       {
         "label": "Cost of Goods Sold",
         "type": "dropdown",
-        "ui_id": "interaction_6",
+        "ui_id": "interaction_3",
         "has_ui": true,
-        "fallback": "interactions/006-cost-of-goods-sold/page.html"
+        "fallback": "interactions/004-cost-of-goods-sold/page.html"
       },
       {
-        "label": "Bulk Actions",
+        "label": "Select a reason",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-select-a-reason/page.html"
+      },
+      {
+        "label": "Add New Row",
+        "type": "tooltip",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/002-add-new-row/page.html"
+      },
+      {
+        "label": "Add Items in Bulk",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/003-add-items-in-bulk/page.html"
+      },
+      {
+        "label": "Cost of Goods Sold",
         "type": "dropdown",
         "ui_id": "interaction_7",
         "has_ui": true,
-        "fallback": "interactions/007-bulk-actions/page.html"
+        "fallback": "interactions/004-cost-of-goods-sold/page.html"
+      },
+      {
+        "label": "Select a reason",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/005-select-a-reason/page.html"
+      },
+      {
+        "label": "Save as Draft",
+        "type": "tooltip",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/006-save-as-draft/page.html"
+      },
+      {
+        "label": "Convert to Adjusted",
+        "type": "tooltip",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/007-convert-to-adjusted/page.html"
       }
     ]
   },
@@ -323,7 +730,15 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
@@ -331,7 +746,7 @@
         "type": "dropdown",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/001-all-price-lists/page.html"
+        "fallback": "interactions/002-all-price-lists/page.html"
       },
       {
         "label": "More Actions",
@@ -348,23 +763,58 @@
         "fallback": "interactions/004-advanced-search/page.html"
       },
       {
-        "label": "Default Price List for Retail Transactions",
-        "type": "modal",
-        "ui_id": "interaction_4",
-        "has_ui": true,
-        "fallback": "interactions/005-default-price-list-for-retail-transactions/page.html"
-      },
-      {
         "label": "Mark as Active",
         "type": "unknown",
-        "ui_id": "interaction_5",
+        "ui_id": "interaction_4",
         "has_ui": true,
         "fallback": "interactions/006-mark-as-active/page.html"
       },
       {
         "label": "Delete",
         "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/007-delete/page.html"
+      },
+      {
+        "label": "All Price Lists",
+        "type": "dropdown",
         "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/002-all-price-lists/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/003-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-advanced-search/page.html"
+      },
+      {
+        "label": "Default Price List for Retail Transactions",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/005-default-price-list-for-retail-transactions/page.html"
+      },
+      {
+        "label": "Mark as Active",
+        "type": "unknown",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/006-mark-as-active/page.html"
+      },
+      {
+        "label": "Delete",
+        "type": "modal",
+        "ui_id": "interaction_11",
         "has_ui": true,
         "fallback": "interactions/007-delete/page.html"
       }
@@ -382,43 +832,58 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "Markup",
-        "type": "dropdown",
-        "ui_id": "interaction_1",
-        "has_ui": true,
-        "fallback": "interactions/003-markup/page.html"
-      },
-      {
         "label": "View Examples",
         "type": "modal",
-        "ui_id": "interaction_2",
+        "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/004-view-examples/page.html"
+        "fallback": "interactions/003-view-examples/page.html"
       },
       {
-        "label": "Save",
-        "type": "tooltip",
-        "ui_id": "interaction_3",
+        "label": "Markup",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/005-save/page.html"
+        "fallback": "interactions/006-markup/page.html"
       },
       {
         "label": "1",
         "type": "tooltip",
-        "ui_id": "interaction_4",
+        "ui_id": "interaction_3",
         "has_ui": true,
-        "fallback": "interactions/007-1/page.html"
+        "fallback": "interactions/002-1/page.html"
       },
       {
-        "label": "Never mind",
+        "label": "View Examples",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/003-view-examples/page.html"
+      },
+      {
+        "label": "Markup",
         "type": "dropdown",
         "ui_id": "interaction_5",
         "has_ui": true,
-        "fallback": "interactions/008-never-mind/page.html"
+        "fallback": "interactions/006-markup/page.html"
+      },
+      {
+        "label": "Save",
+        "type": "unknown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/007-save/page.html"
       }
     ]
   },
@@ -434,43 +899,72 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "More Actions",
+        "label": "All Items",
         "type": "dropdown",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/002-more-actions/page.html"
+        "fallback": "interactions/003-all-items/page.html"
       },
       {
-        "label": "All Items",
+        "label": "More Actions",
         "type": "dropdown",
         "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/003-all-items/page.html"
+        "fallback": "interactions/004-more-actions/page.html"
       },
       {
         "label": "Advanced Search",
         "type": "modal",
         "ui_id": "interaction_3",
         "has_ui": true,
-        "fallback": "interactions/004-advanced-search/page.html"
+        "fallback": "interactions/006-advanced-search/page.html"
       },
       {
         "label": "Show dropdown menu",
         "type": "dropdown",
         "ui_id": "interaction_4",
         "has_ui": true,
-        "fallback": "interactions/006-show-dropdown-menu/page.html"
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
       },
       {
-        "label": "25 per page",
+        "label": "All Items",
         "type": "dropdown",
         "ui_id": "interaction_5",
         "has_ui": true,
-        "fallback": "interactions/008-25-per-page/page.html"
+        "fallback": "interactions/003-all-items/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/004-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/006-advanced-search/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
       }
     ]
   },
@@ -486,36 +980,418 @@
       "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
       "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
       "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
-      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html"
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
     },
     "interactions": [
       {
-        "label": "Save",
-        "type": "unknown",
+        "label": "Show dropdown menu",
+        "type": "dropdown",
         "ui_id": "interaction_1",
         "has_ui": true,
-        "fallback": "interactions/002-save/page.html"
-      },
-      {
-        "label": "1",
-        "type": "tooltip",
-        "ui_id": "interaction_2",
-        "has_ui": true,
-        "fallback": "interactions/004-1/page.html"
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
       },
       {
         "label": "Sales",
         "type": "dropdown",
-        "ui_id": "interaction_3",
+        "ui_id": "interaction_2",
         "has_ui": true,
-        "fallback": "interactions/005-sales/page.html"
+        "fallback": "interactions/001-sales/page.html"
       },
       {
         "label": "Cost of Goods Sold",
         "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-cost-of-goods-sold/page.html"
+      },
+      {
+        "label": "Save",
+        "type": "unknown",
         "ui_id": "interaction_4",
         "has_ui": true,
-        "fallback": "interactions/006-cost-of-goods-sold/page.html"
+        "fallback": "interactions/003-save/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
+      }
+    ]
+  },
+  "app-60073668069-invoices": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "All Invoices",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/005-all-invoices/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/006-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/007-advanced-search/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "All Invoices",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/005-all-invoices/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/006-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/007-advanced-search/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
+      }
+    ]
+  },
+  "app-60073668069-quotes": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "All Quotes",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-all-quotes/page.html"
+      },
+      {
+        "label": "All Quotes",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-all-quotes/page.html"
+      }
+    ]
+  },
+  "app-60073668069-recurringinvoices": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "All Recurring Invoices",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/005-all-recurring-invoices/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/007-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/008-advanced-search/page.html"
+      },
+      {
+        "label": "All Recurring Invoices",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-all-recurring-invoices/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/007-more-actions/page.html"
+      },
+      {
+        "label": "Advanced Search",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/008-advanced-search/page.html"
+      }
+    ]
+  },
+  "app-60073668069-recurringinvoices-new": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Add Items in Bulk",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-add-items-in-bulk/page.html"
+      },
+      {
+        "label": "Select Customer",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/008-select-customer/page.html"
+      },
+      {
+        "label": "Add Items in Bulk",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-add-items-in-bulk/page.html"
+      },
+      {
+        "label": "Save",
+        "type": "unknown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-save/page.html"
+      },
+      {
+        "label": "Select Customer",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-select-customer/page.html"
+      }
+    ]
+  },
+  "app-60073668069-salesorders": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "All Sales Orders",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/005-all-sales-orders/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/007-more-actions/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
+      },
+      {
+        "label": "All Sales Orders",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-all-sales-orders/page.html"
+      },
+      {
+        "label": "More Actions",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/007-more-actions/page.html"
+      },
+      {
+        "label": "Show dropdown menu",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/008-show-dropdown-menu/page.html"
+      }
+    ]
+  },
+  "app-60073668069-salesorders-new": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "app-60073668069-home": "../app-60073668069-home/page.html",
+      "app-60073668069-inventory-product-index": "../app-60073668069-inventory-product-index/page.html",
+      "app-60073668069-inventory-product-product-creation": "../app-60073668069-inventory-product-product-creation/page.html",
+      "app-60073668069-inventory-pricelists": "../app-60073668069-inventory-pricelists/page.html",
+      "app-60073668069-inventory-pricelists-new": "../app-60073668069-inventory-pricelists-new/page.html",
+      "app-60073668069-inventory-adjustments": "../app-60073668069-inventory-adjustments/page.html",
+      "app-60073668069-inventory-adjustments-new": "../app-60073668069-inventory-adjustments-new/page.html",
+      "app-60073668069-contacts": "../app-60073668069-contacts/page.html",
+      "app-60073668069-contacts-new": "../app-60073668069-contacts-new/page.html",
+      "app-60073668069-quotes": "../app-60073668069-quotes/page.html",
+      "app-60073668069-salesorders": "../app-60073668069-salesorders/page.html",
+      "app-60073668069-salesorders-new": "../app-60073668069-salesorders-new/page.html",
+      "app-60073668069-invoices": "../app-60073668069-invoices/page.html",
+      "app-60073668069-recurringinvoices": "../app-60073668069-recurringinvoices/page.html",
+      "app-60073668069-recurringinvoices-new": "../app-60073668069-recurringinvoices-new/page.html",
+      "app-60073668069-deliverychallans": "../app-60073668069-deliverychallans/page.html",
+      "app-60073668069-deliverychallans-new": "../app-60073668069-deliverychallans-new/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Add Items in Bulk",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-add-items-in-bulk/page.html"
+      },
+      {
+        "label": "Add Items in Bulk",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-add-items-in-bulk/page.html"
+      },
+      {
+        "label": "Save as Draft",
+        "type": "unknown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-save-as-draft/page.html"
+      },
+      {
+        "label": "Save and Send",
+        "type": "unknown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-save-and-send/page.html"
       }
     ]
   },

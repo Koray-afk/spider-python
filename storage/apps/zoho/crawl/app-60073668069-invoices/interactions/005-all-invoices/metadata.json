@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "All Invoices",
+  "triggerId": "",
+  "triggerClass": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+  "selector": "[data-crawl-id=\"17\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-invoices",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/invoices",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/invoices",
+  "beforeTitle": "Invoices | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/invoices",
+  "title": "Invoices | Zoho Books",
+  "resultPagePath": "app-60073668069-invoices/interactions/005-all-invoices",
+  "captured_at": "2026-06-17T09:05:22.364447+00:00"
+}

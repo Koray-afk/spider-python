@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-pricelists-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+  "source_title": "New Price List | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Save",
+    "id": "ember310",
+    "class_name": "btn btn-primary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember310",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "//*[@id=\"ember310\"]",
+    "outer_html": "<button form=\"pricebooks-new\" id=\"ember310\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"18\"><!----> Save<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+    "slug": "app-60073668069-inventory-pricelists-new",
+    "title": "New Price List | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button form=\"pricebooks-new\" id=\"ember310\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"18\"><!----> Save<!----></button>",
+  "trigger_label": "Save",
+  "trigger_id": "ember310",
+  "trigger_class": "btn btn-primary ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+  "target_slug": "app-60073668069-inventory-pricelists-new",
+  "target_title": "New Price List | Zoho Books"
+}

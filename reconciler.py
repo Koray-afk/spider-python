@@ -216,6 +216,15 @@ def _trigger_from_relationship(inter_dir: Path) -> dict:
     }
 
 
+def _aria_controls_from_html(outer_html: str) -> str | None:
+    """Return the aria-controls attribute value from an element's outerHTML, or None."""
+    if not outer_html or "aria-controls" not in outer_html:
+        return None
+    soup = BeautifulSoup(outer_html, "html.parser")
+    el = soup.find(True)
+    return el.get("aria-controls") or None if el else None
+
+
 def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dict:
     """Diff main vs interaction DOM and return the full reconciliation record."""
     main_soup = BeautifulSoup(main_html, "html.parser")
@@ -228,12 +237,51 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
     _diff(main_root, inter_root, added, modified)
 
     ui_roots, backdrop_roots = _split_backdrop(added)
+    interaction_type = _classify(added) if added else "unknown"
+    location = _location(added[0] if added else None)
+    ui_html = "\n".join(str(r) for r in ui_roots)
+    backdrop_html = "\n".join(str(r) for r in backdrop_roots)
+
+    # For dropdowns: if the trigger has aria-controls, extract ONLY the panel
+    # element with that ID from the interaction page — the diff typically picks
+    # up sentinel divs, the trigger wrapper, and unrelated elements alongside
+    # the actual menu.
+    trigger_outer = trigger.get("outerHTML") or trigger.get("outer_html") or ""
+    panel_id = _aria_controls_from_html(trigger_outer)
+    tab_content_html = ""
+    tab_content_selector = ""
+
+    if panel_id:
+        panel_el = inter_soup.find(id=panel_id)
+        if isinstance(panel_el, Tag):
+            # Fix 1 — dropdown: use only the controlled panel as ui_html.
+            if interaction_type == "dropdown" or "dropdown" in (
+                " ".join(panel_el.get("class") or [])
+            ).lower():
+                ui_html = str(panel_el)
+                backdrop_html = ""
+                interaction_type = "dropdown"
+                parent = panel_el.parent
+                location = {
+                    "parentSelector": _css_selector(parent) if isinstance(parent, Tag) else "",
+                    "parentXPath": _xpath(parent) if isinstance(parent, Tag) else "",
+                    "insertMethod": "append",
+                }
+
+            # Fix 3 — tab-switch: capture the panel's innerHTML so the stitcher
+            # can swap it in without a page reload.
+            if "tab" in interaction_type.replace("-", "_").lower():
+                tab_content_html = panel_el.decode_contents()
+                tab_content_selector = f"#{panel_id}"
+
     return {
         "trigger": trigger,
-        "interaction_type": _classify(added) if added else "unknown",
-        "location": _location(added[0] if added else None),
-        "ui_html": "\n".join(str(r) for r in ui_roots),
-        "backdrop_html": "\n".join(str(r) for r in backdrop_roots),
+        "interaction_type": interaction_type,
+        "location": location,
+        "ui_html": ui_html,
+        "backdrop_html": backdrop_html,
+        "tab_content_html": tab_content_html,
+        "tab_content_selector": tab_content_selector,
     }
 
 

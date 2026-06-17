@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-product-index",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/product/index",
+  "source_title": "Items | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "f1228f53-f628-4cc0-b68d-c5247f29879d",
+    "class_name": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "More Actions",
+    "selector": "#f1228f53-f628-4cc0-b68d-c5247f29879d",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "//*[@id=\"f1228f53-f628-4cc0-b68d-c5247f29879d\"]",
+    "outer_html": "<button for=\"e2f105e4-6ba9-4797-9e94-d9a584831ccf\" aria-controls=\"e2f105e4-6ba9-4797-9e94-d9a584831ccf\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-secondary d-flex\" id=\"f1228f53-f628-4cc0-b68d-c5247f29879d\" aria-label=\"More Actions\" style=\"padding: 8px;\" type=\"button\" tabindex=\"0\" data-crawl-id=\"17\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+    "slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+    "title": "Items | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"e2f105e4-6ba9-4797-9e94-d9a584831ccf\" aria-controls=\"e2f105e4-6ba9-4797-9e94-d9a584831ccf\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-secondary d-flex\" id=\"f1228f53-f628-4cc0-b68d-c5247f29879d\" aria-label=\"More Actions\" style=\"padding: 8px;\" type=\"button\" tabindex=\"0\" data-crawl-id=\"17\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>",
+  "trigger_label": "More Actions",
+  "trigger_id": "e51d22c9-5668-48b2-a2b6-bed7aa77bdb5",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+  "target_slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+  "target_title": "Items | Zoho Books"
+}

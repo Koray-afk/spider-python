@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New",
+    "id": "",
+    "className": "btn btn-primary d-flex align-items-center ",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "All Recurring Invoices",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More Actions",
+    "id": "de78f563-6c9f-4b56-ae9b-f7091f0a0ca7",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced Search",
+    "id": "",
+    "className": "icon-button",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]
