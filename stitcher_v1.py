@@ -61,6 +61,71 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     return panel;
   }
 
+  function clearPopperStyles(el) {
+    if (!el || !el.style) return;
+    el.style.transform = "";
+    el.style.inset = "";
+    el.style.top = "";
+    el.style.left = "";
+    el.style.right = "";
+    el.style.bottom = "";
+    el.style.margin = "";
+    el.removeAttribute("data-popper-placement");
+    el.removeAttribute("data-popper-reference-hidden");
+  }
+
+  function wantsEndAlignment(trigger, placement) {
+    if (placement && /end|right/i.test(placement)) return true;
+    if (trigger.closest && trigger.closest(".float-end")) return true;
+    var dd = trigger.closest && trigger.closest(".dropdown");
+    return !!(dd && dd.classList.contains("float-end"));
+  }
+
+  function repositionNearTrigger(panel, trigger) {
+    var placement = panel.getAttribute("data-popper-placement") || "";
+    clearPopperStyles(panel);
+    var rect = trigger.getBoundingClientRect();
+    panel.style.position = "fixed";
+    panel.style.zIndex = "2000";
+    panel.style.margin = "0";
+    panel.style.top = rect.bottom + "px";
+    panel.style.bottom = "auto";
+
+    var menuWidth = panel.offsetWidth || panel.getBoundingClientRect().width || 220;
+    var end = wantsEndAlignment(trigger, placement);
+    if (end) {
+      panel.style.left = Math.max(8, rect.right - menuWidth) + "px";
+    } else {
+      panel.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - menuWidth - 8)) + "px";
+    }
+    panel.style.right = "auto";
+  }
+
+  function repositionInjectedUI(container, trigger) {
+    container.style.position = "static";
+    container.style.pointerEvents = "none";
+    container.style.background = "transparent";
+    container.style.border = "0";
+    container.style.padding = "0";
+    container.style.margin = "0";
+
+    function apply() {
+      var panels = container.querySelectorAll(
+        ".dropdown-menu, .popover, .popover-container, .popper[role='tooltip'], .tooltip, .popper.tooltip"
+      );
+      Array.prototype.forEach.call(panels, function (panel) {
+        if (/backdrop|modal-backdrop|arrow/i.test(panel.className || "")) return;
+        panel.style.pointerEvents = "auto";
+        if (panel.classList.contains("dropdown-menu") || panel.classList.contains("show")) {
+          panel.style.display = "block";
+        }
+        repositionNearTrigger(panel, trigger);
+      });
+    }
+    apply();
+    requestAnimationFrame(apply);
+  }
+
   function isCloseControl(el) {
     if (!el || el.nodeType !== 1) return false;
     var tag = el.tagName.toLowerCase();
@@ -170,6 +235,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       }
 
       bindClose(container, trigger);
+      repositionInjectedUI(container, trigger);
       console.log("[STITCH] Inject UI", id, "type=" + (cfg.type || "?"), "→", cfg.parentSelector);
     } catch (err) {
       console.warn("[STITCH] UI injection failed → snapshot fallback", id, err);
