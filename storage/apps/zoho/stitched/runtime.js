@@ -4,10 +4,6 @@
 (function () {
   "use strict";
 
-  var CLOSE_SELECTOR =
-    ".close, .sidebar-close, .modal-close, [data-dismiss], [data-bs-dismiss]," +
-    " [aria-label*='close' i], [class*='backdrop'], [class*='overlay-mask']";
-
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
     return all[id] || null;
@@ -24,24 +20,51 @@
     return panel;
   }
 
+  function isCloseControl(el) {
+    if (!el || el.nodeType !== 1) return false;
+    var tag = el.tagName.toLowerCase();
+    if (tag !== "button" && tag !== "a" && el.getAttribute("role") !== "button") {
+      if (!/backdrop|overlay-mask/.test(el.className || "")) return false;
+    }
+    var cls = el.className || "";
+    if (/\b(close|btn-close|sidebar-close|modal-close|popover-close-button|close-details)\b/i.test(cls)) {
+      return true;
+    }
+    if (/close-button|btn-close|close-details|popover-close|modal-backdrop|backdrop/.test(cls)) {
+      return true;
+    }
+    var label = (el.getAttribute("aria-label") || "").toLowerCase();
+    if (label.indexOf("close") >= 0 || label === "back") return true;
+    if (el.hasAttribute("data-dismiss") || el.hasAttribute("data-bs-dismiss")) return true;
+    return false;
+  }
+
+  function bindCloseControls(container) {
+    container.querySelectorAll("button, a, [role='button'], div, span").forEach(function (el) {
+      if (!isCloseControl(el)) return;
+      el.addEventListener(
+        "click",
+        function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          removeUI(container);
+        },
+        true
+      );
+    });
+  }
+
   function removeUI(container) {
     if (!container) return;
     if (container.__stitchOutside)
-      document.removeEventListener("click", container.__stitchOutside, true);
+      document.removeEventListener("click", container.__stitchOutside, false);
     if (container.__stitchKey)
       document.removeEventListener("keydown", container.__stitchKey, true);
     if (container.parentNode) container.parentNode.removeChild(container);
   }
 
   function bindClose(container, trigger) {
-    // Explicit close affordances inside the injected UI.
-    container.querySelectorAll(CLOSE_SELECTOR).forEach(function (btn) {
-      btn.addEventListener("click", function (ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        removeUI(container);
-      });
-    });
+    bindCloseControls(container);
     // Click anywhere outside the injected UI (and not on the trigger) closes it.
     function outside(ev) {
       if (
@@ -119,6 +142,9 @@
       var t = e.target;
       if (!t || !t.closest) return;
 
+      // Clicks inside an open injected overlay are handled by bindCloseControls.
+      if (t.closest(".stitch-injected-ui")) return;
+
       // 1. Sidebar accordion toggle — purely in-page, never loads a snapshot.
       var acc = t.closest("[data-stitch-accordion]");
       if (acc) {
@@ -144,7 +170,7 @@
 
       // 2. Interaction → inject reconciled UI into the current page (no reload).
       var uiTrigger = t.closest("[data-stitch-ui-id]");
-      if (uiTrigger) {
+      if (uiTrigger && !uiTrigger.classList.contains("stitch-injected-ui")) {
         e.preventDefault();
         e.stopPropagation();
         injectInteraction(uiTrigger);

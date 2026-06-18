@@ -45,10 +45,6 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 (function () {
   "use strict";
 
-  var CLOSE_SELECTOR =
-    ".close, .sidebar-close, .modal-close, [data-dismiss], [data-bs-dismiss]," +
-    " [aria-label*='close' i], [class*='backdrop'], [class*='overlay-mask']";
-
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
     return all[id] || null;
@@ -65,24 +61,51 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     return panel;
   }
 
+  function isCloseControl(el) {
+    if (!el || el.nodeType !== 1) return false;
+    var tag = el.tagName.toLowerCase();
+    if (tag !== "button" && tag !== "a" && el.getAttribute("role") !== "button") {
+      if (!/backdrop|overlay-mask/.test(el.className || "")) return false;
+    }
+    var cls = el.className || "";
+    if (/\\b(close|btn-close|sidebar-close|modal-close|popover-close-button|close-details)\\b/i.test(cls)) {
+      return true;
+    }
+    if (/close-button|btn-close|close-details|popover-close|modal-backdrop|backdrop/.test(cls)) {
+      return true;
+    }
+    var label = (el.getAttribute("aria-label") || "").toLowerCase();
+    if (label.indexOf("close") >= 0 || label === "back") return true;
+    if (el.hasAttribute("data-dismiss") || el.hasAttribute("data-bs-dismiss")) return true;
+    return false;
+  }
+
+  function bindCloseControls(container) {
+    container.querySelectorAll("button, a, [role='button'], div, span").forEach(function (el) {
+      if (!isCloseControl(el)) return;
+      el.addEventListener(
+        "click",
+        function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          removeUI(container);
+        },
+        true
+      );
+    });
+  }
+
   function removeUI(container) {
     if (!container) return;
     if (container.__stitchOutside)
-      document.removeEventListener("click", container.__stitchOutside, true);
+      document.removeEventListener("click", container.__stitchOutside, false);
     if (container.__stitchKey)
       document.removeEventListener("keydown", container.__stitchKey, true);
     if (container.parentNode) container.parentNode.removeChild(container);
   }
 
   function bindClose(container, trigger) {
-    // Explicit close affordances inside the injected UI.
-    container.querySelectorAll(CLOSE_SELECTOR).forEach(function (btn) {
-      btn.addEventListener("click", function (ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        removeUI(container);
-      });
-    });
+    bindCloseControls(container);
     // Click anywhere outside the injected UI (and not on the trigger) closes it.
     function outside(ev) {
       if (
@@ -160,6 +183,9 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       var t = e.target;
       if (!t || !t.closest) return;
 
+      // Clicks inside an open injected overlay are handled by bindCloseControls.
+      if (t.closest(".stitch-injected-ui")) return;
+
       // 1. Sidebar accordion toggle — purely in-page, never loads a snapshot.
       var acc = t.closest("[data-stitch-accordion]");
       if (acc) {
@@ -185,7 +211,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 
       // 2. Interaction → inject reconciled UI into the current page (no reload).
       var uiTrigger = t.closest("[data-stitch-ui-id]");
-      if (uiTrigger) {
+      if (uiTrigger && !uiTrigger.classList.contains("stitch-injected-ui")) {
         e.preventDefault();
         e.stopPropagation();
         injectInteraction(uiTrigger);
@@ -610,6 +636,50 @@ def _wire_navigations(
     return page_links
 
 
+def _parent_slug_for_form(slug: str) -> str | None:
+    """Map a creation/new form slug back to its list page slug."""
+    if slug.endswith("-new"):
+        return slug[:-4]
+    if slug.endswith("-product-product-creation"):
+        return slug.replace("-product-product-creation", "-product-index")
+    return None
+
+
+def _wire_flyout_close(
+    soup: BeautifulSoup,
+    slug: str,
+    valid_slugs: set[str],
+    to_root: str,
+    used: set[int],
+) -> None:
+    """Wire X / Back / Cancel on full-page flyout forms to navigate back to the list page."""
+    parent = _parent_slug_for_form(slug)
+    if not parent or parent not in valid_slugs:
+        return
+    rel = f"{to_root}{parent}/page.html"
+    for sel in (
+        "button.close-details",
+        'button[aria-label="Close this side bar"]',
+        'button[aria-label="Back"]',
+    ):
+        for el in soup.select(sel):
+            if id(el) in used:
+                continue
+            used.add(id(el))
+            el["data-stitch-go"] = rel
+    for el in soup.find_all("button"):
+        if id(el) in used:
+            continue
+        if (el.get_text() or "").strip() != "Cancel":
+            continue
+        classes = el.get("class") or []
+        if isinstance(classes, str):
+            classes = classes.split()
+        if "btn-secondary" in classes or "btn-link" in classes:
+            used.add(id(el))
+            el["data-stitch-go"] = rel
+
+
 def _normalize_trigger(trigger: dict) -> dict:
     """Map a reconciliation-style trigger (camelCase) to the snake_case keys
     `_find_trigger` expects. Pass-through for already snake_case triggers."""
@@ -1009,6 +1079,9 @@ def _process_html(
     # Accordions first: claim sidebar toggles so interaction wiring never
     # rebinds them to a snapshot, and rewritten submenu anchors stay reachable.
     accordions = _wire_accordions(soup, used, expand_sidebars)
+
+    if valid_slugs is not None and page_dir is not None:
+        _wire_flyout_close(soup, page_dir.name, valid_slugs, to_root, used)
 
     inter_manifest: list[dict] = []
     configs: dict[str, dict] = {}
