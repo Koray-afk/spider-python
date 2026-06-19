@@ -101,6 +101,32 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     panel.style.right = "auto";
   }
 
+  function isCenteredPanel(panel) {
+    var cls = panel.className || "";
+    return (
+      /quick-add-menu|dropdown-menu-center|multi-col-dropdown/.test(cls) ||
+      panel.classList.contains("modal-dialog")
+    );
+  }
+
+  function repositionCenteredPanel(panel) {
+    clearPopperStyles(panel);
+    panel.style.position = "fixed";
+    panel.style.zIndex = "2000";
+    panel.style.margin = "0";
+    panel.style.display = "block";
+    panel.style.pointerEvents = "auto";
+    panel.style.transform = "none";
+
+    var rect = panel.getBoundingClientRect();
+    var w = panel.offsetWidth || rect.width || 0;
+    var h = panel.offsetHeight || rect.height || 0;
+    panel.style.left = Math.max(8, (window.innerWidth - w) / 2) + "px";
+    panel.style.top = Math.max(56, (window.innerHeight - h) / 2) + "px";
+    panel.style.right = "auto";
+    panel.style.bottom = "auto";
+  }
+
   function repositionInjectedUI(container, trigger) {
     container.style.position = "static";
     container.style.pointerEvents = "none";
@@ -111,7 +137,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 
     function apply() {
       var panels = container.querySelectorAll(
-        ".dropdown-menu, .popover, .popover-container, .popper[role='tooltip'], .tooltip, .popper.tooltip"
+        ".dropdown-menu, .modal-dialog, .popover, .popover-container, .popper[role='tooltip'], .tooltip, .popper.tooltip"
       );
       Array.prototype.forEach.call(panels, function (panel) {
         if (/backdrop|modal-backdrop|arrow/i.test(panel.className || "")) return;
@@ -119,11 +145,71 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         if (panel.classList.contains("dropdown-menu") || panel.classList.contains("show")) {
           panel.style.display = "block";
         }
-        repositionNearTrigger(panel, trigger);
+        if (isCenteredPanel(panel)) {
+          repositionCenteredPanel(panel);
+        } else {
+          repositionNearTrigger(panel, trigger);
+        }
+        panel.querySelectorAll("a, button, .dropdown-item, [role='menuitem'], [role='option']").forEach(function (el) {
+          el.style.pointerEvents = "auto";
+        });
       });
     }
     apply();
     requestAnimationFrame(apply);
+  }
+
+  function handleInjectedUIClick(e, t) {
+    var injected = t.closest(".stitch-injected-ui");
+    if (!injected) return false;
+
+    var goTrigger = t.closest("[data-stitch-go]");
+    if (goTrigger) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = goTrigger.getAttribute("data-stitch-go");
+      return true;
+    }
+
+    var a = t.closest("a[href]");
+    if (a) {
+      var href = (a.getAttribute("href") || "").trim();
+      if (a.hasAttribute("data-stitch-unresolved")) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("[STITCH] Overlay link (uncrawled route)", a.getAttribute("data-stitch-route") || href);
+        return true;
+      }
+      if (href && href !== "#" && href.indexOf("javascript:") !== 0) {
+        if (/^https?:\\/\\//i.test(href) && href.indexOf(location.origin) !== 0) {
+          e.preventDefault();
+          e.stopPropagation();
+          return true;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = href;
+        return true;
+      }
+    }
+
+    var menuItem = t.closest(".dropdown-item, [role='menuitem'], [role='option']");
+    if (menuItem && (menuItem.tagName === "BUTTON" || menuItem.getAttribute("role") === "button" || menuItem.tagName === "LI")) {
+      e.preventDefault();
+      e.stopPropagation();
+      var scope = menuItem.closest(".dropdown-menu") || menuItem.parentElement;
+      if (scope) {
+        Array.prototype.forEach.call(
+          scope.querySelectorAll(".dropdown-item.selected-option, .dropdown-item.active"),
+          function (sib) { sib.classList.remove("selected-option", "active"); }
+        );
+      }
+      menuItem.classList.add("selected-option");
+      console.log("[STITCH] Dropdown item (demo selection)", (menuItem.textContent || "").trim().slice(0, 48));
+      return true;
+    }
+
+    return true;
   }
 
   function isCloseControl(el) {
@@ -215,7 +301,10 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       var parent = cfg.parentSelector
         ? document.querySelector(cfg.parentSelector)
         : document.body;
-      if (!parent) throw new Error("parentSelector not found: " + cfg.parentSelector);
+      if (!parent) {
+        console.warn("[STITCH] parentSelector not found, falling back to body:", cfg.parentSelector);
+        parent = document.body;
+      }
 
       var container = document.createElement("div");
       container.className = "stitch-injected-ui";
@@ -249,8 +338,8 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       var t = e.target;
       if (!t || !t.closest) return;
 
-      // Clicks inside an open injected overlay are handled by bindCloseControls.
-      if (t.closest(".stitch-injected-ui")) return;
+      // Clicks inside an open injected overlay: navigate local links / demo-select items.
+      if (handleInjectedUIClick(e, t)) return;
 
       // 1. Sidebar accordion toggle — purely in-page, never loads a snapshot.
       var acc = t.closest("[data-stitch-accordion]");
@@ -368,6 +457,26 @@ _INTERACTION_FIX_CSS = """#main-nav-tab,
 .main-nav-lhs,
 .main-nav-lhs * {
     pointer-events:auto !important;
+}
+.quick-add-menu.dropdown-menu-center,
+.stitch-injected-ui .quick-add-menu.dropdown-menu-center {
+    position: fixed !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 2000;
+}
+.stitch-injected-ui .dropdown-menu,
+.stitch-injected-ui .dropdown-menu .dropdown-item,
+.stitch-injected-ui .dropdown-menu button,
+.stitch-injected-ui .dropdown-menu a,
+.stitch-injected-ui .popover-container,
+.stitch-injected-ui .popover {
+    pointer-events: auto !important;
 }"""
 
 FALLBACK_404 = """<!doctype html>
@@ -442,6 +551,37 @@ def _norm_route(raw: str) -> str:
     if not raw:
         return ""
     return "/" + raw.strip("/").lower()
+
+
+def _resolve_nav_target_slug(
+    nav: dict,
+    valid_slugs: set[str],
+    route_index: dict[str, str],
+) -> str | None:
+    """Map a navigation record to a crawled page slug.
+
+    Navigations often record target_slug with query params baked in (e.g.
+    dashboard_id=defaultdashboard) even when only the base route was captured.
+    Fall back to route_index lookup, then longest valid slug prefix."""
+    slug = nav.get("target_slug", "")
+    if slug and slug in valid_slugs:
+        return slug
+
+    target_url = nav.get("target_url", "")
+    if target_url:
+        fragment = urlparse(target_url).fragment
+        key = _norm_route("#" + fragment if fragment else "")
+        if key and key in route_index:
+            resolved = route_index[key]
+            if resolved in valid_slugs:
+                return resolved
+
+    if slug:
+        prefixes = [s for s in valid_slugs if slug == s or slug.startswith(s + "-")]
+        if prefixes:
+            return max(prefixes, key=len)
+
+    return None
 
 
 def _build_route_index(
@@ -678,14 +818,15 @@ def _wire_navigations(
     valid_slugs: set[str],
     to_root: str,
     used: set[int],
+    route_index: dict[str, str] | None = None,
 ) -> dict[str, str]:
     """Bind non-anchor navigation triggers (div/li/span/role=menuitem/button)
     discovered during the crawl. Each becomes clickable via data-stitch-go →
     the local target page, so navigation works without an anchor tag."""
     page_links: dict[str, str] = {}
     for nav in navigations:
-        slug = nav.get("target_slug", "")
-        if not slug or slug not in valid_slugs:
+        slug = _resolve_nav_target_slug(nav, valid_slugs, route_index or {})
+        if not slug:
             continue
         trigger = nav.get("trigger", {}) or {}
         # Anchors are already rewritten via href; skip to avoid redundancy.
@@ -846,8 +987,8 @@ def _wire_from_discovered(
             nav = nav_idx.get(selector)
             if not nav:
                 continue
-            slug = nav.get("target_slug", "")
-            if not slug or slug not in valid_slugs:
+            slug = _resolve_nav_target_slug(nav, valid_slugs, route_index)
+            if not slug:
                 continue
             used.add(id(el))
             rel = f"{to_root}{slug}/page.html"
@@ -1168,7 +1309,9 @@ def _process_html(
 
     # Fallback wiring: handles any elements not already claimed above.
     if navigations and valid_slugs is not None:
-        page_links.update(_wire_navigations(soup, navigations, valid_slugs, to_root, used))
+        page_links.update(
+            _wire_navigations(soup, navigations, valid_slugs, to_root, used, route_index)
+        )
     if interactions and page_dir is not None:
         # Wire tabs first (fallback): claims remaining tab-switch triggers.
         tabs_configs.update(

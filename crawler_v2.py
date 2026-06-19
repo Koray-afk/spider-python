@@ -44,6 +44,7 @@ STEALTH_SCRIPT = (
 DEFAULT_MAX_INTERACTIONS = 10
 WAIT_AFTER_LOAD_MS = 2000
 WAIT_AFTER_CLICK_MS = 800
+NETWORKIDLE_TIMEOUT_MS = 8000
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico"}
 CSS_EXTS = {".css"}
@@ -199,7 +200,81 @@ def prepare_context(context) -> None:
     context.add_init_script(STEALTH_SCRIPT)
 
 
-def save_page_capture(page_dir: Path, page, url: str, title: str, page_type: str) -> None:
+def _should_skip_url(url: str, patterns: list[str]) -> bool:
+    return bool(patterns) and any(p in url for p in patterns)
+
+
+def _should_enqueue_link(
+    link: str,
+    source_url: str,
+    *,
+    skip_patterns: list[str],
+    seed_norms: set[str],
+    list_detail_limits: list[dict],
+    link_counters: dict[str, dict[str, int]],
+    cross_page_rules: list[dict] | None = None,
+) -> bool:
+    """Filter BFS links: skip patterns, cap list→detail fan-out, block redundant hops."""
+    link_norm = normalize_url(link)
+    if _should_skip_url(link, skip_patterns) and link_norm not in seed_norms:
+        return False
+
+    for rule in cross_page_rules or []:
+        link_pat = rule.get("link_pattern", "")
+        source_pat = rule.get("source_pattern", "")
+        source_allow = rule.get("source_allow", "")
+        if link_pat in link and source_pat in source_url and source_allow not in source_url:
+            return False
+
+    src_key = normalize_url(source_url)
+    page_counts = link_counters.setdefault(src_key, {})
+    for lim in list_detail_limits or []:
+        pat = lim.get("pattern", "")
+        if pat not in link:
+            continue
+        excl = lim.get("exclude_pattern")
+        if excl and excl in link:
+            continue
+        max_n = lim.get("max_from_page", 3)
+        count = page_counts.get(pat, 0)
+        if count >= max_n:
+            return False
+        page_counts[pat] = count + 1
+        break
+
+    return True
+
+
+def _stabilize_page(
+    page,
+    *,
+    wait_ms: int,
+    use_networkidle: bool = False,
+    networkidle_ms: int = NETWORKIDLE_TIMEOUT_MS,
+) -> None:
+    if use_networkidle:
+        try:
+            page.wait_for_load_state("networkidle", timeout=networkidle_ms)
+        except Exception:
+            pass
+    if wait_ms > 0:
+        page.wait_for_timeout(wait_ms)
+
+
+def _goto_clean(page, url: str, *, use_networkidle: bool, wait_ms: int) -> None:
+    page.goto(url, wait_until="domcontentloaded", timeout=60000)
+    _stabilize_page(page, wait_ms=wait_ms, use_networkidle=use_networkidle)
+
+
+def save_page_capture(
+    page_dir: Path,
+    page,
+    url: str,
+    title: str,
+    page_type: str,
+    *,
+    skip_screenshots: bool = False,
+) -> None:
     page_dir.mkdir(parents=True, exist_ok=True)
 
     print("[PAGE] Saving HTML")
@@ -207,7 +282,8 @@ def save_page_capture(page_dir: Path, page, url: str, title: str, page_type: str
     (page_dir / "page.html").write_text(html, encoding="utf-8")
 
     print("[PAGE] Saving Screenshot")
-    page.screenshot(path=str(page_dir / "screenshot.png"), full_page=True)
+    if not skip_screenshots:
+        page.screenshot(path=str(page_dir / "screenshot.png"), full_page=True)
 
     print("[PAGE] Saving Metadata")
     (page_dir / "metadata.json").write_text(
@@ -233,6 +309,7 @@ def save_interaction_capture(
     crawl_root: Path,
     element: dict | None = None,
     tab_panel: dict | None = None,
+    skip_screenshots: bool = False,
 ) -> None:
     folder.mkdir(parents=True, exist_ok=True)
     element = element or {}
@@ -246,7 +323,8 @@ def save_interaction_capture(
     (folder / "page.html").write_text(html, encoding="utf-8")
 
     print("[PAGE] Saving Screenshot")
-    page.screenshot(path=str(folder / "screenshot.png"), full_page=True)
+    if not skip_screenshots:
+        page.screenshot(path=str(folder / "screenshot.png"), full_page=True)
 
     print("[PAGE] Saving Metadata")
     (folder / "metadata.json").write_text(
@@ -325,6 +403,33 @@ def save_interaction_capture(
         (folder / "tab-content.html").write_text(tab_html, encoding="utf-8")
 
 
+def build_seed_urls(start_url: str, patterns: list[str]) -> list[str]:
+    """Turn hash-route patterns into full app URLs queued at crawl start."""
+    if not patterns:
+        return []
+    p = urlparse(start_url)
+    base = f"{p.scheme}://{p.netloc}"
+    m = re.search(r"(/app/\d+)", start_url)
+    app_prefix = m.group(1) if m else ""
+    seeds: list[str] = []
+    seen: set[str] = set()
+    for raw in patterns:
+        route = raw if raw.startswith("#") else "#" + raw.lstrip("/")
+        url = f"{base}{app_prefix}{route}" if app_prefix else f"{base}{route}"
+        key = normalize_url(url)
+        if key not in seen:
+            seen.add(key)
+            seeds.append(url)
+    return seeds
+
+
+def _build_seed_norms(start_url: str, seed_patterns: list[str] | None) -> set[str]:
+    norms = {normalize_url(start_url)}
+    for seed_url in build_seed_urls(start_url, seed_patterns or []):
+        norms.add(normalize_url(seed_url))
+    return norms
+
+
 def collect_links(page, page_url: str, base_domain: str) -> list[str]:
     links: list[str] = []
     seen: set[str] = set()
@@ -393,12 +498,12 @@ def crawl_interactions(
     crawl_root: Path,
     candidates: list[dict],
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
+    *,
+    wait_after_load_ms: int = WAIT_AFTER_LOAD_MS,
+    use_networkidle: bool = True,
+    skip_screenshots: bool = False,
 ) -> dict:
-    """Replay each discovered trigger in a brand-new tab.
-
-    A fresh tab per interaction guarantees a clean DOM — no overlays, modals, or
-    routes accumulated from prior interactions can leak into a capture.
-    """
+    """Replay each discovered trigger, reusing one tab (reload between clicks)."""
     interactions_dir = page_dir / "interactions"
     interactions_dir.mkdir(parents=True, exist_ok=True)
     (interactions_dir / "discovered.json").write_text(
@@ -418,151 +523,153 @@ def crawl_interactions(
     other_items = [c for c in candidates if c.get("llm_type") != "tab_switch"]
     to_process = tab_items + other_items[:max(0, max_interactions - len(tab_items))]
 
-    for idx, item in enumerate(to_process, start=1):
-        selector = item.get("selector", "")
-        if not selector:
-            continue
-        # Anchors are navigation — BFS owns them. Never click/capture here.
-        if (item.get("elementType") or "").lower() == "a":
-            continue
-
-        ipage = None
-        try:
-            ipage = context.new_page()
-            ipage.goto(page_url, wait_until="domcontentloaded", timeout=60000)
-            try:
-                ipage.wait_for_load_state("networkidle", timeout=30000)
-            except Exception:
-                pass
-            ipage.wait_for_timeout(WAIT_AFTER_LOAD_MS)
-            ipage.evaluate(DISCOVER_JS)
-
-            locator = ipage.locator(selector).first
-            if locator.count() == 0 or not locator.is_visible():
-                ipage.close()
+    ipage = None
+    try:
+        ipage = context.new_page()
+        for idx, item in enumerate(to_process, start=1):
+            selector = item.get("selector", "")
+            if not selector:
+                continue
+            # Anchors are navigation — BFS owns them. Never click/capture here.
+            if (item.get("elementType") or "").lower() == "a":
                 continue
 
-            before_url = ipage.url
-            before_title = ipage.title()
-            before_fp = ipage.evaluate(DOM_FINGERPRINT_JS)
-            before_tabs = ipage.evaluate(ACTIVE_TABS_JS)
-
-            # Capture the complete trigger element BEFORE clicking — after a
-            # navigation/DOM mutation the element may detach and outerHTML is lost.
             try:
-                element_meta = locator.evaluate(EXTRACT_ELEMENT_JS)
-            except Exception:
-                element_meta = {}
+                _goto_clean(
+                    ipage,
+                    page_url,
+                    use_networkidle=use_networkidle,
+                    wait_ms=wait_after_load_ms,
+                )
+                ipage.evaluate(DISCOVER_JS)
 
-            # For tab_switch elements, read aria-controls before clicking so we
-            # can look up the exact panel by ID after the click.
-            aria_controls_val = ""
-            if item.get("llm_type") == "tab_switch":
+                locator = ipage.locator(selector).first
+                if locator.count() == 0 or not locator.is_visible():
+                    continue
+
+                before_url = ipage.url
+                before_title = ipage.title()
+                before_fp = ipage.evaluate(DOM_FINGERPRINT_JS)
+                before_tabs = ipage.evaluate(ACTIVE_TABS_JS)
+
+                # Capture the complete trigger element BEFORE clicking — after a
+                # navigation/DOM mutation the element may detach and outerHTML is lost.
                 try:
-                    aria_controls_val = locator.get_attribute("aria-controls") or ""
+                    element_meta = locator.evaluate(EXTRACT_ELEMENT_JS)
                 except Exception:
-                    aria_controls_val = ""
+                    element_meta = {}
 
-            locator.click(timeout=5000)
-            ipage.wait_for_timeout(WAIT_AFTER_CLICK_MS)
-            try:
-                ipage.wait_for_load_state("networkidle", timeout=10000)
-            except Exception:
-                pass
+                # For tab_switch elements, read aria-controls before clicking so we
+                # can look up the exact panel by ID after the click.
+                aria_controls_val = ""
+                if item.get("llm_type") == "tab_switch":
+                    try:
+                        aria_controls_val = locator.get_attribute("aria-controls") or ""
+                    except Exception:
+                        aria_controls_val = ""
 
-            after_fp = ipage.evaluate(DOM_FINGERPRINT_JS)
-            # The click changed the URL. This is a NAVIGATION, not a UI state —
-            # record the edge (so non-anchor triggers like div/li/role=menuitem
-            # become clickable in the clone) and feed the target back to BFS so
-            # the destination page itself gets crawled. No interaction capture.
-            if normalize_url(ipage.url) != normalize_url(before_url):
-                target_url = ipage.url
-                target_slug = page_slug(target_url)
-                navigations.append(
+                locator.click(timeout=5000)
+                ipage.wait_for_timeout(WAIT_AFTER_CLICK_MS)
+                if use_networkidle:
+                    try:
+                        ipage.wait_for_load_state("networkidle", timeout=10000)
+                    except Exception:
+                        pass
+
+                after_fp = ipage.evaluate(DOM_FINGERPRINT_JS)
+                # The click changed the URL. This is a NAVIGATION, not a UI state —
+                # record the edge (so non-anchor triggers like div/li/role=menuitem
+                # become clickable in the clone) and feed the target back to BFS so
+                # the destination page itself gets crawled. No interaction capture.
+                if normalize_url(ipage.url) != normalize_url(before_url):
+                    target_url = ipage.url
+                    target_slug = page_slug(target_url)
+                    navigations.append(
+                        {
+                            "label": item.get("label", ""),
+                            "tag_name": (element_meta.get("tag_name") or item.get("elementType") or ""),
+                            "selector": element_meta.get("css_selector", "") or selector,
+                            "target_url": target_url,
+                            "target_slug": target_slug,
+                            "target_page": f"../{target_slug}/page.html",
+                            "trigger": element_meta,
+                        }
+                    )
+                    nav_targets.append(target_url)
+                    print(f"    -> navigation: {item.get('label') or selector} → {target_slug}")
+                    continue
+                # No DOM change means no UI state appeared — nothing to capture.
+                # Tab-switch panels often swap equally-sized content so dom_changed
+                # may return False; never skip them on that basis.
+                if not dom_changed(before_fp, after_fp) and item.get("llm_type") != "tab_switch":
+                    continue
+
+                tab_panel = None
+                if item.get("llm_type") == "tab_switch":
+                    # Force the type — don't let CLASSIFY_JS re-label it as dropdown/modal.
+                    itype = "tab-switch"
+                    if aria_controls_val:
+                        try:
+                            tab_panel = ipage.evaluate(
+                                "(panelId) => {"
+                                "  const el = document.getElementById(panelId);"
+                                "  if (!el) return null;"
+                                "  return { selector: '#' + CSS.escape(panelId), innerHTML: el.innerHTML };"
+                                "}",
+                                aria_controls_val,
+                            )
+                        except Exception:
+                            tab_panel = None
+                else:
+                    after_tabs = ipage.evaluate(ACTIVE_TABS_JS)
+                    if detect_tab_switch(before_fp, after_fp, before_tabs, after_tabs):
+                        itype = "tab-switch"
+                        try:
+                            tab_panel = ipage.evaluate(ACTIVE_TAB_PANEL_JS)
+                        except Exception:
+                            tab_panel = None
+                    else:
+                        itype = ipage.evaluate(CLASSIFY_JS)
+
+                folder_name = f"{idx:03d}-{slugify_label(item.get('label', ''))}"
+                folder = interactions_dir / folder_name
+
+                save_interaction_capture(
+                    folder,
+                    ipage,
+                    source_slug=source_slug,
+                    source_url=page_url,
+                    before_url=before_url,
+                    before_title=before_title,
+                    item=item,
+                    selector=selector,
+                    itype=itype,
+                    crawl_root=crawl_root,
+                    element=element_meta,
+                    tab_panel=tab_panel,
+                    skip_screenshots=skip_screenshots,
+                )
+
+                rel_path = f"interactions/{folder_name}"
+                registry.append(
                     {
                         "label": item.get("label", ""),
-                        "tag_name": (element_meta.get("tag_name") or item.get("elementType") or ""),
-                        "selector": element_meta.get("css_selector", "") or selector,
-                        "target_url": target_url,
-                        "target_slug": target_slug,
-                        "target_page": f"../{target_slug}/page.html",
-                        "trigger": element_meta,
+                        "selector": selector,
+                        "interaction_path": rel_path,
+                        "relationship_file": f"{rel_path}/relationship.json",
                     }
                 )
-                nav_targets.append(target_url)
-                print(f"    -> navigation: {item.get('label') or selector} → {target_slug}")
-                continue
-            # No DOM change means no UI state appeared — nothing to capture.
-            # Tab-switch panels often swap equally-sized content so dom_changed
-            # may return False; never skip them on that basis.
-            if not dom_changed(before_fp, after_fp) and item.get("llm_type") != "tab_switch":
-                continue
-
-            tab_panel = None
-            if item.get("llm_type") == "tab_switch":
-                # Force the type — don't let CLASSIFY_JS re-label it as dropdown/modal.
-                itype = "tab-switch"
-                if aria_controls_val:
-                    try:
-                        tab_panel = ipage.evaluate(
-                            "(panelId) => {"
-                            "  const el = document.getElementById(panelId);"
-                            "  if (!el) return null;"
-                            "  return { selector: '#' + CSS.escape(panelId), innerHTML: el.innerHTML };"
-                            "}",
-                            aria_controls_val,
-                        )
-                    except Exception:
-                        tab_panel = None
-            else:
-                after_tabs = ipage.evaluate(ACTIVE_TABS_JS)
-                if detect_tab_switch(before_fp, after_fp, before_tabs, after_tabs):
-                    itype = "tab-switch"
-                    try:
-                        tab_panel = ipage.evaluate(ACTIVE_TAB_PANEL_JS)
-                    except Exception:
-                        tab_panel = None
-                else:
-                    itype = ipage.evaluate(CLASSIFY_JS)
-
-            folder_name = f"{idx:03d}-{slugify_label(item.get('label', ''))}"
-            folder = interactions_dir / folder_name
-
-            save_interaction_capture(
-                folder,
-                ipage,
-                source_slug=source_slug,
-                source_url=page_url,
-                before_url=before_url,
-                before_title=before_title,
-                item=item,
-                selector=selector,
-                itype=itype,
-                crawl_root=crawl_root,
-                element=element_meta,
-                tab_panel=tab_panel,
-            )
-
-            rel_path = f"interactions/{folder_name}"
-            registry.append(
-                {
-                    "label": item.get("label", ""),
-                    "selector": selector,
-                    "interaction_path": rel_path,
-                    "relationship_file": f"{rel_path}/relationship.json",
-                }
-            )
-            saved += 1
-            print(f"    + interaction {saved}: {item.get('label') or selector} ({itype})")
-        except Exception as exc:
-            print(f"[BFS] Interaction save failed ({selector}): {exc}")
-            traceback.print_exc()
-        finally:
-            if ipage:
-                try:
-                    ipage.close()
-                except Exception:
-                    pass
+                saved += 1
+                print(f"    + interaction {saved}: {item.get('label') or selector} ({itype})")
+            except Exception as exc:
+                print(f"[BFS] Interaction save failed ({selector}): {exc}")
+                traceback.print_exc()
+    finally:
+        if ipage:
+            try:
+                ipage.close()
+            except Exception:
+                pass
 
     (interactions_dir / "interactions.json").write_text(
         json.dumps(registry, indent=2), encoding="utf-8"
@@ -583,20 +690,60 @@ def bfs_crawl(
     app_name: str,
     *,
     priority_url_patterns: list[str] | None = None,
+    seed_url_patterns: list[str] | None = None,
+    skip_url_patterns: list[str] | None = None,
+    list_detail_link_limits: list[dict] | None = None,
+    link_cross_page_rules: list[dict] | None = None,
+    mandatory_tab_labels: list[str] | None = None,
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
+    max_ranked_interactions: int = 15,
+    max_interaction_depth: int | None = 3,
     check_login: bool = False,
+    skip_screenshots: bool = False,
+    wait_after_load_ms: int = WAIT_AFTER_LOAD_MS,
+    use_networkidle: bool = True,
 ) -> dict:
     queue: list[tuple[str, int]] = [(start_url, 0)]
+    start_norm = normalize_url(start_url)
+    seed_norms = _build_seed_norms(start_url, seed_url_patterns)
+    for seed_url in build_seed_urls(start_url, seed_url_patterns or []):
+        if normalize_url(seed_url) != start_norm:
+            queue.append((seed_url, 1))
+    if seed_url_patterns:
+        print(f"[BFS] Seeded routes: {len(queue) - 1}")
     visited: set[str] = set()
+    link_counters: dict[str, dict[str, int]] = {}
     pages = 0
     interactions_found = 0
     interactions_saved = 0
     sitemap: list[dict] = []
 
+    def _enqueue_link(link: str, source_url: str, depth: int) -> None:
+        link_norm = normalize_url(link)
+        if link_norm in visited or link_norm in {normalize_url(q) for q, _ in queue}:
+            return
+        if not _should_enqueue_link(
+            link,
+            source_url,
+            skip_patterns=skip_url_patterns or [],
+            seed_norms=seed_norms,
+            list_detail_limits=list_detail_link_limits or [],
+            link_counters=link_counters,
+            cross_page_rules=link_cross_page_rules,
+        ):
+            return
+        if any(pat in link for pat in (priority_url_patterns or [])):
+            queue.insert(0, (link, depth))
+        else:
+            queue.append((link, depth))
+
     while queue and pages < max_pages:
         url, depth = queue.pop(0)
         norm = normalize_url(url)
         if norm in visited:
+            continue
+        if _should_skip_url(url, skip_url_patterns or []) and norm not in seed_norms:
+            print(f"[BFS] Skipped URL (pattern): {url}")
             continue
         p = urlparse(url)
         if p.netloc and p.netloc != base_domain:
@@ -616,12 +763,12 @@ def bfs_crawl(
         try:
             # 1. Open the page on its own fresh tab and let it stabilize.
             page = context.new_page()
-            page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            try:
-                page.wait_for_load_state("networkidle", timeout=30000)
-            except Exception:
-                pass
-            page.wait_for_timeout(WAIT_AFTER_LOAD_MS)
+            _goto_clean(
+                page,
+                url,
+                use_networkidle=use_networkidle,
+                wait_ms=wait_after_load_ms,
+            )
 
             if check_login and is_login_page(page):
                 print("[AUTH] Session expired — delete metadata/auth.json and re-run")
@@ -631,7 +778,9 @@ def bfs_crawl(
             # 2. Capture the pristine page BEFORE any interaction touches the DOM.
             page_dir = crawl_root / slug
             page_title = page.title()
-            save_page_capture(page_dir, page, url, page_title, page_type)
+            save_page_capture(
+                page_dir, page, url, page_title, page_type, skip_screenshots=skip_screenshots
+            )
             pages += 1
 
             # 3. Discover triggers and links from the untouched page, then close it.
@@ -643,22 +792,8 @@ def bfs_crawl(
 
             links = collect_links(page, page.url, base_domain)
             print(f"[BFS] Links Found: {len(links)}")
-            queued_norms = {normalize_url(q) for q, _ in queue}
-            priority_links: list[tuple[str, int]] = []
-            normal_links: list[tuple[str, int]] = []
             for link in links:
-                link_norm = normalize_url(link)
-                if link_norm in visited or link_norm in queued_norms:
-                    continue
-                queued_norms.add(link_norm)
-                if any(pat in link for pat in (priority_url_patterns or [])):
-                    priority_links.append((link, depth + 1))
-                else:
-                    normal_links.append((link, depth + 1))
-            # Priority links go to the front of the queue so they are visited
-            # before sidebar module pages consume the page budget.
-            queue[0:0] = priority_links
-            queue.extend(normal_links)
+                _enqueue_link(link, url, depth + 1)
 
             page.close()
             page = None
@@ -672,16 +807,32 @@ def bfs_crawl(
                 and (c.get("label") or "").strip() not in _SKIP_LABELS
             ]
 
-            # 3c. LLM-rank candidates (depth < 3 only, silently skips if no API key).
-            if depth < 3 and candidates and os.getenv("GEMINI_API_KEY"):
+            # 3c. LLM-rank candidates (skipped when depth exceeds max_interaction_depth).
+            run_interactions = max_interaction_depth is None or depth < max_interaction_depth
+            if run_interactions and candidates and os.getenv("GEMINI_API_KEY"):
                 from ranker.interaction_ranker import rank_candidates
-                candidates = rank_candidates(page_title, url, candidates)
+                candidates = rank_candidates(
+                    page_title,
+                    url,
+                    candidates,
+                    top_n=max_ranked_interactions,
+                    mandatory_labels=mandatory_tab_labels,
+                )
                 print(f"[BFS] Ranked Candidates: {len(candidates)}")
 
-            # 4. Run each interaction in its own isolated tab (depth < 3 only).
-            if depth < 3:
+            # 4. Run each interaction, reusing one tab per page.
+            if run_interactions:
                 ix = crawl_interactions(
-                    context, url, slug, page_dir, crawl_root, candidates, max_interactions
+                    context,
+                    url,
+                    slug,
+                    page_dir,
+                    crawl_root,
+                    candidates,
+                    max_interactions,
+                    wait_after_load_ms=wait_after_load_ms,
+                    use_networkidle=use_networkidle,
+                    skip_screenshots=skip_screenshots,
                 )
                 interactions_found += ix["found"]
                 interactions_saved += ix["saved"]
@@ -694,11 +845,9 @@ def bfs_crawl(
                 if nav_targets:
                     print(f"[BFS] Navigations Found: {len(nav_targets)}")
                 for link in nav_targets:
-                    link_norm = normalize_url(link)
-                    if link_norm not in visited and link_norm not in {normalize_url(q) for q, _ in queue}:
-                        queue.append((link, depth + 1))
+                    _enqueue_link(link, url, depth + 1)
             else:
-                print(f"[BFS] Depth {depth} — interactions skipped")
+                print(f"[BFS] Depth {depth} — interactions skipped (max_interaction_depth={max_interaction_depth})")
 
             sitemap.append({"slug": slug, "url": url, "title": page_title, "page_type": page_type})
             get_sitemap_path(app_name).write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
@@ -729,6 +878,8 @@ def bfs_crawl(
 def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
     crawl_root = ensure_app_dirs(app_name)
     max_interactions = cfg.get("max_interactions_per_page", DEFAULT_MAX_INTERACTIONS)
+    max_ranked_interactions = cfg.get("max_ranked_interactions", 15)
+    max_interaction_depth = cfg.get("max_interaction_depth", 3)
     with sync_playwright() as p:
         auth_file = None
         if post_auth:
@@ -753,6 +904,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
         context = browser.new_context(**ctx_kwargs)
         prepare_context(context)
         priority_url_patterns = cfg.get("priority_url_patterns") or []
+        seed_url_patterns = cfg.get("seed_url_patterns") or []
         result = bfs_crawl(
             context,
             start,
@@ -762,8 +914,18 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             crawl_root,
             app_name,
             priority_url_patterns=priority_url_patterns,
+            seed_url_patterns=seed_url_patterns if post_auth else [],
+            skip_url_patterns=cfg.get("skip_url_patterns") or [],
+            list_detail_link_limits=cfg.get("list_detail_link_limits") or [],
+            link_cross_page_rules=cfg.get("link_cross_page_rules") or [],
+            mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
             max_interactions=max_interactions,
+            max_ranked_interactions=max_ranked_interactions,
+            max_interaction_depth=max_interaction_depth,
             check_login=post_auth,
+            skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+            wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+            use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
         )
         context.close()
         browser.close()

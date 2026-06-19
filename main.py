@@ -83,6 +83,7 @@ def usage() -> None:
     print("  python main.py serve <app> [--port N] [--watch] [--no-open]")
     print("                                       Serve the stitched clone locally")
     print("  python main.py status <app>          Show crawl stats")
+    print("  python main.py coverage <app>       Audit dead buttons / missing routes")
     print("  python main.py clean <app>           Delete crawl output")
     print("  python main.py html-clean <app>      stitched_html → cleaned_html (for LLM analysis)")
     print("  python main.py analyze <app>         cleaned_html → business_json (needs GEMINI_API_KEY)")
@@ -141,6 +142,10 @@ def main() -> None:
         cmd_serve(app_name, sys.argv[3:])
     elif command == "status":
         cmd_status(app_name)
+    elif command == "coverage":
+        from coverage import print_audit
+
+        print_audit(app_name)
     elif command == "clean":
         cmd_clean(app_name)
     elif command == "html-clean":

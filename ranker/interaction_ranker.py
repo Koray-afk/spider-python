@@ -1,6 +1,6 @@
 """LLM-powered interaction ranker.
 
-Calls Gemini once per page to select and type-tag the top N most important
+Calls Gemini 3.1 Pro once per page to select and type-tag the top N most important
 clickable candidates from the discovered list before the crawler clicks them.
 Falls back to the original list on any error so the crawler is never blocked.
 """
@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-3.1-pro"
 
 PROMPT = """Page: "{page_title}"
 URL:  "{page_url}"
@@ -31,8 +31,8 @@ Each entry shows: index, label, HTML tag, and CSS classes.
 MANDATORY — always include these regardless of the limit:
 - Any element that is a tab switch (role="tab", or className contains "nav-link",
   or it toggles/reveals a section within the current page) → ALWAYS include ALL of them
-- Any element whose label contains: "Getting Started", "Recent Updates",
-  "Dashboard", "Overview", "Summary"
+- Any element whose label contains: "Getting Started", "Recent Updates", "Dashboard",
+  "Overview", "Summary", "Transactions", "History", "Comments", "Mails", "Statement"
 
 THEN fill the remaining slots (up to {top_n} total) with, in this priority order:
 1. Primary CTA buttons: "New", "Create", "Add", "Import"
@@ -83,12 +83,53 @@ def _parse_response(text: str) -> list[dict]:
     return json.loads(text.strip())
 
 
+def _candidate_key(c: dict) -> tuple:
+    return (
+        (c.get("selector") or "").strip(),
+        (c.get("label") or "").strip(),
+        (c.get("id") or "").strip(),
+    )
+
+
+def _inject_mandatory_labels(
+    candidates: list[dict],
+    ranked: list[dict],
+    *,
+    top_n: int,
+    mandatory_labels: list[str] | None,
+) -> list[dict]:
+    """Ensure tab/detail labels are ranked even if the LLM skipped them."""
+    if not mandatory_labels:
+        return ranked[:top_n]
+
+    seen_keys = {_candidate_key(r) for r in ranked}
+    injected: list[dict] = []
+    for c in candidates:
+        label = (c.get("label") or "").strip()
+        if not label:
+            continue
+        label_lower = label.lower()
+        if not any(m.lower() in label_lower for m in mandatory_labels):
+            continue
+        key = _candidate_key(c)
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        item = dict(c)
+        item["llm_type"] = item.get("llm_type") or "tab_switch"
+        injected.append(item)
+
+    merged = injected + ranked
+    return merged[:top_n]
+
+
 def rank_candidates(
     page_title: str,
     page_url: str,
     candidates: list[dict],
     *,
-    top_n: int = 8,
+    top_n: int = 15,
+    mandatory_labels: list[str] | None = None,
 ) -> list[dict]:
     """Return up to top_n candidates ranked by LLM importance.
 
@@ -102,7 +143,9 @@ def rank_candidates(
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        return candidates
+        return _inject_mandatory_labels(
+            candidates, candidates[:top_n], top_n=top_n, mandatory_labels=mandatory_labels
+        )
 
     try:
         from google import genai  # pyrefly: ignore [missing-import]
@@ -136,10 +179,16 @@ def rank_candidates(
 
         if not results:
             print("[RANK] LLM returned no valid indices — using full candidate list")
-            return candidates
+            return _inject_mandatory_labels(
+                candidates, candidates[:top_n], top_n=top_n, mandatory_labels=mandatory_labels
+            )
 
-        return results
+        return _inject_mandatory_labels(
+            candidates, results, top_n=top_n, mandatory_labels=mandatory_labels
+        )
 
     except Exception as exc:
         print(f"[RANK] LLM ranking failed ({exc}) — using full candidate list")
-        return candidates
+        return _inject_mandatory_labels(
+            candidates, candidates[:top_n], top_n=top_n, mandatory_labels=mandatory_labels
+        )
