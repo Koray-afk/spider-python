@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button for=\"f1340cd9-dc5e-4f86-a695-77f708bb7e4e\" aria-controls=\"f1340cd9-dc5e-4f86-a695-77f708bb7e4e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"26\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"f1340cd9-dc5e-4f86-a695-77f708bb7e4e\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Sales</div><!-- --><!-- --><span id=\"d9f4d29e-fe2b-414f-adec-663520190c80\"><a class=\"ember-view dropdown-item\" href=\"#/invoices/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember732\">Invoice</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/contacts/3869248000000043205/customerpayment?currency_id=3869248000000000064\" id=\"ember734\">Customer Payment</a><!-- --><!-- --><!-- --><span id=\"f2800b6a-8fe4-4c27-807d-e1b8f1a4c778\"><a class=\"ember-view dropdown-item\" href=\"#/quotes/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember736\">Quote</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"efb5c9f5-0395-4b1b-880c-41c7a17b3e7d\"><a class=\"ember-view dropdown-item\" href=\"#/salesorders/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember738\">Sales Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d39437ed-ec4f-442b-997d-e34bae8c97b7\"><a class=\"ember-view dropdown-item\" href=\"#/deliverychallans/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember740\">Delivery Challan</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c5ea9370-781a-4ae0-bae3-d46cd3ce90a0\"><a class=\"ember-view dropdown-item\" href=\"#/recurringinvoices/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember742\">Recurring Invoice</a></span> <!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?customer_id=3869248000000043205&amp;customer_name=ABC%20Electronics\" id=\"ember744\">Expense</a><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?customer_id=3869248000000043205&amp;customer_name=ABC%20Electronics\" id=\"ember746\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d9e16563-c756-4166-960c-0de86b55390a\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember748\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f9b9e64a-1e57-4a3d-bde2-f79495ae97ae\"><a class=\"ember-view dropdown-item\" href=\"#/creditnotes/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember750\">Credit Note</a></span> <!-- --><!-- --><!-- --><div class=\"dropdown-divider\"></div><!-- --><!-- --><span id=\"dbec6646-f331-45d4-8340-c2c31194af78\"><a class=\"ember-view dropdown-item\" href=\"#/timesheet/projects/new?contact_id=3869248000000043205&amp;contact_name=ABC%20Electronics\" id=\"ember752\">Project</a></span> <!-- --><!-- --><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

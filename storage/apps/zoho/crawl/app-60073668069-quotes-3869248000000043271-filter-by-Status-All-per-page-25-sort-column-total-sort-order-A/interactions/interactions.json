@@ -1,0 +1,80 @@
+[
+  {
+    "label": "Quote Details",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/001-quote-details",
+    "relationship_file": "interactions/001-quote-details/relationship.json"
+  },
+  {
+    "label": "Activity Logs",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/002-activity-logs",
+    "relationship_file": "interactions/002-activity-logs/relationship.json"
+  },
+  {
+    "label": "Details",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/003-details",
+    "relationship_file": "interactions/003-details/relationship.json"
+  },
+  {
+    "label": "Comments",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/004-comments",
+    "relationship_file": "interactions/004-comments/relationship.json"
+  },
+  {
+    "label": "New Quote",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/005-new-quote",
+    "relationship_file": "interactions/005-new-quote/relationship.json"
+  },
+  {
+    "label": "New Invoice",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/006-new-invoice",
+    "relationship_file": "interactions/006-new-invoice/relationship.json"
+  },
+  {
+    "label": "All Quotes",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/007-all-quotes",
+    "relationship_file": "interactions/007-all-quotes/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/008-navigate-to-opt-0",
+    "relationship_file": "interactions/008-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/009-more-actions",
+    "relationship_file": "interactions/009-more-actions/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/010-edit",
+    "relationship_file": "interactions/010-edit/relationship.json"
+  },
+  {
+    "label": "Share",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/012-share",
+    "relationship_file": "interactions/012-share/relationship.json"
+  },
+  {
+    "label": "PDF/Print",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/013-pdf-print",
+    "relationship_file": "interactions/013-pdf-print/relationship.json"
+  },
+  {
+    "label": "Convert",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/014-convert",
+    "relationship_file": "interactions/014-convert/relationship.json"
+  }
+]

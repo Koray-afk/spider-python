@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Navigate To (Opt+0)",
+    "tagName": "button",
+    "id": "",
+    "className": "btn p-0",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button class=\"btn p-0\" data-crawl-id=\"1\">All</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

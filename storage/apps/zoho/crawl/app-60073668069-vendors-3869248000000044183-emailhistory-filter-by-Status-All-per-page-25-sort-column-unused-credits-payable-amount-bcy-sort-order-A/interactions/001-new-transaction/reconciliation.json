@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"25\"]",
+    "outerHTML": "<button for=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" aria-controls=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"25\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Purchases</div><!-- --><!-- --><span id=\"c60d4936-f2fb-4d56-907d-318fa345a8ce\"><a class=\"ember-view dropdown-item\" href=\"#/bills/new?contact_id=3869248000000044183&amp;contact_name=Ram\" id=\"ember524\">Bill</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000044183/vendorpayment?currency_id=3869248000000000064\" id=\"ember526\">Bill Payment</a><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?vendor_id=3869248000000044183&amp;vendor_name=Ram\" id=\"ember528\">Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"cf66ed09-9097-4e50-ac7d-494f5335128d\"><a class=\"ember-view dropdown-item\" href=\"#/recurringbills/new?contact_id=3869248000000044183&amp;contact_name=Ram\" id=\"ember530\">Recurring Bill</a></span> <!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?vendor_id=3869248000000044183&amp;vendor_name=Ram\" id=\"ember532\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"cf965972-eab2-4606-aa70-93df4054aff9\"><a class=\"ember-view dropdown-item\" href=\"#/purchaseorders/new?contact_id=3869248000000044183&amp;contact_name=Ram\" id=\"ember534\">Purchase Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"e55f3580-bc13-45de-973d-5d05a3d5db66\"><a class=\"ember-view dropdown-item\" href=\"#/vendorcredits/new?contact_id=3869248000000044183&amp;contact_name=Ram\" id=\"ember536\">Vendor Credit</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"dc4031d5-5643-49e5-adc4-8c06d45d1502\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000044183&amp;contact_name=Ram\" id=\"ember538\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000044183/vendorcheck?currency_id=3869248000000000064\" id=\"ember540\">Pay Bill via Check</a><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

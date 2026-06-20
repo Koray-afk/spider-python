@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Add Items in Bulk",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/004-add-items-in-bulk",
+    "relationship_file": "interactions/004-add-items-in-bulk/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/005-navigate-to-opt-0",
+    "relationship_file": "interactions/005-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/008-show-dropdown-menu",
+    "relationship_file": "interactions/008-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Bulk Actions",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/009-bulk-actions",
+    "relationship_file": "interactions/009-bulk-actions/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/010-show-dropdown-menu",
+    "relationship_file": "interactions/010-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Select or add a customer",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/013-select-or-add-a-customer",
+    "relationship_file": "interactions/013-select-or-add-a-customer/relationship.json"
+  },
+  {
+    "label": "Due on Receipt",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/014-due-on-receipt",
+    "relationship_file": "interactions/014-due-on-receipt/relationship.json"
+  },
+  {
+    "label": "Select or Add Salesperson",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/015-select-or-add-salesperson",
+    "relationship_file": "interactions/015-select-or-add-salesperson/relationship.json"
+  }
+]

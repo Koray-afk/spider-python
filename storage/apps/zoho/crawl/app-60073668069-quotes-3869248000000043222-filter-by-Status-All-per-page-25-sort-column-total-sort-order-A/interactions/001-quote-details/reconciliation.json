@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Quote Details",
+    "tagName": "button",
+    "id": "",
+    "className": "nav-link font-normal cursor-pointer active",
+    "selector": "[data-crawl-id=\"32\"]",
+    "outerHTML": "<button role=\"tab\" class=\"nav-link font-normal cursor-pointer active\" type=\"button\" data-ember-action=\"\" data-ember-action-479=\"479\" data-crawl-id=\"32\">\n                <div class=\"d-inline-block\">\n                  Quote Details\n<!---->                </div>\n              </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

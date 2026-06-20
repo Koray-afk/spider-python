@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link  ",
+    "selector": "[data-crawl-id=\"28\"]",
+    "outerHTML": "<button for=\"dab457d2-444b-4aa5-9c27-dbc36be045c6\" aria-controls=\"dab457d2-444b-4aa5-9c27-dbc36be045c6\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  details-menu-item nav-link  \" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"28\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm align-middle\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu max-height-450 overflow-y-auto ms-2 show\" data-popper-placement=\"bottom-end\" id=\"dab457d2-444b-4aa5-9c27-dbc36be045c6\" role=\"listbox\" style=\"min-width: 40px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-932.688px, 152.5px);\"><button class=\"dropdown-item\" id=\"fffd3e9e-99fb-4f46-99dc-7f1f355ae448\" type=\"button\"><!-- --> View Journal <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"f4d638d0-f263-4a31-8ed6-9106ff58510e\" type=\"button\"><!-- --> Void <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"f3d1b986-4798-47b3-b421-03ea8ec322f3\" type=\"button\"><!-- --> Delete <!-- --></button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

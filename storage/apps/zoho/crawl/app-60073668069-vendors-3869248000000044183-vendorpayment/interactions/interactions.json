@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/004-show-dropdown-menu",
+    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/011-save-as-draft",
+    "relationship_file": "interactions/011-save-as-draft/relationship.json"
+  },
+  {
+    "label": "Cash",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/014-cash",
+    "relationship_file": "interactions/014-cash/relationship.json"
+  },
+  {
+    "label": "Petty Cash",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/015-petty-cash",
+    "relationship_file": "interactions/015-petty-cash/relationship.json"
+  }
+]

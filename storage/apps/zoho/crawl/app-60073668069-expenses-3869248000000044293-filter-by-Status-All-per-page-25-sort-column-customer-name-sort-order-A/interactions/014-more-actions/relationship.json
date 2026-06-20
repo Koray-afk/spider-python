@@ -1,0 +1,38 @@
+{
+  "source_page": "app-60073668069-expenses-3869248000000044293-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "source_title": "Edit | Expenses | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Save (Opt+S)",
+    "id": "a61721f9b",
+    "class_name": "btn btn-primary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#a61721f9b",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "//*[@id=\"a61721f9b\"]",
+    "outer_html": "<button form=\"expenses-new\" id=\"a61721f9b\" class=\"btn btn-primary ember-view\" data-agent-save=\"primary-save-btn\" type=\"submit\" data-crawl-id=\"18\"><!----> Save<small> (Opt+S)</small><!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+    "slug": "app-60073668069-expenses-3869248000000044293-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+    "title": "Travel Expense | Expenses | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button form=\"expenses-new\" id=\"a61721f9b\" class=\"btn btn-primary ember-view\" data-agent-save=\"primary-save-btn\" type=\"submit\" data-crawl-id=\"18\"><!----> Save<small> (Opt+S)</small><!----></button>",
+  "trigger_label": "More Actions",
+  "trigger_id": "c14c03b6-447b-4865-936b-585dc3db00d2",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+  "target_url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "target_slug": "app-60073668069-expenses-3869248000000044293-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+  "target_title": "Travel Expense | Expenses | Zoho Books",
+  "tab_content": {
+    "selector": "#associatedTxn > div:nth-of-type(1)",
+    "file": "tab-content.html"
+  }
+}

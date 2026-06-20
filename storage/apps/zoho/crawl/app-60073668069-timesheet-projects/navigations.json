@@ -1,0 +1,48 @@
+[
+  {
+    "label": "New",
+    "tag_name": "button",
+    "selector": "#e5a2b737-2834-4f01-9216-42e11496e8f0 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+    "target_slug": "app-60073668069-timesheet-projects-new",
+    "target_page": "../app-60073668069-timesheet-projects-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "New",
+      "id": "",
+      "class_name": "btn btn-primary d-flex align-items-center rounded-end-0",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#e5a2b737-2834-4f01-9216-42e11496e8f0 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary d-flex align-items-center rounded-end-0\" data-crawl-id=\"20\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M15.01 8c0 .39-.31.7-.7.7H8.7v5.61c0 .39-.31.7-.7.7s-.7-.31-.7-.7V8.7H1.69c-.39 0-.7-.31-.7-.7s.31-.7.7-.7H7.3V1.69c0-.39.31-.7.7-.7s.7.31.7.7V7.3h5.61c.39 0 .7.31.7.7z\"></path></svg> <span class=\"ms-2\">New</span></button>"
+    }
+  },
+  {
+    "label": "CREATE NEW PROJECT",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+    "target_slug": "app-60073668069-timesheet-projects-new",
+    "target_page": "../app-60073668069-timesheet-projects-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "CREATE NEW PROJECT",
+      "id": "",
+      "class_name": "btn btn-primary uppercase ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary uppercase \" style=\"padding:10px 24px\" data-ember-action=\"\" data-ember-action-483=\"483\" data-crawl-id=\"23\">Create new project</button>"
+    }
+  }
+]

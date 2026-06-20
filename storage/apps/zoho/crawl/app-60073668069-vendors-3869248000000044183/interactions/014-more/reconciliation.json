@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "More",
+    "tagName": "button",
+    "id": "",
+    "className": "icon-button action page-link-sec disabled ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button class=\"icon-button action page-link-sec disabled \" aria-label=\"Previous Page\" type=\"button\" data-ember-action=\"\" data-ember-action-2603=\"2603\" data-crawl-id=\"26\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon icon-xs rotate-minus-180 align-middle fill-dropdown-blue pagination-arrow\" aria-hidden=\"true\"><path d=\"M349.6 227.7L219 97.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L264 255.3c.4.4.4 1 0 1.4L162.9 357.9c-15.7 15.7-16.1 41.7-.3 57.3 7.8 7.7 17.9 11.5 28.1 11.5 10.2 0 20.5-3.9 28.3-11.7l130.6-130.6c7.5-7.5 11.7-17.7 11.7-28.3 0-10.7-4.2-20.9-11.7-28.4z\"></path></svg></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#ember543",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[4]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<h3 class=\"accordion-title collapsed ember-view toggle-header cursor-pointer\" id=\"ember544\"><button aria-controls=\"c734fff4-024c-474c-9ed3-46b7ea27725e\" aria-expanded=\"false\" class=\"accordion-button uppercase fw-light d-flex justify-content-between\" data-crawl-id=\"40\" id=\"c62f4843-33f4-4c6c-af91-d4fd0ec573e8\" type=\"button\">Bank Account Details <div><button class=\"icon-button\" id=\"e4e55874-6d37-44da-afb4-d39f12b02d3a\" tabindex=\"0\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon me-2 icon-md kyc-banner-header align-bottom fill-dropdown-blue\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 15C122.9 15 15 122.9 15 256s107.9 241 241 241 241-107.9 241-241S389.1 15 256 15zm122 263H278v100c0 12.2-9.8 22-22 22s-22-9.8-22-22V278H134c-12.2 0-22-9.8-22-22s9.8-22 22-22h100V134c0-12.2 9.8-22 22-22s22 9.8 22 22v100h100c12.2 0 22 9.8 22 22s-9.8 22-22 22z\"></path><path d=\"M378 234H278V134c0-12.2-9.8-22-22-22s-22 9.8-22 22v100H134c-12.2 0-22 9.8-22 22s9.8 22 22 22h100v100c0 12.2 9.8 22 22 22s22-9.8 22-22V278h100c12.2 0 22-9.8 22-22s-9.8-22-22-22z\" fill=\"#FFF\"></path></svg></button> <!-- --> <i class=\"zf-ac-toggler\"><svg class=\"icon-xxs icon text-light-shade-blue mb-2 fill-dropdown-blue\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></i></div></button></h3>\n<div aria-labelledby=\"c62f4843-33f4-4c6c-af91-d4fd0ec573e8\" class=\"ember-view collapse\" hidden=\"true\" id=\"c734fff4-024c-474c-9ed3-46b7ea27725e\" role=\"region\" style=\"\"><div><div class=\"emptyMsg\"><p>No bank account added yet</p></div></div></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Last 6 Months",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary",
+    "selector": "[data-crawl-id=\"37\"]",
+    "outerHTML": "<button for=\"edb7fe15-e428-4b8b-b906-807127e8533e\" aria-controls=\"edb7fe15-e428-4b8b-b906-807127e8533e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-secondary\" type=\"button\" data-crawl-id=\"37\"><!----> More</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"edb7fe15-e428-4b8b-b906-807127e8533e\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-97px, 97.5469px);\"><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1201=\"1201\" id=\"f5f2a1e7-e73a-451c-96fd-59b1e57313fd\">Associate Templates</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1202=\"1202\" id=\"f2cabea7-3849-44af-81d6-2425745db530\">Configure Customer Portal</button> <!-- --><div class=\"dropdown-divider\"></div><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1203=\"1203\" id=\"cf618711-ed7e-4045-837b-d8934004c97f\">Stop All Reminders</button> <!-- --><div class=\"dropdown-divider\"></div><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1204=\"1204\" id=\"c51a4ff7-898e-4b0a-bd89-964bb5db0ef6\">Link to Vendor</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1205=\"1205\" id=\"ca9bce49-a2ea-4077-ae12-f2108150c7b6\">Clone</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1206=\"1206\" id=\"c0863d03-ce94-4bcd-af08-198e9c1c6c73\">Merge Customers</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1207=\"1207\" id=\"cd62b3c3-dac6-41c9-b7f5-35d7cc12b351\">Mark as Inactive</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1208=\"1208\" id=\"d01730e7-0385-4419-9b35-c52b9c5382d4\">Delete</button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

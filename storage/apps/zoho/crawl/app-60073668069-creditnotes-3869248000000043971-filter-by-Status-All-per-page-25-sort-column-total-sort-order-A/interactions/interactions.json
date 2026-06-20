@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Comments & History",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/002-comments-history",
+    "relationship_file": "interactions/002-comments-history/relationship.json"
+  },
+  {
+    "label": "All Credit Notes",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/012-all-credit-notes",
+    "relationship_file": "interactions/012-all-credit-notes/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/013-navigate-to-opt-0",
+    "relationship_file": "interactions/013-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/014-show-dropdown-menu",
+    "relationship_file": "interactions/014-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/015-show-dropdown-menu",
+    "relationship_file": "interactions/015-show-dropdown-menu/relationship.json"
+  }
+]

@@ -1,6 +1,6 @@
 """LLM-powered interaction ranker.
 
-Calls Gemini 3.1 Pro once per page to select and type-tag the top N most important
+Calls Gemini once per page to select and type-tag the top N most important
 clickable candidates from the discovered list before the crawler clicks them.
 Falls back to the original list on any error so the crawler is never blocked.
 """
@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL = "gemini-3.1-pro"
+MODEL = "gemini-2.5-flash"
 
 PROMPT = """Page: "{page_title}"
 URL:  "{page_url}"

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "View",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  text-blue",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button for=\"f62382e7-8817-4982-93af-c171e24eb454\" aria-controls=\"f62382e7-8817-4982-93af-c171e24eb454\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  text-blue\" type=\"button\" data-crawl-id=\"19\">Change destination to deliver</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu address-list z-index-1000 address-group-popover multiple-address-select-popover show\" data-popper-placement=\"bottom-start\" id=\"f62382e7-8817-4982-93af-c171e24eb454\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(419.664px, 385.086px);\"><div class=\"p-2\"><input aria-label=\"Search\" autofocus=\"\" class=\"ember-text-field ember-view form-control\" id=\"ember743\" placeholder=\"Search\" type=\"text\"/></div> <div class=\"scrollable-address-list max-height-300\"><ul class=\"multiple-address-select mb-0 ps-0\"><li class=\"selected\"><a data-ember-action=\"\" data-ember-action-744=\"744\" href=\"#\"><!-- --> <address class=\"mb-0 text-wrap\"><!-- --><!-- --><!-- --> <div><!-- --> Rajasthan<br/> India , <br/> </div></address></a></li></ul></div> <div class=\"plus icon-except-selector\" data-ember-action=\"\" data-ember-action-745=\"745\"><button class=\"btn btn-link p-0\"><svg class=\"icon icon-sm align-text-top me-1\" id=\"Layer_2\" viewbox=\"0 0 440.72 440.73\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M220.36 0C98.66 0 0 98.66 0 220.36s98.66 220.37 220.36 220.37 220.36-98.66 220.36-220.37S342.06 0 220.36 0zm106.21 242.74h-83.79v83.8c0 12.43-10.07 22.5-22.5 22.5s-22.5-10.07-22.5-22.5v-83.8h-83.8c-12.42 0-22.5-10.07-22.5-22.5s10.08-22.5 22.5-22.5h83.8v-83.79c0-12.43 10.07-22.5 22.5-22.5s22.5 10.07 22.5 22.5v83.79h83.79c12.43 0 22.5 10.08 22.5 22.5s-10.07 22.5-22.5 22.5z\" fill=\"#408dfb\" id=\"Layer_1-2\"></path></svg> New Address</button></div></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

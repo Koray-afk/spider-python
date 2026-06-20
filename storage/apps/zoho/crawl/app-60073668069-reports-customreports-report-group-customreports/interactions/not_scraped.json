@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"13\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"13\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 shrink-sidebar\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav"
+  },
+  {
+    "label": "Schedule Type :\u00a0 All",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"18\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"18\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"f82551b0-93ae-4917-946a-697326766cb3\" class=\"dropdown-toggle no-caret  btn btn-secondary\" aria-controls=\"f82551b0-93ae-4917-946a-697326766cb3\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n   "
+  },
+  {
+    "label": "Parent Report :\u00a0 All",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"19\" id=\"d46458db-3e1f-4d22-85ba-daf1345a76fc\" class=\"d-flex icon-button position-relative justify-content-center \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scro"
+  },
+  {
+    "label": "Try Zoho Analytics",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"22\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember480\" data-crawl-id=\"22\" aria-invalid=\"false\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" aria-haspopup=\"listbox\" aria-label=\"Schedule Type\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember480\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for el"
+  }
+]

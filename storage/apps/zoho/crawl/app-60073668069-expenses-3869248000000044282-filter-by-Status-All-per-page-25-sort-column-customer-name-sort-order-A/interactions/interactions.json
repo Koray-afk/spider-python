@@ -1,0 +1,68 @@
+[
+  {
+    "label": "Expense History",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/002-expense-history",
+    "relationship_file": "interactions/002-expense-history/relationship.json"
+  },
+  {
+    "label": "Journal",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/003-journal",
+    "relationship_file": "interactions/003-journal/relationship.json"
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/004-new-expense",
+    "relationship_file": "interactions/004-new-expense/relationship.json"
+  },
+  {
+    "label": "All Expenses",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/005-all-expenses",
+    "relationship_file": "interactions/005-all-expenses/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/006-edit",
+    "relationship_file": "interactions/006-edit/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/010-navigate-to-opt-0",
+    "relationship_file": "interactions/010-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/011-show-dropdown-menu",
+    "relationship_file": "interactions/011-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/013-show-dropdown-menu",
+    "relationship_file": "interactions/013-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/014-more-actions",
+    "relationship_file": "interactions/014-more-actions/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/015-show-dropdown-menu",
+    "relationship_file": "interactions/015-show-dropdown-menu/relationship.json"
+  }
+]

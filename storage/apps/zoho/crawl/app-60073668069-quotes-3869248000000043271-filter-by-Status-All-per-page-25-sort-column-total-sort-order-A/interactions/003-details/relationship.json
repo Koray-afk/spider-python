@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-quotes-3869248000000043271-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043271?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "source_title": "QT-000005 | Quotes | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Details",
+    "id": "",
+    "class_name": "slider-btn text-neutral-700 font-xxs lh-1 px-3 ms-1 text-black",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#entity-summary > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"34\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button class=\"slider-btn text-neutral-700 font-xxs lh-1 px-3 ms-1 text-black\" data-ember-action=\"\" data-ember-action-485=\"485\" data-crawl-id=\"34\"><!----> Details</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043271?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+    "slug": "app-60073668069-quotes-3869248000000043271-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+    "title": "QT-000005 | Quotes | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button class=\"slider-btn text-neutral-700 font-xxs lh-1 px-3 ms-1 text-black\" data-ember-action=\"\" data-ember-action-485=\"485\" data-crawl-id=\"34\"><!----> Details</button>",
+  "trigger_label": "Details",
+  "trigger_id": "",
+  "trigger_class": "slider-btn text-neutral-700 font-xxs lh-1 px-3 ms-1 text-black",
+  "target_url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043271?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "target_slug": "app-60073668069-quotes-3869248000000043271-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "target_title": "QT-000005 | Quotes | Zoho Books"
+}

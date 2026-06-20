@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+  "source_url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+  "source_title": "Items | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "NAME",
+    "id": "",
+    "class_name": "btn srt-btn bg-transparent",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#vertically-scrolled-table > thead:nth-of-type(1) > tr:nth-of-type(1) > th:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[5]/div[2]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[2]/button[1]",
+    "outer_html": "<button class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\" type=\"button\" data-ember-action=\"\" data-ember-action-611=\"611\" data-crawl-id=\"19\"> <div class=\"position-relative d-flex align-items-center \"><!----> <div class=\"over-flow\" title=\"Name\">Name<!----> </div><span class=\"column d-print-none sort ps-2\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxxs sort-up-caret rotate-180\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxxs sort-down-caret\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></div></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=A",
+    "slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-A",
+    "title": "Items | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\" type=\"button\" data-ember-action=\"\" data-ember-action-611=\"611\" data-crawl-id=\"19\"> <div class=\"position-relative d-flex align-items-center \"><!----> <div class=\"over-flow\" title=\"Name\">Name<!----> </div><span class=\"column d-print-none sort ps-2\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxxs sort-up-caret rotate-180\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxxs sort-down-caret\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></div></button>",
+  "trigger_label": "NAME",
+  "trigger_id": "",
+  "trigger_class": "btn srt-btn bg-transparent",
+  "target_url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=A",
+  "target_slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-A",
+  "target_title": "Items | Zoho Books"
+}

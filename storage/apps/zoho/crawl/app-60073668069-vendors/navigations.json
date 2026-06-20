@@ -1,0 +1,48 @@
+[
+  {
+    "label": "New Expense",
+    "tag_name": "button",
+    "selector": "#c7903121-efca-4a4e-973d-d1c89d91546f > li:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/expenses/new",
+    "target_slug": "app-60073668069-expenses-new",
+    "target_page": "../app-60073668069-expenses-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "icon-button add-new tab-element-right",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#c7903121-efca-4a4e-973d-d1c89d91546f > li:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[5]/div[1]/div[1]/ul[1]/li[2]/button[1]",
+      "outer_html": "<button class=\"icon-button add-new tab-element-right\" title=\"New Expense\" type=\"button\" data-crawl-id=\"11\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-s align-middle\" aria-hidden=\"true\"><path d=\"M416 226H286V96c0-16.6-13.4-30-30-30s-30 13.4-30 30v130H96c-16.6 0-30 13.4-30 30s13.4 30 30 30h130v130c0 16.6 13.4 30 30 30s30-13.4 30-30V286h130c16.6 0 30-13.4 30-30s-13.4-30-30-30\"></path></svg></button>"
+    }
+  },
+  {
+    "label": "New",
+    "tag_name": "button",
+    "selector": "#e4f71cb5-8237-4ec3-9c03-2d269bb4e3fa > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/vendors/new",
+    "target_slug": "app-60073668069-vendors-new",
+    "target_page": "../app-60073668069-vendors-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "New",
+      "id": "",
+      "class_name": "btn btn-primary d-flex align-items-center ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#e4f71cb5-8237-4ec3-9c03-2d269bb4e3fa > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary d-flex align-items-center \" data-crawl-id=\"17\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M15.01 8c0 .39-.31.7-.7.7H8.7v5.61c0 .39-.31.7-.7.7s-.7-.31-.7-.7V8.7H1.69c-.39 0-.7-.31-.7-.7s.31-.7.7-.7H7.3V1.69c0-.39.31-.7.7-.7s.7.31.7.7V7.3h5.61c.39 0 .7.31.7.7z\"></path></svg> <span class=\"ms-2\">New</span></button>"
+    }
+  }
+]

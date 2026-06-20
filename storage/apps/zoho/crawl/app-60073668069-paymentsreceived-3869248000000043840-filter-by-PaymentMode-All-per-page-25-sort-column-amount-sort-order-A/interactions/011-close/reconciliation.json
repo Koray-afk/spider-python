@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Close",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+    "selector": "[data-crawl-id=\"23\"]",
+    "outerHTML": "<button for=\"ceae69c0-5111-452d-bfe0-5199b7479c74\" aria-controls=\"ceae69c0-5111-452d-bfe0-5199b7479c74\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  details-menu-item nav-link over-flow \" type=\"button\" data-crawl-id=\"23\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 446\" class=\"icon icon-sm me-2\"><g id=\"Layer_1-2\"><path d=\"M412 0H100C44.86 0 0 44.86 0 100v246c0 55.14 44.86 100 100 100h312c55.14 0 100-44.86 100-100V100C512 44.86 467.14 0 412 0zm60 346c0 33.08-26.92 60-60 60H100c-33.08 0-60-26.92-60-60V100c0-33.08 26.92-60 60-60h312c33.08 0 60 26.92 60 60v246z\"></path><path d=\"M387.16 112.78l-107.98 76.47c-13.84 9.8-32.44 9.8-46.28 0l-107.97-76.47c-9.01-6.38-21.5-4.25-27.88 4.76-6.38 9.01-4.25 21.5 4.76 27.88l107.97 76.47c13.84 9.8 30.05 14.7 46.26 14.7s32.43-4.9 46.26-14.7l107.98-76.47c9.01-6.38 11.15-18.87 4.76-27.88-6.38-9.01-18.87-11.15-27.88-4.76z\"></path></g></svg><span class=\"text-truncate\">Send</span> <span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle ms-2\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu max-height-450 overflow-y-auto ms-2 show\" data-popper-placement=\"bottom-start\" id=\"ceae69c0-5111-452d-bfe0-5199b7479c74\" role=\"listbox\" style=\"min-width: 89.5469px; position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(501.656px, 152.5px);\"><button class=\"dropdown-item\" id=\"c99f8727-2537-4eca-8646-f25d4b890495\" type=\"button\"><svg class=\"icon icon-md align-text-bottom\" id=\"Layer_2\" viewbox=\"0 0 512 446\" xmlns=\"http://www.w3.org/2000/svg\"><g id=\"Layer_1-2\"><path d=\"M412 0H100C44.86 0 0 44.86 0 100v246c0 55.14 44.86 100 100 100h312c55.14 0 100-44.86 100-100V100C512 44.86 467.14 0 412 0zm60 346c0 33.08-26.92 60-60 60H100c-33.08 0-60-26.92-60-60V100c0-33.08 26.92-60 60-60h312c33.08 0 60 26.92 60 60v246z\"></path><path d=\"M387.16 112.78l-107.98 76.47c-13.84 9.8-32.44 9.8-46.28 0l-107.97-76.47c-9.01-6.38-21.5-4.25-27.88 4.76-6.38 9.01-4.25 21.5 4.76 27.88l107.97 76.47c13.84 9.8 30.05 14.7 46.26 14.7s32.43-4.9 46.26-14.7l107.98-76.47c9.01-6.38 11.15-18.87 4.76-27.88-6.38-9.01-18.87-11.15-27.88-4.76z\"></path></g></svg> \u00a0  Send Email <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"ce9b1474-d9b9-48f4-b7f6-7c05b6694a70\" type=\"button\"><svg class=\"icon icon-md align-text-bottom\" id=\"Layer_2\" viewbox=\"0 0 512 466\" xmlns=\"http://www.w3.org/2000/svg\"><g id=\"Layer_1-2\"><path d=\"M188.03 269.87H146.3c-11.05 0-20-8.96-20-20.02s8.95-20.02 20-20.02h41.73c11.05 0 20 8.96 20 20.02s-8.95 20.02-20 20.02zM251.29 165.25H146.3c-11.05 0-20-8.96-20-20.02s8.95-20.02 20-20.02h104.99c11.05 0 20 8.96 20 20.02s-8.95 20.02-20 20.02z\"></path><path d=\"M40.1 466c-5.75 0-11.56-1.26-17.05-3.83C8.83 455.51 0 441.62 0 425.9V100.09C0 44.9 44.86 0 100 0h312c55.14 0 100 44.9 100 100.09v193.86c0 55.19-44.86 100.09-100 100.09H147.77c-4.68 0-9.23 1.65-12.82 4.65l-69.32 57.93c-7.39 6.18-16.4 9.37-25.54 9.37zm-.1-40.1l69.32-57.93a60.09 60.09 0 0138.46-13.96h264.23c33.08 0 60-26.94 60-60.06V100.09c0-33.12-26.92-60.06-60-60.06H100c-33.08 0-60 26.94-60 60.06V425.9z\"></path></g></svg> \u00a0  Send SMS <!-- --></button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

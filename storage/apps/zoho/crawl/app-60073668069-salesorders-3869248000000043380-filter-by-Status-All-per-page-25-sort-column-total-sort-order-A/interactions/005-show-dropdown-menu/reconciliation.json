@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link  ",
+    "selector": "[data-crawl-id=\"28\"]",
+    "outerHTML": "<button for=\"d9b3b5bb-81c7-4027-bb06-df95834c1e26\" aria-controls=\"d9b3b5bb-81c7-4027-bb06-df95834c1e26\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  details-menu-item nav-link  \" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"28\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm align-middle\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu max-height-450 overflow-y-auto ms-2 show\" data-popper-placement=\"bottom-end\" id=\"d9b3b5bb-81c7-4027-bb06-df95834c1e26\" role=\"listbox\" style=\"min-width: 40px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-836.578px, 152.5px);\"><button class=\"dropdown-item\" id=\"c62d4683-8967-4a5c-b51d-3f375cf55f45\" type=\"button\"><!-- --> Convert to Invoice <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"e54e4204-8685-4eb3-aa9c-ab16146b88dd\" type=\"button\"><!-- --> Convert to Purchase Order <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"c8c63c23-c2c7-4845-a3a5-616c17c23bb4\" type=\"button\"><!-- --> Clone <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"ebca17db-b94d-487b-9368-c3d02edf763d\" type=\"button\"><!-- --> Delete <!-- --></button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

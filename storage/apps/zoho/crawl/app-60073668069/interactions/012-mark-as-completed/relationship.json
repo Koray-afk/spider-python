@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069",
+  "source_url": "https://books.zoho.in/app/60073668069#",
+  "source_title": "Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Mark as Completed",
+    "id": "",
+    "class_name": "btn btn-small btn-outline-blue font-xs ms-2 py-1",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember1576 > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+    "outer_html": "<button class=\"btn btn-small btn-outline-blue font-xs ms-2 py-1\" data-ember-action=\"\" data-ember-action-1613=\"1613\" data-crawl-id=\"18\"><!----> Mark as Completed</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+    "slug": "app-60073668069-home-gettingstarted",
+    "title": "Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button class=\"btn btn-small btn-outline-blue font-xs ms-2 py-1\" data-ember-action=\"\" data-ember-action-1613=\"1613\" data-crawl-id=\"18\"><!----> Mark as Completed</button>",
+  "trigger_label": "Mark as Completed",
+  "trigger_id": "",
+  "trigger_class": "btn btn-small btn-outline-blue font-xs ms-2 py-1",
+  "target_url": "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+  "target_slug": "app-60073668069-home-gettingstarted",
+  "target_title": "Zoho Books"
+}

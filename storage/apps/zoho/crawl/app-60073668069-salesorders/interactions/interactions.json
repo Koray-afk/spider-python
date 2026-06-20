@@ -1,0 +1,44 @@
+[
+  {
+    "label": "All Sales Orders",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/001-all-sales-orders",
+    "relationship_file": "interactions/001-all-sales-orders/relationship.json"
+  },
+  {
+    "label": "New",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/002-new",
+    "relationship_file": "interactions/002-new/relationship.json"
+  },
+  {
+    "label": "New Quote",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/003-new-quote",
+    "relationship_file": "interactions/003-new-quote/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/006-more-actions",
+    "relationship_file": "interactions/006-more-actions/relationship.json"
+  },
+  {
+    "label": "Advanced Search",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/007-advanced-search",
+    "relationship_file": "interactions/007-advanced-search/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/009-show-dropdown-menu",
+    "relationship_file": "interactions/009-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/015-show-dropdown-menu",
+    "relationship_file": "interactions/015-show-dropdown-menu/relationship.json"
+  }
+]

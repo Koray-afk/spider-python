@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Hide Chart",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/002-hide-chart",
+    "relationship_file": "interactions/002-hide-chart/relationship.json"
+  },
+  {
+    "label": "Last 30 days",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/006-last-30-days",
+    "relationship_file": "interactions/006-last-30-days/relationship.json"
+  },
+  {
+    "label": "Active Accounts",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/007-active-accounts",
+    "relationship_file": "interactions/007-active-accounts/relationship.json"
+  },
+  {
+    "label": "All Accounts",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/008-all-accounts",
+    "relationship_file": "interactions/008-all-accounts/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-show-dropdown-menu",
+    "relationship_file": "interactions/010-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/011-show-dropdown-menu",
+    "relationship_file": "interactions/011-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/013-show-dropdown-menu",
+    "relationship_file": "interactions/013-show-dropdown-menu/relationship.json"
+  }
+]

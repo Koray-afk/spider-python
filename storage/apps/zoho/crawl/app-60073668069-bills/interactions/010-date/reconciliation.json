@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "DATE",
+    "tagName": "button",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"23\"]",
+    "outerHTML": "<button class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\" type=\"button\" data-ember-action=\"\" data-ember-action-554=\"554\" data-crawl-id=\"23\"> <div class=\"position-relative d-flex align-items-center \"><!----> <div class=\"over-flow\" title=\"Date\">Date<!----> </div><!----></div></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

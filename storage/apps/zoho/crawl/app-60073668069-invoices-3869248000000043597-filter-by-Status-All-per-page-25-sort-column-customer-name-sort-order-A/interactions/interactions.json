@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Comments",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/001-comments",
+    "relationship_file": "interactions/001-comments/relationship.json"
+  },
+  {
+    "label": "Journal",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/002-journal",
+    "relationship_file": "interactions/002-journal/relationship.json"
+  }
+]

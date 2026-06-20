@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-show-dropdown-menu",
+    "relationship_file": "interactions/002-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-show-dropdown-menu",
+    "relationship_file": "interactions/003-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-show-dropdown-menu",
+    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
+  }
+]

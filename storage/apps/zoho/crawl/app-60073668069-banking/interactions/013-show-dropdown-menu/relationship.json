@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking",
+  "source_title": "Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  btn btn-text shadow-none",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Show dropdown menu",
+    "selector": "#dd-e7efd241-8f8f-4fc6-9b4e-1cb257d4ec70 > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"22\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/button[1]",
+    "outer_html": "<button for=\"e7efd241-8f8f-4fc6-9b4e-1cb257d4ec70\" aria-controls=\"e7efd241-8f8f-4fc6-9b4e-1cb257d4ec70\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-text shadow-none\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"22\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon\"><path id=\"Oval-50_2_\" d=\"M256 32c30.3 0 59.6 5.9 87.2 17.6 26.7 11.3 50.6 27.4 71.2 48s36.7 44.5 48 71.2c11.7 27.6 17.6 56.9 17.6 87.2s-5.9 59.6-17.6 87.2c-11.3 26.7-27.4 50.6-48 71.2s-44.5 36.7-71.2 48C315.6 474.1 286.3 480 256 480c-30.3 0-59.6-5.9-87.2-17.6-26.7-11.3-50.6-27.4-71.2-48s-36.7-44.5-48-71.2C37.9 315.6 32 286.3 32 256s5.9-59.6 17.6-87.2c11.3-26.7 27.4-50.6 48-71.2s44.5-36.7 71.2-48C196.4 37.9 225.7 32 256 32m0-32C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z\"></path><path d=\"M256 350.7c-7.9 0-15.8-3-21.8-8.9L137.4 246c-8.2-8.2-8.3-21.5-.2-29.7s21.5-8.3 29.7-.2l89.1 88.1 89.1-88.1c8.2-8.2 21.5-8.1 29.7.2 8.2 8.2 8.1 21.5-.2 29.7l-96.8 95.8c-6 5.9-13.9 8.9-21.8 8.9z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking",
+    "slug": "app-60073668069-banking",
+    "title": "Banking | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"e7efd241-8f8f-4fc6-9b4e-1cb257d4ec70\" aria-controls=\"e7efd241-8f8f-4fc6-9b4e-1cb257d4ec70\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-text shadow-none\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"22\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon\"><path id=\"Oval-50_2_\" d=\"M256 32c30.3 0 59.6 5.9 87.2 17.6 26.7 11.3 50.6 27.4 71.2 48s36.7 44.5 48 71.2c11.7 27.6 17.6 56.9 17.6 87.2s-5.9 59.6-17.6 87.2c-11.3 26.7-27.4 50.6-48 71.2s-44.5 36.7-71.2 48C315.6 474.1 286.3 480 256 480c-30.3 0-59.6-5.9-87.2-17.6-26.7-11.3-50.6-27.4-71.2-48s-36.7-44.5-48-71.2C37.9 315.6 32 286.3 32 256s5.9-59.6 17.6-87.2c11.3-26.7 27.4-50.6 48-71.2s44.5-36.7 71.2-48C196.4 37.9 225.7 32 256 32m0-32C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z\"></path><path d=\"M256 350.7c-7.9 0-15.8-3-21.8-8.9L137.4 246c-8.2-8.2-8.3-21.5-.2-29.7s21.5-8.3 29.7-.2l89.1 88.1 89.1-88.1c8.2-8.2 21.5-8.1 29.7.2 8.2 8.2 8.1 21.5-.2 29.7l-96.8 95.8c-6 5.9-13.9 8.9-21.8 8.9z\"></path></svg></button>",
+  "trigger_label": "Show dropdown menu",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-text shadow-none",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking",
+  "target_slug": "app-60073668069-banking",
+  "target_title": "Banking | Zoho Books"
+}

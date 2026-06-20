@@ -1,0 +1,50 @@
+[
+  {
+    "label": "PDF/Print",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/003-pdf-print",
+    "relationship_file": "interactions/003-pdf-print/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "New Quote",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/006-new-quote",
+    "relationship_file": "interactions/006-new-quote/relationship.json"
+  },
+  {
+    "label": "New Invoice",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/007-new-invoice",
+    "relationship_file": "interactions/007-new-invoice/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/011-show-dropdown-menu",
+    "relationship_file": "interactions/011-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/013-show-dropdown-menu",
+    "relationship_file": "interactions/013-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/014-collapse-expand",
+    "relationship_file": "interactions/014-collapse-expand/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/015-more-actions",
+    "relationship_file": "interactions/015-more-actions/relationship.json"
+  }
+]

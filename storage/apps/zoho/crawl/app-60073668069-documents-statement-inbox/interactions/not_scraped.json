@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Add to Bank",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"12\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"12\" data-ember-action=\"\" data-ember-action-320=\"320\" class=\"btn-group btn btn-primary btn-sm\">Add to Bank</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"scroll-y noscroll-x fi"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"d3d3033f-72b3-4e31-a708-f646d30e7cce\" aria-controls=\"d3d3033f-72b3-4e31-a708-f646d30e7cce\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scro"
+  },
+  {
+    "label": "Move to",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" aria-haspopup=\"true\" aria-expanded=\"false\" for=\"f0d5948a-db51-43d0-8943-1a85759ccfaf\" class=\"dropdown-toggle   btn btn-secondary btn-sm\" aria-controls=\"f0d5948a-db51-43d0-8943-1a85759ccfaf\">Move to</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, en"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"13\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"13\" data-ember-action=\"\" data-ember-action-320=\"320\" class=\"btn-group btn btn-primary btn-sm\">Add to Bank</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"scroll-y noscroll-x fi"
+  }
+]

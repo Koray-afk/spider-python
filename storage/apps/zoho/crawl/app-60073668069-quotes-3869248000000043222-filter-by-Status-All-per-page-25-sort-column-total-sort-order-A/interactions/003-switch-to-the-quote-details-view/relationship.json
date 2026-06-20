@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-quotes-3869248000000043222-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043222?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "source_title": "QT-000001 | Quotes | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "switch to the Quote Details View.",
+    "id": "ember346",
+    "class_name": "btn btn btn-link p-0 border-0 align-baseline ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember346",
+    "crawl_selector": "[data-crawl-id=\"36\"]",
+    "xpath": "//*[@id=\"ember346\"]",
+    "outer_html": "<button id=\"ember346\" class=\"btn btn btn-link p-0 border-0 align-baseline ember-view\" type=\"button\" data-crawl-id=\"36\"><!----> switch to the Quote Details View.<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043222?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+    "slug": "app-60073668069-quotes-3869248000000043222-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+    "title": "QT-000001 | Quotes | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button id=\"ember346\" class=\"btn btn btn-link p-0 border-0 align-baseline ember-view\" type=\"button\" data-crawl-id=\"36\"><!----> switch to the Quote Details View.<!----></button>",
+  "trigger_label": "switch to the Quote Details View.",
+  "trigger_id": "ember346",
+  "trigger_class": "btn btn btn-link p-0 border-0 align-baseline ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043222?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "target_slug": "app-60073668069-quotes-3869248000000043222-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "target_title": "QT-000001 | Quotes | Zoho Books"
+}

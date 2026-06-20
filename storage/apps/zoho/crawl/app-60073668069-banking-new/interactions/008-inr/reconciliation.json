@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "INR",
+    "tagName": "button",
+    "id": "fd3564eb-7704-401f-a3cf-f72cb49916af",
+    "className": "icon-button rhs-panel-toggle d-print-none mb-2 d-flex align-items-center justify-content-center opened",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button class=\"icon-button rhs-panel-toggle d-print-none mb-2 d-flex align-items-center justify-content-center opened\" id=\"fd3564eb-7704-401f-a3cf-f72cb49916af\" type=\"button\" tabindex=\"0\" data-crawl-id=\"19\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon icon-xs text-neutral-700 \" aria-hidden=\"true\"><path d=\"M349.6 227.7L219 97.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L264 255.3c.4.4.4 1 0 1.4L162.9 357.9c-15.7 15.7-16.1 41.7-.3 57.3 7.8 7.7 17.9 11.5 28.1 11.5 10.2 0 20.5-3.9 28.3-11.7l130.6-130.6c7.5-7.5 11.7-17.7 11.7-28.3 0-10.7-4.2-20.9-11.7-28.4z\"></path></svg></button>"
+  },
+  "interaction_type": "tooltip",
+  "location": {
+    "parentSelector": "#tooltip-popover-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"popper tooltip fade show\" data-popper-placement=\"left\" for=\"fd3564eb-7704-401f-a3cf-f72cb49916af\" id=\"c4f00afc-284c-4f09-a340-85bd30bc886b\" role=\"tooltip\" style=\"position: absolute; left: 0px; top: 0px; margin: 0px; transform: translate(1731px, 1044px);\"><div class=\"arrow\" data-popper-arrow=\"\" style=\"position: absolute; top: 0px; transform: translate(0px, 11px);\"></div> Expand Widgets Pane</div>\n<div class=\"alert alert-danger\"><button aria-label=\"Close Error Message(s)\" class=\"icon-button btn-close\" data-crawl-id=\"15\" data-ember-action=\"\" data-ember-action-565=\"565\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon icon-xs\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\" fill=\"#fe4242\"></path></svg></button><!-- --> <ul style=\"padding-left:16px\"><li class=\"pe-4\">Please enter a valid account name.</li></ul> <!-- --></div>\n<button aria-labelledby=\"c4f00afc-284c-4f09-a340-85bd30bc886b\" class=\"icon-button rhs-panel-toggle d-print-none mb-2 d-flex align-items-center justify-content-center closed\" data-crawl-id=\"19\" id=\"fd3564eb-7704-401f-a3cf-f72cb49916af\" tabindex=\"0\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon icon-xs text-neutral-700 rotate-180\" id=\"Layer_1\" version=\"1.1\" viewbox=\"0 0 512 512\" x=\"0\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\"><path d=\"M349.6 227.7L219 97.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L264 255.3c.4.4.4 1 0 1.4L162.9 357.9c-15.7 15.7-16.1 41.7-.3 57.3 7.8 7.7 17.9 11.5 28.1 11.5 10.2 0 20.5-3.9 28.3-11.7l130.6-130.6c7.5-7.5 11.7-17.7 11.7-28.3 0-10.7-4.2-20.9-11.7-28.4z\"></path></svg></button>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

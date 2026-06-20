@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Navigate To (Opt+0)",
+    "tag_name": "button",
+    "selector": "#a576f0798",
+    "target_url": "https://books.zoho.in/app/60073668069#/invoices/3869248000000043597/payment?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+    "target_slug": "app-60073668069-invoices-3869248000000043597-payment-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+    "target_page": "../app-60073668069-invoices-3869248000000043597-payment-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "OK",
+      "id": "a576f0798",
+      "class_name": "btn btn-primary ember-view",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#a576f0798",
+      "xpath": "//*[@id=\"a576f0798\"]",
+      "outer_html": "<button id=\"a576f0798\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"1\"><!----> OK<!----></button>"
+    }
+  }
+]

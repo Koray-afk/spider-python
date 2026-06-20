@@ -14,7 +14,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL = "gemini-3.1-pro"
+MODEL = "gemini-2.5-flash"
 NAV_TYPES = frozenset({"nav_item", "link", "navigation", "button"})
 
 PROMPT = """You are an expert software architect building an application knowledge graph.

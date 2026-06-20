@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "PAYABLES (BCY)",
+  "triggerId": "",
+  "triggerClass": "btn srt-btn bg-transparent",
+  "selector": "[data-crawl-id=\"22\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-vendors",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/vendors",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/vendors?filter_by=Status.All&per_page=25&sort_column=vendor_name&sort_order=A",
+  "beforeTitle": "Contacts | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/vendors?filter_by=Status.All&per_page=25&sort_column=vendor_name&sort_order=A",
+  "title": "Contacts | Zoho Books",
+  "resultPagePath": "app-60073668069-vendors/interactions/013-payables-bcy",
+  "captured_at": "2026-06-19T09:53:42.247296+00:00"
+}

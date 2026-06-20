@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"25\"]",
+    "outerHTML": "<button for=\"ff7a322d-7045-48b4-8ec8-bb974899b716\" aria-controls=\"ff7a322d-7045-48b4-8ec8-bb974899b716\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"25\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"ff7a322d-7045-48b4-8ec8-bb974899b716\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Purchases</div><!-- --><!-- --><span id=\"f166e873-20a4-401d-a33f-0b11778d68d7\"><a class=\"ember-view dropdown-item\" href=\"#/bills/new?contact_id=3869248000000039604&amp;contact_name=TP-Link\" id=\"ember524\">Bill</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000039604/vendorpayment?currency_id=3869248000000000064\" id=\"ember526\">Bill Payment</a><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?vendor_id=3869248000000039604&amp;vendor_name=TP-Link\" id=\"ember528\">Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f90c8a20-cb21-491e-9cd6-c02555314df1\"><a class=\"ember-view dropdown-item\" href=\"#/recurringbills/new?contact_id=3869248000000039604&amp;contact_name=TP-Link\" id=\"ember530\">Recurring Bill</a></span> <!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?vendor_id=3869248000000039604&amp;vendor_name=TP-Link\" id=\"ember532\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f8703785-d7ff-4922-87b5-b8ab6e209335\"><a class=\"ember-view dropdown-item\" href=\"#/purchaseorders/new?contact_id=3869248000000039604&amp;contact_name=TP-Link\" id=\"ember534\">Purchase Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d3951115-a561-4d2f-bb71-216e423334ea\"><a class=\"ember-view dropdown-item\" href=\"#/vendorcredits/new?contact_id=3869248000000039604&amp;contact_name=TP-Link\" id=\"ember536\">Vendor Credit</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"e101eef7-7069-4028-8fa3-02aaf25b0203\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000039604&amp;contact_name=TP-Link\" id=\"ember538\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000039604/vendorcheck?currency_id=3869248000000000064\" id=\"ember540\">Pay Bill via Check</a><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

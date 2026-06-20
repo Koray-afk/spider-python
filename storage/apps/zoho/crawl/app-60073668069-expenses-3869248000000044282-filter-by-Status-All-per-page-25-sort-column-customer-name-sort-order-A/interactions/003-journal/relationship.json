@@ -1,0 +1,38 @@
+{
+  "source_page": "app-60073668069-expenses-3869248000000044282-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044282?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "source_title": "Meals and Entertainment | Expenses | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  btn no-box-shadow toggle-btn",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Show dropdown menu",
+    "selector": "#dd-e8e56629-c949-4f52-b79f-95d350818792 > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"26\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/span[1]/button[1]",
+    "outer_html": "<button for=\"e8e56629-c949-4f52-b79f-95d350818792\" aria-controls=\"e8e56629-c949-4f52-b79f-95d350818792\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  btn no-box-shadow toggle-btn\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"26\"><svg xmlns=\"http://www.w3.org/2000/svg\" data-name=\"Layer 2\" viewBox=\"0 0 431.49 429.8\" class=\"icon icon-sm align-middle mb-1 fill-cool-grey\"><path d=\"M215.75 0C96.59 0 0 96.21 0 214.9s96.59 214.9 215.75 214.9 215.74-96.21 215.74-214.9S334.9 0 215.75 0zm103.96 203.7l-85.66 85.66c-4.89 4.88-11.28 7.32-17.68 7.32s-12.8-2.44-17.68-7.32l-86.91-86.9c-9.76-9.77-9.76-25.6 0-35.36 9.77-9.76 25.6-9.76 35.36 0l69.23 69.23 67.98-67.99c9.77-9.76 25.59-9.76 35.36 0 9.76 9.77 9.76 25.59 0 35.36z\" data-name=\"Layer 1\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044282?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+    "slug": "app-60073668069-expenses-3869248000000044282-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+    "title": "Meals and Entertainment | Expenses | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button for=\"e8e56629-c949-4f52-b79f-95d350818792\" aria-controls=\"e8e56629-c949-4f52-b79f-95d350818792\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  btn no-box-shadow toggle-btn\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"26\"><svg xmlns=\"http://www.w3.org/2000/svg\" data-name=\"Layer 2\" viewBox=\"0 0 431.49 429.8\" class=\"icon icon-sm align-middle mb-1 fill-cool-grey\"><path d=\"M215.75 0C96.59 0 0 96.21 0 214.9s96.59 214.9 215.75 214.9 215.74-96.21 215.74-214.9S334.9 0 215.75 0zm103.96 203.7l-85.66 85.66c-4.89 4.88-11.28 7.32-17.68 7.32s-12.8-2.44-17.68-7.32l-86.91-86.9c-9.76-9.77-9.76-25.6 0-35.36 9.77-9.76 25.6-9.76 35.36 0l69.23 69.23 67.98-67.99c9.77-9.76 25.59-9.76 35.36 0 9.76 9.77 9.76 25.59 0 35.36z\" data-name=\"Layer 1\"></path></svg></button>",
+  "trigger_label": "Journal",
+  "trigger_id": "",
+  "trigger_class": "text-dodgerblue nav-link bg-transparent active",
+  "target_url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044282?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "target_slug": "app-60073668069-expenses-3869248000000044282-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+  "target_title": "Meals and Entertainment | Expenses | Zoho Books",
+  "tab_content": {
+    "selector": "#e8e56629-c949-4f52-b79f-95d350818792",
+    "file": "tab-content.html"
+  }
+}

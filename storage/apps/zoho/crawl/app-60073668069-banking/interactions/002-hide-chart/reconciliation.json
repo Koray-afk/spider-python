@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Hide Chart",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-link p-0",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button class=\"btn btn-link p-0\" data-ember-action=\"\" data-ember-action-445=\"445\" data-crawl-id=\"19\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon icon-xlg align-top\"><path d=\"M466.2 262.9l-12.4-102.5c-.6-5.3-3.3-10.1-7.5-13.3s-9.5-4.8-14.7-4.1l-97.8 11.9c-11 1.3-18.8 11.3-17.4 22.3 1.3 11 11.3 18.8 22.3 17.4l53.9-6.5c-.1.1-.2.2-.3.4l-87.5 111.7L180 202.5c-4.2-3.3-9.5-4.8-14.7-4.1-5.3.6-10.1 3.3-13.3 7.5L49.5 336.6c-6.8 8.7-5.3 21.3 3.4 28.1 3.7 2.9 8 4.3 12.3 4.3 5.9 0 11.8-2.6 15.8-7.7l90.1-114.9L295.6 344c8.7 6.8 21.3 5.3 28.1-3.4l96.7-123.3 6.1 50.6c1.2 10.1 9.9 17.6 19.8 17.6.8 0 1.6 0 2.4-.1 11-1.5 18.8-11.5 17.5-22.5z\"></path></svg>&nbsp; Hide Chart&nbsp; <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs rotate-minus-180\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/button[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<svg class=\"icon icon-xxs\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

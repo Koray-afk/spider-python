@@ -1,0 +1,62 @@
+[
+  {
+    "label": "New Transaction",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/004-new-transaction",
+    "relationship_file": "interactions/004-new-transaction/relationship.json"
+  },
+  {
+    "label": "All Customers",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/005-all-customers",
+    "relationship_file": "interactions/005-all-customers/relationship.json"
+  },
+  {
+    "label": "Accrual",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/006-accrual",
+    "relationship_file": "interactions/006-accrual/relationship.json"
+  },
+  {
+    "label": "Enter Opening Balance",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/008-enter-opening-balance",
+    "relationship_file": "interactions/008-enter-opening-balance/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-navigate-to-opt-0",
+    "relationship_file": "interactions/009-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-show-dropdown-menu",
+    "relationship_file": "interactions/010-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/011-show-dropdown-menu",
+    "relationship_file": "interactions/011-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/013-more-actions",
+    "relationship_file": "interactions/013-more-actions/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/015-edit",
+    "relationship_file": "interactions/015-edit/relationship.json"
+  }
+]

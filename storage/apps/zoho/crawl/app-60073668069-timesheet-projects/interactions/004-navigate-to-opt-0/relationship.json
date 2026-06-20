@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-timesheet-projects",
+  "source_url": "https://books.zoho.in/app/60073668069#/timesheet/projects",
+  "source_title": "Projects | Timesheet | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "All",
+    "id": "",
+    "class_name": "btn p-0",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#de8868d0-3041-4bec-a2a2-1723438e67e9 > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button class=\"btn p-0\" data-crawl-id=\"1\">All</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/timesheet/projects",
+    "slug": "app-60073668069-timesheet-projects",
+    "title": "Projects | Timesheet | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"btn p-0\" data-crawl-id=\"1\">All</button>",
+  "trigger_label": "Navigate To (Opt+0)",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle   btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/timesheet/projects",
+  "target_slug": "app-60073668069-timesheet-projects",
+  "target_title": "Projects | Timesheet | Zoho Books"
+}

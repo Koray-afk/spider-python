@@ -1,0 +1,62 @@
+[
+  {
+    "label": "New Transaction",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/003-new-transaction",
+    "relationship_file": "interactions/003-new-transaction/relationship.json"
+  },
+  {
+    "label": "All Customers",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/004-all-customers",
+    "relationship_file": "interactions/004-all-customers/relationship.json"
+  },
+  {
+    "label": "Last 6 Months",
+    "selector": "[data-crawl-id=\"37\"]",
+    "interaction_path": "interactions/005-last-6-months",
+    "relationship_file": "interactions/005-last-6-months/relationship.json"
+  },
+  {
+    "label": "Enter Opening Balance",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/006-enter-opening-balance",
+    "relationship_file": "interactions/006-enter-opening-balance/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/009-more-actions",
+    "relationship_file": "interactions/009-more-actions/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/011-edit",
+    "relationship_file": "interactions/011-edit/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/012-more",
+    "relationship_file": "interactions/012-more/relationship.json"
+  },
+  {
+    "label": "Enable Portal",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/013-enable-portal",
+    "relationship_file": "interactions/013-enable-portal/relationship.json"
+  },
+  {
+    "label": "Accrual",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/014-accrual",
+    "relationship_file": "interactions/014-accrual/relationship.json"
+  },
+  {
+    "label": "25 per page",
+    "selector": "[data-crawl-id=\"40\"]",
+    "interaction_path": "interactions/015-25-per-page",
+    "relationship_file": "interactions/015-25-per-page/relationship.json"
+  }
+]

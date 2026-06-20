@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"25\"]",
+    "outerHTML": "<button for=\"e1b806e7-330f-4500-ad17-71b26123471e\" aria-controls=\"e1b806e7-330f-4500-ad17-71b26123471e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"25\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"e1b806e7-330f-4500-ad17-71b26123471e\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Purchases</div><!-- --><!-- --><span id=\"e648b553-e8cc-4ffc-a6a6-3ff9c23d9d9f\"><a class=\"ember-view dropdown-item\" href=\"#/bills/new?contact_id=3869248000000039426&amp;contact_name=Dell%20India\" id=\"ember561\">Bill</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000039426/vendorpayment?currency_id=3869248000000000064\" id=\"ember563\">Bill Payment</a><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?vendor_id=3869248000000039426&amp;vendor_name=Dell%20India\" id=\"ember565\">Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f192a612-d95d-45bc-a984-22fcd412c986\"><a class=\"ember-view dropdown-item\" href=\"#/recurringbills/new?contact_id=3869248000000039426&amp;contact_name=Dell%20India\" id=\"ember567\">Recurring Bill</a></span> <!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?vendor_id=3869248000000039426&amp;vendor_name=Dell%20India\" id=\"ember569\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"cd180b07-3263-4772-a28e-b85a01e87676\"><a class=\"ember-view dropdown-item\" href=\"#/purchaseorders/new?contact_id=3869248000000039426&amp;contact_name=Dell%20India\" id=\"ember571\">Purchase Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d5b3ff79-9b29-4c38-a5ca-280219d7cba0\"><a class=\"ember-view dropdown-item\" href=\"#/vendorcredits/new?contact_id=3869248000000039426&amp;contact_name=Dell%20India\" id=\"ember573\">Vendor Credit</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"cc426a29-432b-4d85-82fc-6e7a00249240\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000039426&amp;contact_name=Dell%20India\" id=\"ember575\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000039426/vendorcheck?currency_id=3869248000000000064\" id=\"ember577\">Pay Bill via Check</a><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

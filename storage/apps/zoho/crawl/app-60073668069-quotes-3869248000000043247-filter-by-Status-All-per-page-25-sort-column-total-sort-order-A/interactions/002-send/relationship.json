@@ -1,0 +1,38 @@
+{
+  "source_page": "app-60073668069-quotes-3869248000000043247-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043247?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "source_title": "QT-000002 | Quotes | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Send",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dd-c18adc8f-1673-43a2-aae5-8b175cabf889 > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"25\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[3]/ul[1]/li[3]/button[1]",
+    "outer_html": "<button for=\"c18adc8f-1673-43a2-aae5-8b175cabf889\" aria-controls=\"c18adc8f-1673-43a2-aae5-8b175cabf889\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  details-menu-item nav-link over-flow \" type=\"button\" data-crawl-id=\"25\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 446\" class=\"icon icon-sm me-2\"><g id=\"Layer_1-2\"><path d=\"M412 0H100C44.86 0 0 44.86 0 100v246c0 55.14 44.86 100 100 100h312c55.14 0 100-44.86 100-100V100C512 44.86 467.14 0 412 0zm60 346c0 33.08-26.92 60-60 60H100c-33.08 0-60-26.92-60-60V100c0-33.08 26.92-60 60-60h312c33.08 0 60 26.92 60 60v246z\"></path><path d=\"M387.16 112.78l-107.98 76.47c-13.84 9.8-32.44 9.8-46.28 0l-107.97-76.47c-9.01-6.38-21.5-4.25-27.88 4.76-6.38 9.01-4.25 21.5 4.76 27.88l107.97 76.47c13.84 9.8 30.05 14.7 46.26 14.7s32.43-4.9 46.26-14.7l107.98-76.47c9.01-6.38 11.15-18.87 4.76-27.88-6.38-9.01-18.87-11.15-27.88-4.76z\"></path></g></svg><span class=\"text-truncate\">Send</span> <span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle ms-2\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043247?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+    "slug": "app-60073668069-quotes-3869248000000043247-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+    "title": "QT-000002 | Quotes | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button for=\"c18adc8f-1673-43a2-aae5-8b175cabf889\" aria-controls=\"c18adc8f-1673-43a2-aae5-8b175cabf889\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  details-menu-item nav-link over-flow \" type=\"button\" data-crawl-id=\"25\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 446\" class=\"icon icon-sm me-2\"><g id=\"Layer_1-2\"><path d=\"M412 0H100C44.86 0 0 44.86 0 100v246c0 55.14 44.86 100 100 100h312c55.14 0 100-44.86 100-100V100C512 44.86 467.14 0 412 0zm60 346c0 33.08-26.92 60-60 60H100c-33.08 0-60-26.92-60-60V100c0-33.08 26.92-60 60-60h312c33.08 0 60 26.92 60 60v246z\"></path><path d=\"M387.16 112.78l-107.98 76.47c-13.84 9.8-32.44 9.8-46.28 0l-107.97-76.47c-9.01-6.38-21.5-4.25-27.88 4.76-6.38 9.01-4.25 21.5 4.76 27.88l107.97 76.47c13.84 9.8 30.05 14.7 46.26 14.7s32.43-4.9 46.26-14.7l107.98-76.47c9.01-6.38 11.15-18.87 4.76-27.88-6.38-9.01-18.87-11.15-27.88-4.76z\"></path></g></svg><span class=\"text-truncate\">Send</span> <span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle ms-2\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></button>",
+  "trigger_label": "Send",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+  "target_url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043247?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "target_slug": "app-60073668069-quotes-3869248000000043247-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "target_title": "QT-000002 | Quotes | Zoho Books",
+  "tab_content": {
+    "selector": "#c18adc8f-1673-43a2-aae5-8b175cabf889",
+    "file": "tab-content.html"
+  }
+}

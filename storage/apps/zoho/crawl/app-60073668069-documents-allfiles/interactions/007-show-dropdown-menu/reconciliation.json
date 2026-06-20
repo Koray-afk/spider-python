@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-primary ",
+    "selector": "[data-crawl-id=\"8\"]",
+    "outerHTML": "<button for=\"fd0cdd97-6732-42b1-878e-19033e2adfc0\" aria-controls=\"fd0cdd97-6732-42b1-878e-19033e2adfc0\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  btn btn-primary \" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"8\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"fd0cdd97-6732-42b1-878e-19033e2adfc0\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-109.5px, 98.5234px);\"><div class=\"file-upload dropdown-item file-upload-input\" id=\"af7e0d4e1\"><input accept=\"image/gif,image/jpeg,image/png,image/bmp,application/pdf,application/doc,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/xml,text/csv,.xml,text/xml,image/tiff,image/webp,application/rtf,text/plain,application/json,application/vnd.ms-outlook,message/rfc822,application/vnd.oasis.opendocument.spreadsheet,application/vnd.apple.numbers,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.apple.keynote,application/zip,application/vnd.rar,application/x-7z-compressed,.asice,.rar,.dwg,.msg,.dst,.numbers,.key,.pages,application/acad,application/postscript,application/octet-stream,application/vnd.oasis.opendocument.text,application/vnd.oasis.opendocument.formula\" aria-label=\"Attach From Desktop\" class=\"upload ember-view dropdown-item\" id=\"ember423\" multiple=\"\" title=\"\" type=\"file\"/> Attach From Desktop</div> <button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-424=\"424\" type=\"button\">Attach From Cloud</button><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

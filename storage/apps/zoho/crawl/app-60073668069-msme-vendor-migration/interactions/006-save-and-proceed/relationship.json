@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-msme-vendor-migration",
+  "source_url": "https://books.zoho.in/app/60073668069#/msme-vendor-migration",
+  "source_title": "Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Save and Proceed",
+    "id": "ember176",
+    "class_name": "btn btn-primary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember176",
+    "crawl_selector": "[data-crawl-id=\"16\"]",
+    "xpath": "//*[@id=\"ember176\"]",
+    "outer_html": "<button id=\"ember176\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"16\"><!----> Save and Proceed<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/msme-vendor-migration",
+    "slug": "app-60073668069-msme-vendor-migration",
+    "title": "Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button id=\"ember176\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"16\"><!----> Save and Proceed<!----></button>",
+  "trigger_label": "Save and Proceed",
+  "trigger_id": "ember176",
+  "trigger_class": "btn btn-primary ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/msme-vendor-migration",
+  "target_slug": "app-60073668069-msme-vendor-migration",
+  "target_title": "Zoho Books"
+}

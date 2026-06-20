@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-timesheet-projects-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+  "source_title": "New Project | Timesheet | Zoho Books",
+  "trigger": {
+    "tag_name": "div",
+    "text": "Select customer",
+    "id": "ac-ember431",
+    "class_name": "ac-box ac-box-open",
+    "name": "",
+    "role": "combobox",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ac-ember431",
+    "crawl_selector": "[data-crawl-id=\"28\"]",
+    "xpath": "//*[@id=\"ac-ember431\"]",
+    "outer_html": "<div ac-toggler=\"\" id=\"ac-ember431\" class=\"ac-box ac-box-open\" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-disabled=\"false\" aria-labelledby=\"aa48bcf4e\" aria-expanded=\"true\" aria-controls=\"acDropdownListBox\" aria-invalid=\"false\" aria-describedby=\"error-msg-ember431\" aria-required=\"true\" data-crawl-id=\"28\"><div class=\"ac-selected form-control  \"> <span class=\"placeholder-text me-0 ac-selected-label\">Select customer <!----></span><div class=\"ac-toggle-container\"><i class=\"zf-ac-toggler\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 374.98 227.51\"><path fill=\"#408dfb\" d=\"M187.46 0C177.23 0 167 3.9 159.19 11.71L11.73 159.06C-3.9 174.68-3.91 200 11.71 215.63c15.62 15.63 40.94 15.64 56.57.02L187.46 96.56 306.7 215.8c15.62 15.62 40.95 15.62 56.57 0 15.62-15.62 15.62-40.95 0-56.57L215.75 11.72C207.94 3.91 197.7 0 187.47 0z\" id=\"Layer_1-2\"></path></svg></i></div></div></div>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+    "slug": "app-60073668069-timesheet-projects-new",
+    "title": "New Project | Timesheet | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<div ac-toggler=\"\" id=\"ac-ember431\" class=\"ac-box ac-box-open\" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-disabled=\"false\" aria-labelledby=\"aa48bcf4e\" aria-expanded=\"true\" aria-controls=\"acDropdownListBox\" aria-invalid=\"false\" aria-describedby=\"error-msg-ember431\" aria-required=\"true\" data-crawl-id=\"28\"><div class=\"ac-selected form-control  \"> <span class=\"placeholder-text me-0 ac-selected-label\">Select customer <!----></span><div class=\"ac-toggle-container\"><i class=\"zf-ac-toggler\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 374.98 227.51\"><path fill=\"#408dfb\" d=\"M187.46 0C177.23 0 167 3.9 159.19 11.71L11.73 159.06C-3.9 174.68-3.91 200 11.71 215.63c15.62 15.63 40.94 15.64 56.57.02L187.46 96.56 306.7 215.8c15.62 15.62 40.95 15.62 56.57 0 15.62-15.62 15.62-40.95 0-56.57L215.75 11.72C207.94 3.91 197.7 0 187.47 0z\" id=\"Layer_1-2\"></path></svg></i></div></div></div>",
+  "trigger_label": "Billing Method",
+  "trigger_id": "ac-ember434",
+  "trigger_class": "ac-box ",
+  "target_url": "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+  "target_slug": "app-60073668069-timesheet-projects-new",
+  "target_title": "New Project | Timesheet | Zoho Books"
+}

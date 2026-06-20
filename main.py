@@ -7,7 +7,7 @@ from crawler_v2 import crawl_application, crawl_postauth, crawl_preauth
 from reconciler import reconcile_app
 from src.runtime.server import DEFAULT_PORT, serve_app
 from stitcher_v1 import stitch_app
-from storage.storage_manager import clean_crawl, crawl_stats, get_crawl_dir
+from storage.storage_manager import clean_crawl, crawl_stats, get_crawl_checkpoint_path, get_crawl_dir
 
 
 def _fmt_bytes(n: int) -> str:
@@ -21,11 +21,20 @@ def _fmt_bytes(n: int) -> str:
 def cmd_status(app_name: str) -> None:
     stats = crawl_stats(app_name)
     root = get_crawl_dir(app_name)
+    ckpt = get_crawl_checkpoint_path(app_name)
     print(f"App: {app_name}")
     print(f"Storage: {root.resolve()}")
     print(f"Pages crawled: {stats['pages']}")
     print(f"Interaction captures: {stats['interactions']}")
     print(f"Storage size: {_fmt_bytes(stats['bytes'])}")
+    if ckpt.is_file():
+        import json
+        data = json.loads(ckpt.read_text(encoding="utf-8"))
+        sq = len(data.get("sidebar_queue") or [])
+        dq = len(data.get("deferred_queue") or [])
+        print(f"Checkpoint: yes ({sq} sidebar + {dq} deferred remaining)")
+    else:
+        print("Checkpoint: none (fresh crawl or finished)")
 
 
 def cmd_clean(app_name: str) -> None:
@@ -84,7 +93,7 @@ def usage() -> None:
     print("                                       Serve the stitched clone locally")
     print("  python main.py status <app>          Show crawl stats")
     print("  python main.py coverage <app>       Audit dead buttons / missing routes")
-    print("  python main.py clean <app>           Delete crawl output")
+    print("  python main.py clean <app>           Delete crawl output + checkpoint")
     print("  python main.py html-clean <app>      stitched_html → cleaned_html (for LLM analysis)")
     print("  python main.py analyze <app>         cleaned_html → business_json (needs GEMINI_API_KEY)")
     print("  python main.py semantic_tree <app>   Semantic UI tree (needs GEMINI_API_KEY)")

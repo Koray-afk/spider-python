@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "All Received Payments",
+    "tagName": "button",
+    "id": "",
+    "className": "badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray",
+    "selector": "[data-crawl-id=\"17\"]",
+    "outerHTML": "<button class=\"badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray\" data-crawl-id=\"17\"><span class=\"blue-dot mx-2 pe-1 hotspot hotspot-webinar\"></span> <span>Take a live product tour</span></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#main-nav-tab > ul:nth-of-type(1) > li:nth-of-type(17) > div:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[17]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"rounded-xlg position-relative text-center pt-6 pb-3 px-1 mb-4 ms-3 migrate-option-dark text-primary-black\"><div class=\"pb-3 position-relative\"><img alt=\"\" class=\"lhs-webinar-img\" src=\"https://d31g2a6snus4ly.cloudfront.net/zbooks/assets/images/paid-live-webinar-cdf05a87fc.png\" width=\"68\"/> <button aria-label=\"Close the Free Webinar Popup\" class=\"icon-button btn btn-text close-expand-view\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon icon-xxs fill-grey-shaded\" id=\"Layer_2\" viewbox=\"0 0 333.23 333.23\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M209.04 166.62l115.4-115.4c11.72-11.72 11.72-30.71 0-42.43-11.72-11.72-30.71-11.72-42.43 0l-115.4 115.4L51.21 8.79C39.49-2.93 20.5-2.93 8.78 8.79c-11.72 11.72-11.72 30.71 0 42.43l115.4 115.4L8.79 282.02c-11.72 11.72-11.72 30.71 0 42.43 5.86 5.86 13.54 8.79 21.21 8.79s15.35-2.93 21.21-8.79l115.4-115.4 115.4 115.4c5.86 5.86 13.54 8.79 21.21 8.79s15.35-2.93 21.21-8.79c11.72-11.72 11.72-30.71 0-42.43l-115.4-115.4z\" id=\"Layer_1-2\"></path></svg></button></div> <div class=\"badge badge-lhs-webinar text-uppercase rounded-pill justify-content-center text-dark-gray cursor-pointer\"><span class=\"blue-dot mx-2 pe-1 hotspot hotspot-webinar\"></span> <span>Take a live product tour</span></div> <div class=\"py-3\">Join us for a free webinar and get an in-depth overview of books.</div> <a class=\"btn btn-sm btn-link highlight-btn-primary font-xs\" href=\"https://zoho.to/inlivewebinar\" rel=\"noreferrer noopener\" target=\"_blank\">Register Now <svg class=\"icon icon-xxs\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M158.747 512c13.885 0 27.778-5.45 38.345-16.335L391.6 294.999c20.898-21.591 20.898-56.406 0-77.971L197.092 16.35c-21.023-21.693-55.245-21.818-76.413-.268-21.17 21.53-21.283 56.578-.26 78.271l156.688 161.646-156.688 161.642c-21.018 21.703-20.905 56.748.26 78.301C131.207 506.64 144.979 512 158.747 512z\"></path></svg></a></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

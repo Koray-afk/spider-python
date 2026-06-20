@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Last 6 Months",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   text-blue",
+    "selector": "[data-crawl-id=\"38\"]",
+    "outerHTML": "<button for=\"e5274d01-7f70-43f8-a9d1-4f0b7dd3e581\" aria-controls=\"e5274d01-7f70-43f8-a9d1-4f0b7dd3e581\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   text-blue\" type=\"button\" data-crawl-id=\"38\">Last 6 Months</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"e5274d01-7f70-43f8-a9d1-4f0b7dd3e581\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-174.625px, 436.273px);\"><button class=\"dropdown-item\" type=\"button\">This Fiscal Year</button><button class=\"dropdown-item\" type=\"button\">Previous Fiscal Year</button><button class=\"dropdown-item\" type=\"button\">Last 12 Months</button><button class=\"dropdown-item\" type=\"button\">Last 6 Months</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

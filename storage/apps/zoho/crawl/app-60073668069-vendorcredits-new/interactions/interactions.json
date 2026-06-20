@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Add New Row",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/003-add-new-row",
+    "relationship_file": "interactions/003-add-new-row/relationship.json"
+  },
+  {
+    "label": "Add Items in Bulk",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/004-add-items-in-bulk",
+    "relationship_file": "interactions/004-add-items-in-bulk/relationship.json"
+  },
+  {
+    "label": "Save as Open",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/005-save-as-open",
+    "relationship_file": "interactions/005-save-as-open/relationship.json"
+  },
+  {
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/006-save-as-draft",
+    "relationship_file": "interactions/006-save-as-draft/relationship.json"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/007-cancel",
+    "relationship_file": "interactions/007-cancel/relationship.json"
+  },
+  {
+    "label": "Close Vendor Credits Creation Page",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/008-close-vendor-credits-creation-page",
+    "relationship_file": "interactions/008-close-vendor-credits-creation-page/relationship.json"
+  },
+  {
+    "label": "Select a Vendor",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/009-select-a-vendor",
+    "relationship_file": "interactions/009-select-a-vendor/relationship.json"
+  },
+  {
+    "label": "Accounts Payable",
+    "selector": "[data-crawl-id=\"30\"]",
+    "interaction_path": "interactions/010-accounts-payable",
+    "relationship_file": "interactions/010-accounts-payable/relationship.json"
+  },
+  {
+    "label": "Select a Tax",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/011-select-a-tax",
+    "relationship_file": "interactions/011-select-a-tax/relationship.json"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "New Transaction",
+  "triggerId": "",
+  "triggerClass": "dropdown-toggle   btn btn-primary",
+  "selector": "[data-crawl-id=\"26\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-contacts-3869248000000043561",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043561",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043561?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "beforeTitle": "Flashter Inc. | Contacts | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043561?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "title": "Flashter Inc. | Contacts | Zoho Books",
+  "resultPagePath": "app-60073668069-contacts-3869248000000043561/interactions/003-new-transaction",
+  "captured_at": "2026-06-19T11:59:36.701430+00:00"
+}

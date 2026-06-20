@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/001-collapse-expand",
+    "relationship_file": "interactions/001-collapse-expand/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/003-show-dropdown-menu",
+    "relationship_file": "interactions/003-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/004-show-dropdown-menu",
+    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  }
+]

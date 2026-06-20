@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-bills",
+  "source_url": "https://books.zoho.in/app/60073668069#/bills",
+  "source_title": "Bills | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "dbe8f0ca-3043-469b-88fb-49048fa8e44a",
+    "class_name": "icon-button btn btn-secondary d-flex align-items-center active",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dbe8f0ca-3043-469b-88fb-49048fa8e44a",
+    "crawl_selector": "[data-crawl-id=\"22\"]",
+    "xpath": "//*[@id=\"dbe8f0ca-3043-469b-88fb-49048fa8e44a\"]",
+    "outer_html": "<button class=\"icon-button btn btn-secondary d-flex align-items-center active\" id=\"dbe8f0ca-3043-469b-88fb-49048fa8e44a\" type=\"button\" data-ember-action=\"\" data-ember-action-543=\"543\" tabindex=\"0\" data-crawl-id=\"22\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 451.12 231.775\" class=\"icon icon-sm\" aria-hidden=\"true\"><path d=\"M421.12 60H119.616c-16.568 0-30-13.431-30-30s13.432-30 30-30H421.12c16.568 0 30 13.431 30 30s-13.432 30-30 30zm0 171.775H119.616c-16.568 0-30-13.431-30-30s13.432-30 30-30H421.12c16.568 0 30 13.431 30 30s-13.432 30-30 30zM30.76 60H30C13.432 60 0 46.568 0 30S13.432 0 30 0h.76c16.568 0 30 13.432 30 30s-13.432 30-30 30zm0 171.775H30c-16.568 0-30-13.432-30-30s13.432-30 30-30h.76c16.568 0 30 13.432 30 30s-13.432 30-30 30z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/bills",
+    "slug": "app-60073668069-bills",
+    "title": "Bills | Zoho Books"
+  },
+  "interaction_type": "tooltip",
+  "original_element_html": "<button class=\"icon-button btn btn-secondary d-flex align-items-center active\" id=\"dbe8f0ca-3043-469b-88fb-49048fa8e44a\" type=\"button\" data-ember-action=\"\" data-ember-action-543=\"543\" tabindex=\"0\" data-crawl-id=\"22\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 451.12 231.775\" class=\"icon icon-sm\" aria-hidden=\"true\"><path d=\"M421.12 60H119.616c-16.568 0-30-13.431-30-30s13.432-30 30-30H421.12c16.568 0 30 13.431 30 30s-13.432 30-30 30zm0 171.775H119.616c-16.568 0-30-13.431-30-30s13.432-30 30-30H421.12c16.568 0 30 13.431 30 30s-13.432 30-30 30zM30.76 60H30C13.432 60 0 46.568 0 30S13.432 0 30 0h.76c16.568 0 30 13.432 30 30s-13.432 30-30 30zm0 171.775H30c-16.568 0-30-13.432-30-30s13.432-30 30-30h.76c16.568 0 30 13.432 30 30s-13.432 30-30 30z\"></path></svg></button>",
+  "trigger_label": "Show dropdown menu",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  customize-action",
+  "target_url": "https://books.zoho.in/app/60073668069#/bills",
+  "target_slug": "app-60073668069-bills",
+  "target_title": "Bills | Zoho Books"
+}

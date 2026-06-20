@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Choose your account for import",
+    "tagName": "button",
+    "id": "e29e783a-bcca-4d61-9e95-d4e5c08c9627",
+    "className": "icon-button ms-4",
+    "selector": "[data-crawl-id=\"22\"]",
+    "outerHTML": "<button class=\"icon-button ms-4\" id=\"e29e783a-bcca-4d61-9e95-d4e5c08c9627\" type=\"button\" data-ember-action=\"\" data-ember-action-565=\"565\" tabindex=\"0\" data-crawl-id=\"22\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xs align-middle\" aria-hidden=\"true\"><path fill=\"none\" d=\"M.3.3h511.3v511.3H.3z\"></path><path fill=\"#FF5273\" d=\"M313.3 255.5l121.2-121.2c15.3-16 14.7-41.5-1.3-56.8-15.5-14.8-40-14.8-55.5 0L256.5 198.7 135.3 77.5c-16-15.4-41.4-14.9-56.8 1.1-15 15.6-15 40.2 0 55.7l121.2 121.2L78.5 376.7c-15.9 15.5-16.2 40.9-.7 56.8s40.9 16.2 56.8.7l.7-.7 121.2-121.2 121.2 121.2c16 15.4 41.4 14.9 56.8-1.1 15-15.6 15-40.2 0-55.7L313.3 255.5z\"></path></svg></button>"
+  },
+  "interaction_type": "tooltip",
+  "location": {
+    "parentSelector": "#tooltip-popover-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"popper tooltip fade show\" data-popper-placement=\"bottom\" for=\"f6ee8217-aa81-4ac4-be0c-6c9196aad86c\" id=\"d9e67dd9-0e5b-409a-9087-5bfe5f4912d9\" role=\"tooltip\" style=\"position: absolute; left: 0px; top: 0px; margin: 0px; transform: translate(1266px, 43px);\"><div class=\"arrow\" data-popper-arrow=\"\" style=\"position: absolute; left: 0px; transform: translate(116px, 0px);\"></div> Your premium trial plan ends in 4 days.</div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

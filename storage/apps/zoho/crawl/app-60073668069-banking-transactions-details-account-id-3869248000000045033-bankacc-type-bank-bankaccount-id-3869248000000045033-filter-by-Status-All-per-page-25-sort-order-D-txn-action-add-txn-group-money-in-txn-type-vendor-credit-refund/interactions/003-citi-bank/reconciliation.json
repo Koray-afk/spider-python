@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Citi Bank",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-item pe-7 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "outerHTML": "<button class=\"dropdown-item pe-7 \" type=\"button\" data-ember-action=\"\" data-ember-action-625=\"625\" data-crawl-id=\"16\">Recurring Bills <!----></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#main-nav-tab > ul:nth-of-type(1) > li:nth-of-type(2)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown dropend ember-view\" id=\"dd-fa812b00-340d-4e3a-85f1-27c9dce41114\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-efae440a-f6f4-4a92-84c9-9dd920c95b20\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-c7fa7221-ee76-420a-b1a0-14c2ba8e4e26\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-d2bf03d4-2ae4-4e36-9958-dc4b6f2d1d4f\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-cfa3bbf7-5de6-4cfb-8472-eaade5285615\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-da8ce945-b33a-4b40-bec3-83646255ae94\"><!-- --> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"25\"]",
+    "outerHTML": "<button for=\"dffa8636-89bb-4d55-b732-5c180edd794e\" aria-controls=\"dffa8636-89bb-4d55-b732-5c180edd794e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"25\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"dffa8636-89bb-4d55-b732-5c180edd794e\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Purchases</div><!-- --><!-- --><span id=\"e5203059-92b2-4f11-b516-5f65cd2e7899\"><a class=\"ember-view dropdown-item\" href=\"#/bills/new?contact_id=3869248000000039460&amp;contact_name=LG%20Electronics\" id=\"ember561\">Bill</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000039460/vendorpayment?currency_id=3869248000000000064\" id=\"ember563\">Bill Payment</a><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?vendor_id=3869248000000039460&amp;vendor_name=LG%20Electronics\" id=\"ember565\">Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d16e3312-2881-4ed7-8030-d016909fa4ac\"><a class=\"ember-view dropdown-item\" href=\"#/recurringbills/new?contact_id=3869248000000039460&amp;contact_name=LG%20Electronics\" id=\"ember567\">Recurring Bill</a></span> <!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?vendor_id=3869248000000039460&amp;vendor_name=LG%20Electronics\" id=\"ember569\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c3123232-400b-4bab-9958-a3cf8acba102\"><a class=\"ember-view dropdown-item\" href=\"#/purchaseorders/new?contact_id=3869248000000039460&amp;contact_name=LG%20Electronics\" id=\"ember571\">Purchase Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"dd7d76be-0d88-4263-acc0-426460afaf9c\"><a class=\"ember-view dropdown-item\" href=\"#/vendorcredits/new?contact_id=3869248000000039460&amp;contact_name=LG%20Electronics\" id=\"ember573\">Vendor Credit</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f5246e81-5e79-4c7d-a151-fd9d492d0cb8\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000039460&amp;contact_name=LG%20Electronics\" id=\"ember575\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/vendors/3869248000000039460/vendorcheck?currency_id=3869248000000000064\" id=\"ember577\">Pay Bill via Check</a><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

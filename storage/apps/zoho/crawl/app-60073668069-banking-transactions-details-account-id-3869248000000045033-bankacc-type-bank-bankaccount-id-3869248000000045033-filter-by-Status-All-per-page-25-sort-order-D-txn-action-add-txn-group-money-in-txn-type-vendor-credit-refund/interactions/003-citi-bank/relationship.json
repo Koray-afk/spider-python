@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "source_title": "Citi Bank | Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Recurring Bills",
+    "id": "",
+    "class_name": "dropdown-item pe-7 ",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dc409fe6-34fe-4f43-bb31-e612b8dae88b > div:nth-of-type(1) > button:nth-of-type(16)",
+    "crawl_selector": "[data-crawl-id=\"16\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[2]/div[2]/div[1]/button[16]",
+    "outer_html": "<button class=\"dropdown-item pe-7 \" type=\"button\" data-ember-action=\"\" data-ember-action-625=\"625\" data-crawl-id=\"16\">Recurring Bills <!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+    "slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+    "title": "Citi Bank | Banking | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"dropdown-item pe-7 \" type=\"button\" data-ember-action=\"\" data-ember-action-625=\"625\" data-crawl-id=\"16\">Recurring Bills <!----></button>",
+  "trigger_label": "Citi Bank",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-text font-medium pe-3 d-flex align-items-center mw-100",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "target_slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+  "target_title": "Citi Bank | Banking | Zoho Books"
+}

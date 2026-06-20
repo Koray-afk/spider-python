@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Sales",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-sales",
+    "relationship_file": "interactions/002-sales/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Save",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/008-save",
+    "relationship_file": "interactions/008-save/relationship.json"
+  }
+]

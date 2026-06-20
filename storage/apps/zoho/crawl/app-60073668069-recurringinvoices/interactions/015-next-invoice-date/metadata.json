@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "NEXT INVOICE DATE",
+  "triggerId": "",
+  "triggerClass": "btn srt-btn bg-transparent",
+  "selector": "[data-crawl-id=\"24\"]",
+  "interactionType": "tooltip",
+  "sourcePage": "app-60073668069-recurringinvoices",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/recurringinvoices",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/recurringinvoices?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "beforeTitle": "Recurring Invoices | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/recurringinvoices?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "title": "Recurring Invoices | Zoho Books",
+  "resultPagePath": "app-60073668069-recurringinvoices/interactions/015-next-invoice-date",
+  "captured_at": "2026-06-19T15:37:08.027212+00:00"
+}

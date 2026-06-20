@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/001-collapse-expand",
+    "relationship_file": "interactions/001-collapse-expand/relationship.json"
+  },
+  {
+    "label": "Send",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/003-send",
+    "relationship_file": "interactions/003-send/relationship.json"
+  },
+  {
+    "label": "PDF/Print",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/004-pdf-print",
+    "relationship_file": "interactions/004-pdf-print/relationship.json"
+  },
+  {
+    "label": "Refund",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/005-refund",
+    "relationship_file": "interactions/005-refund/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Journal",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/007-journal",
+    "relationship_file": "interactions/007-journal/relationship.json"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "None",
+    "tagName": "div",
+    "id": "msc-ember656",
+    "className": "multi-check-dropdown ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<div msc-toggler=\"\" id=\"msc-ember656\" class=\"multi-check-dropdown \" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-controls=\"mscDropdownListBox\" aria-labelledby=\"ad99c9acc\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" data-crawl-id=\"26\"><div class=\"ms-selected form-control  \"><span class=\"label multi-checkbox-text \">None</span></div></div>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#ember656 > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/fieldset[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<ul aria-label=\"Dropdown options\" aria-multiselectable=\"true\" class=\"ms-dropdown-results dropdown-menu\" id=\"mscDropdownListBox\" role=\"listbox\" tabindex=\"-1\"><!-- --><!-- --><li class=\"dropdown-item text-uppercase\"><div class=\"ps-3\">No Results Found</div></li></ul>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

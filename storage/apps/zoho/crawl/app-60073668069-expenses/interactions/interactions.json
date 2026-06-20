@@ -1,0 +1,44 @@
+[
+  {
+    "label": "All Expenses",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/002-all-expenses",
+    "relationship_file": "interactions/002-all-expenses/relationship.json"
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/003-new-expense",
+    "relationship_file": "interactions/003-new-expense/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/008-show-dropdown-menu",
+    "relationship_file": "interactions/008-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/009-more-actions",
+    "relationship_file": "interactions/009-more-actions/relationship.json"
+  },
+  {
+    "label": "EXPENSE ACCOUNT",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/012-expense-account",
+    "relationship_file": "interactions/012-expense-account/relationship.json"
+  },
+  {
+    "label": "CUSTOMER NAME",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/015-customer-name",
+    "relationship_file": "interactions/015-customer-name/relationship.json"
+  }
+]

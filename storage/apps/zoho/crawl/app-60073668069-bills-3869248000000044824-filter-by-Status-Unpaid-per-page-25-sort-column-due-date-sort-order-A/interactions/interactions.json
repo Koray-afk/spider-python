@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Comments & History",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/002-comments-history",
+    "relationship_file": "interactions/002-comments-history/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/003-edit",
+    "relationship_file": "interactions/003-edit/relationship.json"
+  },
+  {
+    "label": "PDF/Print",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/005-pdf-print",
+    "relationship_file": "interactions/005-pdf-print/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Unpaid Bills",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/009-unpaid-bills",
+    "relationship_file": "interactions/009-unpaid-bills/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/011-show-dropdown-menu",
+    "relationship_file": "interactions/011-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/013-show-dropdown-menu",
+    "relationship_file": "interactions/013-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/014-show-dropdown-menu",
+    "relationship_file": "interactions/014-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/015-more-actions",
+    "relationship_file": "interactions/015-more-actions/relationship.json"
+  }
+]

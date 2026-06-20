@@ -14,7 +14,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL = "gemini-3.1-pro"
+MODEL = "gemini-2.5-flash"
 MAX_SEMANTIC_TREE_CHARS = 120_000
 
 PROMPT = """You are an expert Frontend Architect and React component designer.

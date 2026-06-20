@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Add New Row",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/002-add-new-row",
+    "relationship_file": "interactions/002-add-new-row/relationship.json"
+  },
+  {
+    "label": "Add Items in Bulk",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/003-add-items-in-bulk",
+    "relationship_file": "interactions/003-add-items-in-bulk/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Bulk Actions",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/008-bulk-actions",
+    "relationship_file": "interactions/008-bulk-actions/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/009-show-dropdown-menu",
+    "relationship_file": "interactions/009-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Cost of Goods Sold",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/010-cost-of-goods-sold",
+    "relationship_file": "interactions/010-cost-of-goods-sold/relationship.json"
+  },
+  {
+    "label": "Select a reason",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/011-select-a-reason",
+    "relationship_file": "interactions/011-select-a-reason/relationship.json"
+  }
+]

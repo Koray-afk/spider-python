@@ -9,27 +9,38 @@ APPS = {
         ),
         "post_auth_home": "https://books.zoho.in",
         "max_pages_pre_auth": 5,
-        # Demo budget: enough for module lists + a few detail pages + /new forms.
-        "max_pages_post_auth": 110,
+        "max_pages_post_auth": 120,
         "max_interactions_per_page": 15,
         "max_ranked_interactions": 18,
-        # None = click interactions on every crawled page regardless of BFS depth.
         "max_interaction_depth": None,
-        # Faster crawl — HTML + interactions matter more than screenshots for stitch.
         "crawl_skip_screenshots": True,
-        "crawl_wait_after_load_ms": 1000,
-        "crawl_use_networkidle": False,
+        # Let fonts/CSS settle — 1s was making pages look blurry/incomplete.
+        "crawl_wait_after_load_ms": 2000,
+        "crawl_use_networkidle": True,
         "priority_url_patterns": [
-            "#/home/",
-            "#/inventory/product/index",
+            "#/home/dashboard",
+            "#/invoices",
+            "#/quotes",
             "#/contacts",
+            "#/inventory/product/index",
             "/new",
-            "variantslist",
         ],
-        # Pre-queued at crawl start so demo-critical routes are captured early.
         "seed_url_patterns": [
+            "#/home/dashboard",
             "#/inventory/product/index",
             "#/contacts",
+            "#/invoices",
+            "#/quotes",
+            "#/expenses",
+            "#/salesorders",
+            "#/purchaseorders",
+            "#/bills",
+            "#/paymentsreceived",
+            "#/paymentsmade",
+            "#/creditnotes",
+            "#/recurringinvoices",
+            "#/deliverychallans",
+            "#/vendors",
             "#/invoices/new",
             "#/quotes/new",
             "#/expenses/new",
@@ -43,22 +54,69 @@ APPS = {
             "#/paymentsmade/new",
             "#/inventory/adjustments/new",
         ],
-        # Cap row→detail links per list page (avoids 25+ identical item detail pages).
         "list_detail_link_limits": [
-            {"pattern": "/variantslist/", "max_from_page": 3},
-            {"pattern": "#/contacts/", "max_from_page": 3, "exclude_pattern": "/new"},
+            {"pattern": "/variantslist/", "max_from_page": 2},
+            {"pattern": "#/contacts/", "max_from_page": 2, "exclude_pattern": "/new"},
             {"pattern": "#/vendors/", "max_from_page": 2, "exclude_pattern": "/new"},
         ],
-        # Don't crawl item detail URLs discovered from another item detail page.
+        "global_link_limits": [
+            {"pattern": "/variantslist/", "max_total": 2},
+            {"pattern": "#/quotes/", "max_total": 1, "exclude_pattern": "/new"},
+            {"pattern": "#/invoices/", "max_total": 1, "exclude_pattern": "/new"},
+            {"pattern": "#/salesorders/", "max_total": 1, "exclude_pattern": "/new"},
+            {"pattern": "#/paymentsreceived/", "max_total": 1, "exclude_pattern": "/new"},
+            {"pattern": "#/purchaseorders/", "max_total": 1, "exclude_pattern": "/new"},
+            {"pattern": "#/bills/", "max_total": 1, "exclude_pattern": "/new"},
+        ],
         "link_cross_page_rules": [
             {
                 "link_pattern": "/variantslist/",
                 "source_pattern": "/variantslist/",
                 "source_allow": "inventory/product/index",
             },
+            {
+                "link_pattern": "#/contacts/",
+                "source_pattern": "#/contacts/",
+                "source_allow_regex": r"#/contacts/?$",
+            },
+            {
+                "link_pattern": "#/quotes/",
+                "source_pattern": "#/quotes/",
+                "source_allow_regex": r"#/quotes/?$",
+            },
+            {
+                "link_pattern": "#/invoices/",
+                "source_pattern": "#/invoices/",
+                "source_allow_regex": r"#/invoices/?$",
+            },
+            {
+                "link_pattern": "#/salesorders/",
+                "source_pattern": "#/salesorders/",
+                "source_allow_regex": r"#/salesorders/?$",
+            },
+            {
+                "link_pattern": "#/paymentsreceived/",
+                "source_pattern": "#/paymentsreceived/",
+                "source_allow_regex": r"#/paymentsreceived/?$",
+            },
         ],
-        "skip_url_patterns": [],
-        # Always capture in-page tabs on detail views (Transactions, History, etc.).
+        # Skip low-value routes that ate the last crawl's page budget.
+        "skip_url_patterns": [
+            "/settings/",
+            "productedit",
+            "bulkadd",
+            "emailhistory-filter",
+            "statement-filter",
+            "comments-filter",
+            "sales-filter-by",
+            "customerpayment",
+            "timesheet-projects-new",
+            "reports-",
+            "pricelists/386",
+            "recurringbills",
+            "recurringexpenses",
+            "accountant/",
+        ],
         "mandatory_tab_labels": [
             "Overview",
             "Transactions",
@@ -70,6 +128,10 @@ APPS = {
             "Recent Updates",
             "Dashboard",
         ],
+        # Walk left sidebar top-to-bottom; finish each page before the next module.
+        "crawl_sidebar_first": True,
+        # Resume from crawl_checkpoint.json after interrupt (use `clean` to reset).
+        "crawl_resume": True,
     },
 }
 

@@ -107,6 +107,10 @@ def get_sitemap_path(app_name: str) -> Path:
     return get_metadata_dir(app_name) / "sitemap.json"
 
 
+def get_crawl_checkpoint_path(app_name: str) -> Path:
+    return get_metadata_dir(app_name) / "crawl_checkpoint.json"
+
+
 def ensure_app_dirs(app_name: str) -> Path:
     get_metadata_dir(app_name).mkdir(parents=True, exist_ok=True)
     crawl_dir = get_crawl_dir(app_name)
@@ -117,7 +121,13 @@ def ensure_app_dirs(app_name: str) -> Path:
 def clean_crawl(app_name: str) -> None:
     path = get_crawl_dir(app_name)
     if path.exists():
+        side = path / "_sidebar_order.json"
+        if side.is_file():
+            side.unlink()
         shutil.rmtree(path)
+    checkpoint = get_crawl_checkpoint_path(app_name)
+    if checkpoint.exists():
+        checkpoint.unlink()
     ensure_app_dirs(app_name)
 
 

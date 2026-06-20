@@ -18,6 +18,7 @@ load_dotenv()
 from storage.storage_manager import (
     ensure_app_dirs,
     get_auth_file,
+    get_crawl_checkpoint_path,
     get_crawl_dir,
     get_sitemap_path,
 )
@@ -29,6 +30,7 @@ DOM_FINGERPRINT_JS = _SCRIPTS["fingerprint"]
 EXTRACT_ELEMENT_JS = _SCRIPTS["extract_element"]
 ACTIVE_TABS_JS = _SCRIPTS["active_tabs"]
 ACTIVE_TAB_PANEL_JS = _SCRIPTS["active_tab_panel"]
+SIDEBAR_LINKS_JS = _SCRIPTS["sidebar_links"]
 
 CHROME_MAC_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DEBUG_PORT = 9222
@@ -204,6 +206,74 @@ def _should_skip_url(url: str, patterns: list[str]) -> bool:
     return bool(patterns) and any(p in url for p in patterns)
 
 
+def _route_fragment(url: str) -> str:
+    return urlparse(url).fragment.split("?")[0].rstrip("/")
+
+
+def _is_bare_home(url: str) -> bool:
+    frag = _route_fragment(url)
+    return frag in ("home", "/home", "")
+
+
+def _is_redundant_route(url: str) -> bool:
+    """Skip routes that duplicate a better page already in the crawl plan."""
+    frag = _route_fragment(url)
+    if _is_bare_home(url):
+        return True
+    # Edit sub-routes are almost always the same form as /new.
+    if re.search(r"/(edit|productedit)(/|$)", frag):
+        return True
+    return False
+
+
+def _visited_global_count(visited: set[str], pattern: str, exclude: str = "") -> int:
+    count = 0
+    for norm in visited:
+        if pattern not in norm:
+            continue
+        if exclude and exclude in norm:
+            continue
+        count += 1
+    return count
+
+
+def _prune_queues(
+    sidebar_queue: list[tuple[str, int]],
+    deferred_queue: list[tuple[str, int]],
+    *,
+    visited: set[str],
+    skip_patterns: list[str],
+    seed_norms: set[str],
+    global_link_limits: list[dict] | None,
+) -> tuple[int, int]:
+    """Drop duplicate/redundant URLs already satisfied or over global caps."""
+
+    def _keep(url: str) -> bool:
+        norm = normalize_url(url)
+        if norm in visited:
+            return False
+        if _is_redundant_route(url) and norm not in seed_norms:
+            return False
+        if _should_skip_url(url, skip_patterns) and norm not in seed_norms:
+            return False
+        for lim in global_link_limits or []:
+            pat = lim.get("pattern", "")
+            if pat not in url:
+                continue
+            excl = lim.get("exclude_pattern", "")
+            if excl and excl in url:
+                continue
+            if _visited_global_count(visited, pat, excl) >= lim.get("max_total", 999):
+                return False
+            break
+        return True
+
+    before = len(sidebar_queue) + len(deferred_queue)
+    sidebar_queue[:] = [(u, d) for u, d in sidebar_queue if _keep(u)]
+    deferred_queue[:] = [(u, d) for u, d in deferred_queue if _keep(u)]
+    return before, len(sidebar_queue) + len(deferred_queue)
+
+
 def _should_enqueue_link(
     link: str,
     source_url: str,
@@ -213,18 +283,42 @@ def _should_enqueue_link(
     list_detail_limits: list[dict],
     link_counters: dict[str, dict[str, int]],
     cross_page_rules: list[dict] | None = None,
+    global_link_limits: list[dict] | None = None,
 ) -> bool:
     """Filter BFS links: skip patterns, cap list→detail fan-out, block redundant hops."""
     link_norm = normalize_url(link)
+    if _is_redundant_route(link) and link_norm not in seed_norms:
+        return False
     if _should_skip_url(link, skip_patterns) and link_norm not in seed_norms:
         return False
 
     for rule in cross_page_rules or []:
         link_pat = rule.get("link_pattern", "")
         source_pat = rule.get("source_pattern", "")
+        if link_pat not in link or source_pat not in source_url:
+            continue
         source_allow = rule.get("source_allow", "")
-        if link_pat in link and source_pat in source_url and source_allow not in source_url:
+        source_allow_regex = rule.get("source_allow_regex", "")
+        if source_allow_regex:
+            if not re.search(source_allow_regex, source_url):
+                return False
+        elif source_allow and source_allow not in source_url:
             return False
+
+    global_counts = link_counters.setdefault("__global__", {})
+    for lim in global_link_limits or []:
+        pat = lim.get("pattern", "")
+        if pat not in link:
+            continue
+        excl = lim.get("exclude_pattern")
+        if excl and excl in link:
+            continue
+        max_n = lim.get("max_total", 3)
+        count = global_counts.get(pat, 0)
+        if count >= max_n:
+            return False
+        global_counts[pat] = count + 1
+        break
 
     src_key = normalize_url(source_url)
     page_counts = link_counters.setdefault(src_key, {})
@@ -451,6 +545,122 @@ def collect_links(page, page_url: str, base_domain: str) -> list[str]:
     return links
 
 
+def collect_sidebar_links(page, page_url: str, base_domain: str) -> list[dict]:
+    """Left-nav module links in DOM order (skips quick-add /new shortcuts)."""
+    try:
+        raw = page.evaluate(SIDEBAR_LINKS_JS) or []
+    except Exception:
+        return []
+    out: list[dict] = []
+    seen: set[str] = set()
+    for item in raw:
+        href = (item.get("href") or "").strip()
+        full = abs_url(href, page_url)
+        if not full:
+            continue
+        p = urlparse(full)
+        if p.netloc and p.netloc != base_domain:
+            continue
+        key = normalize_url(full)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({"url": full, "label": (item.get("label") or "").strip()})
+    return out
+
+
+def _page_on_disk(crawl_root: Path, url: str) -> bool:
+    return (crawl_root / page_slug(url) / "page.html").is_file()
+
+
+def _visited_from_disk(crawl_root: Path) -> set[str]:
+    norms: set[str] = set()
+    if not crawl_root.is_dir():
+        return norms
+    for page_dir in crawl_root.iterdir():
+        meta_path = page_dir / "metadata.json"
+        if not (page_dir / "page.html").is_file() or not meta_path.is_file():
+            continue
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            url = meta.get("url", "")
+            if url:
+                norms.add(normalize_url(url))
+        except Exception:
+            pass
+    return norms
+
+
+def _load_checkpoint(path: Path) -> dict | None:
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _save_checkpoint(
+    path: Path,
+    *,
+    visited: set[str],
+    sidebar_queue: list[tuple[str, int]],
+    deferred_queue: list[tuple[str, int]],
+    pages: int,
+    sitemap: list[dict],
+    link_counters: dict,
+    sidebar_discovered: bool,
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "updated_at": _now(),
+                "visited": sorted(visited),
+                "sidebar_queue": [{"url": u, "depth": d} for u, d in sidebar_queue],
+                "deferred_queue": [{"url": u, "depth": d} for u, d in deferred_queue],
+                "pages_completed": pages,
+                "sitemap": sitemap,
+                "link_counters": link_counters,
+                "sidebar_discovered": sidebar_discovered,
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+
+def _save_sidebar_order(crawl_root: Path, urls: list[str]) -> None:
+    (crawl_root / "_sidebar_order.json").write_text(
+        json.dumps(urls, indent=2), encoding="utf-8"
+    )
+
+
+def _load_sidebar_order(crawl_root: Path) -> list[str]:
+    path = crawl_root / "_sidebar_order.json"
+    if not path.is_file():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return [u for u in data if isinstance(u, str)]
+    except Exception:
+        return []
+
+
+def _not_scraped_entry(item: dict, reason: str, *, detail: str = "") -> dict:
+    entry = {
+        "label": item.get("label", ""),
+        "selector": item.get("selector", ""),
+        "elementType": item.get("elementType", ""),
+        "status": "not_scraped",
+        "reason": reason,
+    }
+    if detail:
+        entry["detail"] = detail[:500]
+    return entry
+
+
 def dom_changed(before: dict, after: dict) -> bool:
     if after.get("overlays", 0) > before.get("overlays", 0):
         return True
@@ -515,6 +725,7 @@ def crawl_interactions(
     registry: list[dict] = []
     navigations: list[dict] = []
     nav_targets: list[str] = []
+    not_scraped: list[dict] = []
 
     # Always process every llm_type="tab_switch" item — tab panels can be missed
     # if they fall outside the max_interactions budget. Non-tab items fill the
@@ -522,6 +733,13 @@ def crawl_interactions(
     tab_items = [c for c in candidates if c.get("llm_type") == "tab_switch"]
     other_items = [c for c in candidates if c.get("llm_type") != "tab_switch"]
     to_process = tab_items + other_items[:max(0, max_interactions - len(tab_items))]
+    to_process_keys = {
+        (c.get("selector", ""), c.get("label", ""), c.get("id", "")) for c in to_process
+    }
+    for c in candidates:
+        key = (c.get("selector", ""), c.get("label", ""), c.get("id", ""))
+        if key not in to_process_keys:
+            not_scraped.append(_not_scraped_entry(c, "over_budget"))
 
     ipage = None
     try:
@@ -529,9 +747,11 @@ def crawl_interactions(
         for idx, item in enumerate(to_process, start=1):
             selector = item.get("selector", "")
             if not selector:
+                not_scraped.append(_not_scraped_entry(item, "no_selector"))
                 continue
             # Anchors are navigation — BFS owns them. Never click/capture here.
             if (item.get("elementType") or "").lower() == "a":
+                not_scraped.append(_not_scraped_entry(item, "anchor_navigation"))
                 continue
 
             try:
@@ -545,6 +765,7 @@ def crawl_interactions(
 
                 locator = ipage.locator(selector).first
                 if locator.count() == 0 or not locator.is_visible():
+                    not_scraped.append(_not_scraped_entry(item, "not_visible"))
                     continue
 
                 before_url = ipage.url
@@ -602,6 +823,7 @@ def crawl_interactions(
                 # Tab-switch panels often swap equally-sized content so dom_changed
                 # may return False; never skip them on that basis.
                 if not dom_changed(before_fp, after_fp) and item.get("llm_type") != "tab_switch":
+                    not_scraped.append(_not_scraped_entry(item, "no_ui_change"))
                     continue
 
                 tab_panel = None
@@ -662,8 +884,8 @@ def crawl_interactions(
                 saved += 1
                 print(f"    + interaction {saved}: {item.get('label') or selector} ({itype})")
             except Exception as exc:
-                print(f"[BFS] Interaction save failed ({selector}): {exc}")
-                traceback.print_exc()
+                not_scraped.append(_not_scraped_entry(item, "click_failed", detail=str(exc)))
+                print(f"[BFS] Interaction not scraped ({selector}): {exc}")
     finally:
         if ipage:
             try:
@@ -674,6 +896,11 @@ def crawl_interactions(
     (interactions_dir / "interactions.json").write_text(
         json.dumps(registry, indent=2), encoding="utf-8"
     )
+    (interactions_dir / "not_scraped.json").write_text(
+        json.dumps(not_scraped, indent=2), encoding="utf-8"
+    )
+    if not_scraped:
+        print(f"[BFS] Not scraped: {len(not_scraped)}")
     (page_dir / "navigations.json").write_text(
         json.dumps(navigations, indent=2), encoding="utf-8"
     )
@@ -694,6 +921,7 @@ def bfs_crawl(
     skip_url_patterns: list[str] | None = None,
     list_detail_link_limits: list[dict] | None = None,
     link_cross_page_rules: list[dict] | None = None,
+    global_link_limits: list[dict] | None = None,
     mandatory_tab_labels: list[str] | None = None,
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
     max_ranked_interactions: int = 15,
@@ -702,25 +930,45 @@ def bfs_crawl(
     skip_screenshots: bool = False,
     wait_after_load_ms: int = WAIT_AFTER_LOAD_MS,
     use_networkidle: bool = True,
+    sidebar_first: bool = True,
+    resume: bool = True,
 ) -> dict:
-    queue: list[tuple[str, int]] = [(start_url, 0)]
+    checkpoint_path = get_crawl_checkpoint_path(app_name)
     start_norm = normalize_url(start_url)
     seed_norms = _build_seed_norms(start_url, seed_url_patterns)
-    for seed_url in build_seed_urls(start_url, seed_url_patterns or []):
-        if normalize_url(seed_url) != start_norm:
-            queue.append((seed_url, 1))
-    if seed_url_patterns:
-        print(f"[BFS] Seeded routes: {len(queue) - 1}")
-    visited: set[str] = set()
+    visited: set[str] = _visited_from_disk(crawl_root)
+    sidebar_queue: list[tuple[str, int]] = []
+    deferred_queue: list[tuple[str, int]] = []
+    sidebar_discovered = False
     link_counters: dict[str, dict[str, int]] = {}
-    pages = 0
-    interactions_found = 0
-    interactions_saved = 0
     sitemap: list[dict] = []
 
-    def _enqueue_link(link: str, source_url: str, depth: int) -> None:
+    ckpt = _load_checkpoint(checkpoint_path) if resume else None
+    if ckpt:
+        visited.update(ckpt.get("visited") or [])
+        sidebar_queue = [(e["url"], e["depth"]) for e in ckpt.get("sidebar_queue") or []]
+        deferred_queue = [(e["url"], e["depth"]) for e in ckpt.get("deferred_queue") or []]
+        link_counters = ckpt.get("link_counters") or {}
+        sidebar_discovered = bool(ckpt.get("sidebar_discovered"))
+        sitemap = ckpt.get("sitemap") or []
+        pages = int(ckpt.get("pages_completed") or len(sitemap))
+        print(f"[BFS] Resuming crawl — {pages} pages on disk, {len(sidebar_queue)} sidebar + {len(deferred_queue)} deferred queued")
+    else:
+        pages = len(visited)
+        sidebar_queue = [(start_url, 0)]
+        if not sidebar_first:
+            for seed_url in build_seed_urls(start_url, seed_url_patterns or []):
+                if normalize_url(seed_url) != start_norm:
+                    deferred_queue.append((seed_url, 1))
+            if seed_url_patterns:
+                print(f"[BFS] Seeded routes: {len(deferred_queue)}")
+
+    def _queue_norms() -> set[str]:
+        return {normalize_url(u) for u, _ in sidebar_queue + deferred_queue}
+
+    def _enqueue_deferred(link: str, source_url: str, depth: int) -> None:
         link_norm = normalize_url(link)
-        if link_norm in visited or link_norm in {normalize_url(q) for q, _ in queue}:
+        if link_norm in visited or link_norm in _queue_norms():
             return
         if not _should_enqueue_link(
             link,
@@ -730,20 +978,90 @@ def bfs_crawl(
             list_detail_limits=list_detail_link_limits or [],
             link_counters=link_counters,
             cross_page_rules=link_cross_page_rules,
+            global_link_limits=global_link_limits,
         ):
             return
-        if any(pat in link for pat in (priority_url_patterns or [])):
-            queue.insert(0, (link, depth))
+        if not sidebar_first and any(pat in link for pat in (priority_url_patterns or [])):
+            deferred_queue.insert(0, (link, depth))
         else:
-            queue.append((link, depth))
+            deferred_queue.append((link, depth))
 
-    while queue and pages < max_pages:
-        url, depth = queue.pop(0)
+    def _enqueue_sidebar(link: str, depth: int) -> None:
+        link_norm = normalize_url(link)
+        if link_norm in visited or link_norm in _queue_norms():
+            return
+        if _should_skip_url(link, skip_url_patterns or []) and link_norm not in seed_norms:
+            return
+        sidebar_queue.append((link, depth))
+
+    def _pop_next() -> tuple[str, int] | None:
+        while sidebar_queue:
+            item = sidebar_queue.pop(0)
+            if normalize_url(item[0]) not in visited:
+                return item
+        while deferred_queue:
+            item = deferred_queue.pop(0)
+            if normalize_url(item[0]) not in visited:
+                return item
+        return None
+
+    if sidebar_first and _load_sidebar_order(crawl_root):
+        if not ckpt:
+            for link in _load_sidebar_order(crawl_root):
+                _enqueue_sidebar(link, 1)
+            sidebar_discovered = True
+            print(f"[BFS] Restored sidebar order: {len(sidebar_queue)} modules queued")
+        else:
+            missing = 0
+            for link in _load_sidebar_order(crawl_root):
+                link_norm = normalize_url(link)
+                if link_norm in visited or _page_on_disk(crawl_root, link):
+                    continue
+                before_q = len(sidebar_queue) + len(deferred_queue)
+                _enqueue_sidebar(link, 1)
+                if len(sidebar_queue) + len(deferred_queue) > before_q:
+                    missing += 1
+            if missing:
+                print(f"[BFS] Re-queued {missing} uncrawled sidebar module(s)")
+    elif not ckpt and visited and resume and sidebar_first:
+        print(
+            "[BFS] Saved pages on disk but no checkpoint/sidebar order — "
+            "will discover sidebar on next new page"
+        )
+
+    before, after = _prune_queues(
+        sidebar_queue,
+        deferred_queue,
+        visited=visited,
+        skip_patterns=skip_url_patterns or [],
+        seed_norms=seed_norms,
+        global_link_limits=global_link_limits,
+    )
+    if before != after:
+        print(f"[BFS] Pruned duplicate queue URLs: {before - after}")
+
+    interactions_found = 0
+    interactions_saved = 0
+
+    while pages < max_pages:
+        nxt = _pop_next()
+        if not nxt:
+            break
+        url, depth = nxt
         norm = normalize_url(url)
         if norm in visited:
             continue
+        if _page_on_disk(crawl_root, url):
+            visited.add(norm)
+            print(f"[BFS] Skip (already saved): {url}")
+            continue
+        if _is_redundant_route(url) and norm not in seed_norms:
+            print(f"[BFS] Skipped duplicate route: {url}")
+            visited.add(norm)
+            continue
         if _should_skip_url(url, skip_url_patterns or []) and norm not in seed_norms:
             print(f"[BFS] Skipped URL (pattern): {url}")
+            visited.add(norm)
             continue
         p = urlparse(url)
         if p.netloc and p.netloc != base_domain:
@@ -752,16 +1070,15 @@ def bfs_crawl(
         visited.add(norm)
         slug = page_slug(url)
 
-        print(f"[BFS] Queue Size: {len(queue)}")
+        print(f"[BFS] Sidebar queue: {len(sidebar_queue)} | Deferred: {len(deferred_queue)}")
         print(f"[BFS] Current URL: {url}")
         print(f"[BFS] Depth: {depth}")
-        print(f"[BFS] Pages Visited: {pages}")
+        print(f"[BFS] Pages completed: {pages}")
 
         page = None
         candidates: list[dict] = []
         page_title = ""
         try:
-            # 1. Open the page on its own fresh tab and let it stabilize.
             page = context.new_page()
             _goto_clean(
                 page,
@@ -775,7 +1092,6 @@ def bfs_crawl(
                 page.close()
                 break
 
-            # 2. Capture the pristine page BEFORE any interaction touches the DOM.
             page_dir = crawl_root / slug
             page_title = page.title()
             save_page_capture(
@@ -783,7 +1099,28 @@ def bfs_crawl(
             )
             pages += 1
 
-            # 3. Discover triggers and links from the untouched page, then close it.
+            if sidebar_first and not sidebar_discovered:
+                nav_items = collect_sidebar_links(page, page.url, base_domain)
+                if nav_items:
+                    has_dashboard = any(
+                        "home/dashboard" in _route_fragment(n["url"]) for n in nav_items
+                    )
+                    print(f"[BFS] Sidebar modules (in order): {len(nav_items)}")
+                    order_urls: list[str] = []
+                    for nav in nav_items:
+                        link = nav["url"]
+                        if has_dashboard and _is_bare_home(link):
+                            print(f"    · skip duplicate home: {link}")
+                            continue
+                        label = nav.get("label") or ""
+                        order_urls.append(link)
+                        print(f"    · {label or link}")
+                        _enqueue_sidebar(link, 1)
+                    _save_sidebar_order(crawl_root, order_urls)
+                    sidebar_discovered = True
+                else:
+                    print("[BFS] Sidebar not found — falling back to link discovery")
+
             try:
                 candidates = discover_with_scroll(page)
             except Exception as exc:
@@ -793,12 +1130,11 @@ def bfs_crawl(
             links = collect_links(page, page.url, base_domain)
             print(f"[BFS] Links Found: {len(links)}")
             for link in links:
-                _enqueue_link(link, url, depth + 1)
+                _enqueue_deferred(link, url, depth + 1)
 
             page.close()
             page = None
 
-            # 3b. Pre-filter: drop accordion-button and icon-only noise before LLM/click.
             _SKIP_CLASSES = {"accordion-button", "accordion-title"}
             _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing"}
             candidates = [
@@ -807,7 +1143,6 @@ def bfs_crawl(
                 and (c.get("label") or "").strip() not in _SKIP_LABELS
             ]
 
-            # 3c. LLM-rank candidates (skipped when depth exceeds max_interaction_depth).
             run_interactions = max_interaction_depth is None or depth < max_interaction_depth
             if run_interactions and candidates and os.getenv("GEMINI_API_KEY"):
                 from ranker.interaction_ranker import rank_candidates
@@ -820,7 +1155,6 @@ def bfs_crawl(
                 )
                 print(f"[BFS] Ranked Candidates: {len(candidates)}")
 
-            # 4. Run each interaction, reusing one tab per page.
             if run_interactions:
                 ix = crawl_interactions(
                     context,
@@ -839,18 +1173,36 @@ def bfs_crawl(
                 print(f"[BFS] Interactions Found: {ix['found']}")
                 print(f"[BFS] Interactions Saved: {ix['saved']}")
 
-                # Non-anchor navigations discovered via clicks feed back into BFS so
-                # their destination pages get crawled too.
                 nav_targets = ix.get("nav_targets", [])
                 if nav_targets:
                     print(f"[BFS] Navigations Found: {len(nav_targets)}")
                 for link in nav_targets:
-                    _enqueue_link(link, url, depth + 1)
+                    _enqueue_deferred(link, url, depth + 1)
             else:
                 print(f"[BFS] Depth {depth} — interactions skipped (max_interaction_depth={max_interaction_depth})")
 
             sitemap.append({"slug": slug, "url": url, "title": page_title, "page_type": page_type})
             get_sitemap_path(app_name).write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
+            pruned = _prune_queues(
+                sidebar_queue,
+                deferred_queue,
+                visited=visited,
+                skip_patterns=skip_url_patterns or [],
+                seed_norms=seed_norms,
+                global_link_limits=global_link_limits,
+            )
+            if pruned[0] != pruned[1]:
+                print(f"[BFS] Pruned duplicate queue URLs: {pruned[0] - pruned[1]}")
+            _save_checkpoint(
+                checkpoint_path,
+                visited=visited,
+                sidebar_queue=sidebar_queue,
+                deferred_queue=deferred_queue,
+                pages=pages,
+                sitemap=sitemap,
+                link_counters=link_counters,
+                sidebar_discovered=sidebar_discovered,
+            )
 
         except Exception as exc:
             print(f"[BFS] Page capture failed: {exc}")
@@ -863,8 +1215,10 @@ def bfs_crawl(
                 except Exception:
                     pass
 
-    if not queue:
+    if not sidebar_queue and not deferred_queue:
         print("[BFS] Queue Exhausted")
+        if checkpoint_path.is_file():
+            checkpoint_path.unlink()
     elif pages >= max_pages:
         print("[BFS] Page Limit Reached")
 
@@ -872,6 +1226,7 @@ def bfs_crawl(
         "pages": pages,
         "interactions_found": interactions_found,
         "interactions_saved": interactions_saved,
+        "resumed": bool(ckpt),
     }
 
 
@@ -918,6 +1273,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             skip_url_patterns=cfg.get("skip_url_patterns") or [],
             list_detail_link_limits=cfg.get("list_detail_link_limits") or [],
             link_cross_page_rules=cfg.get("link_cross_page_rules") or [],
+            global_link_limits=cfg.get("global_link_limits") or [],
             mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
             max_interactions=max_interactions,
             max_ranked_interactions=max_ranked_interactions,
@@ -926,6 +1282,8 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
             wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
             use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+            sidebar_first=bool(cfg.get("crawl_sidebar_first", True)),
+            resume=bool(cfg.get("crawl_resume", True)),
         )
         context.close()
         browser.close()

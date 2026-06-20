@@ -1,0 +1,114 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 shrink-sidebar",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Hide the reports sidebar",
+    "id": "",
+    "className": "icon-button align-center me-1",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "View the reports sidebar",
+    "id": "",
+    "className": "icon-button btn btn-secondary ms-1",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "This Month",
+    "id": "rangemenu-button-ember435",
+    "className": "dropdown-toggle   btn btn-default no-caret p-0",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "This Month",
+    "id": "rangemenu-button-ember441",
+    "className": "dropdown-toggle   form-control btn btn-outline no-caret",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Items",
+    "id": "ac-ember437",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"42\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   input-group-text",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary  ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Run Report",
+    "id": "efc95d02-525e-45bc-a058-18ecc17b360a",
+    "className": "ember-view btn btn-primary opacity-7 run-report",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Run Report",
+    "id": "",
+    "className": "btn btn-primary",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-link",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "source_title": "Citi Bank | Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Add Transaction",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  btn btn-primary",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dd-e403a54f-f6ae-4f4a-b377-9b45696d7d18 > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1]",
+    "outer_html": "<button for=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" aria-controls=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-primary\" type=\"button\" data-crawl-id=\"18\">Add Transaction <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs ms-1\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+    "slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+    "title": "Citi Bank | Banking | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" aria-controls=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-primary\" type=\"button\" data-crawl-id=\"18\">Add Transaction <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs ms-1\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>",
+  "trigger_label": "Add Transaction",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-primary",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "target_slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+  "target_title": "Citi Bank | Banking | Zoho Books"
+}

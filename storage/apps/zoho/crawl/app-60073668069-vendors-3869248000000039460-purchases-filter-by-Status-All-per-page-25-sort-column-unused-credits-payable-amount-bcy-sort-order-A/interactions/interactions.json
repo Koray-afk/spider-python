@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Go to transactions",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/002-go-to-transactions",
+    "relationship_file": "interactions/002-go-to-transactions/relationship.json"
+  },
+  {
+    "label": "All Vendors",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/005-all-vendors",
+    "relationship_file": "interactions/005-all-vendors/relationship.json"
+  },
+  {
+    "label": "Status: All",
+    "selector": "[data-crawl-id=\"30\"]",
+    "interaction_path": "interactions/006-status-all",
+    "relationship_file": "interactions/006-status-all/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/008-more-actions",
+    "relationship_file": "interactions/008-more-actions/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/011-more",
+    "relationship_file": "interactions/011-more/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  }
+]

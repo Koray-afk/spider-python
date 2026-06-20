@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Table View",
+    "selector": "[data-crawl-id=\"39\"]",
+    "interaction_path": "interactions/001-table-view",
+    "relationship_file": "interactions/001-table-view/relationship.json"
+  },
+  {
+    "label": "Chart View",
+    "selector": "[data-crawl-id=\"40\"]",
+    "interaction_path": "interactions/002-chart-view",
+    "relationship_file": "interactions/002-chart-view/relationship.json"
+  },
+  {
+    "label": "Custom",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/004-custom",
+    "relationship_file": "interactions/004-custom/relationship.json"
+  },
+  {
+    "label": "None",
+    "selector": "[data-crawl-id=\"41\"]",
+    "interaction_path": "interactions/008-none",
+    "relationship_file": "interactions/008-none/relationship.json"
+  },
+  {
+    "label": "Run Report",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/009-run-report",
+    "relationship_file": "interactions/009-run-report/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/012-collapse-expand",
+    "relationship_file": "interactions/012-collapse-expand/relationship.json"
+  }
+]

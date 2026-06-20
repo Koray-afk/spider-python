@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-reports-profitandloss-cash-based-false-filter-by-CustomDate-from-date-2025-04-01-per-page-500-to-date-2026-03-31-usestate-false",
+  "source_url": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&filter_by=CustomDate&from_date=2025-04-01&per_page=500&to_date=2026-03-31&usestate=false",
+  "source_title": "Profit and Loss | Reports | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Chart View",
+    "id": "",
+    "class_name": "nav-link cursor-pointer lh-200 ",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"40\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[3]/div[7]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/button[1]",
+    "outer_html": "<button class=\"nav-link cursor-pointer lh-200 \" data-ember-action=\"\" data-ember-action-449=\"449\" data-crawl-id=\"40\">Chart View</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&chart_type=bar_chart&chart_view=true&filter_by=CustomDate&from_date=2025-04-01&is_hierarchy_report=true&to_date=2026-03-31&usestate=false&x_axis=%5B%7B%22field%22%3A%22project_ids%22%2C%22group%22%3A%22project%22%7D%5D&y_axis=%5B%7B%22field%22%3A%22reports_income_key%22%2C%22group%22%3A%22report%22%7D%5D",
+    "slug": "app-60073668069-reports-profitandloss-cash-based-false-chart-type-bar-chart-chart-view-true-filter-by-CustomDate-from-date-2025-04-01-is-hierarchy-report-true-to-date-2026-03-31-usestate-false-x-axis-5B-7B-22field-22-3A-22project-ids-22-2C-22group-22-3A-22project-22-7D-5D-y-axis-5B-7B-22field-22-3A-22reports-income-key-22-2C-22group-22-3A-22report-22-7D-5D",
+    "title": "Profit and Loss | Reports | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button class=\"nav-link cursor-pointer lh-200 \" data-ember-action=\"\" data-ember-action-449=\"449\" data-crawl-id=\"40\">Chart View</button>",
+  "trigger_label": "Chart View",
+  "trigger_id": "",
+  "trigger_class": "nav-link cursor-pointer lh-200 ",
+  "target_url": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&chart_type=bar_chart&chart_view=true&filter_by=CustomDate&from_date=2025-04-01&is_hierarchy_report=true&to_date=2026-03-31&usestate=false&x_axis=%5B%7B%22field%22%3A%22project_ids%22%2C%22group%22%3A%22project%22%7D%5D&y_axis=%5B%7B%22field%22%3A%22reports_income_key%22%2C%22group%22%3A%22report%22%7D%5D",
+  "target_slug": "app-60073668069-reports-profitandloss-cash-based-false-chart-type-bar-chart-chart-view-true-filter-by-CustomDate-from-date-2025-04-01-is-hierarchy-report-true-to-date-2026-03-31-usestate-false-x-axis-5B-7B-22field-22-3A-22project-ids-22-2C-22group-22-3A-22project-22-7D-5D-y-axis-5B-7B-22field-22-3A-22reports-income-key-22-2C-22group-22-3A-22report-22-7D-5D",
+  "target_title": "Profit and Loss | Reports | Zoho Books"
+}

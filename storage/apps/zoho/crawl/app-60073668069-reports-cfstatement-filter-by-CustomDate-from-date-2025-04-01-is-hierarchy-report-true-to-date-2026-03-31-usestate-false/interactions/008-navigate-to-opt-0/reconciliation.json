@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Navigate To (Opt+0)",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-link font-medium text-medium text-default p-0 no-caret",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button for=\"e271dc85-f916-4f11-a9ec-318ad5788e5c\" aria-controls=\"e271dc85-f916-4f11-a9ec-318ad5788e5c\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-link font-medium text-medium text-default p-0 no-caret\" type=\"button\" data-crawl-id=\"1\">Compare Based on Period/Year&nbsp;&nbsp;<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-middle\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-start\" id=\"e271dc85-f916-4f11-a9ec-318ad5788e5c\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1464px, 314.297px);\"><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-634=\"634\" type=\"button\">Compare Based on Period/Year</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-635=\"635\" type=\"button\">Compare Based on Reporting Tags</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Add budget for project hours.",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/001-add-budget-for-project-hours",
+    "relationship_file": "interactions/001-add-budget-for-project-hours/relationship.json"
+  },
+  {
+    "label": "Add User",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-add-user",
+    "relationship_file": "interactions/002-add-user/relationship.json"
+  },
+  {
+    "label": "Add Project Task",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/003-add-project-task",
+    "relationship_file": "interactions/003-add-project-task/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Select customer",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/008-select-customer",
+    "relationship_file": "interactions/008-select-customer/relationship.json"
+  },
+  {
+    "label": "Billing Method",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/009-billing-method",
+    "relationship_file": "interactions/009-billing-method/relationship.json"
+  },
+  {
+    "label": "Log Time (c+t)",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/010-log-time-c-t",
+    "relationship_file": "interactions/010-log-time-c-t/relationship.json"
+  }
+]

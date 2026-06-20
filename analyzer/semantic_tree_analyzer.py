@@ -14,7 +14,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL = "gemini-3.1-pro"
+MODEL = "gemini-2.5-flash"
 MAX_HTML_CHARS = 120_000
 
 PROMPT = """You are an expert UI Architect and Frontend Engineer.

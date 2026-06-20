@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Close the Edit Payment page",
+  "triggerId": "",
+  "triggerClass": "icon-button close-details separationline m-3",
+  "selector": "[data-crawl-id=\"16\"]",
+  "interactionType": "modal",
+  "sourcePage": "app-60073668069-paymentsmade-new",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/paymentsmade/new",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/paymentsmade/new",
+  "beforeTitle": "Add New | Payments Made | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/paymentsmade/new",
+  "title": "Add New | Payments Made | Zoho Books",
+  "resultPagePath": "app-60073668069-paymentsmade-new/interactions/013-close-the-edit-payment-page",
+  "captured_at": "2026-06-19T10:29:13.551097+00:00"
+}

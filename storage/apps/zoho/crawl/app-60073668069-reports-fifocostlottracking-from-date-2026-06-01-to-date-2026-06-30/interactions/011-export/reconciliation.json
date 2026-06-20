@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Export",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary  ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "outerHTML": "<button for=\"e20e49d2-e666-4d80-8676-ddec16582c19\" aria-controls=\"e20e49d2-e666-4d80-8676-ddec16582c19\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-secondary  \" type=\"button\" data-crawl-id=\"32\"><span class=\"d-inline-flex align-items-center\"><!----> <span>Export</span></span> <!----></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu px-2 min-w-200 show\" data-popper-placement=\"bottom-end\" id=\"e20e49d2-e666-4d80-8676-ddec16582c19\" role=\"menu\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-149.5px, 100.773px);\"> <div class=\"fltheader\">Export As</div> <!-- --> <button class=\"dropdown-item ps-4\" data-ember-action=\"\" data-ember-action-726=\"726\" type=\"button\">PDF</button> <button class=\"dropdown-item ps-4\" data-ember-action=\"\" data-ember-action-727=\"727\" type=\"button\">XLSX (Microsoft Excel)</button> <!-- --> <button class=\"dropdown-item ps-4\" data-ember-action=\"\" data-ember-action-728=\"728\" type=\"button\">XLS (Microsoft Excel 1997-2004 Compatible)</button> <!-- --> <!-- --> <!-- --> <div class=\"fltheader\">Print</div> <button class=\"dropdown-item ps-4 cursor-pointer\" data-ember-action=\"\" data-ember-action-729=\"729\">Print</button> <button class=\"dropdown-item ps-4 cursor-pointer\" data-ember-action=\"\" data-ember-action-730=\"730\">Print Preference</button><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

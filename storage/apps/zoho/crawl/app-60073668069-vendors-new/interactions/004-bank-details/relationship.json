@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-vendors-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/vendors/new",
+  "source_title": "New Contact | Contacts | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Bank Details",
+    "id": "bankdetails-tab",
+    "class_name": "nav-link text-black  ",
+    "name": "bankdetails",
+    "role": "tab",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#bankdetails-tab",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "//*[@id=\"bankdetails-tab\"]",
+    "outer_html": "<button role=\"tab\" id=\"bankdetails-tab\" class=\"nav-link text-black  \" aria-controls=\"bankdetails-tabpanel\" aria-selected=\"false\" tabindex=\"-1\" name=\"bankdetails\" type=\"button\" data-crawl-id=\"19\"><div class=\"d-inline-block \">Bank Details <!----></div></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/vendors/new",
+    "slug": "app-60073668069-vendors-new",
+    "title": "New Contact | Contacts | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button role=\"tab\" id=\"bankdetails-tab\" class=\"nav-link text-black  \" aria-controls=\"bankdetails-tabpanel\" aria-selected=\"false\" tabindex=\"-1\" name=\"bankdetails\" type=\"button\" data-crawl-id=\"19\"><div class=\"d-inline-block \">Bank Details <!----></div></button>",
+  "trigger_label": "Bank Details",
+  "trigger_id": "bankdetails-tab",
+  "trigger_class": "nav-link text-black  ",
+  "target_url": "https://books.zoho.in/app/60073668069#/vendors/new",
+  "target_slug": "app-60073668069-vendors-new",
+  "target_title": "New Contact | Contacts | Zoho Books"
+}

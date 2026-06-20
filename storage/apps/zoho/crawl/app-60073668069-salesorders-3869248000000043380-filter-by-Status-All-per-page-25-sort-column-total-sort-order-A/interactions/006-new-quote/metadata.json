@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "New Quote",
+  "triggerId": "",
+  "triggerClass": "icon-button add-new tab-element-right",
+  "selector": "[data-crawl-id=\"10\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "app-60073668069-salesorders-3869248000000043380-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "beforeTitle": "SO-00005 | Sales Orders | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+  "title": "SO-00005 | Sales Orders | Zoho Books",
+  "resultPagePath": "app-60073668069-salesorders-3869248000000043380-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A/interactions/006-new-quote",
+  "captured_at": "2026-06-19T10:53:11.718903+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Cash",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   no-caret form-control-pref btn btn-link p-0 prefix-placeholder ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button for=\"d4d07715-a44b-4aa6-9d66-d70796166c00\" aria-controls=\"d4d07715-a44b-4aa6-9d66-d70796166c00\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   no-caret form-control-pref btn btn-link p-0 prefix-placeholder \" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"26\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-sm\"><path d=\"M255.8 40.8c-118.9 0-215.4 96.5-215.4 215.4s96.5 215.4 215.4 215.4 215.4-96.4 215.4-215.4S374.7 40.8 255.8 40.8zm94.5 237h-72.9v72.9c-.3 11.9-10.1 21.4-22.1 21.2-11.6-.2-20.9-9.6-21.2-21.2v-72.9h-72.9c-11.9 0-21.6-9.7-21.6-21.6s9.7-21.6 21.6-21.6h72.9v-72.9c.3-11.9 10.1-21.4 22.1-21.2 11.6.2 20.9 9.6 21.2 21.2v72.9h72.9c11.9 0 21.6 9.7 21.6 21.6 0 12-9.7 21.6-21.6 21.6z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu text-start dropdown-menu-width mt-0 show\" data-popper-placement=\"bottom-end\" id=\"d4d07715-a44b-4aa6-9d66-d70796166c00\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-1013.57px, 295.594px);\"><h6 class=\"dropdown-header mb-2\">Placeholder</h6> <div class=\"dropdown dropend ember-view sub-dropdown\" id=\"dd-cffa06d5-db03-45b4-a28b-49b0d57a0b73\"><button aria-controls=\"cffa06d5-db03-45b4-a28b-49b0d57a0b73\" aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret dropdown-item\" for=\"cffa06d5-db03-45b4-a28b-49b0d57a0b73\" type=\"button\">Fiscal Year Start</button> <!-- --> <!-- --></div><div class=\"dropdown dropend ember-view sub-dropdown\" id=\"dd-f26b88aa-bfdc-482c-a772-7c4250db0e20\"><button aria-controls=\"f26b88aa-bfdc-482c-a772-7c4250db0e20\" aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret dropdown-item\" for=\"f26b88aa-bfdc-482c-a772-7c4250db0e20\" type=\"button\">Fiscal Year End</button> <!-- --> <!-- --></div><div class=\"dropdown dropend ember-view sub-dropdown\" id=\"dd-ce7921a7-32e3-4903-94f6-c9be1eb7beea\"><button aria-controls=\"ce7921a7-32e3-4903-94f6-c9be1eb7beea\" aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret dropdown-item\" for=\"ce7921a7-32e3-4903-94f6-c9be1eb7beea\" type=\"button\">Transaction Year</button> <!-- --> <!-- --></div><button class=\"dropdown-item\" type=\"button\">Transaction Date</button><div class=\"dropdown dropend ember-view sub-dropdown\" id=\"dd-f2f04019-014d-4980-bd0e-e77330ca4c1d\"><button aria-controls=\"f2f04019-014d-4980-bd0e-e77330ca4c1d\" aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret dropdown-item\" for=\"f2f04019-014d-4980-bd0e-e77330ca4c1d\" type=\"button\">Transaction Month</button> <!-- --> <!-- --></div></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Record Deposit",
+  "triggerId": "ember557",
+  "triggerClass": "btn btn-secondary ember-view ms-3 font-small",
+  "selector": "[data-crawl-id=\"19\"]",
+  "interactionType": "modal",
+  "sourcePage": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "beforeTitle": "Citi Bank | Banking | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=deposit",
+  "title": "Citi Bank | Banking | Zoho Books",
+  "resultPagePath": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund/interactions/005-record-deposit",
+  "captured_at": "2026-06-19T11:48:16.599106+00:00"
+}

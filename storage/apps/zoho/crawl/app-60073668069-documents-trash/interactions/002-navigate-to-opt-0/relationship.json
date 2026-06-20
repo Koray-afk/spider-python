@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-documents-trash",
+  "source_url": "https://books.zoho.in/app/60073668069#/documents/trash",
+  "source_title": "Trash | Documents | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "All",
+    "id": "",
+    "class_name": "dropdown-item",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#da614cc5-0be1-41a6-99cb-41831a0bda02 > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[2]/div[2]/button[1]",
+    "outer_html": "<button class=\"dropdown-item\" type=\"button\" data-ember-action=\"\" data-ember-action-331=\"331\" data-crawl-id=\"1\">All</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/documents/trash",
+    "slug": "app-60073668069-documents-trash",
+    "title": "Trash | Documents | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"dropdown-item\" type=\"button\" data-ember-action=\"\" data-ember-action-331=\"331\" data-crawl-id=\"1\">All</button>",
+  "trigger_label": "Navigate To (Opt+0)",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle   btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/documents/trash",
+  "target_slug": "app-60073668069-documents-trash",
+  "target_title": "Trash | Documents | Zoho Books"
+}

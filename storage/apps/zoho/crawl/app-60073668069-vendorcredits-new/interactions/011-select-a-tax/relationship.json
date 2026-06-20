@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-vendorcredits-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/vendorcredits/new",
+  "source_title": "Add New | Vendor Credits | Zoho Books",
+  "trigger": {
+    "tag_name": "span",
+    "text": "Subscribe",
+    "id": "",
+    "class_name": "top-upgrade-button-item top-item-spaced mx-0 font-xs text-blue mt-1 cursor-pointer",
+    "name": "",
+    "role": "button",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#top-band > span:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"32\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/header[1]/span[1]",
+    "outer_html": "<span class=\"top-upgrade-button-item top-item-spaced mx-0 font-xs text-blue mt-1 cursor-pointer\" tabindex=\"0\" role=\"button\" data-crawl-id=\"32\">Subscribe</span>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/vendorcredits/new",
+    "slug": "app-60073668069-vendorcredits-new",
+    "title": "Add New | Vendor Credits | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<span class=\"top-upgrade-button-item top-item-spaced mx-0 font-xs text-blue mt-1 cursor-pointer\" tabindex=\"0\" role=\"button\" data-crawl-id=\"32\">Subscribe</span>",
+  "trigger_label": "Select a Tax",
+  "trigger_id": "ac-ember603",
+  "trigger_class": "ac-box ",
+  "target_url": "https://books.zoho.in/app/60073668069#/vendorcredits/new",
+  "target_slug": "app-60073668069-vendorcredits-new",
+  "target_title": "Add New | Vendor Credits | Zoho Books"
+}

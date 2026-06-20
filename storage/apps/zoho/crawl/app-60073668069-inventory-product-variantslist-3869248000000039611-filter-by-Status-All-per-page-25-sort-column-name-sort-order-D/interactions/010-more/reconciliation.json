@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "More",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary",
+    "selector": "[data-crawl-id=\"23\"]",
+    "outerHTML": "<button for=\"e31c48d6-2445-4c60-a382-f5a559ecf072\" aria-controls=\"e31c48d6-2445-4c60-a382-f5a559ecf072\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-secondary\" type=\"button\" data-crawl-id=\"23\">More <!----></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"e31c48d6-2445-4c60-a382-f5a559ecf072\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-92px, 99.5px);\"><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1344=\"1344\" type=\"button\">Clone Item</button> <!-- --><!-- --> <span id=\"c6388f8a-7bc4-4cf8-908f-97cd75942d34\"><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1345=\"1345\" type=\"button\">Mark as Inactive</button></span> <!-- --><span id=\"edbc100a-624d-4061-8926-7ea73ccb5752\"><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1346=\"1346\" type=\"button\">Delete</button></span> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

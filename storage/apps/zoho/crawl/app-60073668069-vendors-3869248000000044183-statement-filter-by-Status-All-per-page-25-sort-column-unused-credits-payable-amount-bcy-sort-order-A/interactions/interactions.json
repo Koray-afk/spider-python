@@ -1,0 +1,32 @@
+[
+  {
+    "label": "New Transaction",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/002-new-transaction",
+    "relationship_file": "interactions/002-new-transaction/relationship.json"
+  },
+  {
+    "label": "This Month",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/003-this-month",
+    "relationship_file": "interactions/003-this-month/relationship.json"
+  },
+  {
+    "label": "Filter By: All",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/004-filter-by-all",
+    "relationship_file": "interactions/004-filter-by-all/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/011-more-actions",
+    "relationship_file": "interactions/011-more-actions/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/013-edit",
+    "relationship_file": "interactions/013-edit/relationship.json"
+  }
+]

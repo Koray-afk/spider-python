@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "MODE",
+    "tagName": "button",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"24\"]",
+    "outerHTML": "<button class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\" type=\"button\" data-ember-action=\"\" data-ember-action-514=\"514\" data-crawl-id=\"24\"> <div class=\"position-relative d-flex align-items-center justify-content-end\"><!----> <div class=\"over-flow\" title=\"Unused Amount\">Unused Amount<!----> </div><!----></div></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

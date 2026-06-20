@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Transaction",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Go to transactions",
+    "id": "",
+    "className": "dropdown-toggle no-caret  bg-white border-0 text-black-semibold font-large",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Expense",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "All Vendors",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Status: All",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "View",
+    "id": "",
+    "className": "btn btn-link p-0 align-baseline",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Edit",
+    "id": "ember507",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "More Actions",
+    "id": "d2519354-1915-4284-aa24-c90fbcc71625",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "25 per page",
+    "id": "ac-ember502",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"47\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "DATE",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "BILL#",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "VENDOR NAME",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "AMOUNT",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "BALANCE DUE",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "AMOUNT PAID",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

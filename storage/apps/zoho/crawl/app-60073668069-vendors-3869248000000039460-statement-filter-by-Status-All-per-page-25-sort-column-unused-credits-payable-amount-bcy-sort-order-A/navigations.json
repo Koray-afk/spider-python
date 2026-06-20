@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Edit",
+    "tag_name": "button",
+    "selector": "#dd8211ea-dff9-47e9-babe-e0dec2c6157a",
+    "target_url": "https://books.zoho.in/app/60073668069#/vendors/new",
+    "target_slug": "app-60073668069-vendors-new",
+    "target_page": "../app-60073668069-vendors-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "dd8211ea-dff9-47e9-babe-e0dec2c6157a",
+      "class_name": "icon-button btn btn-primary d-flex",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#dd8211ea-dff9-47e9-babe-e0dec2c6157a",
+      "xpath": "//*[@id=\"dd8211ea-dff9-47e9-babe-e0dec2c6157a\"]",
+      "outer_html": "<button class=\"icon-button btn btn-primary d-flex\" id=\"dd8211ea-dff9-47e9-babe-e0dec2c6157a\" type=\"button\" tabindex=\"0\" data-crawl-id=\"22\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\" aria-hidden=\"true\"><path d=\"M15.01 8c0 .39-.31.7-.7.7H8.7v5.61c0 .39-.31.7-.7.7s-.7-.31-.7-.7V8.7H1.69c-.39 0-.7-.31-.7-.7s.31-.7.7-.7H7.3V1.69c0-.39.31-.7.7-.7s.7.31.7.7V7.3h5.61c.39 0 .7.31.7.7z\"></path></svg></button>"
+    }
+  }
+]

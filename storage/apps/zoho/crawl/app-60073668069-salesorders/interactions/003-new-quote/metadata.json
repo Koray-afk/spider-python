@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "New Quote",
+  "triggerId": "",
+  "triggerClass": "icon-button add-new tab-element-right",
+  "selector": "[data-crawl-id=\"10\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-salesorders",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/salesorders",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/salesorders",
+  "beforeTitle": "Sales Orders | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/salesorders",
+  "title": "Sales Orders | Zoho Books",
+  "resultPagePath": "app-60073668069-salesorders/interactions/003-new-quote",
+  "captured_at": "2026-06-19T09:45:22.348325+00:00"
+}

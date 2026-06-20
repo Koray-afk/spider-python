@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Add Criterion",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/002-add-criterion",
+    "relationship_file": "interactions/002-add-criterion/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/004-show-dropdown-menu",
+    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Save",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/008-save",
+    "relationship_file": "interactions/008-save/relationship.json"
+  },
+  {
+    "label": "Any one of the following criteria matches",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/010-any-one-of-the-following-criteria-matches",
+    "relationship_file": "interactions/010-any-one-of-the-following-criteria-matches/relationship.json"
+  },
+  {
+    "label": "Criterion Configuration",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/011-criterion-configuration",
+    "relationship_file": "interactions/011-criterion-configuration/relationship.json"
+  },
+  {
+    "label": "None",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/014-none",
+    "relationship_file": "interactions/014-none/relationship.json"
+  }
+]

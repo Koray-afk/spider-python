@@ -477,6 +477,41 @@ _INTERACTION_FIX_CSS = """#main-nav-tab,
 .stitch-injected-ui .popover-container,
 .stitch-injected-ui .popover {
     pointer-events: auto !important;
+}
+
+/* Production overlays/widgets — broken or distracting in the static clone. */
+#annmsgstrip,
+.zread_strip,
+books_svgs,
+.micshide,
+#zcwindows,
+.zcoverlay,
+.zsiq_theme1,
+#zsiq_float,
+#zsiq_chat_wrap,
+iframe#avcliqiframe,
+#wmstoolbar,
+#micsbackdrop,
+#tooltip-popover-wrapper,
+#zgs20_globalsearch,
+#zgs20_gsSearchResultsArea,
+#zgs20_gsResultsHolder,
+#zgs20_gsSearchTopBandHolder,
+.zgs19_gsOverlay,
+#zgs20_gsOverlay,
+.popover-container,
+.finance-app .rhs-sidebar,
+.finance-app .rhs-menu,
+.finance-app #rhs-menu-bar,
+.finance-app .rhs-sidebar-menu {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* Empty captured flyout shells from live app — break flex layout in the clone. */
+.finance-app .slide-sidebar,
+.finance-app .sidebar-container {
+    display: none !important;
+    pointer-events: none !important;
 }"""
 
 FALLBACK_404 = """<!doctype html>
@@ -510,16 +545,25 @@ FALLBACK_404 = """<!doctype html>
 
 
 def _resolve_entry(navigation: dict, valid_slugs: set[str]) -> str | None:
-    """Pick the entry page: prefer a dashboard, then a home page, then anything."""
-    for slug, info in navigation.items():
-        if any(h in (info.get("title", "") or "").lower() for h in _ENTRY_TITLE_HINTS):
+    """Pick the entry page: prefer dashboard slug, then dashboard title, then home."""
+    for slug in sorted(navigation):
+        if "home-dashboard" in slug.lower():
             return slug
+    for slug, info in sorted(navigation.items()):
+        title = (info.get("title", "") or "").lower()
+        if not any(h in title for h in _ENTRY_TITLE_HINTS):
+            continue
+        if slug.endswith("-home") and not slug.endswith("-home-dashboard"):
+            continue
+        if "gettingstarted" in slug or "recentupdates" in slug:
+            continue
+        return slug
     for hint in _ENTRY_SLUG_HINTS:
-        for slug in navigation:
+        for slug in sorted(navigation):
             if hint in slug.lower():
                 return slug
     if navigation:
-        return next(iter(navigation))
+        return next(iter(sorted(navigation)))
     return next(iter(sorted(valid_slugs)), None)
 
 
@@ -852,6 +896,45 @@ def _parent_slug_for_form(slug: str) -> str | None:
     return None
 
 
+_ENTITY_DETAIL_MODULES = (
+    "contacts",
+    "vendors",
+    "quotes",
+    "invoices",
+    "salesorders",
+    "purchaseorders",
+    "bills",
+    "expenses",
+    "creditnotes",
+    "vendorcredits",
+    "paymentsreceived",
+    "paymentsmade",
+)
+
+
+def _parent_slug_for_flyout(slug: str, valid_slugs: set[str]) -> str | None:
+    """Map a full-page flyout (new form or entity detail) back to its list page."""
+    parent = _parent_slug_for_form(slug)
+    if parent and parent in valid_slugs:
+        return parent
+
+    # Item detail: .../variantslist/{id}?...
+    if re.search(r"inventory-product-variantslist-\d+", slug):
+        for vs in valid_slugs:
+            if vs.endswith("-inventory-product-index"):
+                return vs
+
+    # Entity detail: app-{id}-{module}-{entity_id} (no list filters in slug).
+    modules = "|".join(_ENTITY_DETAIL_MODULES)
+    m = re.match(rf"^(app-\d+-(?:{modules}))-\d+$", slug)
+    if m:
+        candidate = m.group(1)
+        if candidate in valid_slugs:
+            return candidate
+
+    return None
+
+
 def _wire_flyout_close(
     soup: BeautifulSoup,
     slug: str,
@@ -859,9 +942,9 @@ def _wire_flyout_close(
     to_root: str,
     used: set[int],
 ) -> None:
-    """Wire X / Back / Cancel on full-page flyout forms to navigate back to the list page."""
-    parent = _parent_slug_for_form(slug)
-    if not parent or parent not in valid_slugs:
+    """Wire X / Back / Cancel on full-page flyouts to navigate back to the list page."""
+    parent = _parent_slug_for_flyout(slug, valid_slugs)
+    if not parent:
         return
     rel = f"{to_root}{parent}/page.html"
     for sel in (

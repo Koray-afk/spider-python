@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Table View",
+    "tagName": "button",
+    "id": "",
+    "className": "nav-link cursor-pointer px-0 ms-2 lh-200 active",
+    "selector": "[data-crawl-id=\"39\"]",
+    "outerHTML": "<button class=\"nav-link cursor-pointer px-0 ms-2 lh-200 active\" data-ember-action=\"\" data-ember-action-448=\"448\" data-crawl-id=\"39\">Table View</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#main-nav-tab > ul:nth-of-type(1) > li:nth-of-type(2)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown dropend ember-view\" id=\"dd-dc9bfe91-a57e-4bae-913f-867165bde837\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-ee13e627-333f-47ab-80b3-7a18825ee0ef\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-ee90db8a-1d5f-44cc-8ac7-9f2b5d0c598a\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-f4a55354-70d2-421c-ac66-65df8988af24\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-ea6eab6b-063e-47cf-bbea-4eeb2125d277\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-c256e8c4-15e6-4c6d-b6a2-4206a608e5ff\"><!-- --> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Add User",
+    "tagName": "button",
+    "id": "d8846636-0227-4966-92d9-c4a3bf937aba",
+    "className": "icon-button",
+    "selector": "[data-crawl-id=\"20\"]",
+    "outerHTML": "<button class=\"icon-button\" id=\"d8846636-0227-4966-92d9-c4a3bf937aba\" type=\"button\" data-ember-action=\"\" data-ember-action-451=\"451\" tabindex=\"0\" data-crawl-id=\"20\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 418 512\" class=\"icon icon-sm mt-2 text-danger\" aria-hidden=\"true\"><path d=\"M397.98 80.58H302.24V53.83C302.24 24.15 278.07 0 248.37 0h-78.75c-29.71 0-53.88 24.15-53.88 53.83v26.75H20.02C8.96 80.58 0 89.53 0 100.58s8.96 20 20.02 20H37.4l17.4 310.45c2.54 45.4 40.19 80.97 85.71 80.97h137c45.52 0 83.16-35.57 85.71-80.97l17.4-310.45H398c11.06 0 20.02-8.95 20.02-20s-8.96-20-20.02-20zm-242.2-26.75c0-7.63 6.21-13.83 13.84-13.83h78.75c7.63 0 13.83 6.2 13.83 13.83v26.75H155.77V53.83zM323.23 428.8c-1.36 24.23-21.45 43.2-45.73 43.2h-137c-24.29 0-44.38-18.98-45.73-43.2L77.5 120.58h263.01L323.24 428.8z\" id=\"Layer_1-2\"></path></svg></button>"
+  },
+  "interaction_type": "tooltip",
+  "location": {
+    "parentSelector": "#tooltip-popover-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"popper tooltip fade show\" data-popper-placement=\"right\" for=\"d50b68bc-db10-4df1-8d62-b629bd3c66e1\" id=\"df8b2242-73d0-4417-b462-24d805f48f05\" role=\"tooltip\" style=\"position: absolute; left: 0px; top: 0px; margin: 0px; transform: translate(1283px, 909px);\"><div class=\"arrow\" data-popper-arrow=\"\" style=\"position: absolute; top: 0px; transform: translate(0px, 11px);\"></div> Remove</div>\n<label class=\"col-form-label col-lg-2\" id=\"ae6ddee65\">Hours Budget Type <span id=\"c0c40d17-3ec2-4e8a-a6c9-3b628201e90d\" tabindex=\"0\"><svg class=\"icon icon-sm align-text-bottom text-muted\" id=\"Layer_1\" version=\"1.1\" viewbox=\"0 0 512 512\" x=\"0\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\"><path d=\"M256 172.3c-11.3 0-20.4 9.2-20.4 20.4v195.9c0 11.3 9.2 20.4 20.4 20.4s20.4-9 20.4-20.4V192.7c0-11.4-9.2-20.4-20.4-20.4z\"></path><path d=\"M256 0C114.9 0 0 114.9 0 256s114.8 256 256 256c141.1 0 256-114.9 256-256S397.1 0 256 0zm0 471.3c-118.7 0-215.3-96.6-215.3-215.3S137.3 40.7 256 40.7 471.3 137.3 471.3 256 374.7 471.3 256 471.3z\"></path><circle cx=\"256.4\" cy=\"121.7\" r=\"21.9\"></circle></svg></span> <!-- --></label>\n<div class=\"ember-view\" data-auto-gen-binding-ac-type=\"content\" data-auto-gen-binding-key=\"budget_type\" data-auto-gen-binding-type=\"auto-complete\" id=\"ember578\"><div class=\"ac-container\"><div class=\"ac-wrapper\"><div ac-toggler=\"\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember578\" aria-disabled=\"false\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-invalid=\"false\" aria-labelledby=\"ae6ddee65\" aria-required=\"false\" class=\"ac-box\" data-crawl-id=\"28\" id=\"ac-ember578\" role=\"combobox\" tabindex=\"0\"><div class=\"ac-selected form-control\"> <span class=\"placeholder-text me-0 ac-selected-label\"><!-- --></span><div class=\"ac-toggle-container\"><i class=\"zf-ac-toggler\"><svg height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></i></div></div></div> <!-- --></div> <!-- --> <div aria-live=\"assertive\" class=\"visually-hidden\" role=\"status\"><!-- --></div></div> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

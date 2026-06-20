@@ -1,0 +1,55 @@
+[
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Log Time (c+t)",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"12\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"12\" title=\"Log Time (c+t)\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> interce"
+  },
+  {
+    "label": "LOG TIME",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"23\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"23\" data-ember-action=\"\" data-ember-action-316=\"316\" class=\"btn btn-primary uppercase\">Log Time</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <textarea rows=\"3\" id=\"a16552d33\" "
+  },
+  {
+    "label": "All Timesheets",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"16\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"16\" aria-haspopup=\"true\" for=\"ddd14cfd-7ba1-4a0f-817b-ce474c42d3ac\" aria-controls=\"ddd14cfd-7ba1-4a0f-817b-ce474c42d3ac\" class=\"dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - e"
+  },
+  {
+    "label": "Select a project",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Select user",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"e1c00694-7179-4d87-85db-a013dc42092f\" aria-controls=\"e1c00694-7179-4d87-85db-a013dc42092f\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scro"
+  }
+]

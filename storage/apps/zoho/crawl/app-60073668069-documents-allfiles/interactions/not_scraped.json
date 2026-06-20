@@ -1,0 +1,54 @@
+[
+  {
+    "label": "Add to",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"18\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"18\" aria-haspopup=\"true\" aria-expanded=\"false\" for=\"da0d6982-4897-4176-9627-9bb653a0b401\" aria-controls=\"da0d6982-4897-4176-9627-9bb653a0b401\" class=\"dropdown-toggle no-caret  btn btn-primary btn-sm\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enable"
+  },
+  {
+    "label": "FILE NAME",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "UPLOADED BY",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "UPLOADED ON",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "FOLDER",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Move to",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"17\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"17\" aria-haspopup=\"true\" aria-expanded=\"false\" for=\"d5accf37-63fe-4c17-85c8-59daac35d407\" class=\"dropdown-toggle   btn btn-secondary btn-sm\" aria-controls=\"d5accf37-63fe-4c17-85c8-59daac35d407\">Move to</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enable"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"19\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"c769c114-7528-4d89-a91e-d464733c4e79\" aria-controls=\"c769c114-7528-4d89-a91e-d464733c4e79\" class=\"dropdown-toggle no-caret  btn btn-sm btn-secondary\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stabl"
+  }
+]

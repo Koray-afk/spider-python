@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Journal",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/007-journal",
+    "relationship_file": "interactions/007-journal/relationship.json"
+  },
+  {
+    "label": "All Received Payments",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/010-all-received-payments",
+    "relationship_file": "interactions/010-all-received-payments/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/013-show-dropdown-menu",
+    "relationship_file": "interactions/013-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/014-show-dropdown-menu",
+    "relationship_file": "interactions/014-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/015-more-actions",
+    "relationship_file": "interactions/015-more-actions/relationship.json"
+  }
+]
