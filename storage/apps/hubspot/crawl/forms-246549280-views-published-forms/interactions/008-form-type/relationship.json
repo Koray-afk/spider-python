@@ -1,0 +1,34 @@
+{
+  "source_page": "forms-246549280-views-published-forms",
+  "source_url": "https://app-na2.hubspot.com/forms/246549280/views/published_forms",
+  "source_title": "Forms | HubSpot",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Form Type",
+    "id": "",
+    "class_name": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "/html[1]/body[1]/div[5]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button tabindex=\"0\" aria-haspopup=\"true\" aria-labelledby=\"abstractdropdown-button-content-4\" data-dropdown=\"true\" data-dropdown-open=\"false\" data-has-custom-button-content=\"true\" data-fnd-select-multi-value=\"t\" aria-readonly=\"false\" aria-owns=\"abstractdropdown-content-5\" aria-disabled=\"false\" aria-invalid=\"false\" data-fnd-button=\"t\" data-button-use=\"transparent\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA firZfa\" data-crawl-id=\"18\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa fjsJRK\"><span id=\"abstractdropdown-button-content-4\" class=\"AbstractDropdown__StyledButtonContents-iJVKGW OANEe\"><span class=\"AbstractDropdown__StyledDropdownButtonLabel-cgnbqh lhwCwn\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"dashboard.frameworkTable.filters.formType.labelInActive\">Form Type</i18n-string></span><span data-test-id=\"dropdown-caret\" class=\"DropdownCaret__StyledCaret-dQyJuC ZexJi\"></span></span></span></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/forms/246549280/views/published_forms",
+    "slug": "forms-246549280-views-published-forms",
+    "title": "Forms | HubSpot"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button tabindex=\"0\" aria-haspopup=\"true\" aria-labelledby=\"abstractdropdown-button-content-4\" data-dropdown=\"true\" data-dropdown-open=\"false\" data-has-custom-button-content=\"true\" data-fnd-select-multi-value=\"t\" aria-readonly=\"false\" aria-owns=\"abstractdropdown-content-5\" aria-disabled=\"false\" aria-invalid=\"false\" data-fnd-button=\"t\" data-button-use=\"transparent\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA firZfa\" data-crawl-id=\"18\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa fjsJRK\"><span id=\"abstractdropdown-button-content-4\" class=\"AbstractDropdown__StyledButtonContents-iJVKGW OANEe\"><span class=\"AbstractDropdown__StyledDropdownButtonLabel-cgnbqh lhwCwn\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"dashboard.frameworkTable.filters.formType.labelInActive\">Form Type</i18n-string></span><span data-test-id=\"dropdown-caret\" class=\"DropdownCaret__StyledCaret-dQyJuC ZexJi\"></span></span></span></button>",
+  "trigger_label": "Form Type",
+  "trigger_id": "",
+  "trigger_class": "PrivateButton__StyledButton-eRHhiA firZfa",
+  "target_url": "https://app-na2.hubspot.com/forms/246549280/views/published_forms",
+  "target_slug": "forms-246549280-views-published-forms",
+  "target_title": "Forms | HubSpot"
+}

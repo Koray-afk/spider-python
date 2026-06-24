@@ -1,0 +1,71 @@
+[
+  {
+    "label": "Due today",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/tasks/246549280/view/due_today",
+    "target_slug": "tasks-246549280-view-due-today",
+    "target_page": "../tasks-246549280-view-due-today/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Due today",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/section[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"due_today\" data-test-id=\"view-tab-due_today\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"1\" data-rbd-draggable-id=\"due_today\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-1-hidden-text-2\" data-rbd-drag-handle-draggable-id=\"due_today\" data-rbd-drag-handle-context-id=\"1\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch\" data-crawl-id=\"30\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span>Due today</span></span></span></span></div></div>"
+    }
+  },
+  {
+    "label": "Overdue",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+    "target_url": "https://app-na2.hubspot.com/tasks/246549280/view/overdue",
+    "target_slug": "tasks-246549280-view-overdue",
+    "target_page": "../tasks-246549280-view-overdue/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Overdue",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/section[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"overdue\" data-test-id=\"view-tab-overdue\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"1\" data-rbd-draggable-id=\"overdue\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-1-hidden-text-2\" data-rbd-drag-handle-draggable-id=\"overdue\" data-rbd-drag-handle-context-id=\"1\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch\" data-crawl-id=\"31\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span>Overdue</span></span></span></span></div></div>"
+    }
+  },
+  {
+    "label": "Upcoming",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+    "target_url": "https://app-na2.hubspot.com/tasks/246549280/view/upcoming",
+    "target_slug": "tasks-246549280-view-upcoming",
+    "target_page": "../tasks-246549280-view-upcoming/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Upcoming",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/section[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"upcoming\" data-test-id=\"view-tab-upcoming\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"1\" data-rbd-draggable-id=\"upcoming\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-1-hidden-text-2\" data-rbd-drag-handle-draggable-id=\"upcoming\" data-rbd-drag-handle-context-id=\"1\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch\" data-crawl-id=\"32\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span>Upcoming</span></span></span></span></div></div>"
+    }
+  }
+]

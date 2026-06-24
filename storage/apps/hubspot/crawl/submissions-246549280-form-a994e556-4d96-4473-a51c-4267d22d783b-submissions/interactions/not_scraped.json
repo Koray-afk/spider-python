@@ -1,0 +1,40 @@
+[
+  {
+    "label": "View form",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Export submissions",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"15\" data-fnd-button=\"t\" aria-disabled=\"false\" data-button-use=\"secondary\" data-action=\"export-submissions\" data-test-id=\"action-button-export-submissions\" class=\"PrivateButton__StyledButton-eRHhiA bOCoLt\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - elem"
+  },
+  {
+    "label": "Edit form",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"16\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-action=\"edit\" data-crawl-id=\"16\" data-test-id=\"edit\" data-fnd-button=\"t\" aria-disabled=\"false\" data-button-use=\"primary\" class=\"PrivateButton__StyledButton-eRHhiA gqHeqB\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - s"
+  },
+  {
+    "label": "Collaborate with Assistant",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"17\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"17\" data-fnd-button=\"t\" aria-disabled=\"false\" data-test-selected=\"false\" data-test-id=\"copilot-icon-tab\" data-onboarding=\"copilot-icon-tab\" data-button-use=\"tertiary-extra-light\" aria-label=\"Collaborate with Assistant\" class=\"PrivateButton__StyledButton-eRHhiA bVmNmm\">\u2026</button>\n  - attempting click action\n    2 \u00d7 wa"
+  }
+]

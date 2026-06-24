@@ -1,0 +1,37 @@
+[
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Non\u2011HubSpot Forms",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

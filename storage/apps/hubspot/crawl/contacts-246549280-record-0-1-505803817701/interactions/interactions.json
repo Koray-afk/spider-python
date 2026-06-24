@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/002-overview",
+    "relationship_file": "interactions/002-overview/relationship.json"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/003-key-information",
+    "relationship_file": "interactions/003-key-information/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"38\"]",
+    "interaction_path": "interactions/004-health",
+    "relationship_file": "interactions/004-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"39\"]",
+    "interaction_path": "interactions/005-data-quality",
+    "relationship_file": "interactions/005-data-quality/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/006-create-new",
+    "relationship_file": "interactions/006-create-new/relationship.json"
+  },
+  {
+    "label": "Create a note",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/007-create-a-note",
+    "relationship_file": "interactions/007-create-a-note/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/008-create-an-email",
+    "relationship_file": "interactions/008-create-an-email/relationship.json"
+  },
+  {
+    "label": "Create a task",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/009-create-a-task",
+    "relationship_file": "interactions/009-create-a-task/relationship.json"
+  },
+  {
+    "label": "Create activity",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/010-create-activity",
+    "relationship_file": "interactions/010-create-activity/relationship.json"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/011-actions",
+    "relationship_file": "interactions/011-actions/relationship.json"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/012-actions",
+    "relationship_file": "interactions/012-actions/relationship.json"
+  }
+]

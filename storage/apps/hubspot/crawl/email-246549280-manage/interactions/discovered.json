@@ -1,0 +1,122 @@
+[
+  {
+    "label": "All emails",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX hkAHdR",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Drafts",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Scheduled",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Sent",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Archived",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create email",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA cjLXJu",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add view (5/50)",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add quick filter",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA iblkDC",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Email type",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Assistant",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Wondrr",
+    "id": "hs-global-toolbar-accounts",
+    "className": "sc-AxjAm cYqPoz",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

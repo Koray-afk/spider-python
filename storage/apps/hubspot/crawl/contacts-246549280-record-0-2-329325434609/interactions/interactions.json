@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/002-key-information",
+    "relationship_file": "interactions/002-key-information/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"37\"]",
+    "interaction_path": "interactions/003-overview",
+    "relationship_file": "interactions/003-overview/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"38\"]",
+    "interaction_path": "interactions/004-health",
+    "relationship_file": "interactions/004-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"39\"]",
+    "interaction_path": "interactions/005-data-quality",
+    "relationship_file": "interactions/005-data-quality/relationship.json"
+  },
+  {
+    "label": "View recent email activity",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/006-view-recent-email-activity",
+    "relationship_file": "interactions/006-view-recent-email-activity/relationship.json"
+  },
+  {
+    "label": "Incoming email - \ud83d\udc1d Up to 5x more concurrent requests. Live now.",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/007-incoming-email-up-to-5x-more-concurrent-requests",
+    "relationship_file": "interactions/007-incoming-email-up-to-5x-more-concurrent-requests/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/008-create-new",
+    "relationship_file": "interactions/008-create-new/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/009-edit",
+    "relationship_file": "interactions/009-edit/relationship.json"
+  },
+  {
+    "label": "Copy",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/010-copy",
+    "relationship_file": "interactions/010-copy/relationship.json"
+  },
+  {
+    "label": "Create a note",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/011-create-a-note",
+    "relationship_file": "interactions/011-create-a-note/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/012-create-an-email",
+    "relationship_file": "interactions/012-create-an-email/relationship.json"
+  }
+]

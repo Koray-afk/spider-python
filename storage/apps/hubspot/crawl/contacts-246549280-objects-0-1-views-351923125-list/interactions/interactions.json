@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Table view",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/004-table-view",
+    "relationship_file": "interactions/004-table-view/relationship.json"
+  },
+  {
+    "label": "Newsletter subscribers\n0",
+    "selector": "[data-crawl-id=\"39\"]",
+    "interaction_path": "interactions/006-newsletter-subscribers-0",
+    "relationship_file": "interactions/006-newsletter-subscribers-0/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-create-new",
+    "relationship_file": "interactions/009-create-new/relationship.json"
+  },
+  {
+    "label": "Add contacts",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/010-add-contacts",
+    "relationship_file": "interactions/010-add-contacts/relationship.json"
+  },
+  {
+    "label": "Filter (1)",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/011-filter-1",
+    "relationship_file": "interactions/011-filter-1/relationship.json"
+  }
+]

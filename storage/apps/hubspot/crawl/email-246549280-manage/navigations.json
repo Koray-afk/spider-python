@@ -1,0 +1,71 @@
+[
+  {
+    "label": "Drafts",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/email/246549280/manage/state/draft",
+    "target_slug": "email-246549280-manage-state-draft",
+    "target_page": "../email-246549280-manage-state-draft/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Drafts",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/section[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"draft_emails\" data-test-id=\"view-tab-draft_emails\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"2\" data-rbd-draggable-id=\"draft_emails\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-2-hidden-text-9\" data-rbd-drag-handle-draggable-id=\"draft_emails\" data-rbd-drag-handle-context-id=\"2\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK\" data-crawl-id=\"31\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span><span class=\"StatusDot__StyledStatusDot-bOMVgF hUgQTR\"></span>Drafts</span></span></span></span></div></div>"
+    }
+  },
+  {
+    "label": "Scheduled",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+    "target_url": "https://app-na2.hubspot.com/email/246549280/manage/state/scheduled",
+    "target_slug": "email-246549280-manage-state-scheduled",
+    "target_page": "../email-246549280-manage-state-scheduled/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Scheduled",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+      "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/section[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"scheduled_emails\" data-test-id=\"view-tab-scheduled_emails\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"2\" data-rbd-draggable-id=\"scheduled_emails\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-2-hidden-text-9\" data-rbd-drag-handle-draggable-id=\"scheduled_emails\" data-rbd-drag-handle-context-id=\"2\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK\" data-crawl-id=\"32\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span><span class=\"StatusDot__StyledStatusDot-bOMVgF hYOZeW\"></span>Scheduled</span></span></span></span></div></div>"
+    }
+  },
+  {
+    "label": "Sent",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+    "target_url": "https://app-na2.hubspot.com/email/246549280/manage/state/sent",
+    "target_slug": "email-246549280-manage-state-sent",
+    "target_page": "../email-246549280-manage-state-sent/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Sent",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+      "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/section[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"sent_emails\" data-test-id=\"view-tab-sent_emails\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"2\" data-rbd-draggable-id=\"sent_emails\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-2-hidden-text-9\" data-rbd-drag-handle-draggable-id=\"sent_emails\" data-rbd-drag-handle-context-id=\"2\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK\" data-crawl-id=\"33\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span><span class=\"StatusDot__StyledStatusDot-bOMVgF gPQlRc\"></span>Sent</span></span></span></span></div></div>"
+    }
+  }
+]

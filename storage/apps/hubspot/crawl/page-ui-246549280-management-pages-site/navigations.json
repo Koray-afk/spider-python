@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Create a website page",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/page-creation/246549280/create-page/site-page/template?pageName=Home&referrer=contentManager",
+    "target_slug": "page-creation-246549280-create-page-site-page-template",
+    "target_page": "../page-creation-246549280-create-page-site-page-template/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Create a website page",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA gqHeqB",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "outer_html": "<button tabindex=\"0\" data-test-id=\"create-SITE_PAGE-btn\" data-onboarding=\"create-content-button\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gqHeqB\" data-crawl-id=\"15\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"app.emptyStates.sitePage.unifiedCreate\">Create a website page</i18n-string></span></button>"
+    }
+  }
+]

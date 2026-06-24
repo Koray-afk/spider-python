@@ -1,0 +1,56 @@
+[
+  {
+    "label": "All segments",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/001-all-segments",
+    "relationship_file": "interactions/001-all-segments/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/004-create-new",
+    "relationship_file": "interactions/004-create-new/relationship.json"
+  },
+  {
+    "label": "Add view (3/50)",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/006-add-view-3-50",
+    "relationship_file": "interactions/006-add-view-3-50/relationship.json"
+  },
+  {
+    "label": "All creators",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/007-all-creators",
+    "relationship_file": "interactions/007-all-creators/relationship.json"
+  },
+  {
+    "label": "All types",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/008-all-types",
+    "relationship_file": "interactions/008-all-types/relationship.json"
+  },
+  {
+    "label": "All objects",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/009-all-objects",
+    "relationship_file": "interactions/009-all-objects/relationship.json"
+  },
+  {
+    "label": "Used in",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/010-used-in",
+    "relationship_file": "interactions/010-used-in/relationship.json"
+  },
+  {
+    "label": "Advanced filters",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/011-advanced-filters",
+    "relationship_file": "interactions/011-advanced-filters/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/012-marketplace",
+    "relationship_file": "interactions/012-marketplace/relationship.json"
+  }
+]

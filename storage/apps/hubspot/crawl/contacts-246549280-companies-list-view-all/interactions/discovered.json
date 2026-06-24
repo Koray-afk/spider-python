@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All companies\n19",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "My companies",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All companies\n19",
+    "id": "",
+    "className": "TabComponent-jGWjCS fYMSxG",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "My companies",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add companies",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA fLJpPc",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sort",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA NRDHr",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Company owner",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Last activity date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Lead status",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  }
+]

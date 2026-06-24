@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Make a phone call",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Overview",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"43\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Health",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"45\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Data quality",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"46\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Companies (1)",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi dqgBbU",
+    "selector": "[data-crawl-id=\"47\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Deals (0)",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi dqgBbU",
+    "selector": "[data-crawl-id=\"48\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Tickets (0)",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi dqgBbU",
+    "selector": "[data-crawl-id=\"49\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Attachments",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi dqgBbU",
+    "selector": "[data-crawl-id=\"50\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create a note",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create an email",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create a task",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create activity",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA NRDHr",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA iblkDC",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

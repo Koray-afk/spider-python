@@ -1,0 +1,30 @@
+[
+  {
+    "label": "12 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

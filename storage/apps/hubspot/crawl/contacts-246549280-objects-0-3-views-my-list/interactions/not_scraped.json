@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Create date",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Last activity date",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Close date",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Filter (1)",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Deal owner\n\u00a0(\n1\n)",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"30\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"30\" data-fnd-button=\"t\" aria-haspopup=\"true\" data-dropdown=\"true\" aria-invalid=\"false\" aria-readonly=\"false\" aria-disabled=\"false\" data-dropdown-open=\"false\" data-button-use=\"transparent\" data-fnd-select-multi-value=\"t\" data-has-custom-button-content=\"true\" aria-owns=\"abstractdropdown-content-41\" class=\"PrivateButton"
+  }
+]

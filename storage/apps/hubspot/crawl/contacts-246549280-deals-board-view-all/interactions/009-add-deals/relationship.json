@@ -1,0 +1,34 @@
+{
+  "source_page": "contacts-246549280-deals-board-view-all",
+  "source_url": "https://app-na2.hubspot.com/contacts/246549280/deals/board/view/all",
+  "source_title": "Deals | All deals",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Add deals",
+    "id": "",
+    "class_name": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#crm > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/span[1]/div[1]/button[1]",
+    "outer_html": "<button tabindex=\"0\" aria-haspopup=\"true\" aria-labelledby=\"abstractdropdown-button-content-50\" data-dropdown=\"true\" data-dropdown-open=\"false\" data-test-id=\"create-object-dropdown\" data-coaching-tips=\"import-button\" data-onboarding=\"new-object-button\" aria-readonly=\"false\" aria-owns=\"abstractdropdown-content-51\" aria-disabled=\"false\" aria-invalid=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA jWYotm\" data-crawl-id=\"19\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span id=\"abstractdropdown-button-content-50\" class=\"AbstractDropdown__StyledButtonContents-iJVKGW gEEeCn\"><span class=\"AbstractDropdown__StyledDropdownButtonLabel-cgnbqh lhwCwn\">Add deals</span><span data-test-id=\"dropdown-caret\" class=\"DropdownCaret__StyledCaret-dQyJuC leqhCH\"></span></span></span></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/all/board",
+    "slug": "contacts-246549280-objects-0-3-views-all-board",
+    "title": "Deals | All deals"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button tabindex=\"0\" aria-haspopup=\"true\" aria-labelledby=\"abstractdropdown-button-content-50\" data-dropdown=\"true\" data-dropdown-open=\"false\" data-test-id=\"create-object-dropdown\" data-coaching-tips=\"import-button\" data-onboarding=\"new-object-button\" aria-readonly=\"false\" aria-owns=\"abstractdropdown-content-51\" aria-disabled=\"false\" aria-invalid=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA jWYotm\" data-crawl-id=\"19\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span id=\"abstractdropdown-button-content-50\" class=\"AbstractDropdown__StyledButtonContents-iJVKGW gEEeCn\"><span class=\"AbstractDropdown__StyledDropdownButtonLabel-cgnbqh lhwCwn\">Add deals</span><span data-test-id=\"dropdown-caret\" class=\"DropdownCaret__StyledCaret-dQyJuC leqhCH\"></span></span></span></button>",
+  "trigger_label": "Add deals",
+  "trigger_id": "",
+  "trigger_class": "PrivateButton__StyledButton-eRHhiA jWYotm",
+  "target_url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/all/board",
+  "target_slug": "contacts-246549280-objects-0-3-views-all-board",
+  "target_title": "Deals | All deals"
+}

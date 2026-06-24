@@ -1,0 +1,80 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-make-a-phone-call",
+    "relationship_file": "interactions/002-make-a-phone-call/relationship.json"
+  },
+  {
+    "label": "Incoming email - Career advice that finally sounds like your life",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/003-incoming-email-career-advice-that-finally-sounds",
+    "relationship_file": "interactions/003-incoming-email-career-advice-that-finally-sounds/relationship.json"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"40\"]",
+    "interaction_path": "interactions/004-key-information",
+    "relationship_file": "interactions/004-key-information/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"41\"]",
+    "interaction_path": "interactions/005-overview",
+    "relationship_file": "interactions/005-overview/relationship.json"
+  },
+  {
+    "label": "1",
+    "selector": "[data-crawl-id=\"42\"]",
+    "interaction_path": "interactions/006-1",
+    "relationship_file": "interactions/006-1/relationship.json"
+  },
+  {
+    "label": "2",
+    "selector": "[data-crawl-id=\"43\"]",
+    "interaction_path": "interactions/007-2",
+    "relationship_file": "interactions/007-2/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"44\"]",
+    "interaction_path": "interactions/008-health",
+    "relationship_file": "interactions/008-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"45\"]",
+    "interaction_path": "interactions/009-data-quality",
+    "relationship_file": "interactions/009-data-quality/relationship.json"
+  },
+  {
+    "label": "Companies (1)",
+    "selector": "[data-crawl-id=\"46\"]",
+    "interaction_path": "interactions/010-companies-1",
+    "relationship_file": "interactions/010-companies-1/relationship.json"
+  },
+  {
+    "label": "Deals (0)",
+    "selector": "[data-crawl-id=\"47\"]",
+    "interaction_path": "interactions/011-deals-0",
+    "relationship_file": "interactions/011-deals-0/relationship.json"
+  },
+  {
+    "label": "Tickets (0)",
+    "selector": "[data-crawl-id=\"48\"]",
+    "interaction_path": "interactions/012-tickets-0",
+    "relationship_file": "interactions/012-tickets-0/relationship.json"
+  },
+  {
+    "label": "Attachments",
+    "selector": "[data-crawl-id=\"49\"]",
+    "interaction_path": "interactions/013-attachments",
+    "relationship_file": "interactions/013-attachments/relationship.json"
+  }
+]

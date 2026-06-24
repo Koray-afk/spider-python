@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Got it",
+    "tagName": "button",
+    "id": "switch-columns",
+    "className": "PrivateButton__StyledButton-eRHhiA gqHeqB",
+    "selector": "[data-crawl-id=\"18\"]",
+    "outerHTML": "<button tabindex=\"0\" id=\"switch-columns\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gqHeqB\" data-crawl-id=\"18\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"formSubmissions.switchColumns.tour.gotIt\">Got it</i18n-string></span></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#hs-one-nav-root",
+    "parentXPath": "/html[1]/body[1]/div[5]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<iframe class=\"RenderNavComponent__StyledIframe-hKZAvR tKToN\" frameborder=\"0\" height=\"200\" name=\"nav-components:nav-onboarding-tours\" scrolling=\"yes\" src=\"https://app-na2.hubspot.com/nav-onboarding-tours/246549280\" style=\"position: fixed; overflow: hidden; z-index: 1211; width: 0px; height: 0px; display: block;\" width=\"200\"></iframe>\n<iframe class=\"RenderNavComponent__StyledIframe-hKZAvR tKToN\" data-test-id=\"mini-trial-guide-iframe\" frameborder=\"0\" height=\"200\" id=\"mini-trial-guide-iframe\" name=\"nav-components:mini-trial-guide\" scrolling=\"yes\" src=\"https://app-na2.hubspot.com/trial-mini-guide-ui/246549280/mini-trial-guide\" style=\"block-size: 448px; inline-size: 306px; position: absolute; inset-block-start: calc(var(--global-nav-height, 86px) + 16px); inset-inline-end: 432px; background: transparent; z-index: 1080; transition: inset-inline-end 0.5s; display: block;\" title=\"mini-trial-guide-iframe\" width=\"200\"></iframe>\n<iframe class=\"RenderNavComponent__StyledIframe-hKZAvR tKToN\" data-test-id=\"breeze-projects-ui-modal-iframe\" frameborder=\"0\" height=\"200\" id=\"breeze-projects-ui-modal-iframe\" name=\"nav-components:breeze-projects-ui-modal\" scrolling=\"yes\" src=\"https://app-na2.hubspot.com/breeze-projects-ui/246549280/navigation-modal\" style=\"width: 0px; height: 0px; display: none;\" width=\"200\"></iframe>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

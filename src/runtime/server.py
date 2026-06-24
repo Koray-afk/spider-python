@@ -43,21 +43,76 @@ _LIVERELOAD_SNIPPET = """
 """
 
 
+# Slug substrings checked in order when picking the entry page.
+# HubSpot-specific hints come first so contacts-list / global-home
+# are preferred over the empty reports-dashboard shell.
+_ENTRY_SLUG_HINTS = (
+    "contacts-list-view-all",  # HubSpot contacts list
+    "global-home",             # HubSpot home overview
+    "home-dashboard",          # Zoho dashboard
+    "dashboard",
+    "home",
+)
+
+
+_LOGIN_PAGE_MARKERS = (
+    "<title>HubSpot Login",
+    'data-application-name="LoginUI"',
+    "Your authentication has expired",
+    "Sign in to HubSpot",
+    "data-error-type=\"SESSION_TIMED_OUT\"",
+)
+
+
+def _is_login_page_html(path: Path) -> bool:
+    """Return True if the page.html at *path* is a login/auth redirect."""
+    try:
+        snippet = path.read_text(encoding="utf-8", errors="ignore")[:3000]
+        return any(m in snippet for m in _LOGIN_PAGE_MARKERS)
+    except Exception:
+        return False
+
+
 def _resolve_entry_path(stitched_dir: Path) -> str:
-    """Return the root-relative URL of the entry page (the dashboard)."""
+    """Return the root-relative URL of the entry page.
+
+    Prefers well-known home/dashboard slugs (HubSpot contacts-list, global-home,
+    Zoho home-dashboard) over generic "dashboard"-titled pages, and explicitly
+    skips HubSpot's reports-dashboard (empty JS shell) and any page whose saved
+    HTML is actually a HubSpot login/auth-expired redirect.
+    """
+    def _is_good(slug: str) -> bool:
+        p = stitched_dir / slug / "page.html"
+        if not p.exists():
+            return False
+        if slug.startswith("reports-dashboard"):
+            return False
+        if _is_login_page_html(p):
+            return False
+        return True
+
     nav = stitched_dir / "navigation.json"
     if nav.exists():
         try:
             data = json.loads(nav.read_text(encoding="utf-8"))
+            # 1. Check slug hints in priority order.
+            for hint in _ENTRY_SLUG_HINTS:
+                for slug in data:
+                    if hint in slug.lower() and _is_good(slug):
+                        return f"/{slug}/page.html"
+            # 2. Fall back to any page whose title contains "dashboard".
             for slug, info in data.items():
-                if "dashboard" in (info.get("title", "") or "").lower():
+                if "dashboard" in (info.get("title", "") or "").lower() and _is_good(slug):
                     return f"/{slug}/page.html"
-            if data:
-                return f"/{next(iter(data))}/page.html"
+            # 3. First entry in navigation that has a valid page.html on disk.
+            for slug in data:
+                if _is_good(slug):
+                    return f"/{slug}/page.html"
         except Exception:
             pass
+    # 4. Any directory with a valid page.html.
     for d in sorted(stitched_dir.iterdir()):
-        if d.is_dir() and (d / "page.html").exists():
+        if d.is_dir() and _is_good(d.name):
             return f"/{d.name}/page.html"
     if (stitched_dir / "index.html").exists():
         return "/index.html"

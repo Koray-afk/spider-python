@@ -1,0 +1,48 @@
+[
+  {
+    "label": "Manage dashboards",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/reports-list/246549280/dashboards/views",
+    "target_slug": "reports-list-246549280-dashboards-views",
+    "target_page": "../reports-list-246549280-dashboards-views/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Manage dashboards",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA bUinhK",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/header[1]/div[2]/div[2]/div[1]/div[1]/button[1]",
+      "outer_html": "<button tabindex=\"0\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"transparent\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA bUinhK\" data-crawl-id=\"16\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa fjsJRK\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"dashboardSelector.manageDashboardsButton\">Manage dashboards</i18n-string></span></button>"
+    }
+  },
+  {
+    "label": "Create dashboard",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/discover/246549280/create/dashboards?dashboardId=140060939",
+    "target_slug": "discover-246549280-create-dashboards",
+    "target_page": "../discover-246549280-create-dashboards/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Create dashboard",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA bOCoLt",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/header[1]/div[2]/div[2]/div[1]/div[1]/button[2]",
+      "outer_html": "<button tabindex=\"0\" data-test-id=\"discover-dashboards-action\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"secondary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA bOCoLt\" data-crawl-id=\"17\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fOLvgR\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span><i18n-string data-locale-at-render=\"en-us\" data-key=\"reporting-action-components.actions.createDashboard.button.text\">Create dashboard</i18n-string></span></span></span></span></button>"
+    }
+  }
+]

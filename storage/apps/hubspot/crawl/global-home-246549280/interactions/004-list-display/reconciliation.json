@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "List display",
+    "tagName": "button",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA fAELR",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button tabindex=\"0\" aria-label=\"List display\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"tertiary-light\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA fAELR\" data-crawl-id=\"19\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"ListView\" class=\"StyledIcon-jibXlG eLxJpm\"><path d=\"M28.14 8.14H3a1.14 1.14 0 1 1 0-2.28h25.14a1.14 1.14 0 1 1 0 2.28M28.14 26.43H3a1.14 1.14 0 1 1 0-2.28h25.14a1.14 1.14 0 1 1 0 2.28M28.14 17.29H3a1.14 1.14 0 1 1 0-2.28h25.14a1.14 1.14 0 1 1 0 2.28\"></path></svg></span></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

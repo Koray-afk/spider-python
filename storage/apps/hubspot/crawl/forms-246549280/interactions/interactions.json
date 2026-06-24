@@ -1,0 +1,50 @@
+[
+  {
+    "label": "All forms",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/001-all-forms",
+    "relationship_file": "interactions/001-all-forms/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/003-create-new",
+    "relationship_file": "interactions/003-create-new/relationship.json"
+  },
+  {
+    "label": "Add view (2/50)",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/005-add-view-2-50",
+    "relationship_file": "interactions/005-add-view-2-50/relationship.json"
+  },
+  {
+    "label": "Add quick filter",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/006-add-quick-filter",
+    "relationship_file": "interactions/006-add-quick-filter/relationship.json"
+  },
+  {
+    "label": "Form Type",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/007-form-type",
+    "relationship_file": "interactions/007-form-type/relationship.json"
+  },
+  {
+    "label": "Advanced filters",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/008-advanced-filters",
+    "relationship_file": "interactions/008-advanced-filters/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/010-marketplace",
+    "relationship_file": "interactions/010-marketplace/relationship.json"
+  },
+  {
+    "label": "13 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/012-13-days-left-in-trial",
+    "relationship_file": "interactions/012-13-days-left-in-trial/relationship.json"
+  }
+]

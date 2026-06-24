@@ -1,0 +1,34 @@
+{
+  "source_page": "contacts-246549280-deals-board-view-all",
+  "source_url": "https://app-na2.hubspot.com/contacts/246549280/deals/board/view/all",
+  "source_title": "Deals | All deals",
+  "trigger": {
+    "tag_name": "div",
+    "text": "All deals\n0",
+    "id": "",
+    "class_name": "sc-AxirZ fHnTju",
+    "name": "",
+    "role": "button",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#crm > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"38\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "outer_html": "<div role=\"button\" aria-disabled=\"false\" class=\"sc-AxirZ fHnTju\" tabindex=\"0\" data-crawl-id=\"38\"><div class=\"Flex__StyledFlex-cHGzEF lmXQsg\"><div tabindex=\"0\" class=\"View__StyledView-fDIglR dQdDbn\"><div data-test-id=\"view-title-all\" class=\"Text__StyledText-llZFeh jyXNVz\">All deals</div></div><span class=\"Badge__StyledBadge-cmJlgF ldfIgv\"><span><div class=\"Flex__StyledFlex-cHGzEF laPnkM\"><span data-test-id=\"view-object-count-all\" class=\"Text__StyledText-llZFeh hRlONJ\"><span>0</span></span></div></span></span></div></div>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/all/board",
+    "slug": "contacts-246549280-objects-0-3-views-all-board",
+    "title": "Deals | All deals"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<div role=\"button\" aria-disabled=\"false\" class=\"sc-AxirZ fHnTju\" tabindex=\"0\" data-crawl-id=\"38\"><div class=\"Flex__StyledFlex-cHGzEF lmXQsg\"><div tabindex=\"0\" class=\"View__StyledView-fDIglR dQdDbn\"><div data-test-id=\"view-title-all\" class=\"Text__StyledText-llZFeh jyXNVz\">All deals</div></div><span class=\"Badge__StyledBadge-cmJlgF ldfIgv\"><span><div class=\"Flex__StyledFlex-cHGzEF laPnkM\"><span data-test-id=\"view-object-count-all\" class=\"Text__StyledText-llZFeh hRlONJ\"><span>0</span></span></div></span></span></div></div>",
+  "trigger_label": "All deals\n0",
+  "trigger_id": "",
+  "trigger_class": "sc-AxirZ fHnTju",
+  "target_url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/all/board",
+  "target_slug": "contacts-246549280-objects-0-3-views-all-board",
+  "target_title": "Deals | All deals"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Add",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Phone Number\nDetails\n--",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Preferred channels\nDetails\n--",
+    "selector": "[data-crawl-id=\"41\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Create activity",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

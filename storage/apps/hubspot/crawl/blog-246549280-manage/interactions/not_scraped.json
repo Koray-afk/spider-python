@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Configure",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Start with AI",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

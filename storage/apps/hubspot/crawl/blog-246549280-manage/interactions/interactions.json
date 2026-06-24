@@ -1,0 +1,68 @@
+[
+  {
+    "label": "Blog",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/001-blog",
+    "relationship_file": "interactions/001-blog/relationship.json"
+  },
+  {
+    "label": "Publish status",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/002-publish-status",
+    "relationship_file": "interactions/002-publish-status/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/003-create-new",
+    "relationship_file": "interactions/003-create-new/relationship.json"
+  },
+  {
+    "label": "Create",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/004-create",
+    "relationship_file": "interactions/004-create/relationship.json"
+  },
+  {
+    "label": "Advanced filters",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/005-advanced-filters",
+    "relationship_file": "interactions/005-advanced-filters/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/007-marketplace",
+    "relationship_file": "interactions/007-marketplace/relationship.json"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/008-assistant",
+    "relationship_file": "interactions/008-assistant/relationship.json"
+  },
+  {
+    "label": "13 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/009-13-days-left-in-trial",
+    "relationship_file": "interactions/009-13-days-left-in-trial/relationship.json"
+  },
+  {
+    "label": "Wondrr",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/010-wondrr",
+    "relationship_file": "interactions/010-wondrr/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/011-more",
+    "relationship_file": "interactions/011-more/relationship.json"
+  },
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/012-manage-navigation",
+    "relationship_file": "interactions/012-manage-navigation/relationship.json"
+  }
+]

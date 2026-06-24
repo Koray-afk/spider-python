@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Deals",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA eMArco",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All deals\n0",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "My deals",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Board view",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA gHiIAY",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All deals\n0",
+    "id": "",
+    "className": "TabComponent-jGWjCS fYMSxG",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "My deals",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add deals",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA NRDHr",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA NRDHr",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add deal",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA irCSWE",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Import data from a file",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jUXfkX",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sales Pipeline",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA pJPkj",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Deal owner",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

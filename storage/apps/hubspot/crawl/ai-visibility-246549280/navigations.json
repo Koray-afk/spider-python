@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Show UGC",
+    "tag_name": "button",
+    "selector": "#uiopenpopup-46 > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/ai-visibility/246549280/recommendations/153067316",
+    "target_slug": "ai-visibility-246549280-recommendations-153067316",
+    "target_page": "../ai-visibility-246549280-recommendations-153067316/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "View recommendations",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA irCSWE",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#uiopenpopup-46 > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[10]/div[1]/div[1]/div[1]/footer[1]/button[1]",
+      "outer_html": "<button tabindex=\"0\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA irCSWE\" data-crawl-id=\"41\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"aiVisibility.dashboard.brandVisibilityGauge.lowVisibilityHighlightPopover.button\">View recommendations</i18n-string></span></button>"
+    }
+  }
+]

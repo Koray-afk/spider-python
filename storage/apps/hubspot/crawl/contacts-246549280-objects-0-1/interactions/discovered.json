@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All contacts\n23",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All customers",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"42\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All contacts\n23",
+    "id": "",
+    "className": "TabComponent-jGWjCS fYMSxG",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Newsletter subscribers",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Unsubscribed",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All customers",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"41\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add contacts",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA fLJpPc",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sort",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA NRDHr",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Contact owner",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Last activity date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Lead status",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

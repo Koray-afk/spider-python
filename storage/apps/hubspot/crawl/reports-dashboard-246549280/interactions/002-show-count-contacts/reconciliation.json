@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Show (Count) Contacts",
+    "tagName": "button",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"28\"]",
+    "outerHTML": "<button aria-label=\"Show (Count) Contacts\" tabindex=\"-1\" aria-pressed=\"true\" class=\"highcharts-a11y-proxy-button\" aria-hidden=\"false\" style=\"border-width: 0px; background-color: transparent; cursor: pointer; outline: none; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 110.227px; height: 15px; left: 18px; top: 0px; visibility: visible;\" data-crawl-id=\"28\"></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#highcharts-ck54n9t-33 > svg:nth-of-type(1) > g:nth-of-type(6)",
+    "parentXPath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/svg[1]/g[6]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<g aria-hidden=\"true\" aria-label=\"\" class=\"highcharts-series highcharts-series-0 highcharts-column-series highcharts-tracker highcharts-series-hover\" clip-path=\"url(#highcharts-ck54n9t-34-)\" data-z-index=\"0.1\" opacity=\"1\" transform=\"translate(62,44) scale(1 1)\" visibility=\"hidden\"><rect aria-label=\"Connected Inbox, 21\" class=\"highcharts-point\" fill=\"#FFA581\" height=\"266\" opacity=\"1\" role=\"img\" style=\"outline: 0px;\" tabindex=\"-1\" width=\"192\" x=\"124\" y=\"52\"></rect><rect aria-label=\"HubSpot Processing, 2\" class=\"highcharts-point\" fill=\"#FFA581\" height=\"25\" opacity=\"1\" role=\"img\" style=\"outline: 0px;\" tabindex=\"-1\" width=\"192\" x=\"565\" y=\"293\"></rect></g>\n<g aria-hidden=\"true\" class=\"highcharts-markers highcharts-series-0 highcharts-column-series highcharts-series-hover\" clip-path=\"none\" data-z-index=\"0.1\" opacity=\"1\" transform=\"translate(62,44) scale(1 1)\" visibility=\"hidden\"></g>\n<g aria-hidden=\"true\" class=\"highcharts-data-labels highcharts-series-0 highcharts-column-series highcharts-tracker highcharts-series-hover\" data-z-index=\"6\" opacity=\"1\" transform=\"translate(62,44) scale(1 1)\" visibility=\"hidden\"><g class=\"highcharts-label highcharts-data-label highcharts-data-label-color-undefined\" data-z-index=\"1\" transform=\"translate(209,28)\"><text data-z-index=\"1\" style=\"color:inherit;font-size:11px;font-weight:600;fill:inherit;\" x=\"5\" y=\"16\"><tspan class=\"highcharts-text-outline\" fill=\"#FFFFFF\" stroke=\"#FFFFFF\" stroke-linejoin=\"round\" stroke-width=\"2px\" style=\"\">21<tspan x=\"5\" y=\"16\">\u200b</tspan></tspan>21</text></g><g class=\"highcharts-label highcharts-data-label highcharts-data-label-color-undefined\" data-z-index=\"1\" transform=\"translate(653,269)\"><text data-z-index=\"1\" style=\"color:inherit;font-size:11px;font-weight:600;fill:inherit;\" x=\"5\" y=\"16\"><tspan class=\"highcharts-text-outline\" fill=\"#FFFFFF\" stroke=\"#FFFFFF\" stroke-linejoin=\"round\" stroke-width=\"2px\" style=\"\">2<tspan x=\"5\" y=\"16\">\u200b</tspan></tspan>2</text></g></g>\n<g class=\"highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-0 highcharts-legend-item-hidden\" data-z-index=\"1\" transform=\"translate(8,3)\"><text data-z-index=\"2\" style=\"color:#cccccc;cursor:pointer;font-size:12px;font-weight:400;text-decoration:none;fill:#cccccc;\" text-anchor=\"start\" x=\"15\" y=\"15\">(Count) Contacts</text><rect class=\"highcharts-point\" data-z-index=\"3\" fill=\"#cccccc\" height=\"10\" rx=\"5\" ry=\"5\" width=\"10\" x=\"0\" y=\"6\"></rect></g>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

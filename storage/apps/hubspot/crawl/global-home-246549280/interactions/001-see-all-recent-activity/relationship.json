@@ -1,0 +1,34 @@
+{
+  "source_page": "global-home-246549280",
+  "source_url": "https://app-na2.hubspot.com/global-home/246549280",
+  "source_title": "Home | HubSpot",
+  "trigger": {
+    "tag_name": "button",
+    "text": "See all recent activity",
+    "id": "",
+    "class_name": "PrivateButton__StyledButton-eRHhiA gjBgKZ",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"25\"]",
+    "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/main[1]/div[6]/div[1]/div[2]/div[2]/button[1]",
+    "outer_html": "<button tabindex=\"0\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"link\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gjBgKZ\" data-crawl-id=\"25\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa iBYTVS\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"app.recents.seeAll\" data-test-id=\"recents-widget-see-all\">See all recent activity</i18n-string><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Right\" class=\"StyledIcon-jibXlG eXbnwa\"><path d=\"M11 27.71c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62l9.48-9.48-9.48-9.47a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0L22.1 15.48c.45.45.45 1.17 0 1.62L11.81 27.39c-.22.22-.52.33-.81.33Z\"></path></svg></span></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/global-home/246549280",
+    "slug": "global-home-246549280",
+    "title": "Home | HubSpot"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button tabindex=\"0\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"link\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gjBgKZ\" data-crawl-id=\"25\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa iBYTVS\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"app.recents.seeAll\" data-test-id=\"recents-widget-see-all\">See all recent activity</i18n-string><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Right\" class=\"StyledIcon-jibXlG eXbnwa\"><path d=\"M11 27.71c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62l9.48-9.48-9.48-9.47a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0L22.1 15.48c.45.45.45 1.17 0 1.62L11.81 27.39c-.22.22-.52.33-.81.33Z\"></path></svg></span></button>",
+  "trigger_label": "See all recent activity",
+  "trigger_id": "",
+  "trigger_class": "PrivateButton__StyledButton-eRHhiA gjBgKZ",
+  "target_url": "https://app-na2.hubspot.com/global-home/246549280",
+  "target_slug": "global-home-246549280",
+  "target_title": "Home | HubSpot"
+}

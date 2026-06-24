@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Advanced filters",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Clear all",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Save view",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Add view (4/50)",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"15\" data-fnd-button=\"t\" aria-disabled=\"false\" data-button-use=\"transparent\" data-test-id=\"add-view-popover-button\" class=\"PrivateButton__StyledButton-eRHhiA ejvtpe\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n     "
+  },
+  {
+    "label": "Start 0 tasks",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"24\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" type=\"button\" data-crawl-id=\"24\" data-fnd-button=\"t\" aria-disabled=\"true\" data-button-use=\"tertiary\" data-test-id=\"start-task-queue-button\" data-selenium-test=\"start-task-queue-button\" class=\"PrivateButton__StyledButton-eRHhiA gIBpPa\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - el"
+  }
+]

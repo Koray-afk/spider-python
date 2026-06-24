@@ -27,10 +27,11 @@ close behavior (click-outside, ESC, and `.close`/`.sidebar-close`/`[data-dismiss
 
 import json
 import re
+import urllib.request
 from pathlib import Path
 from urllib.parse import urlparse
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from storage.storage_manager import (
     clean_stitched,
@@ -45,9 +46,48 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 (function () {
   "use strict";
 
+  // ── HubSpot static-clone bootstrap ────────────────────────────────────────
+  // Add classes that HubSpot JS normally sets on <body> so the full nav CSS
+  // layout activates (sidebar width, sticky toolbar offset, etc.).
+  (function bootstrapHubSpotLayout() {
+    var body = document.body;
+    if (!body) return;
+    // sticky-global-toolbar: activates fixed nav + content-top-offset rules
+    if (!body.classList.contains("sticky-global-toolbar")) {
+      body.classList.add("sticky-global-toolbar");
+    }
+    // HubSpot sets id="crm" on <body> on CRM pages for CRM-specific layout
+    if (window.location.hostname.indexOf("hubspot") !== -1 ||
+        document.querySelector("#hs-nav-v4")) {
+      if (!body.id) body.id = "crm";
+    }
+  })();
+  // ── End HubSpot bootstrap ─────────────────────────────────────────────────
+
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
     return all[id] || null;
+  }
+
+  function showDemoHint(msg) {
+    if (document.getElementById("stitch-demo-hint")) return;
+    var el = document.createElement("div");
+    el.id = "stitch-demo-hint";
+    el.textContent = msg || "Demo mode \u2014 this action is outside the recorded path";
+    el.style.cssText = [
+      "position:fixed", "bottom:24px", "right:24px", "z-index:99999",
+      "background:rgba(30,30,30,0.88)", "color:#fff",
+      "padding:10px 18px", "border-radius:8px",
+      "font:13px/1.5 system-ui,sans-serif",
+      "pointer-events:none", "opacity:0",
+      "transition:opacity 0.2s",
+    ].join(";");
+    document.body.appendChild(el);
+    requestAnimationFrame(function () { el.style.opacity = "1"; });
+    setTimeout(function () {
+      el.style.opacity = "0";
+      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 250);
+    }, 3000);
   }
 
   function findPanel(toggle) {
@@ -128,6 +168,26 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   }
 
   function repositionInjectedUI(container, trigger) {
+    // HubSpot modals (Schedule meeting, etc.) ship their own fixed overlay CSS.
+    // Skip dropdown repositioning and keep the modal stack clickable.
+    var hsModal = container.querySelector(
+      '[data-component-name="ModalDialog"], [role="dialog"]'
+    );
+    if (hsModal) {
+      container.style.position = "static";
+      container.style.pointerEvents = "auto";
+      container.style.background = "transparent";
+      container.style.border = "0";
+      container.style.padding = "0";
+      container.style.margin = "0";
+      container.querySelectorAll(
+        '[role="presentation"], [role="dialog"], [data-action="close"], [aria-label="Close" i], button, [role="button"]'
+      ).forEach(function (el) {
+        el.style.pointerEvents = "auto";
+      });
+      return;
+    }
+
     container.style.position = "static";
     container.style.pointerEvents = "none";
     container.style.background = "transparent";
@@ -137,12 +197,25 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 
     function apply() {
       var panels = container.querySelectorAll(
-        ".dropdown-menu, .modal-dialog, .popover, .popover-container, .popper[role='tooltip'], .tooltip, .popper.tooltip"
+        ".dropdown-menu, .modal-dialog, .popover, .popover-container, .popper[role='tooltip'], .tooltip, .popper.tooltip, [role='menu'], ul[class*='MenuButton'], ul[class*='StyledMenu'], [data-component-name='UIPopover'], [class*='Popover__StyledPopoverContainer'], [class*='AbstractDropdown__DropdownContent'], [data-floating-ui-portal] > div"
       );
       Array.prototype.forEach.call(panels, function (panel) {
         if (/backdrop|modal-backdrop|arrow/i.test(panel.className || "")) return;
+        var wrapper = panel.parentElement;
+        if (wrapper && wrapper !== container && wrapper.style && wrapper.style.transform) {
+          clearPopperStyles(wrapper);
+          wrapper.style.position = "static";
+          wrapper.style.overflow = "visible";
+        }
+        clearPopperStyles(panel);
         panel.style.pointerEvents = "auto";
-        if (panel.classList.contains("dropdown-menu") || panel.classList.contains("show")) {
+        if (
+          panel.classList.contains("dropdown-menu") ||
+          panel.classList.contains("show") ||
+          panel.getAttribute("role") === "menu" ||
+          panel.getAttribute("data-component-name") === "UIPopover" ||
+          /AbstractDropdown__DropdownContent|Popover__StyledPopoverContainer|Popover__StyledFloatingContainer/.test(panel.className || "")
+        ) {
           panel.style.display = "block";
         }
         if (isCenteredPanel(panel)) {
@@ -178,6 +251,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         e.preventDefault();
         e.stopPropagation();
         console.log("[STITCH] Overlay link (uncrawled route)", a.getAttribute("data-stitch-route") || href);
+        showDemoHint();
         return true;
       }
       if (href && href !== "#" && href.indexOf("javascript:") !== 0) {
@@ -194,18 +268,21 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     }
 
     var menuItem = t.closest(".dropdown-item, [role='menuitem'], [role='option']");
-    if (menuItem && (menuItem.tagName === "BUTTON" || menuItem.getAttribute("role") === "button" || menuItem.tagName === "LI")) {
+    if (menuItem) {
       e.preventDefault();
       e.stopPropagation();
-      var scope = menuItem.closest(".dropdown-menu") || menuItem.parentElement;
+      var scope = menuItem.closest(".dropdown-menu, [role='menu']") || menuItem.parentElement;
       if (scope) {
         Array.prototype.forEach.call(
-          scope.querySelectorAll(".dropdown-item.selected-option, .dropdown-item.active"),
+          scope.querySelectorAll(".dropdown-item.selected-option, .dropdown-item.active, [role='menuitem'].selected-option"),
           function (sib) { sib.classList.remove("selected-option", "active"); }
         );
       }
       menuItem.classList.add("selected-option");
-      console.log("[STITCH] Dropdown item (demo selection)", (menuItem.textContent || "").trim().slice(0, 48));
+      var btn = menuItem.tagName === "BUTTON" ? menuItem : menuItem.querySelector("button");
+      if (btn) btn.classList.add("selected-option");
+      console.log("[STITCH] Menu item (demo selection)", (menuItem.textContent || "").trim().slice(0, 48));
+      showDemoHint("Demo mode \u2014 create flows are outside the recorded path");
       return true;
     }
 
@@ -228,6 +305,53 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     var label = (el.getAttribute("aria-label") || "").toLowerCase();
     if (label.indexOf("close") >= 0 || label === "back") return true;
     if (el.hasAttribute("data-dismiss") || el.hasAttribute("data-bs-dismiss")) return true;
+    return false;
+  }
+
+  function removeBakedOverlay(root) {
+    if (!root) return;
+    if (root.parentNode) root.parentNode.removeChild(root);
+    else root.style.display = "none";
+    document.querySelectorAll(".private-overlay-highlight, .hDDpEi").forEach(function (el) {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    });
+    document.querySelectorAll("[data-floating-ui-inert]").forEach(function (el) {
+      el.removeAttribute("data-floating-ui-inert");
+    });
+    document.querySelectorAll(".stitch-tour-highlight-reset").forEach(function (el) {
+      el.classList.remove("stitch-tour-highlight-reset");
+    });
+  }
+
+  function dismissBakedOverlay(target) {
+    if (!target || !target.closest) return false;
+    if (target.closest(".stitch-injected-ui")) return false;
+
+    var closeEl = target.closest("[data-action='close'], [aria-label='Close' i]");
+    if (closeEl) {
+      var pop =
+        closeEl.closest("[data-component-name='UIPopover']") ||
+        closeEl.closest("[data-floating-ui-portal]");
+      if (pop) {
+        removeBakedOverlay(pop.closest("[data-floating-ui-portal]") || pop);
+        return true;
+      }
+    }
+
+    var popover = target.closest("[data-component-name='UIPopover']");
+    if (popover && isCloseControl(target)) {
+      removeBakedOverlay(popover.closest("[data-floating-ui-portal]") || popover);
+      return true;
+    }
+
+    var btn = target.closest("button, [role='button']");
+    if (btn && (btn.textContent || "").trim().toLowerCase() === "dismiss") {
+      var card = btn.closest("[class*='CardWrapper'], [class*='CardSection']");
+      if (card) {
+        removeBakedOverlay(card.closest("[class*='CardWrapper']") || card);
+        return true;
+      }
+    }
     return false;
   }
 
@@ -310,6 +434,12 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       container.className = "stitch-injected-ui";
       container.setAttribute("data-stitch-ui-id", id);
       container.setAttribute("data-stitch-type", cfg.type || "");
+      if (cfg.uiCss) {
+        var styleEl = document.createElement("style");
+        styleEl.setAttribute("data-stitch-injected-css", id);
+        styleEl.textContent = cfg.uiCss;
+        container.appendChild(styleEl);
+      }
       if (cfg.backdropHtml) container.insertAdjacentHTML("beforeend", cfg.backdropHtml);
       container.insertAdjacentHTML("beforeend", cfg.uiHtml);
 
@@ -328,7 +458,11 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       console.log("[STITCH] Inject UI", id, "type=" + (cfg.type || "?"), "→", cfg.parentSelector);
     } catch (err) {
       console.warn("[STITCH] UI injection failed → snapshot fallback", id, err);
-      if (fallback) window.location.href = fallback;
+      if (fallback) {
+        window.location.href = fallback;
+      } else {
+        showDemoHint();
+      }
     }
   }
 
@@ -416,12 +550,35 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         var href = a.getAttribute("href") || "";
         if (a.hasAttribute("data-stitch-unresolved")) {
           console.log("[STITCH] Sidebar Link (unresolved route)", a.getAttribute("data-stitch-route") || "#");
+          showDemoHint();
         } else if (a.hasAttribute("data-stitch-page")) {
           console.log("[STITCH] Sidebar Link", href);
         }
         if (/^https?:\\/\\//i.test(href) && href.indexOf(location.origin) !== 0) {
           e.preventDefault();
         }
+        return;
+      }
+
+      // 5b. Baked-in HubSpot coaching popovers / dismissible banners (crawl snapshot).
+      if (dismissBakedOverlay(t)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+
+      // 6. Unwired button — show demo hint so the viewer knows the click was
+      //    registered but is outside the recorded demo path.
+      var btn = t.closest("button,input[type='button'],input[type='submit'],[role='button']");
+      if (
+        btn &&
+        !btn.closest(".stitch-injected-ui") &&
+        !btn.hasAttribute("data-stitch-ui-id") &&
+        !btn.hasAttribute("data-stitch-go") &&
+        !btn.hasAttribute("data-stitch-tab-id") &&
+        !btn.hasAttribute("data-stitch-accordion")
+      ) {
+        showDemoHint();
       }
     },
     true
@@ -432,7 +589,13 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 _INERT_PREFIXES = ("javascript:", "mailto:", "tel:", "data:", "blob:")
 
 _ENTRY_TITLE_HINTS = ("dashboard",)
-_ENTRY_SLUG_HINTS = ("home-dashboard", "dashboard", "home")
+_ENTRY_SLUG_HINTS = (
+    "contacts-list-view-all",  # HubSpot — contacts list is the best landing page
+    "global-home",             # HubSpot — home overview
+    "home-dashboard",          # Zoho
+    "dashboard",
+    "home",
+)
 
 # Generic class tokens that mark an element as an accordion *toggle* (the
 # clickable header), independent of any particular app. No Zoho-specific names.
@@ -474,9 +637,29 @@ _INTERACTION_FIX_CSS = """#main-nav-tab,
 .stitch-injected-ui .dropdown-menu .dropdown-item,
 .stitch-injected-ui .dropdown-menu button,
 .stitch-injected-ui .dropdown-menu a,
+.stitch-injected-ui [role="menu"],
+.stitch-injected-ui [role="menuitem"],
+.stitch-injected-ui [role="menu"] button,
+.stitch-injected-ui [data-component-name="UIPopover"],
+.stitch-injected-ui [class*="AbstractDropdown__DropdownContent"],
+.stitch-injected-ui [class*="Popover__StyledPopoverContainer"],
 .stitch-injected-ui .popover-container,
 .stitch-injected-ui .popover {
     pointer-events: auto !important;
+}
+/* HubSpot main content — keep toolbar, filters, and table rows clickable. */
+#hs-global-toolbar button,
+#hs-global-toolbar [role="button"],
+[data-test-id="filter-bar-container"] button,
+[data-test-id="filter-bar-container"] [role="button"],
+[data-selenium-test="FiltersBar-container"] button,
+.PrivateButton__StyledButton-eRHhiA,
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id],
+[role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer;
 }
 
 /* Production overlays/widgets — broken or distracting in the static clone. */
@@ -512,6 +695,123 @@ iframe#avcliqiframe,
 .finance-app .sidebar-container {
     display: none !important;
     pointer-events: none !important;
+}
+
+/* ── HubSpot-specific fixes ──────────────────────────────────────────────────
+   styled-components injects icon sizing at runtime; strip_scripts() empties
+   those <style> tags. These rules provide safe fallback sizing for all SVGs
+   that land in the static snapshot without explicit width/height attributes. */
+svg:not([width]):not([height]) {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+#hs-global-toolbar svg,
+#hs-nav-v4 svg,
+[data-test-id="nav-primary"] svg {
+    max-width: 32px !important;
+    max-height: 32px !important;
+    overflow: hidden !important;
+    flex-shrink: 0;
+}
+/* Toolbar must remain clickable for interaction wiring to work. */
+#hs-global-toolbar,
+#hs-global-toolbar * {
+    pointer-events: auto !important;
+}
+/* Live-only HubSpot widgets that are broken or distracting in the static clone. */
+#hs-feedback-fetcher,
+.growth-dynamic-namespace,
+#hs-nav-v4 iframe,
+.UIPlaceholderBubble__Placeholder-mfCgX {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot blanket pointer-events restore — nav, sidebar, buttons, tabs */
+#hs-nav-v4 a, #hs-nav-v4 button, #hs-nav-v4 [role="tab"],
+#hs-nav-v4 [role="menuitem"], #hs-nav-v4 li,
+[data-test-id="nav-primary"] a,
+[data-test-id="nav-primary"] button,
+[data-test-id="nav-primary"] [role="tab"],
+#hs-global-toolbar a, #hs-global-toolbar button,
+.private-page__outer button,
+.private-page__outer a,
+.private-page__outer [role="tab"],
+.private-page__outer [role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Kill invisible overlay divs that intercept clicks above interactive content */
+.UIOverlay--invisible,
+[data-overlay-type],
+.private-overlay--invisible {
+    pointer-events: none !important;
+    display: none !important;
+}
+/* HubSpot loading/skeleton states — API never resolves in the static clone */
+[data-test-id="loading-spinner"],
+.private-loading-page,
+.private-spinner-container,
+.loading-page-wrapper,
+.UIOverlay--blocker,
+[data-loading="true"] {
+    display: none !important;
+}
+/* Coaching popovers / tour highlights frozen open during crawl */
+body > [data-floating-ui-portal],
+.private-overlay-highlight {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot tour scrim overlay baked during crawl (e.g. AEO coaching walkthrough).
+   Only target .hDDpEi — do NOT hide [class*="Overlay__StyledInner"] globally;
+   legitimate modals (Schedule meeting, etc.) use the same overlay wrapper when
+   injected at runtime via .stitch-injected-ui. Baked .hDDpEi nodes are also
+   removed in _strip_baked_onboarding_ui(); this rule is a belt-and-suspenders
+   fallback for any that survive on main page snapshots. */
+.hDDpEi {
+    display: none !important;
+    pointer-events: none !important;
+}
+.stitch-tour-highlight-reset {
+    z-index: auto !important;
+    border: none !important;
+    margin-block: 0 !important;
+}
+
+/* HubSpot: hide live-only widgets; captured CSS handles layout when present. */
+#notificationBannerContainer,
+[data-test-id="notificationBannerContainer"],
+div#growth-dynamic-ui,
+#hs-feedback-fetcher,
+.copilot-sidebar-container,
+.quartz-grid-sidebar-container,
+iframe[name*="chatspot"],
+iframe[name*="mini-trial-guide"] {
+    display: none !important;
+}
+
+/* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
+[data-test-id="AvatarDisplay-avatarContent"] {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+.AvatarContent__HiddenSvg-cXPETG,
+[class*="AvatarContent__HiddenSvg"] {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }"""
 
 FALLBACK_404 = """<!doctype html>
@@ -544,11 +844,47 @@ FALLBACK_404 = """<!doctype html>
 """
 
 
-def _resolve_entry(navigation: dict, valid_slugs: set[str]) -> str | None:
-    """Pick the entry page: prefer dashboard slug, then dashboard title, then home."""
-    for slug in sorted(navigation):
-        if "home-dashboard" in slug.lower():
-            return slug
+_STITCH_LOGIN_MARKERS = (
+    "<title>HubSpot Login",
+    'data-application-name="LoginUI"',
+    "Your authentication has expired",
+    "data-error-type=\"SESSION_TIMED_OUT\"",
+)
+
+
+def _slug_is_login_page(stitched_dir: Path, slug: str) -> bool:
+    """Return True if the stitched page.html for *slug* is a login redirect."""
+    p = stitched_dir / slug / "page.html"
+    if not p.exists():
+        return False
+    try:
+        snippet = p.read_text(encoding="utf-8", errors="ignore")[:3000]
+        return any(m in snippet for m in _STITCH_LOGIN_MARKERS)
+    except Exception:
+        return False
+
+
+def _resolve_entry(
+    navigation: dict,
+    valid_slugs: set[str],
+    stitched_dir: Path | None = None,
+) -> str | None:
+    """Pick the entry page: prefer well-known home slugs, then dashboard title, then home.
+    Skips any page whose stitched HTML is actually a login/auth-expired page.
+    """
+    def _ok(slug: str) -> bool:
+        if slug.startswith("reports-dashboard"):
+            return False
+        if stitched_dir and _slug_is_login_page(stitched_dir, slug):
+            return False
+        return True
+
+    # Check slug hints first — ordered from best to acceptable.
+    for hint in _ENTRY_SLUG_HINTS:
+        for slug in sorted(navigation):
+            if hint in slug.lower() and _ok(slug):
+                return slug
+    # Fall back to any page whose title contains a dashboard hint.
     for slug, info in sorted(navigation.items()):
         title = (info.get("title", "") or "").lower()
         if not any(h in title for h in _ENTRY_TITLE_HINTS):
@@ -557,14 +893,13 @@ def _resolve_entry(navigation: dict, valid_slugs: set[str]) -> str | None:
             continue
         if "gettingstarted" in slug or "recentupdates" in slug:
             continue
+        if not _ok(slug):
+            continue
         return slug
-    for hint in _ENTRY_SLUG_HINTS:
-        for slug in sorted(navigation):
-            if hint in slug.lower():
-                return slug
-    if navigation:
-        return next(iter(sorted(navigation)))
-    return next(iter(sorted(valid_slugs)), None)
+    for slug in sorted(navigation):
+        if _ok(slug):
+            return slug
+    return next((s for s in sorted(valid_slugs) if _ok(s)), None)
 
 
 def _write_entry_redirect(stitched_dir: Path, entry_slug: str) -> None:
@@ -586,11 +921,19 @@ def _norm_class(value) -> str:
 
 
 def _norm_route(raw: str) -> str:
-    """Normalize an SPA route to a comparable key (drops query, lowercased)."""
+    """Normalize an SPA route to a comparable key (drops query, lowercased).
+
+    Handles both hash-route SPAs (Zoho: /app/id#/contacts) and path-based SPAs
+    (HubSpot: /contacts/246549280/contacts/list/view/all).
+    """
     if not raw:
         return ""
     if "#" in raw:
+        # Hash-route SPA: use the fragment as the route key.
         raw = raw.split("#", 1)[1]
+    else:
+        # Path-based SPA: use the full URL path as the route key.
+        raw = urlparse(raw).path
     raw = raw.split("?", 1)[0].strip()
     if not raw:
         return ""
@@ -613,12 +956,18 @@ def _resolve_nav_target_slug(
 
     target_url = nav.get("target_url", "")
     if target_url:
+        for key in (_norm_route(target_url), _norm_route(target_url.split("?")[0])):
+            if key and key in route_index:
+                resolved = route_index[key]
+                if resolved in valid_slugs:
+                    return resolved
         fragment = urlparse(target_url).fragment
-        key = _norm_route("#" + fragment if fragment else "")
-        if key and key in route_index:
-            resolved = route_index[key]
-            if resolved in valid_slugs:
-                return resolved
+        if fragment:
+            key = _norm_route("#" + fragment.split("?")[0])
+            if key and key in route_index:
+                resolved = route_index[key]
+                if resolved in valid_slugs:
+                    return resolved
 
     if slug:
         prefixes = [s for s in valid_slugs if slug == s or slug.startswith(s + "-")]
@@ -626,6 +975,39 @@ def _resolve_nav_target_slug(
             return max(prefixes, key=len)
 
     return None
+
+
+def _hubspot_extra_route_keys(url: str, slug: str) -> list[str]:
+    """Map HubSpot sidebar object routes to crawled list-page URLs.
+
+    The vertical nav links to /objects/0-1 (contacts) and /objects/0-2
+    (companies) but crawls often save the longer /contacts/list/view/all paths.
+    """
+    path = urlparse(url or "").path
+    m = re.search(r"/contacts/(\d+)/", path)
+    portal = m.group(1) if m else ""
+    if not portal:
+        m2 = re.search(r"/global-home/(\d+)", path)
+        portal = m2.group(1) if m2 else ""
+    keys: list[str] = []
+    if "contacts-list-view-all" in slug and portal:
+        keys += [
+            f"/contacts/{portal}/objects/0-1",
+            f"/contacts/{portal}/objects/0-1/views/all/list",
+        ]
+    if "companies-list-view-all" in slug and portal:
+        keys += [
+            f"/contacts/{portal}/objects/0-2",
+            f"/contacts/{portal}/objects/0-2/views/all/list",
+        ]
+    if "deals-board-view-all" in slug and portal:
+        keys += [
+            f"/contacts/{portal}/objects/0-3",
+            f"/contacts/{portal}/deals/board/view/all",
+        ]
+    if slug.startswith("global-home") and portal:
+        keys.append(f"/global-home/{portal}")
+    return [_norm_route(k) for k in keys if k]
 
 
 def _build_route_index(
@@ -640,8 +1022,18 @@ def _build_route_index(
     def add(url: str, slug: str) -> None:
         if not slug or slug not in valid_slugs:
             return
-        fragment = urlparse(url or "").fragment
-        for key in (_norm_route("#" + fragment), _norm_route(fragment.split("?")[0])):
+        parsed = urlparse(url or "")
+        keys: set[str] = set()
+        if parsed.fragment:
+            frag = parsed.fragment.split("?")[0]
+            keys.add(_norm_route("#" + frag))
+            keys.add(_norm_route(frag))
+        if parsed.path:
+            keys.add(_norm_route(parsed.path))
+            keys.add(_norm_route(url))
+        for alias in _hubspot_extra_route_keys(url, slug):
+            keys.add(alias)
+        for key in keys:
             if key:
                 index.setdefault(key, slug)
 
@@ -811,6 +1203,23 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
     aria-label, text, name, role, type) and assign each interaction to the best
     not-yet-used element in document order.
     """
+    for key in ("crawl_selector", "selector", "css_selector"):
+        sel = (trigger.get(key) or "").strip()
+        if not sel or sel.startswith("/"):
+            continue
+        try:
+            for el in soup.select(sel):
+                if id(el) not in used:
+                    return el
+        except Exception:
+            pass
+
+    tid = (trigger.get("id") or "").strip()
+    if tid:
+        el = soup.find(id=tid)
+        if el is not None and id(el) not in used:
+            return el
+
     tag = (trigger.get("tag_name") or "").lower() or True
     tid = trigger.get("id") or ""
     cls = _norm_class(trigger.get("class_name"))
@@ -997,6 +1406,30 @@ def _rewrite_fragment_anchors(html: str, route_index: dict[str, str], to_root: s
     return str(frag)
 
 
+def _interaction_config_from_recon(
+    recon: dict,
+    *,
+    route_index: dict[str, str],
+    to_root: str,
+    fallback: str,
+    itype: str = "",
+) -> dict:
+    loc = recon.get("location", {}) or {}
+    ui_html = recon.get("ui_html", "") or ""
+    backdrop_html = recon.get("backdrop_html", "") or ""
+    ui_css = recon.get("ui_css", "") or ""
+    return {
+        "type": itype or recon.get("interaction_type", "unknown") or "unknown",
+        "parentSelector": loc.get("parentSelector", "") or "",
+        "parentXPath": loc.get("parentXPath", "") or "",
+        "insertMethod": loc.get("insertMethod", "append") or "append",
+        "uiHtml": _rewrite_fragment_anchors(ui_html, route_index, to_root),
+        "uiCss": ui_css,
+        "backdropHtml": _rewrite_fragment_anchors(backdrop_html, route_index, to_root),
+        "fallback": fallback,
+    }
+
+
 def _build_interactions_index(interactions: list[dict]) -> dict[str, dict]:
     """Map [data-crawl-id="N"] selector → interactions.json item.
 
@@ -1093,23 +1526,19 @@ def _wire_from_discovered(
                 except Exception:
                     recon = {}
             itype = recon.get("interaction_type", "unknown") or "unknown"
-            loc = recon.get("location", {}) or {}
             ui_html = recon.get("ui_html", "") or ""
-            backdrop_html = recon.get("backdrop_html", "") or ""
             fallback = f"{ipath}/page.html"
             used.add(id(el))
             inter_counter += 1
             ui_id = f"interaction_{inter_counter}"
             el["data-stitch-ui-id"] = ui_id
-            configs[ui_id] = {
-                "type": itype,
-                "parentSelector": loc.get("parentSelector", "") or "",
-                "parentXPath": loc.get("parentXPath", "") or "",
-                "insertMethod": loc.get("insertMethod", "append") or "append",
-                "uiHtml": _rewrite_fragment_anchors(ui_html, route_index, to_root),
-                "backdropHtml": _rewrite_fragment_anchors(backdrop_html, route_index, to_root),
-                "fallback": fallback,
-            }
+            configs[ui_id] = _interaction_config_from_recon(
+                recon,
+                route_index=route_index,
+                to_root=to_root,
+                fallback=fallback,
+                itype=itype,
+            )
             inter_manifest.append({
                 "label": entry.get("label", ""),
                 "type": itype,
@@ -1210,15 +1639,13 @@ def _wire_interactions(
             counter += 1
             ui_id = f"interaction_{counter}"
             el["data-stitch-ui-id"] = ui_id
-            configs[ui_id] = {
-                "type": itype,
-                "parentSelector": loc.get("parentSelector", "") or "",
-                "parentXPath": loc.get("parentXPath", "") or "",
-                "insertMethod": loc.get("insertMethod", "append") or "append",
-                "uiHtml": _rewrite_fragment_anchors(ui_html, route_index, to_root),
-                "backdropHtml": _rewrite_fragment_anchors(backdrop_html, route_index, to_root),
-                "fallback": fallback,
-            }
+            configs[ui_id] = _interaction_config_from_recon(
+                recon,
+                route_index=route_index,
+                to_root=to_root,
+                fallback=fallback,
+                itype=itype,
+            )
             bound = True
 
         manifest.append(
@@ -1308,6 +1735,94 @@ def _inject_runtime(
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
 
 
+def _strip_cross_origin_iframes(soup: BeautifulSoup) -> int:
+    """Replace cross-origin iframes with inert placeholder divs.
+
+    Cross-origin iframes (HubSpot nav widget, chat, analytics frames) never
+    load in the static clone and cause hanging network requests that slow page
+    display. We remove them from the DOM entirely, leaving a display:none
+    placeholder so the removed slot is traceable for debugging.
+    """
+    removed = 0
+    for iframe in soup.find_all("iframe"):
+        src = (iframe.get("src") or "").strip()
+        if src and not src.startswith(("/", "#", "data:")):
+            placeholder = soup.new_tag("div")
+            placeholder["class"] = "stitch-iframe-removed"
+            placeholder["style"] = "display:none"
+            placeholder["data-original-src"] = src
+            iframe.replace_with(placeholder)
+            removed += 1
+    return removed
+
+
+def _strip_baked_onboarding_ui(soup: BeautifulSoup) -> int:
+    """Remove coaching popovers and dismissible banners frozen open during crawl.
+
+  HubSpot marks the page background ``data-floating-ui-inert`` while a popover is
+  open. Remove the portal *and* clear inert flags so sidebar navigation works.
+  Only applied to main page snapshots — interaction captures keep their open UI.
+    """
+    removed = 0
+
+    for el in soup.find_all(attrs={"data-floating-ui-inert": True}):
+        del el["data-floating-ui-inert"]
+    for el in soup.find_all(lambda tag: tag.has_attr("data-floating-ui-inert")):
+        del el["data-floating-ui-inert"]
+
+    for portal in list(soup.select("[data-floating-ui-portal]")):
+        portal.decompose()
+        removed += 1
+
+    for popover in list(soup.select("[data-component-name='UIPopover']")):
+        popover.decompose()
+        removed += 1
+
+    for highlight in list(soup.select(".private-overlay-highlight")):
+        highlight.unwrap()
+        removed += 1
+
+    for overlay in list(soup.select(".hDDpEi")):
+        parent = overlay.parent
+        overlay.decompose()
+        removed += 1
+        if not isinstance(parent, Tag):
+            continue
+        for child in list(parent.children):
+            if not isinstance(child, Tag):
+                continue
+            if not any("View__StyledView" in c for c in (child.get("class") or [])):
+                continue
+            classes = list(child.get("class") or [])
+            if "stitch-tour-highlight-reset" not in classes:
+                child["class"] = [*classes, "stitch-tour-highlight-reset"]
+
+    seen: set[int] = set()
+    for btn in list(soup.find_all("button")):
+        if id(btn) in seen:
+            continue
+        if (btn.get_text(" ", strip=True) or "").strip().lower() != "dismiss":
+            continue
+        card = btn.find_parent(
+            lambda tag: isinstance(tag, Tag)
+            and any("CardWrapper" in c or "CardSection" in c for c in (tag.get("class") or []))
+        )
+        if not card:
+            continue
+        wrapper = card.find_parent(
+            lambda tag: isinstance(tag, Tag)
+            and any("CardWrapper" in c for c in (tag.get("class") or []))
+        ) or card
+        wid = id(wrapper)
+        if wid in seen:
+            continue
+        wrapper.decompose()
+        seen.add(wid)
+        removed += 1
+
+    return removed
+
+
 def _neutralize_disabled_state(soup: BeautifulSoup) -> tuple[int, int]:
     """Undo temporary disabled/loading state captured during the crawl so the
     offline clone stays interactive. Runs across the whole document:
@@ -1349,6 +1864,18 @@ def _neutralize_disabled_state(soup: BeautifulSoup) -> tuple[int, int]:
     (soup.head or soup.body or soup).append(style_tag)
 
     return pe_removed, controls_restored
+
+
+def _fix_svg_viewbox_html(html: str) -> str:
+    """Restore SVG viewBox casing after BeautifulSoup serialization.
+
+    BeautifulSoup's html.parser lowercases all attribute names on output, turning
+    viewBox="0 0 32 32" into viewbox="0 0 32 32". Browsers treat viewbox as an
+    unknown attribute and fall back to a default viewport, causing icons to render
+    at their raw path-coordinate size (often thousands of pixels). A simple
+    string-level substitution restores the correct camelCase form.
+    """
+    return re.sub(r"\bviewbox=", "viewBox=", html, flags=re.IGNORECASE)
 
 
 def _process_html(
@@ -1407,10 +1934,15 @@ def _process_html(
         inter_manifest.extend(fb_manifest)
         configs.update(fb_configs)
 
+    # Remove cross-origin iframes before final neutralization pass.
+    _strip_cross_origin_iframes(soup)
+    # Main pages only: drop coaching popovers / banners captured in open state.
+    if page_dir is not None:
+        _strip_baked_onboarding_ui(soup)
     # Final pass: undo any temporary disabled/loading state before writing.
     fixes = _neutralize_disabled_state(soup)
     _inject_runtime(soup, to_root, configs, tabs_configs)
-    return str(soup), page_links, inter_manifest, accordions, fixes
+    return _fix_svg_viewbox_html(str(soup)), page_links, inter_manifest, accordions, fixes
 
 
 def _load_json_list(path: Path) -> list[dict]:
@@ -1433,6 +1965,140 @@ def _load_interactions(page_dir: Path) -> list[dict]:
         return []
 
 
+_FONT_EXTS = {".woff", ".woff2", ".ttf", ".eot", ".otf"}
+_FONT_CDN_MARKERS = ("static2.hubspot.com", "fonts.hubspot.com", "fonts.gstatic.com")
+
+
+_HS_CSS_CDN_MARKERS = ("static.hsappstatic.net", "hubspot.com")
+
+
+def _fix_escaped_attr_quotes(html: str) -> str:
+    r"""Unescape \" inside HTML attribute values produced by JS-serialised link tags.
+
+    HubSpot's JS sometimes injects <link> tags whose attributes are serialised
+    with escaped quotes (e.g. href=\"https://...\"). Browsers skip those tags
+    entirely. Only rewrite <link> tags — a global replace would corrupt JSON
+    embedded in inline <script> blocks (e.g. window.__STITCH_INTERACTIONS__).
+    """
+
+    def _fix_link_tag(m: re.Match) -> str:
+        return m.group(0).replace('\\"', '"')
+
+    return re.sub(r"<link\b[^>]*>", _fix_link_tag, html, flags=re.IGNORECASE)
+
+
+def _localize_hubspot_css(html: str, css_dir: Path, to_root: str) -> str:
+    """Download HubSpot CDN CSS files and rewrite <link> tags to local paths.
+
+    External CSS files from static.hsappstatic.net load fine in a real browser
+    but can silently fail from localhost (referrer checks, CORP headers, or plain
+    network latency). Downloading them once at stitch time and serving locally
+    ensures the clone renders identically regardless of CDN availability.
+
+    Only stylesheet <link> tags pointing to HubSpot CDNs are rewritten; other
+    external links are left unchanged.
+    """
+    seen: dict[str, str] = {}
+
+    def _rewrite_link(m: re.Match) -> str:
+        tag = m.group(0)
+        href_m = re.search(r'\bhref=(["\'])(https?://[^"\']+\.css[^"\']*)\1', tag)
+        if not href_m:
+            return tag
+        url = href_m.group(2)
+        if not any(marker in url for marker in _HS_CSS_CDN_MARKERS):
+            return tag
+        base_url = url.split("?")[0]
+        if base_url in seen:
+            local_name = seen[base_url]
+        else:
+            path_part = urlparse(base_url).path
+            stem = re.sub(r"[^a-zA-Z0-9_\-]", "_", path_part.lstrip("/"))[:80]
+            local_name = stem + ".css"
+            dest = css_dir / local_name
+            if not dest.exists():
+                try:
+                    req = urllib.request.Request(
+                        base_url,
+                        headers={"User-Agent": "Mozilla/5.0"},
+                    )
+                    with urllib.request.urlopen(req, timeout=20) as resp:
+                        dest.write_bytes(resp.read())
+                    print(f"[CSS] Downloaded {local_name}")
+                except Exception as exc:
+                    print(f"[CSS] Failed {base_url}: {exc}")
+                    return tag
+            seen[base_url] = local_name
+
+        local_href = f"{to_root}assets/css/{local_name}"
+        new_tag = re.sub(r'\bhref=(["\'])[^"\']+\1', f'href="{local_href}"', tag)
+        return new_tag
+
+    # Match any <link> tag that contains a stylesheet rel, regardless of attribute order.
+    return re.sub(
+        r'<link\b(?=[^>]*\brel=["\']stylesheet["\'])[^>]*(?:/>|>)',
+        _rewrite_link,
+        html,
+        flags=re.IGNORECASE,
+    )
+
+
+def _localize_fonts(html: str, fonts_dir: Path, to_root: str) -> str:
+    """Download CDN font files referenced in @font-face rules and rewrite URLs.
+
+    Scans every <style> block for url() calls pointing to remote font files
+    (.woff, .woff2, .ttf, .eot, .otf). Each unique font URL is downloaded once
+    into `fonts_dir`. The url() reference in the HTML is then replaced with a
+    relative path like `{to_root}assets/fonts/<filename>` so the static clone
+    serves fonts locally without cross-origin restrictions.
+    """
+    font_url_re = re.compile(
+        r'url\([\'"]?(https?://[^)\'"]+(?:' + "|".join(re.escape(e) for e in _FONT_EXTS) + r')[^)\'"]*)[\'"]?\)',
+        re.IGNORECASE,
+    )
+
+    seen: dict[str, str] = {}
+
+    def _download_and_remap(m: re.Match) -> str:
+        raw_url = m.group(1).split("?")[0]
+        if raw_url in seen:
+            local_name = seen[raw_url]
+        else:
+            suffix = Path(urlparse(raw_url).path).suffix.lower() or ".woff2"
+            stem = re.sub(r"[^a-zA-Z0-9_\-]", "_", Path(urlparse(raw_url).path).stem)[:48]
+            local_name = f"{stem}{suffix}"
+            dest = fonts_dir / local_name
+            if not dest.exists():
+                try:
+                    req = urllib.request.Request(
+                        raw_url,
+                        headers={"User-Agent": "Mozilla/5.0"},
+                    )
+                    with urllib.request.urlopen(req, timeout=15) as resp:
+                        dest.write_bytes(resp.read())
+                    print(f"[FONTS] Downloaded {local_name}")
+                except Exception as exc:
+                    print(f"[FONTS] Failed {raw_url}: {exc}")
+                    return m.group(0)
+            seen[raw_url] = local_name
+
+        local_url = f"{to_root}assets/fonts/{local_name}"
+        return f"url({local_url})"
+
+    def _fix_style_block(sm: re.Match) -> str:
+        block = sm.group(0)
+        if not any(marker in block for marker in _FONT_CDN_MARKERS):
+            return block
+        return font_url_re.sub(_download_and_remap, block)
+
+    return re.sub(
+        r"<style\b[^>]*>[\s\S]*?</style>",
+        _fix_style_block,
+        html,
+        flags=re.IGNORECASE,
+    )
+
+
 def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     crawl_dir = get_crawl_dir(app_name)
     if not crawl_dir.is_dir():
@@ -1444,7 +2110,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     urls = {e.get("slug", ""): e.get("url", "") for e in sitemap}
 
     page_dirs = [d for d in sorted(crawl_dir.iterdir()) if d.is_dir() and (d / "page.html").exists()]
-    valid_slugs = {d.name for d in page_dirs}
+    valid_slugs = {d.name for d in page_dirs if d.name != "login"}
     route_index = _build_route_index(page_dirs, sitemap, valid_slugs)
 
     stitched_dir = get_stitched_dir(app_name)
@@ -1452,6 +2118,11 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     stitched_dir.mkdir(parents=True, exist_ok=True)
 
     (stitched_dir / "runtime.js").write_text(RUNTIME_JS, encoding="utf-8")
+
+    fonts_dir = stitched_dir / "assets" / "fonts"
+    fonts_dir.mkdir(parents=True, exist_ok=True)
+    css_dir = stitched_dir / "assets" / "css"
+    css_dir.mkdir(parents=True, exist_ok=True)
 
     navigation: dict[str, dict] = {}
     pages_done = 0
@@ -1469,7 +2140,9 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
         interactions = _load_interactions(page_dir)
         navigations = _load_json_list(page_dir / "navigations.json")
         discovered = _load_json_list(page_dir / "interactions" / "discovered.json")
-        html = (page_dir / "page.html").read_text(encoding="utf-8")
+        html = _fix_escaped_attr_quotes(
+            (page_dir / "page.html").read_text(encoding="utf-8")
+        )
         new_html, page_links, inter_manifest, accordions, fixes = _process_html(
             html,
             to_root="../",
@@ -1481,6 +2154,8 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             discovered=discovered,
             expand_sidebars=expand_sidebars,
         )
+        new_html = _localize_hubspot_css(new_html, css_dir, to_root="../")
+        new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
         (out_dir / "page.html").write_text(new_html, encoding="utf-8")
         pages_done += 1
         accordions_total += accordions
@@ -1498,7 +2173,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 continue
             dst = out_dir / item["path"]
             dst.parent.mkdir(parents=True, exist_ok=True)
-            ihtml = src.read_text(encoding="utf-8")
+            ihtml = _fix_escaped_attr_quotes(src.read_text(encoding="utf-8"))
             new_ihtml, _, _, _, ifixes = _process_html(
                 ihtml,
                 to_root="../../../",
@@ -1507,6 +2182,8 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 navigations=navigations,
                 expand_sidebars=expand_sidebars,
             )
+            new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../")
+            new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")
             pointer_events_fixed += ifixes[0]
             controls_restored += ifixes[1]
             dst.write_text(new_ihtml, encoding="utf-8")
@@ -1538,7 +2215,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     )
     (stitched_dir / "404.html").write_text(FALLBACK_404, encoding="utf-8")
 
-    entry_slug = _resolve_entry(navigation, valid_slugs)
+    entry_slug = _resolve_entry(navigation, valid_slugs, stitched_dir=stitched_dir)
     if entry_slug:
         _write_entry_redirect(stitched_dir, entry_slug)
         print(f"[STITCH] Entry page: {entry_slug}")

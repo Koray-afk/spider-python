@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Copy link",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Clear filters",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"17\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" type=\"button\" data-crawl-id=\"17\" data-fnd-button=\"t\" aria-disabled=\"true\" data-button-use=\"transparent\" data-selenium-test=\"clear-filters-button\" class=\"PrivateButton__StyledButton-eRHhiA dRtUei\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying cli"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" id=\"edit-button\" data-crawl-id=\"19\" data-fnd-button=\"t\" aria-disabled=\"false\" data-test-id=\"edit-button\" data-button-use=\"tertiary-light\" data-onboarding=\"edit-link-button\" data-selenium-test=\"edit-link-button\" class=\"PrivateButton__StyledButton-eRHhiA bAjTzX\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be"
+  }
+]

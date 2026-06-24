@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-make-a-phone-call",
+    "relationship_file": "interactions/002-make-a-phone-call/relationship.json"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/003-key-information",
+    "relationship_file": "interactions/003-key-information/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/004-overview",
+    "relationship_file": "interactions/004-overview/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/005-health",
+    "relationship_file": "interactions/005-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"37\"]",
+    "interaction_path": "interactions/006-data-quality",
+    "relationship_file": "interactions/006-data-quality/relationship.json"
+  },
+  {
+    "label": "Incoming email - 15+ new internships for Web Development profile",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/008-incoming-email-15-new-internships-for-web-develo",
+    "relationship_file": "interactions/008-incoming-email-15-new-internships-for-web-develo/relationship.json"
+  },
+  {
+    "label": "Incoming email - Arakoo is hiring Reinforcement Learning Research intern and your profile matches",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/009-incoming-email-arakoo-is-hiring-reinforcement-le",
+    "relationship_file": "interactions/009-incoming-email-arakoo-is-hiring-reinforcement-le/relationship.json"
+  },
+  {
+    "label": "Incoming email - Top Web Development internships around you",
+    "selector": "[data-crawl-id=\"30\"]",
+    "interaction_path": "interactions/010-incoming-email-top-web-development-internships-a",
+    "relationship_file": "interactions/010-incoming-email-top-web-development-internships-a/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/012-create-new",
+    "relationship_file": "interactions/012-create-new/relationship.json"
+  }
+]

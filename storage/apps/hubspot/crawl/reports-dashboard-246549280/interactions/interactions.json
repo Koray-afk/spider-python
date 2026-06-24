@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Show (Count) Contacts",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/002-show-count-contacts",
+    "relationship_file": "interactions/002-show-count-contacts/relationship.json"
+  },
+  {
+    "label": "Contacts Added Over Time\n\nIn the last 30 days | Daily\n\nChart\n\nChart with 30 data points.\nThe chart has 1 X axis displayi",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/003-contacts-added-over-time-in-the-last-30-days-dai",
+    "relationship_file": "interactions/003-contacts-added-over-time-in-the-last-30-days-dai/relationship.json"
+  },
+  {
+    "label": "Deals Created Over Time\n\nIn the last 30 days | Daily\n\nThere is no data to show in this time frame. Try changing the date",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/004-deals-created-over-time-in-the-last-30-days-dail",
+    "relationship_file": "interactions/004-deals-created-over-time-in-the-last-30-days-dail/relationship.json"
+  },
+  {
+    "label": "Deals by Stage\n\nIn the last 30 days\n\nThere is no data to show in this time frame. Try changing the date range.",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/005-deals-by-stage-in-the-last-30-days-there-is-no-d",
+    "relationship_file": "interactions/005-deals-by-stage-in-the-last-30-days-there-is-no-d/relationship.json"
+  },
+  {
+    "label": "CRM Data Overview",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/006-crm-data-overview",
+    "relationship_file": "interactions/006-crm-data-overview/relationship.json"
+  },
+  {
+    "label": "Comments",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/008-comments",
+    "relationship_file": "interactions/008-comments/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/011-create-new",
+    "relationship_file": "interactions/011-create-new/relationship.json"
+  }
+]

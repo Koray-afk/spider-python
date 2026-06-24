@@ -32,6 +32,45 @@ ACTIVE_TABS_JS = _SCRIPTS["active_tabs"]
 ACTIVE_TAB_PANEL_JS = _SCRIPTS["active_tab_panel"]
 SIDEBAR_LINKS_JS = _SCRIPTS["sidebar_links"]
 
+MUTATION_OBSERVER_SETUP_JS = """() => {
+  window.__stitch_muts = [];
+  window.__stitch_mo = new MutationObserver(function(recs) {
+    recs.forEach(function(r) {
+      if (r.addedNodes.length) {
+        r.addedNodes.forEach(function(n) {
+          if (n.nodeType !== 1) return;
+          window.__stitch_muts.push({
+            kind: 'added',
+            tag: n.tagName,
+            id: n.id || '',
+            cls: (n.className && typeof n.className === 'string')
+                 ? n.className.split(' ').slice(0,3).join(' ') : '',
+            parentId: n.parentElement ? n.parentElement.id : '',
+            parentTag: n.parentElement ? n.parentElement.tagName : '',
+          });
+        });
+      }
+      if (r.type === 'attributes') {
+        window.__stitch_muts.push({
+          kind: 'attr', attr: r.attributeName,
+          tag: r.target.tagName, id: r.target.id || '',
+          cls: (r.target.className && typeof r.target.className === 'string')
+               ? r.target.className.split(' ').slice(0,3).join(' ') : '',
+        });
+      }
+    });
+  });
+  window.__stitch_mo.observe(document.body, {
+    childList: true, subtree: true,
+    attributes: true, attributeFilter: ['class','style','aria-hidden','hidden']
+  });
+}"""
+
+MUTATION_OBSERVER_READ_JS = """() => {
+  if (window.__stitch_mo) window.__stitch_mo.disconnect();
+  return window.__stitch_muts || [];
+}"""
+
 CHROME_MAC_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DEBUG_PORT = 9222
 USER_DATA_DIR = "/tmp/chrome_dev_profile"
@@ -87,9 +126,226 @@ def strip_scripts(html: str) -> str:
     return html
 
 
-def static_snapshot_html(html: str, page_url: str) -> str:
-    """Produce a static UI snapshot: absolutized assets, no base tag, no JS."""
+_WAIT_FOR_STYLED_COMPONENTS_JS = """
+() => new Promise(resolve => {
+  var deadline = Date.now() + 15000;
+  function cssomStats() {
+    var total = 0;
+    var styled = 0;
+    Array.from(document.styleSheets).forEach(function(sheet) {
+      var rules;
+      try { rules = sheet.cssRules || sheet.rules; } catch (e) { return; }
+      if (!rules) return;
+      Array.from(rules).forEach(function(rule) {
+        var text = rule.cssText || '';
+        total += text.length;
+        if (/\\.sc-|Styled[A-Z]|__[A-Za-z]{4,}/.test(text)) styled += 1;
+      });
+    });
+    return { total: total, styled: styled };
+  }
+  function check() {
+    var stats = cssomStats();
+    // styled-components rules live in the CSSOM, not <style>.textContent.
+    if (stats.styled >= 80 || stats.total >= 120000 || Date.now() > deadline) {
+      resolve(stats);
+      return;
+    }
+    setTimeout(check, 300);
+  }
+  check();
+})
+"""
+
+_EXTRACT_HUBSPOT_CSS_JS = """
+() => {
+  var parts = [];
+  var seen = new Set();
+  function add(text) {
+    text = (text || '').trim();
+    if (!text || seen.has(text)) return;
+    seen.add(text);
+    parts.push(text);
+  }
+  Array.from(document.styleSheets).forEach(function(sheet) {
+    var rules;
+    try { rules = sheet.cssRules || sheet.rules; } catch (e) { return; }
+    if (!rules) return;
+    Array.from(rules).forEach(function(rule) { add(rule.cssText); });
+  });
+  Array.from(document.querySelectorAll('style')).forEach(function(el) {
+    add(el.textContent || '');
+  });
+  return parts.join('\\n');
+}
+"""
+
+
+def _inline_hubspot_styled_css(page, html: str) -> str:
+    """Persist all JS-injected CSS before scripts are stripped.
+
+    HubSpot styled-components writes rules into the CSSOM via insertRule, so
+    <style data-styled> tags often have empty textContent. We wait until the
+    live page has enough styled-component rules, then serialize document.styleSheets
+    (plus any inline <style> text) into a single captured block.
+    """
+    try:
+        page.evaluate(_WAIT_FOR_STYLED_COMPONENTS_JS)
+        css = page.evaluate(_EXTRACT_HUBSPOT_CSS_JS) or ""
+    except Exception:
+        return html
+    if not css.strip():
+        return html
+    block = f'<style id="hs-captured-styles">\n{css}\n</style>'
+    if "</head>" in html:
+        return html.replace("</head>", block + "\n</head>", 1)
+    return html + block
+
+
+_BAKE_SELECTORS = [
+    "#hs-global-toolbar",
+    "#hs-global-toolbar *",
+    "#hs-nav-v4",
+    "#hs-nav-v4 > *",
+    "[data-test-id='nav-primary']",
+    "[data-test-id='nav-primary'] *",
+    ".private-page__outer",
+    ".copilot-app-container",
+    "[data-test-id='crm-visualization-toolbar']",
+    "[data-test-id='crm-visualization-toolbar'] *",
+    "[data-observer-type='COLUMN']",
+    "[data-test-id^='cell-']",
+    "[data-test-id='AvatarDisplay-avatarContent']",
+    "header",
+    "nav",
+]
+
+_BAKE_PROPS = [
+    "background-color", "color", "font-family", "font-size", "font-weight",
+    "line-height", "border", "border-radius", "padding", "margin",
+    "display", "flex", "flex-direction", "flex-shrink", "align-items",
+    "justify-content", "gap", "width", "height", "min-width", "max-width",
+    "min-height", "max-height", "overflow", "position", "top", "left",
+    "right", "bottom", "box-shadow", "opacity", "white-space",
+]
+
+_BAKE_JS = (
+    "(function(selectors, props) {"
+    "  var seen = new Set();"
+    "  selectors.forEach(function(sel) {"
+    "    var els = document.querySelectorAll(sel);"
+    "    els.forEach(function(el) {"
+    "      if (seen.has(el)) return;"
+    "      seen.add(el);"
+    "      var cs = window.getComputedStyle(el);"
+    "      var parts = [];"
+    "      props.forEach(function(p) {"
+    "        var v = cs.getPropertyValue(p);"
+    "        if (v && v !== 'initial' && v !== 'inherit' && v !== 'auto'"
+    "            && v !== 'normal' && v !== 'none' && v !== '') {"
+    "          parts.push(p + ':' + v);"
+    "        }"
+    "      });"
+    "      if (parts.length) {"
+    "        var existing = el.getAttribute('style') || '';"
+    "        el.setAttribute('style', existing + ';' + parts.join(';'));"
+    "      }"
+    "    });"
+    "  });"
+    "})(['" + "','".join(_BAKE_SELECTORS) + "'], ['" + "','".join(_BAKE_PROPS) + "'])"
+)
+
+
+_HUBSPOT_LOADING_REMOVE_JS = """() => {
+  var sels = [
+    '[data-test-id="loading-spinner"]',
+    '.private-loading-page',
+    '.private-spinner-container',
+    '.loading-page-wrapper',
+    '[aria-label="Loading"]',
+    '[data-loading="true"]',
+    '.UIOverlay--blocker',
+    '.UIModalDialog--loading',
+    '.UIPlaceholderBubble__Placeholder-mfCgX',
+  ];
+  sels.forEach(function(s) {
+    document.querySelectorAll(s).forEach(function(el) { el.remove(); });
+  });
+}"""
+
+
+def _strip_hubspot_loading_elements(page, page_url: str) -> None:
+    """Remove HubSpot loading spinners and skeleton screens from the live DOM.
+
+    Called before page.content() so the static snapshot never contains
+    loading states that would never resolve in the static clone (since
+    the API calls they wait on are never made).
+    """
+    if "hubspot" not in page_url.lower():
+        return
+    try:
+        page.evaluate(_HUBSPOT_LOADING_REMOVE_JS)
+    except Exception:
+        pass
+
+
+def _bake_hubspot_computed_styles_in_page(page, page_url: str) -> None:
+    """Inline computed styles on key HubSpot structural elements.
+
+    Runs JS against the live DOM to read window.getComputedStyle for nav/toolbar
+    elements and write critical visual properties directly onto el.style so the
+    static snapshot retains the rendered appearance even after hashed class names
+    become stale or missing.
+
+    Must be called BEFORE page.content() so the mutations are included in the
+    captured HTML.
+    """
+    if "hubspot" not in page_url.lower():
+        return
+    try:
+        page.evaluate(_BAKE_JS)
+    except Exception:
+        pass
+
+
+def _make_css_urls_absolute(html: str, page_url: str) -> str:
+    """Absolutize url() references inside <style> blocks.
+
+    make_assets_absolute() only rewrites src= and href= HTML attributes.
+    @font-face src, background-image, and other url() calls inside <style>
+    text are untouched by that pass. This function handles them so that
+    fonts and images referenced in inline CSS are not left as broken
+    relative paths in the static snapshot.
+    """
+    def _fix_url(um: re.Match) -> str:
+        raw = um.group(1).strip()
+        u = raw.strip("'\"")
+        if not u or u.startswith(("http", "data:", "#", "blob:")):
+            return um.group(0)
+        return f"url({urljoin(page_url, u)})"
+
+    def _fix_style_block(m: re.Match) -> str:
+        return re.sub(r"url\(([^)]*)\)", _fix_url, m.group(0))
+
+    return re.sub(
+        r"<style\b[^>]*>[\s\S]*?</style>",
+        _fix_style_block,
+        html,
+        flags=re.IGNORECASE,
+    )
+
+
+def static_snapshot_html(html: str, page_url: str, *, page=None) -> str:
+    """Produce a static UI snapshot: absolutized assets, no base tag, no JS.
+
+    Pass page= (the live Playwright page object) to capture any CSS that was
+    injected by JavaScript (e.g. HubSpot's styled-components) before scripts
+    are stripped from the snapshot.
+    """
+    if page is not None and "hubspot" in page_url.lower():
+        html = _inline_hubspot_styled_css(page, html)
     html = make_assets_absolute(html, page_url, include_js=False)
+    html = _make_css_urls_absolute(html, page_url)
     html = remove_base_tag(html)
     html = strip_scripts(html)
     return html
@@ -178,6 +434,9 @@ def post_auth_start_url(auth_file: str, fallback: str) -> str:
         o = origin.get("origin", "")
         if not o:
             continue
+        # HubSpot: no workspaceconf localStorage — use the configured post_auth_home.
+        if "hubspot.com" in o:
+            return fallback.rstrip("/")
         for item in origin.get("localStorage", []):
             if item.get("name") == "workspaceconf":
                 try:
@@ -210,18 +469,22 @@ def _route_fragment(url: str) -> str:
     return urlparse(url).fragment.split("?")[0].rstrip("/")
 
 
-def _is_bare_home(url: str) -> bool:
-    frag = _route_fragment(url)
-    return frag in ("home", "/home", "")
+def _is_bare_home(url: str, *, hash_routes: bool = True) -> bool:
+    if hash_routes:
+        frag = _route_fragment(url)
+        return frag in ("home", "/home", "")
+    # Path-based SPA (e.g. HubSpot): only the literal root or /login counts as home.
+    path = urlparse(url).path.rstrip("/") or "/"
+    return path in ("/", "/login")
 
 
-def _is_redundant_route(url: str) -> bool:
+def _is_redundant_route(url: str, *, hash_routes: bool = True) -> bool:
     """Skip routes that duplicate a better page already in the crawl plan."""
-    frag = _route_fragment(url)
-    if _is_bare_home(url):
+    if _is_bare_home(url, hash_routes=hash_routes):
         return True
+    route = _route_fragment(url) if hash_routes else urlparse(url).path
     # Edit sub-routes are almost always the same form as /new.
-    if re.search(r"/(edit|productedit)(/|$)", frag):
+    if re.search(r"/(edit|productedit)(/|$)", route):
         return True
     return False
 
@@ -245,6 +508,7 @@ def _prune_queues(
     skip_patterns: list[str],
     seed_norms: set[str],
     global_link_limits: list[dict] | None,
+    hash_routes: bool = True,
 ) -> tuple[int, int]:
     """Drop duplicate/redundant URLs already satisfied or over global caps."""
 
@@ -252,7 +516,7 @@ def _prune_queues(
         norm = normalize_url(url)
         if norm in visited:
             return False
-        if _is_redundant_route(url) and norm not in seed_norms:
+        if _is_redundant_route(url, hash_routes=hash_routes) and norm not in seed_norms:
             return False
         if _should_skip_url(url, skip_patterns) and norm not in seed_norms:
             return False
@@ -284,10 +548,11 @@ def _should_enqueue_link(
     link_counters: dict[str, dict[str, int]],
     cross_page_rules: list[dict] | None = None,
     global_link_limits: list[dict] | None = None,
+    hash_routes: bool = True,
 ) -> bool:
     """Filter BFS links: skip patterns, cap list→detail fan-out, block redundant hops."""
     link_norm = normalize_url(link)
-    if _is_redundant_route(link) and link_norm not in seed_norms:
+    if _is_redundant_route(link, hash_routes=hash_routes) and link_norm not in seed_norms:
         return False
     if _should_skip_url(link, skip_patterns) and link_norm not in seed_norms:
         return False
@@ -372,7 +637,9 @@ def save_page_capture(
     page_dir.mkdir(parents=True, exist_ok=True)
 
     print("[PAGE] Saving HTML")
-    html = static_snapshot_html(page.content(), page.url)
+    _strip_hubspot_loading_elements(page, page.url)
+    _bake_hubspot_computed_styles_in_page(page, page.url)
+    html = static_snapshot_html(page.content(), page.url, page=page)
     (page_dir / "page.html").write_text(html, encoding="utf-8")
 
     print("[PAGE] Saving Screenshot")
@@ -404,6 +671,7 @@ def save_interaction_capture(
     element: dict | None = None,
     tab_panel: dict | None = None,
     skip_screenshots: bool = False,
+    mutations: list | None = None,
 ) -> None:
     folder.mkdir(parents=True, exist_ok=True)
     element = element or {}
@@ -413,7 +681,9 @@ def save_interaction_capture(
     rel_folder = str(folder.relative_to(crawl_root))
 
     print("[PAGE] Saving HTML")
-    html = static_snapshot_html(page.content(), page.url)
+    _strip_hubspot_loading_elements(page, page.url)
+    _bake_hubspot_computed_styles_in_page(page, page.url)
+    html = static_snapshot_html(page.content(), page.url, page=page)
     (folder / "page.html").write_text(html, encoding="utf-8")
 
     print("[PAGE] Saving Screenshot")
@@ -495,10 +765,19 @@ def save_interaction_capture(
     tab_html = (tab_panel.get("innerHTML") or tab_panel.get("outerHTML") or "") if tab_panel else ""
     if tab_html:
         (folder / "tab-content.html").write_text(tab_html, encoding="utf-8")
+    if mutations:
+        (folder / "mutations.json").write_text(
+            json.dumps(mutations, indent=2), encoding="utf-8"
+        )
 
 
-def build_seed_urls(start_url: str, patterns: list[str]) -> list[str]:
-    """Turn hash-route patterns into full app URLs queued at crawl start."""
+def build_seed_urls(start_url: str, patterns: list[str], *, hash_routes: bool = True) -> list[str]:
+    """Turn route patterns into full app URLs queued at crawl start.
+
+    When hash_routes=True (Zoho-style), patterns are treated as #/fragment routes.
+    When hash_routes=False (HubSpot-style), patterns that start with "/" are used
+    as absolute paths directly on the origin.
+    """
     if not patterns:
         return []
     p = urlparse(start_url)
@@ -508,8 +787,13 @@ def build_seed_urls(start_url: str, patterns: list[str]) -> list[str]:
     seeds: list[str] = []
     seen: set[str] = set()
     for raw in patterns:
-        route = raw if raw.startswith("#") else "#" + raw.lstrip("/")
-        url = f"{base}{app_prefix}{route}" if app_prefix else f"{base}{route}"
+        if hash_routes or raw.startswith("#"):
+            route = raw if raw.startswith("#") else "#" + raw.lstrip("/")
+            url = f"{base}{app_prefix}{route}" if app_prefix else f"{base}{route}"
+        else:
+            # Path-based routing: use the pattern as an absolute path on the origin.
+            path = raw if raw.startswith("/") else "/" + raw
+            url = f"{base}{path}"
         key = normalize_url(url)
         if key not in seen:
             seen.add(key)
@@ -517,9 +801,9 @@ def build_seed_urls(start_url: str, patterns: list[str]) -> list[str]:
     return seeds
 
 
-def _build_seed_norms(start_url: str, seed_patterns: list[str] | None) -> set[str]:
+def _build_seed_norms(start_url: str, seed_patterns: list[str] | None, *, hash_routes: bool = True) -> set[str]:
     norms = {normalize_url(start_url)}
-    for seed_url in build_seed_urls(start_url, seed_patterns or []):
+    for seed_url in build_seed_urls(start_url, seed_patterns or [], hash_routes=hash_routes):
         norms.add(normalize_url(seed_url))
     return norms
 
@@ -569,8 +853,32 @@ def collect_sidebar_links(page, page_url: str, base_domain: str) -> list[dict]:
     return out
 
 
+_LOGIN_PAGE_MARKERS = (
+    "<title>HubSpot Login",
+    "data-application-name=\"LoginUI\"",
+    "data-error-type=\"SESSION_TIMED_OUT\"",
+    "Your authentication has expired",
+    "Sign in to HubSpot",
+)
+
+
+def _is_login_html(html: str) -> bool:
+    """Return True if the saved HTML is actually a login/auth redirect page."""
+    snippet = html[:4000]
+    return any(m in snippet for m in _LOGIN_PAGE_MARKERS)
+
+
 def _page_on_disk(crawl_root: Path, url: str) -> bool:
-    return (crawl_root / page_slug(url) / "page.html").is_file()
+    p = crawl_root / page_slug(url) / "page.html"
+    if not p.is_file():
+        return False
+    # Do not treat a login-redirect capture as a real saved page.
+    try:
+        if _is_login_html(p.read_text(encoding="utf-8", errors="ignore")[:4000]):
+            return False
+    except Exception:
+        pass
+    return True
 
 
 def _visited_from_disk(crawl_root: Path) -> set[str]:
@@ -579,9 +887,13 @@ def _visited_from_disk(crawl_root: Path) -> set[str]:
         return norms
     for page_dir in crawl_root.iterdir():
         meta_path = page_dir / "metadata.json"
-        if not (page_dir / "page.html").is_file() or not meta_path.is_file():
+        html_path = page_dir / "page.html"
+        if not html_path.is_file() or not meta_path.is_file():
             continue
         try:
+            # Skip pages that are actually login redirects.
+            if _is_login_html(html_path.read_text(encoding="utf-8", errors="ignore")[:4000]):
+                continue
             meta = json.loads(meta_path.read_text(encoding="utf-8"))
             url = meta.get("url", "")
             if url:
@@ -789,6 +1101,11 @@ def crawl_interactions(
                     except Exception:
                         aria_controls_val = ""
 
+                try:
+                    ipage.evaluate(MUTATION_OBSERVER_SETUP_JS)
+                except Exception:
+                    pass
+
                 locator.click(timeout=5000)
                 ipage.wait_for_timeout(WAIT_AFTER_CLICK_MS)
                 if use_networkidle:
@@ -796,6 +1113,11 @@ def crawl_interactions(
                         ipage.wait_for_load_state("networkidle", timeout=10000)
                     except Exception:
                         pass
+
+                try:
+                    click_mutations = ipage.evaluate(MUTATION_OBSERVER_READ_JS)
+                except Exception:
+                    click_mutations = []
 
                 after_fp = ipage.evaluate(DOM_FINGERPRINT_JS)
                 # The click changed the URL. This is a NAVIGATION, not a UI state —
@@ -870,6 +1192,7 @@ def crawl_interactions(
                     element=element_meta,
                     tab_panel=tab_panel,
                     skip_screenshots=skip_screenshots,
+                    mutations=click_mutations,
                 )
 
                 rel_path = f"interactions/{folder_name}"
@@ -932,10 +1255,11 @@ def bfs_crawl(
     use_networkidle: bool = True,
     sidebar_first: bool = True,
     resume: bool = True,
+    hash_routes: bool = True,
 ) -> dict:
     checkpoint_path = get_crawl_checkpoint_path(app_name)
     start_norm = normalize_url(start_url)
-    seed_norms = _build_seed_norms(start_url, seed_url_patterns)
+    seed_norms = _build_seed_norms(start_url, seed_url_patterns, hash_routes=hash_routes)
     visited: set[str] = _visited_from_disk(crawl_root)
     sidebar_queue: list[tuple[str, int]] = []
     deferred_queue: list[tuple[str, int]] = []
@@ -957,7 +1281,7 @@ def bfs_crawl(
         pages = len(visited)
         sidebar_queue = [(start_url, 0)]
         if not sidebar_first:
-            for seed_url in build_seed_urls(start_url, seed_url_patterns or []):
+            for seed_url in build_seed_urls(start_url, seed_url_patterns or [], hash_routes=hash_routes):
                 if normalize_url(seed_url) != start_norm:
                     deferred_queue.append((seed_url, 1))
             if seed_url_patterns:
@@ -979,6 +1303,7 @@ def bfs_crawl(
             link_counters=link_counters,
             cross_page_rules=link_cross_page_rules,
             global_link_limits=global_link_limits,
+            hash_routes=hash_routes,
         ):
             return
         if not sidebar_first and any(pat in link for pat in (priority_url_patterns or [])):
@@ -1036,6 +1361,7 @@ def bfs_crawl(
         skip_patterns=skip_url_patterns or [],
         seed_norms=seed_norms,
         global_link_limits=global_link_limits,
+        hash_routes=hash_routes,
     )
     if before != after:
         print(f"[BFS] Pruned duplicate queue URLs: {before - after}")
@@ -1055,7 +1381,7 @@ def bfs_crawl(
             visited.add(norm)
             print(f"[BFS] Skip (already saved): {url}")
             continue
-        if _is_redundant_route(url) and norm not in seed_norms:
+        if _is_redundant_route(url, hash_routes=hash_routes) and norm not in seed_norms:
             print(f"[BFS] Skipped duplicate route: {url}")
             visited.add(norm)
             continue
@@ -1109,7 +1435,7 @@ def bfs_crawl(
                     order_urls: list[str] = []
                     for nav in nav_items:
                         link = nav["url"]
-                        if has_dashboard and _is_bare_home(link):
+                        if has_dashboard and _is_bare_home(link, hash_routes=hash_routes):
                             print(f"    · skip duplicate home: {link}")
                             continue
                         label = nav.get("label") or ""
@@ -1190,6 +1516,7 @@ def bfs_crawl(
                 skip_patterns=skip_url_patterns or [],
                 seed_norms=seed_norms,
                 global_link_limits=global_link_limits,
+                hash_routes=hash_routes,
             )
             if pruned[0] != pruned[1]:
                 print(f"[BFS] Pruned duplicate queue URLs: {pruned[0] - pruned[1]}")
@@ -1284,6 +1611,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
             sidebar_first=bool(cfg.get("crawl_sidebar_first", True)),
             resume=bool(cfg.get("crawl_resume", True)),
+            hash_routes=bool(cfg.get("crawl_hash_routes", True)),
         )
         context.close()
         browser.close()
@@ -1311,3 +1639,4 @@ def crawl_application(app_name: str, cfg: dict) -> dict:
         "pages_crawled": pre["pages"] + post["pages"],
         "interactions": pre["interactions_saved"] + post["interactions_saved"],
     }
+

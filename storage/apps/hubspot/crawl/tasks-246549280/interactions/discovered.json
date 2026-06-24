@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX dXfJby",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Due today",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Overdue",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Upcoming",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bDxMch",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add view (4/50)",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Start 0 tasks",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA gIBpPa",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Assigned to\n\u00a0(\n1\n)",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Task type",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Due date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Queue",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Clear all",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save view",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA kRTZzk",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Logged call",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA hnEotT",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Key information",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi dqgBbU",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Overview",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Health",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Data quality",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create a note",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create an email",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create a task",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create a task",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA QamZP",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Actions",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA eafRvU",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA dzVnnU",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Make a phone call",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Schedule a meeting",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bXdOFw",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

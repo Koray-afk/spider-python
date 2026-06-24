@@ -1,0 +1,48 @@
+[
+  {
+    "label": "Published",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/forms/246549280/views/published_forms",
+    "target_slug": "forms-246549280-views-published-forms",
+    "target_page": "../forms-246549280-views-published-forms/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Published",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"published_forms\" data-test-id=\"view-tab-published_forms\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"3\" data-rbd-draggable-id=\"published_forms\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-3-hidden-text-10\" data-rbd-drag-handle-draggable-id=\"published_forms\" data-rbd-drag-handle-context-id=\"3\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK\" data-crawl-id=\"30\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span>Published</span></span></span></span></div></div>"
+    }
+  },
+  {
+    "label": "Create form",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/forms/246549280/type",
+    "target_slug": "forms-246549280-type",
+    "target_page": "../forms-246549280-type/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Create form",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA gqHeqB",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/main[1]/section[1]/div[1]/section[1]/header[1]/div[1]/div[2]/div[1]/div[1]/button[1]",
+      "outer_html": "<button tabindex=\"0\" data-test-id=\"form-creation-button\" data-selenium-test=\"create-form\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gqHeqB\" data-crawl-id=\"14\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"formCreation.formCreationCta\">Create form</i18n-string></span></button>"
+    }
+  }
+]

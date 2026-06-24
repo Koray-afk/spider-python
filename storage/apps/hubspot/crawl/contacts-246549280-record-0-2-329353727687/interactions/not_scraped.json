@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Incoming email - Qwen3.7-Max Challenges Google for Third Place, AI Saves Whales, Fine-Tuning Breaks Copyright Alignment",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"29\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"29\" aria-disabled=\"true\" cssstyles=\"[object Object]\" data-button-use=\"secondary\" data-test-id=\"chat-with-copilot-button\" class=\"uiButton private-button private-button--secondary private-button--xs StyledAIBaseButton__BreezeSecondaryAIBaseButton-dnPMLU fCTDWn disabled private-button--disabled private-button--non-link\""
+  }
+]

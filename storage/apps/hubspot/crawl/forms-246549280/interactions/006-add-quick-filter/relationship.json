@@ -1,0 +1,34 @@
+{
+  "source_page": "forms-246549280",
+  "source_url": "https://app-na2.hubspot.com/forms/246549280",
+  "source_title": "Forms | HubSpot",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Add quick filter",
+    "id": "",
+    "class_name": "PrivateButton__StyledButton-eRHhiA iblkDC",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "/html[1]/body[1]/div[5]/div[1]/main[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[1]",
+    "outer_html": "<button tabindex=\"0\" data-selenium-test=\"FiltersBar-quickAddQuickFilter\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"transparent\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA iblkDC\" data-crawl-id=\"19\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa fjsJRK\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Add\" class=\"StyledIcon-jibXlG eXbnwa\"><path d=\"M15.57 29.29c-.63 0-1.14-.51-1.14-1.14V3a1.14 1.14 0 1 1 2.28 0v25.14c0 .63-.51 1.14-1.14 1.14Z\"></path><path d=\"M28.14 16.71H3a1.14 1.14 0 1 1 0-2.28h25.14a1.14 1.14 0 1 1 0 2.28\"></path></svg><i18n-string data-locale-at-render=\"en-us\" data-key=\"customerDataFiltersUI.quickFiltersBar.addQuickFilterButton\">Add quick filter</i18n-string></span></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/forms/246549280/views/all_forms",
+    "slug": "forms-246549280-views-all-forms",
+    "title": "Forms | HubSpot"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button tabindex=\"0\" data-selenium-test=\"FiltersBar-quickAddQuickFilter\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"transparent\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA iblkDC\" data-crawl-id=\"19\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa fjsJRK\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Add\" class=\"StyledIcon-jibXlG eXbnwa\"><path d=\"M15.57 29.29c-.63 0-1.14-.51-1.14-1.14V3a1.14 1.14 0 1 1 2.28 0v25.14c0 .63-.51 1.14-1.14 1.14Z\"></path><path d=\"M28.14 16.71H3a1.14 1.14 0 1 1 0-2.28h25.14a1.14 1.14 0 1 1 0 2.28\"></path></svg><i18n-string data-locale-at-render=\"en-us\" data-key=\"customerDataFiltersUI.quickFiltersBar.addQuickFilterButton\">Add quick filter</i18n-string></span></button>",
+  "trigger_label": "Add quick filter",
+  "trigger_id": "",
+  "trigger_class": "PrivateButton__StyledButton-eRHhiA iblkDC",
+  "target_url": "https://app-na2.hubspot.com/forms/246549280/views/all_forms",
+  "target_slug": "forms-246549280-views-all-forms",
+  "target_title": "Forms | HubSpot"
+}

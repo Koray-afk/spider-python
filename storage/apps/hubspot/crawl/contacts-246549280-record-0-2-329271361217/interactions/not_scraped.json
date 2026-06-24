@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "View recent emails",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"27\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" type=\"button\" data-crawl-id=\"27\" data-fnd-button=\"t\" aria-disabled=\"true\" data-button-use=\"tertiary\" class=\"PrivateButton__StyledButton-eRHhiA hCYvVO\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting "
+  }
+]

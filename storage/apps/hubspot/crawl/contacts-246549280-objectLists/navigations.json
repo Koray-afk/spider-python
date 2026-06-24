@@ -1,0 +1,48 @@
+[
+  {
+    "label": "Unused segments",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/contacts/246549280/objectLists/views/cleanup?count=25",
+    "target_slug": "contacts-246549280-objectLists-views-cleanup",
+    "target_page": "../contacts-246549280-objectLists-views-cleanup/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Unused segments",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"unused\" data-test-id=\"view-tab-unused\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"119\" data-rbd-draggable-id=\"unused\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-119-hidden-text-238\" data-rbd-drag-handle-draggable-id=\"unused\" data-rbd-drag-handle-context-id=\"119\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK\" data-crawl-id=\"34\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span>Unused segments</span></span></span></span></div></div>"
+    }
+  },
+  {
+    "label": "Recently deleted",
+    "tag_name": "div",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+    "target_url": "https://app-na2.hubspot.com/contacts/246549280/objectLists/views/deleted?count=25",
+    "target_slug": "contacts-246549280-objectLists-views-deleted",
+    "target_page": "../contacts-246549280-objectLists-views-deleted/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "Recently deleted",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"recently_deleted\" data-test-id=\"view-tab-recently_deleted\" data-onboarding=\"view-tab\" data-rbd-draggable-context-id=\"87\" data-rbd-draggable-id=\"recently_deleted\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-87-hidden-text-174\" data-rbd-drag-handle-draggable-id=\"recently_deleted\" data-rbd-drag-handle-context-id=\"87\" draggable=\"false\" class=\"TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK\" data-crawl-id=\"35\"><div class=\"Flex__StyledFlex-cHGzEF loJfKR\"><span class=\"View__StyledView-fDIglR dkJvWj\"><span data-content=\"true\" class=\"TruncateString__TruncateStringContainer-fmKoUB fttGMF\"><span class=\"TruncateString__TruncateStringInner-gODLZE bAcXjo\"><span>Recently deleted</span></span></span></span></div></div>"
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Health",
+    "tagName": "div",
+    "id": "",
+    "className": "sc-AxirZ faeGHx sc-fzozJi iCgEgg",
+    "selector": "[data-crawl-id=\"39\"]",
+    "outerHTML": "<div aria-expanded=\"true\" aria-controls=\"trellis-foundations-disclosure-:crm-records-uir9:\" role=\"button\" aria-disabled=\"false\" class=\"sc-AxirZ faeGHx sc-fzozJi iCgEgg\" tabindex=\"0\" data-crawl-id=\"39\"><h4 role=\"presentation\" class=\"AccordionItem__StyledHeading-bEMmTM ieVDgq\"><div class=\"AccordionItem__StyledCaretWrapper-etILvC dtDDYH\"><span><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Right\" class=\"StyledIcon-jibXlG NCRDP\"><path d=\"M11 27.71c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62l9.48-9.48-9.48-9.47a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0L22.1 15.48c.45.45.45 1.17 0 1.62L11.81 27.39c-.22.22-.52.33-.81.33Z\"></path></svg></span></div>Health</h4></div>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#record-page-middle-pane > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h4:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h4[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"AccordionItem__StyledCaretWrapper-etILvC cTrXtx\"><span><svg aria-hidden=\"true\" class=\"StyledIcon-jibXlG NCRDP\" data-icon-name=\"Right\" focusable=\"false\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M11 27.71c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62l9.48-9.48-9.48-9.47a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0L22.1 15.48c.45.45.45 1.17 0 1.62L11.81 27.39c-.22.22-.52.33-.81.33Z\"></path></svg></span></div>\n<div class=\"sc-Axmtr eWHWrn sc-AxmLO ierOcK\" data-open-complete=\"false\" data-transition-wrapper=\"true\"></div>\n<div class=\"Overhang__StyledOverhang-dVyrkV gZoPxv\"></div>\n<div class=\"Overhang__StyledOverhang-dVyrkV kgYCZy\"></div>",
+  "ui_css": ".cTrXtx { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; align-self: start; position: absolute; left: 0px; top: 0px; width: 16px; transition: 150ms ease-out; }\n.gZoPxv { background-image: linear-gradient(to top, rgba(245, 245, 245, 0), rgb(245, 245, 245)); height: 14px; width: auto; opacity: 0.678571; pointer-events: none; position: absolute; top: 0px; bottom: initial; left: 0px; right: 0px; }",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

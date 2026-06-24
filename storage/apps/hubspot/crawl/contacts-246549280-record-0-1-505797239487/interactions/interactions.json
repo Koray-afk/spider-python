@@ -1,0 +1,80 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-make-a-phone-call",
+    "relationship_file": "interactions/002-make-a-phone-call/relationship.json"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"34\"]",
+    "interaction_path": "interactions/003-key-information",
+    "relationship_file": "interactions/003-key-information/relationship.json"
+  },
+  {
+    "label": "Phone Number\nDetails\n--",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/004-phone-number-details",
+    "relationship_file": "interactions/004-phone-number-details/relationship.json"
+  },
+  {
+    "label": "Preferred channels\nDetails\n--",
+    "selector": "[data-crawl-id=\"37\"]",
+    "interaction_path": "interactions/005-preferred-channels-details",
+    "relationship_file": "interactions/005-preferred-channels-details/relationship.json"
+  },
+  {
+    "label": "Favorite Content Topics\nDetails\n--",
+    "selector": "[data-crawl-id=\"38\"]",
+    "interaction_path": "interactions/006-favorite-content-topics-details",
+    "relationship_file": "interactions/006-favorite-content-topics-details/relationship.json"
+  },
+  {
+    "label": "Lead Status\nDetails\n--",
+    "selector": "[data-crawl-id=\"39\"]",
+    "interaction_path": "interactions/007-lead-status-details",
+    "relationship_file": "interactions/007-lead-status-details/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"40\"]",
+    "interaction_path": "interactions/008-overview",
+    "relationship_file": "interactions/008-overview/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"41\"]",
+    "interaction_path": "interactions/009-health",
+    "relationship_file": "interactions/009-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"42\"]",
+    "interaction_path": "interactions/010-data-quality",
+    "relationship_file": "interactions/010-data-quality/relationship.json"
+  },
+  {
+    "label": "Companies (1)",
+    "selector": "[data-crawl-id=\"43\"]",
+    "interaction_path": "interactions/011-companies-1",
+    "relationship_file": "interactions/011-companies-1/relationship.json"
+  },
+  {
+    "label": "Deals (0)",
+    "selector": "[data-crawl-id=\"44\"]",
+    "interaction_path": "interactions/012-deals-0",
+    "relationship_file": "interactions/012-deals-0/relationship.json"
+  },
+  {
+    "label": "Tickets (0)",
+    "selector": "[data-crawl-id=\"45\"]",
+    "interaction_path": "interactions/013-tickets-0",
+    "relationship_file": "interactions/013-tickets-0/relationship.json"
+  }
+]

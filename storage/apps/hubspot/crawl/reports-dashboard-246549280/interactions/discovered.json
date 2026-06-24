@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show (Count) Contacts",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Contacts Added Over Time\n\nIn the last 30 days | Daily\n\nChart\n\nChart with 30 data points.\nThe chart has 1 X axis displayi",
+    "id": "commentable-area-dashboard-widget-324324594",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Deals Created Over Time\n\nIn the last 30 days | Daily\n\nThere is no data to show in this time frame. Try changing the date",
+    "id": "commentable-area-dashboard-widget-324324595",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Deals by Stage\n\nIn the last 30 days\n\nThere is no data to show in this time frame. Try changing the date range.",
+    "id": "commentable-area-dashboard-widget-324324596",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "CRM Data Overview",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA gwDHut",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Manage dashboards",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bUinhK",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Comments",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bVmNmm",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Team Activity Summary",
+    "id": "commentable-area-dashboard-widget-324324598",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Open Ticket Summary",
+    "id": "commentable-area-dashboard-widget-324324599",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create dashboard",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bOCoLt",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add content",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quick filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA fjoheX",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Owners",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA kwMaoi",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

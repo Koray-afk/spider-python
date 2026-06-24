@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-make-a-phone-call",
+    "relationship_file": "interactions/002-make-a-phone-call/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"37\"]",
+    "interaction_path": "interactions/004-overview",
+    "relationship_file": "interactions/004-overview/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"38\"]",
+    "interaction_path": "interactions/005-health",
+    "relationship_file": "interactions/005-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"39\"]",
+    "interaction_path": "interactions/006-data-quality",
+    "relationship_file": "interactions/006-data-quality/relationship.json"
+  },
+  {
+    "label": "Create a note",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/008-create-a-note",
+    "relationship_file": "interactions/008-create-a-note/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/009-create-an-email",
+    "relationship_file": "interactions/009-create-an-email/relationship.json"
+  },
+  {
+    "label": "Create a task",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/010-create-a-task",
+    "relationship_file": "interactions/010-create-a-task/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/011-create-an-email",
+    "relationship_file": "interactions/011-create-an-email/relationship.json"
+  },
+  {
+    "label": "Create activity",
+    "selector": "[data-crawl-id=\"29\"]",
+    "interaction_path": "interactions/012-create-activity",
+    "relationship_file": "interactions/012-create-activity/relationship.json"
+  }
+]

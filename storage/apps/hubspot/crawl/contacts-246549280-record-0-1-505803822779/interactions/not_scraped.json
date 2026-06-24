@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Schedule a meeting",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"31\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"31\" aria-disabled=\"true\" cssstyles=\"[object Object]\" data-button-use=\"secondary\" data-test-id=\"chat-with-copilot-button\" class=\"uiButton private-button private-button--secondary private-button--xs StyledAIBaseButton__BreezeSecondaryAIBaseButton-dnPMLU fCTDWn disabled private-button--disabled private-button--non-link\""
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

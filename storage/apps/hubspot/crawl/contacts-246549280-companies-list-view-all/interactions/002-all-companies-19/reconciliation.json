@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "All companies\n19",
+    "tagName": "div",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"36\"]",
+    "outerHTML": "<div role=\"button\" aria-disabled=\"false\" class=\"sc-AxirZ fHnTju\" tabindex=\"0\" data-crawl-id=\"36\"><div class=\"Flex__StyledFlex-cHGzEF lmXQsg\"><div tabindex=\"0\" class=\"View__StyledView-fDIglR dQdDbn\"><div data-test-id=\"view-title-all\" class=\"Text__StyledText-llZFeh jyXNVz\">All companies</div></div><span class=\"Badge__StyledBadge-cmJlgF ldfIgv\"><span><div class=\"Flex__StyledFlex-cHGzEF laPnkM\"><span data-test-id=\"view-object-count-all\" class=\"Text__StyledText-llZFeh hRlONJ\"><span>19</span></span></div></span></span></div></div>"
+  },
+  "interaction_type": "tooltip",
+  "location": {
+    "parentSelector": "html:nth-of-type(1) > body:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div data-floating-ui-portal=\"\" id=\":rfg:\"><div class=\"Tooltip__StyledFloatingContainer-AgWbX iWZnhl\" data-floating-ui-focusable=\"\" id=\"tooltip-239\" role=\"tooltip\" tabindex=\"-1\"><div style=\"transform-origin: center bottom; opacity: 1; transform: scale(1); transition-property: opacity, transform; transition-duration: 200ms;\"><div class=\"Tooltip__StyledTooltipContainer-hFiYxu jCsjPF\" data-component-name=\"UIPopover\" data-open-complete=\"true\"><div class=\"TooltipContent__StyledTooltipContent-UdGfd jFaXJe\">All companies</div><svg aria-hidden=\"true\" fill=\"#141414\" height=\"20\" style=\"position: absolute; pointer-events: none; top: 100%; left: 45px;\" viewbox=\"0 0 20 20\" width=\"20\"><path d=\"M0,0 H20 L11.25,8.75 Q10,10 8.75,8.75 Z\" stroke=\"none\"></path><clippath id=\":rfh:\"><rect height=\"20\" width=\"20\" x=\"0\" y=\"0\"></rect></clippath></svg></div></div></div></div>",
+  "ui_css": ".iWZnhl { position: absolute; left: 0px; top: 0px; transform: translate(429px, 29px); z-index: 1111; }\n.jCsjPF { position: relative; display: block; box-shadow: rgba(20, 20, 20, 0.08) 0px 24px 48px 0px; line-height: 1.5; padding-inline: 16px; padding-block: 10px; text-decoration: none; overflow-wrap: break-word; font-size: 12px; border-radius: 4px; background-color: rgb(20, 20, 20); color: rgb(255, 255, 255); max-inline-size: 232px; }\n.jCsjPF a, .jCsjPF button[data-button-use^=\"link\"], .jCsjPF button[data-button-use=\"transparent\"], .jCsjPF button[data-button-use=\"unstyled\"] { color: rgb(255, 255, 255); text-decoration: underline; text-underline-offset: 24%; font-weight: 600; }\n.jCsjPF a:hover, .jCsjPF button[data-button-use^=\"link\"]:hover, .jCsjPF button[data-button-use=\"transparent\"]:hover, .jCsjPF button[data-button-use=\"unstyled\"]:hover { color: rgb(230, 230, 230); }\n.jCsjPF a:active, .jCsjPF button[data-button-use^=\"link\"]:active, .jCsjPF button[data-button-use=\"transparent\"]:active, .jCsjPF button[data-button-use=\"unstyled\"]:active { color: rgb(179, 179, 179); }\n.jCsjPF svg[data-icon-name] { fill: rgb(255, 255, 255); }\n.jCsjPF svg[data-icon-name=\"ExternalLink\"] { fill: rgb(255, 255, 255) !important; }",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -15,6 +15,7 @@ no LLM. The interaction `page.html` and `relationship.json` are left untouched.
 """
 
 import json
+import re
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Tag
@@ -53,7 +54,7 @@ _TYPE_RULES = [
     ("modal", {"modal", "modal-dialog", "modal-content"}, {"dialog"}),
     ("drawer", {"offcanvas", "drawer", "slide-panel", "slide-in"}, set()),
     ("sidebar", {"sidebar", "side-panel", "sidebar-panel", "sidenav"}, set()),
-    ("dropdown", {"dropdown-menu", "dropdown-content", "menu-list"}, {"menu", "listbox"}),
+    ("dropdown", {"dropdown-menu", "dropdown-content", "menu-list", "abstractdropdown", "popover"}, set()),
     ("popover", {"popover", "popup", "pop-over"}, set()),
     ("tooltip", {"tooltip", "tip"}, {"tooltip"}),
     ("overlay", {"overlay", "backdrop", "modal-backdrop", "cdk-overlay-pane", "mask"}, set()),
@@ -216,13 +217,155 @@ def _trigger_from_relationship(inter_dir: Path) -> dict:
     }
 
 
-def _aria_controls_from_html(outer_html: str) -> str | None:
-    """Return the aria-controls attribute value from an element's outerHTML, or None."""
-    if not outer_html or "aria-controls" not in outer_html:
+def _aria_attr_from_html(outer_html: str, attr: str) -> str | None:
+    """Return an ARIA wiring attribute from a trigger's outerHTML, or None."""
+    if not outer_html or attr not in outer_html:
         return None
     soup = BeautifulSoup(outer_html, "html.parser")
     el = soup.find(True)
-    return el.get("aria-controls") or None if el else None
+    return el.get(attr) or None if el else None
+
+
+def _aria_controls_from_html(outer_html: str) -> str | None:
+    """Return the aria-controls attribute value from an element's outerHTML, or None."""
+    return _aria_attr_from_html(outer_html, "aria-controls")
+
+
+def _extract_style_text(html: str) -> str:
+    soup = BeautifulSoup(html, "html.parser")
+    return "\n".join(tag.get_text() for tag in soup.find_all("style"))
+
+
+def _classes_in_html(html: str) -> set[str]:
+    if not html:
+        return set()
+    soup = BeautifulSoup(html, "html.parser")
+    out: set[str] = set()
+    for el in soup.find_all(True):
+        out |= _classes(el)
+    return out
+
+
+_CSS_RULE_RE = re.compile(r"([^{}@][^{]*)\{([^{}]*)\}")
+
+
+def _extract_css_rules(css: str) -> list[tuple[str, str]]:
+    rules: list[tuple[str, str]] = []
+    for match in _CSS_RULE_RE.finditer(css or ""):
+        selector = match.group(1).strip()
+        body = match.group(2).strip()
+        if selector and body:
+            rules.append((selector, body))
+    return rules
+
+
+def _selector_uses_classes(selector: str, classes: set[str]) -> bool:
+    tokens = set(re.findall(r"\.([a-zA-Z_][\w-]*)", selector))
+    return bool(tokens & classes)
+
+
+def _css_delta_for_ui(
+    main_html: str,
+    inter_html: str,
+    ui_html: str,
+    backdrop_html: str = "",
+) -> str:
+    """Return CSS rules present on the interaction page but missing from main.
+
+    HubSpot styled-components inject rules when overlays mount. The interaction
+    page was captured with the overlay open, so its baked <style> blocks contain
+    rules for classes in ui_html that the main page never received.
+    """
+    if not ui_html:
+        return ""
+    classes = _classes_in_html(ui_html + (backdrop_html or ""))
+    if not classes:
+        return ""
+    main_rules = dict(_extract_css_rules(_extract_style_text(main_html)))
+    delta_parts: list[str] = []
+    seen: set[tuple[str, str]] = set()
+    for selector, body in _extract_css_rules(_extract_style_text(inter_html)):
+        if not _selector_uses_classes(selector, classes):
+            continue
+        key = (selector, body)
+        if key in seen:
+            continue
+        seen.add(key)
+        if main_rules.get(selector) == body:
+            continue
+        delta_parts.append(f"{selector} {{ {body} }}")
+    css = "\n".join(delta_parts)
+    # Drop orphan closing braces left by partial @-rule parsing in flat extraction.
+    return "\n".join(line for line in css.splitlines() if line.strip() != "}")
+
+
+def _panel_id_on_page(inter_soup: BeautifulSoup, panel_id: str) -> bool:
+    return bool(panel_id and inter_soup.find(id=panel_id))
+
+
+def _resolve_panel_id(inter_soup: BeautifulSoup, trigger: dict) -> str | None:
+    """Best-effort panel id for dropdown / menu triggers."""
+    outer = trigger.get("outerHTML") or trigger.get("outer_html") or ""
+    for attr in ("aria-controls", "aria-owns"):
+        panel_id = _aria_attr_from_html(outer, attr)
+        if panel_id and _panel_id_on_page(inter_soup, panel_id):
+            return panel_id
+
+    tid = (trigger.get("id") or "").strip()
+    if tid:
+        el = inter_soup.find(id=tid)
+        if isinstance(el, Tag):
+            for attr in ("aria-controls", "aria-owns"):
+                val = el.get(attr) or ""
+                if val and _panel_id_on_page(inter_soup, val):
+                    return val
+
+    # HubSpot floating-ui dropdowns often wire aria-owns on a data-test-id trigger.
+    test_id = ""
+    if outer:
+        m = re.search(r'data-test-id=["\']([^"\']+)["\']', outer)
+        if m:
+            test_id = m.group(1)
+    if test_id:
+        el = inter_soup.find(attrs={"data-test-id": test_id})
+        if isinstance(el, Tag):
+            for attr in ("aria-controls", "aria-owns"):
+                val = el.get(attr) or ""
+                if val and _panel_id_on_page(inter_soup, val):
+                    return val
+
+    menu = inter_soup.find(id="nav-object-create-menu")
+    if isinstance(menu, Tag):
+        return "nav-object-create-menu"
+    return None
+
+
+def _is_dropdown_panel(el: Tag) -> bool:
+    cls = " ".join(_classes(el)).lower()
+    role = (el.get("role") or "").lower()
+    if role in ("menu", "listbox"):
+        return True
+    if role == "presentation" and (
+        "abstractdropdown" in cls or el.find(attrs={"data-dropdown-menu": True})
+    ):
+        return True
+    if "dropdown-menu" in cls or "abstractdropdown" in cls or "popover" in cls:
+        return True
+    if el.find(attrs={"data-dropdown-menu": True}):
+        return True
+    eid = (el.get("id") or "").lower()
+    return bool(eid and ("menu" in eid or "dropdown" in eid))
+
+
+def _dropdown_ui_html(panel_el: Tag) -> str:
+    """Prefer the smallest popover wrapper that still carries dropdown styling."""
+    popover = panel_el.find_parent(attrs={"data-component-name": "UIPopover"})
+    if isinstance(popover, Tag):
+        return str(popover)
+    portal = panel_el.find_parent(attrs={"data-floating-ui-portal": True})
+    if isinstance(portal, Tag):
+        return str(portal)
+    return str(panel_el)
 
 
 def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dict:
@@ -242,12 +385,9 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
     ui_html = "\n".join(str(r) for r in ui_roots)
     backdrop_html = "\n".join(str(r) for r in backdrop_roots)
 
-    # For dropdowns: if the trigger has aria-controls, extract ONLY the panel
-    # element with that ID from the interaction page — the diff typically picks
-    # up sentinel divs, the trigger wrapper, and unrelated elements alongside
-    # the actual menu.
-    trigger_outer = trigger.get("outerHTML") or trigger.get("outer_html") or ""
-    panel_id = _aria_controls_from_html(trigger_outer)
+    # For dropdowns: extract ONLY the controlled panel from the interaction page.
+    # The DOM diff often picks up the trigger wrapper and unrelated siblings.
+    panel_id = _resolve_panel_id(inter_soup, trigger)
     tab_content_html = ""
     tab_content_selector = ""
 
@@ -255,16 +395,14 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
         panel_el = inter_soup.find(id=panel_id)
         if isinstance(panel_el, Tag):
             # Fix 1 — dropdown: use only the controlled panel as ui_html.
-            if interaction_type == "dropdown" or "dropdown" in (
-                " ".join(panel_el.get("class") or [])
-            ).lower():
-                ui_html = str(panel_el)
+            if interaction_type == "dropdown" or _is_dropdown_panel(panel_el):
+                ui_html = _dropdown_ui_html(panel_el)
                 backdrop_html = ""
                 interaction_type = "dropdown"
-                parent = panel_el.parent
+                # Inject at body level so popper/fixed positioning can work cleanly.
                 location = {
-                    "parentSelector": _css_selector(parent) if isinstance(parent, Tag) else "",
-                    "parentXPath": _xpath(parent) if isinstance(parent, Tag) else "",
+                    "parentSelector": "",
+                    "parentXPath": "",
                     "insertMethod": "append",
                 }
 
@@ -274,11 +412,14 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
                 tab_content_html = panel_el.decode_contents()
                 tab_content_selector = f"#{panel_id}"
 
+    ui_css = _css_delta_for_ui(main_html, inter_html, ui_html, backdrop_html)
+
     return {
         "trigger": trigger,
         "interaction_type": interaction_type,
         "location": location,
         "ui_html": ui_html,
+        "ui_css": ui_css,
         "backdrop_html": backdrop_html,
         "tab_content_html": tab_content_html,
         "tab_content_selector": tab_content_selector,
@@ -340,7 +481,8 @@ def reconcile_app(app_name: str) -> dict:
             type_counts[itype] = type_counts.get(itype, 0) + 1
             print(
                 f"[RECON] {page_dir.name}/{inter_dir.name}: {itype} "
-                f"| ui={len(recon['ui_html'])}B backdrop={len(recon['backdrop_html'])}B"
+                f"| ui={len(recon['ui_html'])}B css={len(recon.get('ui_css', ''))}B "
+                f"backdrop={len(recon['backdrop_html'])}B"
             )
 
     return {"interactions": total, "type_counts": type_counts}

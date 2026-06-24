@@ -1,0 +1,122 @@
+[
+  {
+    "label": "See all recent activity",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA gjBgKZ",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Calendar display",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA fAELR",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "List display",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA kFVbpG",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create meeting",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA iNGSTh",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New meeting",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA eouYxq",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create Task",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA cKNWh",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Task",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA buwEKU",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Completed",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bAjTzX",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Assistant",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "13 days left in trial",
+    "id": "mini-trial-guide-button",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More",
+    "id": "more-tools-toggle",
+    "className": "",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Manage navigation",
+    "id": "",
+    "className": "sc-fzoXzr dAExvT",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

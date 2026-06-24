@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Next",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/forms/246549280/templates?formType=NEW_EDITOR",
+    "target_slug": "forms-246549280-templates",
+    "target_page": "../forms-246549280-templates/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Next",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA cTOBHB",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[3]/button[1]",
+      "outer_html": "<button tabindex=\"0\" data-onboarding=\"next-form-type\" data-test-id=\"next-form-type\" data-loading=\"false\" data-loading-state=\"idle\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary-on-fill\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA cTOBHB\" data-crawl-id=\"1\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span class=\"LoadingButton__StyledLoadingButtonContent-eZyBjk gmkyPY\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"next\">Next</i18n-string></span><div hidden=\"\" role=\"status\" class=\"LoadingSpinner__SpinnerOuter-fUXWZV hwToRa\"><div class=\"LoadingSpinner__SpinnerInner-cNsNum hWUyTe\"><div class=\"LoadingSpinner__SpinnerWrapper-caSYdL leGzVW\"><div class=\"LoadingSpinner__RotatingRing-gxxKnD dptMQt\"><svg height=\"40\" width=\"40\" viewBox=\"0 0 50 50\" stroke=\"#E7E5E4\" class=\"LoadingSpinner__Ring-efDcQv cVtKFw\"><circle cx=\"25\" cy=\"25\" r=\"22.5\" fill=\"none\" stroke-width=\"5\"></circle><circle cx=\"25\" cy=\"25\" r=\"22.5\" fill=\"none\" stroke=\"#141414\" stroke-width=\"5\" class=\"LoadingSpinner__RingPath-ejcfZe eyUvln\"></circle></svg></div></div><div class=\"LoadingSpinner__ResultSpinner-eHeOCR cRyzyJ\"><span class=\"IconHolder__StyledIconHolder-gQLlhR jXTLfL\"><span class=\"IconHolder__StyledIconWrapper-iVlqGS jMWuCE\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Success\" class=\"StyledIcon-jibXlG gSmca-D\"><path d=\"M11 26.43c-.3 0-.59-.12-.81-.33l-8-8.01a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0l7.17 7.17L27.31 6.22c.43-.46 1.16-.49 1.62-.05.46.43.48 1.16.05 1.62L11.83 26.07c-.21.23-.51.36-.82.36h-.02Z\"></path></svg></span></span></div></div><span class=\"ScreenReaderOnly__StyledSpan-oNDjY iqcCVV\">Loading</span></div></span></button>"
+    }
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "label": "2 Sources",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Create activity",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "meetings-246549280",
+  "source_url": "https://app-na2.hubspot.com/meetings/246549280",
+  "source_title": "Meetings",
+  "trigger": {
+    "tag_name": "button",
+    "text": "More",
+    "id": "more-tools-toggle",
+    "class_name": "",
+    "name": "",
+    "role": "menuitem",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#more-tools-toggle",
+    "crawl_selector": "[data-crawl-id=\"10\"]",
+    "xpath": "//*[@id=\"more-tools-toggle\"]",
+    "outer_html": "<button id=\"more-tools-toggle\" data-test-id=\"more-tools-toggle\" aria-expanded=\"false\" aria-controls=\"more-tools-content\" role=\"menuitem\" aria-haspopup=\"true\" data-menu-item-level=\"primary\" data-menu-item-group=\"more-tools\" data-location=\"vertical-nav\" data-crawl-id=\"10\"><div class=\"PrimarySidebarItemLayout__StyledItemWrapper-ksMfbe bbfepc\"><div class=\"PrimarySidebarItemLayout__StyledIconSlot-gJbtLn bHlcXx\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"ThreeDots\" class=\"StyledIcon-jibXlG jDqiSy\"><circle cx=\"3.43\" cy=\"16.43\" r=\"3.43\"></circle><circle cx=\"16\" cy=\"16.43\" r=\"3.43\"></circle><circle cx=\"28.57\" cy=\"16.43\" r=\"3.43\"></circle></svg></div><div class=\"PrimarySidebarItemLayout__StyledLabelArea-hCMLcN cjRSwS\"><span class=\"PrimarySidebarItemLayout__StyledLabelText-OVnYD fEMShA nav-menu-item-label-text\">More</span><span class=\"VerticalNavMenuItemSignifiersAndActions__VerticalNavMenuItemAddons-hlKNle erwVja\"></span><span class=\"Dot__StyledDot-cbkgaN iboa-do\"></span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"SVG__SVGBase-XPqSr ddMMQm sidebar-item-layout--no-icon-override\" role=\"presentation\"><path d=\"M11 27.71c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62l9.48-9.48-9.48-9.47a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0L22.1 15.48c.45.45.45 1.17 0 1.62L11.81 27.39c-.22.22-.52.33-.81.33Z\"></path></svg></div></div></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/meetings/246549280",
+    "slug": "meetings-246549280",
+    "title": "Meetings"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button id=\"more-tools-toggle\" data-test-id=\"more-tools-toggle\" aria-expanded=\"false\" aria-controls=\"more-tools-content\" role=\"menuitem\" aria-haspopup=\"true\" data-menu-item-level=\"primary\" data-menu-item-group=\"more-tools\" data-location=\"vertical-nav\" data-crawl-id=\"10\"><div class=\"PrimarySidebarItemLayout__StyledItemWrapper-ksMfbe bbfepc\"><div class=\"PrimarySidebarItemLayout__StyledIconSlot-gJbtLn bHlcXx\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"ThreeDots\" class=\"StyledIcon-jibXlG jDqiSy\"><circle cx=\"3.43\" cy=\"16.43\" r=\"3.43\"></circle><circle cx=\"16\" cy=\"16.43\" r=\"3.43\"></circle><circle cx=\"28.57\" cy=\"16.43\" r=\"3.43\"></circle></svg></div><div class=\"PrimarySidebarItemLayout__StyledLabelArea-hCMLcN cjRSwS\"><span class=\"PrimarySidebarItemLayout__StyledLabelText-OVnYD fEMShA nav-menu-item-label-text\">More</span><span class=\"VerticalNavMenuItemSignifiersAndActions__VerticalNavMenuItemAddons-hlKNle erwVja\"></span><span class=\"Dot__StyledDot-cbkgaN iboa-do\"></span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"SVG__SVGBase-XPqSr ddMMQm sidebar-item-layout--no-icon-override\" role=\"presentation\"><path d=\"M11 27.71c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62l9.48-9.48-9.48-9.47a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0L22.1 15.48c.45.45.45 1.17 0 1.62L11.81 27.39c-.22.22-.52.33-.81.33Z\"></path></svg></div></div></button>",
+  "trigger_label": "More",
+  "trigger_id": "more-tools-toggle",
+  "trigger_class": "",
+  "target_url": "https://app-na2.hubspot.com/meetings/246549280",
+  "target_slug": "meetings-246549280",
+  "target_title": "Meetings"
+}

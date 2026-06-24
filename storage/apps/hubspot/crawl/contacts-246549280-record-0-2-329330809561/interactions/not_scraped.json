@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Create a note",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Find related contacts",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"26\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" type=\"button\" data-crawl-id=\"26\" data-fnd-button=\"t\" aria-disabled=\"true\" data-button-use=\"tertiary\" class=\"PrivateButton__StyledButton-eRHhiA hCYvVO\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting "
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "label": "onboarding.steps.finalStep.title",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Close",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Other activity",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"20\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" role=\"button\" data-crawl-id=\"20\" aria-expanded=\"false\" aria-disabled=\"false\" class=\"sc-AxjAm gPiYpG sc-AxhUy fXtrFT\" aria-controls=\"trellis-foundations-disclosure-:rf:\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if neede"
+  },
+  {
+    "label": "1 visit",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"21\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" role=\"button\" data-crawl-id=\"21\" aria-expanded=\"false\" aria-disabled=\"false\" class=\"sc-AxjAm gPiYpG sc-AxhUy fXtrFT\" aria-controls=\"trellis-foundations-disclosure-:rj:\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if neede"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "13 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

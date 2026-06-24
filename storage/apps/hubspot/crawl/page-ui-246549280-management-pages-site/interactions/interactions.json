@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-create-new",
+    "relationship_file": "interactions/001-create-new/relationship.json"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/004-assistant",
+    "relationship_file": "interactions/004-assistant/relationship.json"
+  },
+  {
+    "label": "Wondrr",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/005-wondrr",
+    "relationship_file": "interactions/005-wondrr/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/006-more",
+    "relationship_file": "interactions/006-more/relationship.json"
+  },
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/009-manage-navigation",
+    "relationship_file": "interactions/009-manage-navigation/relationship.json"
+  },
+  {
+    "label": "Edit brand kit",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/010-edit-brand-kit",
+    "relationship_file": "interactions/010-edit-brand-kit/relationship.json"
+  }
+]

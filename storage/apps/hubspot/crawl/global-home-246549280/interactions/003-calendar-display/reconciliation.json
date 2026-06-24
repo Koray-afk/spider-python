@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Calendar display",
+    "tagName": "button",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA fAELR",
+    "selector": "[data-crawl-id=\"18\"]",
+    "outerHTML": "<button tabindex=\"0\" aria-label=\"Calendar display\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"tertiary-light\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA fAELR\" data-crawl-id=\"18\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Meetings\" class=\"StyledIcon-jibXlG eLxJpm\"><path d=\"M9.86 8.71c-.63 0-1.14-.51-1.14-1.14V3A1.14 1.14 0 1 1 11 3v4.57c0 .63-.51 1.14-1.14 1.14M21.29 8.71c-.63 0-1.14-.51-1.14-1.14V3a1.14 1.14 0 1 1 2.28 0v4.57c0 .63-.51 1.14-1.14 1.14M19 13.28H3A1.14 1.14 0 1 1 3 11h16a1.14 1.14 0 1 1 0 2.28M8.71 24.71c-.63 0-1.14-.51-1.14-1.14v-6.86a1.14 1.14 0 1 1 2.28 0v6.86c0 .63-.51 1.14-1.14 1.14M13.29 24.71c-.63 0-1.14-.51-1.14-1.14v-6.86a1.14 1.14 0 1 1 2.28 0v6.86c0 .63-.51 1.14-1.14 1.14M20.14 29.28c-.63 0-1.14-.51-1.14-1.14v-5.71c0-1.89 1.54-3.43 3.43-3.43h5.71a1.14 1.14 0 1 1 0 2.28h-5.71c-.63 0-1.14.51-1.14 1.14v5.71c0 .63-.51 1.14-1.14 1.14Z\"></path><path d=\"M20.14 29.28H5.29c-1.89 0-3.43-1.54-3.43-3.43v-9.14a1.14 1.14 0 1 1 2.28 0v9.14c0 .63.51 1.14 1.14 1.14h14.38l7.33-7.33V7.57c0-.63-.51-1.14-1.14-1.14H5.29c-.63 0-1.14.51-1.14 1.14v4.57a1.14 1.14 0 1 1-2.28 0V7.57c0-1.89 1.54-3.43 3.43-3.43h20.57c1.89 0 3.43 1.54 3.43 3.43v12.57c0 .3-.12.59-.33.81l-8 8c-.21.21-.51.33-.81.33Z\"></path><path d=\"M23.57 13.28H3A1.14 1.14 0 1 1 3 11h20.57a1.14 1.14 0 1 1 0 2.28\"></path></svg></span></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1) > svg:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]/svg[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<path d=\"M20.14 29.28H5.29c-1.89 0-3.43-1.54-3.43-3.43v-9.14a1.14 1.14 0 1 1 2.28 0v9.14c0 .63.51 1.14 1.14 1.14h14.38l7.33-7.33V7.57c0-.63-.51-1.14-1.14-1.14H5.29c-.63 0-1.14.51-1.14 1.14v4.57a1.14 1.14 0 1 1-2.28 0V7.57c0-1.89 1.54-3.43 3.43-3.43h20.57c1.89 0 3.43 1.54 3.43 3.43v12.57c0 .3-.12.59-.33.81l-8 8c-.21.21-.51.33-.81.33Z\"></path>\n<path d=\"M23.57 13.28H3A1.14 1.14 0 1 1 3 11h20.57a1.14 1.14 0 1 1 0 2.28\"></path>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

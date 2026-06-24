@@ -133,6 +133,76 @@ APPS = {
         # Resume from crawl_checkpoint.json after interrupt (use `clean` to reset).
         "crawl_resume": True,
     },
+    "hubspot": {
+        # Use the login page itself as pre_auth_home so the crawler opens it,
+        # waits for the user to log in, and does NOT mark any real app page as
+        # visited before the authenticated post-auth phase begins.
+        "pre_auth_home": "https://app-na2.hubspot.com/login",
+        "login_url": "https://app-na2.hubspot.com/login",
+        # Update the portal ID (246549280) if your account uses a different one.
+        "post_auth_home": "https://app-na2.hubspot.com/contacts/246549280/contacts/list/view/all",
+        "max_pages_pre_auth": 1,
+        "max_pages_post_auth": 100,
+        "max_interactions_per_page": 12,
+        "max_ranked_interactions": 15,
+        "max_interaction_depth": None,
+        "crawl_skip_screenshots": True,
+        # HubSpot's React SPA + styled-components need time to finish rendering.
+        # 7 s gives the CSSOM polling in _inline_hubspot_styled_css a head start.
+        "crawl_wait_after_load_ms": 7000,
+        # HubSpot never fully reaches networkidle — use domcontentloaded + wait.
+        "crawl_use_networkidle": False,
+        # Sidebar lives in a cross-origin iframe Playwright can't read; use seeds.
+        "crawl_sidebar_first": False,
+        "crawl_resume": True,
+        # NEW: tells routing helpers to treat paths (not #fragments) as distinct pages.
+        "crawl_hash_routes": False,
+        "priority_url_patterns": [
+            "/global-home/",
+            "/contacts/246549280/contacts/list/view/all",
+            "/contacts/246549280/deals/board/view/all",
+        ],
+        "seed_url_patterns": [
+            "/global-home/246549280",
+            "/contacts/246549280/contacts/list/view/all",
+            "/contacts/246549280/companies/list/view/all",
+            "/contacts/246549280/deals/board/view/all",
+            "/marketing/246549280/email/manage",
+            "/forms/246549280",
+            "/reports/246549280/dashboards",
+        ],
+        "list_detail_link_limits": [
+            {"pattern": "/contacts/246549280/contact/", "max_from_page": 2},
+            {"pattern": "/contacts/246549280/company/", "max_from_page": 2},
+            {"pattern": "/contacts/246549280/deal/", "max_from_page": 2},
+        ],
+        "global_link_limits": [
+            {"pattern": "/contacts/246549280/contact/", "max_total": 3},
+            {"pattern": "/contacts/246549280/company/", "max_total": 3},
+            {"pattern": "/contacts/246549280/deal/", "max_total": 3},
+        ],
+        "link_cross_page_rules": [],
+        "skip_url_patterns": [
+            "/pricing",
+            "/upgrade",
+            "/oauth/",
+            "/integrations/",
+            "/academy/",
+            "/marketplace/",
+            "/help/",
+            "/notifications",
+            "/user-preferences/",
+            "/feedback/",
+            "/logout",
+            "/login",
+            "/legal/",
+            "/go-to/",
+            "/user-guide/",
+            "/sales-products-settings/",
+            "/settings/",
+        ],
+        "mandatory_tab_labels": ["All", "Contacts", "Companies", "Deals"],
+    },
 }
 
 

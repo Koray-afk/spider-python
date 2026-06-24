@@ -1,0 +1,34 @@
+{
+  "source_page": "reports-dashboard-246549280",
+  "source_url": "https://app-na2.hubspot.com/reports-dashboard/246549280",
+  "source_title": "Reports dashboard",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "highcharts-a11y-proxy-button",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Show (Count) Contacts",
+    "selector": "#highcharts-qzsqrd2-33 > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"32\"]",
+    "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+    "outer_html": "<button aria-label=\"Show (Count) Contacts\" tabindex=\"-1\" aria-pressed=\"true\" class=\"highcharts-a11y-proxy-button\" aria-hidden=\"false\" style=\"border-width: 0px; background-color: transparent; cursor: pointer; outline: none; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 110.227px; height: 15px; left: 18px; top: 0px; visibility: visible;\" data-crawl-id=\"32\"></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/reports-dashboard/246549280/view/140060939",
+    "slug": "reports-dashboard-246549280-view-140060939",
+    "title": "Reports dashboard"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button aria-label=\"Show (Count) Contacts\" tabindex=\"-1\" aria-pressed=\"true\" class=\"highcharts-a11y-proxy-button\" aria-hidden=\"false\" style=\"border-width: 0px; background-color: transparent; cursor: pointer; outline: none; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 110.227px; height: 15px; left: 18px; top: 0px; visibility: visible;\" data-crawl-id=\"32\"></button>",
+  "trigger_label": "Contacts Added Over Time\n\nIn the last 30 days | Daily\n\nChart\n\nChart with 30 data points.\nThe chart has 1 X axis displayi",
+  "trigger_id": "commentable-area-dashboard-widget-324324594",
+  "trigger_class": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+  "target_url": "https://app-na2.hubspot.com/reports-dashboard/246549280/view/140060939",
+  "target_slug": "reports-dashboard-246549280-view-140060939",
+  "target_title": "Reports dashboard"
+}
