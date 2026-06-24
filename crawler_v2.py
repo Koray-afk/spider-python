@@ -1249,6 +1249,9 @@ def bfs_crawl(
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
     max_ranked_interactions: int = 15,
     max_interaction_depth: int | None = 3,
+    use_ax_discovery: bool = True,
+    ax_max_candidates_per_page: int = 200,
+    ax_skip_grid_roles: bool = True,
     check_login: bool = False,
     skip_screenshots: bool = False,
     wait_after_load_ms: int = WAIT_AFTER_LOAD_MS,
@@ -1453,6 +1456,19 @@ def bfs_crawl(
                 print(f"[BFS] Interaction discovery failed: {exc}")
                 candidates = []
 
+            if use_ax_discovery:
+                try:
+                    from discover.accessibility import enhance_candidates_with_accessibility
+
+                    candidates = enhance_candidates_with_accessibility(
+                        page,
+                        candidates,
+                        max_candidates=ax_max_candidates_per_page,
+                        skip_grid_roles=ax_skip_grid_roles,
+                    )
+                except Exception as exc:
+                    print(f"[AX] Enhancement failed ({exc}) — DOM-only discovery")
+
             links = collect_links(page, page.url, base_domain)
             print(f"[BFS] Links Found: {len(links)}")
             for link in links:
@@ -1612,6 +1628,9 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             sidebar_first=bool(cfg.get("crawl_sidebar_first", True)),
             resume=bool(cfg.get("crawl_resume", True)),
             hash_routes=bool(cfg.get("crawl_hash_routes", True)),
+            use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
+            ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
+            ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
         )
         context.close()
         browser.close()

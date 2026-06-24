@@ -24,7 +24,8 @@ URL:  "{page_url}"
 You are selecting interactive elements for a sales demo prototype.
 
 Below is a numbered list of clickable UI elements discovered on this page.
-Each entry shows: index, label, HTML tag, and CSS classes.
+Each entry shows: index, label, HTML tag, accessible name/role, page region,
+states, and CSS classes when available.
 
 {numbered_candidates}
 
@@ -66,7 +67,19 @@ def _build_numbered_list(candidates: list[dict]) -> str:
         tag = c.get("elementType", "")
         cls = (c.get("className") or "").strip()
         cid = (c.get("id") or "").strip()
+        ax_name = (c.get("ax_name") or "").strip()
+        ax_role = (c.get("ax_role") or "").strip()
+        region = (c.get("region") or "").strip()
+        states = c.get("ax_states") or []
         parts = [f"{i}. [{tag}]", f'label="{label}"']
+        if ax_name and ax_name.lower() != label.lower():
+            parts.append(f'ax_name="{ax_name}"')
+        if ax_role:
+            parts.append(f'role="{ax_role}"')
+        if region:
+            parts.append(f'region="{region}"')
+        if states:
+            parts.append(f'states="{",".join(states)}"')
         if cid:
             parts.append(f'id="{cid}"')
         if cls:
