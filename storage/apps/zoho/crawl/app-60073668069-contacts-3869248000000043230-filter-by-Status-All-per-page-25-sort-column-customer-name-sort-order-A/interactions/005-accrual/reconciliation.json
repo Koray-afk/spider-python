@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Accrual",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"36\"]",
+    "outerHTML": "<button for=\"f5dcb3f4-4b0f-4c2c-8800-b480137b228d\" aria-controls=\"f5dcb3f4-4b0f-4c2c-8800-b480137b228d\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"36\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"f5dcb3f4-4b0f-4c2c-8800-b480137b228d\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Sales</div><!-- --><!-- --><span id=\"f006e704-87fc-4aa4-a8d2-cf924f3b5573\"><a class=\"ember-view dropdown-item\" href=\"#/invoices/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember794\">Invoice</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/contacts/3869248000000043230/customerpayment?currency_id=3869248000000000064\" id=\"ember796\">Customer Payment</a><!-- --><!-- --><!-- --><span id=\"f4a1f86e-a353-405f-9930-4fb6b79d26be\"><a class=\"ember-view dropdown-item\" href=\"#/quotes/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember798\">Quote</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"eca15024-079a-4131-9970-0a85d9d80dc1\"><a class=\"ember-view dropdown-item\" href=\"#/salesorders/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember800\">Sales Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d454749f-8c4a-4986-b94e-7ecce8f6e68e\"><a class=\"ember-view dropdown-item\" href=\"#/deliverychallans/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember802\">Delivery Challan</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c5c89177-c9cb-4535-a5dd-b0fdb45f37a0\"><a class=\"ember-view dropdown-item\" href=\"#/recurringinvoices/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember804\">Recurring Invoice</a></span> <!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?customer_id=3869248000000043230&amp;customer_name=AMS%20Stores\" id=\"ember806\">Expense</a><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?customer_id=3869248000000043230&amp;customer_name=AMS%20Stores\" id=\"ember808\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"db05756d-5605-40ba-aab6-4b1e9d5f7603\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember810\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c776b40c-869a-4203-bb35-7786e0b38114\"><a class=\"ember-view dropdown-item\" href=\"#/creditnotes/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember812\">Credit Note</a></span> <!-- --><!-- --><!-- --><div class=\"dropdown-divider\"></div><!-- --><!-- --><span id=\"f763fc14-2714-4d57-b3c8-ddddf3c619cc\"><a class=\"ember-view dropdown-item\" href=\"#/timesheet/projects/new?contact_id=3869248000000043230&amp;contact_name=AMS%20Stores\" id=\"ember814\">Project</a></span> <!-- --><!-- --><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

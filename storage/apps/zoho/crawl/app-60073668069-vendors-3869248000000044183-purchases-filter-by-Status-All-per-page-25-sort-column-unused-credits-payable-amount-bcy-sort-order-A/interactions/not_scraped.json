@@ -1,0 +1,77 @@
+[
+  {
+    "label": "AMOUNT",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "BALANCE DUE",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "AMOUNT PAID",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> "
+  },
+  {
+    "label": "Go to transactions",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"28\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"28\" aria-haspopup=\"true\" aria-expanded=\"false\" for=\"e591f250-1690-4b88-a20c-0a1661ab0161\" aria-controls=\"e591f250-1690-4b88-a20c-0a1661ab0161\" class=\"dropdown-toggle no-caret  bg-white border-0 text-black-semibold font-large\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Expense\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"c5ea6f5b-dd17-49d3-8cdd-68371de283e7\" aria-controls=\"c5ea6f5b-dd17-49d3-8cdd-68371de283e7\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "View",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"18\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"18\" aria-haspopup=\"true\" aria-expanded=\"false\" for=\"ddec964a-3dae-4527-bef6-fece42a9c61e\" aria-controls=\"ddec964a-3dae-4527-bef6-fece42a9c61e\" class=\"dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled "
+  },
+  {
+    "label": "VENDOR NAME",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

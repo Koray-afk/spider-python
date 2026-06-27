@@ -1,0 +1,25 @@
+[
+  {
+    "label": "New Quote",
+    "tag_name": "button",
+    "selector": "#f571ea18-abc4-4bd4-a1a7-5121af547c81 > li:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/quotes/new",
+    "target_slug": "app-60073668069-quotes-new",
+    "target_page": "../app-60073668069-quotes-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "icon-button add-new tab-element-right",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#f571ea18-abc4-4bd4-a1a7-5121af547c81 > li:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[4]/div[1]/div[1]/ul[1]/li[2]/button[1]",
+      "outer_html": "<button class=\"icon-button add-new tab-element-right\" title=\"New Quote\" type=\"button\" data-crawl-id=\"10\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-s align-middle\" aria-hidden=\"true\"><path d=\"M416 226H286V96c0-16.6-13.4-30-30-30s-30 13.4-30 30v130H96c-16.6 0-30 13.4-30 30s13.4 30 30 30h130v130c0 16.6 13.4 30 30 30s30-13.4 30-30V286h130c16.6 0 30-13.4 30-30s-13.4-30-30-30\"></path></svg></button>"
+    }
+  }
+]

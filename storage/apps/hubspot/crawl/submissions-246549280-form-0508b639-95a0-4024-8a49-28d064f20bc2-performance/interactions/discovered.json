@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Submissions",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA hnEotT",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Last 30 days\nDate range: From 05/24/2026 to 06/22/2026\n\nVIEWS\n\n0\n\nCONVERSION RATE\n\n\u2013\n\nSUBMISSIONS\n\n0\nClick-through rate,",
+    "id": "commentable-area-forms-submissions-data-well",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Step completion\nDate range: From 05/24/2026 to 06/22/2026",
+    "id": "commentable-area-forms-submissions-conversion-funnel",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Contact type\nDate range: From 05/24/2026 to 06/22/2026",
+    "id": "commentable-area-forms-submissions-contact-chart",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Conversion pages\nDate range: From 05/24/2026 to 06/22/2026",
+    "id": "commentable-area-forms-submissions-conversion-chart",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Submissions by source\nDate range: From 05/24/2026 to 06/22/2026",
+    "id": "commentable-area-forms-submissions-source-table",
+    "className": "EmbeddedCommentableArea__StyledHoverableCommentableArea-bqHczX frStka commentable-area",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Assistant",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "12 days left in trial",
+    "id": "mini-trial-guide-button",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More",
+    "id": "more-tools-toggle",
+    "className": "",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Manage navigation",
+    "id": "",
+    "className": "sc-fzoXzr dAExvT",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Actions",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bWtCjq",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export submissions",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bOCoLt",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

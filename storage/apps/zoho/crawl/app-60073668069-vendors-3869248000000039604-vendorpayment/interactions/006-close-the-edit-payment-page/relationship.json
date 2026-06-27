@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-vendors-3869248000000039604-vendorpayment",
+  "source_url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/vendorpayment",
+  "source_title": "Contacts | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "f28a3096-12f5-4549-a63f-deb07eaf1b25",
+    "class_name": "popover-trigger",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#f28a3096-12f5-4549-a63f-deb07eaf1b25",
+    "crawl_selector": "[data-crawl-id=\"16\"]",
+    "xpath": "//*[@id=\"f28a3096-12f5-4549-a63f-deb07eaf1b25\"]",
+    "outer_html": "<button class=\"popover-trigger\" id=\"f28a3096-12f5-4549-a63f-deb07eaf1b25\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"16\"><div class=\"bubble-scale-animation\"></div></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/vendorpayment",
+    "slug": "app-60073668069-vendors-3869248000000039604-vendorpayment",
+    "title": "Contacts | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button class=\"popover-trigger\" id=\"f28a3096-12f5-4549-a63f-deb07eaf1b25\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"16\"><div class=\"bubble-scale-animation\"></div></button>",
+  "trigger_label": "Close the Edit Payment page",
+  "trigger_id": "",
+  "trigger_class": "icon-button close-details separationline m-3",
+  "target_url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/vendorpayment",
+  "target_slug": "app-60073668069-vendors-3869248000000039604-vendorpayment",
+  "target_title": "Contacts | Zoho Books"
+}

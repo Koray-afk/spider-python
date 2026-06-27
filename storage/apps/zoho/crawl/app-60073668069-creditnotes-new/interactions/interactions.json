@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Add New Row",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/004-add-new-row",
+    "relationship_file": "interactions/004-add-new-row/relationship.json"
+  },
+  {
+    "label": "Add Items in Bulk",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/005-add-items-in-bulk",
+    "relationship_file": "interactions/005-add-items-in-bulk/relationship.json"
+  },
+  {
+    "label": "Save as Open",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/006-save-as-open",
+    "relationship_file": "interactions/006-save-as-open/relationship.json"
+  },
+  {
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/007-save-as-draft",
+    "relationship_file": "interactions/007-save-as-draft/relationship.json"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Show dropdown menu",
+  "triggerId": "",
+  "triggerClass": "dropdown-toggle   input-group-text",
+  "selector": "[data-crawl-id=\"3\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-home",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/home",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/home/dashboard?dashboard_id=defaultdashboard",
+  "beforeTitle": "Dashboard | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/home/dashboard?dashboard_id=defaultdashboard",
+  "title": "Dashboard | Zoho Books",
+  "resultPagePath": "app-60073668069-home/interactions/010-show-dropdown-menu",
+  "captured_at": "2026-06-19T09:37:36.252134+00:00"
+}

@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking-feeds-bankslist",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking/feeds/bankslist",
+  "source_title": "Connect Bank / Credit Card | Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "icon-button btn btn-text ms-2 d-inline-block mt-n1",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Close",
+    "selector": "#modal-wrapper > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > section:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/header[1]/section[2]/button[1]",
+    "outer_html": "<button class=\"icon-button btn btn-text ms-2 d-inline-block mt-n1\" aria-label=\"Close\" type=\"button\" data-crawl-id=\"1\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xs align-middle\" aria-hidden=\"true\"><path fill=\"#fe4242\" d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking/feeds/bankslist",
+    "slug": "app-60073668069-banking-feeds-bankslist",
+    "title": "Connect Bank / Credit Card | Banking | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"icon-button btn btn-text ms-2 d-inline-block mt-n1\" aria-label=\"Close\" type=\"button\" data-crawl-id=\"1\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xs align-middle\" aria-hidden=\"true\"><path fill=\"#fe4242\" d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\"></path></svg></button>",
+  "trigger_label": "Navigate To (Opt+0)",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle   btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking/feeds/bankslist",
+  "target_slug": "app-60073668069-banking-feeds-bankslist",
+  "target_title": "Connect Bank / Credit Card | Banking | Zoho Books"
+}

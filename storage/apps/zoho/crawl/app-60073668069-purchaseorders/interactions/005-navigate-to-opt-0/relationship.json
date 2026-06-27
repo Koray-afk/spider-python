@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-purchaseorders",
+  "source_url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+  "source_title": "Add New | Purchase Orders | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Stay Here",
+    "id": "a92c0c26a",
+    "class_name": "btn btn-primary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#a92c0c26a",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "//*[@id=\"a92c0c26a\"]",
+    "outer_html": "<button id=\"a92c0c26a\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"1\"><!----> Stay Here<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+    "slug": "app-60073668069-purchaseorders",
+    "title": "Add New | Purchase Orders | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button id=\"a92c0c26a\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"1\"><!----> Stay Here<!----></button>",
+  "trigger_label": "Navigate To (Opt+0)",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle   btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+  "target_slug": "app-60073668069-purchaseorders",
+  "target_title": "Add New | Purchase Orders | Zoho Books"
+}

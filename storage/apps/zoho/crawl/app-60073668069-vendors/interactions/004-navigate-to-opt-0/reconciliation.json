@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Navigate To (Opt+0)",
+    "tagName": "button",
+    "id": "",
+    "className": "btn p-0",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button class=\"btn p-0\" data-crawl-id=\"1\">All Vendors</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#vertically-scrolled-table > thead:nth-of-type(1) > tr:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[6]/div[2]/div[1]/table[1]/thead[1]/tr[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<th aria-sort=\"ascending\" class=\"text-start sortable ascending\" style=\"\"><button aria-roledescription=\"Sortable Header\" class=\"btn srt-btn bg-transparent\" data-crawl-id=\"29\" data-ember-action=\"\" data-ember-action-782=\"782\" type=\"button\"> <div class=\"position-relative d-flex align-items-center\"><!-- --> <div class=\"over-flow\" title=\"Name\">Name<!-- --> </div><span aria-hidden=\"true\" class=\"column d-print-none sort ps-2\"><svg class=\"icon icon-xxxs sort-up-caret rotate-180\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg> <svg class=\"icon icon-xxxs sort-down-caret\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></div></button><span class=\"cell-resizer position-absolute d-print-none ps-3\"></span> <!-- --></th>\n<th aria-sort=\"\" class=\"text-end sortable\" style=\"\"><button aria-roledescription=\"Sortable Header\" class=\"btn srt-btn bg-transparent\" data-crawl-id=\"32\" data-ember-action=\"\" data-ember-action-790=\"790\" type=\"button\"> <div class=\"position-relative d-flex align-items-center justify-content-end\"><!-- --> <div class=\"over-flow\" title=\"Unused Credits (BCY)\">Unused Credits (BCY)<!-- --> </div><!-- --></div></button><span class=\"cell-resizer position-absolute d-print-none ps-3\"></span> <!-- --></th>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

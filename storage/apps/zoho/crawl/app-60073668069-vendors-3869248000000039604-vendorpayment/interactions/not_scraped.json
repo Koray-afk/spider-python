@@ -1,0 +1,63 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> "
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Expense\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts"
+  },
+  {
+    "label": "Petty Cash",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"27\\\"]\").first\n    - locator resolved to <button id=\"ember449\" type=\"button\" data-crawl-id=\"27\" class=\"btn btn-secondary ember-view\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade d-block show nested-modal\">\u2026</div> f"
+  },
+  {
+    "label": "Clear Applied Amount",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"19\" data-ember-action=\"\" data-ember-action-427=\"427\" aria-label=\"Close the Edit Payment page\" class=\"icon-button close-details separationline m-3\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if neede"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"20\\\"]\").first\n    - locator resolved to <button id=\"ember446\" type=\"button\" data-crawl-id=\"20\" class=\"btn btn-secondary ember-view\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade d-block show nested-modal\">\u2026</div> f"
+  }
+]

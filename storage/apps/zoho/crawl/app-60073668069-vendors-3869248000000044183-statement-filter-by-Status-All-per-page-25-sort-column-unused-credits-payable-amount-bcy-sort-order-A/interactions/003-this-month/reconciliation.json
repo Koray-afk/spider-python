@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "This Month",
+    "tagName": "button",
+    "id": "rangemenu-button-ember521",
+    "className": "dropdown-toggle   form-control btn no-caret btn-outline",
+    "selector": "[data-crawl-id=\"28\"]",
+    "outerHTML": "<button for=\"e9b8cf21-16d5-450d-9975-8408b2beffce\" aria-controls=\"e9b8cf21-16d5-450d-9975-8408b2beffce\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   form-control btn no-caret btn-outline\" id=\"rangemenu-button-ember521\" type=\"button\" data-crawl-id=\"28\"><svg data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18px\" height=\"18px\" style=\"vertical-align: text-top;\" viewBox=\"0 0 512 512\"><path d=\"M397.57 48.68h-31v-9a21 21 0 0 0-42 0v9H187.91v-9a21 21 0 0 0-42 0v9H115a81.1 81.1 0 0 0-81 81v282.61a81.1 81.1 0 0 0 81 81h282.57a81.1 81.1 0 0 0 81-81V129.68a81.1 81.1 0 0 0-81-81zm39 363.61a39.05 39.05 0 0 1-39 39H115a39 39 0 0 1-39-39V129.68a39 39 0 0 1 39-39h31v3.7a21 21 0 0 0 42 0v-3.7h136.7v3.7a21 21 0 0 0 42 0v-3.7h31a39.05 39.05 0 0 1 39 39z\"></path><path d=\"M384.47 203.82a21 21 0 0 1-21 21h-208.9a21 21 0 0 1 0-42h208.9a21 21 0 0 1 21 21z\"></path><path style=\"fill:none\" d=\"M0 0h512v512H0z\"></path></svg> This Month <span class=\"float-end drp-caret-position pe-0\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 512 512\" class=\"drp-down-arrow\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></span></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu drp-dropdownmenu show\" data-popper-placement=\"bottom-start\" id=\"e9b8cf21-16d5-450d-9975-8408b2beffce\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(600px, 211.547px);\"><button class=\"dropdown-item\" id=\"drp-range-Today\" type=\"button\">Today</button><button class=\"dropdown-item\" id=\"drp-range-This Week\" type=\"button\">This Week</button><button class=\"dropdown-item active\" id=\"drp-range-This Month\" type=\"button\">This Month</button><button class=\"dropdown-item\" id=\"drp-range-This Quarter\" type=\"button\">This Quarter</button><button class=\"dropdown-item\" id=\"drp-range-This Year\" type=\"button\">This Year</button><button class=\"dropdown-item\" id=\"drp-range-Yesterday\" type=\"button\">Yesterday</button><button class=\"dropdown-item\" id=\"drp-range-Previous Week\" type=\"button\">Previous Week</button><button class=\"dropdown-item\" id=\"drp-range-Previous Month\" type=\"button\">Previous Month</button><button class=\"dropdown-item\" id=\"drp-range-Previous Quarter\" type=\"button\">Previous Quarter</button><button class=\"dropdown-item\" id=\"drp-range-Previous Year\" type=\"button\">Previous Year</button><div class=\"dropdown dropend ember-view sub-dropdown\" id=\"dd-f151202e-fd04-44fe-ab0e-615330b6c633\"><button aria-controls=\"f151202e-fd04-44fe-ab0e-615330b6c633\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-label=\"Custom Range Menu\" class=\"dropdown-toggle dropdown-item no-caret\" for=\"f151202e-fd04-44fe-ab0e-615330b6c633\" id=\"drp-range-Custom\" type=\"button\">Custom</button> <!-- --></div></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

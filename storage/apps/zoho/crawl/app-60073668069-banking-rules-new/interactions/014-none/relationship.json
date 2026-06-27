@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking-rules-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking/rules/new",
+  "source_title": "Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "div",
+    "text": "None",
+    "id": "msc-ember656",
+    "class_name": "multi-check-dropdown ",
+    "name": "",
+    "role": "combobox",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#msc-ember656",
+    "crawl_selector": "[data-crawl-id=\"26\"]",
+    "xpath": "//*[@id=\"msc-ember656\"]",
+    "outer_html": "<div msc-toggler=\"\" id=\"msc-ember656\" class=\"multi-check-dropdown \" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-controls=\"mscDropdownListBox\" aria-labelledby=\"ad99c9acc\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" data-crawl-id=\"26\"><div class=\"ms-selected form-control  \"><span class=\"label multi-checkbox-text \">None</span></div></div>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking/rules/new",
+    "slug": "app-60073668069-banking-rules-new",
+    "title": "Banking | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<div msc-toggler=\"\" id=\"msc-ember656\" class=\"multi-check-dropdown \" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-controls=\"mscDropdownListBox\" aria-labelledby=\"ad99c9acc\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" data-crawl-id=\"26\"><div class=\"ms-selected form-control  \"><span class=\"label multi-checkbox-text \">None</span></div></div>",
+  "trigger_label": "None",
+  "trigger_id": "msc-ember437",
+  "trigger_class": "multi-check-dropdown ",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking/rules/new",
+  "target_slug": "app-60073668069-banking-rules-new",
+  "target_title": "Banking | Zoho Books"
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Choose File",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"16\"]",
+    "outerHTML": "<button for=\"d044d499-9616-471a-acb2-e0fbbff99fb2\" aria-controls=\"d044d499-9616-471a-acb2-e0fbbff99fb2\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"16\"><span>Choose File</span></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu text-start show\" data-popper-placement=\"bottom-start\" id=\"d044d499-9616-471a-acb2-e0fbbff99fb2\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1014.57px, 418.594px);\"><div class=\"file-upload file-upload-input dropdown-item\" id=\"ab2233720\"><input aria-label=\"Attach From Desktop\" class=\"upload ember-view dropdown-item\" id=\"ember561\" title=\"\" type=\"file\"/> Choose File from Desktop</div> <button class=\"dropdown-item\" type=\"button\">Choose File from Documents</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

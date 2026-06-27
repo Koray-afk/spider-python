@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking-import-isAccountInfoNeeded-true",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking/import?isAccountInfoNeeded=true",
+  "source_title": "Import | Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "e29e783a-bcca-4d61-9e95-d4e5c08c9627",
+    "class_name": "icon-button ms-4",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#e29e783a-bcca-4d61-9e95-d4e5c08c9627",
+    "crawl_selector": "[data-crawl-id=\"22\"]",
+    "xpath": "//*[@id=\"e29e783a-bcca-4d61-9e95-d4e5c08c9627\"]",
+    "outer_html": "<button class=\"icon-button ms-4\" id=\"e29e783a-bcca-4d61-9e95-d4e5c08c9627\" type=\"button\" data-ember-action=\"\" data-ember-action-565=\"565\" tabindex=\"0\" data-crawl-id=\"22\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xs align-middle\" aria-hidden=\"true\"><path fill=\"none\" d=\"M.3.3h511.3v511.3H.3z\"></path><path fill=\"#FF5273\" d=\"M313.3 255.5l121.2-121.2c15.3-16 14.7-41.5-1.3-56.8-15.5-14.8-40-14.8-55.5 0L256.5 198.7 135.3 77.5c-16-15.4-41.4-14.9-56.8 1.1-15 15.6-15 40.2 0 55.7l121.2 121.2L78.5 376.7c-15.9 15.5-16.2 40.9-.7 56.8s40.9 16.2 56.8.7l.7-.7 121.2-121.2 121.2 121.2c16 15.4 41.4 14.9 56.8-1.1 15-15.6 15-40.2 0-55.7L313.3 255.5z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking/import?isAccountInfoNeeded=true",
+    "slug": "app-60073668069-banking-import-isAccountInfoNeeded-true",
+    "title": "Import | Banking | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button class=\"icon-button ms-4\" id=\"e29e783a-bcca-4d61-9e95-d4e5c08c9627\" type=\"button\" data-ember-action=\"\" data-ember-action-565=\"565\" tabindex=\"0\" data-crawl-id=\"22\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xs align-middle\" aria-hidden=\"true\"><path fill=\"none\" d=\"M.3.3h511.3v511.3H.3z\"></path><path fill=\"#FF5273\" d=\"M313.3 255.5l121.2-121.2c15.3-16 14.7-41.5-1.3-56.8-15.5-14.8-40-14.8-55.5 0L256.5 198.7 135.3 77.5c-16-15.4-41.4-14.9-56.8 1.1-15 15.6-15 40.2 0 55.7l121.2 121.2L78.5 376.7c-15.9 15.5-16.2 40.9-.7 56.8s40.9 16.2 56.8.7l.7-.7 121.2-121.2 121.2 121.2c16 15.4 41.4 14.9 56.8-1.1 15-15.6 15-40.2 0-55.7L313.3 255.5z\"></path></svg></button>",
+  "trigger_label": "Choose your account for import",
+  "trigger_id": "ac-ember428",
+  "trigger_class": "ac-box ",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking/import?isAccountInfoNeeded=true",
+  "target_slug": "app-60073668069-banking-import-isAccountInfoNeeded-true",
+  "target_title": "Import | Banking | Zoho Books"
+}

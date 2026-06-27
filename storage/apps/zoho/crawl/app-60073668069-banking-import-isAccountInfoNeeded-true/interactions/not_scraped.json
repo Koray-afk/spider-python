@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Next",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"18\\\"]\").first\n    - locator resolved to <button disabled id=\"ember433\" type=\"submit\" data-crawl-id=\"18\" class=\"btn btn-primary ember-view\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabl"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button disabled id=\"ember433\" type=\"submit\" data-crawl-id=\"19\" class=\"btn btn-primary ember-view\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabl"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"2\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"2\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" class=\"dropdown-toggle no-caret \" for=\"ee005e13-dff0-48b3-8b9e-ef9c6b56ae2c\" aria-controls=\"ee005e13-dff0-48b3-8b9e-ef9c6b56ae2c\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visi"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"3\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"d7d0cfa5-3439-4bde-81c1-b669bbad726b\" class=\"dropdown-toggle   input-group-text\" aria-controls=\"d7d0cfa5-3439-4bde-81c1-b669bbad726b\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - elemen"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"4\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"d869854f-6882-46f7-abec-52deeb64e320\" aria-controls=\"d869854f-6882-46f7-abec-52deeb64e320\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n "
+  },
+  {
+    "label": "Download sample file",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"17\\\"]\").first\n    - locator resolved to <button disabled id=\"ember433\" type=\"submit\" data-crawl-id=\"17\" class=\"btn btn-primary ember-view\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabl"
+  }
+]

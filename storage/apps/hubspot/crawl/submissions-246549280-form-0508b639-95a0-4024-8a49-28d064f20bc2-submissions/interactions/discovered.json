@@ -1,0 +1,98 @@
+[
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Assistant",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "12 days left in trial",
+    "id": "mini-trial-guide-button",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Wondrr",
+    "id": "hs-global-toolbar-accounts",
+    "className": "sc-AxjAm cYqPoz",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More",
+    "id": "more-tools-toggle",
+    "className": "",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Manage navigation",
+    "id": "",
+    "className": "sc-fzoXzr dAExvT",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Actions",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bWtCjq",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export submissions",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bOCoLt",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit form",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA gqHeqB",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Collaborate with Assistant",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bVmNmm",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

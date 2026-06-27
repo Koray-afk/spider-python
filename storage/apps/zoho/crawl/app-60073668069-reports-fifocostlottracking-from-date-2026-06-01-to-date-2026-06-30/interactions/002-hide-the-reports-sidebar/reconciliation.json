@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Hide the reports sidebar",
+    "tagName": "button",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"14\"]",
+    "outerHTML": "<button class=\"icon-button collapse-expand z-index-1 \" aria-label=\"Collapse/Expand\" type=\"button\" data-crawl-id=\"14\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon lpanel align-middle rtl-rotate-180\" aria-hidden=\"true\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M157.3 413.2c-6.6 0-13.1-2.5-18.2-7.5L7.5 274c-10-10-10-26.3 0-36.3L139.2 106c10-10 26.3-10 36.3 0s10 26.3 0 36.3L62 255.9l113.5 113.5c10 10 10 26.3 0 36.3-5 5-11.6 7.5-18.2 7.5\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M290.1 285H73.5c-14.2 0-25.7-11.5-25.7-25.7s11.5-25.7 25.7-25.7h216.7c14.2 0 25.7 11.5 25.7 25.7-.1 14.2-11.6 25.7-25.8 25.7m195.2 0h-94.4c-14.2 0-25.7-11.5-25.7-25.7s11.5-25.7 25.7-25.7h94.4c14.2 0 25.7 11.5 25.7 25.7S499.5 285 485.3 285m0 125.1H342c-14.2 0-25.7-11.5-25.7-25.7s11.5-25.7 25.7-25.7h143.3c14.2 0 25.7 11.5 25.7 25.7s-11.5 25.7-25.7 25.7m0-250.1H342c-14.2 0-25.7-11.5-25.7-25.7s11.5-25.7 25.7-25.7h143.3c14.2 0 25.7 11.5 25.7 25.7S499.5 160 485.3 160\"></path></svg></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#main-nav-tab > ul:nth-of-type(1) > li:nth-of-type(2)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown dropend ember-view\" id=\"dd-d4aff195-43fd-441e-975b-a35bd9ccc2eb\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-ccc05f5f-eb2c-4c39-b142-06f0c7d22835\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-cb11eba7-9665-4221-87b0-36bfb6867fd7\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-eff910b8-7fa9-46e2-8699-8f02750734cd\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-e7ec94f6-dbba-483b-b67e-c70ff68de187\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-dddf62ec-9332-4c98-b238-d3ce904938e9\"><!-- --> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

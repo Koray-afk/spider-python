@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "File Type:\u00a0 All",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle         no-caret",
+    "selector": "[data-crawl-id=\"8\"]",
+    "outerHTML": "<button for=\"da614cc5-0be1-41a6-99cb-41831a0bda02\" aria-controls=\"da614cc5-0be1-41a6-99cb-41831a0bda02\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle         no-caret\" type=\"button\" data-crawl-id=\"8\"><span class=\"text-muted \">File Type:&nbsp; </span><span>All</span> <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"fill-dropdown-blue icon icon-xsmall mb-1 ms-1\" width=\"8px\" height=\"8px\"><path d=\"M492.9 211.6c-25.5-25.7-67.1-25.8-92.8-.3L256 354.2l-144.1-143c-25.7-25.5-67.3-25.4-92.8.3s-25.4 67.2.3 92.7L209.8 493c25.6 25.4 66.9 25.4 92.5 0l190.4-188.8c12.9-12.8 19.4-29.7 19.4-46.5-.1-16.6-6.5-33.4-19.2-46.1z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu listview-filter show\" data-popper-placement=\"bottom-start\" id=\"da614cc5-0be1-41a6-99cb-41831a0bda02\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(304.766px, 156.297px);\"><!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-331=\"331\" type=\"button\">All</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-332=\"332\" type=\"button\">Images</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-333=\"333\" type=\"button\">PDF</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-334=\"334\" type=\"button\">Docs</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-335=\"335\" type=\"button\">Sheets</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

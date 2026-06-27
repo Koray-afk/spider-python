@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/002-create-new",
+    "relationship_file": "interactions/002-create-new/relationship.json"
+  },
+  {
+    "label": "All meeting types",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/004-all-meeting-types",
+    "relationship_file": "interactions/004-all-meeting-types/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-marketplace",
+    "relationship_file": "interactions/005-marketplace/relationship.json"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/006-assistant",
+    "relationship_file": "interactions/006-assistant/relationship.json"
+  },
+  {
+    "label": "13 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/007-13-days-left-in-trial",
+    "relationship_file": "interactions/007-13-days-left-in-trial/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/008-more",
+    "relationship_file": "interactions/008-more/relationship.json"
+  },
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/009-manage-navigation",
+    "relationship_file": "interactions/009-manage-navigation/relationship.json"
+  },
+  {
+    "label": "(default)",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/011-default",
+    "relationship_file": "interactions/011-default/relationship.json"
+  }
+]

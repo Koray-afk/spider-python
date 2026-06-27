@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show ChatGPT",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show Gemini",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show Perplexity",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show Wondrr",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show Earned",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show Peer",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show UGC",
+    "id": "",
+    "className": "highcharts-a11y-proxy-button",
+    "selector": "[data-crawl-id=\"41\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add prompts",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Engine",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Products/Services",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Chart options",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jDRfJF",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

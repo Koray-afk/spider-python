@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Go to transactions",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/002-go-to-transactions",
+    "relationship_file": "interactions/002-go-to-transactions/relationship.json"
+  },
+  {
+    "label": "New Transaction",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/005-new-transaction",
+    "relationship_file": "interactions/005-new-transaction/relationship.json"
+  },
+  {
+    "label": "All Vendors",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/006-all-vendors",
+    "relationship_file": "interactions/006-all-vendors/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/008-navigate-to-opt-0",
+    "relationship_file": "interactions/008-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/009-more-actions",
+    "relationship_file": "interactions/009-more-actions/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/010-edit",
+    "relationship_file": "interactions/010-edit/relationship.json"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Attachments",
+    "selector": "[data-crawl-id=\"46\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  }
+]

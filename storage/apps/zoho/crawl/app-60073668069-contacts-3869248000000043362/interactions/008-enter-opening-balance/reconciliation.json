@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Enter Opening Balance",
+    "tagName": "button",
+    "id": "c6b57180-3ffb-4ef6-960b-3eb585f65519",
+    "className": "popover-trigger",
+    "selector": "[data-crawl-id=\"35\"]",
+    "outerHTML": "<button class=\"popover-trigger\" id=\"c6b57180-3ffb-4ef6-960b-3eb585f65519\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"35\"><span class=\"text-capitalize cursor-pointer text-blue ps-3 ms-1\">Enter Opening Balance</span></button>"
+  },
+  "interaction_type": "modal",
+  "location": {
+    "parentSelector": "#tooltip-popover-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<div tabindex=\"0\"></div>\n<div class=\"popover popper popover-container mw-700 z-index-3\" data-popper-placement=\"bottom\" for=\"c6b57180-3ffb-4ef6-960b-3eb585f65519\" style=\"position: absolute; left: 0px; top: 0px; margin: 0px; display: block; transform: translate(999px, 394px);\"><div class=\"arrow\" data-popper-arrow=\"\" style=\"position: absolute; left: 0px; transform: translate(116px, 0px);\"></div> <div aria-labelledby=\"c6b57180-3ffb-4ef6-960b-3eb585f65519\" id=\"popover-wrapper\" role=\"dialog\" tabindex=\"-1\"><div class=\"popover-header font-large p-4\">Edit Opening Balance <button aria-label=\"Close Popover\" class=\"popover-close-button\" type=\"button\"><svg aria-hidden=\"true\" class=\"popover-close-icon\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\" fill=\"#fe4242\"></path></svg></button></div> <div class=\"popover-body p-0 w-400px\"><!-- --> <form><div class=\"p-5\"><div class=\"ember-view\" id=\"ember1609\" tabindex=\"-1\"><!-- --></div> <div class=\"form-group row\"><label class=\"col-form-label col-lg-5 font-small\" for=\"abd047905\">Opening Balance</label> <div class=\"col-form-label col-lg-7 font-small\"><input class=\"ember-text-field text-start ember-view form-control\" data-auto-gen-binding-key=\"opening_balance_amount\" data-auto-gen-binding-type=\"number-field\" id=\"abd047905\" type=\"text\"/></div></div> <!-- --><!-- --><!-- --></div> <div class=\"form-group popover-footer m-0 ps-4\"><button class=\"btn btn-primary ember-view ms-1\" id=\"ember1611\" type=\"submit\"><!-- --> Save<!-- --></button>\u00a0 <!-- --></div></form></div></div></div>\n<div tabindex=\"0\"></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

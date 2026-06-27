@@ -1,0 +1,122 @@
+[
+  {
+    "label": "All segments",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX hkAHdR",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Unused segments",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Recently deleted",
+    "id": "",
+    "className": "TabComponent-jGWjCS ViewTab__StyledTabComponent-cHdzLX bJtBeK",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quick create",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA bWtCjq",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add view (3/50)",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All creators",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All types",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All objects",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Used in",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced filters",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Assistant",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "13 days left in trial",
+    "id": "mini-trial-guide-button",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

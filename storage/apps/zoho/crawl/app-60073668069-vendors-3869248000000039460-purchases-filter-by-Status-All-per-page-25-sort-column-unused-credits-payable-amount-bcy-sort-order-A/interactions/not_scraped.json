@@ -1,0 +1,57 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> "
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Expense\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "New Transaction",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"25\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"25\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" for=\"fdfa8d5c-f8b2-4d71-bd77-240e759c80d9\" aria-controls=\"fdfa8d5c-f8b2-4d71-bd77-240e759c80d9\">New Transaction</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"c4993f77-9d18-47b2-b24c-9299b17152cb\" aria-controls=\"c4993f77-9d18-47b2-b24c-9299b17152cb\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "View",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"3\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" class=\"dropdown-toggle no-caret \" for=\"f7732018-5d2f-4a08-b7ca-4eb724dce3cf\" aria-controls=\"f7732018-5d2f-4a08-b7ca-4eb724dce3cf\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"4\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"ecb0c667-dc59-4af9-a658-5703384fbd87\" class=\"dropdown-toggle   input-group-text\" aria-controls=\"ecb0c667-dc59-4af9-a658-5703384fbd87\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - elemen"
+  }
+]

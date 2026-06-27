@@ -1,0 +1,68 @@
+[
+  {
+    "label": "See all recent activity",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/001-see-all-recent-activity",
+    "relationship_file": "interactions/001-see-all-recent-activity/relationship.json"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-calls",
+    "relationship_file": "interactions/002-calls/relationship.json"
+  },
+  {
+    "label": "Calendar display",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/003-calendar-display",
+    "relationship_file": "interactions/003-calendar-display/relationship.json"
+  },
+  {
+    "label": "List display",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/004-list-display",
+    "relationship_file": "interactions/004-list-display/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/005-create-new",
+    "relationship_file": "interactions/005-create-new/relationship.json"
+  },
+  {
+    "label": "Create meeting",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/006-create-meeting",
+    "relationship_file": "interactions/006-create-meeting/relationship.json"
+  },
+  {
+    "label": "New meeting",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/007-new-meeting",
+    "relationship_file": "interactions/007-new-meeting/relationship.json"
+  },
+  {
+    "label": "Create Task",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/008-create-task",
+    "relationship_file": "interactions/008-create-task/relationship.json"
+  },
+  {
+    "label": "New Task",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/009-new-task",
+    "relationship_file": "interactions/009-new-task/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/011-marketplace",
+    "relationship_file": "interactions/011-marketplace/relationship.json"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/012-assistant",
+    "relationship_file": "interactions/012-assistant/relationship.json"
+  }
+]

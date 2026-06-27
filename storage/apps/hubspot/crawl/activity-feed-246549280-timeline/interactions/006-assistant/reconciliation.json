@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Assistant",
+    "tagName": "button",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "outerHTML": "<button class=\"sc-AxhUy eILLbW\" id=\"hs-global-toolbar-copilot-list-item\" data-test-id=\"hs-global-toolbar-copilot-list-item\" aria-label=\"Open Assistant\" data-location=\"global-toolbar\" data-crawl-id=\"6\"><svg width=\"16px\" height=\"16px\" viewBox=\"0 0 17 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><title>Open Assistant</title><g clip-path=\"url(#clip0_11552_13649)\"><path d=\"M15.9751 7.51952C12.2738 7.51952 9.18045 4.32283 9.18045 0.491223C9.18045 0.226213 8.96712 0.00537109 8.71112 0.00537109C8.45512 0.00537109 8.24178 0.226213 8.24178 0.491223C8.24178 4.32283 5.14845 7.51952 1.44712 7.51952C1.18578 7.51952 0.977783 7.74036 0.977783 8.00537C0.977783 8.2759 1.18578 8.49122 1.44712 8.49122C5.14845 8.49122 8.24178 11.6879 8.24178 15.5195C8.24178 15.7845 8.45512 16.0054 8.71112 16.0054C8.96712 16.0054 9.18045 15.7845 9.18045 15.5195C9.18045 11.6879 12.2738 8.49122 15.9751 8.49122C16.2365 8.49122 16.4445 8.27038 16.4445 8.00537C16.4445 7.73484 16.2365 7.51952 15.9751 7.51952Z\" fill=\"#FFFFFF\"></path></g><defs><clipPath id=\"clip0_11552_13649\"><rect width=\"16\" height=\"16\" fill=\"white\" transform=\"translate(0.711121)\"></rect></clipPath></defs></svg><span class=\"icon-text-key\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"nav.icons.breezeAssistant\">Assistant</i18n-string></span></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#marketplace-nav-menu",
+    "parentXPath": "/html[1]/body[1]/div[2]/div[2]/header[1]/nav[1]/ul[1]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<iframe class=\"RenderNavComponent__StyledIframe-hKZAvR tKToN\" frameborder=\"0\" height=\"200\" name=\"nav-components:marketplace-nav-menu\" scrolling=\"yes\" src=\"https://app-na2.hubspot.com/marketplace-embed/246549280/navigation-menu?hostAppName=activity-feed-ui\" style=\"position: absolute; height: 0px; display: none; width: 280px; translate: -100px 23px; border-radius: 16px; background-color: rgb(51, 51, 51);\" width=\"200\"></iframe>\n<iframe class=\"RenderNavComponent__StyledIframe-hKZAvR tKToN\" data-test-id=\"breeze-projects-ui-modal-iframe\" frameborder=\"0\" height=\"200\" id=\"breeze-projects-ui-modal-iframe\" name=\"nav-components:breeze-projects-ui-modal\" scrolling=\"yes\" src=\"https://app-na2.hubspot.com/breeze-projects-ui/246549280/navigation-modal\" style=\"width: 0px; height: 0px; display: none;\" width=\"200\"></iframe>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Companies",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA eMArco",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Clear all",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA ejvtpe",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All companies",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "My companies\n0",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"41\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Prospecting Agent companies",
+    "id": "",
+    "className": "sc-AxirZ fHnTju",
+    "selector": "[data-crawl-id=\"43\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "All companies",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "My companies\n0",
+    "id": "",
+    "className": "TabComponent-jGWjCS fYMSxG",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Prospecting Agent companies",
+    "id": "",
+    "className": "TabComponent-jGWjCS UClnu",
+    "selector": "[data-crawl-id=\"42\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add companies",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA jWYotm",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filter (1)",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA esATPn",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sort",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA NRDHr",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Company owner\n\u00a0(\n1\n)",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Create date",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA firZfa",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Journal",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/001-journal",
+    "relationship_file": "interactions/001-journal/relationship.json"
+  },
+  {
+    "label": "Comments",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/002-comments",
+    "relationship_file": "interactions/002-comments/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/003-edit",
+    "relationship_file": "interactions/003-edit/relationship.json"
+  },
+  {
+    "label": "Share",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/005-share",
+    "relationship_file": "interactions/005-share/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/014-collapse-expand",
+    "relationship_file": "interactions/014-collapse-expand/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/015-show-dropdown-menu",
+    "relationship_file": "interactions/015-show-dropdown-menu/relationship.json"
+  }
+]

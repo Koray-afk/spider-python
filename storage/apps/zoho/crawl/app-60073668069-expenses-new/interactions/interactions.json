@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Save (Opt+S)",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/002-save-opt-s",
+    "relationship_file": "interactions/002-save-opt-s/relationship.json"
+  },
+  {
+    "label": "INR",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/007-inr",
+    "relationship_file": "interactions/007-inr/relationship.json"
+  },
+  {
+    "label": "Select an account",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/008-select-an-account",
+    "relationship_file": "interactions/008-select-an-account/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-show-dropdown-menu",
+    "relationship_file": "interactions/010-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/011-show-dropdown-menu",
+    "relationship_file": "interactions/011-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/013-show-dropdown-menu",
+    "relationship_file": "interactions/013-show-dropdown-menu/relationship.json"
+  }
+]

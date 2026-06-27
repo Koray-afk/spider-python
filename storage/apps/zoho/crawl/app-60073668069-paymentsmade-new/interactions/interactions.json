@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/004-show-dropdown-menu",
+    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Select Vendor",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/010-select-vendor",
+    "relationship_file": "interactions/010-select-vendor/relationship.json"
+  },
+  {
+    "label": "Close the Edit Payment page",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/013-close-the-edit-payment-page",
+    "relationship_file": "interactions/013-close-the-edit-payment-page/relationship.json"
+  }
+]

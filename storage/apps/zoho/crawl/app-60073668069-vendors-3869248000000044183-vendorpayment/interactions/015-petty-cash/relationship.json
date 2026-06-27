@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-vendors-3869248000000044183-vendorpayment",
+  "source_url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/vendorpayment",
+  "source_title": "Contacts | Zoho Books",
+  "trigger": {
+    "tag_name": "div",
+    "text": "Petty Cash",
+    "id": "ac-ember586",
+    "class_name": "ac-box ",
+    "name": "",
+    "role": "combobox",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ac-ember586",
+    "crawl_selector": "[data-crawl-id=\"27\"]",
+    "xpath": "//*[@id=\"ac-ember586\"]",
+    "outer_html": "<div ac-toggler=\"\" id=\"ac-ember586\" class=\"ac-box \" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-disabled=\"false\" aria-labelledby=\"a86625738\" aria-expanded=\"false\" aria-controls=\"acDropdownListBox\" aria-invalid=\"false\" aria-describedby=\"error-msg-ember586\" aria-required=\"true\" data-crawl-id=\"27\"><div class=\"ac-selected form-control  \"> <span data-integrity-label=\"\" class=\"ac-selected-label \">Petty Cash</span><div class=\"ac-toggle-container\"><i class=\"zf-ac-toggler\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></i></div></div></div>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/vendorpayment",
+    "slug": "app-60073668069-vendors-3869248000000044183-vendorpayment",
+    "title": "Contacts | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<div ac-toggler=\"\" id=\"ac-ember586\" class=\"ac-box \" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-disabled=\"false\" aria-labelledby=\"a86625738\" aria-expanded=\"false\" aria-controls=\"acDropdownListBox\" aria-invalid=\"false\" aria-describedby=\"error-msg-ember586\" aria-required=\"true\" data-crawl-id=\"27\"><div class=\"ac-selected form-control  \"> <span data-integrity-label=\"\" class=\"ac-selected-label \">Petty Cash</span><div class=\"ac-toggle-container\"><i class=\"zf-ac-toggler\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></i></div></div></div>",
+  "trigger_label": "Petty Cash",
+  "trigger_id": "ac-ember441",
+  "trigger_class": "ac-box ",
+  "target_url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/vendorpayment",
+  "target_slug": "app-60073668069-vendors-3869248000000044183-vendorpayment",
+  "target_title": "Contacts | Zoho Books"
+}

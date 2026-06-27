@@ -1,0 +1,94 @@
+[
+  {
+    "label": "Import Statement",
+    "tag_name": "button",
+    "selector": "#banking-txns-page > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/banking/import?account_name=Citi%20Bank&account_type=bank&accountid=3869248000000045033&stmt_suggestion_count=0",
+    "target_slug": "app-60073668069-banking-import-account-name-Citi-20Bank-account-type-bank-accountid-3869248000000045033-stmt-suggestion-count-0",
+    "target_page": "../app-60073668069-banking-import-account-name-Citi-20Bank-account-type-bank-accountid-3869248000000045033-stmt-suggestion-count-0/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Import Statement",
+      "id": "",
+      "class_name": "btn btn-primary",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#banking-txns-page > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary\" data-crawl-id=\"21\">Import Statement</button>"
+    }
+  },
+  {
+    "label": "Citi Bank",
+    "tag_name": "button",
+    "selector": "#c2ab4129-9d49-4bf3-ab3e-61273a033e1a > button:nth-of-type(16)",
+    "target_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+    "target_slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+    "target_page": "../app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Vendor Credit Refund",
+      "id": "",
+      "class_name": "dropdown-item",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#c2ab4129-9d49-4bf3-ab3e-61273a033e1a > button:nth-of-type(16)",
+      "xpath": "/html[1]/body[1]/div[6]/div[2]/div[2]/button[16]",
+      "outer_html": "<button class=\"dropdown-item\" type=\"button\" data-ember-action=\"\" data-ember-action-606=\"606\" data-crawl-id=\"16\">Vendor Credit Refund</button>"
+    }
+  },
+  {
+    "label": "Quick Categorize",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/banking/quickcategorize?account_id=3869248000000045033&account_name=Citi%20Bank&account_number=xxxx0001&account_type=bank&from_date=2026-04-01&response_option=1&to_date=2026-06-30",
+    "target_slug": "app-60073668069-banking-quickcategorize-account-id-3869248000000045033-account-name-Citi-20Bank-account-number-xxxx0001-account-type-bank-from-date-2026-04-01-response-option-1-to-date-2026-06-30",
+    "target_page": "../app-60073668069-banking-quickcategorize-account-id-3869248000000045033-account-name-Citi-20Bank-account-number-xxxx0001-account-type-bank-from-date-2026-04-01-response-option-1-to-date-2026-06-30/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Quick Categorize",
+      "id": "",
+      "class_name": "btn btn-secondary ms-3 font-small",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/button[1]",
+      "outer_html": "<button class=\"btn btn-secondary ms-3 font-small\" type=\"button\" data-crawl-id=\"17\">Quick Categorize</button>"
+    }
+  },
+  {
+    "label": "Record Deposit",
+    "tag_name": "button",
+    "selector": "#ember648",
+    "target_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=deposit",
+    "target_slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-deposit",
+    "target_page": "../app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-deposit/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Record Deposit",
+      "id": "ember648",
+      "class_name": "btn btn-secondary ember-view ms-3 font-small",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#ember648",
+      "xpath": "//*[@id=\"ember648\"]",
+      "outer_html": "<button id=\"ember648\" class=\"btn btn-secondary ember-view ms-3 font-small\" type=\"button\" data-crawl-id=\"19\"><!----> Record Deposit<!----></button>"
+    }
+  }
+]

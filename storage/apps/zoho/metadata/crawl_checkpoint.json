@@ -1,0 +1,977 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-19T15:43:51.025639+00:00",
+  "visited": [
+    "https://books.zoho.in/app/60073668069",
+    "https://books.zoho.in/app/60073668069#/banking",
+    "https://books.zoho.in/app/60073668069#/banking/feeds/bankslist",
+    "https://books.zoho.in/app/60073668069#/banking/import",
+    "https://books.zoho.in/app/60073668069#/banking/new",
+    "https://books.zoho.in/app/60073668069#/banking/quickcategorize",
+    "https://books.zoho.in/app/60073668069#/banking/rules",
+    "https://books.zoho.in/app/60073668069#/banking/rules/new",
+    "https://books.zoho.in/app/60073668069#/banking/transactions",
+    "https://books.zoho.in/app/60073668069#/banking/transactions/details",
+    "https://books.zoho.in/app/60073668069#/bills",
+    "https://books.zoho.in/app/60073668069#/bills/3869248000000044824",
+    "https://books.zoho.in/app/60073668069#/bills/new",
+    "https://books.zoho.in/app/60073668069#/contacts",
+    "https://books.zoho.in/app/60073668069#/contacts/3869248000000043205",
+    "https://books.zoho.in/app/60073668069#/contacts/3869248000000043230",
+    "https://books.zoho.in/app/60073668069#/contacts/3869248000000043362",
+    "https://books.zoho.in/app/60073668069#/contacts/3869248000000043561",
+    "https://books.zoho.in/app/60073668069#/contacts/3869248000000043590",
+    "https://books.zoho.in/app/60073668069#/contacts/new",
+    "https://books.zoho.in/app/60073668069#/creditnotes",
+    "https://books.zoho.in/app/60073668069#/creditnotes/3869248000000043971",
+    "https://books.zoho.in/app/60073668069#/creditnotes/3869248000000043990",
+    "https://books.zoho.in/app/60073668069#/creditnotes/new",
+    "https://books.zoho.in/app/60073668069#/deliverychallans",
+    "https://books.zoho.in/app/60073668069#/documents/allfiles",
+    "https://books.zoho.in/app/60073668069#/documents/inbox",
+    "https://books.zoho.in/app/60073668069#/documents/statement-inbox",
+    "https://books.zoho.in/app/60073668069#/documents/trash",
+    "https://books.zoho.in/app/60073668069#/expenses",
+    "https://books.zoho.in/app/60073668069#/expenses/3869248000000044282",
+    "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293",
+    "https://books.zoho.in/app/60073668069#/expenses/documents",
+    "https://books.zoho.in/app/60073668069#/expenses/new",
+    "https://books.zoho.in/app/60073668069#/home",
+    "https://books.zoho.in/app/60073668069#/home/dashboard",
+    "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+    "https://books.zoho.in/app/60073668069#/home/recentupdates",
+    "https://books.zoho.in/app/60073668069#/inventory/adjustments",
+    "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+    "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+    "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+    "https://books.zoho.in/app/60073668069#/inventory/product/index",
+    "https://books.zoho.in/app/60073668069#/inventory/product/product-creation",
+    "https://books.zoho.in/app/60073668069#/inventory/product/variantslist",
+    "https://books.zoho.in/app/60073668069#/inventory/product/variantslist/3869248000000039611",
+    "https://books.zoho.in/app/60073668069#/inventory/product/variantslist/3869248000000043730",
+    "https://books.zoho.in/app/60073668069#/invoices",
+    "https://books.zoho.in/app/60073668069#/invoices/3869248000000043582",
+    "https://books.zoho.in/app/60073668069#/invoices/3869248000000043597",
+    "https://books.zoho.in/app/60073668069#/invoices/new",
+    "https://books.zoho.in/app/60073668069#/msme-vendor-migration",
+    "https://books.zoho.in/app/60073668069#/payments",
+    "https://books.zoho.in/app/60073668069#/paymentsmade",
+    "https://books.zoho.in/app/60073668069#/paymentsmade/import",
+    "https://books.zoho.in/app/60073668069#/paymentsmade/new",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043840",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859/paymentrefund/new",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884/paymentrefund/new",
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/new",
+    "https://books.zoho.in/app/60073668069#/payroll",
+    "https://books.zoho.in/app/60073668069#/purchaseorders",
+    "https://books.zoho.in/app/60073668069#/purchaseorders/3869248000000044385",
+    "https://books.zoho.in/app/60073668069#/purchaseorders/new",
+    "https://books.zoho.in/app/60073668069#/quotes",
+    "https://books.zoho.in/app/60073668069#/quotes/3869248000000043222",
+    "https://books.zoho.in/app/60073668069#/quotes/3869248000000043247",
+    "https://books.zoho.in/app/60073668069#/quotes/3869248000000043271",
+    "https://books.zoho.in/app/60073668069#/quotes/new",
+    "https://books.zoho.in/app/60073668069#/recurringinvoices",
+    "https://books.zoho.in/app/60073668069#/recurringinvoices/new",
+    "https://books.zoho.in/app/60073668069#/reports",
+    "https://books.zoho.in/app/60073668069#/reports/cfstatement",
+    "https://books.zoho.in/app/60073668069#/reports/customreports",
+    "https://books.zoho.in/app/60073668069#/reports/fifocostlottracking",
+    "https://books.zoho.in/app/60073668069#/reports/profitandloss",
+    "https://books.zoho.in/app/60073668069#/reports/scheduledlist",
+    "https://books.zoho.in/app/60073668069#/reports/sharedreports",
+    "https://books.zoho.in/app/60073668069#/salesorders",
+    "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380",
+    "https://books.zoho.in/app/60073668069#/salesorders/new",
+    "https://books.zoho.in/app/60073668069#/timesheet/alltimeentries",
+    "https://books.zoho.in/app/60073668069#/timesheet/projects",
+    "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+    "https://books.zoho.in/app/60073668069#/vendorcredits",
+    "https://books.zoho.in/app/60073668069#/vendorcredits/import",
+    "https://books.zoho.in/app/60073668069#/vendorcredits/new",
+    "https://books.zoho.in/app/60073668069#/vendors",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/comments",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/emailhistory",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/purchases",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/statement",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/vendorpayment",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/comments",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/emailhistory",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/purchases",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/statement",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/vendorpayment",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/comments",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/emailhistory",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/purchases",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/statement",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/vendorpayment",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/comments",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/emailhistory",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/purchases",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/statement",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/vendorpayment",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/comments",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/emailhistory",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/purchases",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/statement",
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/vendorpayment",
+    "https://books.zoho.in/app/60073668069#/vendors/new"
+  ],
+  "sidebar_queue": [],
+  "deferred_queue": [
+    {
+      "url": "https://books.zoho.in/app/60073668069#/deliverychallans/new",
+      "depth": 2
+    },
+    {
+      "url": "https://books.zoho.in/app/60073668069#/recurringinvoices/3869248000000043739?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "depth": 2
+    },
+    {
+      "url": "https://books.zoho.in/app/60073668069#/recurringinvoices/3869248000000043763?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "depth": 2
+    },
+    {
+      "url": "https://books.zoho.in/app/60073668069#/recurringinvoices/3869248000000043777?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "depth": 2
+    }
+  ],
+  "pages_completed": 120,
+  "sitemap": [
+    {
+      "slug": "app-60073668069-home-dashboard",
+      "url": "https://books.zoho.in/app/60073668069#/home/dashboard",
+      "title": "Dashboard | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-home",
+      "url": "https://books.zoho.in/app/60073668069#/home",
+      "title": "Dashboard | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-product-index",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/product/index",
+      "title": "Items | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-pricelists",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists",
+      "title": "Price Lists | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-adjustments",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/adjustments",
+      "title": "Inventory Adjustments | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts",
+      "url": "https://books.zoho.in/app/60073668069#/contacts",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-quotes",
+      "url": "https://books.zoho.in/app/60073668069#/quotes",
+      "title": "Quotes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-salesorders",
+      "url": "https://books.zoho.in/app/60073668069#/salesorders",
+      "title": "Sales Orders | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-invoices",
+      "url": "https://books.zoho.in/app/60073668069#/invoices",
+      "title": "Invoices | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived",
+      "title": "Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-creditnotes",
+      "url": "https://books.zoho.in/app/60073668069#/creditnotes",
+      "title": "Credit Notes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors",
+      "url": "https://books.zoho.in/app/60073668069#/vendors",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-expenses",
+      "url": "https://books.zoho.in/app/60073668069#/expenses",
+      "title": "Expenses | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-purchaseorders",
+      "url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+      "title": "Purchase Orders | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-bills",
+      "url": "https://books.zoho.in/app/60073668069#/bills",
+      "title": "Bills | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsmade",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsmade",
+      "title": "Payments Made | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendorcredits",
+      "url": "https://books.zoho.in/app/60073668069#/vendorcredits",
+      "title": "Vendor Credits | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-timesheet-projects",
+      "url": "https://books.zoho.in/app/60073668069#/timesheet/projects",
+      "title": "Projects | Timesheet | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-timesheet-alltimeentries",
+      "url": "https://books.zoho.in/app/60073668069#/timesheet/alltimeentries",
+      "title": "All Timesheets | Timesheet | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking",
+      "url": "https://books.zoho.in/app/60073668069#/banking",
+      "title": "Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-reports",
+      "url": "https://books.zoho.in/app/60073668069#/reports",
+      "title": "Reports | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-documents-inbox",
+      "url": "https://books.zoho.in/app/60073668069#/documents/inbox",
+      "title": "Inbox | Documents | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-payroll",
+      "url": "https://books.zoho.in/app/60073668069#/payroll",
+      "title": "Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-payments",
+      "url": "https://books.zoho.in/app/60073668069#/payments",
+      "title": "Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069",
+      "url": "https://books.zoho.in/app/60073668069#",
+      "title": "Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-product-product-creation",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/product/product-creation",
+      "title": "Add New Item | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-pricelists-new",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/pricelists/new",
+      "title": "New Price List | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-adjustments-new",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+      "title": "New Adjustment | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts-new",
+      "url": "https://books.zoho.in/app/60073668069#/contacts/new",
+      "title": "New Contact | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-salesorders-new",
+      "url": "https://books.zoho.in/app/60073668069#/salesorders/new",
+      "title": "Add New | Sales Orders | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived-new",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/new",
+      "title": "Add New | Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-creditnotes-new",
+      "url": "https://books.zoho.in/app/60073668069#/creditnotes/new",
+      "title": "Add New | Credit Notes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-new",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/new",
+      "title": "New Contact | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-purchaseorders-new",
+      "url": "https://books.zoho.in/app/60073668069#/purchaseorders/new",
+      "title": "Add New | Purchase Orders | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-bills-new",
+      "url": "https://books.zoho.in/app/60073668069#/bills/new",
+      "title": "Add New | Bills | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsmade-new",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsmade/new",
+      "title": "Add New | Payments Made | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendorcredits-new",
+      "url": "https://books.zoho.in/app/60073668069#/vendorcredits/new",
+      "title": "Add New | Vendor Credits | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-home-gettingstarted",
+      "url": "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+      "title": "Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-home-recentupdates",
+      "url": "https://books.zoho.in/app/60073668069#/home/recentupdates",
+      "title": "Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-transactions-account-id-3869248000000045033-filter-by-Status-All",
+      "url": "https://books.zoho.in/app/60073668069#/banking/transactions?account_id=3869248000000045033&filter_by=Status.All",
+      "title": "Citi Bank | Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-reports-cfstatement-filter-by-CustomDate-from-date-2025-04-01-is-hierarchy-report-true-to-date-2026-03-31-usestate-false",
+      "url": "https://books.zoho.in/app/60073668069#/reports/cfstatement?filter_by=CustomDate&from_date=2025-04-01&is_hierarchy_report=true&to_date=2026-03-31&usestate=false",
+      "title": "Cash Flow Statement | Reports | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-product-variantslist-3869248000000039611-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist/3869248000000039611?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+      "title": "WiFi Router | Items | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-product-variantslist-3869248000000043730-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist/3869248000000043730?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+      "title": "Switch small | Items | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-reports-fifocostlottracking-from-date-2026-06-01-to-date-2026-06-30",
+      "url": "https://books.zoho.in/app/60073668069#/reports/fifocostlottracking?from_date=2026-06-01&to_date=2026-06-30",
+      "title": "FIFO Cost Lot Tracking | Reports | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts-3869248000000043205-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043205?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+      "title": "ABC Electronics | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts-3869248000000043230-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043230?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+      "title": "AMS Stores | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-quotes-3869248000000043271-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043271?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "title": "QT-000005 | Quotes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-quotes-3869248000000043222-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043222?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "title": "QT-000001 | Quotes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-quotes-3869248000000043247-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/quotes/3869248000000043247?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "title": "QT-000002 | Quotes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-quotes-new",
+      "url": "https://books.zoho.in/app/60073668069#/quotes/new",
+      "title": "Add New | Quotes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-salesorders-3869248000000043380-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "title": "SO-00005 | Sales Orders | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-invoices-new",
+      "url": "https://books.zoho.in/app/60073668069#/invoices/new",
+      "title": "Add New | Invoices | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-invoices-3869248000000043597-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/invoices/3869248000000043597?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+      "title": "INV-000024 | Invoices | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-invoices-3869248000000043582-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/invoices/3869248000000043582?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+      "title": "INV-000019 | Invoices | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived-3869248000000043840-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043840?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A",
+      "title": "Flashter Inc. | Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived-3869248000000043859-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A",
+      "title": "Flashter Inc. | Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived-3869248000000043884-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A",
+      "title": "Flashter Inc. | Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-creditnotes-3869248000000043971-filter-by-Status-All-per-page-25-sort-column-total-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/creditnotes/3869248000000043971?filter_by=Status.All&per_page=25&sort_column=total&sort_order=A",
+      "title": "Credit Notes | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-msme-vendor-migration",
+      "url": "https://books.zoho.in/app/60073668069#/msme-vendor-migration",
+      "title": "Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039426-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Dell India | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039460-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "LG Electronics | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-expenses-new",
+      "url": "https://books.zoho.in/app/60073668069#/expenses/new",
+      "title": "Add New | Expenses | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-expenses-documents",
+      "url": "https://books.zoho.in/app/60073668069#/expenses/documents",
+      "title": "Expenses | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-expenses-3869248000000044282-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044282?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+      "title": "Meals and Entertainment | Expenses | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-expenses-3869248000000044293-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+      "title": "Travel Expense | Expenses | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-purchaseorders-3869248000000044385-filter-by-Status-All-per-page-25-sort-column-delivery-date-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/purchaseorders/3869248000000044385?filter_by=Status.All&per_page=25&sort_column=delivery_date&sort_order=A",
+      "title": "Purchase Orders | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-bills-3869248000000044824-filter-by-Status-Unpaid-per-page-25-sort-column-due-date-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/bills/3869248000000044824?filter_by=Status.Unpaid&per_page=25&sort_column=due_date&sort_order=A",
+      "title": "David | Bills | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsmade-import",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsmade/import",
+      "title": "Import | Payments Made | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendorcredits-import",
+      "url": "https://books.zoho.in/app/60073668069#/vendorcredits/import",
+      "title": "Import | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-timesheet-projects-new",
+      "url": "https://books.zoho.in/app/60073668069#/timesheet/projects/new",
+      "title": "New Project | Timesheet | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-documents-statement-inbox",
+      "url": "https://books.zoho.in/app/60073668069#/documents/statement-inbox",
+      "title": "Bank Statements | Documents | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-import-isAccountInfoNeeded-true",
+      "url": "https://books.zoho.in/app/60073668069#/banking/import?isAccountInfoNeeded=true",
+      "title": "Import | Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-feeds-bankslist",
+      "url": "https://books.zoho.in/app/60073668069#/banking/feeds/bankslist",
+      "title": "Connect Bank / Credit Card | Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-rules",
+      "url": "https://books.zoho.in/app/60073668069#/banking/rules",
+      "title": "Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-reports-sharedreports-report-group-sharedreports",
+      "url": "https://books.zoho.in/app/60073668069#/reports/sharedreports?report_group=sharedreports",
+      "title": "Reports | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-reports-customreports-report-group-customreports",
+      "url": "https://books.zoho.in/app/60073668069#/reports/customreports?report_group=customreports",
+      "title": "Reports | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-documents-allfiles",
+      "url": "https://books.zoho.in/app/60073668069#/documents/allfiles",
+      "title": "All Documents | Documents | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-documents-trash",
+      "url": "https://books.zoho.in/app/60073668069#/documents/trash",
+      "title": "Trash | Documents | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+      "url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+      "title": "Citi Bank | Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-quickcategorize-account-id-3869248000000045033-account-name-Citi-20Bank-account-number-xxxx0001-account-type-bank-from-date-2026-04-01-response-option-1-to-date-2026-06-30",
+      "url": "https://books.zoho.in/app/60073668069#/banking/quickcategorize?account_id=3869248000000045033&account_name=Citi%20Bank&account_number=xxxx0001&account_type=bank&from_date=2026-04-01&response_option=1&to_date=2026-06-30",
+      "title": "Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-reports-profitandloss-cash-based-false-filter-by-CustomDate-from-date-2025-04-01-per-page-500-to-date-2026-03-31-usestate-false",
+      "url": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&filter_by=CustomDate&from_date=2025-04-01&per_page=500&to_date=2026-03-31&usestate=false",
+      "title": "Profit and Loss | Reports | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039604",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604",
+      "title": "TP-Link | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-inventory-product-variantslist-filter-by-Status-All-per-page-25-sort-column-name-sort-order-D",
+      "url": "https://books.zoho.in/app/60073668069#/inventory/product/variantslist?filter_by=Status.All&per_page=25&sort_column=name&sort_order=D",
+      "title": "Items | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts-3869248000000043362",
+      "url": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043362",
+      "title": "NewTech | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts-3869248000000043590",
+      "url": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043590",
+      "title": "Elite International | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-contacts-3869248000000043561",
+      "url": "https://books.zoho.in/app/60073668069#/contacts/3869248000000043561",
+      "title": "Flashter Inc. | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived-3869248000000043859-paymentrefund-new-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A-transaction-type-customer-payment",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859/paymentrefund/new?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A&transaction_type=customer_payment",
+      "title": "Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-paymentsreceived-3869248000000043884-paymentrefund-new-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A-transaction-type-customer-payment",
+      "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884/paymentrefund/new?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A&transaction_type=customer_payment",
+      "title": "Payments Received | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039426-comments-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/comments?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Dell India | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039426-purchases-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/purchases?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Dell India | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039460-comments-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/comments?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "LG Electronics | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039460-purchases-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/purchases?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "LG Electronics | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044275",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275",
+      "title": "David | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044183",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183",
+      "title": "Ram | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-new",
+      "url": "https://books.zoho.in/app/60073668069#/banking/new",
+      "title": "Add New | Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-banking-rules-new",
+      "url": "https://books.zoho.in/app/60073668069#/banking/rules/new",
+      "title": "Banking | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039604-comments-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/comments?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "TP-Link | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039604-purchases-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/purchases?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "TP-Link | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039426-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Dell India | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039426-statement-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/statement?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Dell India | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039426-vendorpayment",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/vendorpayment",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039460-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "LG Electronics | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039460-statement-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/statement?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "LG Electronics | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039460-vendorpayment",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/vendorpayment",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044275-comments-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/comments?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "David | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044275-purchases-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/purchases?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "David | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044183-comments-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/comments?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Ram | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044183-purchases-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/purchases?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Ram | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039604-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "TP-Link | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039604-statement-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/statement?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "TP-Link | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000039604-vendorpayment",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/vendorpayment",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044275-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "David | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044275-statement-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/statement?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "David | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044275-vendorpayment",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/vendorpayment",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044183-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Ram | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-recurringinvoices",
+      "url": "https://books.zoho.in/app/60073668069#/recurringinvoices",
+      "title": "Recurring Invoices | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-deliverychallans",
+      "url": "https://books.zoho.in/app/60073668069#/deliverychallans",
+      "title": "Delivery Challans | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044183-statement-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/statement?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+      "title": "Ram | Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-vendors-3869248000000044183-vendorpayment",
+      "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/vendorpayment",
+      "title": "Contacts | Zoho Books",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "app-60073668069-recurringinvoices-new",
+      "url": "https://books.zoho.in/app/60073668069#/recurringinvoices/new",
+      "title": "Add New | Recurring Invoices | Zoho Books",
+      "page_type": "post_auth"
+    }
+  ],
+  "link_counters": {
+    "__global__": {
+      "/variantslist/": 3,
+      "#/bills/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/home/dashboard": {},
+    "https://books.zoho.in/app/60073668069#/inventory/product/index": {
+      "/variantslist/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/inventory/adjustments": {},
+    "https://books.zoho.in/app/60073668069#/contacts": {
+      "#/contacts/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/quotes": {},
+    "https://books.zoho.in/app/60073668069#/salesorders": {},
+    "https://books.zoho.in/app/60073668069#/invoices": {},
+    "https://books.zoho.in/app/60073668069#/paymentsreceived": {},
+    "https://books.zoho.in/app/60073668069#/creditnotes": {},
+    "https://books.zoho.in/app/60073668069#/vendors": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/expenses": {},
+    "https://books.zoho.in/app/60073668069#/purchaseorders": {},
+    "https://books.zoho.in/app/60073668069#/bills": {},
+    "https://books.zoho.in/app/60073668069#/paymentsmade": {},
+    "https://books.zoho.in/app/60073668069#/vendorcredits": {},
+    "https://books.zoho.in/app/60073668069#/timesheet/projects": {},
+    "https://books.zoho.in/app/60073668069#/banking": {},
+    "https://books.zoho.in/app/60073668069#/reports": {},
+    "https://books.zoho.in/app/60073668069#/documents/inbox": {},
+    "https://books.zoho.in/app/60073668069#/banking/transactions": {},
+    "https://books.zoho.in/app/60073668069#/reports/cfstatement": {},
+    "https://books.zoho.in/app/60073668069#/inventory/product/variantslist/3869248000000039611": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/inventory/product/variantslist/3869248000000043730": {},
+    "https://books.zoho.in/app/60073668069#/quotes/3869248000000043271": {},
+    "https://books.zoho.in/app/60073668069#/quotes/3869248000000043247": {},
+    "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380": {
+      "#/contacts/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/invoices/3869248000000043597": {
+      "#/contacts/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/invoices/3869248000000043582": {
+      "#/contacts/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043840": {},
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859": {},
+    "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884": {},
+    "https://books.zoho.in/app/60073668069#/creditnotes/3869248000000043971": {},
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/expenses/3869248000000044282": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/banking/feeds/bankslist": {},
+    "https://books.zoho.in/app/60073668069#/banking/rules": {},
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/comments": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039426/purchases": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/comments": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039460/purchases": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/comments": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000039604/purchases": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/comments": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044275/purchases": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/comments": {
+      "#/vendors/": 2
+    },
+    "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/purchases": {
+      "#/vendors/": 1
+    },
+    "https://books.zoho.in/app/60073668069#/recurringinvoices": {}
+  },
+  "sidebar_discovered": true
+}

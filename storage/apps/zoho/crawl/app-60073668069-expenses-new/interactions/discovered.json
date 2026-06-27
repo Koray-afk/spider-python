@@ -1,0 +1,106 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Save (Opt+S)",
+    "id": "abf24f96b",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Save and New (Opt+N)",
+    "id": "a4ce28570",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-secondary cursor-pointer",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Expense",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "INR",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-secondary multicurrency-selection  input-group-text",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select an account",
+    "id": "ac-ember435",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select or add a customer",
+    "id": "ac-ember449",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   input-group-text",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn no-box-shadow toggle-btn",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

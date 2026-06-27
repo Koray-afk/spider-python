@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Edit",
+    "tag_name": "button",
+    "selector": "#c54fac1f-60e9-4087-adb3-1f3692273831 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/expenses/3869248000000044293/edit",
+    "target_slug": "app-60073668069-expenses-3869248000000044293-edit",
+    "target_page": "../app-60073668069-expenses-3869248000000044293-edit/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Edit",
+      "id": "",
+      "class_name": "details-menu-item nav-link text-center over-flow  ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#c54fac1f-60e9-4087-adb3-1f3692273831 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[2]/ul[1]/li[1]/span[1]/button[1]",
+      "outer_html": "<button class=\"details-menu-item nav-link text-center over-flow  \" type=\"button\" data-crawl-id=\"21\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 510 512\" class=\"icon align-top icon-sm me-2\"><g id=\"Layer_2-2\"><path d=\"M50.3 512c-13.04 0-25.74-5.08-35.2-14.35C3.47 486.27-1.93 469.88.64 453.82l16.9-105.61c3.01-18.79 11.71-35.82 25.17-49.27l272.83-272.7c35.01-34.99 91.99-34.98 127.01.02l41.14 41.12c16.96 16.96 26.31 39.5 26.32 63.47 0 23.98-9.33 46.52-26.29 63.47L210.3 467.59c-12.98 12.98-29.4 21.57-47.47 24.84L59.23 511.2c-2.97.54-5.96.8-8.93.8zM379.02 39.99c-12.74 0-25.48 4.85-35.18 14.54L71 327.23c-7.46 7.45-12.28 16.9-13.95 27.31l-16.9 105.61c-.73 4.55 1.54 7.55 2.95 8.93 1.41 1.38 4.46 3.58 8.99 2.76l103.6-18.77A49.498 49.498 0 00182 439.3l273.4-273.27c9.4-9.39 14.57-21.89 14.57-35.18s-5.19-25.79-14.59-35.19l-41.14-41.12c-9.71-9.71-22.47-14.56-35.22-14.56z\"></path><path transform=\"rotate(-45.01 331.896 178.02)\" d=\"M311.84 79.14h40.01v197.75h-40.01z\"></path></g></svg> <span>Edit</span> <!----></button>"
+    }
+  }
+]

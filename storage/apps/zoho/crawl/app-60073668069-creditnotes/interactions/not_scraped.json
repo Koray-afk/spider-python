@@ -1,0 +1,104 @@
+[
+  {
+    "label": "AMOUNT",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "BALANCE",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "New Quote",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"10\\\"]\").first\n    - locator resolved to <button type=\"button\" title=\"New Quote\" data-crawl-id=\"10\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts p"
+  },
+  {
+    "label": "New Invoice",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Invoice\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"19\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"More Actions\" id=\"c1b5747f-69d9-42be-8453-8f9f9e6326c6\" for=\"c76c5764-637c-4db4-8d57-1e5dc2f163b9\" aria-controls=\"c76c5764-637c-4db4-8d57-1e5dc2f163b9\" class=\"dropdown-toggle no-caret  btn btn-secondary d-flex\">\u2026</button>\n  - attempting click action\n    2 \u00d7 w"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"20\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"20\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"d92e2f4d-9dfe-463e-82b6-1223f39dc9be\" class=\"dropdown-toggle no-caret  customize-action\" aria-controls=\"d92e2f4d-9dfe-463e-82b6-1223f39dc9be\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n    "
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"2\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"2\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" class=\"dropdown-toggle no-caret \" for=\"d709eac3-d229-4ded-afc5-5dcd48bfe522\" aria-controls=\"d709eac3-d229-4ded-afc5-5dcd48bfe522\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visi"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"3\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"e81dd6b2-5fa1-4c87-961d-1246fa29962b\" class=\"dropdown-toggle   input-group-text\" aria-controls=\"e81dd6b2-5fa1-4c87-961d-1246fa29962b\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - elemen"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"4\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"ffa621df-d972-4479-9f5e-981d8b152801\" aria-controls=\"ffa621df-d972-4479-9f5e-981d8b152801\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n "
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"16\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"16\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade d-block sho"
+  },
+  {
+    "label": "DATE",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"21\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"21\" data-ember-action=\"\" data-ember-action-545=\"545\" class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrol"
+  },
+  {
+    "label": "CREDIT NOTE#",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"22\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"22\" data-ember-action=\"\" data-ember-action-547=\"547\" class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrol"
+  },
+  {
+    "label": "CUSTOMER NAME",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"23\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"23\" data-ember-action=\"\" data-ember-action-550=\"550\" class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrol"
+  }
+]

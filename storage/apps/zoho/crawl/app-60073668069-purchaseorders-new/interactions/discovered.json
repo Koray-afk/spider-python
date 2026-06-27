@@ -1,0 +1,130 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Expense",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Add Items in Bulk",
+    "id": "",
+    "className": "btn btn-md add-line-item-btn ms-3 align-self-start ",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save and Send",
+    "id": "ae9d49526",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Save as Draft",
+    "id": "ember619",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-secondary",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Go Back",
+    "id": "",
+    "className": "icon-button close-details py-2 pe-3 me-3",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Select a Vendor",
+    "id": "ac-ember555",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Due on Receipt",
+    "id": "ac-ember565",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "At Transaction Level",
+    "id": "ac-ember571",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select a Tax",
+    "id": "ac-ember611",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Change destination to deliver",
+    "id": "",
+    "className": "dropdown-toggle no-caret  text-blue",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Bulk Actions",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-link no-caret",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Change",
+    "id": "",
+    "className": "action-icons font-xs cursor-pointer text-blue",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn add-line-item-dropdown",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "label": "View Details",
+    "selector": "[data-crawl-id=\"42\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Expense\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts"
+  },
+  {
+    "label": "Last 6 Months",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"cb72fc57-4f67-4fa8-b5d8-1f7b44437f8a\" aria-controls=\"cb72fc57-4f67-4fa8-b5d8-1f7b44437f8a\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scro"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> "
+  },
+  {
+    "label": "View",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button type=\"button\" id=\"a03fb2aec\" data-crawl-id=\"19\" aria-expanded=\"false\" class=\"accordion-button \" aria-controls=\"ff58ca43-87db-47d4-8828-915973dc6dc6\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n  "
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Deals",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/002-deals",
+    "relationship_file": "interactions/002-deals/relationship.json"
+  },
+  {
+    "label": "All deals\n0",
+    "selector": "[data-crawl-id=\"38\"]",
+    "interaction_path": "interactions/003-all-deals-0",
+    "relationship_file": "interactions/003-all-deals-0/relationship.json"
+  },
+  {
+    "label": "Board view",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/005-board-view",
+    "relationship_file": "interactions/005-board-view/relationship.json"
+  },
+  {
+    "label": "All deals\n0",
+    "selector": "[data-crawl-id=\"37\"]",
+    "interaction_path": "interactions/006-all-deals-0",
+    "relationship_file": "interactions/006-all-deals-0/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/008-create-new",
+    "relationship_file": "interactions/008-create-new/relationship.json"
+  },
+  {
+    "label": "Add deal",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/012-add-deal",
+    "relationship_file": "interactions/012-add-deal/relationship.json"
+  }
+]

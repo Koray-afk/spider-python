@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Bank Details",
+  "triggerId": "bankdetails-tab",
+  "triggerClass": "nav-link text-black  ",
+  "selector": "[data-crawl-id=\"19\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "app-60073668069-vendors-new",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/vendors/new",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/vendors/new",
+  "beforeTitle": "New Contact | Contacts | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/vendors/new",
+  "title": "New Contact | Contacts | Zoho Books",
+  "resultPagePath": "app-60073668069-vendors-new/interactions/004-bank-details",
+  "captured_at": "2026-06-19T10:22:45.311654+00:00"
+}

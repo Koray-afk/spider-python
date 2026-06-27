@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Go to transactions",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  bg-white border-0 text-black-semibold font-large",
+    "selector": "[data-crawl-id=\"28\"]",
+    "outerHTML": "<button for=\"fe780db7-ce7e-4b7f-96f2-429b17a16477\" aria-controls=\"fe780db7-ce7e-4b7f-96f2-429b17a16477\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  bg-white border-0 text-black-semibold font-large\" type=\"button\" data-crawl-id=\"28\">Go to transactions <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs my-1 fill-dropdown-blue\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-start\" id=\"fe780db7-ce7e-4b7f-96f2-429b17a16477\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(605px, 208.141px);\"><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-659=\"659\" role=\"button\" tabindex=\"0\">Bills</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-660=\"660\" role=\"button\" tabindex=\"0\">Bill Payments</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-661=\"661\" role=\"button\" tabindex=\"0\">Expenses</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-662=\"662\" role=\"button\" tabindex=\"0\">Recurring Bills</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-663=\"663\" role=\"button\" tabindex=\"0\">Recurring Expenses</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-664=\"664\" role=\"button\" tabindex=\"0\">Purchase Orders</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-665=\"665\" role=\"button\" tabindex=\"0\">Vendor Credits</span><span class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-666=\"666\" role=\"button\" tabindex=\"0\">Journals</span></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

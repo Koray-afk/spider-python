@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Enter Opening Balance",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary",
+    "selector": "[data-crawl-id=\"35\"]",
+    "outerHTML": "<button for=\"edb7fe15-e428-4b8b-b906-807127e8533e\" aria-controls=\"edb7fe15-e428-4b8b-b906-807127e8533e\" aria-haspopup=\"true\" aria-expanded=\"true\" class=\"dropdown-toggle   btn btn-secondary\" type=\"button\" data-crawl-id=\"35\"><!----> More</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,117 @@
+[
+  {
+    "label": "New",
+    "tag_name": "button",
+    "selector": "#ea4130bf-191a-42d0-a591-abfe609d37f8 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+    "target_slug": "app-60073668069-inventory-adjustments-new",
+    "target_page": "../app-60073668069-inventory-adjustments-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "New",
+      "id": "",
+      "class_name": "btn btn-primary d-flex align-items-center ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#ea4130bf-191a-42d0-a591-abfe609d37f8 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary d-flex align-items-center \" data-crawl-id=\"16\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M15.01 8c0 .39-.31.7-.7.7H8.7v5.61c0 .39-.31.7-.7.7s-.7-.31-.7-.7V8.7H1.69c-.39 0-.7-.31-.7-.7s.31-.7.7-.7H7.3V1.69c0-.39.31-.7.7-.7s.7.31.7.7V7.3h5.61c.39 0 .7.31.7.7z\"></path></svg> <span class=\"ms-2\">New</span></button>"
+    }
+  },
+  {
+    "label": "CREATE ADJUSTMENT",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+    "target_slug": "app-60073668069-inventory-adjustments-new",
+    "target_page": "../app-60073668069-inventory-adjustments-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "CREATE ADJUSTMENT",
+      "id": "",
+      "class_name": "btn btn-primary uppercase ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[4]/div[2]/div[2]/div[2]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary uppercase \" style=\"padding:10px 24px\" data-ember-action=\"\" data-ember-action-483=\"483\" data-crawl-id=\"20\">Create Adjustment</button>"
+    }
+  },
+  {
+    "label": "Period:\u00a0\nAll",
+    "tag_name": "button",
+    "selector": "#list-filter > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/reports/fifocostlottracking?from_date=2026-06-01&to_date=2026-06-30",
+    "target_slug": "app-60073668069-reports-fifocostlottracking-from-date-2026-06-01-to-date-2026-06-30",
+    "target_page": "../app-60073668069-reports-fifocostlottracking-from-date-2026-06-01-to-date-2026-06-30/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "FIFO Cost Lot Tracking Report",
+      "id": "",
+      "class_name": "btn btn-link",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#list-filter > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-link\" data-ember-action=\"\" data-ember-action-520=\"520\" data-crawl-id=\"19\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 459.1 512\" class=\"icon icon-md align-text-top\"><g id=\"Layer_1-2\"><path d=\"M382.4 412.6c11 0 20-9 20-20V20c0-11-9-20-20-20s-20 9-20 20v372.6c0 11 9 20 20 20zM77.7 412.6c11 0 20-9 20-20V256c0-11-9-20-20-20s-20 9-20 20v136.6c0 11 9 20 20 20zM229.1 412.6c11 0 20-9 20-20V133.9c0-11-9-20-20-20s-20 9-20 20v258.6c0 11 9 20 20 20zM439.1 472H20c-11 0-20 9-20 20s9 20 20 20h419.1c11 0 20-9 20-20s-9-20-20-20z\"></path></g></svg>&nbsp;FIFO Cost Lot Tracking Report</button>"
+    }
+  },
+  {
+    "label": "Collapse/Expand",
+    "tag_name": "button",
+    "selector": "#list-filter > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/reports/fifocostlottracking?from_date=2026-06-01&to_date=2026-06-30",
+    "target_slug": "app-60073668069-reports-fifocostlottracking-from-date-2026-06-01-to-date-2026-06-30",
+    "target_page": "../app-60073668069-reports-fifocostlottracking-from-date-2026-06-01-to-date-2026-06-30/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "FIFO Cost Lot Tracking Report",
+      "id": "",
+      "class_name": "btn btn-link",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#list-filter > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-link\" data-ember-action=\"\" data-ember-action-729=\"729\" data-crawl-id=\"14\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 459.1 512\" class=\"icon icon-md align-text-top\"><g id=\"Layer_1-2\"><path d=\"M382.4 412.6c11 0 20-9 20-20V20c0-11-9-20-20-20s-20 9-20 20v372.6c0 11 9 20 20 20zM77.7 412.6c11 0 20-9 20-20V256c0-11-9-20-20-20s-20 9-20 20v136.6c0 11 9 20 20 20zM229.1 412.6c11 0 20-9 20-20V133.9c0-11-9-20-20-20s-20 9-20 20v258.6c0 11 9 20 20 20zM439.1 472H20c-11 0-20 9-20 20s9 20 20 20h419.1c11 0 20-9 20-20s-9-20-20-20z\"></path></g></svg>&nbsp;FIFO Cost Lot Tracking Report</button>"
+    }
+  },
+  {
+    "label": "FIFO Cost Lot Tracking Report",
+    "tag_name": "button",
+    "selector": "#c40ed5dc-ad17-4d4e-976d-1238a54d90c3 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/inventory/adjustments/new",
+    "target_slug": "app-60073668069-inventory-adjustments-new",
+    "target_page": "../app-60073668069-inventory-adjustments-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "New",
+      "id": "",
+      "class_name": "btn btn-primary d-flex align-items-center ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#c40ed5dc-ad17-4d4e-976d-1238a54d90c3 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-primary d-flex align-items-center \" data-crawl-id=\"15\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm\"><path d=\"M15.01 8c0 .39-.31.7-.7.7H8.7v5.61c0 .39-.31.7-.7.7s-.7-.31-.7-.7V8.7H1.69c-.39 0-.7-.31-.7-.7s.31-.7.7-.7H7.3V1.69c0-.39.31-.7.7-.7s.7.31.7.7V7.3h5.61c.39 0 .7.31.7.7z\"></path></svg> <span class=\"ms-2\">New</span></button>"
+    }
+  }
+]

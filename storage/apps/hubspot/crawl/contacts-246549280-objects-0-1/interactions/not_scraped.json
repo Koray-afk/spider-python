@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Create date",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Last activity date",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Lead status",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Add contacts",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"19\" data-fnd-button=\"t\" aria-haspopup=\"true\" data-dropdown=\"true\" aria-invalid=\"false\" aria-readonly=\"false\" aria-disabled=\"false\" data-button-use=\"primary\" data-dropdown-open=\"false\" data-coaching-tips=\"import-button\" data-onboarding=\"new-object-button\" data-test-id=\"create-object-dropdown\" aria-owns=\"abstractdropdo"
+  },
+  {
+    "label": "Contact owner",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"28\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"28\" data-fnd-button=\"t\" aria-disabled=\"true\" data-test-id=\"save-view-buttons__save\" data-button-use=\"tertiary-extra-light\" class=\"PrivateButton__StyledButton-eRHhiA NRDHr\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying"
+  }
+]

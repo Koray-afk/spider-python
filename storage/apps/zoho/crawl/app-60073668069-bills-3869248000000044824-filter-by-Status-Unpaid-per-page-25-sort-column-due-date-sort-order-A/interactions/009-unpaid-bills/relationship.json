@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-bills-3869248000000044824-filter-by-Status-Unpaid-per-page-25-sort-column-due-date-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/bills/3869248000000044824?filter_by=Status.Unpaid&per_page=25&sort_column=due_date&sort_order=A",
+  "source_title": "David | Bills | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  btn btn-primary btn-left-border",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Show dropdown menu",
+    "selector": "#dd-c7d5ee8f-61bb-431d-9005-a0173c68a782 > button:nth-of-type(2)",
+    "crawl_selector": "[data-crawl-id=\"16\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[2]",
+    "outer_html": "<button for=\"c7d5ee8f-61bb-431d-9005-a0173c68a782\" aria-controls=\"c7d5ee8f-61bb-431d-9005-a0173c68a782\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-primary btn-left-border\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"16\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/bills/3869248000000044824?filter_by=Status.Unpaid&per_page=25&sort_column=due_date&sort_order=A",
+    "slug": "app-60073668069-bills-3869248000000044824-filter-by-Status-Unpaid-per-page-25-sort-column-due-date-sort-order-A",
+    "title": "David | Bills | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"c7d5ee8f-61bb-431d-9005-a0173c68a782\" aria-controls=\"c7d5ee8f-61bb-431d-9005-a0173c68a782\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-primary btn-left-border\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"16\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>",
+  "trigger_label": "Unpaid Bills",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/bills/3869248000000044824?filter_by=Status.Unpaid&per_page=25&sort_column=due_date&sort_order=A",
+  "target_slug": "app-60073668069-bills-3869248000000044824-filter-by-Status-Unpaid-per-page-25-sort-column-due-date-sort-order-A",
+  "target_title": "David | Bills | Zoho Books"
+}

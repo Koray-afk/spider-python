@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-item pe-7 ",
+    "selector": "[data-crawl-id=\"4\"]",
+    "outerHTML": "<button class=\"dropdown-item pe-7 \" type=\"button\" data-ember-action=\"\" data-ember-action-483=\"483\" data-crawl-id=\"4\">Inventory Adjustments <!----></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

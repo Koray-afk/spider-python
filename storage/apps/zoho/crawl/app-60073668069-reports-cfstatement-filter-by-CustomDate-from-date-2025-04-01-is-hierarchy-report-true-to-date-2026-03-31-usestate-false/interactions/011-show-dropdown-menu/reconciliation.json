@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-item pe-7 ",
+    "selector": "[data-crawl-id=\"4\"]",
+    "outerHTML": "<button class=\"dropdown-item pe-7 \" type=\"button\" data-ember-action=\"\" data-ember-action-699=\"699\" data-crawl-id=\"4\">Inventory Adjustments <!----></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#main-nav-tab > ul:nth-of-type(1) > li:nth-of-type(2)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown dropend ember-view\" id=\"dd-e53e5444-34c3-4b94-a0d7-db0d9eee2b6e\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-c9ead359-987e-4ad5-889e-aab3bc3c27e7\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-cef6cb35-7df1-423f-957c-0cec10c4911e\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-ed613fd9-b521-46ab-a270-54c617ce7e5d\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-d02fc01f-7004-4861-84d4-2c38b320c588\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-f2d73822-12bd-4c2f-8c01-5862f975302a\"><!-- --> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

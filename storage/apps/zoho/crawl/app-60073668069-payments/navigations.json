@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Set Up Now",
+    "tag_name": "button",
+    "selector": "#ember175",
+    "target_url": "https://books.zoho.in/app/60073668069#/settings/onlinepayments/customer-onlinepayments",
+    "target_slug": "app-60073668069-settings-onlinepayments-customer-onlinepayments",
+    "target_page": "../app-60073668069-settings-onlinepayments-customer-onlinepayments/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Set Up Now",
+      "id": "ember175",
+      "class_name": "btn btn-primary ember-view",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#ember175",
+      "xpath": "//*[@id=\"ember175\"]",
+      "outer_html": "<button id=\"ember175\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"15\"><!----> Set Up Now<!----></button>"
+    }
+  }
+]

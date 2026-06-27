@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/001-collapse-expand",
+    "relationship_file": "interactions/001-collapse-expand/relationship.json"
+  },
+  {
+    "label": "All Vendors",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/004-all-vendors",
+    "relationship_file": "interactions/004-all-vendors/relationship.json"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/011-edit",
+    "relationship_file": "interactions/011-edit/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/012-more",
+    "relationship_file": "interactions/012-more/relationship.json"
+  },
+  {
+    "label": "Link Email account",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/013-link-email-account",
+    "relationship_file": "interactions/013-link-email-account/relationship.json"
+  }
+]

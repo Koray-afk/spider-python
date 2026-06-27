@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"e4435a3b-cd5c-46f5-ae59-915263da73cf\" aria-controls=\"e4435a3b-cd5c-46f5-ae59-915263da73cf\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scro"
+  },
+  {
+    "label": "Enable Autoscan",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"8\\\"]\").first\n    - locator resolved to <button disabled id=\"ember188\" type=\"submit\" data-crawl-id=\"8\" class=\"btn btn-primary ember-view mt-4\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not en"
+  }
+]

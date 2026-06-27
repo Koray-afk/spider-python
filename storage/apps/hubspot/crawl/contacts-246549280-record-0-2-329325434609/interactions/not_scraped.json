@@ -1,0 +1,23 @@
+[
+  {
+    "label": "Create a task",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Create activity",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  }
+]

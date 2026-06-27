@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Refund",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link  ",
+    "selector": "[data-crawl-id=\"27\"]",
+    "outerHTML": "<button for=\"c7e4771e-c317-4018-972a-99726d02b40c\" aria-controls=\"c7e4771e-c317-4018-972a-99726d02b40c\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  details-menu-item nav-link  \" type=\"button\" aria-label=\"Show dropdown menu\" aria-expanded=\"false\" data-crawl-id=\"27\"><svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon icon-sm align-middle\"><path d=\"M3.5 8c0 .83-.67 1.5-1.5 1.5S.5 8.83.5 8 1.17 6.5 2 6.5s1.5.67 1.5 1.5zM8 6.5c-.83 0-1.5.67-1.5 1.5S7.17 9.5 8 9.5 9.5 8.83 9.5 8 8.83 6.5 8 6.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu max-height-450 overflow-y-auto ms-2 show\" data-popper-placement=\"bottom-end\" id=\"c7e4771e-c317-4018-972a-99726d02b40c\" role=\"listbox\" style=\"min-width: 40px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-1080.69px, 152.5px);\"><button class=\"dropdown-item\" id=\"f0749b82-93e4-4bc1-a106-a622b2c5e009\" type=\"button\"><!-- --> View Journal <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"fd9e9081-9a15-4159-93fd-e655bae8eeba\" type=\"button\"><!-- --> Void <!-- --></button> <!-- --><button class=\"dropdown-item\" id=\"c7b7b194-3ef5-4314-b2e2-2d8aef1f1566\" type=\"button\"><!-- --> Delete <!-- --></button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

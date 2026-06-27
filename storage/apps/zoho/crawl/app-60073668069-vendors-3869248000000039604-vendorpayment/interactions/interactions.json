@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Save as Paid",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/003-save-as-paid",
+    "relationship_file": "interactions/003-save-as-paid/relationship.json"
+  },
+  {
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/004-save-as-draft",
+    "relationship_file": "interactions/004-save-as-draft/relationship.json"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/005-cancel",
+    "relationship_file": "interactions/005-cancel/relationship.json"
+  },
+  {
+    "label": "Close the Edit Payment page",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/006-close-the-edit-payment-page",
+    "relationship_file": "interactions/006-close-the-edit-payment-page/relationship.json"
+  },
+  {
+    "label": "Set up auto-generation for payment numbers",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/007-set-up-auto-generation-for-payment-numbers",
+    "relationship_file": "interactions/007-set-up-auto-generation-for-payment-numbers/relationship.json"
+  },
+  {
+    "label": "Cash",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/008-cash",
+    "relationship_file": "interactions/008-cash/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/014-show-dropdown-menu",
+    "relationship_file": "interactions/014-show-dropdown-menu/relationship.json"
+  }
+]

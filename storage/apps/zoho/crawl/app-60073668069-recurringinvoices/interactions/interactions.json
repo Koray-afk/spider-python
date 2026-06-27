@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-show-dropdown-menu",
+    "relationship_file": "interactions/002-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-show-dropdown-menu",
+    "relationship_file": "interactions/003-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-show-dropdown-menu",
+    "relationship_file": "interactions/004-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/007-collapse-expand",
+    "relationship_file": "interactions/007-collapse-expand/relationship.json"
+  },
+  {
+    "label": "All Recurring Invoices",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/008-all-recurring-invoices",
+    "relationship_file": "interactions/008-all-recurring-invoices/relationship.json"
+  },
+  {
+    "label": "New",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/009-new",
+    "relationship_file": "interactions/009-new/relationship.json"
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/010-more-actions",
+    "relationship_file": "interactions/010-more-actions/relationship.json"
+  },
+  {
+    "label": "CUSTOMER NAME",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/012-customer-name",
+    "relationship_file": "interactions/012-customer-name/relationship.json"
+  },
+  {
+    "label": "LAST INVOICE DATE",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/014-last-invoice-date",
+    "relationship_file": "interactions/014-last-invoice-date/relationship.json"
+  },
+  {
+    "label": "NEXT INVOICE DATE",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/015-next-invoice-date",
+    "relationship_file": "interactions/015-next-invoice-date/relationship.json"
+  }
+]

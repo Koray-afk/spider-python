@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Last 30 days",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-text",
+    "selector": "[data-crawl-id=\"18\"]",
+    "outerHTML": "<button for=\"eba27675-b476-4bc0-8a9b-0b01c2e5a36e\" aria-controls=\"eba27675-b476-4bc0-8a9b-0b01c2e5a36e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-text\" type=\"button\" data-crawl-id=\"18\">Last 30 days <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"align-middle ms-1\" width=\"6px\" height=\"6px\" style=\"fill: #2485e8\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"eba27675-b476-4bc0-8a9b-0b01c2e5a36e\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-485px, 186.945px);\"><button class=\"dropdown-item active\" data-ember-action=\"\" data-ember-action-652=\"652\" type=\"button\">Last 30 days</button> <button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-653=\"653\" type=\"button\">Last 12 months</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

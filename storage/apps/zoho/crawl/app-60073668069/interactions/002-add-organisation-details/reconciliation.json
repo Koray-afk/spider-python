@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Add Organisation Details",
+    "tagName": "div",
+    "id": "",
+    "className": "nav-link gs-link  active",
+    "selector": "[data-crawl-id=\"32\"]",
+    "outerHTML": "<div class=\"nav-link gs-link  active\" role=\"tab\" data-ember-action=\"\" data-ember-action-694=\"694\" data-crawl-id=\"32\"><div class=\"d-inline-flex align-items-center px-3 pb-3 pt-2 task-name\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 431.5 429.81\" class=\"icon fill-mild-grey me-3 mt-2\"><path d=\"M215.75 0C96.6 0 0 96.22 0 214.91s96.6 214.9 215.75 214.9 215.75-96.22 215.75-214.9S334.91 0 215.75 0zm111.47 165.67L195.51 297.38c-4.59 4.59-10.6 6.88-16.62 6.88s-12.02-2.29-16.61-6.88l-52-52c-9.17-9.17-9.17-24.05 0-33.23 9.18-9.18 24.06-9.18 33.24 0l35.37 35.38 115.1-115.1c9.17-9.17 24.05-9.17 33.23 0 9.18 9.18 9.18 24.06 0 33.24z\"></path><path d=\"M327.22 165.67L195.51 297.38c-4.59 4.59-10.6 6.88-16.62 6.88s-12.02-2.29-16.61-6.88l-52-52c-9.17-9.17-9.17-24.05 0-33.23 9.18-9.18 24.06-9.18 33.24 0l35.37 35.38 115.1-115.1c9.17-9.17 24.05-9.17 33.23 0 9.18 9.18 9.18 24.06 0 33.24z\" fill=\"#fff\"></path></svg> <span class=\"pt-2\">Add Organisation Details</span></div></div>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

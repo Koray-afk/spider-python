@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Mark as Completed",
+  "triggerId": "",
+  "triggerClass": "btn btn-small btn-outline-blue font-xs ms-2 py-1",
+  "selector": "[data-crawl-id=\"18\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "app-60073668069",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+  "beforeTitle": "Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/home/gettingstarted",
+  "title": "Zoho Books",
+  "resultPagePath": "app-60073668069/interactions/012-mark-as-completed",
+  "captured_at": "2026-06-19T10:10:38.963586+00:00"
+}

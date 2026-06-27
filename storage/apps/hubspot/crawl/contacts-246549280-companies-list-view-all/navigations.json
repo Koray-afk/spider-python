@@ -1,0 +1,48 @@
+[
+  {
+    "label": "My companies",
+    "tag_name": "div",
+    "selector": "#crm > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-2/views/my/list",
+    "target_slug": "contacts-246549280-objects-0-2-views-my-list",
+    "target_page": "../contacts-246549280-objects-0-2-views-my-list/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "My companies",
+      "id": "",
+      "class_name": "sc-AxirZ fHnTju",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#crm > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+      "outer_html": "<div role=\"button\" aria-disabled=\"false\" class=\"sc-AxirZ fHnTju\" tabindex=\"0\" data-crawl-id=\"38\"><div class=\"Flex__StyledFlex-cHGzEF lmXQsg\"><div tabindex=\"0\" class=\"View__StyledView-fDIglR dQdDbn\"><div data-test-id=\"view-title-my\" class=\"Text__StyledText-llZFeh jyXNVz\">My companies</div></div></div></div>"
+    }
+  },
+  {
+    "label": "My companies",
+    "tag_name": "div",
+    "selector": "#crm > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-2/views/my/list",
+    "target_slug": "contacts-246549280-objects-0-2-views-my-list",
+    "target_page": "../contacts-246549280-objects-0-2-views-my-list/page.html",
+    "trigger": {
+      "tag_name": "div",
+      "text": "My companies",
+      "id": "",
+      "class_name": "TabComponent-jGWjCS UClnu",
+      "name": "",
+      "role": "button",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#crm > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "outer_html": "<div role=\"button\" aria-selected=\"false\" data-tab-id=\"my\" data-test-id=\"view-tab-my\" data-rbd-draggable-context-id=\"1\" data-rbd-draggable-id=\"my\" tabindex=\"0\" aria-describedby=\"rbd-hidden-text-1-hidden-text-2\" data-rbd-drag-handle-draggable-id=\"my\" data-rbd-drag-handle-context-id=\"1\" draggable=\"false\" class=\"TabComponent-jGWjCS UClnu\" data-crawl-id=\"37\"><div class=\"View__StyledView-fDIglR gBucQn\"><div class=\"Flex__StyledFlex-cHGzEF erjUQ\"><div class=\"Flex__StyledFlex-cHGzEF jDxzWT\"><div role=\"button\" aria-disabled=\"false\" class=\"sc-AxirZ fHnTju\" tabindex=\"0\" data-crawl-id=\"38\"><div class=\"Flex__StyledFlex-cHGzEF lmXQsg\"><div tabindex=\"0\" class=\"View__StyledView-fDIglR dQdDbn\"><div data-test-id=\"view-title-my\" class=\"Text__StyledText-llZFeh jyXNVz\">My companies</div></div></div></div></div><span class=\"TabContents__VisibilityWrapperRedesignInactive-jfRGpw dUKzfK\"><div class=\"Box__StyledBox-fBJlsV fXrVkm\"><button tabindex=\"0\" data-test-id=\"close-view-my\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"transparent\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA dzVnnU\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa fjsJRK\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" focusable=\"false\" data-icon-name=\"Remove\" class=\"StyledIcon-jibXlG fFvrhb\"><path d=\"M27.86 29c-.29 0-.58-.11-.81-.33L4.19 5.81a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0l22.86 22.86a1.14 1.14 0 0 1-.81 1.95\"></path><path d=\"M5 29c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62L27.05 4.19a1.14 1.14 0 0 1 1.62 0c.45.45.45 1.17 0 1.62L5.81 28.67c-.22.22-.52.33-.81.33\"></path></svg></span></button></div></span></div></div></div>"
+    }
+  }
+]

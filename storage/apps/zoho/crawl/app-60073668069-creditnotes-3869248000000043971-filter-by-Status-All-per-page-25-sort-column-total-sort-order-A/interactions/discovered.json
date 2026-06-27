@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Comments & History",
+    "id": "fe173bfe-a2b9-46f5-b06d-aefb17775b9f",
+    "className": "icon-button btn btn-secondary d-inline-flex icon-button",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Edit",
+    "id": "",
+    "className": "details-menu-item nav-link text-center over-flow  ",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Email",
+    "id": "",
+    "className": "details-menu-item nav-link text-center over-flow  ",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "PDF/Print",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Apply to Invoices",
+    "id": "",
+    "className": "details-menu-item nav-link text-center over-flow  ",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Refund",
+    "id": "",
+    "className": "details-menu-item nav-link text-center over-flow  ",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link  ",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Journal",
+    "id": "",
+    "className": "text-dodgerblue nav-link bg-transparent active",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "All Credit Notes",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   input-group-text",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More Actions",
+    "id": "c02df68a-2e95-4a6a-a235-e0ea4803b71d",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Close",
+    "id": "",
+    "className": "icon-button icon-button p-0 mb-1",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Change",
+    "id": "",
+    "className": "btn btn-link p-0",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

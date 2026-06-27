@@ -1,0 +1,87 @@
+[
+  {
+    "label": "Products/Services",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "All filters",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Chart options",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"2\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"2\" aria-label=\"Calls\" id=\"calling-remote-toggle\" data-location=\"global-toolbar\" data-onboarding=\"calling-remote\" data-selenium-test=\"call-remote-toggle\" class=\"CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible"
+  },
+  {
+    "label": "Show ChatGPT",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"28\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" data-crawl-id=\"28\" aria-pressed=\"true\" aria-hidden=\"false\" aria-label=\"Show Gemini\" class=\"highcharts-a11y-proxy-button\"></button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <i18n-string data-l"
+  },
+  {
+    "label": "Show Gemini",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"29\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" data-crawl-id=\"29\" aria-pressed=\"true\" aria-hidden=\"false\" aria-label=\"Show Perplexity\" class=\"highcharts-a11y-proxy-button\"></button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <h4 aria-level="
+  },
+  {
+    "label": "Show Perplexity",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"30\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" type=\"button\" data-crawl-id=\"30\" data-fnd-button=\"t\" aria-disabled=\"true\" data-prev-page=\"true\" aria-label=\"Previous page\" data-button-use=\"transparent\" class=\"PrivateButton__StyledButton-eRHhiA duHmvF\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retry"
+  },
+  {
+    "label": "Show Wondrr",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"35\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"35\" data-active=\"false\" data-fnd-button=\"t\" data-page-number=\"3\" aria-disabled=\"false\" data-button-use=\"transparent\" class=\"PrivateButton__StyledButton-eRHhiA duHmvF\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - s"
+  },
+  {
+    "label": "Show Earned",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"39\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" data-crawl-id=\"39\" aria-pressed=\"true\" aria-hidden=\"false\" aria-label=\"Show Peer\" class=\"highcharts-a11y-proxy-button\"></button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <i18n-string data-loc"
+  },
+  {
+    "label": "Show Peer",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"40\\\"]\").first\n    - locator resolved to <button tabindex=\"-1\" data-crawl-id=\"40\" aria-pressed=\"true\" aria-hidden=\"false\" aria-label=\"Show UGC\" class=\"highcharts-a11y-proxy-button\"></button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <i18n-string data-loca"
+  },
+  {
+    "label": "Add prompts",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"14\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"14\" data-fnd-button=\"t\" aria-haspopup=\"true\" data-dropdown=\"true\" aria-invalid=\"false\" aria-readonly=\"false\" aria-disabled=\"false\" data-button-use=\"primary\" data-dropdown-open=\"false\" data-test-id=\"add-prompts-dropdown\" aria-owns=\"abstractdropdown-content-4\" class=\"PrivateButton__StyledButton-eRHhiA jWYotm\" aria-labe"
+  }
+]

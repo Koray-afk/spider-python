@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-home",
+  "source_url": "https://books.zoho.in/app/60073668069#/home",
+  "source_title": "Dashboard | Zoho Books",
+  "trigger": {
+    "tag_name": "div",
+    "text": "",
+    "id": "",
+    "class_name": "slider-right cursor-pointer rounded-xlg  preview-navigate ",
+    "name": "",
+    "role": "button",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember1040 > div:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"26\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "outer_html": "<div class=\"slider-right cursor-pointer rounded-xlg  preview-navigate \" tabindex=\"0\" role=\"button\" data-ember-action=\"\" data-ember-action-1041=\"1041\" data-crawl-id=\"26\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xs\"><path d=\"M158.747 512c13.885 0 27.778-5.45 38.345-16.335L391.6 294.999c20.898-21.591 20.898-56.406 0-77.971L197.092 16.35c-21.023-21.693-55.245-21.818-76.413-.268-21.17 21.53-21.283 56.578-.26 78.271l156.688 161.646-156.688 161.642c-21.018 21.703-20.905 56.748.26 78.301C131.207 506.64 144.979 512 158.747 512z\"></path></svg></div>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/home/dashboard?dashboard_id=defaultdashboard",
+    "slug": "app-60073668069-home-dashboard-dashboard-id-defaultdashboard",
+    "title": "Dashboard | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<div class=\"slider-right cursor-pointer rounded-xlg  preview-navigate \" tabindex=\"0\" role=\"button\" data-ember-action=\"\" data-ember-action-1041=\"1041\" data-crawl-id=\"26\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xs\"><path d=\"M158.747 512c13.885 0 27.778-5.45 38.345-16.335L391.6 294.999c20.898-21.591 20.898-56.406 0-77.971L197.092 16.35c-21.023-21.693-55.245-21.818-76.413-.268-21.17 21.53-21.283 56.578-.26 78.271l156.688 161.646-156.688 161.642c-21.018 21.703-20.905 56.748.26 78.301C131.207 506.64 144.979 512 158.747 512z\"></path></svg></div>",
+  "trigger_label": "Cash as on 31/03/2027\n\u20b90.00 ( = )",
+  "trigger_id": "",
+  "trigger_class": "cursor-pointer",
+  "target_url": "https://books.zoho.in/app/60073668069#/home/dashboard?dashboard_id=defaultdashboard",
+  "target_slug": "app-60073668069-home-dashboard-dashboard-id-defaultdashboard",
+  "target_title": "Dashboard | Zoho Books"
+}

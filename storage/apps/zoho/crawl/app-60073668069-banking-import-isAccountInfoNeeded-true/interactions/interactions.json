@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Choose File",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/002-choose-file",
+    "relationship_file": "interactions/002-choose-file/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/004-navigate-to-opt-0",
+    "relationship_file": "interactions/004-navigate-to-opt-0/relationship.json"
+  },
+  {
+    "label": "Choose your account for import",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/008-choose-your-account-for-import",
+    "relationship_file": "interactions/008-choose-your-account-for-import/relationship.json"
+  },
+  {
+    "label": "UTF-8 (Unicode)",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/009-utf-8-unicode",
+    "relationship_file": "interactions/009-utf-8-unicode/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/010-collapse-expand",
+    "relationship_file": "interactions/010-collapse-expand/relationship.json"
+  }
+]

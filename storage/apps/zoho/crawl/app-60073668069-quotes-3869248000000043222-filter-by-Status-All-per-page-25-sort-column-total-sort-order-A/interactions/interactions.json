@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Quote Details",
+    "selector": "[data-crawl-id=\"32\"]",
+    "interaction_path": "interactions/001-quote-details",
+    "relationship_file": "interactions/001-quote-details/relationship.json"
+  },
+  {
+    "label": "Activity Logs",
+    "selector": "[data-crawl-id=\"33\"]",
+    "interaction_path": "interactions/002-activity-logs",
+    "relationship_file": "interactions/002-activity-logs/relationship.json"
+  },
+  {
+    "label": "switch to the Quote Details View.",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/003-switch-to-the-quote-details-view",
+    "relationship_file": "interactions/003-switch-to-the-quote-details-view/relationship.json"
+  },
+  {
+    "label": "All Quotes",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/007-all-quotes",
+    "relationship_file": "interactions/007-all-quotes/relationship.json"
+  },
+  {
+    "label": "Close",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/010-close",
+    "relationship_file": "interactions/010-close/relationship.json"
+  }
+]

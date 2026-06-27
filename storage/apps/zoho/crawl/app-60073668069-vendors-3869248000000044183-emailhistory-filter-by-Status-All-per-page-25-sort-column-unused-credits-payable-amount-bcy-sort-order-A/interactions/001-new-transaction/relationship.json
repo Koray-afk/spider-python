@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-vendors-3869248000000044183-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+  "source_title": "Ram | Contacts | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "New Transaction",
+    "id": "",
+    "class_name": "dropdown-toggle   btn btn-primary",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dd-ce610971-9db4-4a9e-8485-876a5521ffbe > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"25\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "outer_html": "<button for=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" aria-controls=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"25\">New Transaction</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+    "slug": "app-60073668069-vendors-3869248000000044183-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+    "title": "Ram | Contacts | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" aria-controls=\"ce610971-9db4-4a9e-8485-876a5521ffbe\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"25\">New Transaction</button>",
+  "trigger_label": "New Transaction",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle   btn btn-primary",
+  "target_url": "https://books.zoho.in/app/60073668069#/vendors/3869248000000044183/emailhistory?filter_by=Status.All&per_page=25&sort_column=unused_credits_payable_amount_bcy&sort_order=A",
+  "target_slug": "app-60073668069-vendors-3869248000000044183-emailhistory-filter-by-Status-All-per-page-25-sort-column-unused-credits-payable-amount-bcy-sort-order-A",
+  "target_title": "Ram | Contacts | Zoho Books"
+}

@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-paymentsreceived-3869248000000043859-paymentrefund-new-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A-transaction-type-customer-payment",
+  "source_url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859/paymentrefund/new?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A&transaction_type=customer_payment",
+  "source_title": "Payments Received | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Contact Us",
+    "id": "ember561",
+    "class_name": "btn btn-secondary ember-view contact-us rounded-md float-end me-5 mt-n2 white-bg text-capitalize",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember561",
+    "crawl_selector": "[data-crawl-id=\"21\"]",
+    "xpath": "//*[@id=\"ember561\"]",
+    "outer_html": "<button id=\"ember561\" class=\"btn btn-secondary ember-view contact-us rounded-md float-end me-5 mt-n2 white-bg text-capitalize\" type=\"button\" data-crawl-id=\"21\"><!----> Contact us<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859/paymentrefund/new?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A&transaction_type=customer_payment",
+    "slug": "app-60073668069-paymentsreceived-3869248000000043859-paymentrefund-new-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A-transaction-type-customer-payment",
+    "title": "Payments Received | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button id=\"ember561\" class=\"btn btn-secondary ember-view contact-us rounded-md float-end me-5 mt-n2 white-bg text-capitalize\" type=\"button\" data-crawl-id=\"21\"><!----> Contact us<!----></button>",
+  "trigger_label": "Cancel",
+  "trigger_id": "",
+  "trigger_class": "btn btn-secondary",
+  "target_url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043859/paymentrefund/new?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A&transaction_type=customer_payment",
+  "target_slug": "app-60073668069-paymentsreceived-3869248000000043859-paymentrefund-new-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A-transaction-type-customer-payment",
+  "target_title": "Payments Received | Zoho Books"
+}

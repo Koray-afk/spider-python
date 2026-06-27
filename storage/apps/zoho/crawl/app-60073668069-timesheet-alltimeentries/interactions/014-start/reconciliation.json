@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Start",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-primary btn-left-border",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button for=\"f74187a5-3600-4c00-a9c8-bfd59c06c797\" aria-controls=\"f74187a5-3600-4c00-a9c8-bfd59c06c797\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-primary btn-left-border\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"19\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs align-text-middle\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"f74187a5-3600-4c00-a9c8-bfd59c06c797\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-101px, 99.2734px);\"><button class=\"dropdown-item font-small\"><!-- --> New Weekly Time Log</button><div class=\"dropdown-divider\"></div><button class=\"dropdown-item font-small\"><i><svg class=\"icon align-text-top me-2\" id=\"Layer_1\" version=\"1.1\" viewbox=\"0 0 512 512\" x=\"0\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\"><path d=\"M256.1 4.3s148.1-6.7 226.6 142.2H243.5s-45.2-1.5-83.7 53.3c-11.1 23-23 46.7-9.6 93.3-19.3-32.6-102.2-177-102.2-177S106.5 10.2 256.1 4.3z\" fill=\"#e53029\"></path><path d=\"M475 382.3s-68.3 131.6-236.5 125.1c20.7-35.9 119.6-207.2 119.6-207.2s23.9-38.4-4.3-99.1c-14.3-21.1-28.9-43.2-76-55 37.9-.4 204.4 0 204.4 0s62.5 103.6-7.2 236.2z\" fill=\"#fdd900\"></path><path d=\"M38.3 383.3s-79.8-125 9.9-267.4c20.7 35.9 119.6 207.2 119.6 207.2s21.3 39.9 88 45.8c25.4-1.9 51.9-3.4 85.6-38.3-18.6 33-102.2 177-102.2 177s-121 2.3-200.9-124.3z\" fill=\"#66b44b\"></path><path d=\"M238.6 508.6l33.6-140.4s37-2.9 68-36.9C321 365.1 238.6 508.6 238.6 508.6z\" fill=\"#61ab48\"></path><path d=\"M143.4 258c0-61.9 50.2-112.1 112.1-112.1 61.9 0 112.1 50.2 112.1 112.1 0 61.9-50.2 112.1-112.1 112.1-61.9 0-112.1-50.2-112.1-112.1z\" fill=\"#fff\"></path><lineargradient gradientunits=\"userSpaceOnUse\" id=\"SVGID_1_\" x1=\"255.496\" x2=\"255.496\" y1=\"165.995\" y2=\"345.731\"><stop offset=\"0\" stop-color=\"#96c1e9\"></stop><stop offset=\"1\" stop-color=\"#116cb3\"></stop></lineargradient><path d=\"M162.2 258c0-51.5 41.8-93.3 93.3-93.3s93.3 41.8 93.3 93.3-41.8 93.3-93.3 93.3-93.3-41.8-93.3-93.3z\" fill=\"#4d8cf5\"></path><path d=\"M482.3 146.1l-138.6 40.6s-20.9-30.7-65.8-40.6c38.9-.2 204.4 0 204.4 0z\" fill=\"#f0ce00\"></path><path d=\"M147.5 288.1C128 254.4 48 116.1 48 116.1l102.6 101.5s-10.5 21.7-6.5 52.7l3.4 17.8z\" fill=\"#d92f27\"></path></svg></i> Timer - Chrome Extension</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

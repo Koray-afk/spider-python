@@ -1,0 +1,40 @@
+[
+  {
+    "label": "All Vendors",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "25 per page",
+    "selector": "[data-crawl-id=\"47\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"47\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"47\" aria-expanded=\"false\" class=\"accordion-button \">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  },
+  {
+    "label": "View",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"e6cf1025-6102-4e2c-94a1-45833fa38ed6\" aria-controls=\"e6cf1025-6102-4e2c-94a1-45833fa38ed6\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scro"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"26\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"26\" aria-expanded=\"true\" class=\"accordion-button \">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  }
+]

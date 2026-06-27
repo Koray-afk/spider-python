@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Add content",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Quick filters",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Owners",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Team Activity Summary",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Open Ticket Summary",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

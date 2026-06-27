@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Export submissions",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Conversion pages\nDate range: From 05/24/2026 to 06/22/2026",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

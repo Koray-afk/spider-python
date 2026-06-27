@@ -1,0 +1,34 @@
+{
+  "source_page": "contacts-246549280-objects-0-3-views-my-list",
+  "source_url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/my/list",
+  "source_title": "Deals | My deals",
+  "trigger": {
+    "tag_name": "button",
+    "text": "All Pipelines",
+    "id": "",
+    "class_name": "PrivateButton__StyledButton-eRHhiA pJPkj",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#crm > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"23\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button tabindex=\"0\" aria-haspopup=\"true\" aria-labelledby=\"abstractdropdown-button-content-1\" data-dropdown=\"true\" data-dropdown-open=\"false\" data-selenium-test=\"pipelineSelector\" data-test-id=\"pipeline-switcher\" data-has-custom-button-content=\"false\" aria-readonly=\"false\" aria-owns=\"abstractdropdown-content-2\" aria-disabled=\"false\" aria-invalid=\"false\" data-fnd-button=\"t\" data-button-use=\"tertiary-extra-light\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA pJPkj\" data-crawl-id=\"23\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span id=\"abstractdropdown-button-content-1\" class=\"AbstractDropdown__StyledButtonContents-iJVKGW gEEeCn\"><span class=\"AbstractDropdown__StyledDropdownButtonLabel-cgnbqh lhwCwn\"><li class=\"TypeaheadResultsItem__StyledItem-fesgnO iCHZzl\"><span><span class=\"TypeaheadResultsItem__StyledContentWrapper-jlAUut iQCjbz\"> <span data-option-text=\"true\" class=\"TypeaheadResultsItem__StyledContentLabel-roRjs iVzGrZ\">All Pipelines</span>  </span></span></li></span><span data-test-id=\"dropdown-caret\" class=\"DropdownCaret__StyledCaret-dQyJuC leqhCH\"></span></span></span></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/my/list",
+    "slug": "contacts-246549280-objects-0-3-views-my-list",
+    "title": "Deals | My deals"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button tabindex=\"0\" aria-haspopup=\"true\" aria-labelledby=\"abstractdropdown-button-content-1\" data-dropdown=\"true\" data-dropdown-open=\"false\" data-selenium-test=\"pipelineSelector\" data-test-id=\"pipeline-switcher\" data-has-custom-button-content=\"false\" aria-readonly=\"false\" aria-owns=\"abstractdropdown-content-2\" aria-disabled=\"false\" aria-invalid=\"false\" data-fnd-button=\"t\" data-button-use=\"tertiary-extra-light\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA pJPkj\" data-crawl-id=\"23\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span id=\"abstractdropdown-button-content-1\" class=\"AbstractDropdown__StyledButtonContents-iJVKGW gEEeCn\"><span class=\"AbstractDropdown__StyledDropdownButtonLabel-cgnbqh lhwCwn\"><li class=\"TypeaheadResultsItem__StyledItem-fesgnO iCHZzl\"><span><span class=\"TypeaheadResultsItem__StyledContentWrapper-jlAUut iQCjbz\"> <span data-option-text=\"true\" class=\"TypeaheadResultsItem__StyledContentLabel-roRjs iVzGrZ\">All Pipelines</span>  </span></span></li></span><span data-test-id=\"dropdown-caret\" class=\"DropdownCaret__StyledCaret-dQyJuC leqhCH\"></span></span></span></button>",
+  "trigger_label": "All Pipelines",
+  "trigger_id": "",
+  "trigger_class": "PrivateButton__StyledButton-eRHhiA pJPkj",
+  "target_url": "https://app-na2.hubspot.com/contacts/246549280/objects/0-3/views/my/list",
+  "target_slug": "contacts-246549280-objects-0-3-views-my-list",
+  "target_title": "Deals | My deals"
+}

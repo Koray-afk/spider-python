@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-create-new",
+    "relationship_file": "interactions/001-create-new/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-marketplace",
+    "relationship_file": "interactions/003-marketplace/relationship.json"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/004-assistant",
+    "relationship_file": "interactions/004-assistant/relationship.json"
+  },
+  {
+    "label": "12 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/005-12-days-left-in-trial",
+    "relationship_file": "interactions/005-12-days-left-in-trial/relationship.json"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/006-more",
+    "relationship_file": "interactions/006-more/relationship.json"
+  },
+  {
+    "label": "Manage navigation",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/007-manage-navigation",
+    "relationship_file": "interactions/007-manage-navigation/relationship.json"
+  },
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/008-actions",
+    "relationship_file": "interactions/008-actions/relationship.json"
+  },
+  {
+    "label": "Got it",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/012-got-it",
+    "relationship_file": "interactions/012-got-it/relationship.json"
+  }
+]

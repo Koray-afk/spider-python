@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Other Details",
+    "id": "paymentdetails-tab",
+    "className": "active nav-link text-black  ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Address",
+    "id": "address-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Contact Persons",
+    "id": "persons-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Bank Details",
+    "id": "bankdetails-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Custom Fields",
+    "id": "customfields-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Reporting Tags",
+    "id": "tags-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Remarks",
+    "id": "notes-tab",
+    "className": "nav-link text-black  ",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Expense",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Save",
+    "id": "ember496",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Cancel",
+    "id": "ember497",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "+91",
+    "id": "ac-ember440",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "INR- Indian Rupee",
+    "id": "ac-ember447",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select an account",
+    "id": "ac-ember449",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Due on Receipt",
+    "id": "ac-ember451",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select a Tax",
+    "id": "ac-ember452",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Contact Persons",
+  "triggerId": "persons-tab",
+  "triggerClass": "nav-link text-black  ",
+  "selector": "[data-crawl-id=\"19\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "app-60073668069-contacts-new",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/contacts/new",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/contacts/new",
+  "beforeTitle": "New Contact | Contacts | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/contacts/new",
+  "title": "New Contact | Contacts | Zoho Books",
+  "resultPagePath": "app-60073668069-contacts-new/interactions/003-contact-persons",
+  "captured_at": "2026-06-19T10:15:17.436406+00:00"
+}

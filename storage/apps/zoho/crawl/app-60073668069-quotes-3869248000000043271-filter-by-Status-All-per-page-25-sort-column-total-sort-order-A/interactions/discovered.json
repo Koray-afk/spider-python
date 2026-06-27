@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Quote Details",
+    "id": "",
+    "className": "nav-link font-normal cursor-pointer active",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Activity Logs",
+    "id": "",
+    "className": "nav-link font-normal cursor-pointer ",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Details",
+    "id": "",
+    "className": "slider-btn text-neutral-700 font-xxs lh-1 px-3 ms-1 text-black",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Comments",
+    "id": "d82daa54-c290-422b-be5b-cc8a34ea520f",
+    "className": "icon-button btn btn-secondary d-inline-flex icon-button",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "All Quotes",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More Actions",
+    "id": "f24e0b4a-e884-4a6f-8e9f-e66c6df60ad8",
+    "className": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit",
+    "id": "",
+    "className": "details-menu-item nav-link text-center over-flow  ",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Send",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Share",
+    "id": "",
+    "className": "details-menu-item nav-link text-center over-flow  ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "PDF/Print",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Convert",
+    "id": "",
+    "className": "dropdown-toggle no-caret  details-menu-item nav-link over-flow ",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Send Quote",
+    "id": "ember481",
+    "className": "btn btn-primary ember-view btn-sm rounded-md font-xs over-flow me-2",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Mark As Sent",
+    "id": "ember482",
+    "className": "btn btn-secondary ember-view btn btn-outline font-xs ms-2 over-flow btn-sm rounded-md",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "PDF",
+    "id": "",
+    "className": "slider-btn float-end text-neutral-700 font-xxs lh-1 px-3 ms-1 flex-grow-1 text-dark-shade-blue",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Spreadsheet Template",
+    "id": "",
+    "className": "dropdown-toggle no-caret  text-black-semibold m-auto",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

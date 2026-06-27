@@ -1,0 +1,73 @@
+[
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Make Recurring",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"22\\\"]\").first\n    - locator resolved to <button type=\"submit\" id=\"a61721f9b\" data-crawl-id=\"22\" form=\"expenses-new\" class=\"btn btn-primary ember-view\" data-agent-save=\"primary-save-btn\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div "
+  },
+  {
+    "label": "Print",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"23\\\"]\").first\n    - locator resolved to <button type=\"button\" id=\"a13caec19\" data-crawl-id=\"23\" form=\"expenses-new\" class=\"btn btn-secondary ember-view\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade d-block show ne"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"24\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"24\" class=\"btn btn-secondary cursor-pointer\">Cancel</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade d-block show nested-modal\">\u2026</div> from <"
+  },
+  {
+    "label": "Journal",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"26\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"26\" id=\"cfa8d08c-d6da-4795-8c26-4dda49c44c43\" class=\"icon-button rhs-panel-toggle d-print-none mb-2 d-flex align-items-center justify-content-center opened\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrol"
+  },
+  {
+    "label": "Expense History",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"19\" data-ember-action=\"\" data-ember-action-474=\"474\" aria-label=\"Clear Selection\" aria-describedby=\"ac-ember473\" class=\"icon-button ac-selection-clear\" id=\"d8a29ae1-d535-4772-9ab9-b7fbe13d1bd3\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visi"
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" id=\"aebf34725\" data-crawl-id=\"11\" aria-expanded=\"false\" class=\"accordion-button \" aria-controls=\"d0b8ece6-cdf3-4831-ade4-b9d7c636574d\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n  "
+  },
+  {
+    "label": "All Expenses",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"16\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"16\" class=\"badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fa"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"3\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"e77eead2-726d-476c-95fa-ade8b12194a2\" class=\"dropdown-toggle   input-group-text\" aria-controls=\"e77eead2-726d-476c-95fa-ade8b12194a2\">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  }
+]

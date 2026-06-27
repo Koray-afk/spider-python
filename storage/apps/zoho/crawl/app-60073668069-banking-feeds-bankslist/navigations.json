@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Add Account",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/banking/new",
+    "target_slug": "app-60073668069-banking-new",
+    "target_page": "../app-60073668069-banking-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Add Account",
+      "id": "",
+      "class_name": "btn btn-secondary shortcut-options",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/footer[1]/button[1]",
+      "outer_html": "<button class=\"btn btn-secondary shortcut-options\" data-crawl-id=\"27\">Add Account</button>"
+    }
+  }
+]

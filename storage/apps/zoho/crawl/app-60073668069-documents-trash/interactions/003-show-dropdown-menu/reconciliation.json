@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "outerHTML": "<button for=\"d4652e9f-2d5b-42cc-b557-2d393891514e\" aria-controls=\"d4652e9f-2d5b-42cc-b557-2d393891514e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret \" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"2\"><span id=\"recent-activities\"><div id=\"c9ed7beb-78d2-49a8-b7e2-7f85fa2d2f71\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" class=\"icon align-middle unified-icon-fill\"><path d=\"M15.1.2c-.3 0-.5.2-.5.5v2.5C13.2 1.2 10.9.1 8.4 0c-2.1 0-4 .8-5.5 2.2C1.4 3.7.5 5.6.5 7.7c-.1 4.3 3.4 7.9 7.7 8h.1c2.9 0 5.6-1.6 7-4.2.1-.2 0-.5-.2-.7-.2-.1-.5 0-.7.2-1.2 2.3-3.6 3.8-6.2 3.7-3.8-.1-6.8-3.2-6.7-6.9 0-1.8.8-3.5 2.1-4.8 1.3-1.3 3-2 4.9-1.9 2.3 0 4.4 1.2 5.7 3.2l.6.9c.1.2.3.3.6.2.2-.1.4-.3.4-.5V.7c-.2-.3-.4-.5-.7-.5z\"></path><path d=\"M7.8 4.7c-.3 0-.5.2-.5.5V9c0 .2.1.3.2.4l1.9 1.3c.1.1.2.1.3.1.2 0 .3-.1.4-.2.2-.2.1-.5-.1-.7L8.3 8.8V5.2c0-.3-.3-.5-.5-.5z\"></path></svg></div> <!----></span></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu mt-4 recent-activity-menu show\" data-popper-placement=\"bottom-start\" id=\"d4652e9f-2d5b-42cc-b557-2d393891514e\" role=\"listbox\" style=\"position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(239px, 36.3984px);\"><div class=\"text-center\"><output class=\"visually-hidden\" role=\"alert\"><div aria-busy=\"true\">Loading...</div></output> <div class=\"loading text-center\"><div class=\"load-circle1\"></div> <div class=\"load-circle2\"></div> <div class=\"load-circle3\"></div> <div class=\"load-circle4\"></div> <div class=\"load-circle5\"></div></div></div></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

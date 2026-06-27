@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-purchaseorders-3869248000000044385-filter-by-Status-All-per-page-25-sort-column-delivery-date-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/purchaseorders/3869248000000044385?filter_by=Status.All&per_page=25&sort_column=delivery_date&sort_order=A",
+  "source_title": "Add New | Purchase Orders | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "d3865375-13a5-46f1-8fb9-63cb950dc5a6",
+    "class_name": "popover-trigger",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#d3865375-13a5-46f1-8fb9-63cb950dc5a6",
+    "crawl_selector": "[data-crawl-id=\"15\"]",
+    "xpath": "//*[@id=\"d3865375-13a5-46f1-8fb9-63cb950dc5a6\"]",
+    "outer_html": "<button class=\"popover-trigger\" id=\"d3865375-13a5-46f1-8fb9-63cb950dc5a6\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"15\"><div class=\"bubble-scale-animation\"></div></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/purchaseorders/3869248000000044385?filter_by=Status.All&per_page=25&sort_column=delivery_date&sort_order=A",
+    "slug": "app-60073668069-purchaseorders-3869248000000044385-filter-by-Status-All-per-page-25-sort-column-delivery-date-sort-order-A",
+    "title": "Add New | Purchase Orders | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button class=\"popover-trigger\" id=\"d3865375-13a5-46f1-8fb9-63cb950dc5a6\" aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" data-crawl-id=\"15\"><div class=\"bubble-scale-animation\"></div></button>",
+  "trigger_label": "Collapse/Expand",
+  "trigger_id": "",
+  "trigger_class": "icon-button collapse-expand z-index-1 ",
+  "target_url": "https://books.zoho.in/app/60073668069#/purchaseorders/3869248000000044385?filter_by=Status.All&per_page=25&sort_column=delivery_date&sort_order=A",
+  "target_slug": "app-60073668069-purchaseorders-3869248000000044385-filter-by-Status-All-per-page-25-sort-column-delivery-date-sort-order-A",
+  "target_title": "Add New | Purchase Orders | Zoho Books"
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Active Accounts",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-text",
+    "selector": "[data-crawl-id=\"20\"]",
+    "outerHTML": "<button for=\"eba27675-b476-4bc0-8a9b-0b01c2e5a36e\" aria-controls=\"eba27675-b476-4bc0-8a9b-0b01c2e5a36e\" aria-haspopup=\"true\" aria-expanded=\"true\" class=\"dropdown-toggle no-caret  btn btn-text\" type=\"button\" data-crawl-id=\"20\">Last 30 days <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"align-middle ms-1\" width=\"6px\" height=\"6px\" style=\"fill: #2485e8\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/button[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<svg class=\"icon icon-xxs\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M481.6 74.4H30.4c-9.6 0-15.3 10.6-10 18.6l223.3 339.2c4.7 7.2 15.2 7.2 20 .1 39.5-58.8 184.2-274.2 227.8-339.2 5.4-7.9-.3-18.7-9.9-18.7z\"></path></svg>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

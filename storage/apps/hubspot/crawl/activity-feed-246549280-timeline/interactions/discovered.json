@@ -1,0 +1,114 @@
+[
+  {
+    "label": "Other activity",
+    "id": "",
+    "className": "sc-AxjAm gPiYpG sc-AxhUy fXtrFT",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "1 visit",
+    "id": "",
+    "className": "sc-AxjAm gPiYpG sc-AxhUy fXtrFT",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "div",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create new",
+    "id": "hs-global-toolbar-object-create",
+    "className": "sc-AxhCb fHxXII",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Calls",
+    "id": "calling-remote-toggle",
+    "className": "CallingNavComponentIcon__StyledToggleButton-bMIzqm ekzwDW",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Marketplace",
+    "id": "hs-global-toolbar-marketplace-list-item",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Assistant",
+    "id": "hs-global-toolbar-copilot-list-item",
+    "className": "sc-AxhUy eILLbW",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "13 days left in trial",
+    "id": "mini-trial-guide-button",
+    "className": "sc-AxhUy cUWOnH",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Wondrr",
+    "id": "hs-global-toolbar-accounts",
+    "className": "sc-AxjAm cYqPoz",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "More",
+    "id": "more-tools-toggle",
+    "className": "",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Manage navigation",
+    "id": "",
+    "className": "sc-fzoXzr dAExvT",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "I will only send emails through HubSpot",
+    "id": "",
+    "className": "PrivateButton__StyledButton-eRHhiA gbdCJe",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "onboarding.steps.sendTrackedEmailInGmail.title",
+    "id": "",
+    "className": "sc-AxjAm gPiYpG sc-AxgMl bUaowJ",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "onboarding.steps.finalStep.title",
+    "id": "",
+    "className": "sc-AxjAm gPiYpG sc-AxgMl bUaowJ",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Close",
+    "id": "",
+    "className": "sc-AxjAm gPiYpG sc-AxirZ kblyHU",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade d-block sho"
+  },
+  {
+    "label": "Start",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"19\" data-ember-action=\"\" data-ember-action-517=\"517\" class=\"btn btn-secondary d-flex align-items-center\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fade "
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"21\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"21\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Show dropdown menu\" for=\"c82b72f8-63ba-47a9-b4ba-d8358c3749f1\" aria-controls=\"c82b72f8-63ba-47a9-b4ba-d8358c3749f1\" class=\"dropdown-toggle no-caret  btn btn-primary btn-left-border\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled "
+  },
+  {
+    "label": "More Actions",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"22\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"22\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"More Actions\" id=\"edefa395-0156-4059-81b3-8d99cf62b78c\" for=\"e1181f32-a030-49a3-abc5-c22de367d4af\" aria-controls=\"e1181f32-a030-49a3-abc5-c22de367d4af\" class=\"dropdown-toggle no-caret  btn btn-secondary d-flex\">\u2026</button>\n  - attempting click action\n    2 \u00d7 w"
+  }
+]

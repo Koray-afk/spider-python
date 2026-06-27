@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "New Expense",
+  "triggerId": "",
+  "triggerClass": "icon-button add-new tab-element-right",
+  "selector": "[data-crawl-id=\"11\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "app-60073668069-expenses",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/expenses",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/expenses",
+  "beforeTitle": "Expenses | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/expenses",
+  "title": "Expenses | Zoho Books",
+  "resultPagePath": "app-60073668069-expenses/interactions/003-new-expense",
+  "captured_at": "2026-06-19T09:54:41.705907+00:00"
+}

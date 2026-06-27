@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "More",
+    "tagName": "button",
+    "id": "",
+    "className": "icon-button action page-link-sec disabled ",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button class=\"icon-button action page-link-sec disabled \" aria-label=\"Previous Page\" type=\"button\" data-ember-action=\"\" data-ember-action-794=\"794\" data-crawl-id=\"26\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon icon-xs rotate-minus-180 align-middle fill-dropdown-blue pagination-arrow\" aria-hidden=\"true\"><path d=\"M349.6 227.7L219 97.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L264 255.3c.4.4.4 1 0 1.4L162.9 357.9c-15.7 15.7-16.1 41.7-.3 57.3 7.8 7.7 17.9 11.5 28.1 11.5 10.2 0 20.5-3.9 28.3-11.7l130.6-130.6c7.5-7.5 11.7-17.7 11.7-28.3 0-10.7-4.2-20.9-11.7-28.4z\"></path></svg></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

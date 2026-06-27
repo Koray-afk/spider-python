@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-paymentsreceived",
+  "source_url": "https://books.zoho.in/app/60073668069#/paymentsreceived",
+  "source_title": "Payments Received | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "UNUSED AMOUNT",
+    "id": "",
+    "class_name": "btn srt-btn bg-transparent",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#vertically-scrolled-table > thead:nth-of-type(1) > tr:nth-of-type(1) > th:nth-of-type(9) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"24\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[9]/button[1]",
+    "outer_html": "<button class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\" type=\"button\" data-ember-action=\"\" data-ember-action-514=\"514\" data-crawl-id=\"24\"> <div class=\"position-relative d-flex align-items-center justify-content-end\"><!----> <div class=\"over-flow\" title=\"Unused Amount\">Unused Amount<!----> </div><!----></div></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/paymentsreceived?filter_by=PaymentMode.All&per_page=25&sort_column=unused_amount&sort_order=A",
+    "slug": "app-60073668069-paymentsreceived-filter-by-PaymentMode-All-per-page-25-sort-column-unused-amount-sort-order-A",
+    "title": "Payments Received | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"btn srt-btn bg-transparent\" aria-roledescription=\"Sortable Header\" type=\"button\" data-ember-action=\"\" data-ember-action-514=\"514\" data-crawl-id=\"24\"> <div class=\"position-relative d-flex align-items-center justify-content-end\"><!----> <div class=\"over-flow\" title=\"Unused Amount\">Unused Amount<!----> </div><!----></div></button>",
+  "trigger_label": "MODE",
+  "trigger_id": "",
+  "trigger_class": "btn srt-btn bg-transparent",
+  "target_url": "https://books.zoho.in/app/60073668069#/paymentsreceived?filter_by=PaymentMode.All&per_page=25&sort_column=unused_amount&sort_order=A",
+  "target_slug": "app-60073668069-paymentsreceived-filter-by-PaymentMode-All-per-page-25-sort-column-unused-amount-sort-order-A",
+  "target_title": "Payments Received | Zoho Books"
+}

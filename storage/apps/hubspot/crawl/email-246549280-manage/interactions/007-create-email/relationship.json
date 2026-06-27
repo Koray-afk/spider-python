@@ -1,0 +1,34 @@
+{
+  "source_page": "email-246549280-manage",
+  "source_url": "https://app-na2.hubspot.com/email/246549280/manage",
+  "source_title": "Marketing Email | HubSpot",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Create email",
+    "id": "",
+    "class_name": "PrivateButton__StyledButton-eRHhiA cjLXJu",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"15\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/section[1]/header[1]/div[1]/div[2]/div[1]/div[1]/span[1]/button[1]",
+    "outer_html": "<button tabindex=\"0\" data-test-id=\"email-create-button\" data-loading=\"false\" data-loading-state=\"idle\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA cjLXJu\" data-crawl-id=\"15\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span class=\"LoadingButton__StyledLoadingButtonContent-eZyBjk gmkyPY\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"EmailComponents.emailCreation.buttonText\">Create email</i18n-string></span><div role=\"status\" class=\"LoadingSpinner__SpinnerOuter-fUXWZV hwToRa\" hidden=\"\"><div class=\"LoadingSpinner__SpinnerInner-cNsNum hFxpIq\"><div class=\"LoadingSpinner__SpinnerWrapper-caSYdL leGzVW\"><div class=\"LoadingSpinner__RotatingRing-gxxKnD dptMQt\"><svg height=\"28\" width=\"28\" viewBox=\"0 0 50 50\" stroke=\"#E7E5E4\" class=\"LoadingSpinner__Ring-efDcQv cVtKFw\"><circle cx=\"25\" cy=\"25\" r=\"22.5\" fill=\"none\" stroke-width=\"5\"></circle><circle cx=\"25\" cy=\"25\" r=\"22.5\" fill=\"none\" stroke=\"#141414\" stroke-width=\"5\" class=\"LoadingSpinner__RingPath-ejcfZe eyUvln\"></circle></svg></div></div></div><span class=\"ScreenReaderOnly__StyledSpan-oNDjY iqcCVV\">Loading</span></div></span></button>"
+  },
+  "target": {
+    "url": "https://app-na2.hubspot.com/email/246549280/manage/state/all",
+    "slug": "email-246549280-manage-state-all",
+    "title": "Marketing Email | HubSpot"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button tabindex=\"0\" data-test-id=\"email-create-button\" data-loading=\"false\" data-loading-state=\"idle\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA cjLXJu\" data-crawl-id=\"15\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><span class=\"LoadingButton__StyledLoadingButtonContent-eZyBjk gmkyPY\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"EmailComponents.emailCreation.buttonText\">Create email</i18n-string></span><div role=\"status\" class=\"LoadingSpinner__SpinnerOuter-fUXWZV hwToRa\" hidden=\"\"><div class=\"LoadingSpinner__SpinnerInner-cNsNum hFxpIq\"><div class=\"LoadingSpinner__SpinnerWrapper-caSYdL leGzVW\"><div class=\"LoadingSpinner__RotatingRing-gxxKnD dptMQt\"><svg height=\"28\" width=\"28\" viewBox=\"0 0 50 50\" stroke=\"#E7E5E4\" class=\"LoadingSpinner__Ring-efDcQv cVtKFw\"><circle cx=\"25\" cy=\"25\" r=\"22.5\" fill=\"none\" stroke-width=\"5\"></circle><circle cx=\"25\" cy=\"25\" r=\"22.5\" fill=\"none\" stroke=\"#141414\" stroke-width=\"5\" class=\"LoadingSpinner__RingPath-ejcfZe eyUvln\"></circle></svg></div></div></div><span class=\"ScreenReaderOnly__StyledSpan-oNDjY iqcCVV\">Loading</span></div></span></button>",
+  "trigger_label": "Create email",
+  "trigger_id": "",
+  "trigger_class": "PrivateButton__StyledButton-eRHhiA cjLXJu",
+  "target_url": "https://app-na2.hubspot.com/email/246549280/manage/state/all",
+  "target_slug": "email-246549280-manage-state-all",
+  "target_title": "Marketing Email | HubSpot"
+}

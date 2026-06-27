@@ -1,0 +1,32 @@
+[
+  {
+    "label": "(1) Owner",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/001-1-owner",
+    "relationship_file": "interactions/001-1-owner/relationship.json"
+  },
+  {
+    "label": "Standard views",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/002-standard-views",
+    "relationship_file": "interactions/002-standard-views/relationship.json"
+  },
+  {
+    "label": "Forms",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/003-forms",
+    "relationship_file": "interactions/003-forms/relationship.json"
+  },
+  {
+    "label": "Clear All",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-clear-all",
+    "relationship_file": "interactions/004-clear-all/relationship.json"
+  },
+  {
+    "label": "Collaborate with Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/005-collaborate-with-assistant",
+    "relationship_file": "interactions/005-collaborate-with-assistant/relationship.json"
+  }
+]

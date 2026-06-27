@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-contacts-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/contacts/new",
+  "source_title": "New Contact | Contacts | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Address",
+    "id": "address-tab",
+    "class_name": "nav-link text-black  ",
+    "name": "address",
+    "role": "tab",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#address-tab",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "//*[@id=\"address-tab\"]",
+    "outer_html": "<button role=\"tab\" id=\"address-tab\" class=\"nav-link text-black  \" aria-controls=\"address-tabpanel\" aria-selected=\"false\" tabindex=\"-1\" name=\"address\" type=\"button\" data-crawl-id=\"18\"><div class=\"d-inline-block \">Address <!----></div></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/contacts/new",
+    "slug": "app-60073668069-contacts-new",
+    "title": "New Contact | Contacts | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button role=\"tab\" id=\"address-tab\" class=\"nav-link text-black  \" aria-controls=\"address-tabpanel\" aria-selected=\"false\" tabindex=\"-1\" name=\"address\" type=\"button\" data-crawl-id=\"18\"><div class=\"d-inline-block \">Address <!----></div></button>",
+  "trigger_label": "Address",
+  "trigger_id": "address-tab",
+  "trigger_class": "nav-link text-black  ",
+  "target_url": "https://books.zoho.in/app/60073668069#/contacts/new",
+  "target_slug": "app-60073668069-contacts-new",
+  "target_title": "New Contact | Contacts | Zoho Books"
+}

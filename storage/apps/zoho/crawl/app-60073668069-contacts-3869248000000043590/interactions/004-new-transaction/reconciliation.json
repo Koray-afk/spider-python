@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button for=\"fa785b23-9418-4bd1-a4e0-dc0f37e00878\" aria-controls=\"fa785b23-9418-4bd1-a4e0-dc0f37e00878\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"26\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"fa785b23-9418-4bd1-a4e0-dc0f37e00878\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Sales</div><!-- --><!-- --><span id=\"c743fc9c-0ba3-4fa5-9c13-ff9518d3a4f6\"><a class=\"ember-view dropdown-item\" href=\"#/invoices/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1018\">Invoice</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/contacts/3869248000000043590/customerpayment?currency_id=3869248000000000064\" id=\"ember1020\">Customer Payment</a><!-- --><!-- --><!-- --><span id=\"cec371d0-75c1-46fc-ba7e-1ad9b8349743\"><a class=\"ember-view dropdown-item\" href=\"#/quotes/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1022\">Quote</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d479d66d-4dbf-4665-a6e0-1164ff3d123e\"><a class=\"ember-view dropdown-item\" href=\"#/salesorders/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1024\">Sales Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"e15956cf-3217-4960-9dde-56cfbc071896\"><a class=\"ember-view dropdown-item\" href=\"#/deliverychallans/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1026\">Delivery Challan</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"e9c5b83b-9051-4737-9eec-879825118b93\"><a class=\"ember-view dropdown-item\" href=\"#/recurringinvoices/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1028\">Recurring Invoice</a></span> <!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?customer_id=3869248000000043590&amp;customer_name=Elite%20International\" id=\"ember1030\">Expense</a><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?customer_id=3869248000000043590&amp;customer_name=Elite%20International\" id=\"ember1032\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f0c4ae1d-c786-4b3c-b851-3e997cef2537\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1034\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c424291f-c52f-49e5-b097-bedcc7098ec2\"><a class=\"ember-view dropdown-item\" href=\"#/creditnotes/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1036\">Credit Note</a></span> <!-- --><!-- --><!-- --><div class=\"dropdown-divider\"></div><!-- --><!-- --><span id=\"e8888182-2b00-48f7-bf3d-3e6323e00fde\"><a class=\"ember-view dropdown-item\" href=\"#/timesheet/projects/new?contact_id=3869248000000043590&amp;contact_name=Elite%20International\" id=\"ember1038\">Project</a></span> <!-- --><!-- --><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Add Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn btn-primary",
+    "selector": "[data-crawl-id=\"18\"]",
+    "outerHTML": "<button for=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" aria-controls=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn btn-primary\" type=\"button\" data-crawl-id=\"18\">Add Transaction <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs ms-1\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu bank-add-dropdown show\" data-popper-placement=\"bottom-end\" id=\"e403a54f-f6ae-4f4a-b377-9b45696d7d18\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-893.711px, 108.547px);\"><div class=\"fltheader\">Money Out</div> <button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-577=\"577\" type=\"button\">Expense</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-578=\"578\" type=\"button\">Vendor Advance</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-579=\"579\" type=\"button\">Vendor Payment</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-580=\"580\" type=\"button\">Transfer To Another Account</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-581=\"581\" type=\"button\">Card Payment</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-582=\"582\" type=\"button\">Owner Drawings</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-583=\"583\" type=\"button\">Credit Note Refund</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-584=\"584\" type=\"button\">Payment Refund</button> <div class=\"dropdown-divider\"></div> <div class=\"fltheader\">Money In</div> <button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-585=\"585\" type=\"button\">Customer Advance</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-586=\"586\" type=\"button\">Customer Payment</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-587=\"587\" type=\"button\">Transfer From Another Account</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-588=\"588\" type=\"button\">Interest Income</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-589=\"589\" type=\"button\">Other Income</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-590=\"590\" type=\"button\">Expense Refund</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-591=\"591\" type=\"button\">Owner's Contribution</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-592=\"592\" type=\"button\">Vendor Credit Refund</button><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-593=\"593\" type=\"button\">Vendor Payment Refund</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

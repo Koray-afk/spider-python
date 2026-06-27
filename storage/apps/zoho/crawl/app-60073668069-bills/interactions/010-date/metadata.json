@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "DATE",
+  "triggerId": "",
+  "triggerClass": "btn srt-btn bg-transparent",
+  "selector": "[data-crawl-id=\"23\"]",
+  "interactionType": "unknown",
+  "sourcePage": "app-60073668069-bills",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/bills",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/bills",
+  "beforeTitle": "Bills | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/bills?filter_by=Status.Unpaid&per_page=25&sort_column=date&sort_order=A",
+  "title": "Bills | Zoho Books",
+  "resultPagePath": "app-60073668069-bills/interactions/010-date",
+  "captured_at": "2026-06-19T09:58:31.334035+00:00"
+}

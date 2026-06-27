@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-create-new",
+    "relationship_file": "interactions/009-create-new/relationship.json"
+  },
+  {
+    "label": "Date",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/011-date",
+    "relationship_file": "interactions/011-date/relationship.json"
+  },
+  {
+    "label": "Engine",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/012-engine",
+    "relationship_file": "interactions/012-engine/relationship.json"
+  }
+]

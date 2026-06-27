@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "12 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Collaborate with Assistant",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"17\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"17\" data-fnd-button=\"t\" aria-disabled=\"false\" data-test-selected=\"false\" data-test-id=\"copilot-icon-tab\" data-onboarding=\"copilot-icon-tab\" data-button-use=\"tertiary-extra-light\" aria-label=\"Collaborate with Assistant\" class=\"PrivateButton__StyledButton-eRHhiA bVmNmm\">\u2026</button>\n  - attempting click action\n    2 \u00d7 wa"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-invoices-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/invoices/new",
+  "source_title": "Add New | Invoices | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Save & Continue",
+    "id": "ember499",
+    "class_name": "btn btn-primary ember-view",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember499",
+    "crawl_selector": "[data-crawl-id=\"38\"]",
+    "xpath": "//*[@id=\"ember499\"]",
+    "outer_html": "<button id=\"ember499\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"38\"><!----> Save &amp; Continue<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/invoices/new",
+    "slug": "app-60073668069-invoices-new",
+    "title": "Add New | Invoices | Zoho Books"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button id=\"ember499\" class=\"btn btn-primary ember-view\" type=\"submit\" data-crawl-id=\"38\"><!----> Save &amp; Continue<!----></button>",
+  "trigger_label": "Save & Continue",
+  "trigger_id": "ember499",
+  "trigger_class": "btn btn-primary ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/invoices/new",
+  "target_slug": "app-60073668069-invoices-new",
+  "target_title": "Add New | Invoices | Zoho Books"
+}

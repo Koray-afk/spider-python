@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/001-make-a-phone-call",
+    "relationship_file": "interactions/001-make-a-phone-call/relationship.json"
+  },
+  {
+    "label": "Incoming email - We benchmarked 100,000 database calls and caching changed everything",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/002-incoming-email-we-benchmarked-100-000-database-c",
+    "relationship_file": "interactions/002-incoming-email-we-benchmarked-100-000-database-c/relationship.json"
+  },
+  {
+    "label": "Key information",
+    "selector": "[data-crawl-id=\"40\"]",
+    "interaction_path": "interactions/003-key-information",
+    "relationship_file": "interactions/003-key-information/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"41\"]",
+    "interaction_path": "interactions/004-overview",
+    "relationship_file": "interactions/004-overview/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"42\"]",
+    "interaction_path": "interactions/005-health",
+    "relationship_file": "interactions/005-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"43\"]",
+    "interaction_path": "interactions/006-data-quality",
+    "relationship_file": "interactions/006-data-quality/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/007-create-new",
+    "relationship_file": "interactions/007-create-new/relationship.json"
+  },
+  {
+    "label": "Create a note",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/008-create-a-note",
+    "relationship_file": "interactions/008-create-a-note/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/009-create-an-email",
+    "relationship_file": "interactions/009-create-an-email/relationship.json"
+  },
+  {
+    "label": "Create a task",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/010-create-a-task",
+    "relationship_file": "interactions/010-create-a-task/relationship.json"
+  },
+  {
+    "label": "Schedule a meeting",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/011-schedule-a-meeting",
+    "relationship_file": "interactions/011-schedule-a-meeting/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"31\"]",
+    "interaction_path": "interactions/012-create-an-email",
+    "relationship_file": "interactions/012-create-an-email/relationship.json"
+  }
+]

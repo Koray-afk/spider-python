@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Show dropdown menu",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-item pe-7 ",
+    "selector": "[data-crawl-id=\"4\"]",
+    "outerHTML": "<button class=\"dropdown-item pe-7 \" type=\"button\" data-ember-action=\"\" data-ember-action-1863=\"1863\" data-crawl-id=\"4\">Inventory Adjustments <!----></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#ember523",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<h3 class=\"accordion-title collapsed ember-view toggle-header cursor-pointer\" id=\"ember524\"><button aria-controls=\"c18c8580-d1c5-461d-a551-9ffd42131e11\" aria-expanded=\"false\" class=\"accordion-button uppercase d-flex fw-light justify-content-between\" data-crawl-id=\"50\" id=\"db4a8885-ec04-40ca-b764-52460dec3ec4\" type=\"button\">Address <i class=\"zf-ac-toggler\"><svg class=\"icon-xxs icon text-light-shade-blue fill-dropdown-blue\" height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></i></button></h3>\n<div aria-labelledby=\"db4a8885-ec04-40ca-b764-52460dec3ec4\" class=\"ember-view collapse\" hidden=\"true\" id=\"c18c8580-d1c5-461d-a551-9ffd42131e11\" role=\"region\" style=\"\"><div class=\"group\"><!-- --> <div class=\"d-flex align-items-center\">Billing Address <!-- --></div> <div class=\"popovercontainer address-group ember-view\" id=\"ember526\"><p><span class=\"text-muted\">No Billing Address</span> - <a class=\"font-xs\" data-ember-action=\"\" data-ember-action-527=\"527\" href=\"#\">New Address</a></p> <!-- --></div> <div class=\"d-flex align-items-center mt-3\">Shipping Address <!-- --></div> <div class=\"popovercontainer address-group ember-view\" id=\"ember528\"><p><span class=\"text-muted\">No Shipping Address</span> - <a class=\"font-xs\" data-ember-action=\"\" data-ember-action-529=\"529\" href=\"#\">New Address</a></p> <!-- --></div> <!-- --><!-- --></div></div>\n<img src=\"https://static.zohocdn.com/ichat/images/a29a4f41_spacer.gif?nocache=1781871124774\" style=\"display: none;\"/>\n<div class=\"wms-chatwindowcontainer wms_super_positioned_bar\" id=\"wms-chatwindowcontainer\"><span class=\"wms_bar_movablehint\" id=\"wmsbarmovablehint\" style=\"\">Here is your Smart Chat (Ctrl+Space)</span></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

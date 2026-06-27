@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add Items in Bulk",
+  "triggerId": "",
+  "triggerClass": "btn btn-md add-line-item-btn ms-3 align-self-start ",
+  "selector": "[data-crawl-id=\"23\"]",
+  "interactionType": "modal",
+  "sourcePage": "app-60073668069-purchaseorders-new",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/purchaseorders/new",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/purchaseorders/new",
+  "beforeTitle": "Add New | Purchase Orders | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/purchaseorders/new",
+  "title": "Add New | Purchase Orders | Zoho Books",
+  "resultPagePath": "app-60073668069-purchaseorders-new/interactions/003-add-items-in-bulk",
+  "captured_at": "2026-06-19T10:24:29.444881+00:00"
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "label": "FILE NAME",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "UPLOADED BY",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "UPLOADED ON",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Restore",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"13\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"13\" data-ember-action=\"\" data-ember-action-327=\"327\" class=\"btn btn-sm btn-secondary\">Restore</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <main class=\"column list-column expanded-list-"
+  }
+]

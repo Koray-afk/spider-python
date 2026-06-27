@@ -1,0 +1,47 @@
+[
+  {
+    "label": "Import data from a file",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Sales Pipeline",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Deal owner",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Add deals",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"19\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"19\" data-fnd-button=\"t\" aria-haspopup=\"true\" data-dropdown=\"true\" aria-invalid=\"false\" aria-readonly=\"false\" aria-disabled=\"false\" data-button-use=\"primary\" data-dropdown-open=\"false\" data-coaching-tips=\"import-button\" data-onboarding=\"new-object-button\" data-test-id=\"create-object-dropdown\" aria-owns=\"abstractdropdo"
+  },
+  {
+    "label": "Export",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"25\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"25\" data-fnd-button=\"t\" aria-disabled=\"false\" data-test-id=\"toolbar-sort-button\" data-button-use=\"tertiary-extra-light\" class=\"PrivateButton__StyledButton-eRHhiA NRDHr\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n "
+  },
+  {
+    "label": "Save",
+    "selector": "[data-crawl-id=\"27\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"27\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"27\" data-fnd-button=\"t\" aria-disabled=\"false\" data-button-use=\"tertiary-extra-light\" data-test-id=\"save-view-buttons__clone\" class=\"PrivateButton__StyledButton-eRHhiA NRDHr\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and sta"
+  }
+]

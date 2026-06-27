@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Select an account",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Due on Receipt",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Select a Tax",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn\" for=\"cdf8826c-9544-4615-ba30-c2a3d939abdb\" aria-controls=\"cdf8826c-9544-4615-ba30-c2a3d939abdb\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scro"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n"
+  }
+]

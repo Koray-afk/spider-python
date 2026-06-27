@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-quotes-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/quotes/new",
+  "source_title": "Add New | Quotes | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "icon-button close-details py-2 pe-3 me-3",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Go Back",
+    "selector": "#scroll-container > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"25\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button class=\"icon-button close-details py-2 pe-3 me-3\" aria-label=\"Go Back\" type=\"button\" data-ember-action=\"\" data-ember-action-553=\"553\" data-crawl-id=\"25\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-sm align-text-top\" aria-hidden=\"true\"><path fill=\"#fe4242\" d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/quotes/new",
+    "slug": "app-60073668069-quotes-new",
+    "title": "Add New | Quotes | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"icon-button close-details py-2 pe-3 me-3\" aria-label=\"Go Back\" type=\"button\" data-ember-action=\"\" data-ember-action-553=\"553\" data-crawl-id=\"25\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-sm align-text-top\" aria-hidden=\"true\"><path fill=\"#fe4242\" d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\"></path></svg></button>",
+  "trigger_label": "Save as Draft",
+  "trigger_id": "ember609",
+  "trigger_class": "btn btn-secondary ember-view",
+  "target_url": "https://books.zoho.in/app/60073668069#/quotes/new",
+  "target_slug": "app-60073668069-quotes-new",
+  "target_title": "Add New | Quotes | Zoho Books"
+}

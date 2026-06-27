@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Submissions",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/001-submissions",
+    "relationship_file": "interactions/001-submissions/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/002-create-new",
+    "relationship_file": "interactions/002-create-new/relationship.json"
+  },
+  {
+    "label": "Export submissions",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/003-export-submissions",
+    "relationship_file": "interactions/003-export-submissions/relationship.json"
+  },
+  {
+    "label": "Submissions by source\nDate range: From 05/24/2026 to 06/22/2026",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/006-submissions-by-source-date-range-from-05-24-2026",
+    "relationship_file": "interactions/006-submissions-by-source-date-range-from-05-24-2026/relationship.json"
+  },
+  {
+    "label": "Step completion\nDate range: From 05/24/2026 to 06/22/2026",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/007-step-completion-date-range-from-05-24-2026-to-06",
+    "relationship_file": "interactions/007-step-completion-date-range-from-05-24-2026-to-06/relationship.json"
+  },
+  {
+    "label": "Contact type\nDate range: From 05/24/2026 to 06/22/2026",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/008-contact-type-date-range-from-05-24-2026-to-06-22",
+    "relationship_file": "interactions/008-contact-type-date-range-from-05-24-2026-to-06-22/relationship.json"
+  },
+  {
+    "label": "Conversion pages\nDate range: From 05/24/2026 to 06/22/2026",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/009-conversion-pages-date-range-from-05-24-2026-to-0",
+    "relationship_file": "interactions/009-conversion-pages-date-range-from-05-24-2026-to-0/relationship.json"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-calls",
+    "relationship_file": "interactions/010-calls/relationship.json"
+  },
+  {
+    "label": "Marketplace",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/011-marketplace",
+    "relationship_file": "interactions/011-marketplace/relationship.json"
+  },
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/012-assistant",
+    "relationship_file": "interactions/012-assistant/relationship.json"
+  }
+]

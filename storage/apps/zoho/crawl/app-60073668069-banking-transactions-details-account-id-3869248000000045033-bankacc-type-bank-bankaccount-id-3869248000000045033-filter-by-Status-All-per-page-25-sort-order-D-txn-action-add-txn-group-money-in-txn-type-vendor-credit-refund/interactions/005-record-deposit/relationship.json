@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-vendor-credit-refund",
+  "source_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=vendor_credit_refund",
+  "source_title": "Citi Bank | Banking | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Record Deposit",
+    "id": "ember645",
+    "class_name": "btn btn-secondary ember-view ms-3 font-small",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#ember645",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "//*[@id=\"ember645\"]",
+    "outer_html": "<button id=\"ember645\" class=\"btn btn-secondary ember-view ms-3 font-small\" type=\"button\" data-crawl-id=\"19\"><!----> Record Deposit<!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=deposit",
+    "slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-deposit",
+    "title": "Citi Bank | Banking | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button id=\"ember645\" class=\"btn btn-secondary ember-view ms-3 font-small\" type=\"button\" data-crawl-id=\"19\"><!----> Record Deposit<!----></button>",
+  "trigger_label": "Record Deposit",
+  "trigger_id": "ember557",
+  "trigger_class": "btn btn-secondary ember-view ms-3 font-small",
+  "target_url": "https://books.zoho.in/app/60073668069#/banking/transactions/details?account_id=3869248000000045033&bankacc_type=bank&bankaccount_id=3869248000000045033&filter_by=Status.All&per_page=25&sort_order=D&txn_action=add&txn_group=money_in&txn_type=deposit",
+  "target_slug": "app-60073668069-banking-transactions-details-account-id-3869248000000045033-bankacc-type-bank-bankaccount-id-3869248000000045033-filter-by-Status-All-per-page-25-sort-order-D-txn-action-add-txn-group-money-in-txn-type-deposit",
+  "target_title": "Citi Bank | Banking | Zoho Books"
+}

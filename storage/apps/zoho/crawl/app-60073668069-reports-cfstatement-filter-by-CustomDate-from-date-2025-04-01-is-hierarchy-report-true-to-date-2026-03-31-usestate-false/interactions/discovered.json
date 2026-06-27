@@ -1,0 +1,138 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 shrink-sidebar",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Hide the reports sidebar",
+    "id": "",
+    "className": "icon-button align-center me-1",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "View the reports sidebar",
+    "id": "",
+    "className": "icon-button btn btn-secondary ms-1",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Custom",
+    "id": "rangemenu-button-ember435",
+    "className": "dropdown-toggle   btn btn-default no-caret p-0",
+    "selector": "[data-crawl-id=\"35\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Custom",
+    "id": "rangemenu-button-ember441",
+    "className": "dropdown-toggle   form-control btn btn-outline no-caret",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Compare Based on Period/Year",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-link font-medium text-medium text-default p-0 no-caret",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "None",
+    "id": "d5aa4412-2189-4d62-b20c-9446a9f1acee",
+    "className": "popover-trigger",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   input-group-text",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary  ",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Run Report",
+    "id": "d6c75eb0-444b-44ca-9378-318fdd78576c",
+    "className": "ember-view btn btn-primary opacity-7 run-report",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   btn dropdown-toggle dropdown-toggle-split btn-primary",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "ACCOUNT",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"41\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "ACCOUNT CODE",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"42\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "TOTAL",
+    "id": "",
+    "className": "btn srt-btn bg-transparent",
+    "selector": "[data-crawl-id=\"43\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

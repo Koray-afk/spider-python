@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Add Items in Bulk",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/003-add-items-in-bulk",
+    "relationship_file": "interactions/003-add-items-in-bulk/relationship.json"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/015-navigate-to-opt-0",
+    "relationship_file": "interactions/015-navigate-to-opt-0/relationship.json"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Assistant",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "13 days left in trial",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Quick create",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"16\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"16\" data-fnd-button=\"t\" aria-haspopup=\"true\" data-dropdown=\"true\" aria-invalid=\"false\" aria-readonly=\"false\" aria-disabled=\"false\" data-dropdown-open=\"false\" data-button-use=\"secondary\" aria-owns=\"abstractdropdown-content-7\" data-selenium-test=\"create-quick-list-dropdown\" class=\"PrivateButton__StyledButton-eRHhiA bWt"
+  }
+]

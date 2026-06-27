@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Save",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/002-save",
+    "relationship_file": "interactions/002-save/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-show-dropdown-menu",
+    "relationship_file": "interactions/005-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/006-show-dropdown-menu",
+    "relationship_file": "interactions/006-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-show-dropdown-menu",
+    "relationship_file": "interactions/007-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "INR",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/008-inr",
+    "relationship_file": "interactions/008-inr/relationship.json"
+  }
+]

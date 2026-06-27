@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Edit",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  btn add-line-item-dropdown",
+    "selector": "[data-crawl-id=\"22\"]",
+    "outerHTML": "<button for=\"f27bc02d-a8a2-43ed-8a79-ac819385a3ba\" aria-controls=\"f27bc02d-a8a2-43ed-8a79-ac819385a3ba\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn add-line-item-dropdown\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"22\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\" class=\"icon icon-xxs\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"f27bc02d-a8a2-43ed-8a79-ac819385a3ba\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-1525.87px, 948.617px);\"><!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-1164=\"1164\" type=\"button\">Add New Header</button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

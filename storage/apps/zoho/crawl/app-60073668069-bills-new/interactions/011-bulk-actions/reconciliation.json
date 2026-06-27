@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Bulk Actions",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-link no-caret",
+    "selector": "[data-crawl-id=\"19\"]",
+    "outerHTML": "<button for=\"eb6d5bc9-47a0-46a3-9a26-81915fabd955\" aria-controls=\"eb6d5bc9-47a0-46a3-9a26-81915fabd955\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-link no-caret\" type=\"button\" data-crawl-id=\"19\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 472.75 472.75\" class=\"icon icon-sm align-text-top\"><path d=\"M236.37 472.75c-63.14 0-122.5-24.59-167.14-69.23C24.59 358.87 0 299.51 0 236.37S24.59 113.88 69.23 69.23C113.88 24.59 173.24 0 236.37 0s122.5 24.59 167.14 69.23c44.65 44.65 69.23 104 69.23 167.14s-24.59 122.5-69.23 167.14c-44.65 44.65-104 69.23-167.14 69.23zm0-430.75C129.19 42 42 129.2 42 236.37s87.2 194.37 194.37 194.37 194.37-87.2 194.37-194.37S343.55 42 236.37 42z\"></path><path d=\"M201.53 309.29c-7.73 0-15.46-2.94-21.34-8.83l-45.52-45.52c-8.2-8.2-8.2-21.5 0-29.7s21.5-8.2 29.7 0l37.17 37.16 106.85-106.85c8.2-8.2 21.5-8.2 29.7 0s8.2 21.5 0 29.7L222.88 300.46c-5.88 5.88-13.61 8.83-21.34 8.83z\"></path></svg> Bulk Actions</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"eb6d5bc9-47a0-46a3-9a26-81915fabd955\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-674px, 737.32px);\"><button class=\"dropdown-item\" type=\"button\">Bulk Update Line Items</button><button class=\"dropdown-item\" type=\"button\">Show All Additional Information</button></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

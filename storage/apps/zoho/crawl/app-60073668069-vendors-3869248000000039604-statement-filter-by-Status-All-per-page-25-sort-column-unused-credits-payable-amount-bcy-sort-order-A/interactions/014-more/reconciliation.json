@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "More",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-secondary",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button for=\"d8ae2870-719b-4fcf-82e3-ec5063b7a54e\" aria-controls=\"d8ae2870-719b-4fcf-82e3-ec5063b7a54e\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-secondary\" type=\"button\" data-crawl-id=\"26\"><!----> More</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu show\" data-popper-placement=\"bottom-end\" id=\"d8ae2870-719b-4fcf-82e3-ec5063b7a54e\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-97px, 97.5469px);\"><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-797=\"797\" id=\"e246aa3c-8daa-4506-8303-03eb4c6a9972\">Associate Templates</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-798=\"798\" id=\"dcfba151-0236-447a-9cc3-1bc0d8e56da4\">Configure Vendor Portal</button> <!-- --><div class=\"dropdown-divider\"></div><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-799=\"799\" id=\"cc54ac05-c646-414c-b34c-913487a8090c\">Add Bank Account</button> <!-- --><div class=\"dropdown-divider\"></div><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-800=\"800\" id=\"d9f841d5-fcb7-4587-b784-89491a61cc4e\">Link to Customer</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-801=\"801\" id=\"ecb1c4ad-551a-4301-ae86-07806a5617d2\">Clone</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-802=\"802\" id=\"fb480110-ef0b-4bb9-84b6-51eec94807db\">Merge Vendors</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-803=\"803\" id=\"e24fce2f-57e4-40d5-a935-d4aacb235b71\">Mark as Inactive</button> <!-- --><button class=\"dropdown-item\" data-ember-action=\"\" data-ember-action-804=\"804\" id=\"e8f136e1-c36a-4a1a-abf5-1ce443b06741\">Delete</button> <!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

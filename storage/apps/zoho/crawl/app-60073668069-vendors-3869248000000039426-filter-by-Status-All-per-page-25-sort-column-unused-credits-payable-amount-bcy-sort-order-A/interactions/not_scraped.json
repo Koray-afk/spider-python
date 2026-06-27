@@ -1,0 +1,72 @@
+[
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "More",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"15\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"15\" aria-label=\"Collapse/Expand\" class=\"icon-button collapse-expand z-index-1 \">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> "
+  },
+  {
+    "label": "New Expense",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Expense\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts"
+  },
+  {
+    "label": "New Bill",
+    "selector": "[data-crawl-id=\"34\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"34\\\"]\").first\n    - locator resolved to <button id=\"ember546\" type=\"submit\" data-crawl-id=\"34\" class=\"btn btn-primary ember-view btn btn-sm me-3\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <a id=\"ember565\" class=\"ember-view dropdown-i"
+  },
+  {
+    "label": "All Vendors",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"16\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"16\" class=\"badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"modal fa"
+  },
+  {
+    "label": "Accrual",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"37\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember609\" data-crawl-id=\"37\" aria-invalid=\"false\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" aria-haspopup=\"listbox\" aria-label=\"At Transaction Level\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember609\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting"
+  },
+  {
+    "label": "Last 6 Months",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"38\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember649\" data-crawl-id=\"38\" aria-invalid=\"false\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select a Tax\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember649\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for ele"
+  },
+  {
+    "label": "Enter Opening Balance",
+    "selector": "[data-crawl-id=\"36\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"36\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember603\" data-crawl-id=\"36\" aria-invalid=\"false\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"ae490f115\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember603\">\u2026</div>\n  - attempting click action\n    - waiting for ele"
+  }
+]

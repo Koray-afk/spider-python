@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "All companies\n19",
+    "selector": "[data-crawl-id=\"36\"]",
+    "interaction_path": "interactions/002-all-companies-19",
+    "relationship_file": "interactions/002-all-companies-19/relationship.json"
+  },
+  {
+    "label": "All companies\n19",
+    "selector": "[data-crawl-id=\"35\"]",
+    "interaction_path": "interactions/004-all-companies-19",
+    "relationship_file": "interactions/004-all-companies-19/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/006-create-new",
+    "relationship_file": "interactions/006-create-new/relationship.json"
+  },
+  {
+    "label": "Add companies",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/007-add-companies",
+    "relationship_file": "interactions/007-add-companies/relationship.json"
+  },
+  {
+    "label": "Filters",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/008-filters",
+    "relationship_file": "interactions/008-filters/relationship.json"
+  },
+  {
+    "label": "Sort",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/009-sort",
+    "relationship_file": "interactions/009-sort/relationship.json"
+  }
+]

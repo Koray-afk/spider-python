@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Close this page",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/banking/rules",
+    "target_slug": "app-60073668069-banking-rules",
+    "target_page": "../app-60073668069-banking-rules/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "icon-button btn py-0",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "Close this page",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]",
+      "outer_html": "<button class=\"icon-button btn py-0\" aria-label=\"Close this page\" type=\"button\" data-crawl-id=\"15\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"icon icon-xxlg ps-3 fill-danger\" aria-hidden=\"true\"><path d=\"M289.9 256L471.8 74.2c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.4-33.9 0L256 222.1 74.2 40.2c-9.4-9.4-24.6-9.4-33.9 0-9.4 9.4-9.4 24.6 0 33.9L222.1 256 40.2 437.8c-9.4 9.4-9.4 24.6 0 33.9 4.7 4.7 10.8 7 17 7s12.3-2.3 17-7L256 289.9l181.8 181.8c4.7 4.7 10.8 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L289.9 256z\"></path></svg></button>"
+    }
+  }
+]

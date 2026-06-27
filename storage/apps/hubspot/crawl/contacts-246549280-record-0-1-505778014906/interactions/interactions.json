@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Calls",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-calls",
+    "relationship_file": "interactions/001-calls/relationship.json"
+  },
+  {
+    "label": "Make a phone call",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-make-a-phone-call",
+    "relationship_file": "interactions/002-make-a-phone-call/relationship.json"
+  },
+  {
+    "label": "Overview",
+    "selector": "[data-crawl-id=\"43\"]",
+    "interaction_path": "interactions/003-overview",
+    "relationship_file": "interactions/003-overview/relationship.json"
+  },
+  {
+    "label": "Health",
+    "selector": "[data-crawl-id=\"45\"]",
+    "interaction_path": "interactions/004-health",
+    "relationship_file": "interactions/004-health/relationship.json"
+  },
+  {
+    "label": "Data quality",
+    "selector": "[data-crawl-id=\"46\"]",
+    "interaction_path": "interactions/005-data-quality",
+    "relationship_file": "interactions/005-data-quality/relationship.json"
+  },
+  {
+    "label": "Companies (1)",
+    "selector": "[data-crawl-id=\"47\"]",
+    "interaction_path": "interactions/006-companies-1",
+    "relationship_file": "interactions/006-companies-1/relationship.json"
+  },
+  {
+    "label": "Deals (0)",
+    "selector": "[data-crawl-id=\"48\"]",
+    "interaction_path": "interactions/007-deals-0",
+    "relationship_file": "interactions/007-deals-0/relationship.json"
+  },
+  {
+    "label": "Tickets (0)",
+    "selector": "[data-crawl-id=\"49\"]",
+    "interaction_path": "interactions/008-tickets-0",
+    "relationship_file": "interactions/008-tickets-0/relationship.json"
+  },
+  {
+    "label": "Attachments",
+    "selector": "[data-crawl-id=\"50\"]",
+    "interaction_path": "interactions/009-attachments",
+    "relationship_file": "interactions/009-attachments/relationship.json"
+  },
+  {
+    "label": "Create new",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/010-create-new",
+    "relationship_file": "interactions/010-create-new/relationship.json"
+  },
+  {
+    "label": "Create a note",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/011-create-a-note",
+    "relationship_file": "interactions/011-create-a-note/relationship.json"
+  },
+  {
+    "label": "Create an email",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/012-create-an-email",
+    "relationship_file": "interactions/012-create-an-email/relationship.json"
+  }
+]

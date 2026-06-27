@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-contacts",
+  "source_url": "https://books.zoho.in/app/60073668069#/contacts",
+  "source_title": "Contacts | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "All Customers",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dd-d161a0ff-de80-4073-a47b-9dc6d89f4189 > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button for=\"d161a0ff-de80-4073-a47b-9dc6d89f4189\" aria-controls=\"d161a0ff-de80-4073-a47b-9dc6d89f4189\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn\" type=\"button\" data-crawl-id=\"17\"><!----><span class=\"filter-title over-flow mw-100\" style=\"color: #212529;\">All Customers</span> <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon fill-dropdown-blue mb-1 icon-xsmall\"><path d=\"M492.9 211.6c-25.5-25.7-67.1-25.8-92.8-.3L256 354.2l-144.1-143c-25.7-25.5-67.3-25.4-92.8.3s-25.4 67.2.3 92.7L209.8 493c25.6 25.4 66.9 25.4 92.5 0l190.4-188.8c12.9-12.8 19.4-29.7 19.4-46.5-.1-16.6-6.5-33.4-19.2-46.1z\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/contacts",
+    "slug": "app-60073668069-contacts",
+    "title": "Contacts | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"d161a0ff-de80-4073-a47b-9dc6d89f4189\" aria-controls=\"d161a0ff-de80-4073-a47b-9dc6d89f4189\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn\" type=\"button\" data-crawl-id=\"17\"><!----><span class=\"filter-title over-flow mw-100\" style=\"color: #212529;\">All Customers</span> <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon fill-dropdown-blue mb-1 icon-xsmall\"><path d=\"M492.9 211.6c-25.5-25.7-67.1-25.8-92.8-.3L256 354.2l-144.1-143c-25.7-25.5-67.3-25.4-92.8.3s-25.4 67.2.3 92.7L209.8 493c25.6 25.4 66.9 25.4 92.5 0l190.4-188.8c12.9-12.8 19.4-29.7 19.4-46.5-.1-16.6-6.5-33.4-19.2-46.1z\"></path></svg></button>",
+  "trigger_label": "All Customers",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/contacts",
+  "target_slug": "app-60073668069-contacts",
+  "target_title": "Contacts | Zoho Books"
+}

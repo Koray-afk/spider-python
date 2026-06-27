@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Go to transactions",
+    "selector": "[data-crawl-id=\"28\"]",
+    "interaction_path": "interactions/001-go-to-transactions",
+    "relationship_file": "interactions/001-go-to-transactions/relationship.json"
+  },
+  {
+    "label": "New Transaction",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/002-new-transaction",
+    "relationship_file": "interactions/002-new-transaction/relationship.json"
+  },
+  {
+    "label": "Status: All",
+    "selector": "[data-crawl-id=\"30\"]",
+    "interaction_path": "interactions/004-status-all",
+    "relationship_file": "interactions/004-status-all/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/011-collapse-expand",
+    "relationship_file": "interactions/011-collapse-expand/relationship.json"
+  }
+]

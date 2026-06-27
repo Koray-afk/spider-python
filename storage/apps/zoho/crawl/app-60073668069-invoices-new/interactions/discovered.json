@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Collapse/Expand",
+    "id": "",
+    "className": "icon-button collapse-expand z-index-1 ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Quote",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "New Invoice",
+    "id": "",
+    "className": "icon-button add-new tab-element-right",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Add Items in Bulk",
+    "id": "",
+    "className": "btn btn-md add-line-item-btn ms-3 align-self-start ",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select or add a customer",
+    "id": "ac-ember432",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"39\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Due on Receipt",
+    "id": "ac-a1ded13d8",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"40\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Accounts Receivable",
+    "id": "ac-ember440",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"41\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select or Add Salesperson",
+    "id": "ac-ember441",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"42\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select Price List",
+    "id": "ac-ember443",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"43\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select a Tax",
+    "id": "ac-ember475",
+    "className": "ac-box ",
+    "selector": "[data-crawl-id=\"44\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save as Draft",
+    "id": "a9bffb7b7",
+    "className": "btn btn-secondary ember-view",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Save and Send",
+    "id": "ac0e00acf",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Show dropdown menu",
+    "id": "",
+    "className": "dropdown-toggle   btn dropdown-toggle-split btn-primary",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cancel",
+    "id": "",
+    "className": "btn btn-secondary",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Save & Continue",
+    "id": "ember499",
+    "className": "btn btn-primary ember-view",
+    "selector": "[data-crawl-id=\"38\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Navigate To (Opt+0)",
+    "id": "",
+    "className": "dropdown-toggle   btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Scan Item",
+    "id": "",
+    "className": "btn btn-link font-normal",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Make Recurring",
+    "id": "",
+    "className": "btn btn-link d-inline-block",
+    "selector": "[data-crawl-id=\"33\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "New Transaction",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"26\"]",
+    "outerHTML": "<button for=\"ef42c441-3f07-4bbc-bf81-b2cdc2af3ce1\" aria-controls=\"ef42c441-3f07-4bbc-bf81-b2cdc2af3ce1\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"26\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"ef42c441-3f07-4bbc-bf81-b2cdc2af3ce1\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Sales</div><!-- --><!-- --><span id=\"c11e44a2-b622-4656-b0bd-c1317c8521f8\"><a class=\"ember-view dropdown-item\" href=\"#/invoices/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember894\">Invoice</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/contacts/3869248000000043561/customerpayment?currency_id=3869248000000000064\" id=\"ember896\">Customer Payment</a><!-- --><!-- --><!-- --><span id=\"c161b4d0-e2a2-4463-b386-8e494800c89b\"><a class=\"ember-view dropdown-item\" href=\"#/quotes/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember898\">Quote</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"fee70885-f18c-4cef-b3ae-882a64b4992a\"><a class=\"ember-view dropdown-item\" href=\"#/salesorders/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember900\">Sales Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c4dfa35b-830e-4f5e-b3ef-3994b7ad3316\"><a class=\"ember-view dropdown-item\" href=\"#/deliverychallans/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember902\">Delivery Challan</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"ec85b8ee-8f39-4552-bc3a-501fff2afde0\"><a class=\"ember-view dropdown-item\" href=\"#/recurringinvoices/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember904\">Recurring Invoice</a></span> <!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?customer_id=3869248000000043561&amp;customer_name=Flashter%20Inc.\" id=\"ember906\">Expense</a><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?customer_id=3869248000000043561&amp;customer_name=Flashter%20Inc.\" id=\"ember908\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c58512ef-4e13-464e-8bfd-0f7174b13486\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember910\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f518d3c5-0322-4b98-b565-d48f985f5c7e\"><a class=\"ember-view dropdown-item\" href=\"#/creditnotes/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember912\">Credit Note</a></span> <!-- --><!-- --><!-- --><div class=\"dropdown-divider\"></div><!-- --><!-- --><span id=\"e6e754d6-832f-49b7-8dd8-3181036ddb52\"><a class=\"ember-view dropdown-item\" href=\"#/timesheet/projects/new?contact_id=3869248000000043561&amp;contact_name=Flashter%20Inc.\" id=\"ember914\">Project</a></span> <!-- --><!-- --><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

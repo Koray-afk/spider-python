@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Chart View",
+  "triggerId": "",
+  "triggerClass": "nav-link cursor-pointer lh-200 ",
+  "selector": "[data-crawl-id=\"40\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "app-60073668069-reports-profitandloss-cash-based-false-filter-by-CustomDate-from-date-2025-04-01-per-page-500-to-date-2026-03-31-usestate-false",
+  "sourceUrl": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&filter_by=CustomDate&from_date=2025-04-01&per_page=500&to_date=2026-03-31&usestate=false",
+  "beforeUrl": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&filter_by=CustomDate&from_date=2025-04-01&per_page=500&to_date=2026-03-31&usestate=false",
+  "beforeTitle": "Profit and Loss | Reports | Zoho Books",
+  "url": "https://books.zoho.in/app/60073668069#/reports/profitandloss?cash_based=false&chart_type=bar_chart&chart_view=true&filter_by=CustomDate&from_date=2025-04-01&is_hierarchy_report=true&to_date=2026-03-31&usestate=false&x_axis=%5B%7B%22field%22%3A%22project_ids%22%2C%22group%22%3A%22project%22%7D%5D&y_axis=%5B%7B%22field%22%3A%22reports_income_key%22%2C%22group%22%3A%22report%22%7D%5D",
+  "title": "Profit and Loss | Reports | Zoho Books",
+  "resultPagePath": "app-60073668069-reports-profitandloss-cash-based-false-filter-by-CustomDate-from-date-2025-04-01-per-page-500-to-date-2026-03-31-usestate-false/interactions/002-chart-view",
+  "captured_at": "2026-06-19T11:50:45.496112+00:00"
+}

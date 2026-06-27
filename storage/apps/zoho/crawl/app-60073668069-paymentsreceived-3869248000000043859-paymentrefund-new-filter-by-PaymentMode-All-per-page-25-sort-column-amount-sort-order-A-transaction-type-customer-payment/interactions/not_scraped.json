@@ -1,0 +1,50 @@
+[
+  {
+    "label": "New Quote",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"10\\\"]\").first\n    - locator resolved to <button type=\"button\" title=\"New Quote\" data-crawl-id=\"10\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts p"
+  },
+  {
+    "label": "New Invoice",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"11\" title=\"New Invoice\" class=\"icon-button add-new tab-element-right\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"main-nav-lhs\">\u2026</div> intercepts"
+  },
+  {
+    "label": "Save",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"20\\\"]\").first\n    - locator resolved to <button tabindex=\"0\" type=\"button\" data-crawl-id=\"20\" aria-label=\"Close Instant Helper\" id=\"c948ad60-6716-4f30-8daf-e44af3ba242a\" class=\"icon-button align-self-center ms-4\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - d"
+  },
+  {
+    "label": "Excess Amount Refund",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"24\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember324\" data-crawl-id=\"24\" aria-invalid=\"false\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"a7897c7e9\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember324\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for e"
+  },
+  {
+    "label": "Cash",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"25\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember327\" data-crawl-id=\"25\" aria-invalid=\"false\" aria-disabled=\"false\" aria-expanded=\"false\" aria-required=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"a961bebaf\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember327\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for e"
+  },
+  {
+    "label": "Petty Cash",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"26\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" ac-toggler=\"\" class=\"ac-box \" role=\"combobox\" id=\"ac-ember330\" data-crawl-id=\"26\" aria-invalid=\"false\" aria-required=\"true\" aria-disabled=\"false\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"ab642e56e\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember330\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for el"
+  }
+]

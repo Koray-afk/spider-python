@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Add Transaction",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/001-add-transaction",
+    "relationship_file": "interactions/001-add-transaction/relationship.json"
+  },
+  {
+    "label": "Import Statement",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-import-statement",
+    "relationship_file": "interactions/002-import-statement/relationship.json"
+  },
+  {
+    "label": "Citi Bank",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/003-citi-bank",
+    "relationship_file": "interactions/003-citi-bank/relationship.json"
+  },
+  {
+    "label": "Record Deposit",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/005-record-deposit",
+    "relationship_file": "interactions/005-record-deposit/relationship.json"
+  },
+  {
+    "label": "Select Vendor",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/008-select-vendor",
+    "relationship_file": "interactions/008-select-vendor/relationship.json"
+  },
+  {
+    "label": "Collapse/Expand",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/011-collapse-expand",
+    "relationship_file": "interactions/011-collapse-expand/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/015-show-dropdown-menu",
+    "relationship_file": "interactions/015-show-dropdown-menu/relationship.json"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Create New Report",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-primary",
+    "selector": "[data-crawl-id=\"14\"]",
+    "outerHTML": "<button class=\"btn btn-primary\" type=\"button\" data-crawl-id=\"14\">Create New Report</button>"
+  },
+  "interaction_type": "modal",
+  "location": {
+    "parentSelector": "#modal-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[3]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"modal-open\"><div class=\"modal-backdrop fade show nested-modal-backdrop\">\u00a0</div> <div class=\"modal fade d-block show nested-modal\"><div tabindex=\"0\"></div><div aria-modal=\"true\" class=\"modal-dialog\" role=\"dialog\"><div class=\"modal-content\"><div class=\"modal-header ember-view\" id=\"ember708\"><h4 class=\"modal-title\"><!-- --> Create Custom Report <!-- --></h4> <!-- --><button aria-label=\"Close\" class=\"icon-button close\" type=\"button\"><svg aria-hidden=\"true\" class=\"icon icon-xs align-middle\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M318.9 243.3L457 105.2c13.7-13.7 13.7-36 0-49.7l-.5-.5c-13.7-13.7-36-13.7-49.7 0L268.7 193.1c-6.9 6.9-18.2 6.9-25.1 0L105.2 55c-13.7-13.7-36-13.7-49.7 0l-.5.5c-13.7 13.7-13.7 36 0 49.7l138.1 138.1c6.9 6.9 6.9 18.2 0 25.1L55 406.8c-13.7 13.7-13.7 36 0 49.7l.5.5c13.7 13.7 36 13.7 49.7 0l138.1-138.1c6.9-6.9 18.2-6.9 25.1 0L406.5 457c13.7 13.7 36 13.7 49.7 0l.5-.5c13.7-13.7 13.7-36 0-49.7L318.6 268.7c-6.6-7.4-6.6-18.3.3-25.4z\" fill=\"#fe4242\"></path></svg></button></div> <div class=\"modal-body\"><!-- --><div class=\"mb-2\"><label class=\"font-small d-block mb-2\" id=\"ab55c3bfd\">Select the report that you want to customize and create a new custom report.</label> <div class=\"ember-view\" id=\"ember709\"><div class=\"ac-container\"><div class=\"ac-wrapper\"><div ac-toggler=\"\" aria-controls=\"acDropdownListBox\" aria-describedby=\"error-msg-ember709\" aria-disabled=\"false\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-invalid=\"false\" aria-labelledby=\"ab55c3bfd\" aria-required=\"false\" class=\"ac-box\" id=\"ac-ember709\" role=\"combobox\" tabindex=\"0\"><div class=\"ac-selected form-control\"> <span class=\"placeholder-text me-0 ac-selected-label\">Select a Report <!-- --></span><div class=\"ac-toggle-container\"><i class=\"zf-ac-toggler\"><svg height=\"512\" viewbox=\"0 0 512 512\" width=\"512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.157 159.57c0 13.773 5.401 27.542 16.195 38.02l198.975 192.867c21.411 20.725 55.94 20.725 77.34 0L493.63 197.59c21.508-20.846 21.637-54.778.269-75.773-21.35-20.994-56.104-21.098-77.612-.26L256.004 276.93 95.721 121.562c-21.528-20.833-56.268-20.734-77.637.26C7.472 132.261 2.157 145.923 2.157 159.57z\"></path></svg></i></div></div></div> <!-- --></div> <!-- --> <div aria-live=\"assertive\" class=\"visually-hidden\" role=\"status\"><!-- --></div></div> <!-- --></div></div><!-- --></div> <div class=\"modal-footer\"><button class=\"btn btn-primary\" disabled=\"\" type=\"button\">Proceed</button> <button class=\"btn btn-secondary\" type=\"button\">Cancel</button></div></div></div><div tabindex=\"0\"></div></div></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-e6a6bdb2-5817-4519-bd57-79256d522a4a\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-eeb16679-2f18-4d33-89f7-464cbb891124\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-d95b0969-49b3-45dc-b840-3c38efda962f\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-e1903dea-9a60-45a2-8361-d4d468a802b0\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-e0d70e93-f9b1-4e54-af8f-851b87b0a9bf\"><!-- --> <!-- --></div>\n<div class=\"dropdown dropend ember-view\" id=\"dd-f2aff3cf-0165-4c2c-8a55-54a8e3d9b5b9\"><!-- --> <!-- --></div>\n<div class=\"modal-open ember-view\" id=\"ember707\"><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

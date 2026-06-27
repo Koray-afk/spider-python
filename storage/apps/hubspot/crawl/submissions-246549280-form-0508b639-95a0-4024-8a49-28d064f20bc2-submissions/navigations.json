@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Edit form",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+    "target_url": "https://app-na2.hubspot.com/forms/246549280/editor/0508b639-95a0-4024-8a49-28d064f20bc2/edit/form?redirectUrl=https%3A%2F%2Fapp-na2.hubspot.com%2Fforms%2F246549280%2Fviews%2Fall_forms",
+    "target_slug": "forms-246549280-editor-0508b639-95a0-4024-8a49-28d064f20bc2-edit-form",
+    "target_page": "../forms-246549280-editor-0508b639-95a0-4024-8a49-28d064f20bc2-edit-form/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Edit form",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA gqHeqB",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]/div[2]/div[1]/div[1]/section[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[2]",
+      "outer_html": "<button tabindex=\"0\" data-action=\"edit\" data-test-id=\"edit\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gqHeqB\" data-crawl-id=\"16\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"assetActionsLibForms.actions.edit\">Edit form</i18n-string></span></button>"
+    }
+  }
+]

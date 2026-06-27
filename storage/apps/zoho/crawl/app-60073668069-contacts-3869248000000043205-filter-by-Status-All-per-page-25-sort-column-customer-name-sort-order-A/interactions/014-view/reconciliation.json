@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "View",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-link p-0 align-baseline",
+    "selector": "[data-crawl-id=\"20\"]",
+    "outerHTML": "<button class=\"btn btn-link p-0 align-baseline\" data-ember-action=\"\" data-ember-action-1159=\"1159\" data-crawl-id=\"20\">View</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#vertically-scrolled-table > tbody:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[6]/div[2]/div[1]/table[1]/tbody[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<tr class=\"ember-view table-active zf-highlight\" id=\"3869248000000043205\" tabindex=\"-1\"><td class=\"pinned-column bulk-selection-cell cursor-pointer text-end\" style=\"width: 38px;min-width: 38px;max-width: 38px;left: 0;\"><input aria-label=\"Select this row\" class=\"ember-checkbox ember-view cursor-pointer align-middle\" id=\"ember1101\" type=\"checkbox\"/></td><td class=\"pe-3 ps-1\"><div class=\"list-primary\"><div class=\"flex-vcenter\"><div class=\"name\" id=\"d0c87956-ef33-42cf-b72c-3a6569facc4a\"><span class=\"active ember-view text-black-semibold\" id=\"ember1102\">ABC Electronics<!-- --></span><!-- --></div> <!-- --> <!-- --><!-- --></div> <!-- --> <div class=\"text-dark-shade-blue mt-2\"><!-- --><!-- -->\u20b90.00<!-- --></div></div></td></tr>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

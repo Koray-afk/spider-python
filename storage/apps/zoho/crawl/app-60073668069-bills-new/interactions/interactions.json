@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Add New Row",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/003-add-new-row",
+    "relationship_file": "interactions/003-add-new-row/relationship.json"
+  },
+  {
+    "label": "Add Landed Cost",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/004-add-landed-cost",
+    "relationship_file": "interactions/004-add-landed-cost/relationship.json"
+  },
+  {
+    "label": "Save as Open",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/005-save-as-open",
+    "relationship_file": "interactions/005-save-as-open/relationship.json"
+  },
+  {
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/006-save-as-draft",
+    "relationship_file": "interactions/006-save-as-draft/relationship.json"
+  },
+  {
+    "label": "Make Recurring",
+    "selector": "[data-crawl-id=\"27\"]",
+    "interaction_path": "interactions/009-make-recurring",
+    "relationship_file": "interactions/009-make-recurring/relationship.json"
+  },
+  {
+    "label": "Bulk Actions",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/011-bulk-actions",
+    "relationship_file": "interactions/011-bulk-actions/relationship.json"
+  },
+  {
+    "label": "Show dropdown menu",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/012-show-dropdown-menu",
+    "relationship_file": "interactions/012-show-dropdown-menu/relationship.json"
+  },
+  {
+    "label": "Select a Vendor",
+    "selector": "[data-crawl-id=\"30\"]",
+    "interaction_path": "interactions/013-select-a-vendor",
+    "relationship_file": "interactions/013-select-a-vendor/relationship.json"
+  }
+]

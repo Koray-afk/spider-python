@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "More",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle no-caret  filter-dd-trigger  menu-active icon-position list-view-select exclude-dd-btn",
+    "selector": "[data-crawl-id=\"27\"]",
+    "outerHTML": "<button for=\"facb2eb8-b5e0-4cbd-b9b0-1d7298df36ae\" aria-controls=\"facb2eb8-b5e0-4cbd-b9b0-1d7298df36ae\" aria-haspopup=\"true\" class=\"dropdown-toggle no-caret  filter-dd-trigger  menu-active icon-position list-view-select exclude-dd-btn\" type=\"button\" aria-expanded=\"true\" data-crawl-id=\"27\"><!----><span class=\"filter-title over-flow \" style=\"color: #212529;\">All Customers</span> <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon fill-dropdown-blue rotate-180 icon-xsmall\"><path d=\"M492.9 211.6c-25.5-25.7-67.1-25.8-92.8-.3L256 354.2l-144.1-143c-25.7-25.5-67.3-25.4-92.8.3s-25.4 67.2.3 92.7L209.8 493c25.6 25.4 66.9 25.4 92.5 0l190.4-188.8c12.9-12.8 19.4-29.7 19.4-46.5-.1-16.6-6.5-33.4-19.2-46.1z\"></path></svg></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

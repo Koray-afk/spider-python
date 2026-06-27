@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Journal",
+    "tagName": "button",
+    "id": "",
+    "className": "text-dodgerblue nav-link bg-transparent active",
+    "selector": "[data-crawl-id=\"29\"]",
+    "outerHTML": "<button class=\"text-dodgerblue nav-link bg-transparent active\" data-crawl-id=\"29\">Journal</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#ember329",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[3]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<div class=\"d-flex justify-content-between pb-3\"><span><small class=\"text-muted\">Amount is displayed in your base currency</small>\u00a0<span class=\"badge text-semibold badge-success\">INR</span></span> <span class=\"btn-group\"><span class=\"btn btn-secondary btn-xs cursor-pointer active\" data-ember-action=\"\" data-ember-action-462=\"462\" role=\"button\" tabindex=\"0\">Accrual</span> <span class=\"btn btn-secondary btn-xs cursor-pointer\" data-ember-action=\"\" data-ember-action-463=\"463\" role=\"button\" tabindex=\"0\">Cash</span></span></div>\n<p class=\"font-large\"><b>Customer Payment  \u00a0-\u00a0PY-1<!-- --></b></p>\n<table class=\"outline-table table-sm table mb-5\" width=\"100%\"><thead><tr class=\"header-row bg-neutral-50 text-semibold\"><th class=\"w-300\">Account</th> <!-- --><!-- --> <th class=\"text-end\">Debit</th> <th class=\"text-end\">Credit</th></tr></thead> <tbody><tr><td class=\"text-start\">Unearned Revenue <!-- --> <!-- --></td> <!-- --><!-- --> <td class=\"text-end\">0.00</td> <td class=\"text-end\">2,000.00</td></tr><tr><td class=\"text-start\">Undeposited Funds <!-- --> <!-- --></td> <!-- --><!-- --> <td class=\"text-end\">2,000.00</td> <td class=\"text-end\">0.00</td></tr> <tr class=\"footer\"><td class=\"text-end\" colspan=\"2\">2,000.00</td> <td class=\"text-end\">2,000.00</td></tr></tbody></table>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

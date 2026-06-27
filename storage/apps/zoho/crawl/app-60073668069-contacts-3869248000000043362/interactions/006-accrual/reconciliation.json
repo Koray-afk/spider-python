@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Accrual",
+    "tagName": "button",
+    "id": "",
+    "className": "dropdown-toggle   btn btn-primary",
+    "selector": "[data-crawl-id=\"36\"]",
+    "outerHTML": "<button for=\"c5005a90-5205-4e5c-bd78-717b4fe6218c\" aria-controls=\"c5005a90-5205-4e5c-bd78-717b4fe6218c\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle   btn btn-primary\" type=\"button\" data-crawl-id=\"36\">New Transaction</button>"
+  },
+  "interaction_type": "dropdown",
+  "location": {
+    "parentSelector": "#overlay-wrapper",
+    "parentXPath": "/html[1]/body[1]/div[6]/div[2]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"dropdown-menu scrollmenu show\" data-popper-placement=\"bottom-end\" id=\"c5005a90-5205-4e5c-bd78-717b4fe6218c\" role=\"listbox\" style=\"position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-170.32px, 97.5469px);\"><div class=\"fltheader\">Sales</div><!-- --><!-- --><span id=\"e4c12947-28b5-4140-9a99-eb560e5d8993\"><a class=\"ember-view dropdown-item\" href=\"#/invoices/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1324\">Invoice</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/contacts/3869248000000043362/customerpayment?currency_id=3869248000000000064\" id=\"ember1326\">Customer Payment</a><!-- --><!-- --><!-- --><span id=\"f9a2c073-7600-4be7-917b-7affecb36e78\"><a class=\"ember-view dropdown-item\" href=\"#/quotes/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1328\">Quote</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"f81f44f9-5457-4e11-a69d-7298b05384a1\"><a class=\"ember-view dropdown-item\" href=\"#/salesorders/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1330\">Sales Order</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"d8520c88-2f87-4bd8-b938-61de057e1db4\"><a class=\"ember-view dropdown-item\" href=\"#/deliverychallans/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1332\">Delivery Challan</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"e9f7f133-9362-4e4a-bbcb-3ed263e31ff5\"><a class=\"ember-view dropdown-item\" href=\"#/recurringinvoices/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1334\">Recurring Invoice</a></span> <!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/expenses/new?customer_id=3869248000000043362&amp;customer_name=NewTech\" id=\"ember1336\">Expense</a><!-- --><!-- --><!-- --><!-- --><a class=\"ember-view dropdown-item\" href=\"#/recurringexpenses/new?customer_id=3869248000000043362&amp;customer_name=NewTech\" id=\"ember1338\">Recurring Expense</a><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"e8c4953d-0b08-4ae4-abf8-0d5298d7ef23\"><a class=\"ember-view dropdown-item\" href=\"#/accountant/journals/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1340\">Journal</a></span> <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><span id=\"c21b153a-21c6-4c7c-9125-d247854b3003\"><a class=\"ember-view dropdown-item\" href=\"#/creditnotes/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1342\">Credit Note</a></span> <!-- --><!-- --><!-- --><div class=\"dropdown-divider\"></div><!-- --><!-- --><span id=\"dd211f43-cea8-452b-8341-bd4a8d4aeb52\"><a class=\"ember-view dropdown-item\" href=\"#/timesheet/projects/new?contact_id=3869248000000043362&amp;contact_name=NewTech\" id=\"ember1344\">Project</a></span> <!-- --><!-- --><!-- --></div>",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Other Details",
+    "tagName": "button",
+    "id": "paymentdetails-tab",
+    "className": "active nav-link text-black  ",
+    "selector": "[data-crawl-id=\"16\"]",
+    "outerHTML": "<button role=\"tab\" id=\"paymentdetails-tab\" class=\"active nav-link text-black  \" aria-controls=\"paymentdetails-tabpanel\" aria-selected=\"true\" tabindex=\"0\" name=\"paymentdetails\" type=\"button\" data-crawl-id=\"16\"><div class=\"d-inline-block \">Other Details <!----></div></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

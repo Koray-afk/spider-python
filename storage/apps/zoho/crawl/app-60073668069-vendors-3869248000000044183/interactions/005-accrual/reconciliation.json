@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "label": "Accrual",
+    "tagName": "button",
+    "id": "",
+    "className": "file-upload border-0 profile-photo-hover",
+    "selector": "[data-crawl-id=\"37\"]",
+    "outerHTML": "<button class=\"file-upload border-0 profile-photo-hover\" type=\"button\" data-crawl-id=\"37\"><input aria-label=\"Attach From Desktop\" id=\"ember521\" title=\"\" accept=\"image/gif,image/png,image/jpeg,image/jpg,image/bmp\" class=\"upload ember-view\" type=\"file\"> <img alt=\"Mr. Ram Babu's profile photo\" src=\"https://secure.gravatar.com/avatar/d6f706803f754dd25f76d676d70f0fad?&amp;d=mm\" class=\"cp-pic\" loading=\"lazy\"> <!----></button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-bills-new",
+  "source_url": "https://books.zoho.in/app/60073668069#/bills/new",
+  "source_title": "Add New | Bills | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Make Recurring",
+    "id": "",
+    "class_name": "btn btn-link d-inline-block",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#fixed-actions-bottom > div:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"27\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[4]/button[1]",
+    "outer_html": "<button class=\"btn btn-link d-inline-block\" data-ember-action=\"\" data-ember-action-497=\"497\" data-crawl-id=\"27\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon align-text-bottom\"><path d=\"M433 511c-4.3 0-8.4-1.7-11.5-4.9l-49.2-50.8-38.7 49.5c-2.8 3.6-7.1 5.8-11.6 6.1-4.6.3-9-1.4-12.3-4.7l-52.6-52.6-51.7 52.5c-3.2 3.3-7.7 5-12.3 4.7s-8.9-2.5-11.7-6.1l-38.8-49.6-50.2 51c-4.6 4.6-11.5 6-17.5 3.6-6-2.5-9.9-8.3-9.9-14.8V31C65 13.4 79.4-1 97-1h320c17.6 0 32 14.4 32 32v464c0 6.5-4 12.4-10 14.8-1.9.8-4 1.2-6 1.2zm-176-96c4.2 0 8.3 1.7 11.3 4.7l44.8 44.8c3.4 3.4 9 3.1 12-.7l33.3-42.6c2.8-3.6 7.1-5.9 11.8-6.1 4.6-.2 9.1 1.5 12.3 4.8l31.1 32.1c1.3 1.3 3.4.4 3.4-1.4V47c0-8.8-7.2-16-16-16H113c-8.8 0-16 7.2-16 16v404.1c0 1.8 2.2 2.7 3.4 1.4l32.2-32.7c3.2-3.3 7.7-5 12.3-4.7s8.9 2.5 11.7 6.1l33.2 42.5c3 3.8 8.6 4.1 12 .7l43.8-44.5c3-3.2 7.1-4.9 11.4-4.9z\"></path><path d=\"M353 212.9c-6.6 0-12 5.4-12 12v59H215.3l21.8-22.1c4.7-4.7 4.7-12.3 0-17s-12.3-4.7-17 0l-40.6 42.6c-4.6 4.6-4.7 12-.3 16.7l41.3 44c2.4 2.5 5.6 3.8 8.7 3.8 2.9 0 5.9-1.1 8.2-3.3 4.8-4.5 5.1-12.1.5-17l-20.6-22.7H353c6.6 0 12-4.7 12-11.3v-72.7c0-6.6-5.3-12-12-12zM274.2 184.1c-4.7 4.7-4.7 12.3 0 17 2.3 2.3 5.4 3.5 8.5 3.5s6.1-1.2 8.5-3.5l40.7-40.7c4.6-4.6 4.7-12 .3-16.7l-41.3-44c-4.5-4.8-12.1-5.1-17-.5-4.8 4.5-5.1 12.1-.5 17l22.3 23.8H161c-6.6 0-12 5.4-12 12v70.7c0 6.6 5.4 12 12 12s12-5.4 12-12v-58.8h121.3l-20.1 20.2z\"></path></svg>&nbsp; Make Recurring</button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/bills/new",
+    "slug": "app-60073668069-bills-new",
+    "title": "Add New | Bills | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"btn btn-link d-inline-block\" data-ember-action=\"\" data-ember-action-497=\"497\" data-crawl-id=\"27\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon align-text-bottom\"><path d=\"M433 511c-4.3 0-8.4-1.7-11.5-4.9l-49.2-50.8-38.7 49.5c-2.8 3.6-7.1 5.8-11.6 6.1-4.6.3-9-1.4-12.3-4.7l-52.6-52.6-51.7 52.5c-3.2 3.3-7.7 5-12.3 4.7s-8.9-2.5-11.7-6.1l-38.8-49.6-50.2 51c-4.6 4.6-11.5 6-17.5 3.6-6-2.5-9.9-8.3-9.9-14.8V31C65 13.4 79.4-1 97-1h320c17.6 0 32 14.4 32 32v464c0 6.5-4 12.4-10 14.8-1.9.8-4 1.2-6 1.2zm-176-96c4.2 0 8.3 1.7 11.3 4.7l44.8 44.8c3.4 3.4 9 3.1 12-.7l33.3-42.6c2.8-3.6 7.1-5.9 11.8-6.1 4.6-.2 9.1 1.5 12.3 4.8l31.1 32.1c1.3 1.3 3.4.4 3.4-1.4V47c0-8.8-7.2-16-16-16H113c-8.8 0-16 7.2-16 16v404.1c0 1.8 2.2 2.7 3.4 1.4l32.2-32.7c3.2-3.3 7.7-5 12.3-4.7s8.9 2.5 11.7 6.1l33.2 42.5c3 3.8 8.6 4.1 12 .7l43.8-44.5c3-3.2 7.1-4.9 11.4-4.9z\"></path><path d=\"M353 212.9c-6.6 0-12 5.4-12 12v59H215.3l21.8-22.1c4.7-4.7 4.7-12.3 0-17s-12.3-4.7-17 0l-40.6 42.6c-4.6 4.6-4.7 12-.3 16.7l41.3 44c2.4 2.5 5.6 3.8 8.7 3.8 2.9 0 5.9-1.1 8.2-3.3 4.8-4.5 5.1-12.1.5-17l-20.6-22.7H353c6.6 0 12-4.7 12-11.3v-72.7c0-6.6-5.3-12-12-12zM274.2 184.1c-4.7 4.7-4.7 12.3 0 17 2.3 2.3 5.4 3.5 8.5 3.5s6.1-1.2 8.5-3.5l40.7-40.7c4.6-4.6 4.7-12 .3-16.7l-41.3-44c-4.5-4.8-12.1-5.1-17-.5-4.8 4.5-5.1 12.1-.5 17l22.3 23.8H161c-6.6 0-12 5.4-12 12v70.7c0 6.6 5.4 12 12 12s12-5.4 12-12v-58.8h121.3l-20.1 20.2z\"></path></svg>&nbsp; Make Recurring</button>",
+  "trigger_label": "Make Recurring",
+  "trigger_id": "",
+  "trigger_class": "btn btn-link d-inline-block",
+  "target_url": "https://books.zoho.in/app/60073668069#/bills/new",
+  "target_slug": "app-60073668069-bills-new",
+  "target_title": "Add New | Bills | Zoho Books"
+}

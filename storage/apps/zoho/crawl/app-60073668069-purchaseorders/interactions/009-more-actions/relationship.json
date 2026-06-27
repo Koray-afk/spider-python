@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-purchaseorders",
+  "source_url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+  "source_title": "Add New | Purchase Orders | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "btn btn-primary advance-search-btn",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#primary-info-element > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"18\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[3]/button[1]",
+    "outer_html": "<button class=\"btn btn-primary advance-search-btn\" type=\"button\" data-ember-action=\"\" data-ember-action-470=\"470\" data-crawl-id=\"18\"><span id=\"d57e720c-5897-4362-aeba-8dd65b66a8a2\" tabindex=\"0\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon icon-sm align-text-bottom\"><path fill=\"#FFF\" d=\"M421 97C365.3 4 244.4-26.3 151.5 29.4S28.3 205.9 83.9 298.8c49.5 82.6 150.5 115.7 237.5 83l66.3 110.7c10 16.7 31.7 22.1 48.4 12.1 16.7-10 22.1-31.7 12.1-48.4L382 345.6c70-61.4 88.4-166 39-248.6zm-85.6 239.5c-76.4 45.8-175.8 20.8-221.6-55.6S93 105.1 169.4 59.3 345.2 38.5 391 114.9s20.8 175.8-55.6 221.6z\"></path></svg></span> <!----></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+    "slug": "app-60073668069-purchaseorders",
+    "title": "Add New | Purchase Orders | Zoho Books"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button class=\"btn btn-primary advance-search-btn\" type=\"button\" data-ember-action=\"\" data-ember-action-470=\"470\" data-crawl-id=\"18\"><span id=\"d57e720c-5897-4362-aeba-8dd65b66a8a2\" tabindex=\"0\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" viewBox=\"0 0 512 512\" xml:space=\"preserve\" class=\"icon icon-sm align-text-bottom\"><path fill=\"#FFF\" d=\"M421 97C365.3 4 244.4-26.3 151.5 29.4S28.3 205.9 83.9 298.8c49.5 82.6 150.5 115.7 237.5 83l66.3 110.7c10 16.7 31.7 22.1 48.4 12.1 16.7-10 22.1-31.7 12.1-48.4L382 345.6c70-61.4 88.4-166 39-248.6zm-85.6 239.5c-76.4 45.8-175.8 20.8-221.6-55.6S93 105.1 169.4 59.3 345.2 38.5 391 114.9s20.8 175.8-55.6 221.6z\"></path></svg></span> <!----></button>",
+  "trigger_label": "More Actions",
+  "trigger_id": "de5d32fc-e636-4645-92f8-a78ea761b0dd",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-secondary d-flex",
+  "target_url": "https://books.zoho.in/app/60073668069#/purchaseorders",
+  "target_slug": "app-60073668069-purchaseorders",
+  "target_title": "Add New | Purchase Orders | Zoho Books"
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "label": "Edit",
+    "tag_name": "button",
+    "selector": "#eb111648-22d7-40b0-a83d-1c5415b066a5 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380/edit",
+    "target_slug": "app-60073668069-salesorders-3869248000000043380-edit",
+    "target_page": "../app-60073668069-salesorders-3869248000000043380-edit/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Edit",
+      "id": "",
+      "class_name": "details-menu-item nav-link text-center over-flow  ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#eb111648-22d7-40b0-a83d-1c5415b066a5 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[2]/ul[1]/li[1]/span[1]/button[1]",
+      "outer_html": "<button class=\"details-menu-item nav-link text-center over-flow  \" type=\"button\" data-crawl-id=\"24\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 510 512\" class=\"icon align-top icon-sm me-2\"><g id=\"Layer_2-2\"><path d=\"M50.3 512c-13.04 0-25.74-5.08-35.2-14.35C3.47 486.27-1.93 469.88.64 453.82l16.9-105.61c3.01-18.79 11.71-35.82 25.17-49.27l272.83-272.7c35.01-34.99 91.99-34.98 127.01.02l41.14 41.12c16.96 16.96 26.31 39.5 26.32 63.47 0 23.98-9.33 46.52-26.29 63.47L210.3 467.59c-12.98 12.98-29.4 21.57-47.47 24.84L59.23 511.2c-2.97.54-5.96.8-8.93.8zM379.02 39.99c-12.74 0-25.48 4.85-35.18 14.54L71 327.23c-7.46 7.45-12.28 16.9-13.95 27.31l-16.9 105.61c-.73 4.55 1.54 7.55 2.95 8.93 1.41 1.38 4.46 3.58 8.99 2.76l103.6-18.77A49.498 49.498 0 00182 439.3l273.4-273.27c9.4-9.39 14.57-21.89 14.57-35.18s-5.19-25.79-14.59-35.19l-41.14-41.12c-9.71-9.71-22.47-14.56-35.22-14.56z\"></path><path transform=\"rotate(-45.01 331.896 178.02)\" d=\"M311.84 79.14h40.01v197.75h-40.01z\"></path></g></svg> <span>Edit</span> <!----></button>"
+    }
+  },
+  {
+    "label": "Send Email",
+    "tag_name": "button",
+    "selector": "#ddfeef17-a757-4028-95b4-38883a839ac7 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380/email",
+    "target_slug": "app-60073668069-salesorders-3869248000000043380-email",
+    "target_page": "../app-60073668069-salesorders-3869248000000043380-email/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Send Email",
+      "id": "",
+      "class_name": "details-menu-item nav-link text-center over-flow  ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#ddfeef17-a757-4028-95b4-38883a839ac7 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[2]/ul[1]/li[3]/span[1]/button[1]",
+      "outer_html": "<button class=\"details-menu-item nav-link text-center over-flow  \" type=\"button\" data-crawl-id=\"25\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 446\" class=\"icon align-top icon-sm me-2\"><g id=\"Layer_1-2\"><path d=\"M412 0H100C44.86 0 0 44.86 0 100v246c0 55.14 44.86 100 100 100h312c55.14 0 100-44.86 100-100V100C512 44.86 467.14 0 412 0zm60 346c0 33.08-26.92 60-60 60H100c-33.08 0-60-26.92-60-60V100c0-33.08 26.92-60 60-60h312c33.08 0 60 26.92 60 60v246z\"></path><path d=\"M387.16 112.78l-107.98 76.47c-13.84 9.8-32.44 9.8-46.28 0l-107.97-76.47c-9.01-6.38-21.5-4.25-27.88 4.76-6.38 9.01-4.25 21.5 4.76 27.88l107.97 76.47c13.84 9.8 30.05 14.7 46.26 14.7s32.43-4.9 46.26-14.7l107.98-76.47c9.01-6.38 11.15-18.87 4.76-27.88-6.38-9.01-18.87-11.15-27.88-4.76z\"></path></g></svg> <span>Send Email</span> <!----></button>"
+    }
+  },
+  {
+    "label": "Mark as Confirmed",
+    "tag_name": "button",
+    "selector": "#ce6aec30-7661-41d3-a1dd-72eb960ffd05 > button:nth-of-type(1)",
+    "target_url": "https://books.zoho.in/app/60073668069#/salesorders/3869248000000043380/email",
+    "target_slug": "app-60073668069-salesorders-3869248000000043380-email",
+    "target_page": "../app-60073668069-salesorders-3869248000000043380-email/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Send Email",
+      "id": "",
+      "class_name": "details-menu-item nav-link text-center over-flow  ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#ce6aec30-7661-41d3-a1dd-72eb960ffd05 > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[2]/div[1]/div[2]/section[1]/div[2]/ul[1]/li[3]/span[1]/button[1]",
+      "outer_html": "<button class=\"details-menu-item nav-link text-center over-flow  \" type=\"button\" data-crawl-id=\"27\"><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 446\" class=\"icon align-top icon-sm me-2\"><g id=\"Layer_1-2\"><path d=\"M412 0H100C44.86 0 0 44.86 0 100v246c0 55.14 44.86 100 100 100h312c55.14 0 100-44.86 100-100V100C512 44.86 467.14 0 412 0zm60 346c0 33.08-26.92 60-60 60H100c-33.08 0-60-26.92-60-60V100c0-33.08 26.92-60 60-60h312c33.08 0 60 26.92 60 60v246z\"></path><path d=\"M387.16 112.78l-107.98 76.47c-13.84 9.8-32.44 9.8-46.28 0l-107.97-76.47c-9.01-6.38-21.5-4.25-27.88 4.76-6.38 9.01-4.25 21.5 4.76 27.88l107.97 76.47c13.84 9.8 30.05 14.7 46.26 14.7s32.43-4.9 46.26-14.7l107.98-76.47c9.01-6.38 11.15-18.87 4.76-27.88-6.38-9.01-18.87-11.15-27.88-4.76z\"></path></g></svg> <span>Send Email</span> <!----></button>"
+    }
+  }
+]

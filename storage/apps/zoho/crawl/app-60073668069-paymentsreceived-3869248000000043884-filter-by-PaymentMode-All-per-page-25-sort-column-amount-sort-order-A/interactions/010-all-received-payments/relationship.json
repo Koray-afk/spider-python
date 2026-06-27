@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-paymentsreceived-3869248000000043884-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A",
+  "source_title": "Flashter Inc. | Payments Received | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "TAKE A LIVE PRODUCT TOUR",
+    "id": "",
+    "class_name": "badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#main-nav-tab > ul:nth-of-type(1) > li:nth-of-type(17) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "/html[1]/body[1]/div[6]/div[6]/div[3]/div[1]/nav[1]/ul[1]/li[17]/div[1]/div[1]/button[1]",
+    "outer_html": "<button class=\"badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray\" data-crawl-id=\"17\"><span class=\"blue-dot mx-2 pe-1 hotspot hotspot-webinar\"></span> <span>Take a live product tour</span></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A",
+    "slug": "app-60073668069-paymentsreceived-3869248000000043884-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A",
+    "title": "Flashter Inc. | Payments Received | Zoho Books"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"badge badge-lhs-webinar w-100 text-uppercase rounded-pill justify-content-center text-dark-gray\" data-crawl-id=\"17\"><span class=\"blue-dot mx-2 pe-1 hotspot hotspot-webinar\"></span> <span>Take a live product tour</span></button>",
+  "trigger_label": "All Received Payments",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  filter-dd-trigger   icon-position list-view-select exclude-dd-btn",
+  "target_url": "https://books.zoho.in/app/60073668069#/paymentsreceived/3869248000000043884?filter_by=PaymentMode.All&per_page=25&sort_column=amount&sort_order=A",
+  "target_slug": "app-60073668069-paymentsreceived-3869248000000043884-filter-by-PaymentMode-All-per-page-25-sort-column-amount-sort-order-A",
+  "target_title": "Flashter Inc. | Payments Received | Zoho Books"
+}

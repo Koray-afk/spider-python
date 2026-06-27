@@ -1,0 +1,34 @@
+{
+  "source_page": "app-60073668069-invoices-3869248000000043582-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+  "source_url": "https://books.zoho.in/app/60073668069#/invoices/3869248000000043582?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "source_title": "INV-000019 | Invoices | Zoho Books",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "dropdown-toggle no-caret  btn p-0 no-box-shadow",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Show dropdown menu",
+    "selector": "#dd-d28933f4-b8ee-4dc6-a322-0cffa6c2a59c > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "/html[1]/body[1]/div[7]/div[6]/header[1]/div[5]/div[1]/div[1]/button[1]",
+    "outer_html": "<button for=\"d28933f4-b8ee-4dc6-a322-0cffa6c2a59c\" aria-controls=\"d28933f4-b8ee-4dc6-a322-0cffa6c2a59c\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"19\"><span id=\"quick-create\"><span id=\"f47a0975-ecc5-423c-aadd-294af51815da\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>"
+  },
+  "target": {
+    "url": "https://books.zoho.in/app/60073668069#/invoices/3869248000000043582?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+    "slug": "app-60073668069-invoices-3869248000000043582-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+    "title": "INV-000019 | Invoices | Zoho Books"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button for=\"d28933f4-b8ee-4dc6-a322-0cffa6c2a59c\" aria-controls=\"d28933f4-b8ee-4dc6-a322-0cffa6c2a59c\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle no-caret  btn p-0 no-box-shadow\" type=\"button\" aria-label=\"Show dropdown menu\" data-crawl-id=\"19\"><span id=\"quick-create\"><span id=\"f47a0975-ecc5-423c-aadd-294af51815da\" class=\"quick-add-icon\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" class=\"icon align-middle unified-icon-fill\"><rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\"></rect><path fill=\"#fff\" d=\"M23.53 15.53h-7.06V8.47a.47.47 0 10-.94 0v7.06H8.47a.47.47 0 100 .94h7.06v7.06a.47.47 0 10.94 0v-7.06h7.06a.47.47 0 100-.94z\"></path></svg></span> <!----></span></button>",
+  "trigger_label": "Show dropdown menu",
+  "trigger_id": "",
+  "trigger_class": "dropdown-toggle no-caret  btn btn-primary btn-left-border",
+  "target_url": "https://books.zoho.in/app/60073668069#/invoices/3869248000000043582?filter_by=Status.All&per_page=25&sort_column=customer_name&sort_order=A",
+  "target_slug": "app-60073668069-invoices-3869248000000043582-filter-by-Status-All-per-page-25-sort-column-customer-name-sort-order-A",
+  "target_title": "INV-000019 | Invoices | Zoho Books"
+}

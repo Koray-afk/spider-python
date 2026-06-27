@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Create scheduling page",
+    "tag_name": "button",
+    "selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://app-na2.hubspot.com/meetings/246549280/link/new",
+    "target_slug": "meetings-246549280-link-new",
+    "target_page": "../meetings-246549280-link-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Create scheduling page",
+      "id": "",
+      "class_name": "PrivateButton__StyledButton-eRHhiA gqHeqB",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "body:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/header[1]/div[1]/div[2]/div[1]/div[1]/button[1]",
+      "outer_html": "<button tabindex=\"0\" data-selenium-test=\"create-meeting-button\" aria-disabled=\"false\" data-fnd-button=\"t\" data-button-use=\"primary\" type=\"button\" class=\"PrivateButton__StyledButton-eRHhiA gqHeqB\" data-crawl-id=\"14\"><span class=\"PrivateButton__StyledButtonTextContainer-gKiNOa kXEbeH\"><i18n-string data-locale-at-render=\"en-us\" data-key=\"editLink.createNew\">Create scheduling page</i18n-string></span></button>"
+    }
+  }
+]
