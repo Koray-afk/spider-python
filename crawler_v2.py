@@ -181,13 +181,12 @@ _EXTRACT_HUBSPOT_CSS_JS = """
 """
 
 
-def _inline_hubspot_styled_css(page, html: str) -> str:
+def _inline_cssom_styles(page, html: str, *, style_id: str = "captured-styles") -> str:
     """Persist all JS-injected CSS before scripts are stripped.
 
-    HubSpot styled-components writes rules into the CSSOM via insertRule, so
-    <style data-styled> tags often have empty textContent. We wait until the
-    live page has enough styled-component rules, then serialize document.styleSheets
-    (plus any inline <style> text) into a single captured block.
+    styled-components / emotion write rules into the CSSOM via insertRule, so
+    <style> tags often have empty textContent. Wait until the live page has
+    enough rules, then serialize document.styleSheets into a captured block.
     """
     try:
         page.evaluate(_WAIT_FOR_STYLED_COMPONENTS_JS)
@@ -196,10 +195,19 @@ def _inline_hubspot_styled_css(page, html: str) -> str:
         return html
     if not css.strip():
         return html
-    block = f'<style id="hs-captured-styles">\n{css}\n</style>'
+    block = f'<style id="{style_id}">\n{css}\n</style>'
     if "</head>" in html:
         return html.replace("</head>", block + "\n</head>", 1)
     return html + block
+
+
+def _inline_hubspot_styled_css(page, html: str) -> str:
+    return _inline_cssom_styles(page, html, style_id="hs-captured-styles")
+
+
+def _uses_cssom_capture(page_url: str) -> bool:
+    u = page_url.lower()
+    return "hubspot" in u or "dashboard.stripe.com" in u
 
 
 _BAKE_SELECTORS = [
@@ -220,6 +228,20 @@ _BAKE_SELECTORS = [
     "nav",
 ]
 
+_STRIPE_BAKE_SELECTORS = [
+    "#dashboardRoot",
+    "#dashboardRoot *",
+    "#merch",
+    "[class*='db-DashboardRoot']",
+    "[class*='db-Nav']",
+    "[class*='db-Sidebar']",
+    "[class*='sail-Nav']",
+    "[class*='sail-Sidebar']",
+    "[class*='Navigation']",
+    "header",
+    "nav",
+]
+
 _BAKE_PROPS = [
     "background-color", "color", "font-family", "font-size", "font-weight",
     "line-height", "border", "border-radius", "padding", "margin",
@@ -229,31 +251,36 @@ _BAKE_PROPS = [
     "right", "bottom", "box-shadow", "opacity", "white-space",
 ]
 
-_BAKE_JS = (
-    "(function(selectors, props) {"
-    "  var seen = new Set();"
-    "  selectors.forEach(function(sel) {"
-    "    var els = document.querySelectorAll(sel);"
-    "    els.forEach(function(el) {"
-    "      if (seen.has(el)) return;"
-    "      seen.add(el);"
-    "      var cs = window.getComputedStyle(el);"
-    "      var parts = [];"
-    "      props.forEach(function(p) {"
-    "        var v = cs.getPropertyValue(p);"
-    "        if (v && v !== 'initial' && v !== 'inherit' && v !== 'auto'"
-    "            && v !== 'normal' && v !== 'none' && v !== '') {"
-    "          parts.push(p + ':' + v);"
-    "        }"
-    "      });"
-    "      if (parts.length) {"
-    "        var existing = el.getAttribute('style') || '';"
-    "        el.setAttribute('style', existing + ';' + parts.join(';'));"
-    "      }"
-    "    });"
-    "  });"
-    "})(['" + "','".join(_BAKE_SELECTORS) + "'], ['" + "','".join(_BAKE_PROPS) + "'])"
-)
+def _make_bake_js(selectors: list[str]) -> str:
+    return (
+        "(function(selectors, props) {"
+        "  var seen = new Set();"
+        "  selectors.forEach(function(sel) {"
+        "    var els = document.querySelectorAll(sel);"
+        "    els.forEach(function(el) {"
+        "      if (seen.has(el)) return;"
+        "      seen.add(el);"
+        "      var cs = window.getComputedStyle(el);"
+        "      var parts = [];"
+        "      props.forEach(function(p) {"
+        "        var v = cs.getPropertyValue(p);"
+        "        if (v && v !== 'initial' && v !== 'inherit' && v !== 'auto'"
+        "            && v !== 'normal' && v !== 'none' && v !== '') {"
+        "          parts.push(p + ':' + v);"
+        "        }"
+        "      });"
+        "      if (parts.length) {"
+        "        var existing = el.getAttribute('style') || '';"
+        "        el.setAttribute('style', existing + ';' + parts.join(';'));"
+        "      }"
+        "    });"
+        "  });"
+        "})(['" + "','".join(selectors) + "'], ['" + "','".join(_BAKE_PROPS) + "'])"
+    )
+
+
+_BAKE_JS = _make_bake_js(_BAKE_SELECTORS)
+_STRIPE_BAKE_JS = _make_bake_js(_STRIPE_BAKE_SELECTORS)
 
 
 _HUBSPOT_LOADING_REMOVE_JS = """() => {
@@ -274,6 +301,23 @@ _HUBSPOT_LOADING_REMOVE_JS = """() => {
 }"""
 
 
+_STRIPE_LOADING_REMOVE_JS = """() => {
+  var sels = [
+    '[class*="Spinner"]',
+    '[class*="Loading"]',
+    '[class*="Skeleton"]',
+    '[aria-busy="true"]',
+    '[data-testid="loading-spinner"]',
+    '[role="progressbar"]',
+  ];
+  sels.forEach(function(s) {
+    document.querySelectorAll(s).forEach(function(el) {
+      if (el.closest && el.closest('#dashboardRoot')) el.remove();
+    });
+  });
+}"""
+
+
 def _strip_hubspot_loading_elements(page, page_url: str) -> None:
     """Remove HubSpot loading spinners and skeleton screens from the live DOM.
 
@@ -285,6 +329,16 @@ def _strip_hubspot_loading_elements(page, page_url: str) -> None:
         return
     try:
         page.evaluate(_HUBSPOT_LOADING_REMOVE_JS)
+    except Exception:
+        pass
+
+
+def _strip_stripe_loading_elements(page, page_url: str) -> None:
+    """Remove Stripe loading spinners/skeletons from the live DOM before snapshot."""
+    if "dashboard.stripe.com" not in page_url.lower():
+        return
+    try:
+        page.evaluate(_STRIPE_LOADING_REMOVE_JS)
     except Exception:
         pass
 
@@ -306,6 +360,24 @@ def _bake_hubspot_computed_styles_in_page(page, page_url: str) -> None:
         page.evaluate(_BAKE_JS)
     except Exception:
         pass
+
+
+def _bake_stripe_computed_styles_in_page(page, page_url: str) -> None:
+    """Inline computed styles on Stripe dashboard nav/sidebar before snapshot."""
+    if "dashboard.stripe.com" not in page_url.lower():
+        return
+    try:
+        page.evaluate(_STRIPE_BAKE_JS)
+    except Exception:
+        pass
+
+
+def _prepare_snapshot_dom(page, page_url: str) -> None:
+    """App-specific DOM cleanup before page.content() capture."""
+    _strip_hubspot_loading_elements(page, page_url)
+    _strip_stripe_loading_elements(page, page_url)
+    _bake_hubspot_computed_styles_in_page(page, page_url)
+    _bake_stripe_computed_styles_in_page(page, page_url)
 
 
 def _make_css_urls_absolute(html: str, page_url: str) -> str:
@@ -342,8 +414,11 @@ def static_snapshot_html(html: str, page_url: str, *, page=None) -> str:
     injected by JavaScript (e.g. HubSpot's styled-components) before scripts
     are stripped from the snapshot.
     """
-    if page is not None and "hubspot" in page_url.lower():
-        html = _inline_hubspot_styled_css(page, html)
+    if page is not None and _uses_cssom_capture(page_url):
+        if "hubspot" in page_url.lower():
+            html = _inline_hubspot_styled_css(page, html)
+        else:
+            html = _inline_cssom_styles(page, html, style_id="stripe-captured-styles")
     html = make_assets_absolute(html, page_url, include_js=False)
     html = _make_css_urls_absolute(html, page_url)
     html = remove_base_tag(html)
@@ -434,8 +509,8 @@ def post_auth_start_url(auth_file: str, fallback: str) -> str:
         o = origin.get("origin", "")
         if not o:
             continue
-        # HubSpot: no workspaceconf localStorage — use the configured post_auth_home.
-        if "hubspot.com" in o:
+        # HubSpot / Stripe: use configured post_auth_home after manual login.
+        if "hubspot.com" in o or "dashboard.stripe.com" in o:
             return fallback.rstrip("/")
         for item in origin.get("localStorage", []):
             if item.get("name") == "workspaceconf":
@@ -637,8 +712,7 @@ def save_page_capture(
     page_dir.mkdir(parents=True, exist_ok=True)
 
     print("[PAGE] Saving HTML")
-    _strip_hubspot_loading_elements(page, page.url)
-    _bake_hubspot_computed_styles_in_page(page, page.url)
+    _prepare_snapshot_dom(page, page.url)
     html = static_snapshot_html(page.content(), page.url, page=page)
     (page_dir / "page.html").write_text(html, encoding="utf-8")
 
@@ -681,8 +755,7 @@ def save_interaction_capture(
     rel_folder = str(folder.relative_to(crawl_root))
 
     print("[PAGE] Saving HTML")
-    _strip_hubspot_loading_elements(page, page.url)
-    _bake_hubspot_computed_styles_in_page(page, page.url)
+    _prepare_snapshot_dom(page, page.url)
     html = static_snapshot_html(page.content(), page.url, page=page)
     (folder / "page.html").write_text(html, encoding="utf-8")
 
@@ -915,6 +988,7 @@ def _load_checkpoint(path: Path) -> dict | None:
 def _save_checkpoint(
     path: Path,
     *,
+    page_type: str,
     visited: set[str],
     sidebar_queue: list[tuple[str, int]],
     deferred_queue: list[tuple[str, int]],
@@ -928,6 +1002,7 @@ def _save_checkpoint(
         json.dumps(
             {
                 "version": 1,
+                "page_type": page_type,
                 "updated_at": _now(),
                 "visited": sorted(visited),
                 "sidebar_queue": [{"url": u, "depth": d} for u, d in sidebar_queue],
@@ -1272,6 +1347,17 @@ def bfs_crawl(
 
     ckpt = _load_checkpoint(checkpoint_path) if resume else None
     if ckpt:
+        ckpt_phase = ckpt.get("page_type")
+        if ckpt_phase != page_type:
+            print(
+                f"[BFS] Ignoring checkpoint from {ckpt_phase or 'unknown'} phase "
+                f"(starting fresh {page_type})"
+            )
+            ckpt = None
+        elif not ckpt_phase and page_type == "post_auth":
+            print("[BFS] Ignoring legacy checkpoint (starting fresh post_auth)")
+            ckpt = None
+    if ckpt:
         visited.update(ckpt.get("visited") or [])
         sidebar_queue = [(e["url"], e["depth"]) for e in ckpt.get("sidebar_queue") or []]
         deferred_queue = [(e["url"], e["depth"]) for e in ckpt.get("deferred_queue") or []]
@@ -1283,12 +1369,13 @@ def bfs_crawl(
     else:
         pages = len(visited)
         sidebar_queue = [(start_url, 0)]
-        if not sidebar_first:
-            for seed_url in build_seed_urls(start_url, seed_url_patterns or [], hash_routes=hash_routes):
-                if normalize_url(seed_url) != start_norm:
-                    deferred_queue.append((seed_url, 1))
-            if seed_url_patterns:
-                print(f"[BFS] Seeded routes: {len(deferred_queue)}")
+        seed_count = 0
+        for seed_url in build_seed_urls(start_url, seed_url_patterns or [], hash_routes=hash_routes):
+            if normalize_url(seed_url) != start_norm:
+                deferred_queue.append((seed_url, 1))
+                seed_count += 1
+        if seed_count:
+            print(f"[BFS] Seeded routes: {seed_count}")
 
     def _queue_norms() -> set[str]:
         return {normalize_url(u) for u, _ in sidebar_queue + deferred_queue}
@@ -1538,6 +1625,7 @@ def bfs_crawl(
                 print(f"[BFS] Pruned duplicate queue URLs: {pruned[0] - pruned[1]}")
             _save_checkpoint(
                 checkpoint_path,
+                page_type=page_type,
                 visited=visited,
                 sidebar_queue=sidebar_queue,
                 deferred_queue=deferred_queue,
@@ -1646,9 +1734,11 @@ def crawl_postauth(app_name: str, cfg: dict) -> dict:
 
 
 def crawl_application(app_name: str, cfg: dict) -> dict:
-    print("pre-auth crawl...")
-    pre = crawl_preauth(app_name, cfg)
-    print(f"  {pre['pages']} pages, {pre['interactions_saved']} interactions saved")
+    pre = {"pages": 0, "interactions_saved": 0}
+    if cfg.get("crawl_pre_auth", True):
+        print("pre-auth crawl...")
+        pre = crawl_preauth(app_name, cfg)
+        print(f"  {pre['pages']} pages, {pre['interactions_saved']} interactions saved")
 
     print("post-auth crawl...")
     post = crawl_postauth(app_name, cfg)

@@ -203,6 +203,83 @@ APPS = {
         ],
         "mandatory_tab_labels": ["All", "Contacts", "Companies", "Deals"],
     },
+    "stripe": {
+        "pre_auth_home": "https://dashboard.stripe.com/login",
+        "login_url": "https://dashboard.stripe.com/login",
+        # Sandbox home — update /test/ → live paths if not using test mode.
+        "post_auth_home": "https://dashboard.stripe.com/test/dashboard",
+        "max_pages_pre_auth": 1,
+        "max_pages_post_auth": 80,
+        "max_interactions_per_page": 12,
+        "max_ranked_interactions": 15,
+        "max_interaction_depth": None,
+        "crawl_skip_screenshots": True,
+        # Stripe Sail SPA (db-NewChrome) needs time for CSSOM + sidebar render.
+        "crawl_wait_after_load_ms": 6000,
+        "crawl_use_networkidle": False,
+        # Seed routes up front (HubSpot-style) — sidebar discovery alone misses Payments sub-nav.
+        "crawl_sidebar_first": False,
+        "crawl_resume": True,
+        # Login is handled in post-auth ensure_auth(); skip crawling the login page.
+        "crawl_pre_auth": False,
+        "crawl_hash_routes": False,
+        "priority_url_patterns": [
+            "/test/dashboard",
+            "/test/payments",
+            "/test/customers",
+            "/test/payments/analytics",
+        ],
+        "seed_url_patterns": [
+            # Primary nav
+            "/test/dashboard",
+            "/test/balance/overview",
+            "/test/payments",
+            "/test/payouts",
+            "/test/customers",
+            "/test/products",
+            # Products → Payments sub-sidebar
+            "/test/payments/analytics",
+            "/test/disputes",
+            "/test/radar",
+            "/test/payment-links",
+            "/test/terminal",
+            # Other Products sections (common routes)
+            "/test/billing",
+            "/test/reporting",
+            "/test/apps",
+        ],
+        "list_detail_link_limits": [
+            {"pattern": "/test/customers/", "max_from_page": 3, "exclude_pattern": "/test/customers"},
+            {"pattern": "/test/payments/", "max_from_page": 2, "exclude_pattern": "/test/payments/analytics"},
+        ],
+        "global_link_limits": [
+            {"pattern": "/test/customers/cus_", "max_total": 5},
+            {"pattern": "/test/payments/pi_", "max_total": 5},
+        ],
+        "link_cross_page_rules": [],
+        "skip_url_patterns": [
+            "/settings",
+            "/support",
+            "/docs",
+            "stripe.com/docs",
+            "/developers",
+            "/logout",
+            "/login",
+            "/register",
+            "/reset",
+            "/account/onboarding",
+            "/identity",
+            "/legal",
+            "/privacy",
+            "/connect/accounts",
+        ],
+        "mandatory_tab_labels": [
+            "Payments",
+            "Payouts",
+            "Top-ups",
+            "All activity",
+        ],
+    },
 }
 
 

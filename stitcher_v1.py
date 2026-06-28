@@ -64,9 +64,76 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   })();
   // ── End HubSpot bootstrap ─────────────────────────────────────────────────
 
+  // ── Stripe dashboard static-clone bootstrap ───────────────────────────────
+  (function bootstrapStripeLayout() {
+    var html = document.documentElement;
+    if (!html) return;
+    if (window.location.hostname.indexOf("dashboard.stripe.com") === -1 &&
+        !document.querySelector("#dashboardRoot")) {
+      return;
+    }
+    if (!html.classList.contains("db-NewChrome")) {
+      html.classList.add("db-NewChrome");
+    }
+    var body = document.body;
+    if (body && !body.id) body.id = "merch";
+
+    // Empty sail portal shells sit on top of the page (inset:0, z-index:299)
+    // and swallow every click in the static clone.
+    Array.prototype.forEach.call(
+      document.querySelectorAll("body > .__sail-layer-containers"),
+      function (layer) {
+        if (!layer.children.length) {
+          layer.style.display = "none";
+          layer.style.pointerEvents = "none";
+          return;
+        }
+        layer.style.pointerEvents = "none";
+      }
+    );
+
+    var chrome = document.getElementById("chrome-layout");
+    if (chrome) chrome.style.pointerEvents = "auto";
+
+    var root = document.getElementById("dashboardRoot");
+    if (root) root.style.pointerEvents = "auto";
+
+    Array.prototype.forEach.call(
+      document.querySelectorAll("#chrome-layout-backdrop, [data-testid='backdrop']"),
+      function (el) {
+        el.style.display = "none";
+        el.style.pointerEvents = "none";
+      }
+    );
+  })();
+  // ── End Stripe bootstrap ──────────────────────────────────────────────────
+
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
     return all[id] || null;
+  }
+
+  function isExternalHref(href) {
+    return /^https?:\\/\\//i.test(href) && href.indexOf(location.origin) !== 0;
+  }
+
+  function eventTargetDeep(e) {
+    var list = (document.elementsFromPoint &&
+      document.elementsFromPoint(e.clientX, e.clientY)) || [e.target];
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      if (!el || el.nodeType !== 1 || !el.closest) continue;
+      if (
+        el.closest(
+          "a[data-stitch-page], a[data-stitch-go], [data-stitch-go], " +
+          "[data-stitch-accordion], [data-stitch-ui-id], [data-stitch-tab-id], " +
+          "a[href], button, [role='button']"
+        )
+      ) {
+        return el;
+      }
+    }
+    return e.target;
   }
 
   function showDemoHint(msg) {
@@ -240,7 +307,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     if (goTrigger) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = goTrigger.getAttribute("data-stitch-go");
+      window.location.assign(goTrigger.getAttribute("data-stitch-go") || "");
       return true;
     }
 
@@ -255,14 +322,14 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         return true;
       }
       if (href && href !== "#" && href.indexOf("javascript:") !== 0) {
-        if (/^https?:\\/\\//i.test(href) && href.indexOf(location.origin) !== 0) {
+        if (isExternalHref(href)) {
           e.preventDefault();
           e.stopPropagation();
           return true;
         }
         e.preventDefault();
         e.stopPropagation();
-        window.location.href = href;
+        window.location.assign(href);
         return true;
       }
     }
@@ -469,7 +536,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   document.addEventListener(
     "click",
     function (e) {
-      var t = e.target;
+      var t = eventTargetDeep(e);
       if (!t || !t.closest) return;
 
       // Clicks inside an open injected overlay: navigate local links / demo-select items.
@@ -496,6 +563,31 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         }
         console.log("[STITCH] Accordion Toggle", acc.getAttribute("data-stitch-accordion") || (panel && panel.id) || "?", expanded ? "→ collapse" : "→ expand");
         return;
+      }
+
+      // 1b. Woven page links beat ancestor interaction wrappers (mis-bound triggers).
+      var navA = t.closest("a[data-stitch-page], a[data-stitch-go]");
+      if (navA) {
+        if (navA.hasAttribute("data-stitch-unresolved")) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log("[STITCH] Sidebar Link (unresolved route)", navA.getAttribute("data-stitch-route") || "#");
+          showDemoHint();
+          return;
+        }
+        var navHref = navA.getAttribute("data-stitch-go") || navA.getAttribute("href") || "";
+        if (navHref && navHref !== "#" && navHref.indexOf("javascript:") !== 0) {
+          if (isExternalHref(navHref)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.assign(navHref);
+          console.log("[STITCH] Sidebar Link", navHref);
+          return;
+        }
       }
 
       // 2. Interaction → inject reconciled UI into the current page (no reload).
@@ -539,7 +631,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       if (goTrigger) {
         e.preventDefault();
         e.stopPropagation();
-        window.location.href = goTrigger.getAttribute("data-stitch-go");
+        window.location.assign(goTrigger.getAttribute("data-stitch-go") || "");
         return;
       }
 
@@ -583,6 +675,8 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     },
     true
   );
+
+  console.log("[STITCH] runtime ready");
 })();
 """
 
@@ -592,6 +686,7 @@ _ENTRY_TITLE_HINTS = ("dashboard",)
 _ENTRY_SLUG_HINTS = (
     "contacts-list-view-all",  # HubSpot — contacts list is the best landing page
     "global-home",             # HubSpot — home overview
+    "test-dashboard",          # Stripe sandbox home
     "home-dashboard",          # Zoho
     "dashboard",
     "home",
@@ -792,6 +887,68 @@ iframe[name*="mini-trial-guide"] {
     display: none !important;
 }
 
+/* ── Stripe dashboard fixes ───────────────────────────────────────────────── */
+/* Full-viewport sail portal shells (inset:0, z-index:299) block all clicks. */
+body > .__sail-layer-containers:empty {
+    display: none !important;
+    pointer-events: none !important;
+}
+body > .__sail-layer-containers {
+    pointer-events: none !important;
+}
+/* Captured Stripe CSS sets .as-4g { pointer-events:none } on #chrome-layout. */
+#chrome-layout,
+#chrome-layout.as-4g,
+#chrome-layout *,
+.as-4g {
+    pointer-events: auto !important;
+}
+#dashboardRoot {
+    pointer-events: auto !important;
+}
+#primary-nav,
+#primary-nav a,
+[data-testid="primary-nav"] a,
+a[data-stitch-page],
+#dashboardRoot a,
+#dashboardRoot button,
+#dashboardRoot [role="button"],
+#dashboardRoot [role="tab"],
+#dashboardRoot [role="menuitem"],
+[class*="db-Nav"] a,
+[class*="db-Nav"] button,
+[class*="sail-Nav"] a,
+[class*="sail-Nav"] button,
+[data-stitch-accordion],
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Invisible PressableCore overlays block button clicks in the static clone */
+.PressableCore-overlay,
+.PressableCore-overlay--isVisible {
+    pointer-events: none !important;
+}
+/* Stripe metrics iframe + hidden portal containers */
+iframe[name*="StripeMetrics"],
+iframe[name*="privateStripeMetrics"],
+.__sail-layer-containers[style*="display: none"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+[class*="Spinner"],
+[class*="LoadingOverlay"],
+[aria-busy="true"] {
+    display: none !important;
+}
+#chrome-layout-backdrop,
+[data-testid="backdrop"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+
 /* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
 [data-test-id="AvatarDisplay-avatarContent"] {
     width: 32px !important;
@@ -908,7 +1065,7 @@ def _write_entry_redirect(stitched_dir: Path, entry_slug: str) -> None:
         "<!doctype html>\n"
         '<html lang="en"><head><meta charset="utf-8">'
         f'<meta http-equiv="refresh" content="0; url={target}">'
-        f'<script>location.replace("{target}");</script>'
+        f'<script>location.href="{target}";</script>'
         f'</head><body>Redirecting to <a href="{target}">the clone</a>…</body></html>\n',
         encoding="utf-8",
     )
@@ -1010,6 +1167,26 @@ def _hubspot_extra_route_keys(url: str, slug: str) -> list[str]:
     return [_norm_route(k) for k in keys if k]
 
 
+def _stripe_extra_route_keys(url: str, slug: str) -> list[str]:
+    """Map Stripe sidebar routes to crawled page slugs when paths differ."""
+    path = urlparse(url or "").path
+    keys: list[str] = []
+    # Products → Payments sub-nav aliases
+    if "payments-analytics" in slug or path.endswith("/payments/analytics"):
+        keys += ["/test/payments/analytics", "/payments/analytics"]
+    if "disputes" in slug and "payments" not in slug:
+        keys += ["/test/disputes", "/disputes"]
+    if "payment-links" in slug:
+        keys += ["/test/payment-links", "/payment-links"]
+    if "terminal" in slug and "settings" not in slug:
+        keys += ["/test/terminal", "/terminal"]
+    if slug.startswith("test-dashboard") or path.endswith("/dashboard"):
+        keys += ["/test/dashboard", "/dashboard"]
+    if "test-payments" in slug and "analytics" not in slug and "disputes" not in slug:
+        keys += ["/test/payments", "/payments"]
+    return [_norm_route(k) for k in keys if k]
+
+
 def _build_route_index(
     page_dirs: list[Path], sitemap: list[dict], valid_slugs: set[str]
 ) -> dict[str, str]:
@@ -1032,6 +1209,8 @@ def _build_route_index(
             keys.add(_norm_route(parsed.path))
             keys.add(_norm_route(url))
         for alias in _hubspot_extra_route_keys(url, slug):
+            keys.add(alias)
+        for alias in _stripe_extra_route_keys(url, slug):
             keys.add(alias)
         for key in keys:
             if key:
@@ -1195,6 +1374,98 @@ def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) 
     return count
 
 
+_OVERSIZED_TRIGGER_IDS = frozenset({
+    "dashboardRoot", "merch", "chrome-layout-backdrop", "main-body",
+    "backboneModals", "nojsRoot",
+})
+_OVERSIZED_TRIGGER_TESTIDS = frozenset({
+    "world-root", "workbench-root",
+})
+_OVERSIZED_TRIGGER_CLASS_FRAGMENTS = (
+    "db-DashboardRoot",
+    "db-World-root",
+    "db-World-wrapper",
+)
+
+
+def _is_oversized_interaction_trigger(el) -> bool:
+    """True when el is too large to be an interaction trigger (mis-bind breaks nav)."""
+    if not getattr(el, "name", None):
+        return False
+    if (el.get("id") or "") in _OVERSIZED_TRIGGER_IDS:
+        return True
+    if (el.get("data-testid") or "") in _OVERSIZED_TRIGGER_TESTIDS:
+        return True
+    cls = " ".join(el.get("class") or [])
+    if any(frag in cls for frag in _OVERSIZED_TRIGGER_CLASS_FRAGMENTS):
+        return True
+    if el.name == "main":
+        return True
+    if el.find(attrs={"data-testid": re.compile(r"^primary-nav-item-link")}):
+        return True
+    if el.find(attrs={"data-testid": "world-root"}):
+        return True
+    if el.find(id="primary-nav"):
+        return True
+    root = el.find(id="dashboardRoot")
+    if root is not None and root is not el:
+        return True
+    # Heuristic: real triggers are small; wrappers match thousands of nodes.
+    if len(list(el.descendants)) > 400:
+        return True
+    return False
+
+
+def _prepare_stripe_stitched_dom(soup: BeautifulSoup) -> int:
+    """Remove click-blocking Stripe portal shells from stitched pages."""
+    if not soup.find(id="dashboardRoot"):
+        return 0
+    body = soup.body
+    if not body:
+        return 0
+    removed = 0
+    for layer in list(body.find_all("div", recursive=False)):
+        classes = " ".join(layer.get("class") or [])
+        if "__sail-layer-containers" not in classes:
+            continue
+        if not layer.find(True):
+            layer.decompose()
+            removed += 1
+            continue
+        style = layer.get("style") or ""
+        if "pointer-events" not in style:
+            layer["style"] = (style + "; pointer-events: none").strip("; ")
+    chrome = soup.find(id="chrome-layout")
+    if chrome is not None:
+        style = chrome.get("style") or ""
+        if "pointer-events" not in style:
+            chrome["style"] = (style + "; pointer-events: auto").strip("; ")
+    root = soup.find(id="dashboardRoot")
+    if root is not None:
+        style = root.get("style") or ""
+        if "pointer-events" not in style:
+            root["style"] = (style + "; pointer-events: auto").strip("; ")
+    for backdrop in soup.find_all(id="chrome-layout-backdrop"):
+        backdrop["style"] = ((backdrop.get("style") or "") + "; display: none; pointer-events: none").strip("; ")
+    return removed
+
+
+def _cleanup_oversized_ui_triggers(soup: BeautifulSoup) -> int:
+    """Strip data-stitch-ui-id from container nodes that should never be triggers."""
+    removed = 0
+    for el in soup.find_all(attrs={"data-stitch-ui-id": True}):
+        if _is_oversized_interaction_trigger(el):
+            del el["data-stitch-ui-id"]
+            removed += 1
+            continue
+        # Empty wrapper divs mis-tagged during attribute scoring.
+        text = el.get_text(" ", strip=True)
+        if len(text) < 2 and not el.find(["a", "button"]) and not el.find(attrs={"role": "button"}):
+            del el["data-stitch-ui-id"]
+            removed += 1
+    return removed
+
+
 def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
     """Locate the trigger element in the snapshot DOM using stable attributes.
 
@@ -1209,7 +1480,7 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
             continue
         try:
             for el in soup.select(sel):
-                if id(el) not in used:
+                if id(el) not in used and not _is_oversized_interaction_trigger(el):
                     return el
         except Exception:
             pass
@@ -1217,7 +1488,7 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
     tid = (trigger.get("id") or "").strip()
     if tid:
         el = soup.find(id=tid)
-        if el is not None and id(el) not in used:
+        if el is not None and id(el) not in used and not _is_oversized_interaction_trigger(el):
             return el
 
     tag = (trigger.get("tag_name") or "").lower() or True
@@ -1259,6 +1530,8 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
         if ttype and el.get("type") == ttype:
             score += 8
         if score > best_score:
+            if _is_oversized_interaction_trigger(el):
+                continue
             best = el
             best_score = score
 
@@ -1514,6 +1787,8 @@ def _wire_from_discovered(
         elif llm_type == "interaction":
             item = inter_idx.get(selector)
             if not item:
+                continue
+            if _is_oversized_interaction_trigger(el):
                 continue
             ipath = item.get("interaction_path", "")
             if not ipath:
@@ -1939,8 +2214,14 @@ def _process_html(
     # Main pages only: drop coaching popovers / banners captured in open state.
     if page_dir is not None:
         _strip_baked_onboarding_ui(soup)
+    ui_cleaned = _cleanup_oversized_ui_triggers(soup)
+    if ui_cleaned:
+        print(f"[STITCH] Removed oversized ui-id from {ui_cleaned} element(s) on {page_dir.name if page_dir else '?'}")
     # Final pass: undo any temporary disabled/loading state before writing.
     fixes = _neutralize_disabled_state(soup)
+    stripe_layers = _prepare_stripe_stitched_dom(soup)
+    if stripe_layers:
+        print(f"[STITCH] Removed {stripe_layers} empty sail-layer shell(s) on {page_dir.name if page_dir else '?'}")
     _inject_runtime(soup, to_root, configs, tabs_configs)
     return _fix_svg_viewbox_html(str(soup)), page_links, inter_manifest, accordions, fixes
 
@@ -1966,10 +2247,21 @@ def _load_interactions(page_dir: Path) -> list[dict]:
 
 
 _FONT_EXTS = {".woff", ".woff2", ".ttf", ".eot", ".otf"}
-_FONT_CDN_MARKERS = ("static2.hubspot.com", "fonts.hubspot.com", "fonts.gstatic.com")
+_FONT_CDN_MARKERS = (
+    "static2.hubspot.com",
+    "fonts.hubspot.com",
+    "fonts.gstatic.com",
+    "b.stripecdn.com",
+    "stripe.com",
+)
 
 
-_HS_CSS_CDN_MARKERS = ("static.hsappstatic.net", "hubspot.com")
+_CDN_CSS_MARKERS = (
+    "static.hsappstatic.net",
+    "hubspot.com",
+    "b.stripecdn.com",
+    "dashboard.stripe.com",
+)
 
 
 def _fix_escaped_attr_quotes(html: str) -> str:
@@ -1988,15 +2280,10 @@ def _fix_escaped_attr_quotes(html: str) -> str:
 
 
 def _localize_hubspot_css(html: str, css_dir: Path, to_root: str) -> str:
-    """Download HubSpot CDN CSS files and rewrite <link> tags to local paths.
+    """Download CDN CSS files and rewrite <link> tags to local paths.
 
-    External CSS files from static.hsappstatic.net load fine in a real browser
-    but can silently fail from localhost (referrer checks, CORP headers, or plain
-    network latency). Downloading them once at stitch time and serving locally
-    ensures the clone renders identically regardless of CDN availability.
-
-    Only stylesheet <link> tags pointing to HubSpot CDNs are rewritten; other
-    external links are left unchanged.
+    External CSS from HubSpot / Stripe CDNs can fail from localhost (referrer
+    checks, CORP headers, latency). Download once at stitch time and serve locally.
     """
     seen: dict[str, str] = {}
 
@@ -2006,7 +2293,7 @@ def _localize_hubspot_css(html: str, css_dir: Path, to_root: str) -> str:
         if not href_m:
             return tag
         url = href_m.group(2)
-        if not any(marker in url for marker in _HS_CSS_CDN_MARKERS):
+        if not any(marker in url for marker in _CDN_CSS_MARKERS):
             return tag
         base_url = url.split("?")[0]
         if base_url in seen:
