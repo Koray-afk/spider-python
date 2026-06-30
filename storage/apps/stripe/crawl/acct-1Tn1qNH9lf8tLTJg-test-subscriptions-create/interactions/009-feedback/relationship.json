@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions/create",
+  "source_title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Feedback?",
+    "id": "",
+    "class_name": "UnstyledLink ButtonLink IconParent Flex-flex",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#merch > div:nth-of-type(5) > div:nth-of-type(10) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"8\"]",
+    "xpath": "/html[1]/body[1]/div[5]/div[10]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1]/button[1]",
+    "outer_html": "<button class=\"UnstyledLink ButtonLink IconParent Flex-flex\" href=\"\" type=\"button\" data-crawl-id=\"8\"><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--flexStart\" style=\"line-height: 0; flex: 1 1 auto;\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--feedback Icon-color Icon-color--gray600 Box-root Margin-right--4 Flex-flex\" style=\"transform: translateY(1.07px);\"><svg height=\"12\" viewBox=\"0 0 19 19\" width=\"12\" xmlns=\"http://www.w3.org/2000/svg\" margin=\"[object Object]\" aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--feedback-svg Icon-color-svg Icon-color--gray600-svg\"><path d=\"M2.666 11.995a304.44 304.44 0 0 1-1.841-.776s-.41-.14-.558-.638c-.148-.498-.187-1.058 0-1.627.187-.57.558-.735.558-.735s9.626-4.07 13.64-5.43c.53-.179 1.18-.156 1.18-.156C17.607 2.702 19 6.034 19 9.9c0 3.866-1.62 6.808-3.354 6.84 0 0-.484.1-1.18-.135-2.189-.733-5.283-1.946-7.971-3.035-.114-.045-.31-.13-.338.177v.589c0 .56-.413.833-.923.627l-1.405-.566c-.51-.206-.923-.822-.923-1.378v-.63c.018-.29-.162-.362-.24-.394zM15.25 15.15c1.367 0 2.475-2.462 2.475-5.5s-1.108-5.5-2.475-5.5-2.475 2.462-2.475 5.5 1.108 5.5 2.475 5.5z\" fill=\"evenodd\"></path></svg></div><span class=\"ButtonLink-label Text-color--gray600 Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\">Feedback?</span></div></div></button>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions",
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button class=\"UnstyledLink ButtonLink IconParent Flex-flex\" href=\"\" type=\"button\" data-crawl-id=\"8\"><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--flexStart\" style=\"line-height: 0; flex: 1 1 auto;\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--feedback Icon-color Icon-color--gray600 Box-root Margin-right--4 Flex-flex\" style=\"transform: translateY(1.07px);\"><svg height=\"12\" viewBox=\"0 0 19 19\" width=\"12\" xmlns=\"http://www.w3.org/2000/svg\" margin=\"[object Object]\" aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--feedback-svg Icon-color-svg Icon-color--gray600-svg\"><path d=\"M2.666 11.995a304.44 304.44 0 0 1-1.841-.776s-.41-.14-.558-.638c-.148-.498-.187-1.058 0-1.627.187-.57.558-.735.558-.735s9.626-4.07 13.64-5.43c.53-.179 1.18-.156 1.18-.156C17.607 2.702 19 6.034 19 9.9c0 3.866-1.62 6.808-3.354 6.84 0 0-.484.1-1.18-.135-2.189-.733-5.283-1.946-7.971-3.035-.114-.045-.31-.13-.338.177v.589c0 .56-.413.833-.923.627l-1.405-.566c-.51-.206-.923-.822-.923-1.378v-.63c.018-.29-.162-.362-.24-.394zM15.25 15.15c1.367 0 2.475-2.462 2.475-5.5s-1.108-5.5-2.475-5.5-2.475 2.462-2.475 5.5 1.108 5.5 2.475 5.5z\" fill=\"evenodd\"></path></svg></div><span class=\"ButtonLink-label Text-color--gray600 Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\">Feedback?</span></div></div></button>",
+  "trigger_label": "Feedback?",
+  "trigger_id": "",
+  "trigger_class": "UnstyledLink ButtonLink IconParent Flex-flex",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions",
+  "target_title": "Subscriptions \u2013 New business \u2013 Stripe [Test]"
+}

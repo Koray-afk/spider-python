@@ -223,12 +223,12 @@ def serve_app(
     except OSError as exc:
         raise OSError(f"Could not bind to port {port}: {exc}. Try --port <other>.") from exc
 
-    url = f"http://localhost:{port}"
+    url = f"http://localhost:{port}{entry_path}"
     print("[SERVER]")
     print(f"Serving:\n{stitched_dir.resolve()}")
     print("[SERVER]")
     print(f"URL:\n{url}")
-    print(f"[SERVER] Entry: {entry_path}")
+    print(f"[SERVER] Root redirect: / → {entry_path}")
     if watch:
         print("[SERVER] Watch mode: open tabs auto-reload on file changes")
     print("[SERVER] Press Ctrl+C to stop")

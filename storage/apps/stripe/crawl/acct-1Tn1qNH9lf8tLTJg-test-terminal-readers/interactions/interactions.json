@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Status",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-status",
+    "relationship_file": "interactions/001-status/relationship.json"
+  },
+  {
+    "label": "Last seen",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-last-seen",
+    "relationship_file": "interactions/002-last-seen/relationship.json"
+  },
+  {
+    "label": "Location name",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-location-name",
+    "relationship_file": "interactions/003-location-name/relationship.json"
+  },
+  {
+    "label": "Reader name",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-reader-name",
+    "relationship_file": "interactions/004-reader-name/relationship.json"
+  },
+  {
+    "label": "Serial number",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/005-serial-number",
+    "relationship_file": "interactions/005-serial-number/relationship.json"
+  },
+  {
+    "label": "Reader type",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/006-reader-type",
+    "relationship_file": "interactions/006-reader-type/relationship.json"
+  },
+  {
+    "label": "More filters",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/007-more-filters",
+    "relationship_file": "interactions/007-more-filters/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/008-n-test-mode-new-business",
+    "relationship_file": "interactions/008-n-test-mode-new-business/relationship.json"
+  }
+]

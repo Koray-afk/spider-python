@@ -1,0 +1,3962 @@
+{
+  "acct-1Tn1qNH9lf8tLTJg-test-acceptance": {
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/acceptance",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "radar": "../radar/page.html",
+      "reports-hub": "../reports-hub/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Card type",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-card-type/page.html"
+      },
+      {
+        "label": "Card country",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-card-country/page.html"
+      },
+      {
+        "label": "Card brand",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-card-brand/page.html"
+      },
+      {
+        "label": "Interaction type",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-interaction-type/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/005-more-filters/page.html"
+      },
+      {
+        "label": "Summarise my acceptance analytics",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/006-summarise-my-acceptance-analytics/page.html"
+      },
+      {
+        "label": "Card type",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/001-card-type/page.html"
+      },
+      {
+        "label": "Card country",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/002-card-country/page.html"
+      },
+      {
+        "label": "Card brand",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/003-card-brand/page.html"
+      },
+      {
+        "label": "Interaction type",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/004-interaction-type/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/005-more-filters/page.html"
+      },
+      {
+        "label": "Summarise my acceptance analytics",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/006-summarise-my-acceptance-analytics/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-apps-created": {
+    "title": "Apps overview \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/apps/created",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-created": "../acct-1Tn1qNH9lf8tLTJg-test-apps-created/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": {
+    "title": "Installed apps \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/apps/installed",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-created": "../acct-1Tn1qNH9lf8tLTJg-test-apps-created/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-authentication": {
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/authentication?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "radar": "../radar/page.html",
+      "reports-hub": "../reports-hub/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Summarise my authentication analytics",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-summarise-my-authentication-analytics/page.html"
+      },
+      {
+        "label": "Card type",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-card-type/page.html"
+      },
+      {
+        "label": "Card country",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-card-country/page.html"
+      },
+      {
+        "label": "Card brand",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-card-brand/page.html"
+      },
+      {
+        "label": "Currency",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-currency/page.html"
+      },
+      {
+        "label": "Interaction type",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/009-interaction-type/page.html"
+      },
+      {
+        "label": "Retry status",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/010-retry-status/page.html"
+      },
+      {
+        "label": "Summarise my authentication analytics",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-summarise-my-authentication-analytics/page.html"
+      },
+      {
+        "label": "Card type",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/005-card-type/page.html"
+      },
+      {
+        "label": "Card country",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/006-card-country/page.html"
+      },
+      {
+        "label": "Card brand",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/007-card-brand/page.html"
+      },
+      {
+        "label": "Currency",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/008-currency/page.html"
+      },
+      {
+        "label": "Interaction type",
+        "type": "modal",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/009-interaction-type/page.html"
+      },
+      {
+        "label": "Retry status",
+        "type": "modal",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/010-retry-status/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/all-activity",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payouts": "../acct-1Tn1qNH9lf8tLTJg-test-payouts/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-topups": "../acct-1Tn1qNH9lf8tLTJg-test-topups/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": "../acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Currency",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-currency/page.html"
+      },
+      {
+        "label": "Type",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-type/page.html"
+      },
+      {
+        "label": "Balance type",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-balance-type/page.html"
+      },
+      {
+        "label": "Created",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-created/page.html"
+      },
+      {
+        "label": "Available on",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-available-on/page.html"
+      },
+      {
+        "label": "Currency",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/004-currency/page.html"
+      },
+      {
+        "label": "Type",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/005-type/page.html"
+      },
+      {
+        "label": "Balance type",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/006-balance-type/page.html"
+      },
+      {
+        "label": "Created",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/007-created/page.html"
+      },
+      {
+        "label": "Available on",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/008-available-on/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/009-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/010-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/012-close-workbench/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": {
+    "title": "Balance overview \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/overview?currency=gbp",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation": "../acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-close-workbench/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-billing": {
+    "title": "Billing overview \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-invoices-create": "../acct-1Tn1qNH9lf8tLTJg-test-invoices-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-billing-migrations": {
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing/migrations",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-migrations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-migrations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-close-workbench/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-billing-revenue": {
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing/revenue",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume": "../acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations": {
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing/subscriptions/simulations",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-migrations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-migrations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Copy link",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/007-close-workbench/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-coupons": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/coupons",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-filter/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/001-filter/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports": {
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/crypto-onramp/reports",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume": "../acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Copy link",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/003-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-workbench-options/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-customers": {
+    "title": "Customers \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-invoices-create": "../acct-1Tn1qNH9lf8tLTJg-test-invoices-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-filter/page.html"
+      },
+      {
+        "label": "All",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/001-all/page.html"
+      },
+      {
+        "label": "Remaining balances",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-remaining-balances/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/004-filter/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-dashboard": {
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/dashboard#",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume": "../acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Set up recurring payments",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/003-set-up-recurring-payments/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-data-management": {
+    "title": "Data Pipeline settings \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/data-management",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Set up tax collection",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/003-set-up-tax-collection/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-disputes": {
+    "title": "Disputes \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/disputes?statuses[0]=needs_response&statuses[1]=warning_needs_response&evidence_due_by[gt]=1782153000&sort=evidence_due_by&order=asc",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Status\nNeeds response\nNeeds response (enquiry)",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-status-needs-response-needs-response-enquiry/page.html"
+      },
+      {
+        "label": "Evidence due by\nAfter 23 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-evidence-due-by-after-23-jun-2026/page.html"
+      },
+      {
+        "label": "Reason",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-reason/page.html"
+      },
+      {
+        "label": "Amount",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-amount/page.html"
+      },
+      {
+        "label": "Disputed date",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-disputed-date/page.html"
+      },
+      {
+        "label": "Export",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/009-export/page.html"
+      },
+      {
+        "label": "Status\nNeeds response\nNeeds response (enquiry)",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/004-status-needs-response-needs-response-enquiry/page.html"
+      },
+      {
+        "label": "Evidence due by\nAfter 23 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/005-evidence-due-by-after-23-jun-2026/page.html"
+      },
+      {
+        "label": "Reason",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/006-reason/page.html"
+      },
+      {
+        "label": "Amount",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/007-amount/page.html"
+      },
+      {
+        "label": "Disputed date",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/008-disputed-date/page.html"
+      },
+      {
+        "label": "Export",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/009-export/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/010-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/011-workbench-options/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": {
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/disputes-analytics?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-features": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/features?active=true",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "All features",
+        "type": "tab-switch",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-all-features/page.html"
+      },
+      {
+        "label": "Active",
+        "type": "tab-switch",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-active/page.html"
+      },
+      {
+        "label": "Archived",
+        "type": "tab-switch",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-archived/page.html"
+      },
+      {
+        "label": "Create feature\nN",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-create-feature-n/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-invoices-create": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/invoices/create",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Add name",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-add-name/page.html"
+      },
+      {
+        "label": "Add name",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-add-name/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-optimization": {
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/optimization",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-payment-links": {
+    "title": "Payment Links \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-links",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/005-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-links/create",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Add new product",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/003-add-new-product/page.html"
+      },
+      {
+        "label": "Products or subscriptions",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-products-or-subscriptions/page.html"
+      },
+      {
+        "label": "Advanced options",
+        "type": "unknown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-advanced-options/page.html"
+      },
+      {
+        "label": "Use your domain",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-use-your-domain/page.html"
+      },
+      {
+        "label": "Add new product",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/003-add-new-product/page.html"
+      },
+      {
+        "label": "Products or subscriptions",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/004-products-or-subscriptions/page.html"
+      },
+      {
+        "label": "Advanced options",
+        "type": "unknown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/006-advanced-options/page.html"
+      },
+      {
+        "label": "Use your domain",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/007-use-your-domain/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": {
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-methods?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-payments": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments?created[gte]=1782239400&created[lte]=1782844199",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payouts": "../acct-1Tn1qNH9lf8tLTJg-test-payouts/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-topups": "../acct-1Tn1qNH9lf8tLTJg-test-topups/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": "../acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date and time\n24 Jun 2026 - 30 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-date-and-time-24-jun-2026-30-jun-2026/page.html"
+      },
+      {
+        "label": "Amount",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-amount/page.html"
+      },
+      {
+        "label": "Currency",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-currency/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-status/page.html"
+      },
+      {
+        "label": "Payment method",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-payment-method/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/009-more-filters/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/010-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date and time\n24 Jun 2026 - 30 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-date-and-time-24-jun-2026-30-jun-2026/page.html"
+      },
+      {
+        "label": "Amount",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/005-amount/page.html"
+      },
+      {
+        "label": "Currency",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/006-currency/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/007-status/page.html"
+      },
+      {
+        "label": "Payment method",
+        "type": "modal",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/008-payment-method/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/009-more-filters/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/010-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-payouts": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payouts",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payouts": "../acct-1Tn1qNH9lf8tLTJg-test-payouts/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-topups": "../acct-1Tn1qNH9lf8tLTJg-test-topups/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": "../acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/pricing-tables",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-products": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/products?active=true",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Status\nActive",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-status-active/page.html"
+      },
+      {
+        "label": "Product category",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-product-category/page.html"
+      },
+      {
+        "label": "Created",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-created/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Status\nActive",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/001-status-active/page.html"
+      },
+      {
+        "label": "Product category",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/002-product-category/page.html"
+      },
+      {
+        "label": "Created",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/003-created/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": "../acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": "../acct-1Tn1qNH9lf8tLTJg-test-radar-insights/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp/page.html",
+      "radar": "../radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "All rule matches\n0",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-all-rule-matches-0/page.html"
+      },
+      {
+        "label": "3D Secure\n0",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-3d-secure-0/page.html"
+      },
+      {
+        "label": "Block\n0",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-block-0/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/008-workbench-options/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp": {
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/cbmp",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/cbmp/vamp",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/insights",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": "../acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": "../acct-1Tn1qNH9lf8tLTJg-test-radar-insights/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-more-filters/page.html"
+      },
+      {
+        "label": "Risk score",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-risk-score/page.html"
+      },
+      {
+        "label": "Card BIN",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-card-bin/page.html"
+      },
+      {
+        "label": "Card brand",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-card-brand/page.html"
+      },
+      {
+        "label": "Digital wallet",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-digital-wallet/page.html"
+      },
+      {
+        "label": "Card country",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/009-card-country/page.html"
+      },
+      {
+        "label": "IP country",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/010-ip-country/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-more-filters/page.html"
+      },
+      {
+        "label": "Risk score",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/005-risk-score/page.html"
+      },
+      {
+        "label": "Card BIN",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/006-card-bin/page.html"
+      },
+      {
+        "label": "Card brand",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/007-card-brand/page.html"
+      },
+      {
+        "label": "Digital wallet",
+        "type": "modal",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/008-digital-wallet/page.html"
+      },
+      {
+        "label": "Card country",
+        "type": "modal",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/009-card-country/page.html"
+      },
+      {
+        "label": "IP country",
+        "type": "modal",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/010-ip-country/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/reviews",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": "../acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": "../acct-1Tn1qNH9lf8tLTJg-test-radar-insights/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/012-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "All reviews\n0",
+        "type": "tab-switch",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-all-reviews-0/page.html"
+      },
+      {
+        "label": "Refund recommendations\n0",
+        "type": "tab-switch",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-refund-recommendations-0/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/008-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/009-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/011-close-workbench/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "unknown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/012-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rule-details?ruleId=block_if_high_risk&startDate=2026-06-27&endDate=2026-06-28",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "28 Jun\u201330 Jun",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-28-jun-30-jun/page.html"
+      },
+      {
+        "label": "Info",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-info/page.html"
+      },
+      {
+        "label": "Download",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-download/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "28 Jun\u201330 Jun",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/001-28-jun-30-jun/page.html"
+      },
+      {
+        "label": "Info",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/002-info/page.html"
+      },
+      {
+        "label": "Download",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-download/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rules",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": "../acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": "../acct-1Tn1qNH9lf8tLTJg-test-radar-insights/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date matched\n28 Jun 2026 \u2192 30 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-date-matched-28-jun-2026-30-jun-2026/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-status/page.html"
+      },
+      {
+        "label": "Category",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-category/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date matched\n28 Jun 2026 \u2192 30 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/001-date-matched-28-jun-2026-30-jun-2026/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/002-status/page.html"
+      },
+      {
+        "label": "Category",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/003-category/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports": {
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees": "../acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation": "../acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-reporting": "../acct-1Tn1qNH9lf8tLTJg-test-tax-reporting/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports": "../acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees": {
+    "title": "Plans and fees \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/all-fees",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/008-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/007-close-workbench/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "unknown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/008-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": {
+    "title": "Balance \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/balance",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-hub": "../acct-1Tn1qNH9lf8tLTJg-test-reports-hub/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgiL3nmVbX": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgiL3nmVbX/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJg65nV6LWA": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJg65nV6LWA/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgBndFcfpf": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgBndFcfpf/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\n28 Jun 2026 \u2192 29 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-28-jun-2026-29-jun-2026/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date range\n28 Jun 2026 \u2192 29 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-28-jun-2026-29-jun-2026/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports-balance-activity-breakdown": {
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/balance/activity-breakdown?startDate=2026-06-28&endDate=2026-06-29&currency=gbp&timezone=Asia%2FCalcutta",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-hub": "../acct-1Tn1qNH9lf8tLTJg-test-reports-hub/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports-hub": {
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/hub",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees": "../acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation": "../acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-reporting": "../acct-1Tn1qNH9lf8tLTJg-test-tax-reporting/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports": "../acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Set up tax collection",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-set-up-tax-collection/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Set up tax collection",
+        "type": "unknown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-set-up-tax-collection/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/net-volume?t=last7Days&g=day",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-revenue": "../acct-1Tn1qNH9lf8tLTJg-test-billing-revenue/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation": {
+    "title": "Payout reconciliation \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/reconciliation",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-hub": "../acct-1Tn1qNH9lf8tLTJg-test-reports-hub/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oeH9lf8tLTJgYdaBIFeS": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oeH9lf8tLTJgYdaBIFeS/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance-activity-breakdown": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance-activity-breakdown/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\n28 Jun 2026 \u2192 29 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-date-range-28-jun-2026-29-jun-2026/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date range\n28 Jun 2026 \u2192 29 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-date-range-28-jun-2026-29-jun-2026/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": {
+    "title": "Revenue Recognition \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recognition",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": {
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations": {
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery/automations",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails": {
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery/emails",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries": {
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery/retries",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": {
+    "title": "Sandboxes \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sandboxes",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/shipping-rates",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Create shipping rate\nN",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-create-shipping-rate-n/page.html"
+      },
+      {
+        "label": "Set up recurring payments",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-set-up-recurring-payments/page.html"
+      },
+      {
+        "label": "Create shipping rate\nN",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-create-shipping-rate-n/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": "../acct-1Tn1qNH9lf8tLTJg-test-sandboxes/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJg65nV6LWA": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oJH9lf8tLTJg65nV6LWA?originId=balance_change_from_activity_dashboard_chart",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": "../acct-1Tn1qNH9lf8tLTJg-test-sandboxes/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgBndFcfpf": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oJH9lf8tLTJgBndFcfpf?originId=payouts_summary_dashboard_chart",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": "../acct-1Tn1qNH9lf8tLTJg-test-sandboxes/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgiL3nmVbX": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oJH9lf8tLTJgiL3nmVbX?originId=balance_summary_dashboard_chart",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": "../acct-1Tn1qNH9lf8tLTJg-test-sandboxes/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oeH9lf8tLTJgYdaBIFeS": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oeH9lf8tLTJgYdaBIFeS?originId=balance_summary_dashboard_chart",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": "../acct-1Tn1qNH9lf8tLTJg-test-sandboxes/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/templates/Gross%20Volume?originId=account_home_gross_volume_line_chart&autorun=direct_from_chart",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-sandboxes": "../acct-1Tn1qNH9lf8tLTJg-test-sandboxes/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": {
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?status=active",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-migrations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-migrations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create": {
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions/create",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing-migrations": "../acct-1Tn1qNH9lf8tLTJg-test-billing-migrations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Add product",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-add-product/page.html"
+      },
+      {
+        "label": "Add trial",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/003-add-trial/page.html"
+      },
+      {
+        "label": "Add coupon",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-add-coupon/page.html"
+      },
+      {
+        "label": "Add trial days",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-add-trial-days/page.html"
+      },
+      {
+        "label": "30 Jun 2026",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/007-30-jun-2026/page.html"
+      },
+      {
+        "label": "More options",
+        "type": "dropdown",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/008-more-options/page.html"
+      },
+      {
+        "label": "Feedback?",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/009-feedback/page.html"
+      },
+      {
+        "label": "Add product",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/002-add-product/page.html"
+      },
+      {
+        "label": "Add trial",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-add-trial/page.html"
+      },
+      {
+        "label": "Add coupon",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-add-coupon/page.html"
+      },
+      {
+        "label": "Add trial days",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-add-trial-days/page.html"
+      },
+      {
+        "label": "30 Jun 2026",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/007-30-jun-2026/page.html"
+      },
+      {
+        "label": "More options",
+        "type": "dropdown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/008-more-options/page.html"
+      },
+      {
+        "label": "Feedback?",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/009-feedback/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/tax-rates",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Create tax rate\nN",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/002-create-tax-rate-n/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-filter/page.html"
+      },
+      {
+        "label": "Export",
+        "type": "dropdown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/005-export/page.html"
+      },
+      {
+        "label": "Create tax rate\nN",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-create-tax-rate-n/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-filter/page.html"
+      },
+      {
+        "label": "Export",
+        "type": "dropdown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-export/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-tax-reporting": {
+    "title": "Tax \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/tax/reporting",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Set up recurring payments",
+        "type": "tab-switch",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-set-up-recurring-payments/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-close-workbench/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-terminal": {
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-locations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-readers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-shop": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-shop/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders": {
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/hardware_orders",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-shop": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-shop/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-locations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-readers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-status/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-status/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/005-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations": {
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/locations",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-locations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-readers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": []
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers": {
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/readers",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-locations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-readers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-status/page.html"
+      },
+      {
+        "label": "Last seen",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-last-seen/page.html"
+      },
+      {
+        "label": "Location name",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-location-name/page.html"
+      },
+      {
+        "label": "Reader name",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-reader-name/page.html"
+      },
+      {
+        "label": "Serial number",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/005-serial-number/page.html"
+      },
+      {
+        "label": "Reader type",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/006-reader-type/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/007-more-filters/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/008-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/001-status/page.html"
+      },
+      {
+        "label": "Last seen",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/002-last-seen/page.html"
+      },
+      {
+        "label": "Location name",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/003-location-name/page.html"
+      },
+      {
+        "label": "Reader name",
+        "type": "modal",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/004-reader-name/page.html"
+      },
+      {
+        "label": "Serial number",
+        "type": "modal",
+        "ui_id": "interaction_13",
+        "has_ui": true,
+        "fallback": "interactions/005-serial-number/page.html"
+      },
+      {
+        "label": "Reader type",
+        "type": "modal",
+        "ui_id": "interaction_14",
+        "has_ui": true,
+        "fallback": "interactions/006-reader-type/page.html"
+      },
+      {
+        "label": "More filters",
+        "type": "modal",
+        "ui_id": "interaction_15",
+        "has_ui": true,
+        "fallback": "interactions/007-more-filters/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_16",
+        "has_ui": true,
+        "fallback": "interactions/008-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-terminal-shop": {
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/shop",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-shop": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-shop/page.html"
+    },
+    "interactions": [
+      {
+        "label": "United Kingdom",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-united-kingdom/page.html"
+      },
+      {
+        "label": "Payment type",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-payment-type/page.html"
+      },
+      {
+        "label": "Compatible SDKs",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/003-compatible-sdks/page.html"
+      },
+      {
+        "label": "Connectivity",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-connectivity/page.html"
+      },
+      {
+        "label": "Device type",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/005-device-type/page.html"
+      },
+      {
+        "label": "Cart\n0",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/006-cart-0/page.html"
+      },
+      {
+        "label": "United Kingdom",
+        "type": "dropdown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/001-united-kingdom/page.html"
+      },
+      {
+        "label": "Payment type",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/002-payment-type/page.html"
+      },
+      {
+        "label": "Compatible SDKs",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/003-compatible-sdks/page.html"
+      },
+      {
+        "label": "Connectivity",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/004-connectivity/page.html"
+      },
+      {
+        "label": "Device type",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/005-device-type/page.html"
+      },
+      {
+        "label": "Cart\n0",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/006-cart-0/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-topups": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/topups",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payouts": "../acct-1Tn1qNH9lf8tLTJg-test-payouts/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-topups": "../acct-1Tn1qNH9lf8tLTJg-test-topups/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": "../acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "acct-1Tn1qNH9lf8tLTJg-test-workbench-overview": {
+    "title": "",
+    "url": "",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-workbench-overview": "../acct-1Tn1qNH9lf8tLTJg-test-workbench-overview/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-workbench-options/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/001-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-workbench-options/page.html"
+      }
+    ]
+  },
+  "radar": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/radar",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": "../acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": "../acct-1Tn1qNH9lf8tLTJg-test-radar-insights/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp/page.html",
+      "radar": "../radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Payment method",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/007-payment-method/page.html"
+      },
+      {
+        "label": "All rule matches\n0",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-all-rule-matches-0/page.html"
+      },
+      {
+        "label": "3D Secure\n0",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-3d-secure-0/page.html"
+      },
+      {
+        "label": "Allow\n0",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/003-allow-0/page.html"
+      },
+      {
+        "label": "Payment method",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/007-payment-method/page.html"
+      }
+    ]
+  },
+  "reports-hub": {
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/reports/hub",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees": "../acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation": "../acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-data-management": "../acct-1Tn1qNH9lf8tLTJg-test-data-management/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-authentication": "../acct-1Tn1qNH9lf8tLTJg-test-authentication/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics": "../acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-methods": "../acct-1Tn1qNH9lf8tLTJg-test-payment-methods/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-optimization": "../acct-1Tn1qNH9lf8tLTJg-test-optimization/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-reporting": "../acct-1Tn1qNH9lf8tLTJg-test-tax-reporting/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports": "../acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Workbench options",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-workbench-options/page.html"
+      }
+    ]
+  },
+  "test-apps": {
+    "title": "Installed apps \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/apps",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-installed": "../acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-apps-created": "../acct-1Tn1qNH9lf8tLTJg-test-apps-created/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": []
+  },
+  "test-balance-overview": {
+    "title": "Balance overview \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/balance/overview",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-balance": "../acct-1Tn1qNH9lf8tLTJg-test-reports-balance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation": "../acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Set up recurring payments",
+        "type": "unknown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-set-up-recurring-payments/page.html"
+      },
+      {
+        "label": "Set up tax collection",
+        "type": "unknown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-set-up-tax-collection/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Set up recurring payments",
+        "type": "unknown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/002-set-up-recurring-payments/page.html"
+      },
+      {
+        "label": "Set up tax collection",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/004-set-up-tax-collection/page.html"
+      }
+    ]
+  },
+  "test-billing": {
+    "title": "Billing overview \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/billing",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-invoices-create": "../acct-1Tn1qNH9lf8tLTJg-test-invoices-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Set up tax collection",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/003-set-up-tax-collection/page.html"
+      }
+    ]
+  },
+  "test-customers": {
+    "title": "Customers \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/customers",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-invoices-create": "../acct-1Tn1qNH9lf8tLTJg-test-invoices-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-filter/page.html"
+      },
+      {
+        "label": "All",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/001-all/page.html"
+      },
+      {
+        "label": "Remaining balances",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-remaining-balances/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/003-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Filter",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/004-filter/page.html"
+      }
+    ]
+  },
+  "test-dashboard": {
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/dashboard",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume": "../acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "Set up tax collection",
+        "type": "unknown",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/004-set-up-tax-collection/page.html"
+      }
+    ]
+  },
+  "test-disputes": {
+    "title": "Disputes \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/disputes",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-status/page.html"
+      },
+      {
+        "label": "Disputed date",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-disputed-date/page.html"
+      },
+      {
+        "label": "Evidence due by",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-evidence-due-by/page.html"
+      },
+      {
+        "label": "Reason",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/007-reason/page.html"
+      },
+      {
+        "label": "Amount",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-amount/page.html"
+      },
+      {
+        "label": "Export",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/009-export/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_7",
+        "has_ui": true,
+        "fallback": "interactions/004-status/page.html"
+      },
+      {
+        "label": "Disputed date",
+        "type": "modal",
+        "ui_id": "interaction_8",
+        "has_ui": true,
+        "fallback": "interactions/005-disputed-date/page.html"
+      },
+      {
+        "label": "Evidence due by",
+        "type": "modal",
+        "ui_id": "interaction_9",
+        "has_ui": true,
+        "fallback": "interactions/006-evidence-due-by/page.html"
+      },
+      {
+        "label": "Reason",
+        "type": "modal",
+        "ui_id": "interaction_10",
+        "has_ui": true,
+        "fallback": "interactions/007-reason/page.html"
+      },
+      {
+        "label": "Amount",
+        "type": "modal",
+        "ui_id": "interaction_11",
+        "has_ui": true,
+        "fallback": "interactions/008-amount/page.html"
+      },
+      {
+        "label": "Export",
+        "type": "modal",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/009-export/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_12",
+        "has_ui": true,
+        "fallback": "interactions/010-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "test-payment-links": {
+    "title": "Payment Links \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/payment-links",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": []
+  },
+  "test-payments": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/payments",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payouts": "../acct-1Tn1qNH9lf8tLTJg-test-payouts/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-topups": "../acct-1Tn1qNH9lf8tLTJg-test-topups/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": "../acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Copy link",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/002-copy-link/page.html"
+      },
+      {
+        "label": "Workbench options",
+        "type": "tooltip",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/003-workbench-options/page.html"
+      },
+      {
+        "label": "Close Workbench",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": true,
+        "fallback": "interactions/005-close-workbench/page.html"
+      }
+    ]
+  },
+  "test-payments-analytics": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/payments/analytics",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/004-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "analytics",
+        "type": "tooltip",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/005-analytics/page.html"
+      }
+    ]
+  },
+  "test-payouts": {
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/payouts",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payouts": "../acct-1Tn1qNH9lf8tLTJg-test-payouts/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-topups": "../acct-1Tn1qNH9lf8tLTJg-test-topups/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity": "../acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": []
+  },
+  "test-products": {
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/products",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-features": "../acct-1Tn1qNH9lf8tLTJg-test-features/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-coupons": "../acct-1Tn1qNH9lf8tLTJg-test-coupons/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates": "../acct-1Tn1qNH9lf8tLTJg-test-shipping-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-tax-rates": "../acct-1Tn1qNH9lf8tLTJg-test-tax-rates/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables": "../acct-1Tn1qNH9lf8tLTJg-test-pricing-tables/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-subscriptions": "../acct-1Tn1qNH9lf8tLTJg-test-subscriptions/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports": "../acct-1Tn1qNH9lf8tLTJg-test-reports/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/004-status/page.html"
+      },
+      {
+        "label": "Product category",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/005-product-category/page.html"
+      },
+      {
+        "label": "Created",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/006-created/page.html"
+      },
+      {
+        "label": "Status",
+        "type": "modal",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/004-status/page.html"
+      },
+      {
+        "label": "Product category",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/005-product-category/page.html"
+      },
+      {
+        "label": "Created",
+        "type": "modal",
+        "ui_id": "interaction_6",
+        "has_ui": true,
+        "fallback": "interactions/006-created/page.html"
+      }
+    ]
+  },
+  "test-radar": {
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/radar",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews": "../acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-rules": "../acct-1Tn1qNH9lf8tLTJg-test-radar-rules/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-insights": "../acct-1Tn1qNH9lf8tLTJg-test-radar-insights/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp": "../acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp/page.html",
+      "radar": "../radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-acceptance": "../acct-1Tn1qNH9lf8tLTJg-test-acceptance/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Payment method",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/008-payment-method/page.html"
+      },
+      {
+        "label": "All rule matches\n0",
+        "type": "modal",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-all-rule-matches-0/page.html"
+      },
+      {
+        "label": "3D Secure\n0",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/002-3d-secure-0/page.html"
+      },
+      {
+        "label": "Allow\n0",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/003-allow-0/page.html"
+      },
+      {
+        "label": "Payment method",
+        "type": "modal",
+        "ui_id": "interaction_5",
+        "has_ui": true,
+        "fallback": "interactions/008-payment-method/page.html"
+      }
+    ]
+  },
+  "test-reporting": {
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/reporting",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume": "../acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume": "../acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-billing": "../acct-1Tn1qNH9lf8tLTJg-test-billing/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "Date range\nLast 7 days",
+        "type": "modal",
+        "ui_id": "interaction_3",
+        "has_ui": true,
+        "fallback": "interactions/001-date-range-last-7-days/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_4",
+        "has_ui": true,
+        "fallback": "interactions/002-n-test-mode-new-business/page.html"
+      }
+    ]
+  },
+  "test-terminal": {
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "url": "https://dashboard.stripe.com/test/terminal",
+    "pages": {
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal": "../acct-1Tn1qNH9lf8tLTJg-test-terminal/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-locations/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-readers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-terminal-shop": "../acct-1Tn1qNH9lf8tLTJg-test-terminal-shop/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-dashboard": "../acct-1Tn1qNH9lf8tLTJg-test-dashboard/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-balance-overview": "../acct-1Tn1qNH9lf8tLTJg-test-balance-overview/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payments": "../acct-1Tn1qNH9lf8tLTJg-test-payments/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-customers": "../acct-1Tn1qNH9lf8tLTJg-test-customers/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-products": "../acct-1Tn1qNH9lf8tLTJg-test-products/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-radar": "../acct-1Tn1qNH9lf8tLTJg-test-radar/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-disputes": "../acct-1Tn1qNH9lf8tLTJg-test-disputes/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery": "../acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery/page.html",
+      "acct-1Tn1qNH9lf8tLTJg-test-payment-links": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"
+    },
+    "interactions": [
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_1",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      },
+      {
+        "label": "N\nTest mode\nNew business",
+        "type": "dropdown",
+        "ui_id": "interaction_2",
+        "has_ui": true,
+        "fallback": "interactions/001-n-test-mode-new-business/page.html"
+      }
+    ]
+  }
+}

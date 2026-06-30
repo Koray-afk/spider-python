@@ -1,0 +1,482 @@
+[
+  {
+    "slug": "test-dashboard",
+    "url": "https://dashboard.stripe.com/test/dashboard",
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-customers",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers",
+    "title": "Customers \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-payments",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments?created[gte]=1782239400&created[lte]=1782844199",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-dashboard",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/dashboard#",
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-balance-overview",
+    "url": "https://dashboard.stripe.com/test/balance/overview",
+    "title": "Balance overview \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-payments",
+    "url": "https://dashboard.stripe.com/test/payments",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-payouts",
+    "url": "https://dashboard.stripe.com/test/payouts",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-customers",
+    "url": "https://dashboard.stripe.com/test/customers",
+    "title": "Customers \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-products",
+    "url": "https://dashboard.stripe.com/test/products",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-payments-analytics",
+    "url": "https://dashboard.stripe.com/test/payments/analytics",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-disputes",
+    "url": "https://dashboard.stripe.com/test/disputes",
+    "title": "Disputes \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-radar",
+    "url": "https://dashboard.stripe.com/test/radar",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-payment-links",
+    "url": "https://dashboard.stripe.com/test/payment-links",
+    "title": "Payment Links \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-terminal",
+    "url": "https://dashboard.stripe.com/test/terminal",
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-billing",
+    "url": "https://dashboard.stripe.com/test/billing",
+    "title": "Billing overview \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-reporting",
+    "url": "https://dashboard.stripe.com/test/reporting",
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "test-apps",
+    "url": "https://dashboard.stripe.com/test/apps",
+    "title": "Installed apps \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-balance-overview",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/overview?currency=gbp",
+    "title": "Balance overview \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-templates-Gross-20Volume",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/templates/Gross%20Volume?originId=account_home_gross_volume_line_chart&autorun=direct_from_chart",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports-net-volume",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/net-volume?t=last7Days&g=day",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-products",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/products?active=true",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery",
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-acceptance",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/acceptance",
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?status=active",
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-payment-links",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-links",
+    "title": "Payment Links \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports",
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-invoices-create",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/invoices/create",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-payouts",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payouts",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-topups",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/topups",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/all-activity",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports-balance",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/balance",
+    "title": "Balance \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports-reconciliation",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/reconciliation",
+    "title": "Payout reconciliation \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-features",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/features?active=true",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-coupons",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/coupons",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-shipping-rates",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/shipping-rates",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-tax-rates",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/tax-rates",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-pricing-tables",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/pricing-tables",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-disputes",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/disputes?statuses[0]=needs_response&statuses[1]=warning_needs_response&evidence_due_by[gt]=1782153000&sort=evidence_due_by&order=asc",
+    "title": "Disputes \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/reviews",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-rules",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rules",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-insights",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/insights",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rule-details?ruleId=block_if_high_risk&startDate=2026-06-27&endDate=2026-06-28",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp-vamp",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/cbmp/vamp",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-links/create",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-terminal",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal",
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-terminal-locations",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/locations",
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-terminal-readers",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/readers",
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-terminal-hardware-orders",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/hardware_orders",
+    "title": "Terminal \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-terminal-shop",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/terminal/shop",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions/create",
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-billing",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing",
+    "title": "Billing overview \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-apps-installed",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/apps/installed",
+    "title": "Installed apps \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-apps-created",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/apps/created",
+    "title": "Apps overview \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sandboxes",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sandboxes",
+    "title": "Sandboxes \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-billing-revenue",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing/revenue",
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-retries",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery/retries",
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-emails",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery/emails",
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-revenue-recovery-automations",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recovery/automations",
+    "title": "Revenue recovery \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-authentication",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/authentication?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment",
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-disputes-analytics",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/disputes-analytics?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment",
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-payment-methods",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-methods?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment",
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-optimization",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/optimization",
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "radar",
+    "url": "https://dashboard.stripe.com/radar",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "reports-hub",
+    "url": "https://dashboard.stripe.com/reports/hub",
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-billing-subscriptions-simulations",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing/subscriptions/simulations",
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-billing-migrations",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/billing/migrations",
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports-all-fees",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/all-fees",
+    "title": "Plans and fees \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-revenue-recognition",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/revenue-recognition",
+    "title": "Revenue Recognition \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-data-management",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/data-management",
+    "title": "Data Pipeline settings \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-tax-reporting",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/tax/reporting",
+    "title": "Tax \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-cbmp",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/cbmp",
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-crypto-onramp-reports",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/crypto-onramp/reports",
+    "title": "Home \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports-hub",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/hub",
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgiL3nmVbX",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oJH9lf8tLTJgiL3nmVbX?originId=balance_summary_dashboard_chart",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJg65nV6LWA",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oJH9lf8tLTJg65nV6LWA?originId=balance_change_from_activity_dashboard_chart",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oJH9lf8tLTJgBndFcfpf",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oJH9lf8tLTJgBndFcfpf?originId=payouts_summary_dashboard_chart",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-sigma-queries-qry-1To1oeH9lf8tLTJgYdaBIFeS",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/sigma/queries/qry_1To1oeH9lf8tLTJgYdaBIFeS?originId=balance_summary_dashboard_chart",
+    "title": "Dashboard \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  },
+  {
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-reports-balance-activity-breakdown",
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/reports/balance/activity-breakdown?startDate=2026-06-28&endDate=2026-06-29&currency=gbp&timezone=Asia%2FCalcutta",
+    "title": "Reports \u2013 New business \u2013 Stripe [Test]",
+    "page_type": "post_auth"
+  }
+]

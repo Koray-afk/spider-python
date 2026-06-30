@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Date range\nLast 7 days",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-date-range-last-7-days",
+    "relationship_file": "interactions/001-date-range-last-7-days/relationship.json"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/004-set-up-tax-collection",
+    "relationship_file": "interactions/004-set-up-tax-collection/relationship.json"
+  }
+]

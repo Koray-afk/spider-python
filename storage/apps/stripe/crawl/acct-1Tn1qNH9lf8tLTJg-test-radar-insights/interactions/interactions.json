@@ -1,0 +1,44 @@
+[
+  {
+    "label": "More filters",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/004-more-filters",
+    "relationship_file": "interactions/004-more-filters/relationship.json"
+  },
+  {
+    "label": "Risk score",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-risk-score",
+    "relationship_file": "interactions/005-risk-score/relationship.json"
+  },
+  {
+    "label": "Card BIN",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/006-card-bin",
+    "relationship_file": "interactions/006-card-bin/relationship.json"
+  },
+  {
+    "label": "Card brand",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/007-card-brand",
+    "relationship_file": "interactions/007-card-brand/relationship.json"
+  },
+  {
+    "label": "Digital wallet",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/008-digital-wallet",
+    "relationship_file": "interactions/008-digital-wallet/relationship.json"
+  },
+  {
+    "label": "Card country",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/009-card-country",
+    "relationship_file": "interactions/009-card-country/relationship.json"
+  },
+  {
+    "label": "IP country",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/010-ip-country",
+    "relationship_file": "interactions/010-ip-country/relationship.json"
+  }
+]

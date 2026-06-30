@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Currency",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/004-currency",
+    "relationship_file": "interactions/004-currency/relationship.json"
+  },
+  {
+    "label": "Type",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/005-type",
+    "relationship_file": "interactions/005-type/relationship.json"
+  },
+  {
+    "label": "Balance type",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/006-balance-type",
+    "relationship_file": "interactions/006-balance-type/relationship.json"
+  },
+  {
+    "label": "Created",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/007-created",
+    "relationship_file": "interactions/007-created/relationship.json"
+  },
+  {
+    "label": "Available on",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/008-available-on",
+    "relationship_file": "interactions/008-available-on/relationship.json"
+  },
+  {
+    "label": "Copy link",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-copy-link",
+    "relationship_file": "interactions/009-copy-link/relationship.json"
+  },
+  {
+    "label": "Workbench options",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-workbench-options",
+    "relationship_file": "interactions/010-workbench-options/relationship.json"
+  },
+  {
+    "label": "Close Workbench",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/012-close-workbench",
+    "relationship_file": "interactions/012-close-workbench/relationship.json"
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Finish your setup",
+    "tag_name": "button",
+    "selector": "#merch > div:nth-of-type(5) > div:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > button:nth-of-type(2)",
+    "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/workbench/overview",
+    "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-workbench-overview",
+    "target_page": "../acct-1Tn1qNH9lf8tLTJg-test-workbench-overview/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "tooltip-trigger-isolate \u2699  as-7f as-hy as-hz as-7h \u26991404sml",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "Enter full screen",
+      "css_selector": "#merch > div:nth-of-type(5) > div:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > button:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[5]/div[9]/div[1]/div[2]/div[1]/div[2]/div[3]/button[2]",
+      "outer_html": "<button aria-label=\"Enter full screen\" class=\"tooltip-trigger-isolate \u2699  as-7f as-hy as-hz as-7h \u26991404sml\" tabindex=\"0\" data-crawl-id=\"3\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-aq as-2z as-30 \u2699epazud\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12.5 2h-9A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 2ZM3.5.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-9Z\"></path><path d=\"M11.76 3.5H8.35a.75.75 0 0 0 0 1.5h1.59L5 9.94v-1.6a.75.75 0 0 0-1.5 0v3.41a.75.75 0 0 0 .75.75h3.41a.75.75 0 1 0 0-1.5h-1.6l4.95-4.95v1.61a.75.75 0 0 0 1.5 0V4.25a.75.75 0 0 0-.75-.75Z\"></path></svg></button>"
+    }
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "test-payments-analytics",
+  "source_url": "https://dashboard.stripe.com/test/payments/analytics",
+  "source_title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "button",
+    "text": "analytics",
+    "id": "",
+    "class_name": "UnstyledLink ButtonLink IconParent Flex-flex",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/span[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button class=\"UnstyledLink ButtonLink IconParent Flex-flex\" href=\"\" type=\"button\" data-crawl-id=\"1\"><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--rowReversed\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--rowReversed Flex-justifyContent--flexStart\" style=\"line-height: 0; flex: 1 1 auto;\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--clipboard Icon-color Icon-color--gray Box-root Margin-left--4 Flex-flex\" style=\"transform: translateY(1.07px);\"><svg margin=\"[object Object]\" aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--clipboard-svg Icon-color-svg Icon-color--gray-svg\" height=\"12\" width=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.75 11.25a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Zm0-3a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.83 2H12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h1.17a3.001 3.001 0 0 1 5.66 0ZM8 1.5A1.5 1.5 0 0 1 9.5 3v1h-3V3A1.5 1.5 0 0 1 8 1.5Zm3 3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-1H4a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V4a.5.5 0 0 0-.5-.5h-1v1Z\"></path></svg></div><span class=\"ButtonLink-label Text-color--gray Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\"><span class=\"\u2699 rs-3 as-hn as-ho as-hp \u26996wlgsr\">analytics</span></span></div></div></button>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments/analytics",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-payments-analytics",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "tooltip",
+  "original_element_html": "<button class=\"UnstyledLink ButtonLink IconParent Flex-flex\" href=\"\" type=\"button\" data-crawl-id=\"1\"><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--rowReversed\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--rowReversed Flex-justifyContent--flexStart\" style=\"line-height: 0; flex: 1 1 auto;\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--clipboard Icon-color Icon-color--gray Box-root Margin-left--4 Flex-flex\" style=\"transform: translateY(1.07px);\"><svg margin=\"[object Object]\" aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--clipboard-svg Icon-color-svg Icon-color--gray-svg\" height=\"12\" width=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.75 11.25a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Zm0-3a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.83 2H12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h1.17a3.001 3.001 0 0 1 5.66 0ZM8 1.5A1.5 1.5 0 0 1 9.5 3v1h-3V3A1.5 1.5 0 0 1 8 1.5Zm3 3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-1H4a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V4a.5.5 0 0 0-.5-.5h-1v1Z\"></path></svg></div><span class=\"ButtonLink-label Text-color--gray Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\"><span class=\"\u2699 rs-3 as-hn as-ho as-hp \u26996wlgsr\">analytics</span></span></div></div></button>",
+  "trigger_label": "analytics",
+  "trigger_id": "",
+  "trigger_class": "UnstyledLink ButtonLink IconParent Flex-flex",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments/analytics",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-payments-analytics",
+  "target_title": "Transactions \u2013 New business \u2013 Stripe [Test]"
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "label": "All rule matches\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "3D Secure\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Allow\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Block\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Review\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Processor\nStripe",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-pe as-c1 as-6l as-pf as-cg as-pg as-bp as-bq as-c0 as-4l as-14 as-ph as-3f as-2u as-5h as-eb as-pi as-bj as-pj as-pk as-pl as-4s as-5j as-1e as-pm as-4p as-8m \u26991b0amo4",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Payment method",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-pe as-pp as-pf as-cg as-pg as-bp as-bq as-c0 as-4l as-14 as-ph as-3f as-2u as-5h as-eb as-pi as-bj as-pj as-pk as-pl as-4s as-5j as-1e as-pm as-4p as-8m \u269927ckpp",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "id": ":r2j:",
+    "className": "\u2699",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Set up recurring payments",
+    "id": "react-aria7167753411-:r46:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-mg as-5i as-5j as-c9 as-3t as-3u as-es as-14 as-l9 as-2u as-ll as-9t \u26991jk0mko",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "header",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Finish your setup",
+    "id": "react-aria7167753411-:r4d:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-mg as-5i as-5j as-c9 as-3t as-3u as-es as-14 as-l9 as-2u as-ll as-9t \u26991jk0mko",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "header",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Set up tax collection",
+    "id": "react-aria7167753411-:r4k:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-mq as-4q as-mg as-5i as-5j as-c9 as-3t as-3u as-es as-14 as-l9 as-2u as-mz as-9t \u2699y4c4lm",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "header",
+    "llm_type": "navigation"
+  }
+]

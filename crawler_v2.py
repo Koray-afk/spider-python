@@ -20,6 +20,7 @@ from storage.storage_manager import (
     get_auth_file,
     get_crawl_checkpoint_path,
     get_crawl_dir,
+    get_metadata_dir,
     get_sitemap_path,
 )
 
@@ -181,13 +182,12 @@ _EXTRACT_HUBSPOT_CSS_JS = """
 """
 
 
-def _inline_hubspot_styled_css(page, html: str) -> str:
+def _inline_cssom_styles(page, html: str, *, style_id: str = "captured-styles") -> str:
     """Persist all JS-injected CSS before scripts are stripped.
 
-    HubSpot styled-components writes rules into the CSSOM via insertRule, so
-    <style data-styled> tags often have empty textContent. We wait until the
-    live page has enough styled-component rules, then serialize document.styleSheets
-    (plus any inline <style> text) into a single captured block.
+    styled-components / emotion write rules into the CSSOM via insertRule, so
+    <style> tags often have empty textContent. Wait until the live page has
+    enough rules, then serialize document.styleSheets into a captured block.
     """
     try:
         page.evaluate(_WAIT_FOR_STYLED_COMPONENTS_JS)
@@ -196,10 +196,19 @@ def _inline_hubspot_styled_css(page, html: str) -> str:
         return html
     if not css.strip():
         return html
-    block = f'<style id="hs-captured-styles">\n{css}\n</style>'
+    block = f'<style id="{style_id}">\n{css}\n</style>'
     if "</head>" in html:
         return html.replace("</head>", block + "\n</head>", 1)
     return html + block
+
+
+def _inline_hubspot_styled_css(page, html: str) -> str:
+    return _inline_cssom_styles(page, html, style_id="hs-captured-styles")
+
+
+def _uses_cssom_capture(page_url: str) -> bool:
+    u = page_url.lower()
+    return "hubspot" in u or "dashboard.stripe.com" in u
 
 
 _BAKE_SELECTORS = [
@@ -220,6 +229,20 @@ _BAKE_SELECTORS = [
     "nav",
 ]
 
+_STRIPE_BAKE_SELECTORS = [
+    "#dashboardRoot",
+    "#dashboardRoot *",
+    "#merch",
+    "[class*='db-DashboardRoot']",
+    "[class*='db-Nav']",
+    "[class*='db-Sidebar']",
+    "[class*='sail-Nav']",
+    "[class*='sail-Sidebar']",
+    "[class*='Navigation']",
+    "header",
+    "nav",
+]
+
 _BAKE_PROPS = [
     "background-color", "color", "font-family", "font-size", "font-weight",
     "line-height", "border", "border-radius", "padding", "margin",
@@ -229,31 +252,36 @@ _BAKE_PROPS = [
     "right", "bottom", "box-shadow", "opacity", "white-space",
 ]
 
-_BAKE_JS = (
-    "(function(selectors, props) {"
-    "  var seen = new Set();"
-    "  selectors.forEach(function(sel) {"
-    "    var els = document.querySelectorAll(sel);"
-    "    els.forEach(function(el) {"
-    "      if (seen.has(el)) return;"
-    "      seen.add(el);"
-    "      var cs = window.getComputedStyle(el);"
-    "      var parts = [];"
-    "      props.forEach(function(p) {"
-    "        var v = cs.getPropertyValue(p);"
-    "        if (v && v !== 'initial' && v !== 'inherit' && v !== 'auto'"
-    "            && v !== 'normal' && v !== 'none' && v !== '') {"
-    "          parts.push(p + ':' + v);"
-    "        }"
-    "      });"
-    "      if (parts.length) {"
-    "        var existing = el.getAttribute('style') || '';"
-    "        el.setAttribute('style', existing + ';' + parts.join(';'));"
-    "      }"
-    "    });"
-    "  });"
-    "})(['" + "','".join(_BAKE_SELECTORS) + "'], ['" + "','".join(_BAKE_PROPS) + "'])"
-)
+def _make_bake_js(selectors: list[str]) -> str:
+    return (
+        "(function(selectors, props) {"
+        "  var seen = new Set();"
+        "  selectors.forEach(function(sel) {"
+        "    var els = document.querySelectorAll(sel);"
+        "    els.forEach(function(el) {"
+        "      if (seen.has(el)) return;"
+        "      seen.add(el);"
+        "      var cs = window.getComputedStyle(el);"
+        "      var parts = [];"
+        "      props.forEach(function(p) {"
+        "        var v = cs.getPropertyValue(p);"
+        "        if (v && v !== 'initial' && v !== 'inherit' && v !== 'auto'"
+        "            && v !== 'normal' && v !== 'none' && v !== '') {"
+        "          parts.push(p + ':' + v);"
+        "        }"
+        "      });"
+        "      if (parts.length) {"
+        "        var existing = el.getAttribute('style') || '';"
+        "        el.setAttribute('style', existing + ';' + parts.join(';'));"
+        "      }"
+        "    });"
+        "  });"
+        "})(['" + "','".join(selectors) + "'], ['" + "','".join(_BAKE_PROPS) + "'])"
+    )
+
+
+_BAKE_JS = _make_bake_js(_BAKE_SELECTORS)
+_STRIPE_BAKE_JS = _make_bake_js(_STRIPE_BAKE_SELECTORS)
 
 
 _HUBSPOT_LOADING_REMOVE_JS = """() => {
@@ -274,6 +302,23 @@ _HUBSPOT_LOADING_REMOVE_JS = """() => {
 }"""
 
 
+_STRIPE_LOADING_REMOVE_JS = """() => {
+  var sels = [
+    '[class*="Spinner"]',
+    '[class*="Loading"]',
+    '[class*="Skeleton"]',
+    '[aria-busy="true"]',
+    '[data-testid="loading-spinner"]',
+    '[role="progressbar"]',
+  ];
+  sels.forEach(function(s) {
+    document.querySelectorAll(s).forEach(function(el) {
+      if (el.closest && el.closest('#dashboardRoot')) el.remove();
+    });
+  });
+}"""
+
+
 def _strip_hubspot_loading_elements(page, page_url: str) -> None:
     """Remove HubSpot loading spinners and skeleton screens from the live DOM.
 
@@ -285,6 +330,16 @@ def _strip_hubspot_loading_elements(page, page_url: str) -> None:
         return
     try:
         page.evaluate(_HUBSPOT_LOADING_REMOVE_JS)
+    except Exception:
+        pass
+
+
+def _strip_stripe_loading_elements(page, page_url: str) -> None:
+    """Remove Stripe loading spinners/skeletons from the live DOM before snapshot."""
+    if "dashboard.stripe.com" not in page_url.lower():
+        return
+    try:
+        page.evaluate(_STRIPE_LOADING_REMOVE_JS)
     except Exception:
         pass
 
@@ -306,6 +361,67 @@ def _bake_hubspot_computed_styles_in_page(page, page_url: str) -> None:
         page.evaluate(_BAKE_JS)
     except Exception:
         pass
+
+
+def _bake_stripe_computed_styles_in_page(page, page_url: str) -> None:
+    """Inline computed styles on Stripe dashboard nav/sidebar before snapshot."""
+    if "dashboard.stripe.com" not in page_url.lower():
+        return
+    try:
+        page.evaluate(_STRIPE_BAKE_JS)
+    except Exception:
+        pass
+
+
+_STRIPE_NAV_EXPAND_JS = """
+() => {
+    // Locate the left-sidebar nav container using multiple stable selectors.
+    var nav = (
+        document.querySelector('[data-testid="navigation"]') ||
+        document.querySelector('nav[aria-label]') ||
+        document.querySelector('[class*="db-Nav"]') ||
+        document.querySelector('[class*="sail-Nav"]') ||
+        document.querySelector('[class*="Sidebar"]') ||
+        document.querySelector('nav') ||
+        null
+    );
+    if (!nav) return 0;
+    // Click every collapsed button inside the nav (aria-expanded="false").
+    // This expands Products sub-menus (Payments, Billing, Reporting, Apps, More)
+    // so their child links are present in the captured HTML.
+    var buttons = Array.from(nav.querySelectorAll('button[aria-expanded="false"]'));
+    buttons.forEach(function(btn) { btn.click(); });
+    return buttons.length;
+}
+"""
+
+
+def _expand_stripe_nav(page, page_url: str) -> int:
+    """Expand all collapsed sidebar nav groups on Stripe pages before capture.
+
+    Stripe's Products section (Payments, Billing, Reporting, Apps, More) renders
+    as collapsed accordion buttons. Clicking them before page.content() ensures
+    their sub-links are baked into the captured HTML and are discoverable by BFS.
+    No-ops for non-Stripe pages.
+    """
+    if "dashboard.stripe.com" not in page_url.lower():
+        return 0
+    try:
+        count = int(page.evaluate(_STRIPE_NAV_EXPAND_JS) or 0)
+        if count:
+            page.wait_for_timeout(800)
+        return count
+    except Exception as exc:
+        print(f"[STRIPE] Nav expansion failed: {exc}")
+        return 0
+
+
+def _prepare_snapshot_dom(page, page_url: str) -> None:
+    """App-specific DOM cleanup before page.content() capture."""
+    _strip_hubspot_loading_elements(page, page_url)
+    _strip_stripe_loading_elements(page, page_url)
+    _bake_hubspot_computed_styles_in_page(page, page_url)
+    _bake_stripe_computed_styles_in_page(page, page_url)
 
 
 def _make_css_urls_absolute(html: str, page_url: str) -> str:
@@ -342,8 +458,11 @@ def static_snapshot_html(html: str, page_url: str, *, page=None) -> str:
     injected by JavaScript (e.g. HubSpot's styled-components) before scripts
     are stripped from the snapshot.
     """
-    if page is not None and "hubspot" in page_url.lower():
-        html = _inline_hubspot_styled_css(page, html)
+    if page is not None and _uses_cssom_capture(page_url):
+        if "hubspot" in page_url.lower():
+            html = _inline_hubspot_styled_css(page, html)
+        else:
+            html = _inline_cssom_styles(page, html, style_id="stripe-captured-styles")
     html = make_assets_absolute(html, page_url, include_js=False)
     html = _make_css_urls_absolute(html, page_url)
     html = remove_base_tag(html)
@@ -434,8 +553,8 @@ def post_auth_start_url(auth_file: str, fallback: str) -> str:
         o = origin.get("origin", "")
         if not o:
             continue
-        # HubSpot: no workspaceconf localStorage — use the configured post_auth_home.
-        if "hubspot.com" in o:
+        # HubSpot / Stripe: use configured post_auth_home after manual login.
+        if "hubspot.com" in o or "dashboard.stripe.com" in o:
             return fallback.rstrip("/")
         for item in origin.get("localStorage", []):
             if item.get("name") == "workspaceconf":
@@ -637,8 +756,7 @@ def save_page_capture(
     page_dir.mkdir(parents=True, exist_ok=True)
 
     print("[PAGE] Saving HTML")
-    _strip_hubspot_loading_elements(page, page.url)
-    _bake_hubspot_computed_styles_in_page(page, page.url)
+    _prepare_snapshot_dom(page, page.url)
     html = static_snapshot_html(page.content(), page.url, page=page)
     (page_dir / "page.html").write_text(html, encoding="utf-8")
 
@@ -681,8 +799,7 @@ def save_interaction_capture(
     rel_folder = str(folder.relative_to(crawl_root))
 
     print("[PAGE] Saving HTML")
-    _strip_hubspot_loading_elements(page, page.url)
-    _bake_hubspot_computed_styles_in_page(page, page.url)
+    _prepare_snapshot_dom(page, page.url)
     html = static_snapshot_html(page.content(), page.url, page=page)
     (folder / "page.html").write_text(html, encoding="utf-8")
 
@@ -915,6 +1032,7 @@ def _load_checkpoint(path: Path) -> dict | None:
 def _save_checkpoint(
     path: Path,
     *,
+    page_type: str,
     visited: set[str],
     sidebar_queue: list[tuple[str, int]],
     deferred_queue: list[tuple[str, int]],
@@ -928,6 +1046,7 @@ def _save_checkpoint(
         json.dumps(
             {
                 "version": 1,
+                "page_type": page_type,
                 "updated_at": _now(),
                 "visited": sorted(visited),
                 "sidebar_queue": [{"url": u, "depth": d} for u, d in sidebar_queue],
@@ -1246,9 +1365,11 @@ def bfs_crawl(
     link_cross_page_rules: list[dict] | None = None,
     global_link_limits: list[dict] | None = None,
     mandatory_tab_labels: list[str] | None = None,
+    mandatory_interaction_labels: list[str] | None = None,
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
     max_ranked_interactions: int = 15,
     max_interaction_depth: int | None = 3,
+    url_interaction_depth_overrides: list[dict] | None = None,
     use_ax_discovery: bool = True,
     ax_max_candidates_per_page: int = 200,
     ax_skip_grid_roles: bool = True,
@@ -1272,6 +1393,17 @@ def bfs_crawl(
 
     ckpt = _load_checkpoint(checkpoint_path) if resume else None
     if ckpt:
+        ckpt_phase = ckpt.get("page_type")
+        if ckpt_phase != page_type:
+            print(
+                f"[BFS] Ignoring checkpoint from {ckpt_phase or 'unknown'} phase "
+                f"(starting fresh {page_type})"
+            )
+            ckpt = None
+        elif not ckpt_phase and page_type == "post_auth":
+            print("[BFS] Ignoring legacy checkpoint (starting fresh post_auth)")
+            ckpt = None
+    if ckpt:
         visited.update(ckpt.get("visited") or [])
         sidebar_queue = [(e["url"], e["depth"]) for e in ckpt.get("sidebar_queue") or []]
         deferred_queue = [(e["url"], e["depth"]) for e in ckpt.get("deferred_queue") or []]
@@ -1283,12 +1415,13 @@ def bfs_crawl(
     else:
         pages = len(visited)
         sidebar_queue = [(start_url, 0)]
-        if not sidebar_first:
-            for seed_url in build_seed_urls(start_url, seed_url_patterns or [], hash_routes=hash_routes):
-                if normalize_url(seed_url) != start_norm:
-                    deferred_queue.append((seed_url, 1))
-            if seed_url_patterns:
-                print(f"[BFS] Seeded routes: {len(deferred_queue)}")
+        seed_count = 0
+        for seed_url in build_seed_urls(start_url, seed_url_patterns or [], hash_routes=hash_routes):
+            if normalize_url(seed_url) != start_norm:
+                deferred_queue.append((seed_url, 1))
+                seed_count += 1
+        if seed_count:
+            print(f"[BFS] Seeded routes: {seed_count}")
 
     def _queue_norms() -> set[str]:
         return {normalize_url(u) for u, _ in sidebar_queue + deferred_queue}
@@ -1423,6 +1556,12 @@ def bfs_crawl(
 
             page_dir = crawl_root / slug
             page_title = page.title()
+
+            # Expand collapsed sidebar nav groups before capturing (Stripe only).
+            _nav_expanded = _expand_stripe_nav(page, page.url)
+            if _nav_expanded:
+                print(f"[STRIPE] Expanded {_nav_expanded} collapsed nav item(s)")
+
             save_page_capture(
                 page_dir, page, url, page_title, page_type, skip_screenshots=skip_screenshots
             )
@@ -1478,14 +1617,24 @@ def bfs_crawl(
             page = None
 
             _SKIP_CLASSES = {"accordion-button", "accordion-title"}
-            _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing"}
+            _SKIP_LABELS = {
+                "button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing",
+                "Developers",
+                # Stripe Workbench developer-tool actions — not useful in a sales demo
+                "Workbench options", "Copy link", "Enter full screen", "Close Workbench",
+            }
             candidates = [
                 c for c in candidates
                 if not any(cls in (c.get("className") or "") for cls in _SKIP_CLASSES)
                 and (c.get("label") or "").strip() not in _SKIP_LABELS
             ]
 
-            run_interactions = max_interaction_depth is None or depth < max_interaction_depth
+            effective_max_depth = max_interaction_depth
+            for _override in (url_interaction_depth_overrides or []):
+                if _override["pattern"] in url:
+                    effective_max_depth = _override["max_depth"]
+                    break
+            run_interactions = effective_max_depth is None or depth < effective_max_depth
             if run_interactions and candidates and os.getenv("GEMINI_API_KEY"):
                 from ranker.interaction_ranker import rank_candidates
                 candidates = rank_candidates(
@@ -1494,6 +1643,7 @@ def bfs_crawl(
                     candidates,
                     top_n=max_ranked_interactions,
                     mandatory_labels=mandatory_tab_labels,
+                    mandatory_interaction_labels=mandatory_interaction_labels,
                 )
                 print(f"[BFS] Ranked Candidates: {len(candidates)}")
 
@@ -1538,6 +1688,7 @@ def bfs_crawl(
                 print(f"[BFS] Pruned duplicate queue URLs: {pruned[0] - pruned[1]}")
             _save_checkpoint(
                 checkpoint_path,
+                page_type=page_type,
                 visited=visited,
                 sidebar_queue=sidebar_queue,
                 deferred_queue=deferred_queue,
@@ -1573,11 +1724,196 @@ def bfs_crawl(
     }
 
 
+def _get_hybrid_checkpoint_path(app_name: str) -> Path:
+    return get_metadata_dir(app_name) / "hybrid_checkpoint.json"
+
+
+def run_interaction_pass(
+    context,
+    crawl_root: Path,
+    app_name: str,
+    *,
+    depth2_patterns: list[str],
+    max_interactions: int = DEFAULT_MAX_INTERACTIONS,
+    max_ranked_interactions: int = 15,
+    mandatory_tab_labels: list[str] | None = None,
+    mandatory_interaction_labels: list[str] | None = None,
+    skip_screenshots: bool = False,
+    wait_after_load_ms: int = WAIT_AFTER_LOAD_MS,
+    use_networkidle: bool = True,
+    use_ax_discovery: bool = True,
+    ax_max_candidates_per_page: int = 200,
+    ax_skip_grid_roles: bool = True,
+) -> dict:
+    """Phase 2 of a hybrid crawl: run interactions on all BFS-discovered pages.
+
+    Pages whose URL matches any pattern in depth2_patterns receive depth-2
+    interaction crawling — interactions on the page AND interactions on any
+    pages navigated to from those interactions.  All other pages get depth-1
+    (interactions on the page only).
+    """
+    sitemap_path = get_sitemap_path(app_name)
+    if not sitemap_path.exists():
+        print("[IXP] No sitemap found — run BFS discovery phase first")
+        return {"interactions_saved": 0}
+
+    sitemap: list[dict] = json.loads(sitemap_path.read_text(encoding="utf-8"))
+
+    ixp_ckpt_path = get_metadata_dir(app_name) / "interaction_pass_checkpoint.json"
+    completed: set[str] = set()
+    if ixp_ckpt_path.exists():
+        ckpt_data = json.loads(ixp_ckpt_path.read_text(encoding="utf-8"))
+        completed = set(ckpt_data.get("completed_slugs", []))
+        print(f"[IXP] Resuming — {len(completed)} pages already done")
+
+    def _sort_key(e: dict) -> int:
+        url = e.get("url", "")
+        return 0 if any(pat in url for pat in depth2_patterns) else 1
+
+    sitemap_sorted = sorted(sitemap, key=_sort_key)
+
+    _SKIP_CLASSES = {"accordion-button", "accordion-title"}
+    _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing", "Developers"}
+
+    interactions_saved = 0
+
+    def _process_one(url: str, slug: str) -> dict:
+        """Open url, discover + filter + rank candidates, run crawl_interactions."""
+        page = None
+        try:
+            page = context.new_page()
+            _goto_clean(page, url, use_networkidle=use_networkidle, wait_ms=wait_after_load_ms)
+            page_title = page.title()
+
+            candidates = discover_with_scroll(page)
+            if use_ax_discovery:
+                try:
+                    from discover.accessibility import enhance_candidates_with_accessibility
+                    candidates = enhance_candidates_with_accessibility(
+                        page, candidates,
+                        max_candidates=ax_max_candidates_per_page,
+                        skip_grid_roles=ax_skip_grid_roles,
+                    )
+                except Exception as exc:
+                    print(f"[AX] Enhancement failed: {exc}")
+
+            candidates = [
+                c for c in candidates
+                if not any(cls in (c.get("className") or "") for cls in _SKIP_CLASSES)
+                and (c.get("label") or "").strip() not in _SKIP_LABELS
+            ]
+
+            if candidates and os.getenv("GEMINI_API_KEY"):
+                from ranker.interaction_ranker import rank_candidates
+                candidates = rank_candidates(
+                    page_title, url, candidates,
+                    top_n=max_ranked_interactions,
+                    mandatory_labels=mandatory_tab_labels or [],
+                    mandatory_interaction_labels=mandatory_interaction_labels or [],
+                )
+                print(f"[IXP] Ranked: {len(candidates)}")
+
+            page.close()
+            page = None
+
+            page_dir = crawl_root / slug
+            return crawl_interactions(
+                context, url, slug, page_dir, crawl_root, candidates, max_interactions,
+                wait_after_load_ms=wait_after_load_ms,
+                use_networkidle=use_networkidle,
+                skip_screenshots=skip_screenshots,
+            )
+        except Exception as exc:
+            print(f"[IXP] Failed ({slug}): {exc}")
+            traceback.print_exc()
+            return {"found": 0, "saved": 0, "nav_targets": []}
+        finally:
+            if page:
+                try:
+                    page.close()
+                except Exception:
+                    pass
+
+    def _save_ckpt() -> None:
+        ixp_ckpt_path.write_text(
+            json.dumps({"completed_slugs": list(completed)}, indent=2), encoding="utf-8"
+        )
+
+    for entry in sitemap_sorted:
+        url = entry["url"]
+        slug = entry["slug"]
+        page_dir = crawl_root / slug
+        interactions_dir = page_dir / "interactions"
+
+        if slug in completed or (interactions_dir / "interactions.json").exists():
+            completed.add(slug)
+            continue
+
+        is_priority = any(pat in url for pat in depth2_patterns)
+        effective_depth = 2 if is_priority else 1
+        print(f"[IXP] [depth={effective_depth}] {slug}")
+
+        ix = _process_one(url, slug)
+        interactions_saved += ix.get("saved", 0)
+        print(f"[IXP] Saved: {ix.get('saved', 0)} | nav_targets: {len(ix.get('nav_targets', []))}")
+
+        if effective_depth >= 2:
+            for nav_url in ix.get("nav_targets", []):
+                nav_slug = page_slug(nav_url)
+                if nav_slug in completed:
+                    continue
+                nav_page_dir = crawl_root / nav_slug
+                nav_ix_dir = nav_page_dir / "interactions"
+                if (nav_ix_dir / "interactions.json").exists():
+                    completed.add(nav_slug)
+                    continue
+
+                print(f"[IXP] [depth=2 nav] {nav_slug}")
+
+                if not (nav_page_dir / "page.html").exists():
+                    nav_page = None
+                    try:
+                        nav_page = context.new_page()
+                        _goto_clean(nav_page, nav_url, use_networkidle=use_networkidle, wait_ms=wait_after_load_ms)
+                        _nav_exp = _expand_stripe_nav(nav_page, nav_url)
+                        if _nav_exp:
+                            print(f"[STRIPE] Expanded {_nav_exp} collapsed nav item(s) on {nav_slug}")
+                        save_page_capture(
+                            nav_page_dir, nav_page, nav_url, nav_page.title(),
+                            "post_auth", skip_screenshots=skip_screenshots,
+                        )
+                    except Exception as exc:
+                        print(f"[IXP] Nav page save failed ({nav_slug}): {exc}")
+                    finally:
+                        if nav_page:
+                            try:
+                                nav_page.close()
+                            except Exception:
+                                pass
+
+                nav_ix = _process_one(nav_url, nav_slug)
+                interactions_saved += nav_ix.get("saved", 0)
+                completed.add(nav_slug)
+                _save_ckpt()
+
+        completed.add(slug)
+        _save_ckpt()
+
+    print(f"[IXP] Done — {interactions_saved} total interactions saved")
+    if ixp_ckpt_path.exists():
+        ixp_ckpt_path.unlink()
+    return {"interactions_saved": interactions_saved}
+
+
 def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
     crawl_root = ensure_app_dirs(app_name)
     max_interactions = cfg.get("max_interactions_per_page", DEFAULT_MAX_INTERACTIONS)
     max_ranked_interactions = cfg.get("max_ranked_interactions", 15)
     max_interaction_depth = cfg.get("max_interaction_depth", 3)
+    # Hybrid mode: phase-1 BFS URL discovery (no interactions), then phase-2 interaction pass.
+    # Only applies to post-auth crawls.
+    hybrid = bool(cfg.get("crawl_hybrid", False)) and post_auth
+
     with sync_playwright() as p:
         auth_file = None
         if post_auth:
@@ -1603,35 +1939,120 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
         prepare_context(context)
         priority_url_patterns = cfg.get("priority_url_patterns") or []
         seed_url_patterns = cfg.get("seed_url_patterns") or []
-        result = bfs_crawl(
-            context,
-            start,
-            urlparse(start).netloc,
-            max_pages,
-            page_type,
-            crawl_root,
-            app_name,
-            priority_url_patterns=priority_url_patterns,
-            seed_url_patterns=seed_url_patterns if post_auth else [],
-            skip_url_patterns=cfg.get("skip_url_patterns") or [],
-            list_detail_link_limits=cfg.get("list_detail_link_limits") or [],
-            link_cross_page_rules=cfg.get("link_cross_page_rules") or [],
-            global_link_limits=cfg.get("global_link_limits") or [],
-            mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
-            max_interactions=max_interactions,
-            max_ranked_interactions=max_ranked_interactions,
-            max_interaction_depth=max_interaction_depth,
-            check_login=post_auth,
-            skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
-            wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
-            use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
-            sidebar_first=bool(cfg.get("crawl_sidebar_first", True)),
-            resume=bool(cfg.get("crawl_resume", True)),
-            hash_routes=bool(cfg.get("crawl_hash_routes", True)),
-            use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
-            ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
-            ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
-        )
+
+        if hybrid:
+            hybrid_ckpt_path = _get_hybrid_checkpoint_path(app_name)
+            hybrid_ckpt: dict = {}
+            if hybrid_ckpt_path.exists():
+                hybrid_ckpt = json.loads(hybrid_ckpt_path.read_text(encoding="utf-8"))
+
+            # ── Phase 1: BFS URL discovery (interactions disabled) ──────────────
+            bfs_pages = 0
+            if not hybrid_ckpt.get("bfs_complete"):
+                print("[HYBRID] Phase 1: BFS URL discovery (interactions disabled)")
+                bfs_result = bfs_crawl(
+                    context,
+                    start,
+                    urlparse(start).netloc,
+                    max_pages,
+                    page_type,
+                    crawl_root,
+                    app_name,
+                    priority_url_patterns=priority_url_patterns,
+                    seed_url_patterns=seed_url_patterns,
+                    skip_url_patterns=cfg.get("skip_url_patterns") or [],
+                    list_detail_link_limits=cfg.get("list_detail_link_limits") or [],
+                    link_cross_page_rules=cfg.get("link_cross_page_rules") or [],
+                    global_link_limits=cfg.get("global_link_limits") or [],
+                    mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
+                    mandatory_interaction_labels=cfg.get("mandatory_interaction_labels") or [],
+                    max_interactions=max_interactions,
+                    max_ranked_interactions=max_ranked_interactions,
+                    max_interaction_depth=0,   # Phase 1: visit pages, no clicking
+                    url_interaction_depth_overrides=[],  # overrides irrelevant in phase 1
+                    check_login=post_auth,
+                    skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+                    wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+                    use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+                    sidebar_first=bool(cfg.get("crawl_sidebar_first", True)),
+                    resume=bool(cfg.get("crawl_resume", True)),
+                    hash_routes=bool(cfg.get("crawl_hash_routes", True)),
+                    use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
+                    ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
+                    ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+                )
+                bfs_pages = bfs_result["pages"]
+                hybrid_ckpt_path.write_text(
+                    json.dumps({"bfs_complete": True, "bfs_pages": bfs_pages}, indent=2),
+                    encoding="utf-8",
+                )
+                print(f"[HYBRID] Phase 1 complete — {bfs_pages} pages discovered")
+            else:
+                sitemap_data = json.loads(get_sitemap_path(app_name).read_text(encoding="utf-8"))
+                bfs_pages = len(sitemap_data)
+                print(f"[HYBRID] Phase 1 already complete — {bfs_pages} pages in sitemap")
+
+            # ── Phase 2: Interaction pass (depth-2 for priority, depth-1 for rest) ──
+            print("[HYBRID] Phase 2: Interaction pass")
+            ix_result = run_interaction_pass(
+                context,
+                crawl_root,
+                app_name,
+                depth2_patterns=cfg.get("interaction_depth_2_patterns") or [],
+                max_interactions=max_interactions,
+                max_ranked_interactions=max_ranked_interactions,
+                mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
+                mandatory_interaction_labels=cfg.get("mandatory_interaction_labels") or [],
+                skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+                wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+                use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+                use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
+                ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
+                ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+            )
+
+            if hybrid_ckpt_path.exists():
+                hybrid_ckpt_path.unlink()
+
+            result = {
+                "pages": bfs_pages,
+                "interactions_found": 0,
+                "interactions_saved": ix_result["interactions_saved"],
+                "resumed": bool(hybrid_ckpt),
+            }
+        else:
+            result = bfs_crawl(
+                context,
+                start,
+                urlparse(start).netloc,
+                max_pages,
+                page_type,
+                crawl_root,
+                app_name,
+                priority_url_patterns=priority_url_patterns,
+                seed_url_patterns=seed_url_patterns if post_auth else [],
+                skip_url_patterns=cfg.get("skip_url_patterns") or [],
+                list_detail_link_limits=cfg.get("list_detail_link_limits") or [],
+                link_cross_page_rules=cfg.get("link_cross_page_rules") or [],
+                global_link_limits=cfg.get("global_link_limits") or [],
+                mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
+                mandatory_interaction_labels=cfg.get("mandatory_interaction_labels") or [],
+                max_interactions=max_interactions,
+                max_ranked_interactions=max_ranked_interactions,
+                max_interaction_depth=max_interaction_depth,
+                url_interaction_depth_overrides=cfg.get("url_interaction_depth_overrides") or [],
+                check_login=post_auth,
+                skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+                wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+                use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+                sidebar_first=bool(cfg.get("crawl_sidebar_first", True)),
+                resume=bool(cfg.get("crawl_resume", True)),
+                hash_routes=bool(cfg.get("crawl_hash_routes", True)),
+                use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
+                ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
+                ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+            )
+
         context.close()
         browser.close()
     return result
@@ -1646,9 +2067,11 @@ def crawl_postauth(app_name: str, cfg: dict) -> dict:
 
 
 def crawl_application(app_name: str, cfg: dict) -> dict:
-    print("pre-auth crawl...")
-    pre = crawl_preauth(app_name, cfg)
-    print(f"  {pre['pages']} pages, {pre['interactions_saved']} interactions saved")
+    pre = {"pages": 0, "interactions_saved": 0}
+    if cfg.get("crawl_pre_auth", True):
+        print("pre-auth crawl...")
+        pre = crawl_preauth(app_name, cfg)
+        print(f"  {pre['pages']} pages, {pre['interactions_saved']} interactions saved")
 
     print("post-auth crawl...")
     post = crawl_postauth(app_name, cfg)

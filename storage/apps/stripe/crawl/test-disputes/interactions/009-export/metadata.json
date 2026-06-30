@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Export",
+  "triggerId": "",
+  "triggerClass": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "modal",
+  "sourcePage": "test-disputes",
+  "sourceUrl": "https://dashboard.stripe.com/test/disputes",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/disputes",
+  "beforeTitle": "Disputes \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/disputes",
+  "title": "Disputes \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "test-disputes/interactions/009-export",
+  "captured_at": "2026-06-30T14:12:12.080938+00:00"
+}

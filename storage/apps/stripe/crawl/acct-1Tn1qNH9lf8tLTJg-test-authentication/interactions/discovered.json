@@ -1,0 +1,82 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "id": "react-aria6585010544-:r8l:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-r2 as-4s as-4t as-c4 as-3t as-3u as-p1 as-14 as-mb as-2u as-qa as-9o \u26991jk0mko",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Finish your setup",
+    "id": "react-aria6585010544-:r8s:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-r2 as-4s as-4t as-c4 as-3t as-3u as-p1 as-14 as-mb as-2u as-qa as-9o \u26991jk0mko",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Set up tax collection",
+    "id": "react-aria6585010544-:r93:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-rc as-4q as-r2 as-4s as-4t as-c4 as-3t as-3u as-p1 as-14 as-mb as-2u as-rk as-9o \u2699y4c4lm",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Summarise my authentication analytics",
+    "id": "",
+    "className": "payments-performance-chat-button-option \u2699 rs-3 as-2 as-n9 as-na as-nb as-nc as-nd as-ne as-nf as-ng as-nh as-31 as-1t as-ni as-nj as-nk as-nl as-3m as-nm as-a as-nn as-no as-g as-np as-nq \u26995oyp4h",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Card type",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-km as-kn as-ko as-cb as-kp as-bk as-bl as-bv as-4l as-14 as-kq as-3f as-2u as-5f as-kr as-ks as-be as-kt as-ku as-kv as-5g as-4t as-1e as-kw as-4p as-8g \u269927ckpp",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Card country",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-km as-kn as-ko as-cb as-kp as-bk as-bl as-bv as-4l as-14 as-kq as-3f as-2u as-5f as-kr as-ks as-be as-kt as-ku as-kv as-5g as-4t as-1e as-kw as-4p as-8g \u269927ckpp",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Card brand",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-km as-kn as-ko as-cb as-kp as-bk as-bl as-bv as-4l as-14 as-kq as-3f as-2u as-5f as-kr as-ks as-be as-kt as-ku as-kv as-5g as-4t as-1e as-kw as-4p as-8g \u269927ckpp",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Currency",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-km as-kn as-ko as-cb as-kp as-bk as-bl as-bv as-4l as-14 as-kq as-3f as-2u as-5f as-kr as-ks as-be as-kt as-ku as-kv as-5g as-4t as-1e as-kw as-4p as-8g \u269927ckpp",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Interaction type",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-km as-kn as-ko as-cb as-kp as-bk as-bl as-bv as-4l as-14 as-kq as-3f as-2u as-5f as-kr as-ks as-be as-kt as-ku as-kv as-5g as-4t as-1e as-kw as-4p as-8g \u269927ckpp",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Retry status",
+    "id": "",
+    "className": "\u2699 rs-h rs-3 rs-2 as-km as-kn as-ko as-cb as-kp as-bk as-bl as-bv as-4l as-14 as-kq as-3f as-2u as-5f as-kr as-ks as-be as-kt as-ku as-kv as-5g as-4t as-1e as-kw as-4p as-8g \u269927ckpp",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  }
+]

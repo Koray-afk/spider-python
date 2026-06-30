@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Add new product",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/003-add-new-product",
+    "relationship_file": "interactions/003-add-new-product/relationship.json"
+  },
+  {
+    "label": "Products or subscriptions",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/004-products-or-subscriptions",
+    "relationship_file": "interactions/004-products-or-subscriptions/relationship.json"
+  },
+  {
+    "label": "Advanced options",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/006-advanced-options",
+    "relationship_file": "interactions/006-advanced-options/relationship.json"
+  },
+  {
+    "label": "Use your domain",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/007-use-your-domain",
+    "relationship_file": "interactions/007-use-your-domain/relationship.json"
+  }
+]

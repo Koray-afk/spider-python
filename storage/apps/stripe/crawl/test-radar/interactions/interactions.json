@@ -1,0 +1,26 @@
+[
+  {
+    "label": "All rule matches\n0",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-all-rule-matches-0",
+    "relationship_file": "interactions/001-all-rule-matches-0/relationship.json"
+  },
+  {
+    "label": "3D Secure\n0",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-3d-secure-0",
+    "relationship_file": "interactions/002-3d-secure-0/relationship.json"
+  },
+  {
+    "label": "Allow\n0",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-allow-0",
+    "relationship_file": "interactions/003-allow-0/relationship.json"
+  },
+  {
+    "label": "Payment method",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/008-payment-method",
+    "relationship_file": "interactions/008-payment-method/relationship.json"
+  }
+]

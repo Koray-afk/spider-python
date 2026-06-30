@@ -38,6 +38,60 @@ GRID_ROLES = frozenset(
     }
 )
 
+AX_DISCOVER_JS = """() => {
+  var ROLES = ['button','tab','menuitem','menuitemcheckbox','menuitemradio',
+               'checkbox','radio','combobox','listbox','option','switch',
+               'treeitem','textbox'];
+  var seen = new Set();
+  var out = [];
+
+  function accName(el) {
+    return (el.getAttribute('aria-label') || el.innerText || el.value ||
+            el.getAttribute('title') || '').trim().slice(0, 120);
+  }
+  function axStates(el) {
+    var s = [];
+    var expanded = el.getAttribute('aria-expanded');
+    if (expanded === 'true') s.push('expanded');
+    if (expanded === 'false') s.push('collapsed');
+    if (el.getAttribute('aria-haspopup')) s.push('haspopup');
+    if (el.getAttribute('aria-selected') === 'true') s.push('selected');
+    if (el.getAttribute('aria-disabled') === 'true' || el.disabled) s.push('disabled');
+    if (el.getAttribute('aria-checked') === 'true') s.push('checked');
+    return s;
+  }
+
+  ROLES.forEach(function(role) {
+    document.querySelectorAll('[role="' + role + '"]').forEach(function(el) {
+      if (seen.has(el)) return;
+      seen.add(el);
+      out.push({role: role, name: accName(el), ax_states: axStates(el)});
+    });
+  });
+
+  document.querySelectorAll('button, input, select, textarea').forEach(function(el) {
+    if (seen.has(el)) return;
+    var tag = el.tagName.toLowerCase();
+    var role = 'button';
+    if (tag === 'input') {
+      var t = (el.type || 'text').toLowerCase();
+      if (t === 'checkbox') role = 'checkbox';
+      else if (t === 'radio') role = 'radio';
+      else if (t === 'submit' || t === 'button' || t === 'reset') role = 'button';
+      else role = 'textbox';
+    } else if (tag === 'select') {
+      role = 'combobox';
+    } else if (tag === 'textarea') {
+      role = 'textbox';
+    }
+    seen.add(el);
+    out.push({role: role, name: accName(el), ax_states: axStates(el)});
+  });
+
+  return out;
+}"""
+
+
 ENRICH_JS = """() => {
   function accName(el) {
     return (el.getAttribute('aria-label') || el.innerText || el.value || el.getAttribute('title') || '')
@@ -101,38 +155,6 @@ def _next_crawl_id(page) -> int:
         }"""
     )
 
-
-def _flatten_interactive_nodes(
-    node: dict | None,
-    *,
-    skip_grid_roles: bool,
-    seen_keys: set[tuple[str, str]],
-    out: list[dict],
-) -> None:
-    if not node:
-        return
-
-    role = (node.get("role") or "").lower()
-    name = (node.get("name") or "").strip()
-
-    if role in INTERACTIVE_ROLES and name:
-        if not (skip_grid_roles and role in GRID_ROLES):
-            key = (role, name)
-            if key not in seen_keys:
-                seen_keys.add(key)
-                ax_states: list[str] = []
-                for state_key in ("checked", "expanded", "selected", "pressed", "disabled"):
-                    if node.get(state_key) is True:
-                        ax_states.append(state_key)
-                out.append({"role": role, "name": name, "ax_states": ax_states})
-
-    for child in node.get("children") or []:
-        _flatten_interactive_nodes(
-            child,
-            skip_grid_roles=skip_grid_roles,
-            seen_keys=seen_keys,
-            out=out,
-        )
 
 
 def _build_candidate_from_locator(locator, crawl_id: int, *, ax_role: str, ax_name: str) -> dict | None:
@@ -250,26 +272,42 @@ def enhance_candidates_with_accessibility(
     max_candidates: int = 200,
     skip_grid_roles: bool = True,
 ) -> list[dict]:
-    """Merge AX-discovered triggers into DOM candidates and enrich all entries."""
+    """Merge AX-discovered triggers into DOM candidates and enrich all entries.
+
+    Uses a JavaScript-based AX walk instead of the deprecated
+    ``page.accessibility.snapshot()`` API (removed in Playwright ≥ 1.47).
+    """
     dom_candidates = list(candidates)
 
     try:
-        snapshot = page.accessibility.snapshot(interesting_only=True)
+        raw_nodes = page.evaluate(AX_DISCOVER_JS) or []
     except Exception as exc:
-        print(f"[AX] Snapshot failed ({exc}) — DOM-only discovery")
+        print(f"[AX] Discovery failed ({exc}) — DOM-only discovery")
         return dom_candidates
 
-    if not snapshot:
-        print("[AX] Empty accessibility snapshot — DOM-only discovery")
+    if not raw_nodes:
+        print("[AX] No interactive nodes found — DOM-only discovery")
         return dom_candidates
 
     ax_nodes: list[dict] = []
-    _flatten_interactive_nodes(
-        snapshot,
-        skip_grid_roles=skip_grid_roles,
-        seen_keys=set(),
-        out=ax_nodes,
-    )
+    seen_keys: set[tuple[str, str]] = set()
+    for node in raw_nodes:
+        role = (node.get("role") or "").lower()
+        name = (node.get("name") or "").strip()
+        role_qualifies = role in INTERACTIVE_ROLES and (name or role == "button")
+        if not role_qualifies:
+            continue
+        if skip_grid_roles and role in GRID_ROLES:
+            continue
+        key = (role, name)
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        ax_nodes.append({
+            "role": role,
+            "name": name,
+            "ax_states": node.get("ax_states") or [],
+        })
 
     added = _add_ax_candidates(page, dom_candidates, ax_nodes)
     merged = dom_candidates + added

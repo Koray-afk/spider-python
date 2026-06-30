@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "id": "react-aria3877199989-:r3o:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-ka as-4s as-4t as-ce as-3t as-3u as-kb as-14 as-j1 as-2u as-jf as-9y \u26991jk0mko",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Create tax rate\nN",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add a test tax rate",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filter",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export",
+    "id": "menu1-button",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

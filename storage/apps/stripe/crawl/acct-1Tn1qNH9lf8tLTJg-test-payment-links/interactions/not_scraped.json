@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"3\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria5530001117-:r36:\" aria-controls=\"react-aria5530001117-:r35:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-1e as-91 as-kn as-75 as-70 as-bi as-3t as-3u as-ko as-14 as-jc as-2u as-jr as-90 \u26991jk0mko\">\u2026</header>\n  - attempt"
+  },
+  {
+    "label": "Finish your setup",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"4\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria3519740916-:r3d:\" aria-controls=\"react-aria3519740916-:r3c:\" data-testid=\"setup-guide-verify_business-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-1e as-91 as-kn as-75 as-70 as-bi as-3t as-3u as-ko as-14 as-jc as-2u as-jr as-90 \u26991jk0mko\">\u2026</header>\n  - a"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"5\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"5\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria5151081695-:r3k:\" aria-controls=\"react-aria5151081695-:r3j:\" data-testid=\"setup-guide-setup_tax-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-ky as-91 as-kn as-75 as-70 as-bi as-3t as-3u as-ko as-14 as-jc as-2u as-l7 as-90 \u2699y4c4lm\">\u2026</header>\n  - attempti"
+  }
+]

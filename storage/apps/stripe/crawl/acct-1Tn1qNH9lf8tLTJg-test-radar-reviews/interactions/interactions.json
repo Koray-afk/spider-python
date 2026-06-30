@@ -1,0 +1,38 @@
+[
+  {
+    "label": "All reviews\n0",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-all-reviews-0",
+    "relationship_file": "interactions/001-all-reviews-0/relationship.json"
+  },
+  {
+    "label": "Refund recommendations\n0",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-refund-recommendations-0",
+    "relationship_file": "interactions/002-refund-recommendations-0/relationship.json"
+  },
+  {
+    "label": "Copy link",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/008-copy-link",
+    "relationship_file": "interactions/008-copy-link/relationship.json"
+  },
+  {
+    "label": "Workbench options",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/009-workbench-options",
+    "relationship_file": "interactions/009-workbench-options/relationship.json"
+  },
+  {
+    "label": "Close Workbench",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/011-close-workbench",
+    "relationship_file": "interactions/011-close-workbench/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/012-n-test-mode-new-business",
+    "relationship_file": "interactions/012-n-test-mode-new-business/relationship.json"
+  }
+]

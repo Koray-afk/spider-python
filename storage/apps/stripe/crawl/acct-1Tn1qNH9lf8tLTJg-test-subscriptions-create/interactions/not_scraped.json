@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"10\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"10\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria3936872652-:r3r:\" aria-controls=\"react-aria3936872652-:r3q:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-4r as-l2 as-5j as-5k as-ce as-3u as-3v as-l3 as-14 as-ja as-2u as-k7 as-9z \u26991jk0mko\">\u2026</header>\n  - attem"
+  },
+  {
+    "label": "Add phase",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"7\\\"]\").first\n    - locator resolved to <button href=\"\" disabled type=\"button\" data-crawl-id=\"7\" data-testid=\"subscription-editor-add-phase-button\" class=\"UnstyledLink Button-element PressableContext Padding-horizontal--12 Padding-vertical--4 PressableContext--display--inlineFlex PressableContext--fontLineHeight--28 PressableContext--fontSize--16 PressableContext--fontWeight--medium PressableContext--heigh"
+  }
+]

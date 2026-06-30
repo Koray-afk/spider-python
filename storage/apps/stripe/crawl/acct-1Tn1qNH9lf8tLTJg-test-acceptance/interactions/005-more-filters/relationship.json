@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-acceptance",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/acceptance",
+  "source_title": "Payments analytics \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "span",
+    "text": "More filters",
+    "id": "",
+    "class_name": "\u2699 rs-g rs-3 rs-2 as-et as-eu as-ev as-8m as-ew as-bp as-bq as-c0 as-4l as-14 as-ex as-3f as-2u as-5h as-ey as-ez as-bj as-f0 as-f1 as-f2 as-4s as-5j as-1e as-f3 as-4p as-8g \u269927ckpp",
+    "name": "",
+    "role": "listitem",
+    "href": "",
+    "src": "",
+    "data_testid": "chip",
+    "aria_label": "",
+    "selector": "#controlbar-sticky > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(5)",
+    "crawl_selector": "[data-crawl-id=\"6\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/span[5]",
+    "outer_html": "<span data-testid=\"chip\" role=\"listitem\" class=\"\u2699 rs-g rs-3 rs-2 as-et as-eu as-ev as-8m as-ew as-bp as-bq as-c0 as-4l as-14 as-ex as-3f as-2u as-5h as-ey as-ez as-bj as-f0 as-f1 as-f2 as-4s as-5j as-1e as-f3 as-4p as-8g \u269927ckpp\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-crawl-id=\"6\"><span class=\"\u2699 rs-2 as-14 as-5h as-4p as-0 \u2699afz09a\"><span class=\"\u2699 as-5i as-5j \u2699fswgix\">More filters</span></span><a tabindex=\"0\" aria-label=\"Add More filters\" data-testid=\"icon-button\" role=\"button\" class=\"\u2699 rs-4 rs-3 rs-2 rs-4 rs-5 as-1d as-1e as-1f as-1g as-1h as-n as-q as-2u as-50 \u26991pe3dx9\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-5s as-5t \u2699psn2hp\"><path d=\"M8.75 4.25a.75.75 0 0 0-1.5 0v3h-3a.75.75 0 0 0 0 1.5h3v3a.75.75 0 0 0 1.5 0v-3h3a.75.75 0 0 0 0-1.5h-3v-3Z\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16 8a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c4.43 0 8 3.581 8 8Zm-1.5 0A6.5 6.5 0 0 1 8 14.5 6.5 6.5 0 0 1 1.5 8 6.5 6.5 0 0 1 8 1.5c3.6 0 6.5 2.908 6.5 6.5Z\"></path></svg></a></span>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/acceptance?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment&display_mode=card",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-acceptance",
+    "title": "Payments analytics \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<span data-testid=\"chip\" role=\"listitem\" class=\"\u2699 rs-g rs-3 rs-2 as-et as-eu as-ev as-8m as-ew as-bp as-bq as-c0 as-4l as-14 as-ex as-3f as-2u as-5h as-ey as-ez as-bj as-f0 as-f1 as-f2 as-4s as-5j as-1e as-f3 as-4p as-8g \u269927ckpp\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-crawl-id=\"6\"><span class=\"\u2699 rs-2 as-14 as-5h as-4p as-0 \u2699afz09a\"><span class=\"\u2699 as-5i as-5j \u2699fswgix\">More filters</span></span><a tabindex=\"0\" aria-label=\"Add More filters\" data-testid=\"icon-button\" role=\"button\" class=\"\u2699 rs-4 rs-3 rs-2 rs-4 rs-5 as-1d as-1e as-1f as-1g as-1h as-n as-q as-2u as-50 \u26991pe3dx9\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-5s as-5t \u2699psn2hp\"><path d=\"M8.75 4.25a.75.75 0 0 0-1.5 0v3h-3a.75.75 0 0 0 0 1.5h3v3a.75.75 0 0 0 1.5 0v-3h3a.75.75 0 0 0 0-1.5h-3v-3Z\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16 8a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c4.43 0 8 3.581 8 8Zm-1.5 0A6.5 6.5 0 0 1 8 14.5 6.5 6.5 0 0 1 1.5 8 6.5 6.5 0 0 1 8 1.5c3.6 0 6.5 2.908 6.5 6.5Z\"></path></svg></a></span>",
+  "trigger_label": "More filters",
+  "trigger_id": "",
+  "trigger_class": "\u2699 rs-h rs-3 rs-2 as-et as-eu as-ev as-cb as-ew as-bk as-bl as-bv as-4l as-14 as-ex as-3f as-2u as-5h as-ey as-ez as-be as-f0 as-f1 as-f2 as-4s as-5j as-1e as-f3 as-4p as-8g \u269927ckpp",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/acceptance?primary_filter=3M&compare_to_filter=previousPeriod&unit=week&dataset_id=deduped&rate=payment&display_mode=card",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-acceptance",
+  "target_title": "Payments analytics \u2013 New business \u2013 Stripe [Test]"
+}

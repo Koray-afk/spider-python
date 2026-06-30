@@ -1,0 +1,26 @@
+[
+  {
+    "label": "All rule matches\n0",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/002-all-rule-matches-0",
+    "relationship_file": "interactions/002-all-rule-matches-0/relationship.json"
+  },
+  {
+    "label": "3D Secure\n0",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/003-3d-secure-0",
+    "relationship_file": "interactions/003-3d-secure-0/relationship.json"
+  },
+  {
+    "label": "Block\n0",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/005-block-0",
+    "relationship_file": "interactions/005-block-0/relationship.json"
+  },
+  {
+    "label": "Workbench options",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/008-workbench-options",
+    "relationship_file": "interactions/008-workbench-options/relationship.json"
+  }
+]

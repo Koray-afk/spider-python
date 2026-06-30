@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/001-set-up-recurring-payments",
+    "relationship_file": "interactions/001-set-up-recurring-payments/relationship.json"
+  },
+  {
+    "label": "Create shipping rate\nN",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/002-create-shipping-rate-n",
+    "relationship_file": "interactions/002-create-shipping-rate-n/relationship.json"
+  }
+]

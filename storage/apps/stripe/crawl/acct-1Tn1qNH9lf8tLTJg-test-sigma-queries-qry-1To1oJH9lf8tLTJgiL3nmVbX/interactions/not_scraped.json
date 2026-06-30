@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Sigma",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"1\\\"]\").first\n    - locator resolved to <button href=\"\" type=\"button\" data-crawl-id=\"1\" data-testid=\"sigma-back-button\" class=\"UnstyledLink ButtonLink db-SigmaBackButton Flex-flex\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div data-t"
+  }
+]

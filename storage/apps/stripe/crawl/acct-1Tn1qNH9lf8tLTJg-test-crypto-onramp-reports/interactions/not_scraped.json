@@ -1,0 +1,33 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "Date range\nLast 7 days",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"5\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"5\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria3556786545-:r5c:\" aria-controls=\"react-aria3556786545-:r5b:\" data-testid=\"setup-guide-setup_tax-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-5u as-56 as-o5 as-50 as-4x as-cn as-3t as-3u as-o6 as-14 as-n1 as-2u as-oi as-a9 \u2699y4c4lm\">\u2026</header>\n  - attempti"
+  },
+  {
+    "label": "Enter full screen",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"3\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria3153638891-:r4u:\" aria-controls=\"react-aria3153638891-:r4t:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-56 as-o5 as-50 as-4x as-cn as-3t as-3u as-o6 as-14 as-n1 as-2u as-nf as-a9 \u26991jk0mko\">\u2026</header>\n  - attempt"
+  },
+  {
+    "label": "Close Workbench",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"4\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria6188500374-:r6n:\" aria-controls=\"react-aria6188500374-:r6m:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-56 as-sc as-50 as-4x as-cn as-3t as-3u as-sd as-14 as-rb as-2u as-rn as-a9 \u26991jk0mko\">\u2026</header>\n  - attempt"
+  }
+]

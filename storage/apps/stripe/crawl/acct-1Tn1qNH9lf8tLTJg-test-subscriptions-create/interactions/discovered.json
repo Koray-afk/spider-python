@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "id": "react-aria5147794793-:r3r:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4r as-l2 as-5j as-5k as-ce as-3u as-3v as-l3 as-14 as-ja as-2u as-k7 as-9z \u26991jk0mko",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Add product",
+    "id": "",
+    "className": "UnstyledLink ButtonLink test-AddProductButton Flex-flex",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add trial",
+    "id": "",
+    "className": "UnstyledLink ButtonLink Flex-flex",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add coupon",
+    "id": "",
+    "className": "UnstyledLink ButtonLink Flex-flex",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add trial days",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add phase",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--12 Padding-vertical--4 PressableContext--display--inlineFlex PressableContext--fontLineHeight--28 PressableContext--fontSize--16 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "30 Jun 2026",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More options",
+    "id": "menu3-button",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Feedback?",
+    "id": "",
+    "className": "UnstyledLink ButtonLink IconParent Flex-flex",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

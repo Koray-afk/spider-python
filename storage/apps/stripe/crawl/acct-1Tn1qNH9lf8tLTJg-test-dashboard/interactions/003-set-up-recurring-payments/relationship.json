@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-dashboard",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/dashboard#",
+  "source_title": "Home \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "div",
+    "text": "Switch to sandbox",
+    "id": ":rc7:",
+    "class_name": "\u2699",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#\\:rc7\\:",
+    "crawl_selector": "[data-crawl-id=\"3\"]",
+    "xpath": "//*[@id=\":rc7:\"]",
+    "outer_html": "<div class=\"\u2699\" aria-expanded=\"false\" aria-haspopup=\"menu\" id=\":rc7:\" data-crawl-id=\"3\"><a role=\"menuitem\" data-testid=\"account-switcher-sandboxes-menu\" aria-expanded=\"false\" aria-haspopup=\"true\" tabindex=\"0\" class=\"\u2699 rs-4 rs-3 rs-2 as-1d as-1e as-1f as-1g as-1h as-2t as-2u as-a8 as-2v as-7f as-1t as-14 as-n0 as-n4 as-mx as-w7 as-7h as-w8 as-g as-p5 as-wa as-wb as-s6 as-wc as-wd \u2699172fgt7\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-2z as-30 as-w9 \u2699lzxt24\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.098 1.688a2 2 0 0 1 .846-.188h.112a2 2 0 0 1 .846.188l5.944 2.773A2 2 0 0 1 16 6.274v3.49a2 2 0 0 1-1.106 1.789l-5.26 2.63a3 3 0 0 1-1.342.317h-.584a3 3 0 0 1-1.341-.317l-5.261-2.63A2 2 0 0 1 0 9.763v-3.49a2 2 0 0 1 1.154-1.812l5.944-2.773Zm7.402 5.4v2.676a.5.5 0 0 1-.276.447l-5.261 2.63c-.07.035-.14.064-.213.087V9.964l5.75-2.875Zm-.563-1.395-2.482 1.24L8.6 5.617V3.202l5.338 2.49ZM7.4 3.202l-5.337 2.49 2.482 1.242L7.4 5.616V3.202Zm.6 5.46 2.08-1.04L8 6.66l-2.08.96L8 8.661ZM1.5 7.089l5.75 2.875v2.964a1.493 1.493 0 0 1-.213-.086l-5.26-2.63a.5.5 0 0 1-.277-.448V7.089Z\"></path></svg><div class=\"\u2699 rs-2 as-2u as-a as-14 \u2699qw7zy0\">Switch to sandbox</div><div class=\"\u2699 rs-2 as-2u as-3a as-14 \u2699156ulol\"><svg aria-hidden=\"true\" width=\"8\" height=\"8\" viewBox=\"0 0 8 8\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-84 as-85 \u26991vesfrc\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2.334.606a.75.75 0 0 1 1.06-.022l3 2.875a.75.75 0 0 1 0 1.082L3.4 7.416a.75.75 0 1 1-1.038-1.082L4.79 4 2.357 1.666a.75.75 0 0 1-.022-1.06Z\"></path></svg></div></a></div>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/dashboard#",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-dashboard",
+    "title": "Home \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<div class=\"\u2699\" aria-expanded=\"false\" aria-haspopup=\"menu\" id=\":rc7:\" data-crawl-id=\"3\"><a role=\"menuitem\" data-testid=\"account-switcher-sandboxes-menu\" aria-expanded=\"false\" aria-haspopup=\"true\" tabindex=\"0\" class=\"\u2699 rs-4 rs-3 rs-2 as-1d as-1e as-1f as-1g as-1h as-2t as-2u as-a8 as-2v as-7f as-1t as-14 as-n0 as-n4 as-mx as-w7 as-7h as-w8 as-g as-p5 as-wa as-wb as-s6 as-wc as-wd \u2699172fgt7\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-2z as-30 as-w9 \u2699lzxt24\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.098 1.688a2 2 0 0 1 .846-.188h.112a2 2 0 0 1 .846.188l5.944 2.773A2 2 0 0 1 16 6.274v3.49a2 2 0 0 1-1.106 1.789l-5.26 2.63a3 3 0 0 1-1.342.317h-.584a3 3 0 0 1-1.341-.317l-5.261-2.63A2 2 0 0 1 0 9.763v-3.49a2 2 0 0 1 1.154-1.812l5.944-2.773Zm7.402 5.4v2.676a.5.5 0 0 1-.276.447l-5.261 2.63c-.07.035-.14.064-.213.087V9.964l5.75-2.875Zm-.563-1.395-2.482 1.24L8.6 5.617V3.202l5.338 2.49ZM7.4 3.202l-5.337 2.49 2.482 1.242L7.4 5.616V3.202Zm.6 5.46 2.08-1.04L8 6.66l-2.08.96L8 8.661ZM1.5 7.089l5.75 2.875v2.964a1.493 1.493 0 0 1-.213-.086l-5.26-2.63a.5.5 0 0 1-.277-.448V7.089Z\"></path></svg><div class=\"\u2699 rs-2 as-2u as-a as-14 \u2699qw7zy0\">Switch to sandbox</div><div class=\"\u2699 rs-2 as-2u as-3a as-14 \u2699156ulol\"><svg aria-hidden=\"true\" width=\"8\" height=\"8\" viewBox=\"0 0 8 8\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-84 as-85 \u26991vesfrc\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2.334.606a.75.75 0 0 1 1.06-.022l3 2.875a.75.75 0 0 1 0 1.082L3.4 7.416a.75.75 0 1 1-1.038-1.082L4.79 4 2.357 1.666a.75.75 0 0 1-.022-1.06Z\"></path></svg></div></a></div>",
+  "trigger_label": "Set up recurring payments",
+  "trigger_id": "react-aria9447742805-:r4n:",
+  "trigger_class": "\u2699 rs-9 rs-3 rs-2 as-1e as-8v as-no as-75 as-73 as-bd as-3t as-3u as-np as-14 as-ml as-2u as-mx as-8u \u26991jk0mko",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/dashboard#",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-dashboard",
+  "target_title": "Home \u2013 New business \u2013 Stripe [Test]"
+}

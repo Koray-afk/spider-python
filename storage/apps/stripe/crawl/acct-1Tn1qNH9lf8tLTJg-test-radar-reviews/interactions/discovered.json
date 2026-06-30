@@ -1,0 +1,122 @@
+[
+  {
+    "label": "All reviews\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Refund recommendations\n0",
+    "id": "",
+    "className": "UnstyledLink ContentTab-link",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Review type",
+    "id": "",
+    "className": "\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Amount",
+    "id": "",
+    "className": "\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Risk",
+    "id": "",
+    "className": "\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Date",
+    "id": "",
+    "className": "\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "More filters",
+    "id": "",
+    "className": "\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Copy link",
+    "id": "",
+    "className": "tooltip-trigger-isolate \u2699  as-8k as-l3 as-l4 as-8m \u26991404sml",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Workbench options",
+    "id": "",
+    "className": "tooltip-trigger-isolate \u2699  as-8k as-l3 as-l4 as-8m \u26991404sml",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Enter full screen",
+    "id": "",
+    "className": "tooltip-trigger-isolate \u2699  as-8k as-l3 as-l4 as-8m \u26991404sml",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Close Workbench",
+    "id": "",
+    "className": "tooltip-trigger-isolate \u2699  as-8k as-l3 as-l4 as-8m \u26991404sml",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "id": ":r2g:",
+    "className": "\u2699",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Set up recurring payments",
+    "id": "react-aria6370462941-:r80:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-rg as-4s as-4t as-ce as-3t as-3u as-nj as-14 as-qu as-2u as-qv as-9y \u26991jk0mko",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "header",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Finish your setup",
+    "id": "react-aria6370462941-:r87:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-rg as-4s as-4t as-ce as-3t as-3u as-nj as-14 as-qu as-2u as-qv as-9y \u26991jk0mko",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "header",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Set up tax collection",
+    "id": "react-aria6370462941-:r8e:",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-pf as-4q as-rg as-4s as-4t as-ce as-3t as-3u as-nj as-14 as-qu as-2u as-rr as-9y \u2699y4c4lm",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "header",
+    "llm_type": "navigation"
+  }
+]

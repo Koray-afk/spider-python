@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Refund recommendations\n0",
+  "triggerId": "",
+  "triggerClass": "UnstyledLink ContentTab-link",
+  "selector": "[data-crawl-id=\"2\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews",
+  "sourceUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/reviews",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/reviews",
+  "beforeTitle": "Radar \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/reviews?status[0]=recommended_refund&smart_refund_confidence_level[0]=very_high&smart_refund_confidence_level[1]=high",
+  "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "acct-1Tn1qNH9lf8tLTJg-test-radar-reviews/interactions/002-refund-recommendations-0",
+  "captured_at": "2026-06-30T14:27:15.333085+00:00"
+}

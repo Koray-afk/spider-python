@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Create test payment link\nN",
+    "tag_name": "button",
+    "selector": "#secondary-nav > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-links/create",
+    "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-payment-links-create",
+    "target_page": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links-create/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Create test payment link\nN",
+      "id": "",
+      "class_name": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#secondary-nav > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]",
+      "outer_html": "<button class=\"UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto\" href=\"\" type=\"button\" style=\"color: rgb(255, 255, 255);\" data-crawl-id=\"1\"><div class=\"Button-align Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--center\" style=\"width: 100%; line-height: 0; flex: 1 1 auto;\"><div class=\"Box-root Padding-right--8\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--add Button-icon Icon-color Icon-color--white Box-root Flex-flex\" style=\"transform: translateY(1.07px);\"><svg aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--add-svg Button-icon-svg Icon-color-svg Icon-color--white-svg\" height=\"12\" width=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M8 .25c.483 0 .875.392.875.875v6h6a.875.875 0 0 1 0 1.75h-6v6a.875.875 0 0 1-1.75 0v-6h-6a.875.875 0 1 1 0-1.75h6v-6c0-.483.392-.875.875-.875Z\"></path></svg></div></div><span class=\"Button-label Text-color--white Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\"><span>Create test payment link</span><div class=\"db-Shortcut \u2699  as-hk as-76 as-hl as-hm as-7a as-4 as-0 as-5o as-y as-hn as-8e as-ho as-7t as-hp as-4n \u2699mad4wv\"><span class=\"\u2699 rs-3 as-hq as-ay as-hr as-hs as-ht as-hu \u26991u1f5n1\">N</span></div></span></div></div></button>"
+    }
+  }
+]

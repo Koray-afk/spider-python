@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Download",
+  "triggerId": "",
+  "triggerClass": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+  "selector": "[data-crawl-id=\"3\"]",
+  "interactionType": "modal",
+  "sourcePage": "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details",
+  "sourceUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rule-details?ruleId=block_if_high_risk&startDate=2026-06-27&endDate=2026-06-28",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rule-details?ruleId=block_if_high_risk&startDate=2026-06-28&endDate=2026-06-30",
+  "beforeTitle": "Radar \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rule-details?ruleId=block_if_high_risk&startDate=2026-06-28&endDate=2026-06-30",
+  "title": "Radar \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "acct-1Tn1qNH9lf8tLTJg-test-radar-rule-details/interactions/003-download",
+  "captured_at": "2026-06-30T14:35:30.005493+00:00"
+}
