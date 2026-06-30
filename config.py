@@ -279,6 +279,10 @@ APPS = {
             "Top-ups",
             "All activity",
         ],
+        # Workbench is a heavy developer panel — capture it but don't recurse into its interactions.
+        "url_interaction_depth_overrides": [
+            {"pattern": "/workbench", "max_depth": 1},
+        ],
     },
 }
 

@@ -1324,6 +1324,7 @@ def bfs_crawl(
     max_interactions: int = DEFAULT_MAX_INTERACTIONS,
     max_ranked_interactions: int = 15,
     max_interaction_depth: int | None = 3,
+    url_interaction_depth_overrides: list[dict] | None = None,
     use_ax_discovery: bool = True,
     ax_max_candidates_per_page: int = 200,
     ax_skip_grid_roles: bool = True,
@@ -1565,14 +1566,19 @@ def bfs_crawl(
             page = None
 
             _SKIP_CLASSES = {"accordion-button", "accordion-title"}
-            _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing"}
+            _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing", "Developers"}
             candidates = [
                 c for c in candidates
                 if not any(cls in (c.get("className") or "") for cls in _SKIP_CLASSES)
                 and (c.get("label") or "").strip() not in _SKIP_LABELS
             ]
 
-            run_interactions = max_interaction_depth is None or depth < max_interaction_depth
+            effective_max_depth = max_interaction_depth
+            for _override in (url_interaction_depth_overrides or []):
+                if _override["pattern"] in url:
+                    effective_max_depth = _override["max_depth"]
+                    break
+            run_interactions = effective_max_depth is None or depth < effective_max_depth
             if run_interactions and candidates and os.getenv("GEMINI_API_KEY"):
                 from ranker.interaction_ranker import rank_candidates
                 candidates = rank_candidates(
@@ -1709,6 +1715,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             max_interactions=max_interactions,
             max_ranked_interactions=max_ranked_interactions,
             max_interaction_depth=max_interaction_depth,
+            url_interaction_depth_overrides=cfg.get("url_interaction_depth_overrides") or [],
             check_login=post_auth,
             skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
             wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
