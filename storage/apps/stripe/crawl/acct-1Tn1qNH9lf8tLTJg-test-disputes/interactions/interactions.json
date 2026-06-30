@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Status\nNeeds response\nNeeds response (enquiry)",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/004-status-needs-response-needs-response-enquiry",
+    "relationship_file": "interactions/004-status-needs-response-needs-response-enquiry/relationship.json"
+  },
+  {
+    "label": "Evidence due by\nAfter 23 Jun 2026",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/005-evidence-due-by-after-23-jun-2026",
+    "relationship_file": "interactions/005-evidence-due-by-after-23-jun-2026/relationship.json"
+  },
+  {
+    "label": "Reason",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/006-reason",
+    "relationship_file": "interactions/006-reason/relationship.json"
+  },
+  {
+    "label": "Amount",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/007-amount",
+    "relationship_file": "interactions/007-amount/relationship.json"
+  },
+  {
+    "label": "Disputed date",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/008-disputed-date",
+    "relationship_file": "interactions/008-disputed-date/relationship.json"
+  },
+  {
+    "label": "Export",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-export",
+    "relationship_file": "interactions/009-export/relationship.json"
+  },
+  {
+    "label": "Copy link",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-copy-link",
+    "relationship_file": "interactions/010-copy-link/relationship.json"
+  },
+  {
+    "label": "Workbench options",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/011-workbench-options",
+    "relationship_file": "interactions/011-workbench-options/relationship.json"
+  }
+]

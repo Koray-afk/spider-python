@@ -1,0 +1,58 @@
+[
+  {
+    "label": "Create link",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add recommended products",
+    "id": "",
+    "className": "UnstyledLink ButtonLink Flex-flex",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add new product",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Products or subscriptions",
+    "id": "menu1-button",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Close",
+    "id": "",
+    "className": "UnstyledLink PressableContext Padding-horizontal--12 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Advanced options",
+    "id": "",
+    "className": "UnstyledLink",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Use your domain",
+    "id": "",
+    "className": "db-FakeChromeWrapper-customDomainsUpsell",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  }
+]

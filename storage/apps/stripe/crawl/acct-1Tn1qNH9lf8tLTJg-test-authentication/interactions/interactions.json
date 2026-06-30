@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Summarise my authentication analytics",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/004-summarise-my-authentication-analytics",
+    "relationship_file": "interactions/004-summarise-my-authentication-analytics/relationship.json"
+  },
+  {
+    "label": "Card type",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-card-type",
+    "relationship_file": "interactions/005-card-type/relationship.json"
+  },
+  {
+    "label": "Card country",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/006-card-country",
+    "relationship_file": "interactions/006-card-country/relationship.json"
+  },
+  {
+    "label": "Card brand",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-card-brand",
+    "relationship_file": "interactions/007-card-brand/relationship.json"
+  },
+  {
+    "label": "Currency",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/008-currency",
+    "relationship_file": "interactions/008-currency/relationship.json"
+  },
+  {
+    "label": "Interaction type",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/009-interaction-type",
+    "relationship_file": "interactions/009-interaction-type/relationship.json"
+  },
+  {
+    "label": "Retry status",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/010-retry-status",
+    "relationship_file": "interactions/010-retry-status/relationship.json"
+  }
+]

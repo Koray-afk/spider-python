@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Add product",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-add-product",
+    "relationship_file": "interactions/002-add-product/relationship.json"
+  },
+  {
+    "label": "Add trial",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-add-trial",
+    "relationship_file": "interactions/003-add-trial/relationship.json"
+  },
+  {
+    "label": "Add coupon",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-add-coupon",
+    "relationship_file": "interactions/004-add-coupon/relationship.json"
+  },
+  {
+    "label": "Add trial days",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/005-add-trial-days",
+    "relationship_file": "interactions/005-add-trial-days/relationship.json"
+  },
+  {
+    "label": "30 Jun 2026",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/007-30-jun-2026",
+    "relationship_file": "interactions/007-30-jun-2026/relationship.json"
+  },
+  {
+    "label": "More options",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/008-more-options",
+    "relationship_file": "interactions/008-more-options/relationship.json"
+  },
+  {
+    "label": "Feedback?",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/009-feedback",
+    "relationship_file": "interactions/009-feedback/relationship.json"
+  }
+]

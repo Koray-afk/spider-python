@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Card type",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-card-type",
+    "relationship_file": "interactions/001-card-type/relationship.json"
+  },
+  {
+    "label": "Card country",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/002-card-country",
+    "relationship_file": "interactions/002-card-country/relationship.json"
+  },
+  {
+    "label": "Card brand",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/003-card-brand",
+    "relationship_file": "interactions/003-card-brand/relationship.json"
+  },
+  {
+    "label": "Interaction type",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/004-interaction-type",
+    "relationship_file": "interactions/004-interaction-type/relationship.json"
+  },
+  {
+    "label": "More filters",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/005-more-filters",
+    "relationship_file": "interactions/005-more-filters/relationship.json"
+  },
+  {
+    "label": "Summarise my acceptance analytics",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/006-summarise-my-acceptance-analytics",
+    "relationship_file": "interactions/006-summarise-my-acceptance-analytics/relationship.json"
+  }
+]

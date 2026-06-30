@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "N\nTest mode\nNew business",
+  "triggerId": ":r2m:",
+  "triggerClass": "\u2699",
+  "selector": "[data-crawl-id=\"2\"]",
+  "interactionType": "modal",
+  "sourcePage": "test-customers",
+  "sourceUrl": "https://dashboard.stripe.com/test/customers",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers",
+  "beforeTitle": "Customers \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers",
+  "title": "Customers \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "test-customers/interactions/003-n-test-mode-new-business",
+  "captured_at": "2026-06-30T14:06:47.349185+00:00"
+}

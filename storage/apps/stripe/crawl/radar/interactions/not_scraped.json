@@ -1,0 +1,57 @@
+[
+  {
+    "label": "Block\n0",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"4\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria5478015129-:r40:\" aria-controls=\"react-aria5478015129-:r3v:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-mm as-5i as-5j as-ce as-3t as-3u as-es as-14 as-lf as-2u as-lr as-9y \u26991jk0mko\">\u2026</header>\n  - attempt"
+  },
+  {
+    "label": "Review\n0",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"5\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"5\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria2420290904-:r47:\" aria-controls=\"react-aria2420290904-:r46:\" data-testid=\"setup-guide-verify_business-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-mm as-5i as-5j as-ce as-3t as-3u as-es as-14 as-lf as-2u as-lr as-9y \u26991jk0mko\">\u2026</header>\n  - a"
+  },
+  {
+    "label": "Processor\nStripe",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"6\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"6\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria4015506695-:r4e:\" aria-controls=\"react-aria4015506695-:r4d:\" data-testid=\"setup-guide-setup_tax-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-mw as-4q as-mm as-5i as-5j as-ce as-3t as-3u as-es as-14 as-lf as-2u as-n5 as-9y \u2699y4c4lm\">\u2026</header>\n  - attempti"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"8\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"8\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria7899210772-:r7f:\" aria-controls=\"react-aria7899210772-:r7e:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-rg as-5i as-5j as-ce as-3t as-3u as-es as-14 as-qv as-2u as-qw as-9y \u26991jk0mko\">\u2026</header>\n  - attempt"
+  },
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"9\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"9\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria5347845914-:r7r:\" aria-controls=\"react-aria5347845914-:r7q:\" data-testid=\"setup-guide-verify_business-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-rl as-5i as-5j as-ce as-3t as-3u as-es as-14 as-r0 as-2u as-r1 as-9y \u26991jk0mko\">\u2026</header>\n  - a"
+  },
+  {
+    "label": "Finish your setup",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"10\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"10\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria5003672142-:r82:\" aria-controls=\"react-aria5003672142-:r81:\" data-testid=\"setup-guide-setup_tax-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-p9 as-4q as-rl as-5i as-5j as-ce as-3t as-3u as-es as-14 as-r0 as-2u as-rx as-9y \u2699y4c4lm\">\u2026</header>\n  - attemp"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

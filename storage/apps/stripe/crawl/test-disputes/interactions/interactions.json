@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Status",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/004-status",
+    "relationship_file": "interactions/004-status/relationship.json"
+  },
+  {
+    "label": "Disputed date",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/005-disputed-date",
+    "relationship_file": "interactions/005-disputed-date/relationship.json"
+  },
+  {
+    "label": "Evidence due by",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/006-evidence-due-by",
+    "relationship_file": "interactions/006-evidence-due-by/relationship.json"
+  },
+  {
+    "label": "Reason",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/007-reason",
+    "relationship_file": "interactions/007-reason/relationship.json"
+  },
+  {
+    "label": "Amount",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/008-amount",
+    "relationship_file": "interactions/008-amount/relationship.json"
+  },
+  {
+    "label": "Export",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-export",
+    "relationship_file": "interactions/009-export/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/010-n-test-mode-new-business",
+    "relationship_file": "interactions/010-n-test-mode-new-business/relationship.json"
+  }
+]

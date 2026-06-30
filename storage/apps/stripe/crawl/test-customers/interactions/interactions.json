@@ -1,0 +1,26 @@
+[
+  {
+    "label": "All",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/001-all",
+    "relationship_file": "interactions/001-all/relationship.json"
+  },
+  {
+    "label": "Remaining balances",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/002-remaining-balances",
+    "relationship_file": "interactions/002-remaining-balances/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/003-n-test-mode-new-business",
+    "relationship_file": "interactions/003-n-test-mode-new-business/relationship.json"
+  },
+  {
+    "label": "Filter",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/004-filter",
+    "relationship_file": "interactions/004-filter/relationship.json"
+  }
+]

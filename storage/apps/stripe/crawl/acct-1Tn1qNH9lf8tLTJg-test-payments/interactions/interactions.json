@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Date and time\n24 Jun 2026 - 30 Jun 2026",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/004-date-and-time-24-jun-2026-30-jun-2026",
+    "relationship_file": "interactions/004-date-and-time-24-jun-2026-30-jun-2026/relationship.json"
+  },
+  {
+    "label": "Amount",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-amount",
+    "relationship_file": "interactions/005-amount/relationship.json"
+  },
+  {
+    "label": "Currency",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/006-currency",
+    "relationship_file": "interactions/006-currency/relationship.json"
+  },
+  {
+    "label": "Status",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-status",
+    "relationship_file": "interactions/007-status/relationship.json"
+  },
+  {
+    "label": "Payment method",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/008-payment-method",
+    "relationship_file": "interactions/008-payment-method/relationship.json"
+  },
+  {
+    "label": "More filters",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/009-more-filters",
+    "relationship_file": "interactions/009-more-filters/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/010-n-test-mode-new-business",
+    "relationship_file": "interactions/010-n-test-mode-new-business/relationship.json"
+  }
+]

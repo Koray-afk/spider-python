@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "id": "react-aria3390020816-:r36:",
+    "className": "\u2699 rs-9 rs-3 rs-2 as-1e as-91 as-k0 as-7c as-4f as-bi as-3t as-3u as-k1 as-14 as-ip as-2u as-j4 as-90 \u26991jk0mko",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Finish your setup",
+    "id": "react-aria3390020816-:r3d:",
+    "className": "\u2699 rs-9 rs-3 rs-2 as-1e as-91 as-k0 as-7c as-4f as-bi as-3t as-3u as-k1 as-14 as-ip as-2u as-j4 as-90 \u26991jk0mko",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Set up tax collection",
+    "id": "react-aria3390020816-:r3k:",
+    "className": "\u2699 rs-9 rs-3 rs-2 as-kd as-91 as-k0 as-7c as-4f as-bi as-3t as-3u as-k1 as-14 as-ip as-2u as-km as-90 \u2699y4c4lm",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "header",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "id": ":r1s:",
+    "className": "\u2699",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "div",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "analytics",
+    "id": "",
+    "className": "UnstyledLink ButtonLink IconParent Flex-flex",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "navigation"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "label": "United Kingdom",
+    "id": "",
+    "className": "SearchableSelect-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--maximized",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Payment type",
+    "id": "",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-59 as-5a as-5b as-5c as-5d as-4m as-5e as-5f as-5g as-14 as-5h as-3e as-2u as-3u as-4o as-5i as-3r as-5j as-5k as-5l as-5m as-35 as-1e as-5n as-5o as-5p \u269927ckpp",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Compatible SDKs",
+    "id": "",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-59 as-5a as-5b as-5c as-5d as-4m as-5e as-5f as-5g as-14 as-5h as-3e as-2u as-3u as-4o as-5i as-3r as-5j as-5k as-5l as-5m as-35 as-1e as-5n as-5o as-5p \u269927ckpp",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Connectivity",
+    "id": "",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-59 as-5a as-5b as-5c as-5d as-4m as-5e as-5f as-5g as-14 as-5h as-3e as-2u as-3u as-4o as-5i as-3r as-5j as-5k as-5l as-5m as-35 as-1e as-5n as-5o as-5p \u269927ckpp",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Device type",
+    "id": "",
+    "className": "\u2699 rs-8 rs-3 rs-2 as-59 as-5a as-5b as-5c as-5d as-4m as-5e as-5f as-5g as-14 as-5h as-3e as-2u as-3u as-4o as-5i as-3r as-5j as-5k as-5l as-5m as-35 as-1e as-5n as-5o as-5p \u269927ckpp",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cart\n0",
+    "id": "",
+    "className": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "llm_type": "interaction"
+  }
+]

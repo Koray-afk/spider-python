@@ -1,0 +1,20 @@
+[
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-n-test-mode-new-business",
+    "relationship_file": "interactions/001-n-test-mode-new-business/relationship.json"
+  },
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-set-up-recurring-payments",
+    "relationship_file": "interactions/002-set-up-recurring-payments/relationship.json"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-set-up-tax-collection",
+    "relationship_file": "interactions/004-set-up-tax-collection/relationship.json"
+  }
+]

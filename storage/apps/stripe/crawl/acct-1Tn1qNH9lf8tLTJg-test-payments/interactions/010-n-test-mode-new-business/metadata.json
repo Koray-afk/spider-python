@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "N\nTest mode\nNew business",
+  "triggerId": ":r2d:",
+  "triggerClass": "\u2699",
+  "selector": "[data-crawl-id=\"7\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "acct-1Tn1qNH9lf8tLTJg-test-payments",
+  "sourceUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments?created[gte]=1782239400&created[lte]=1782844199",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments?created[gte]=1782239400&created[lte]=1782844199",
+  "beforeTitle": "Transactions \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments?created[gte]=1782239400&created[lte]=1782844199",
+  "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "acct-1Tn1qNH9lf8tLTJg-test-payments/interactions/010-n-test-mode-new-business",
+  "captured_at": "2026-06-30T13:57:59.919297+00:00"
+}

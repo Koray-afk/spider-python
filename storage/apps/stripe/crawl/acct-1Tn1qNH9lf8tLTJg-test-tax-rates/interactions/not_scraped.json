@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"6\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"6\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria5333482691-:r40:\" aria-controls=\"react-aria5333482691-:r3v:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-8 rs-3 rs-2 as-1e as-4q as-km as-4s as-4t as-ce as-3t as-3u as-kn as-14 as-jd as-2u as-jr as-9y \u26991jk0mko\">\u2026</header>\n  - attempt"
+  },
+  {
+    "label": "Add a test tax rate",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  }
+]

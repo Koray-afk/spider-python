@@ -1,0 +1,38 @@
+{
+  "source_page": "test-customers",
+  "source_url": "https://dashboard.stripe.com/test/customers",
+  "source_title": "Customers \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "div",
+    "text": "Remaining balances",
+    "id": "",
+    "class_name": "\u2699 rs-9 rs-6 rs-7 rs-4 rs-3 rs-9 as-e2 as-be as-bd as-dk as-dl as-dm as-6s as-dn as-e3 as-dp as-dq as-e4 as-ds as-dt as-1e as-du as-5b as-ah as-dv as-ax as-3s as-3t as-e5 as-84 \u2699w0zr4z",
+    "name": "",
+    "role": "tab",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"8\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[1]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "outer_html": "<div role=\"tab\" aria-controls=\"list-page-section\" aria-selected=\"false\" tabindex=\"-1\" class=\"\u2699 rs-9 rs-6 rs-7 rs-4 rs-3 rs-9 as-e2 as-be as-bd as-dk as-dl as-dm as-6s as-dn as-e3 as-dp as-dq as-e4 as-ds as-dt as-1e as-du as-5b as-ah as-dv as-ax as-3s as-3t as-e5 as-84 \u2699w0zr4z\" data-crawl-id=\"8\"><div class=\"\u2699 rs-2 as-14 as-2u as-e0 as-20 \u269912mlsvi\"><span class=\"\u2699 as-e1 as-20 as-a as-2x \u26991u0ps4z\">Remaining balances</span></div></div>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers?has_remaining_balance=true&listId=remaining-balances",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-customers",
+    "title": "Customers \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<div role=\"tab\" aria-controls=\"list-page-section\" aria-selected=\"false\" tabindex=\"-1\" class=\"\u2699 rs-9 rs-6 rs-7 rs-4 rs-3 rs-9 as-e2 as-be as-bd as-dk as-dl as-dm as-6s as-dn as-e3 as-dp as-dq as-e4 as-ds as-dt as-1e as-du as-5b as-ah as-dv as-ax as-3s as-3t as-e5 as-84 \u2699w0zr4z\" data-crawl-id=\"8\"><div class=\"\u2699 rs-2 as-14 as-2u as-e0 as-20 \u269912mlsvi\"><span class=\"\u2699 as-e1 as-20 as-a as-2x \u26991u0ps4z\">Remaining balances</span></div></div>",
+  "trigger_label": "Remaining balances",
+  "trigger_id": "",
+  "trigger_class": "\u2699 rs-9 rs-6 rs-7 rs-4 rs-3 rs-9 as-e2 as-be as-bd as-dk as-dl as-dm as-6s as-dn as-e3 as-dp as-dq as-e4 as-ds as-dt as-1e as-du as-5b as-ah as-dv as-ax as-3s as-3t as-e5 as-84 \u2699w0zr4z",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers?has_remaining_balance=true&listId=remaining-balances",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-customers",
+  "target_title": "Customers \u2013 New business \u2013 Stripe [Test]",
+  "tab_content": {
+    "selector": "#list-page-section",
+    "file": "tab-content.html"
+  }
+}

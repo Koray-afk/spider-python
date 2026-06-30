@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Status",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/004-status",
+    "relationship_file": "interactions/004-status/relationship.json"
+  },
+  {
+    "label": "Product category",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-product-category",
+    "relationship_file": "interactions/005-product-category/relationship.json"
+  },
+  {
+    "label": "Created",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/006-created",
+    "relationship_file": "interactions/006-created/relationship.json"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-radar-rules",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rules",
+  "source_title": "Radar \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "span",
+    "text": "Date matched\n28 Jun 2026 \u2192 30 Jun 2026",
+    "id": "",
+    "class_name": "\u2699 rs-f rs-3 rs-2 as-dq as-c6 as-6l as-dr as-8s as-ds as-bu as-bv as-c5 as-4l as-14 as-dt as-3f as-2u as-5f as-du as-dv as-bo as-dw as-dx as-dy as-5g as-4t as-1e as-dz as-4p as-8m \u26991b0amo4",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "chip",
+    "aria_label": "Select date",
+    "selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/span[1]",
+    "outer_html": "<span data-testid=\"chip\" tabindex=\"-1\" aria-label=\"Select date\" class=\"\u2699 rs-f rs-3 rs-2 as-dq as-c6 as-6l as-dr as-8s as-ds as-bu as-bv as-c5 as-4l as-14 as-dt as-3f as-2u as-5f as-du as-dv as-bo as-dw as-dx as-dy as-5g as-4t as-1e as-dz as-4p as-8m \u26991b0amo4\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-crawl-id=\"1\"><span class=\"\u2699 rs-2 as-14 as-5f as-4p as-0 \u2699afz09a\"><dl class=\"\u2699 rs-2 as-14 as-5f as-e0 as-2u as-20 as-a as-2x \u26991swmtps\"><dt class=\"\u2699 as-4s as-4t \u2699fswgix\">Date matched</dt><span role=\"separator\" class=\"\u2699   as-e1 as-e2 as-e3 as-e4 as-e5 as-e6 as-e7 as-e8 \u2699nvrp50\"></span><dd class=\"\u2699  as-q as-e0 \u2699q34lrv\">28 Jun 2026 \u2192 30 Jun 2026</dd></dl><a aria-label=\"Edit Date matched\" tabindex=\"0\" role=\"button\" class=\"\u2699 rs-4 rs-3 rs-2 rs-4 rs-5 as-1d as-1e as-1f as-1g as-1h as-n as-q as-2u as-50 \u26991pe3dx9\"><svg aria-hidden=\"true\" width=\"8\" height=\"8\" viewBox=\"0 0 8 8\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-9b as-9c \u26991vesfrc\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M.606 2.334a.75.75 0 0 0-.022 1.06l2.875 3a.75.75 0 0 0 1.082 0L7.416 3.4a.75.75 0 0 0-1.082-1.038L4 4.79 1.667 2.357a.75.75 0 0 0-1.06-.022Z\"></path></svg></a></span></span>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rules?startDate=2026-06-28&endDate=2026-06-30&ruleAction=all",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-rules",
+    "title": "Radar \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<span data-testid=\"chip\" tabindex=\"-1\" aria-label=\"Select date\" class=\"\u2699 rs-f rs-3 rs-2 as-dq as-c6 as-6l as-dr as-8s as-ds as-bu as-bv as-c5 as-4l as-14 as-dt as-3f as-2u as-5f as-du as-dv as-bo as-dw as-dx as-dy as-5g as-4t as-1e as-dz as-4p as-8m \u26991b0amo4\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-crawl-id=\"1\"><span class=\"\u2699 rs-2 as-14 as-5f as-4p as-0 \u2699afz09a\"><dl class=\"\u2699 rs-2 as-14 as-5f as-e0 as-2u as-20 as-a as-2x \u26991swmtps\"><dt class=\"\u2699 as-4s as-4t \u2699fswgix\">Date matched</dt><span role=\"separator\" class=\"\u2699   as-e1 as-e2 as-e3 as-e4 as-e5 as-e6 as-e7 as-e8 \u2699nvrp50\"></span><dd class=\"\u2699  as-q as-e0 \u2699q34lrv\">28 Jun 2026 \u2192 30 Jun 2026</dd></dl><a aria-label=\"Edit Date matched\" tabindex=\"0\" role=\"button\" class=\"\u2699 rs-4 rs-3 rs-2 rs-4 rs-5 as-1d as-1e as-1f as-1g as-1h as-n as-q as-2u as-50 \u26991pe3dx9\"><svg aria-hidden=\"true\" width=\"8\" height=\"8\" viewBox=\"0 0 8 8\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-9b as-9c \u26991vesfrc\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M.606 2.334a.75.75 0 0 0-.022 1.06l2.875 3a.75.75 0 0 0 1.082 0L7.416 3.4a.75.75 0 0 0-1.082-1.038L4 4.79 1.667 2.357a.75.75 0 0 0-1.06-.022Z\"></path></svg></a></span></span>",
+  "trigger_label": "Date matched\n28 Jun 2026 \u2192 30 Jun 2026",
+  "trigger_id": "",
+  "trigger_class": "\u2699 rs-g rs-3 rs-2 as-dq as-c6 as-6l as-dr as-8s as-ds as-bu as-bv as-c5 as-4l as-14 as-dt as-3f as-2u as-5f as-du as-dv as-bo as-dw as-dx as-dy as-5g as-4t as-1e as-dz as-4p as-8m \u26991b0amo4",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/radar/rules?startDate=2026-06-28&endDate=2026-06-30&ruleAction=all",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-radar-rules",
+  "target_title": "Radar \u2013 New business \u2013 Stripe [Test]"
+}

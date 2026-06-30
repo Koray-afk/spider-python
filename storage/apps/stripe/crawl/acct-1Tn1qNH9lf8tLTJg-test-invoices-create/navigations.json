@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Cancel",
+    "tag_name": "button",
+    "selector": "#merch > div:nth-of-type(5) > div:nth-of-type(4) > span:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "about:blank",
+    "target_slug": "blank",
+    "target_page": "../blank/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Cancel",
+      "id": "",
+      "class_name": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "edit-account-name-cancel-button",
+      "aria_label": "",
+      "css_selector": "#merch > div:nth-of-type(5) > div:nth-of-type(4) > span:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[5]/div[4]/span[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "outer_html": "<button data-testid=\"edit-account-name-cancel-button\" class=\"UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto\" href=\"\" type=\"button\" style=\"color: rgb(64, 68, 82);\" data-crawl-id=\"1\"><div class=\"Button-align Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--center\" style=\"width: 100%; line-height: 0; flex: 1 1 auto;\"><span class=\"Button-label Text-color--inherit Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\"><span>Cancel</span></span></div></div></button>"
+    }
+  }
+]

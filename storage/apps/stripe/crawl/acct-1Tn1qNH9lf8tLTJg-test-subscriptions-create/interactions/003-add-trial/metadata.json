@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add trial",
+  "triggerId": "",
+  "triggerClass": "UnstyledLink ButtonLink Flex-flex",
+  "selector": "[data-crawl-id=\"3\"]",
+  "interactionType": "modal",
+  "sourcePage": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create",
+  "sourceUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions/create",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+  "beforeTitle": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+  "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create/interactions/003-add-trial",
+  "captured_at": "2026-06-30T15:36:36.705806+00:00"
+}

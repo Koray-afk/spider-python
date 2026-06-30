@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/all-activity",
+  "source_title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "span",
+    "text": "Available on",
+    "id": "",
+    "class_name": "\u2699 rs-f rs-3 rs-2 as-ct as-cu as-cv as-8d as-cw as-bu as-bv as-c5 as-4l as-14 as-cx as-3f as-2u as-5f as-cy as-cz as-bo as-d0 as-d1 as-d2 as-5g as-4t as-1e as-d3 as-4p as-8r \u269927ckpp",
+    "name": "",
+    "role": "listitem",
+    "href": "",
+    "src": "",
+    "data_testid": "chip",
+    "aria_label": "",
+    "selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(5)",
+    "crawl_selector": "[data-crawl-id=\"9\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/span[5]",
+    "outer_html": "<span data-testid=\"chip\" role=\"listitem\" class=\"\u2699 rs-f rs-3 rs-2 as-ct as-cu as-cv as-8d as-cw as-bu as-bv as-c5 as-4l as-14 as-cx as-3f as-2u as-5f as-cy as-cz as-bo as-d0 as-d1 as-d2 as-5g as-4t as-1e as-d3 as-4p as-8r \u269927ckpp\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-crawl-id=\"9\"><span class=\"\u2699 rs-2 as-14 as-5f as-4p as-0 \u2699afz09a\"><span class=\"\u2699 as-4s as-4t \u2699fswgix\">Available on</span></span><a tabindex=\"0\" aria-label=\"Add Available on\" data-testid=\"icon-button\" role=\"button\" class=\"\u2699 rs-4 rs-3 rs-2 rs-4 rs-5 as-1d as-1e as-1f as-1g as-1h as-n as-q as-2u as-50 \u26991pe3dx9\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-5s as-5t \u2699psn2hp\"><path d=\"M8.75 4.25a.75.75 0 0 0-1.5 0v3h-3a.75.75 0 0 0 0 1.5h3v3a.75.75 0 0 0 1.5 0v-3h3a.75.75 0 0 0 0-1.5h-3v-3Z\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16 8a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c4.43 0 8 3.581 8 8Zm-1.5 0A6.5 6.5 0 0 1 8 14.5 6.5 6.5 0 0 1 1.5 8 6.5 6.5 0 0 1 8 1.5c3.6 0 6.5 2.908 6.5 6.5Z\"></path></svg></a></span>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/all-activity",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity",
+    "title": "Transactions \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<span data-testid=\"chip\" role=\"listitem\" class=\"\u2699 rs-f rs-3 rs-2 as-ct as-cu as-cv as-8d as-cw as-bu as-bv as-c5 as-4l as-14 as-cx as-3f as-2u as-5f as-cy as-cz as-bo as-d0 as-d1 as-d2 as-5g as-4t as-1e as-d3 as-4p as-8r \u269927ckpp\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-crawl-id=\"9\"><span class=\"\u2699 rs-2 as-14 as-5f as-4p as-0 \u2699afz09a\"><span class=\"\u2699 as-4s as-4t \u2699fswgix\">Available on</span></span><a tabindex=\"0\" aria-label=\"Add Available on\" data-testid=\"icon-button\" role=\"button\" class=\"\u2699 rs-4 rs-3 rs-2 rs-4 rs-5 as-1d as-1e as-1f as-1g as-1h as-n as-q as-2u as-50 \u26991pe3dx9\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" class=\"\u2699   as-q as-r as-s as-t as-2y as-5s as-5t \u2699psn2hp\"><path d=\"M8.75 4.25a.75.75 0 0 0-1.5 0v3h-3a.75.75 0 0 0 0 1.5h3v3a.75.75 0 0 0 1.5 0v-3h3a.75.75 0 0 0 0-1.5h-3v-3Z\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16 8a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c4.43 0 8 3.581 8 8Zm-1.5 0A6.5 6.5 0 0 1 8 14.5 6.5 6.5 0 0 1 1.5 8 6.5 6.5 0 0 1 8 1.5c3.6 0 6.5 2.908 6.5 6.5Z\"></path></svg></a></span>",
+  "trigger_label": "Available on",
+  "trigger_id": "",
+  "trigger_class": "\u2699 rs-h rs-3 rs-2 as-p6 as-p7 as-p8 as-8d as-p9 as-bu as-bv as-c5 as-4l as-14 as-pa as-3f as-2u as-5f as-pb as-pc as-bo as-pd as-pe as-pf as-5g as-4t as-1e as-pg as-4p as-8r \u269927ckpp",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/all-activity",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-balance-all-activity",
+  "target_title": "Transactions \u2013 New business \u2013 Stripe [Test]"
+}

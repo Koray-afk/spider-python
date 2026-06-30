@@ -1,0 +1,63 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Finish your setup",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Review type",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"7\\\"]\").first\n    - locator resolved to <span role=\"listitem\" data-crawl-id=\"7\" data-testid=\"chip\" aria-expanded=\"false\" aria-haspopup=\"dialog\" class=\"\u2699 rs-f rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be visib"
+  },
+  {
+    "label": "Amount",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"8\\\"]\").first\n    - locator resolved to <span role=\"listitem\" data-crawl-id=\"8\" data-testid=\"chip\" aria-expanded=\"false\" aria-haspopup=\"dialog\" class=\"\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be visib"
+  },
+  {
+    "label": "Risk",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"9\\\"]\").first\n    - locator resolved to <span role=\"listitem\" data-crawl-id=\"9\" data-testid=\"chip\" aria-expanded=\"false\" aria-haspopup=\"dialog\" class=\"\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be visib"
+  },
+  {
+    "label": "Date",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"10\\\"]\").first\n    - locator resolved to <span role=\"listitem\" data-testid=\"chip\" data-crawl-id=\"10\" aria-expanded=\"false\" aria-haspopup=\"dialog\" class=\"\u2699 rs-g rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be vis"
+  },
+  {
+    "label": "More filters",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <span role=\"listitem\" data-testid=\"chip\" data-crawl-id=\"11\" aria-expanded=\"false\" aria-haspopup=\"dialog\" class=\"\u2699 rs-f rs-3 rs-2 as-dh as-di as-dj as-8s as-dk as-bu as-bv as-c5 as-4l as-14 as-dl as-3f as-2u as-5f as-dm as-dn as-bo as-do as-dp as-dq as-5g as-4t as-1e as-dr as-4p as-8m \u269927ckpp\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be vis"
+  }
+]

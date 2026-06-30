@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Copy link",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/004-copy-link",
+    "relationship_file": "interactions/004-copy-link/relationship.json"
+  },
+  {
+    "label": "Workbench options",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/005-workbench-options",
+    "relationship_file": "interactions/005-workbench-options/relationship.json"
+  },
+  {
+    "label": "Close Workbench",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/007-close-workbench",
+    "relationship_file": "interactions/007-close-workbench/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/008-n-test-mode-new-business",
+    "relationship_file": "interactions/008-n-test-mode-new-business/relationship.json"
+  }
+]

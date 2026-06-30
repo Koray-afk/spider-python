@@ -1,0 +1,26 @@
+[
+  {
+    "label": "All features",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-all-features",
+    "relationship_file": "interactions/002-all-features/relationship.json"
+  },
+  {
+    "label": "Active",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-active",
+    "relationship_file": "interactions/003-active/relationship.json"
+  },
+  {
+    "label": "Archived",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-archived",
+    "relationship_file": "interactions/004-archived/relationship.json"
+  },
+  {
+    "label": "Create feature\nN",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/005-create-feature-n",
+    "relationship_file": "interactions/005-create-feature-n/relationship.json"
+  }
+]

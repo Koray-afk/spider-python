@@ -676,6 +676,40 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     true
   );
 
+  // ── Stripe sidebar shortcuts normalizer ──────────────────────────────────
+  // Each Stripe page was crawled independently and captured its own dynamic
+  // shortcuts list. This normalises the labels + hrefs to a canonical set at
+  // runtime without touching CSS classes (which are per-page and must stay).
+  (function standardizeShortcuts() {
+    var ul = document.querySelector('[data-testid="shortcuts-nav-links"]');
+    if (!ul) return;
+    var parts = window.location.pathname.split("/").filter(Boolean);
+    var ups = parts.length - 1;
+    var prefix = "";
+    for (var i = 0; i < ups; i++) prefix += "../";
+    var canonical = [
+      ["recent-nav-item-radar",          "Radar",         "test-radar/page.html"],
+      ["recent-nav-item-paymentLinks",   "Payment Links", "acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html"],
+      ["recent-nav-item-businessNetwork","Profiles",      "acct-1Tn1qNH9lf8tLTJg-test-profiles/page.html"],
+      ["recent-nav-item-reports",        "Reports",       "acct-1Tn1qNH9lf8tLTJg-test-reporting/page.html"],
+      ["recent-nav-item-apps",           "Apps",          "acct-1Tn1qNH9lf8tLTJg-test-apps-installed/page.html"],
+    ];
+    canonical.forEach(function(c) {
+      var li = ul.querySelector('[data-testid="' + c[0] + '"]');
+      if (!li) return;
+      var spans = li.querySelectorAll("span");
+      for (var i = spans.length - 1; i >= 0; i--) {
+        if (!spans[i].children.length && spans[i].textContent.trim()) {
+          spans[i].textContent = c[1];
+          break;
+        }
+      }
+      var a = li.querySelector("a[href]");
+      if (a) a.setAttribute("href", prefix + c[2]);
+    });
+  })();
+  // ── End Stripe sidebar shortcuts normalizer ───────────────────────────────
+
   console.log("[STITCH] runtime ready");
 })();
 """

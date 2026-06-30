@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Date matched\n28 Jun 2026 \u2192 30 Jun 2026",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-date-matched-28-jun-2026-30-jun-2026",
+    "relationship_file": "interactions/001-date-matched-28-jun-2026-30-jun-2026/relationship.json"
+  },
+  {
+    "label": "Status",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-status",
+    "relationship_file": "interactions/002-status/relationship.json"
+  },
+  {
+    "label": "Category",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-category",
+    "relationship_file": "interactions/003-category/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-n-test-mode-new-business",
+    "relationship_file": "interactions/004-n-test-mode-new-business/relationship.json"
+  }
+]

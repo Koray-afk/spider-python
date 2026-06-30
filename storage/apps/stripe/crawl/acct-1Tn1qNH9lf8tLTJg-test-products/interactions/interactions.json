@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Status\nActive",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-status-active",
+    "relationship_file": "interactions/001-status-active/relationship.json"
+  },
+  {
+    "label": "Product category",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/002-product-category",
+    "relationship_file": "interactions/002-product-category/relationship.json"
+  },
+  {
+    "label": "Created",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/003-created",
+    "relationship_file": "interactions/003-created/relationship.json"
+  },
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-n-test-mode-new-business",
+    "relationship_file": "interactions/004-n-test-mode-new-business/relationship.json"
+  }
+]

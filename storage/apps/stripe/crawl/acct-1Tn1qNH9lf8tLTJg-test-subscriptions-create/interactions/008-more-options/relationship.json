@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions/create",
+  "source_title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "button",
+    "text": "More options",
+    "id": "menu3-button",
+    "class_name": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "overflow-menu-button",
+    "aria_label": "",
+    "selector": "#menu3-button",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "//*[@id=\"menu3-button\"]",
+    "outer_html": "<button data-testid=\"overflow-menu-button\" aria-controls=\"menu3\" aria-haspopup=\"menu\" id=\"menu3-button\" class=\"UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto\" href=\"\" type=\"button\" data-crawl-id=\"1\" style=\"color: rgb(64, 68, 82);\"><div class=\"Button-align Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--center\" style=\"width: 100%; line-height: 0; flex: 1 1 auto;\"><div class=\"Box-root Padding-horizontal--4\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--more Button-icon Icon-color Icon-color--inherit Box-root Flex-flex\" style=\"transform: translateY(1.07px);\"><svg aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--more-svg Button-icon-svg Icon-color-svg Icon-color--inherit-svg\" height=\"12\" width=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm5.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z\"></path></svg></div></div><span class=\"Button-label Text-color--inherit Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text--visuallyHidden Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\">More options</span></div></div></button>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions",
+    "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button data-testid=\"overflow-menu-button\" aria-controls=\"menu3\" aria-haspopup=\"menu\" id=\"menu3-button\" class=\"UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto\" href=\"\" type=\"button\" data-crawl-id=\"1\" style=\"color: rgb(64, 68, 82);\"><div class=\"Button-align Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--center\" style=\"width: 100%; line-height: 0; flex: 1 1 auto;\"><div class=\"Box-root Padding-horizontal--4\"><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--more Button-icon Icon-color Icon-color--inherit Box-root Flex-flex\" style=\"transform: translateY(1.07px);\"><svg aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--more-svg Button-icon-svg Icon-color-svg Icon-color--inherit-svg\" height=\"12\" width=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm5.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z\"></path></svg></div></div><span class=\"Button-label Text-color--inherit Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text--visuallyHidden Text-wrap--noWrap Text-display--block\" style=\"margin-top: -1px;\">More options</span></div></div></button>",
+  "trigger_label": "More options",
+  "trigger_id": "menu3-button",
+  "trigger_class": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions",
+  "target_title": "Subscriptions \u2013 New business \u2013 Stripe [Test]"
+}

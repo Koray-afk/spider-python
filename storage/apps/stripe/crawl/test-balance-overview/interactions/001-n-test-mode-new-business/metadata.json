@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "N\nTest mode\nNew business",
+  "triggerId": ":r1s:",
+  "triggerClass": "\u2699",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "test-balance-overview",
+  "sourceUrl": "https://dashboard.stripe.com/test/balance/overview",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/overview",
+  "beforeTitle": "Balance overview \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/balance/overview",
+  "title": "Balance overview \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "test-balance-overview/interactions/001-n-test-mode-new-business",
+  "captured_at": "2026-06-30T14:00:25.526007+00:00"
+}

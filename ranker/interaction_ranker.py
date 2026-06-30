@@ -36,7 +36,8 @@ MANDATORY — always include these regardless of the limit:
   "Overview", "Summary", "Transactions", "History", "Comments", "Mails", "Statement"
 
 THEN fill the remaining slots (up to {top_n} total) with, in this priority order:
-1. Primary CTA buttons: "New", "Create", "Add", "Import"
+1. Primary CTA buttons: "New", "Create", "Add", "Import", or any icon-only button
+   whose label is "+" or a single special character (these are global create shortcuts)
 2. Dropdown filters: date range, fiscal year, status
 3. Popover triggers: amount breakdowns, charts
 4. Everything else
@@ -110,27 +111,39 @@ def _inject_mandatory_labels(
     *,
     top_n: int,
     mandatory_labels: list[str] | None,
+    mandatory_interaction_labels: list[str] | None = None,
 ) -> list[dict]:
-    """Ensure tab/detail labels are ranked even if the LLM skipped them."""
-    if not mandatory_labels:
-        return ranked[:top_n]
+    """Ensure tab/detail labels and explicit interaction CTAs are always ranked.
 
+    mandatory_labels         → forced in as llm_type="tab_switch"
+    mandatory_interaction_labels → forced in as llm_type="interaction"
+    Both lists match when the candidate label equals (case-insensitive) or
+    contains any entry in the list.
+    """
     seen_keys = {_candidate_key(r) for r in ranked}
     injected: list[dict] = []
+
     for c in candidates:
         label = (c.get("label") or "").strip()
         if not label:
             continue
         label_lower = label.lower()
-        if not any(m.lower() in label_lower for m in mandatory_labels):
-            continue
         key = _candidate_key(c)
         if key in seen_keys:
             continue
-        seen_keys.add(key)
-        item = dict(c)
-        item["llm_type"] = item.get("llm_type") or "tab_switch"
-        injected.append(item)
+
+        if mandatory_labels and any(m.lower() in label_lower for m in mandatory_labels):
+            seen_keys.add(key)
+            item = dict(c)
+            item["llm_type"] = item.get("llm_type") or "tab_switch"
+            injected.append(item)
+        elif mandatory_interaction_labels and any(
+            m.lower() in label_lower for m in mandatory_interaction_labels
+        ):
+            seen_keys.add(key)
+            item = dict(c)
+            item["llm_type"] = item.get("llm_type") or "interaction"
+            injected.append(item)
 
     merged = injected + ranked
     return merged[:top_n]
@@ -143,6 +156,7 @@ def rank_candidates(
     *,
     top_n: int = 15,
     mandatory_labels: list[str] | None = None,
+    mandatory_interaction_labels: list[str] | None = None,
 ) -> list[dict]:
     """Return up to top_n candidates ranked by LLM importance.
 
@@ -157,7 +171,9 @@ def rank_candidates(
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         return _inject_mandatory_labels(
-            candidates, candidates[:top_n], top_n=top_n, mandatory_labels=mandatory_labels
+            candidates, candidates[:top_n], top_n=top_n,
+            mandatory_labels=mandatory_labels,
+            mandatory_interaction_labels=mandatory_interaction_labels,
         )
 
     try:
@@ -193,15 +209,21 @@ def rank_candidates(
         if not results:
             print("[RANK] LLM returned no valid indices — using full candidate list")
             return _inject_mandatory_labels(
-                candidates, candidates[:top_n], top_n=top_n, mandatory_labels=mandatory_labels
+                candidates, candidates[:top_n], top_n=top_n,
+                mandatory_labels=mandatory_labels,
+                mandatory_interaction_labels=mandatory_interaction_labels,
             )
 
         return _inject_mandatory_labels(
-            candidates, results, top_n=top_n, mandatory_labels=mandatory_labels
+            candidates, results, top_n=top_n,
+            mandatory_labels=mandatory_labels,
+            mandatory_interaction_labels=mandatory_interaction_labels,
         )
 
     except Exception as exc:
         print(f"[RANK] LLM ranking failed ({exc}) — using full candidate list")
         return _inject_mandatory_labels(
-            candidates, candidates[:top_n], top_n=top_n, mandatory_labels=mandatory_labels
+            candidates, candidates[:top_n], top_n=top_n,
+            mandatory_labels=mandatory_labels,
+            mandatory_interaction_labels=mandatory_interaction_labels,
         )

@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add trial days",
+  "triggerId": "",
+  "triggerClass": "UnstyledLink Button-element PressableContext Padding-horizontal--8 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+  "selector": "[data-crawl-id=\"6\"]",
+  "interactionType": "modal",
+  "sourcePage": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create",
+  "sourceUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions/create",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+  "beforeTitle": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/subscriptions?create=subscription",
+  "title": "Subscriptions \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "acct-1Tn1qNH9lf8tLTJg-test-subscriptions-create/interactions/005-add-trial-days",
+  "captured_at": "2026-06-30T15:36:58.739471+00:00"
+}

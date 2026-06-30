@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"3\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria1729141296-:r33:\" aria-controls=\"react-aria1729141296-:r32:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-1e as-91 as-j9 as-76 as-4f as-bi as-3t as-3u as-ja as-14 as-hx as-2u as-ic as-90 \u26991jk0mko\">\u2026</header>\n  - attempt"
+  }
+]

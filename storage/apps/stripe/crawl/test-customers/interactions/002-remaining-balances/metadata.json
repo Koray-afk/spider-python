@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Remaining balances",
+  "triggerId": "",
+  "triggerClass": "\u2699 rs-9 rs-6 rs-7 rs-4 rs-3 rs-9 as-e2 as-be as-bd as-dk as-dl as-dm as-6s as-dn as-e3 as-dp as-dq as-e4 as-ds as-dt as-1e as-du as-5b as-ah as-dv as-ax as-3s as-3t as-e5 as-84 \u2699w0zr4z",
+  "selector": "[data-crawl-id=\"8\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "test-customers",
+  "sourceUrl": "https://dashboard.stripe.com/test/customers",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers",
+  "beforeTitle": "Customers \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/customers?has_remaining_balance=true&listId=remaining-balances",
+  "title": "Customers \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "test-customers/interactions/002-remaining-balances",
+  "captured_at": "2026-06-30T14:06:36.489160+00:00"
+}

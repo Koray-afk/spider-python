@@ -1,0 +1,34 @@
+{
+  "source_page": "acct-1Tn1qNH9lf8tLTJg-test-features",
+  "source_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/features?active=true",
+  "source_title": "Product catalogue \u2013 New business \u2013 Stripe [Test]",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Archived",
+    "id": "",
+    "class_name": "UnstyledLink ContentTab-link",
+    "name": "",
+    "role": "tab",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"4\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+    "outer_html": "<button aria-selected=\"false\" class=\"UnstyledLink ContentTab-link\" href=\"\" role=\"tab\" tabindex=\"-1\" type=\"button\" data-crawl-id=\"4\"><div class=\"ContentTab-inner Box-root Padding-horizontal--20 Padding-vertical--16\"><span class=\"Text-color--gray Text-align--center Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\"><span class=\"ContentTab-text\"><div class=\"\u2699\"><div class=\"\u2699 rs-2 as-14 as-dp as-2o \u2699imgr3b\"><div class=\"\u2699 as-az as-a \u269979vm2s\"><div class=\"\u2699\"><span>Archived</span></div></div></div></div></span></span><div class=\"ContentTab-chip ContentTab-chip--default Box-root Box-background--blue\"></div></div></button>"
+  },
+  "target": {
+    "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/features?active=false",
+    "slug": "acct-1Tn1qNH9lf8tLTJg-test-features",
+    "title": "Product catalogue \u2013 New business \u2013 Stripe [Test]"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button aria-selected=\"false\" class=\"UnstyledLink ContentTab-link\" href=\"\" role=\"tab\" tabindex=\"-1\" type=\"button\" data-crawl-id=\"4\"><div class=\"ContentTab-inner Box-root Padding-horizontal--20 Padding-vertical--16\"><span class=\"Text-color--gray Text-align--center Text-fontSize--14 Text-fontWeight--medium Text-lineHeight--20 Text-numericSpacing--proportional Text-typeface--base Text-wrap--noWrap Text-display--block\"><span class=\"ContentTab-text\"><div class=\"\u2699\"><div class=\"\u2699 rs-2 as-14 as-dp as-2o \u2699imgr3b\"><div class=\"\u2699 as-az as-a \u269979vm2s\"><div class=\"\u2699\"><span>Archived</span></div></div></div></div></span></span><div class=\"ContentTab-chip ContentTab-chip--default Box-root Box-background--blue\"></div></div></button>",
+  "trigger_label": "Archived",
+  "trigger_id": "",
+  "trigger_class": "UnstyledLink ContentTab-link",
+  "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/features?active=false",
+  "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-features",
+  "target_title": "Product catalogue \u2013 New business \u2013 Stripe [Test]"
+}

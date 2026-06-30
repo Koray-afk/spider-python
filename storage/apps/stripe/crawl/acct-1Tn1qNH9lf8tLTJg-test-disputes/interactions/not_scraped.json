@@ -1,0 +1,40 @@
+[
+  {
+    "label": "N\nTest mode\nNew business",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Close Workbench",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "over_budget"
+  },
+  {
+    "label": "Set up recurring payments",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"12\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"12\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria2664006407-:r82:\" aria-controls=\"react-aria2664006407-:r81:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-1e as-96 as-rm as-7b as-4l as-bn as-3t as-3u as-n0 as-14 as-qz as-2u as-r0 as-95 \u26991jk0mko\">\u2026</header>\n  - attem"
+  },
+  {
+    "label": "Finish your setup",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"13\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"13\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria5402478968-:r83:\" aria-controls=\"react-aria5402478968-:r82:\" data-testid=\"setup-guide-verify_business-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-1e as-96 as-r9 as-7b as-4l as-bn as-3t as-3u as-nf as-14 as-qm as-2u as-qn as-95 \u26991jk0mko\">\u2026</header>\n  -"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"14\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"14\" aria-expanded=\"false\" data-accordion-trigger=\"true\" id=\"react-aria225987261-:r8o:\" aria-controls=\"react-aria225987261-:r8n:\" data-testid=\"setup-guide-setup_tax-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-p7 as-96 as-s5 as-7b as-4l as-bn as-3t as-3u as-nf as-14 as-rj as-2u as-sg as-95 \u2699y4c4lm\">\u2026</header>\n  - attempti"
+  }
+]

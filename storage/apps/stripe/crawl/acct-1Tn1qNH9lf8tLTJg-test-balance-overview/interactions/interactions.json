@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Copy link",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/002-copy-link",
+    "relationship_file": "interactions/002-copy-link/relationship.json"
+  },
+  {
+    "label": "Workbench options",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/003-workbench-options",
+    "relationship_file": "interactions/003-workbench-options/relationship.json"
+  },
+  {
+    "label": "Close Workbench",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/005-close-workbench",
+    "relationship_file": "interactions/005-close-workbench/relationship.json"
+  }
+]

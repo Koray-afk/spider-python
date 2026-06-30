@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "analytics",
+  "triggerId": "",
+  "triggerClass": "UnstyledLink ButtonLink IconParent Flex-flex",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "tooltip",
+  "sourcePage": "test-payments-analytics",
+  "sourceUrl": "https://dashboard.stripe.com/test/payments/analytics",
+  "beforeUrl": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments/analytics",
+  "beforeTitle": "Transactions \u2013 New business \u2013 Stripe [Test]",
+  "url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payments/analytics",
+  "title": "Transactions \u2013 New business \u2013 Stripe [Test]",
+  "resultPagePath": "test-payments-analytics/interactions/005-analytics",
+  "captured_at": "2026-06-30T14:09:37.091134+00:00"
+}

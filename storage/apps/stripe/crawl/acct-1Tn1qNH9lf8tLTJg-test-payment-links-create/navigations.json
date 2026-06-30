@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Close",
+    "tag_name": "button",
+    "selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://dashboard.stripe.com/acct_1Tn1qNH9lf8tLTJg/test/payment-links",
+    "target_slug": "acct-1Tn1qNH9lf8tLTJg-test-payment-links",
+    "target_page": "../acct-1Tn1qNH9lf8tLTJg-test-payment-links/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Close",
+      "id": "",
+      "class_name": "UnstyledLink PressableContext Padding-horizontal--12 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#dashboardRoot > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/header[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/button[1]",
+      "outer_html": "<button class=\"UnstyledLink PressableContext Padding-horizontal--12 Padding-vertical--4 PressableContext--cursor--pointer PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--medium PressableContext--height PressableContext--height--medium PressableContext--radius--all PressableContext--width PressableContext--width--auto\" href=\"\" type=\"button\" data-crawl-id=\"1\"><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row\" style=\"position: relative;\"><div aria-hidden=\"true\" class=\"TextAligner Box-root\" style=\"line-height: 20px; font-size: 14px; flex: 0 0 auto;\"></div><div class=\"Box-root Flex-flex Flex-alignItems--baseline Flex-direction--row Flex-justifyContent--flexStart\" style=\"line-height: 0; flex: 1 1 auto;\"><span class=\"FullscreenHeader-escapeLabel\"><span>Close</span></span><div aria-hidden=\"true\" class=\"SVGInline SVGInline--cleaned SVG Icon Icon--cancel Icon-color Icon-color--inherit Box-root Flex-flex\" style=\"transform: translateY(1.07px);\"><svg aria-hidden=\"true\" class=\"SVGInline-svg SVGInline--cleaned-svg SVG-svg Icon-svg Icon--cancel-svg Icon-color-svg Icon-color--inherit-svg\" height=\"12\" width=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.256 1.256a.875.875 0 0 1 1.238 0L8 6.763l5.506-5.507a.875.875 0 1 1 1.238 1.238L9.237 8l5.507 5.506a.875.875 0 1 1-1.238 1.238L8 9.237l-5.506 5.507a.875.875 0 0 1-1.238-1.238L6.763 8 1.256 2.494a.875.875 0 0 1 0-1.238Z\"></path></svg></div></div></div></button>"
+    }
+  }
+]

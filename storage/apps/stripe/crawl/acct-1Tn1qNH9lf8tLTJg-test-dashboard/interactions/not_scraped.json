@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Finish your setup",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Set up tax collection",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "header",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"5\\\"]\").first\n    - locator resolved to <header tabindex=\"0\" role=\"button\" data-crawl-id=\"5\" aria-expanded=\"true\" data-accordion-trigger=\"true\" id=\"react-aria7235945424-:r4l:\" aria-controls=\"react-aria7235945424-:r4k:\" data-testid=\"setup-guide-setup_subs-task-section\" class=\"\u2699 rs-9 rs-3 rs-2 as-1e as-8v as-my as-75 as-73 as-bd as-3t as-3u as-mz as-14 as-ls as-2u as-m6 as-8u \u26991jk0mko\">\u2026</header>\n  - attempt"
+  }
+]

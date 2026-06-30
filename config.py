@@ -215,7 +215,8 @@ APPS = {
         "max_interaction_depth": None,
         "crawl_skip_screenshots": True,
         # Stripe Sail SPA (db-NewChrome) needs time for CSSOM + sidebar render.
-        "crawl_wait_after_load_ms": 6000,
+        # 8 s gives the React app enough time to finish API calls and fill content areas.
+        "crawl_wait_after_load_ms": 8000,
         "crawl_use_networkidle": False,
         # Seed routes up front (HubSpot-style) — sidebar discovery alone misses Payments sub-nav.
         "crawl_sidebar_first": False,
@@ -279,9 +280,25 @@ APPS = {
             "Top-ups",
             "All activity",
         ],
-        # Workbench is a heavy developer panel — capture it but don't recurse into its interactions.
+        # Force-include the global `+` create button and any top-nav CTA
+        # regardless of what the LLM picks — classified as interaction type.
+        "mandatory_interaction_labels": ["+", "Create"],
+        # Workbench is a heavy developer panel — depth-1 only even in non-hybrid mode.
         "url_interaction_depth_overrides": [
             {"pattern": "/workbench", "max_depth": 1},
+        ],
+        # Hybrid two-phase crawl: BFS discovers all URLs first, then a separate
+        # interaction pass runs with per-URL depth control.
+        "crawl_hybrid": True,
+        # Important pages get depth-2 interactions (page interactions + nav-target interactions).
+        # Everything else gets depth-1 (page interactions only).
+        "interaction_depth_2_patterns": [
+            "/test/dashboard",
+            "/test/payments",
+            "/test/customers",
+            "/test/balance",
+            "/test/radar",
+            "/test/disputes",
         ],
     },
 }
