@@ -208,6 +208,72 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     panel.style.right = "auto";
   }
 
+  function repositionStripeAccountMenu(panel, trigger) {
+    var pop = panel.querySelector('[data-testid="popover-layer"]');
+    var target = pop || panel;
+    clearPopperStyles(panel);
+    panel.style.position = "static";
+    panel.style.height = "auto";
+    panel.style.maxHeight = "none";
+    panel.style.overflow = "visible";
+    panel.style.width = "auto";
+    panel.style.transform = "none";
+    panel.style.pointerEvents = "none";
+    if (pop) {
+      clearPopperStyles(pop);
+      pop.style.overflow = "visible";
+      pop.style.height = "auto";
+      pop.style.maxHeight = "none";
+      pop.style.display = "block";
+    }
+    Array.prototype.forEach.call(
+      panel.querySelectorAll(
+        '[role="menuitem"], [data-testid="exit-legacy-testmode-button"], .as-bm'
+      ),
+      function (el) {
+        el.style.position = "static";
+        el.style.transform = "none";
+        el.style.inset = "";
+        el.style.top = "";
+        el.style.left = "";
+        el.style.right = "";
+        el.style.bottom = "";
+        el.style.width = "";
+        el.style.display = el.getAttribute("data-testid") === "exit-legacy-testmode-button"
+          ? "flex"
+          : "flex";
+        el.style.alignItems = "center";
+        el.style.width = el.getAttribute("data-testid") === "exit-legacy-testmode-button"
+          ? "calc(100% - 24px)"
+          : "100%";
+        el.style.maxWidth = "100%";
+        el.style.height = "auto";
+        el.style.minHeight = "36px";
+        el.style.gridTemplateColumns = "none";
+        el.style.margin = el.getAttribute("data-testid") === "exit-legacy-testmode-button"
+          ? "8px 12px"
+          : "0";
+        el.style.boxSizing = "border-box";
+      }
+    );
+    target.style.position = "fixed";
+    target.style.zIndex = "2000";
+    target.style.margin = "0";
+    target.style.transform = "none";
+    target.style.pointerEvents = "auto";
+    target.style.display = "block";
+    target.style.width = "288px";
+    target.style.minWidth = "288px";
+    target.style.maxWidth = "320px";
+    target.style.boxSizing = "border-box";
+    var rect = trigger.getBoundingClientRect();
+    var menuWidth = target.offsetWidth || target.getBoundingClientRect().width || 288;
+    target.style.top = (rect.bottom + 4) + "px";
+    target.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - menuWidth - 8)) + "px";
+    target.style.right = "auto";
+    target.style.bottom = "auto";
+  }
+
   function isCenteredPanel(panel) {
     var cls = panel.className || "";
     return (
@@ -285,6 +351,27 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         ) {
           panel.style.display = "block";
         }
+        // Stripe Sail menus ship with popper translate()/fixed coords baked in.
+        if (panel.classList.contains("sn-token-provider") || panel.querySelector('[data-testid="popover-layer"]')) {
+          clearPopperStyles(panel);
+          Array.prototype.forEach.call(panel.querySelectorAll("[style]"), function (node) {
+            if (/transform|position:\s*fixed/i.test(node.getAttribute("style") || "")) {
+              clearPopperStyles(node);
+            }
+          });
+        }
+        // Stripe account switcher: outer role=menu is a shell; content lives in popover-layer.
+        if (
+          panel.getAttribute("role") === "menu" &&
+          (panel.querySelector('[data-testid="popover-layer"]') ||
+            panel.querySelector('[data-testid="exit-legacy-testmode-button"]'))
+        ) {
+          repositionStripeAccountMenu(panel, trigger);
+          panel.querySelectorAll("a, button, [role='menuitem']").forEach(function (el) {
+            el.style.pointerEvents = "auto";
+          });
+          return;
+        }
         if (isCenteredPanel(panel)) {
           repositionCenteredPanel(panel);
         } else {
@@ -332,6 +419,21 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         window.location.assign(href);
         return true;
       }
+    }
+
+    // Stripe account menu flyouts (workspace/sandbox/create) are not in the clone.
+    var acctFlyout = t.closest(
+      '[data-testid="account-switcher-sandboxes-menu"],' +
+      '[data-testid="account-switcher-create-button"],' +
+      '[data-testid="account-switcher-workspace"],' +
+      '[data-testid="account-switcher-sign-out-button"]'
+    );
+    if (acctFlyout) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("[STITCH] Account menu (no flyout)", acctFlyout.getAttribute("data-testid") || "");
+      showDemoHint("Demo mode — account flyouts are outside the recorded path");
+      return true;
     }
 
     var menuItem = t.closest(".dropdown-item, [role='menuitem'], [role='option']");
@@ -545,6 +647,12 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       // 1. Sidebar accordion toggle — purely in-page, never loads a snapshot.
       var acc = t.closest("[data-stitch-accordion]");
       if (acc) {
+        var accTestId = acc.getAttribute("data-testid") || "";
+        if (/^toggle-workload-/.test(accTestId)) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
         e.preventDefault();
         e.stopPropagation();
         var expanded = acc.getAttribute("aria-expanded") === "true";
@@ -983,6 +1091,194 @@ iframe[name*="privateStripeMetrics"],
     pointer-events: none !important;
 }
 
+/* Stripe Products section: prevent flex-grow / space-between from stretching nav rows. */
+#primary-nav [data-testid="workloads-nav"],
+[data-testid="primary-nav"] [data-testid="workloads-nav"],
+#primary-nav section:has([data-testid="workloads-nav"]) .primary-nav-section-header,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) .primary-nav-section-header {
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+    text-align: left !important;
+}
+#primary-nav [data-testid="workloads-nav-links"],
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"],
+#primary-nav section:has([data-testid="workloads-nav"]) > ul,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav section:has([data-testid="workloads-nav"]),
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+}
+
+/* Injected Stripe Products submenu (crawl snapshots omit collapsed panel HTML). */
+#primary-nav li:has(> .stitch-workload-nav-panel),
+[data-testid="primary-nav"] li:has(> .stitch-workload-nav-panel) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+}
+#primary-nav .stitch-workload-nav-panel,
+[data-testid="primary-nav"] .stitch-workload-nav-panel {
+    list-style: none;
+    margin: 0;
+    padding: 2px 0 8px;
+    display: block;
+    overflow: visible;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+#primary-nav .stitch-workload-nav-panel:not(.show),
+[data-testid="primary-nav"] .stitch-workload-nav-panel[hidden] {
+    display: none !important;
+}
+#primary-nav .stitch-workload-nav-panel > li,
+[data-testid="primary-nav"] .stitch-workload-nav-panel > li {
+    list-style: none;
+    margin: 0;
+    padding: 0 12px 0 36px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+#primary-nav .stitch-workload-nav-panel a,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: rgb(26, 44, 68) !important;
+    white-space: nowrap;
+    padding: 2px 8px;
+    border-radius: 6px;
+    min-height: 28px;
+}
+#primary-nav .stitch-workload-nav-panel a span,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a span {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    flex: 0 1 auto !important;
+}
+#primary-nav .stitch-workload-nav-panel a:hover,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a:hover {
+    background: rgba(26, 44, 68, 0.06);
+}
+#primary-nav .stitch-workload-nav-panel a[aria-current="page"],
+#primary-nav .stitch-workload-nav-panel a.stitch-nav-active,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a[aria-current="page"],
+[data-testid="primary-nav"] .stitch-workload-nav-panel a.stitch-nav-active {
+    background: rgb(246, 245, 255) !important;
+    color: rgb(99, 91, 255) !important;
+    font-weight: 500;
+}
+#primary-nav [data-testid^="toggle-workload-"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] {
+    cursor: default !important;
+}
+
+/* Stripe account switcher dropdown (injected reconciliation fragment). */
+.stitch-injected-ui .sn-token-provider[role="menu"],
+.stitch-injected-ui [role="menu"].sn-token-provider {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: block !important;
+    pointer-events: auto !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    max-width: 320px !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px 0px,
+                rgba(48, 49, 61, 0.08) 0px 15px 35px 0px !important;
+    padding: 4px 0 8px !important;
+}
+.stitch-injected-ui [data-testid="account-switcher-workspace"] {
+    display: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="button"] {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 36px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    transform: none !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+.stitch-injected-ui .as-bm,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"] {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin: 8px 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 6px !important;
+    min-height: 36px !important;
+    background: #fff !important;
+    color: rgb(26, 44, 68) !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+}
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::before,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::after {
+    display: none !important;
+    content: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"]:hover {
+    background: rgba(26, 44, 68, 0.06) !important;
+}
+
 /* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
 [data-test-id="AvatarDisplay-avatarContent"] {
     width: 32px !important;
@@ -1201,6 +1497,195 @@ def _hubspot_extra_route_keys(url: str, slug: str) -> list[str]:
     return [_norm_route(k) for k in keys if k]
 
 
+# Stripe Products sidebar: panel ids referenced by toggle-workload-* aria-controls.
+# Injected at stitch time when crawl snapshots omit collapsed submenu HTML.
+_STRIPE_WORKLOAD_NAV: dict[str, list[tuple[str, str]]] = {
+    "payments-navigation-links": [
+        ("/test/payments", "Payments"),
+        ("/test/payments/analytics", "Analytics"),
+        ("/test/disputes", "Disputes"),
+        ("/test/radar", "Radar"),
+        ("/test/payment-links", "Payment Links"),
+        ("/test/terminal", "Terminal"),
+    ],
+    "billing-navigation-links": [
+        ("/test/billing", "Overview"),
+        ("/test/subscriptions", "Subscriptions"),
+        ("/test/invoices", "Invoices"),
+        ("/test/coupons", "Coupons"),
+        ("/test/billing/revenue", "Revenue"),
+    ],
+    "reporting-navigation-links": [
+        ("/test/reporting", "Overview"),
+        ("/test/reports", "Reports"),
+        ("/test/reports/hub", "Reports hub"),
+        ("/test/reports/balance", "Balance"),
+        ("/test/reports/reconciliation", "Reconciliation"),
+        ("/test/revenue-recognition", "Revenue recognition"),
+    ],
+    "apps-navigation-links": [
+        ("/test/apps/installed", "Installed"),
+        ("/test/apps/created", "Created"),
+    ],
+    "more-navigation-links": [
+        ("/test/tax/reporting", "Tax"),
+        ("/test/features", "Features"),
+        ("/test/sigma/queries", "Sigma"),
+        ("/test/sandboxes", "Sandboxes"),
+        ("/test/optimization", "Optimization"),
+    ],
+}
+
+# Stripe Products submenu link classes (from primary-nav-item-link-* in crawl snapshots).
+_STRIPE_WORKLOAD_SUB_LINK_CLASSES = [
+    "⚙", "rs-9", "rs-3", "rs-a", "rs-3", "rs-2", "rs-b",
+    "as-6e", "as-70", "as-1e", "as-1f", "as-1g", "as-71",
+    "as-6h", "as-6i", "as-1i", "as-1y", "as-1x", "as-3h", "as-68",
+    "as-3v", "as-1t", "as-6k", "as-6l", "as-72", "as-6n", "as-4r",
+    "as-14", "as-2u", "as-6o", "as-6p", "as-6q", "as-6r", "as-6s",
+]
+_STRIPE_WORKLOAD_SUB_LINK_OUTER_CLASSES = ["⚙", "rs-2", "as-14", "as-2v", "as-2u", "as-a"]
+# Icon-sized inner classes (as-6t/as-6u) clip text to 24px — use toggle label classes.
+_STRIPE_WORKLOAD_SUB_LINK_LABEL_CLASSES = ["⚙", "as-g", "as-6x", "as-2x", "as-a", "as-20"]
+_STRIPE_WORKLOAD_PANEL_CLASSES = ["stitch-workload-nav-panel", "⚙", "as-g", "as-69"]
+
+
+def _make_stripe_workload_nav_link(soup: BeautifulSoup, href: str, label: str):
+    """Build a Products submenu row matching Stripe primary-nav link markup."""
+    li = soup.new_tag("li", attrs={"class": ["⚙", "as-g"]})
+    a = soup.new_tag("a", href=href)
+    a["class"] = list(_STRIPE_WORKLOAD_SUB_LINK_CLASSES)
+    a["tabindex"] = "1"
+    outer = soup.new_tag("span", attrs={"class": list(_STRIPE_WORKLOAD_SUB_LINK_OUTER_CLASSES)})
+    label_span = soup.new_tag("span", attrs={"class": list(_STRIPE_WORKLOAD_SUB_LINK_LABEL_CLASSES)})
+    label_span.string = label
+    outer.append(label_span)
+    a.append(outer)
+    li.append(a)
+    return li
+
+
+def _resolve_stripe_nav_slug(route: str, route_index: dict[str, str]) -> str | None:
+    """Return crawled slug for a Stripe sidebar route pattern, if any."""
+    for key in (_norm_route(route), _norm_route(route.split("?")[0])):
+        if key and key in route_index:
+            return route_index[key]
+    norm = _norm_route(route)
+    if norm:
+        for key, slug in route_index.items():
+            if key == norm or key.endswith(norm):
+                return slug
+    return None
+
+
+def _inject_stripe_workload_nav_panels(
+    soup: BeautifulSoup, route_index: dict[str, str]
+) -> int:
+    """Create missing Products submenu panels so workload toggles can accordion."""
+    if not soup.find(id="dashboardRoot"):
+        return 0
+    injected = 0
+    for toggle in soup.find_all(attrs={"data-testid": re.compile(r"^toggle-workload-")}):
+        panel_id = (toggle.get("aria-controls") or "").strip()
+        if not panel_id:
+            continue
+        items = _STRIPE_WORKLOAD_NAV.get(panel_id)
+        panel = soup.find(id=panel_id)
+        if panel is not None and "stitch-workload-nav-panel" in (panel.get("class") or []):
+            if not items:
+                continue
+            panel.clear()
+            panel["class"] = list(_STRIPE_WORKLOAD_PANEL_CLASSES)
+            for route, label in items:
+                if not _resolve_stripe_nav_slug(route, route_index):
+                    continue
+                panel.append(_make_stripe_workload_nav_link(soup, route, label))
+            injected += 1
+            continue
+        if panel is None:
+            if not items:
+                continue
+            panel = soup.new_tag("ul", id=panel_id)
+            panel["class"] = list(_STRIPE_WORKLOAD_PANEL_CLASSES)
+            for route, label in items:
+                if not _resolve_stripe_nav_slug(route, route_index):
+                    continue
+                panel.append(_make_stripe_workload_nav_link(soup, route, label))
+            if not panel.contents:
+                continue
+            host = toggle.find_parent("li") or toggle.parent
+            if host is None:
+                continue
+            host.append(panel)
+            injected += 1
+            continue
+        if not items:
+            continue
+        existing_routes = {
+            _norm_route(a.get("data-stitch-route") or a.get("href") or "")
+            for a in panel.find_all("a", href=True)
+        }
+        for route, label in items:
+            if _norm_route(route) in existing_routes:
+                continue
+            if not _resolve_stripe_nav_slug(route, route_index):
+                continue
+            panel.append(_make_stripe_workload_nav_link(soup, route, label))
+            injected += 1
+    return injected
+
+
+def _collapse_panel(panel) -> None:
+    """Hide an accordion panel and clear stitch visibility classes."""
+    panel["hidden"] = "true"
+    panel["aria-hidden"] = "true"
+    classes = panel.get("class") or []
+    if isinstance(classes, str):
+        classes = classes.split()
+    panel["class"] = [c for c in classes if c != "show"]
+
+
+def _stripe_slug_matches(page_slug: str, link_slug: str) -> bool:
+    """True when two crawled slugs refer to the same Stripe page."""
+    if page_slug == link_slug:
+        return True
+    prefix = "acct-1Tn1qNH9lf8tLTJg-"
+
+    def _short(slug: str) -> str:
+        return slug[len(prefix):] if slug.startswith(prefix) else slug
+
+    return _short(page_slug) == _short(link_slug)
+
+
+def _finalize_stripe_workload_nav(
+    soup: BeautifulSoup, page_slug: str | None, route_index: dict[str, str] | None = None
+) -> None:
+    """Expand only the Products submenu that contains the current page."""
+    if not page_slug or not soup.find(id="dashboardRoot"):
+        return
+    active_panel_id = ""
+    for panel in soup.find_all("ul", class_=lambda c: c and "stitch-workload-nav-panel" in c):
+        for link in panel.find_all("a", attrs={"data-stitch-page": True}):
+            link_slug = link.get("data-stitch-page") or ""
+            if _stripe_slug_matches(page_slug, link_slug):
+                link["aria-current"] = "page"
+                link["class"] = list(dict.fromkeys(
+                    (link.get("class") or []) + ["stitch-nav-active"]
+                ))
+                active_panel_id = panel.get("id") or active_panel_id
+    for toggle in soup.find_all(attrs={"data-testid": re.compile(r"^toggle-workload-")}):
+        panel_id = (toggle.get("aria-controls") or "").strip()
+        panel = soup.find(id=panel_id) if panel_id else None
+        if panel is None:
+            continue
+        expanded = panel_id == active_panel_id
+        toggle["aria-expanded"] = "true" if expanded else "false"
+        if expanded:
+            _show_panel(panel)
+        else:
+            _collapse_panel(panel)
+
+
 def _stripe_extra_route_keys(url: str, slug: str) -> list[str]:
     """Map Stripe sidebar routes to crawled page slugs when paths differ."""
     path = urlparse(url or "").path
@@ -1218,6 +1703,42 @@ def _stripe_extra_route_keys(url: str, slug: str) -> list[str]:
         keys += ["/test/dashboard", "/dashboard"]
     if "test-payments" in slug and "analytics" not in slug and "disputes" not in slug:
         keys += ["/test/payments", "/payments"]
+    if "coupons" in slug:
+        keys += ["/test/coupons", "/coupons"]
+    if "subscriptions" in slug and "create" not in slug and "simulations" not in slug:
+        keys += ["/test/subscriptions", "/subscriptions"]
+    if "invoices" in slug and "create" not in slug:
+        keys += ["/test/invoices", "/invoices"]
+    if slug.endswith("test-billing") or path.endswith("/billing"):
+        keys += ["/test/billing", "/billing"]
+    if "billing-revenue" in slug or path.endswith("/billing/revenue"):
+        keys += ["/test/billing/revenue", "/billing/revenue"]
+    if "test-reporting" in slug or path.endswith("/reporting"):
+        keys += ["/test/reporting", "/reporting"]
+    if "test-reports" in slug and "hub" not in slug and "balance" not in slug:
+        keys += ["/test/reports", "/reports"]
+    if "reports-hub" in slug or path.endswith("/reports/hub"):
+        keys += ["/test/reports/hub", "/reports/hub"]
+    if "reports-balance" in slug or path.endswith("/reports/balance"):
+        keys += ["/test/reports/balance", "/reports/balance"]
+    if "reports-reconciliation" in slug or path.endswith("/reports/reconciliation"):
+        keys += ["/test/reports/reconciliation", "/reports/reconciliation"]
+    if "revenue-recognition" in slug:
+        keys += ["/test/revenue-recognition", "/revenue-recognition"]
+    if "apps-installed" in slug or path.endswith("/apps/installed"):
+        keys += ["/test/apps/installed", "/apps/installed"]
+    if "apps-created" in slug or path.endswith("/apps/created"):
+        keys += ["/test/apps/created", "/apps/created"]
+    if "tax-reporting" in slug or path.endswith("/tax/reporting"):
+        keys += ["/test/tax/reporting", "/tax/reporting"]
+    if "test-features" in slug or path.endswith("/features"):
+        keys += ["/test/features", "/features"]
+    if "sigma-queries" in slug or "/sigma/queries" in path:
+        keys += ["/test/sigma/queries", "/sigma/queries"]
+    if "test-sandboxes" in slug or path.endswith("/sandboxes"):
+        keys += ["/test/sandboxes", "/sandboxes"]
+    if "test-optimization" in slug or path.endswith("/optimization"):
+        keys += ["/test/optimization", "/optimization"]
     return [_norm_route(k) for k in keys if k]
 
 
@@ -1386,6 +1907,9 @@ def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) 
         has_aria = el.has_attr("aria-controls") or el.has_attr("aria-expanded")
         if not (is_class_toggle or has_aria):
             continue
+        testid = el.get("data-testid") or ""
+        if testid.startswith("toggle-workload-"):
+            continue
 
         panel = _resolve_panel(soup, el, is_class_toggle)
         if panel is None:
@@ -1406,6 +1930,13 @@ def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) 
         elif el.has_attr("aria-expanded"):
             el["aria-expanded"] = "false"
     return count
+
+
+def _unwire_stripe_workload_accordions(soup: BeautifulSoup) -> None:
+    """Products workload headers keep a fixed expand state per page — no accordion toggle."""
+    for toggle in soup.find_all(attrs={"data-testid": re.compile(r"^toggle-workload-")}):
+        if toggle.has_attr("data-stitch-accordion"):
+            del toggle["data-stitch-accordion"]
 
 
 _OVERSIZED_TRIGGER_IDS = frozenset({
@@ -1508,6 +2039,13 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
     aria-label, text, name, role, type) and assign each interaction to the best
     not-yet-used element in document order.
     """
+    outer = trigger.get("outer_html") or trigger.get("outerHTML") or ""
+    testid = _testid_from_trigger_outer(outer)
+    if testid:
+        el = soup.find(attrs={"data-testid": testid})
+        if el is not None and id(el) not in used and not _is_oversized_interaction_trigger(el):
+            return el
+
     for key in ("crawl_selector", "selector", "css_selector"):
         sel = (trigger.get(key) or "").strip()
         if not sel or sel.startswith("/"):
@@ -1713,6 +2251,51 @@ def _rewrite_fragment_anchors(html: str, route_index: dict[str, str], to_root: s
     return str(frag)
 
 
+def _testid_from_trigger_outer(outer: str) -> str | None:
+    """Extract data-testid from a saved trigger outerHTML (Stripe/React)."""
+    m = re.search(r'data-testid=(["\'])([^"\']+)\1', outer or "")
+    return m.group(2) if m else None
+
+
+def _sanitize_stripe_dropdown_html(html: str) -> str:
+    """Clean Stripe popover fragments before injection into the static clone."""
+    if not html or ("role=\"menu\"" not in html and "account-switcher" not in html):
+        return html
+    frag = BeautifulSoup(html, "html.parser")
+    for node in frag.find_all(style=True):
+        style = node.get("style") or ""
+        if not re.search(r"position\s*:\s*fixed|transform\s*:", style, flags=re.I):
+            continue
+        cleaned = re.sub(r"position\s*:\s*fixed\s*;?", "", style, flags=re.I)
+        cleaned = re.sub(r"transform\s*:\s*[^;]+;?", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"(top|left|right|bottom)\s*:\s*[^;]+;?", "", cleaned, flags=re.I)
+        cleaned = cleaned.strip(" ;")
+        if cleaned:
+            node["style"] = cleaned
+        else:
+            del node["style"]
+    for flyout in frag.find_all(attrs={"data-testid": "account-switcher-workspace"}):
+        flyout.decompose()
+    for item in frag.find_all(attrs={"role": "menuitem"}):
+        item["style"] = "transform:none;position:static;width:100%;"
+        if item.has_attr("title"):
+            del item["title"]
+    for btn in frag.find_all(attrs={"data-testid": "exit-legacy-testmode-button"}):
+        btn["style"] = "transform:none;position:static;display:flex;width:100%;"
+        wrap = btn.find_parent("div", class_=lambda c: c and "as-bm" in " ".join(c if isinstance(c, list) else [c]))
+        if wrap is not None:
+            wrap["style"] = "position:static;display:block;width:100%;transform:none;"
+    for menu in frag.find_all(attrs={"role": "menu"}):
+        style = menu.get("style") or ""
+        if style:
+            cleaned = re.sub(r"max-height\s*:\s*[^;]+;?", "", style, flags=re.I).strip(" ;")
+            if cleaned:
+                menu["style"] = cleaned
+            else:
+                del menu["style"]
+    return str(frag)
+
+
 def _interaction_config_from_recon(
     recon: dict,
     *,
@@ -1725,6 +2308,7 @@ def _interaction_config_from_recon(
     ui_html = recon.get("ui_html", "") or ""
     backdrop_html = recon.get("backdrop_html", "") or ""
     ui_css = recon.get("ui_css", "") or ""
+    ui_html = _sanitize_stripe_dropdown_html(ui_html)
     return {
         "type": itype or recon.get("interaction_type", "unknown") or "unknown",
         "parentSelector": loc.get("parentSelector", "") or "",
@@ -1802,7 +2386,23 @@ def _wire_from_discovered(
             "class_name": entry.get("className", ""),
             "text": entry.get("label", ""),
         }
-        el = _find_trigger(soup, trigger_dict, used)
+        match_trigger = trigger_dict
+        if llm_type in ("interaction", "tab_switch"):
+            item = inter_idx.get(selector)
+            if item:
+                rel_path = page_dir / item.get(
+                    "relationship_file",
+                    f"{item.get('interaction_path', '')}/relationship.json",
+                )
+                if rel_path.exists():
+                    try:
+                        rel = json.loads(rel_path.read_text(encoding="utf-8"))
+                        rel_trigger = _normalize_trigger(rel.get("trigger", {}) or {})
+                        if rel_trigger:
+                            match_trigger = rel_trigger
+                    except Exception:
+                        pass
+        el = _find_trigger(soup, match_trigger, used)
         if el is None:
             continue
 
@@ -2200,11 +2800,16 @@ def _process_html(
     expand_sidebars: bool = True,
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
+    stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
     page_links = _rewrite_anchors(soup, route_index, to_root)
     used: set[int] = set()
     # Accordions first: claim sidebar toggles so interaction wiring never
     # rebinds them to a snapshot, and rewritten submenu anchors stay reachable.
     accordions = _wire_accordions(soup, used, expand_sidebars)
+    _unwire_stripe_workload_accordions(soup)
+    _finalize_stripe_workload_nav(
+        soup, page_dir.name if page_dir is not None else None, route_index
+    )
 
     if valid_slugs is not None and page_dir is not None:
         _wire_flyout_close(soup, page_dir.name, valid_slugs, to_root, used)
