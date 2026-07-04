@@ -373,6 +373,7 @@ APPS = {
         "crawl_bfs_only": False,
         "crawl_redo_interactions": False,
         "crawl_workers": 4,
+        "stitch_entry_slug": "home-v2",
         "interaction_depth_2_patterns": [
             "/home/v2",
             "/rise-crm",

@@ -35,6 +35,7 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
+from config import get_app_config
 from storage.storage_manager import (
     clean_stitched,
     get_crawl_dir,
@@ -340,7 +341,6 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       b.classList.remove("ld-stage-active");
     });
     btn.classList.add("ld-stage-active");
-    if (btn.hasAttribute("data-stitch-ui-id")) injectInteraction(btn);
   }
 
   function toggleBootstrapDropdown(toggle) {
@@ -2272,7 +2272,7 @@ def _rewrite_anchors(soup: BeautifulSoup, route_index: dict[str, str], to_root: 
             continue
         href = (a.get("href") or "").strip()
         low = href.lower()
-        if low in ("", "#") or low.startswith(_INERT_PREFIXES):
+        if low in ("", "#") or low.startswith("#") or low.startswith(_INERT_PREFIXES):
             continue
 
         slug = _resolve_anchor(href, route_index)
@@ -3149,6 +3149,8 @@ def _inject_runtime(
     to_root: str,
     configs: dict[str, dict] | None = None,
     tabs_configs: dict[str, dict] | None = None,
+    *,
+    include_likwid_demo: bool = False,
 ) -> None:
     body = soup.body or soup
     if configs:
@@ -3164,6 +3166,8 @@ def _inject_runtime(
         tab_tag.string = f"window.__STITCH_TABS__ = {data};"
         body.append(tab_tag)
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
+    if include_likwid_demo:
+        body.append(soup.new_tag("script", src=f"{to_root}likwid_demo.js"))
 
 
 def _neutralize_likwid_post_forms(soup: BeautifulSoup) -> int:
@@ -3338,6 +3342,7 @@ def _process_html(
     navigations: list[dict] | None = None,
     discovered: list[dict] | None = None,
     expand_sidebars: bool = True,
+    include_likwid_demo: bool = False,
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
     stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
@@ -3404,7 +3409,7 @@ def _process_html(
     likwid_forms = _neutralize_likwid_post_forms(soup)
     if likwid_forms:
         print(f"[STITCH] Neutralized {likwid_forms} Likwid POST stage button(s) on {page_dir.name if page_dir else '?'}")
-    _inject_runtime(soup, to_root, configs, tabs_configs)
+    _inject_runtime(soup, to_root, configs, tabs_configs, include_likwid_demo=include_likwid_demo)
     return _fix_svg_viewbox_html(str(soup)), page_links, inter_manifest, accordions, fixes
 
 
@@ -3796,6 +3801,10 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     stitched_dir.mkdir(parents=True, exist_ok=True)
 
     (stitched_dir / "runtime.js").write_text(RUNTIME_JS, encoding="utf-8")
+    likwid_demo = app_name == "likwid"
+    if likwid_demo:
+        demo_src = Path(__file__).resolve().parent / "src" / "runtime" / "likwid_demo.js"
+        (stitched_dir / "likwid_demo.js").write_text(demo_src.read_text(encoding="utf-8"), encoding="utf-8")
 
     fonts_dir = stitched_dir / "assets" / "fonts"
     fonts_dir.mkdir(parents=True, exist_ok=True)
@@ -3834,6 +3843,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             navigations=navigations,
             discovered=discovered,
             expand_sidebars=expand_sidebars,
+            include_likwid_demo=likwid_demo,
         )
         new_html = _localize_hubspot_css(new_html, css_dir, to_root="../", css_cdn_dirs=css_cdn_dirs)
         new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
@@ -3863,6 +3873,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 valid_slugs=valid_slugs,
                 navigations=navigations,
                 expand_sidebars=expand_sidebars,
+                include_likwid_demo=likwid_demo,
             )
             new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../", css_cdn_dirs=css_cdn_dirs)
             new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")
@@ -3898,7 +3909,13 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     )
     (stitched_dir / "404.html").write_text(FALLBACK_404, encoding="utf-8")
 
-    entry_slug = _resolve_entry(navigation, valid_slugs, stitched_dir=stitched_dir)
+    stitch_cfg = get_app_config(app_name)
+    entry_override = stitch_cfg.get("stitch_entry_slug")
+    entry_slug = (
+        entry_override
+        if entry_override and entry_override in valid_slugs
+        else _resolve_entry(navigation, valid_slugs, stitched_dir=stitched_dir)
+    )
     if entry_slug:
         _write_entry_redirect(stitched_dir, entry_slug)
         print(f"[STITCH] Entry page: {entry_slug}")
