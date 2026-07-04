@@ -2,7 +2,7 @@
 // stitched clone. There is no backend, so this layer intercepts form submits,
 // stores the submitted data in window.ReplicaStore (persisted to
 // localStorage so records survive full-page navigation), and updates the DOM
-// (table row, counters, pagination text, modal, success popup) so the app
+// (table row, counters, pagination text, modal, success toast) so the app
 // *feels* like the real thing even though nothing is persisted server-side.
 //
 // Entities (company, contact, lead, quotation, ...) are added via
@@ -13,6 +13,8 @@
   "use strict";
 
   var STORAGE_KEY = "__stitchReplicaStore__";
+  var FLASH_KEY   = "__stitchReplicaFlash__";
+  var LOADING_MS  = 900;   // default fake-loading duration
 
   function loadStore() {
     try {
@@ -218,48 +220,117 @@
     el.textContent = "Showing 1 to " + total + " of " + total + " " + label;
   };
 
+  // ── Green toast — matches the real site screenshot ──────────────────────
+  // Fixed top-center, auto-dismiss after 4 s, X closes early.
+  ReplicaHelpers.showToast = function (message) {
+    var toast = document.createElement("div");
+    toast.setAttribute("role", "alert");
+    toast.style.cssText = [
+      "position:fixed",
+      "top:24px",
+      "left:50%",
+      "transform:translateX(-50%)",
+      "z-index:99999",
+      "display:flex",
+      "align-items:center",
+      "gap:12px",
+      "min-width:260px",
+      "max-width:480px",
+      "padding:14px 18px",
+      "border-radius:8px",
+      "border:1.5px solid #28a745",
+      "background:#d4edda",
+      "color:#155724",
+      "font-size:14px",
+      "font-weight:500",
+      "box-shadow:0 4px 16px rgba(0,0,0,0.12)",
+      "cursor:default",
+    ].join(";");
+
+    var msg = document.createElement("span");
+    msg.style.cssText = "flex:1;";
+    msg.textContent = message;
+
+    var close = document.createElement("button");
+    close.type = "button";
+    close.style.cssText = [
+      "background:none",
+      "border:none",
+      "padding:0",
+      "margin:0",
+      "cursor:pointer",
+      "line-height:1",
+      "color:#6c757d",
+      "font-size:18px",
+    ].join(";");
+    close.innerHTML = "&times;";
+    close.setAttribute("aria-label", "Close");
+
+    toast.appendChild(msg);
+    toast.appendChild(close);
+    document.body.appendChild(toast);
+
+    var tid = setTimeout(remove, 4000);
+
+    function remove() {
+      clearTimeout(tid);
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+    }
+
+    close.addEventListener("click", remove);
+  };
+
+  // ── Button loading state ─────────────────────────────────────────────────
+  // Swaps the button to a spinner + "Please wait…" label and disables it.
+  // The button is automatically re-enabled / restored if navigation is blocked
+  // (e.g. validation fails), but in practice we always navigate away or close
+  // the modal before needing to restore.
+  ReplicaHelpers.setButtonLoading = function (btn) {
+    if (!btn) return;
+    btn.__replicaOrigHtml     = btn.innerHTML;
+    btn.__replicaOrigDisabled = btn.disabled;
+    btn.disabled = true;
+    // Support indicator-label / indicator-progress pattern used by Company & Contact buttons.
+    var label = btn.querySelector(".indicator-label");
+    var progress = btn.querySelector(".indicator-progress");
+    if (label && progress) {
+      label.classList.add("d-none");
+      progress.classList.remove("d-none");
+    } else {
+      btn.innerHTML =
+        '<span class="spinner-border spinner-border-sm align-middle me-2"></span>Please wait…';
+    }
+  };
+
+  ReplicaHelpers.restoreButton = function (btn) {
+    if (!btn || btn.__replicaOrigHtml === undefined) return;
+    btn.innerHTML = btn.__replicaOrigHtml;
+    btn.disabled  = btn.__replicaOrigDisabled || false;
+    delete btn.__replicaOrigHtml;
+    delete btn.__replicaOrigDisabled;
+  };
+
+  // ── Session-storage flash: show a toast on the *next* page after redirect ─
+  ReplicaHelpers.setFlash = function (message) {
+    try {
+      sessionStorage.setItem(FLASH_KEY, message);
+    } catch (err) {}
+  };
+
+  ReplicaHelpers.readAndClearFlash = function () {
+    try {
+      var msg = sessionStorage.getItem(FLASH_KEY);
+      if (msg) sessionStorage.removeItem(FLASH_KEY);
+      return msg || null;
+    } catch (err) {
+      return null;
+    }
+  };
+
+  // Keep showSuccessPopup for backward compatibility (quotation view page etc.)
   ReplicaHelpers.showSuccessPopup = function (opts) {
     opts = opts || {};
-    var title = opts.title || "Success";
-    var text = opts.text || "";
-
-    if (window.Swal && typeof window.Swal.fire === "function") {
-      window.Swal.fire({ icon: "success", title: title, text: text });
-      return;
-    }
-
-    // Lightweight clone matching the swal2 markup/classes already styled by
-    // the page's bundled CSS (used elsewhere for captured confirm dialogs).
-    var overlay = document.createElement("div");
-    overlay.className = "swal2-container swal2-center swal2-backdrop-show replica-swal";
-    overlay.innerHTML =
-      '<div class="swal2-popup swal2-modal swal2-icon-success swal2-show" role="dialog" style="display:grid;">' +
-      '<div class="swal2-icon swal2-success swal2-icon-show" style="display:flex;">' +
-      '<div class="swal2-success-circular-line-left"></div>' +
-      '<span class="swal2-success-line-tip"></span><span class="swal2-success-line-long"></span>' +
-      '<div class="swal2-success-ring"></div><div class="swal2-success-fix"></div>' +
-      '<div class="swal2-success-circular-line-right"></div>' +
-      "</div>" +
-      '<h2 class="swal2-title" style="display:block;">' + escapeHtml(title) + "</h2>" +
-      '<div class="swal2-html-container" style="display:block;">' + escapeHtml(text) + "</div>" +
-      '<div class="swal2-actions" style="display:flex;">' +
-      '<button type="button" class="swal2-confirm btn btn-primary">Ok, got it!</button>' +
-      "</div>" +
-      "</div>";
-    document.body.appendChild(overlay);
-
-    function close() {
-      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
-      document.removeEventListener("keydown", onKey, true);
-    }
-    function onKey(ev) {
-      if (ev.key === "Escape" || ev.keyCode === 27) close();
-    }
-    overlay.querySelector(".swal2-confirm").addEventListener("click", close);
-    overlay.addEventListener("click", function (ev) {
-      if (ev.target === overlay) close();
-    });
-    document.addEventListener("keydown", onKey, true);
+    ReplicaHelpers.showToast(opts.title || "Success");
   };
 
   window.ReplicaHelpers = ReplicaHelpers;
@@ -296,6 +367,12 @@
     e.preventDefault();
     e.stopPropagation();
 
+    // Grab the submit button before we do anything else.
+    var btn = (e && e.submitter) ||
+      form.querySelector("button[type='submit'], input[type='submit']");
+    ReplicaHelpers.setButtonLoading(btn);
+
+    // Read and store data immediately (before any async delay).
     var data = ReplicaHelpers.readForm(form);
     data.__id = newId();
     if (typeof entity.beforeSave === "function") entity.beforeSave(data, form);
@@ -305,42 +382,47 @@
     persistStore();
 
     var modalEl = entity.modalSelector ? document.querySelector(entity.modalSelector) : null;
+    var delay   = entity.loadingMs !== undefined ? entity.loadingMs : LOADING_MS;
+    var msg     = entity.successMessage || "Created successfully!";
 
-    // Pattern B: the form lives on its own page (no table to update here) —
-    // save + redirect to the real list page, which re-renders every
-    // persisted record (including this one) on load.
+    // Pattern B: the form lives on its own page — show loading, then redirect.
+    // The destination list reads the flash and shows the toast next to the new row.
     if (entity.redirectTo) {
-      ReplicaHelpers.closeModal(modalEl);
-      form.reset();
-      location.href = typeof entity.redirectTo === "function" ? entity.redirectTo(data) : entity.redirectTo;
+      var dest = typeof entity.redirectTo === "function" ? entity.redirectTo(data) : entity.redirectTo;
+      setTimeout(function () {
+        ReplicaHelpers.closeModal(modalEl);
+        form.reset();
+        ReplicaHelpers.setFlash(msg);
+        location.href = dest;
+      }, delay);
       return true;
     }
 
-    // Pattern A: modal + table live on the same page — update in place.
-    var rowEl = ReplicaHelpers.buildRow(entity, data, store.length);
-    if (rowEl) ReplicaHelpers.prependTableRow(entity.tableBodySelector, rowEl);
+    // Pattern A: modal + table on the same page — update DOM after the fake loading delay.
+    setTimeout(function () {
+      ReplicaHelpers.closeModal(modalEl);
+      form.reset();
+      ReplicaHelpers.restoreButton(btn);
 
-    if (entity.counters) ReplicaHelpers.updateCounters(entity.counters, data);
+      var rowEl = ReplicaHelpers.buildRow(entity, data, store.length);
+      if (rowEl) ReplicaHelpers.prependTableRow(entity.tableBodySelector, rowEl);
 
-    if (entity.paginationInfoSelector) {
-      var total = ReplicaHelpers.countRows(entity.tableBodySelector);
-      ReplicaHelpers.updatePaginationInfo(
-        entity.paginationInfoSelector,
-        total,
-        entity.singularLabel,
-        entity.pluralLabel
-      );
-    }
+      if (entity.counters) ReplicaHelpers.updateCounters(entity.counters, data);
 
-    ReplicaHelpers.closeModal(modalEl);
-    form.reset();
+      if (entity.paginationInfoSelector) {
+        var total = ReplicaHelpers.countRows(entity.tableBodySelector);
+        ReplicaHelpers.updatePaginationInfo(
+          entity.paginationInfoSelector,
+          total,
+          entity.singularLabel,
+          entity.pluralLabel
+        );
+      }
 
-    ReplicaHelpers.showSuccessPopup({
-      title: entity.successTitle || "Added",
-      text: entity.successText || "The item has been successfully added.",
-    });
+      ReplicaHelpers.showToast(msg);
+      console.log("[STITCH] Replica create", entity.storeKey, data);
+    }, delay);
 
-    console.log("[STITCH] Replica create", entity.storeKey, data);
     return true;
   };
 
@@ -450,8 +532,7 @@
     paginationInfoSelector: "#companyPaginationInfo",
     singularLabel: "company",
     pluralLabel: "companies",
-    successTitle: "Company Added",
-    successText: "The company has been successfully added.",
+    successMessage: "Company created successfully!",
     fillRow: fillCompanyRow,
     counters: [
       { label: "All Companies", delta: 1 },
@@ -491,7 +572,7 @@
     row.setAttribute("data-category-ids", "");
     row.setAttribute("data-category-names", "");
 
-    var checkbox = row.querySelector('input.contact-checkbox');
+    var checkbox = row.querySelector("input.contact-checkbox");
     if (checkbox) checkbox.value = data.__id;
 
     var nameLink = row.querySelector("td:nth-child(2) a");
@@ -531,8 +612,7 @@
     paginationInfoSelector: "#paginationInfo",
     singularLabel: "contact",
     pluralLabel: "contacts",
-    successTitle: "Contact Added",
-    successText: "The contact has been successfully added.",
+    successMessage: "Contact created successfully!",
     fillRow: fillContactRow,
   });
 
@@ -589,6 +669,7 @@
     storeKey: "leads",
     fillRow: fillLeadRow,
     redirectTo: "../rise-crm-leads-list/page.html",
+    successMessage: "Lead created successfully!",
     counters: [
       { label: "Total Leads", delta: 1, type: "stat-box" },
       { label: "Open", delta: 1, type: "stat-box" },
@@ -639,6 +720,7 @@
     tableBodySelector: "#kt_customers_table tbody",
     storeKey: "quotations",
     fillRow: fillQuotationRow,
+    successMessage: "Quotation created successfully!",
   });
 
   function collectQuoteItems() {
@@ -649,13 +731,13 @@
       var idx = m[1];
       var name = (input.value || "").trim();
       if (!name) return;
-      var qtyEl = document.querySelector('[name="form-' + idx + '-quantity"]');
+      var qtyEl   = document.querySelector('[name="form-' + idx + '-quantity"]');
       var priceEl = document.querySelector('[name="form-' + idx + '-price"]');
-      var taxEl = document.querySelector('[name="form-' + idx + '-tax_rate"]');
-      var qty = parseFloat(qtyEl && qtyEl.value) || 0;
-      var price = parseFloat(priceEl && priceEl.value) || 0;
-      var taxRate = parseFloat(taxEl && taxEl.value) || 0;
-      var value = qty * price;
+      var taxEl   = document.querySelector('[name="form-' + idx + '-tax_rate"]');
+      var qty      = parseFloat(qtyEl && qtyEl.value) || 0;
+      var price    = parseFloat(priceEl && priceEl.value) || 0;
+      var taxRate  = parseFloat(taxEl && taxEl.value) || 0;
+      var value    = qty * price;
       var taxValue = (value * taxRate) / 100;
       items.push({
         name: name,
@@ -670,38 +752,43 @@
     return items;
   }
 
-  function handleGenerateQuote() {
-    var customerSel = document.getElementById("id_customer");
-    var leadSel = document.getElementById("id_lead");
+  function handleGenerateQuote(btn) {
+    var customerSel   = document.getElementById("id_customer");
+    var leadSel       = document.getElementById("id_lead");
     var customerLabel = selectLabel(customerSel) || selectLabel(leadSel) || "Walk-in Customer";
-    var titleEl = document.getElementById("id_title");
-    var termsEl = document.getElementById("id_terms");
-    var leadTimeEl = document.getElementById("id_lead_time");
+    var titleEl       = document.getElementById("id_title");
+    var termsEl       = document.getElementById("id_terms");
+    var leadTimeEl    = document.getElementById("id_lead_time");
 
     var items = collectQuoteItems();
     var subtotal = 0, gst = 0;
     items.forEach(function (item) {
       subtotal += item.value;
-      gst += item.taxValue;
+      gst      += item.taxValue;
     });
 
     var data = {
-      __id: newId(),
-      __code: fakeCode("QUO"),
+      __id:           newId(),
+      __code:         fakeCode("QUO"),
       __customerLabel: customerLabel,
-      __dateLabel: formatDateLong(new Date()),
-      __grandTotal: subtotal + gst,
-      title: (titleEl && titleEl.value.trim()) || "Quotation for " + customerLabel,
-      terms: termsEl ? termsEl.value.trim() : "",
-      lead_time: leadTimeEl ? leadTimeEl.value : "0",
-      items: items,
+      __dateLabel:    formatDateLong(new Date()),
+      __grandTotal:   subtotal + gst,
+      title:          (titleEl && titleEl.value.trim()) || "Quotation for " + customerLabel,
+      terms:          termsEl ? termsEl.value.trim() : "",
+      lead_time:      leadTimeEl ? leadTimeEl.value : "0",
+      items:          items,
     };
 
     var store = window.ReplicaStore.quotations || (window.ReplicaStore.quotations = []);
     store.unshift(data);
     persistStore();
 
-    location.href = "../rise-crm-quotations-date-wise/page.html";
+    ReplicaHelpers.setButtonLoading(btn);
+    ReplicaHelpers.setFlash("Quotation created successfully!");
+
+    setTimeout(function () {
+      location.href = "../rise-crm-quotations-date-wise/page.html";
+    }, LOADING_MS);
   }
 
   (function wireGenerateQuoteButton() {
@@ -714,7 +801,7 @@
         e.preventDefault();
         e.stopPropagation();
         if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-        handleGenerateQuote();
+        handleGenerateQuote(btn);
       },
       true
     );
@@ -761,8 +848,8 @@
       var subtotal = 0, gst = 0;
       items.forEach(function (item) {
         subtotal += item.value;
-        gst += item.taxValue;
-        var tr = document.createElement("tr");
+        gst      += item.taxValue;
+        var tr    = document.createElement("tr");
         tr.innerHTML =
           "<td>" + escapeHtml(item.name) + "</td>" +
           '<td class="text-end">' + item.quantity + "</td>" +
@@ -781,22 +868,22 @@
       if (grandEl) grandEl.textContent = (subtotal + gst).toFixed(2);
     }
 
-    var titleEl = document.getElementById("replicaQuoteTitle");
-    if (titleEl) titleEl.textContent = "Title: " + (data.title || "");
-    var termsEl = document.getElementById("replicaQuoteTerms");
-    if (termsEl) termsEl.textContent = "Terms & Conditions: " + (data.terms || "");
+    var titleEl2 = document.getElementById("replicaQuoteTitle");
+    if (titleEl2) titleEl2.textContent = "Title: " + (data.title || "");
+    var termsEl2 = document.getElementById("replicaQuoteTerms");
+    if (termsEl2) termsEl2.textContent = "Terms & Conditions: " + (data.terms || "");
   }
 
   (function bootstrapReplicaView() {
     var params = new URLSearchParams(location.search);
-    var raw = params.get("replica");
+    var raw    = params.get("replica");
     if (!raw) return;
     var sepIdx = raw.indexOf(":");
     if (sepIdx < 0) return;
     var storeKey = raw.slice(0, sepIdx);
-    var id = raw.slice(sepIdx + 1);
-    var records = window.ReplicaStore[storeKey] || [];
-    var record = null;
+    var id       = raw.slice(sepIdx + 1);
+    var records  = window.ReplicaStore[storeKey] || [];
+    var record   = null;
     for (var i = 0; i < records.length; i++) {
       if (records[i].__id === id) {
         record = records[i];
@@ -805,6 +892,16 @@
     }
     if (!record) return;
     if (storeKey === "quotations") renderQuotationView(record);
+  })();
+
+  // ── Flash-on-load: show toast from a previous redirect flow ─────────────
+  (function consumeFlash() {
+    var msg = ReplicaHelpers.readAndClearFlash();
+    if (!msg) return;
+    // Small delay so the page DOM and rows render first.
+    setTimeout(function () {
+      ReplicaHelpers.showToast(msg);
+    }, 150);
   })();
 
   renderPersistedOnLoad();
