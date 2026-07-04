@@ -1,0 +1,82 @@
+[
+  {
+    "label": "+ Add Item",
+    "id": "addItemDrawerBtn2",
+    "className": "btn btn-xs btn-light-primary fs-8 fw-semibold py-1 px-3",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "+ Add Item",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Map New Item",
+    "id": "addItemDrawerBtn5",
+    "className": "btn btn-sm btn-light w-100 text-start",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Map New Item",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit",
+    "id": "editDrawerBtn",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Edit",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Map Item",
+    "id": "addItemDrawerBtn",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Map Item",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit Vendor",
+    "id": "editDrawerBtn2",
+    "className": "btn btn-sm btn-light w-100 text-start",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Edit Vendor",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save Changes",
+    "id": "",
+    "className": "btn btn-dark btn-sm flex-grow-1",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Save Changes",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cancel",
+    "id": "vvEditCancel",
+    "className": "btn btn-light btn-sm",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Cancel",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save Mapping",
+    "id": "",
+    "className": "btn btn-dark btn-sm flex-grow-1",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "Save Mapping",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "label": "Product Master",
+    "id": "",
+    "className": "btn btn-sm btn-light btn-active-info me-2",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Product Master",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Product Master",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "Product Master",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Category",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "Category",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Custom Workflow",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Custom Workflow",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Total Orders",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "ax_name": "Total Orders",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Orders Value",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "span",
+    "ax_name": "Orders Value",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Action",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "ax_name": "Action",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

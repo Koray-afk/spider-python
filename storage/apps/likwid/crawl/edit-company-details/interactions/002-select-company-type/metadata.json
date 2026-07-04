@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Select company type",
+  "triggerId": "",
+  "triggerClass": "select2-selection select2-selection--single form-select form-select-solid",
+  "selector": "[data-crawl-id=\"10\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "edit-company-details",
+  "sourceUrl": "https://likwidai.com/edit-company-details/",
+  "beforeUrl": "https://likwidai.com/edit-company-details/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/edit-company-details/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "edit-company-details/interactions/002-select-company-type",
+  "captured_at": "2026-07-03T08:22:47.874505+00:00"
+}

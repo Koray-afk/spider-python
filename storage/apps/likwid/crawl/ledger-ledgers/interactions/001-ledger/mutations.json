@@ -1,0 +1,76 @@
+[
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "text-center py-10 text-gray-400",
+    "parentId": "stmt-body",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default modal-open"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default modal-open"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default modal-open"
+  },
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "modal-backdrop fade show",
+    "parentId": "kt_app_body",
+    "parentTag": "BODY"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "modal-backdrop fade show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "stmt-modal",
+    "cls": "modal fade show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "stmt-modal",
+    "cls": "modal fade show"
+  },
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "d-flex gap-3 mb-5",
+    "parentId": "stmt-body",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "table-responsive",
+    "parentId": "stmt-body",
+    "parentTag": "DIV"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Save Assignment",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"6\"]",
+    "outerHTML": "<button type=\"submit\" name=\"assign\" class=\"btn btn-sm btn-dark\" data-crawl-id=\"6\">Save Assignment</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "/",
+    "insertMethod": "append"
+  },
+  "ui_html": "<html lang=\"en\"><!--begin::Head--><head>\n<title>Likwid.Ai</title>\n<!-- Google tag (gtag.js) -->\n<link href=\"https://likwidai.com/static/images/favicon-32x32.png\" rel=\"shortcut icon\"/>\n<link href=\"https://likwidai.com/static/images/apple-touch-icon.png\" rel=\"shortcut icon\"/>\n<!--begin::Fonts(mandatory for all pages)-->\n<link href=\"https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700\" rel=\"stylesheet\"/>\n<!--end::Fonts-->\n<!--begin::Vendor Stylesheets(used for this page only)-->\n<link href=\"https://likwidai.com/static/suitestatic/assets/plugins/custom/datatables/datatables.bundle.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<link href=\"https://likwidai.com/static/suitestatic/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<!--end::Vendor Stylesheets-->\n<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->\n<link href=\"https://likwidai.com/static/suitestatic/assets/plugins/global/plugins.bundle.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<link href=\"https://likwidai.com/static/suitestatic/assets/css/style.bundle.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<!--end::Global Stylesheets Bundle-->\n</head></html>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

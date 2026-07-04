@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en"><!--begin::Head--><head>
+<title>Likwid.Ai</title>
+<!-- Google tag (gtag.js) -->
+<link href="https://likwidai.com/static/images/favicon-32x32.png" rel="shortcut icon"/>
+<link href="https://likwidai.com/static/images/apple-touch-icon.png" rel="shortcut icon"/>
+<!--begin::Fonts(mandatory for all pages)-->
+<link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" rel="stylesheet"/>
+<!--end::Fonts-->
+<!--begin::Vendor Stylesheets(used for this page only)-->
+<link href="../assets/css/static_suitestatic_assets_plugins_custom_datatables_datatables_bundle_css.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/static_suitestatic_assets_plugins_custom_vis-timeline_vis-timeline_bundle_css.css" rel="stylesheet" type="text/css"/>
+<!--end::Vendor Stylesheets-->
+<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+<link href="../assets/css/static_suitestatic_assets_plugins_global_plugins_bundle_css.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/static_suitestatic_assets_css_style_bundle_css.css" rel="stylesheet" type="text/css"/>
+<!--end::Global Stylesheets Bundle-->
+<style id="plotly.js-style-global"></style>
+<style>
+	.messages-container {
+		position: fixed;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 9999;
+		width: 25%;
+	}
+	</style><style type="text/css">.vis-time-axis{overflow:hidden;position:relative}.vis-time-axis.vis-foreground{left:0;top:0;width:100%}.vis-time-axis.vis-background{height:100%;left:0;position:absolute;top:0;width:100%}.vis-time-axis .vis-text{box-sizing:border-box;color:#4d4d4d;overflow:hidden;padding:3px;position:absolute;white-space:nowrap}.vis-time-axis .vis-text.vis-measure{margin-left:0;margin-right:0;padding-left:0;padding-right:0;position:absolute;visibility:hidden}.vis-time-axis .vis-grid.vis-vertical{border-left:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-vertical-rtl{border-right:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-minor{border-color:#e5e5e5}.vis-time-axis .vis-grid.vis-major{border-color:#bfbfbf}</style><style type="text/css">.vis .overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}.vis-active{box-shadow:0 0 10px #86d5f8}</style><style type="text/css">.vis-custom-time{background-color:#6e94ff;cursor:move;width:2px;z-index:1}.vis-custom-time>.vis-custom-time-marker{background-color:inherit;color:#fff;cursor:auto;font-size:12px;padding:3px 5px;top:0;white-space:nowrap;z-index:inherit}</style><style type="text/css">.vis-current-time{background-color:#ff7f6e;pointer-events:none;width:2px;z-index:1}.vis-rolling-mode-btn{background:#3876c2;border-radius:50%;color:#fff;cursor:pointer;font-size:28px;font-weight:700;height:40px;opacity:.8;position:absolute;right:20px;text-align:center;top:7px;width:40px}.vis-rolling-mode-btn:before{content:"\26F6"}.vis-rolling-mode-btn:hover{opacity:1}</style><style type="text/css">.vis-panel{box-sizing:border-box;margin:0;padding:0;position:absolute}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right,.vis-panel.vis-top{border:1px #bfbfbf}.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right{border-bottom-style:solid;border-top-style:solid;overflow:hidden}.vis-left.vis-panel.vis-vertical-scroll,.vis-right.vis-panel.vis-vertical-scroll{height:100%;overflow-x:hidden;overflow-y:scroll}.vis-left.vis-panel.vis-vertical-scroll{direction:rtl}.vis-left.vis-panel.vis-vertical-scroll .vis-content,.vis-right.vis-panel.vis-vertical-scroll{direction:ltr}.vis-right.vis-panel.vis-vertical-scroll .vis-content{direction:rtl}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-top{border-left-style:solid;border-right-style:solid}.vis-background{overflow:hidden}.vis-panel>.vis-content{position:relative}.vis-panel .vis-shadow{box-shadow:0 0 10px rgba(0,0,0,.8);height:1px;position:absolute;width:100%}.vis-panel .vis-shadow.vis-top{left:0;top:-1px}.vis-panel .vis-shadow.vis-bottom{bottom:-1px;left:0}</style><style type="text/css">.vis-graph-group0{fill:#4f81bd;fill-opacity:0;stroke-width:2px;stroke:#4f81bd}.vis-graph-group1{fill:#f79646;fill-opacity:0;stroke-width:2px;stroke:#f79646}.vis-graph-group2{fill:#8c51cf;fill-opacity:0;stroke-width:2px;stroke:#8c51cf}.vis-graph-group3{fill:#75c841;fill-opacity:0;stroke-width:2px;stroke:#75c841}.vis-graph-group4{fill:#ff0100;fill-opacity:0;stroke-width:2px;stroke:#ff0100}.vis-graph-group5{fill:#37d8e6;fill-opacity:0;stroke-width:2px;stroke:#37d8e6}.vis-graph-group6{fill:#042662;fill-opacity:0;stroke-width:2px;stroke:#042662}.vis-graph-group7{fill:#00ff26;fill-opacity:0;stroke-width:2px;stroke:#00ff26}.vis-graph-group8{fill:#f0f;fill-opacity:0;stroke-width:2px;stroke:#f0f}.vis-graph-group9{fill:#8f3938;fill-opacity:0;stroke-width:2px;stroke:#8f3938}.vis-timeline .vis-fill{fill-opacity:.1;stroke:none}.vis-timeline .vis-bar{fill-opacity:.5;stroke-width:1px}.vis-timeline .vis-point{stroke-width:2px;fill-opacity:1}.vis-timeline .vis-legend-background{stroke-width:1px;fill-opacity:.9;fill:#fff;stroke:#c2c2c2}.vis-timeline .vis-outline{stroke-width:1px;fill-opacity:1;fill:#fff;stroke:#e5e5e5}.vis-timeline .vis-icon-fill{fill-opacity:.3;stroke:none}</style><style type="text/css">.vis-timeline{border:1px solid #bfbfbf;box-sizing:border-box;margin:0;overflow:hidden;padding:0;position:relative}.vis-loading-screen{height:100%;left:0;position:absolute;top:0;width:100%}</style><style type="text/css">.vis [class*=span]{min-height:0;width:auto}</style><style type="text/css">.vis-item{background-color:#d5ddf6;border-color:#97b0f8;border-width:1px;color:#1a1a1a;display:inline-block;position:absolute;z-index:1}.vis-item.vis-selected{background-color:#fff785;border-color:#ffc200;z-index:2}.vis-editable.vis-selected{cursor:move}.vis-item.vis-point.vis-selected{background-color:#fff785}.vis-item.vis-box{border-radius:2px;border-style:solid;text-align:center}.vis-item.vis-point{background:none}.vis-item.vis-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}.vis-item.vis-range{border-radius:2px;border-style:solid;box-sizing:border-box}.vis-item.vis-background{background-color:rgba(213,221,246,.4);border:none;box-sizing:border-box;margin:0;padding:0}.vis-item .vis-item-overflow{height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%}.vis-item-visible-frame{white-space:nowrap}.vis-item.vis-range .vis-item-content{display:inline-block;position:relative}.vis-item.vis-background .vis-item-content{display:inline-block;position:absolute}.vis-item.vis-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item .vis-item-content{box-sizing:border-box;padding:5px;white-space:nowrap}.vis-item .vis-onUpdateTime-tooltip{background:#4f81bd;border-radius:1px;color:#fff;padding:5px;position:absolute;text-align:center;transition:.4s;-o-transition:.4s;-moz-transition:.4s;-webkit-transition:.4s;white-space:nowrap;width:200px}.vis-item .vis-delete,.vis-item .vis-delete-rtl{box-sizing:border-box;cursor:pointer;height:24px;padding:0 5px;position:absolute;top:0;-webkit-transition:background .2s linear;-moz-transition:background .2s linear;-ms-transition:background .2s linear;-o-transition:background .2s linear;transition:background .2s linear;width:24px}.vis-item .vis-delete{right:-24px}.vis-item .vis-delete-rtl{left:-24px}.vis-item .vis-delete-rtl:after,.vis-item .vis-delete:after{color:red;content:"\00D7";font-family:arial,sans-serif;font-size:22px;font-weight:700;-webkit-transition:color .2s linear;-moz-transition:color .2s linear;-ms-transition:color .2s linear;-o-transition:color .2s linear;transition:color .2s linear}.vis-item .vis-delete-rtl:hover,.vis-item .vis-delete:hover{background:red}.vis-item .vis-delete-rtl:hover:after,.vis-item .vis-delete:hover:after{color:#fff}.vis-item .vis-drag-center{cursor:move;height:100%;left:0;position:absolute;top:0;width:100%}.vis-item.vis-range .vis-drag-left{cursor:w-resize;left:-4px}.vis-item.vis-range .vis-drag-left,.vis-item.vis-range .vis-drag-right{height:100%;max-width:20%;min-width:2px;position:absolute;top:0;width:24px}.vis-item.vis-range .vis-drag-right{cursor:e-resize;right:-4px}.vis-range.vis-item.vis-readonly .vis-drag-left,.vis-range.vis-item.vis-readonly .vis-drag-right{cursor:auto}.vis-item.vis-cluster{border-radius:2px;border-style:solid;text-align:center;vertical-align:center}.vis-item.vis-cluster-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item.vis-cluster-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}</style><style type="text/css">div.vis-tooltip{background-color:#f5f4ed;border:1px solid #808074;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:3px 3px 10px rgba(0,0,0,.2);color:#000;font-family:verdana;font-size:14px;padding:5px;pointer-events:none;position:absolute;visibility:hidden;white-space:nowrap;z-index:5}</style><style type="text/css">.vis-itemset{box-sizing:border-box;margin:0;padding:0;position:relative}.vis-itemset .vis-background,.vis-itemset .vis-foreground{height:100%;overflow:visible;position:absolute;width:100%}.vis-axis{height:0;left:0;position:absolute;width:100%;z-index:1}.vis-foreground .vis-group{border-bottom:1px solid #bfbfbf;box-sizing:border-box;position:relative}.vis-foreground .vis-group:last-child{border-bottom:none}.vis-nesting-group{cursor:pointer}.vis-label.vis-nested-group.vis-group-level-unknown-but-gte1{background:#f5f5f5}.vis-label.vis-nested-group.vis-group-level-0{background-color:#fff}.vis-ltr .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-left:0}.vis-rtl .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-right:0}.vis-label.vis-nested-group.vis-group-level-1{background-color:rgba(0,0,0,.05)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-left:15px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-right:15px}.vis-label.vis-nested-group.vis-group-level-2{background-color:rgba(0,0,0,.1)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-left:30px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-right:30px}.vis-label.vis-nested-group.vis-group-level-3{background-color:rgba(0,0,0,.15)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-left:45px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-right:45px}.vis-label.vis-nested-group.vis-group-level-4{background-color:rgba(0,0,0,.2)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-left:60px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-right:60px}.vis-label.vis-nested-group.vis-group-level-5{background-color:rgba(0,0,0,.25)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-left:75px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-right:75px}.vis-label.vis-nested-group.vis-group-level-6{background-color:rgba(0,0,0,.3)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-left:90px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-right:90px}.vis-label.vis-nested-group.vis-group-level-7{background-color:rgba(0,0,0,.35)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-left:105px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-right:105px}.vis-label.vis-nested-group.vis-group-level-8{background-color:rgba(0,0,0,.4)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-left:120px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-right:120px}.vis-label.vis-nested-group.vis-group-level-9{background-color:rgba(0,0,0,.45)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-left:135px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-right:135px}.vis-label.vis-nested-group{background-color:rgba(0,0,0,.5)}.vis-ltr .vis-label.vis-nested-group .vis-inner{padding-left:150px}.vis-rtl .vis-label.vis-nested-group .vis-inner{padding-right:150px}.vis-group-level-unknown-but-gte1{border:1px solid red}.vis-label.vis-nesting-group:before{display:inline-block;width:15px}.vis-label.vis-nesting-group.expanded:before{content:"\25BC"}.vis-label.vis-nesting-group.collapsed:before{content:"\25B6"}.vis-rtl .vis-label.vis-nesting-group.collapsed:before{content:"\25C0"}.vis-ltr .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-left:15px}.vis-rtl .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-right:15px}.vis-overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}</style><style type="text/css">.vis-labelset{overflow:hidden}.vis-labelset,.vis-labelset .vis-label{box-sizing:border-box;position:relative}.vis-labelset .vis-label{border-bottom:1px solid #bfbfbf;color:#4d4d4d;left:0;top:0;width:100%}.vis-labelset .vis-label.draggable{cursor:pointer}.vis-group-is-dragging{background:rgba(0,0,0,.1)}.vis-labelset .vis-label:last-child{border-bottom:none}.vis-labelset .vis-label .vis-inner{display:inline-block;padding:5px}.vis-labelset .vis-label .vis-inner.vis-hidden{padding:0}</style><style type="text/css">div.vis-configuration{display:block;float:left;font-size:12px;position:relative}div.vis-configuration-wrapper{display:block;width:700px}div.vis-configuration-wrapper:after{clear:both;content:"";display:block}div.vis-configuration.vis-config-option-container{background-color:#fff;border:2px solid #f7f8fa;border-radius:4px;display:block;left:10px;margin-top:20px;padding-left:5px;width:495px}div.vis-configuration.vis-config-button{background-color:#f7f8fa;border:2px solid #ceced0;border-radius:4px;cursor:pointer;display:block;height:25px;left:10px;line-height:25px;margin-bottom:30px;margin-top:20px;padding-left:5px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-button.hover{background-color:#4588e6;border:2px solid #214373;color:#fff}div.vis-configuration.vis-config-item{display:block;float:left;height:25px;line-height:25px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-item.vis-config-s2{background-color:#f7f8fa;border-radius:3px;left:10px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s3{background-color:#e4e9f0;border-radius:3px;left:20px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s4{background-color:#cfd8e6;border-radius:3px;left:30px;padding-left:5px}div.vis-configuration.vis-config-header{font-size:18px;font-weight:700}div.vis-configuration.vis-config-label{height:25px;line-height:25px;width:120px}div.vis-configuration.vis-config-label.vis-config-s3{width:110px}div.vis-configuration.vis-config-label.vis-config-s4{width:100px}div.vis-configuration.vis-config-colorBlock{border:1px solid #444;border-radius:2px;cursor:pointer;height:19px;margin:0;padding:0;top:1px;width:30px}input.vis-configuration.vis-config-checkbox{left:-5px}input.vis-configuration.vis-config-rangeinput{margin:0;padding:1px;pointer-events:none;position:relative;top:-5px;width:60px}input.vis-configuration.vis-config-range{-webkit-appearance:none;background-color:transparent;border:0 solid #fff;height:20px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-runnable-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:5px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-thumb{-webkit-appearance:none;background:#3876c2;background:-moz-linear-gradient(top,#3876c2 0,#385380 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#3876c2),color-stop(100%,#385380));background:-webkit-linear-gradient(top,#3876c2,#385380);background:-o-linear-gradient(top,#3876c2 0,#385380 100%);background:-ms-linear-gradient(top,#3876c2 0,#385380 100%);background:linear-gradient(180deg,#3876c2 0,#385380);border:1px solid #14334b;border-radius:50%;box-shadow:0 0 1px 0 #111927;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#3876c2",endColorstr="#385380",GradientType=0);height:17px;margin-top:-7px;width:17px}input.vis-configuration.vis-config-range:focus{outline:none}input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track{background:#9d9d9d;background:-moz-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#9d9d9d),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#9d9d9d,#c8c8c8 99%);background:-o-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:linear-gradient(180deg,#9d9d9d 0,#c8c8c8 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9d9d9d",endColorstr="#c8c8c8",GradientType=0)}input.vis-configuration.vis-config-range::-moz-range-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:10px;width:300px}input.vis-configuration.vis-config-range::-moz-range-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:-moz-focusring{outline:1px solid #fff;outline-offset:-1px}input.vis-configuration.vis-config-range::-ms-track{background:transparent;border-color:transparent;border-width:6px 0;color:transparent;height:5px;width:300px}input.vis-configuration.vis-config-range::-ms-fill-lower{background:#777;border-radius:10px}input.vis-configuration.vis-config-range::-ms-fill-upper{background:#ddd;border-radius:10px}input.vis-configuration.vis-config-range::-ms-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:focus::-ms-fill-lower{background:#888}input.vis-configuration.vis-config-range:focus::-ms-fill-upper{background:#ccc}.vis-configuration-popup{background:rgba(57,76,89,.85);border:2px solid #f2faff;border-radius:4px;color:#fff;font-size:14px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:opacity .3s ease-in-out;-moz-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;width:150px}.vis-configuration-popup:after,.vis-configuration-popup:before{border:solid transparent;content:" ";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.vis-configuration-popup:after{border-color:rgba(136,183,213,0) rgba(136,183,213,0) rgba(136,183,213,0) rgba(57,76,89,.85);border-width:8px;margin-top:-8px}.vis-configuration-popup:before{border-color:rgba(194,225,245,0) rgba(194,225,245,0) rgba(194,225,245,0) #f2faff;border-width:12px;margin-top:-12px}</style><style type="text/css">.vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal{border-bottom:1px solid;height:0;position:absolute;width:100%}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor{border-color:#e5e5e5}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-major{border-color:#bfbfbf}.vis-data-axis .vis-y-axis.vis-major{color:#4d4d4d;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-major.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-minor{color:#bebebe;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-minor.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title{bottom:20px;color:#4d4d4d;position:absolute;text-align:center;white-space:nowrap}.vis-data-axis .vis-y-axis.vis-title.vis-measure{margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title.vis-left{bottom:0;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-o-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;-o-transform-origin:left top;transform-origin:left bottom}.vis-data-axis .vis-y-axis.vis-title.vis-right{bottom:0;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:right bottom;-moz-transform-origin:right bottom;-ms-transform-origin:right bottom;-o-transform-origin:right bottom;transform-origin:right bottom}.vis-legend{background-color:rgba(247,252,255,.65);border:1px solid #b3b3b3;box-shadow:2px 2px 10px hsla(0,0%,60%,.55);padding:5px}.vis-legend-text{display:inline-block;white-space:nowrap}</style><style id="stitch-interaction-fixes">#main-nav-tab,
+#main-nav-tab *,
+.main-nav-lhs,
+.main-nav-lhs * {
+    pointer-events:auto !important;
+}
+.quick-add-menu.dropdown-menu-center,
+.stitch-injected-ui .quick-add-menu.dropdown-menu-center {
+    position: fixed !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 2000;
+}
+.stitch-injected-ui .dropdown-menu,
+.stitch-injected-ui .dropdown-menu .dropdown-item,
+.stitch-injected-ui .dropdown-menu button,
+.stitch-injected-ui .dropdown-menu a,
+.stitch-injected-ui [role="menu"],
+.stitch-injected-ui [role="menuitem"],
+.stitch-injected-ui [role="menu"] button,
+.stitch-injected-ui [data-component-name="UIPopover"],
+.stitch-injected-ui [class*="AbstractDropdown__DropdownContent"],
+.stitch-injected-ui [class*="Popover__StyledPopoverContainer"],
+.stitch-injected-ui .popover-container,
+.stitch-injected-ui .popover {
+    pointer-events: auto !important;
+}
+/* HubSpot main content — keep toolbar, filters, and table rows clickable. */
+#hs-global-toolbar button,
+#hs-global-toolbar [role="button"],
+[data-test-id="filter-bar-container"] button,
+[data-test-id="filter-bar-container"] [role="button"],
+[data-selenium-test="FiltersBar-container"] button,
+.PrivateButton__StyledButton-eRHhiA,
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id],
+[role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* Production overlays/widgets — broken or distracting in the static clone. */
+#annmsgstrip,
+.zread_strip,
+books_svgs,
+.micshide,
+#zcwindows,
+.zcoverlay,
+.zsiq_theme1,
+#zsiq_float,
+#zsiq_chat_wrap,
+iframe#avcliqiframe,
+#wmstoolbar,
+#micsbackdrop,
+#tooltip-popover-wrapper,
+#zgs20_globalsearch,
+#zgs20_gsSearchResultsArea,
+#zgs20_gsResultsHolder,
+#zgs20_gsSearchTopBandHolder,
+.zgs19_gsOverlay,
+#zgs20_gsOverlay,
+.popover-container,
+.finance-app .rhs-sidebar,
+.finance-app .rhs-menu,
+.finance-app #rhs-menu-bar,
+.finance-app .rhs-sidebar-menu {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* Empty captured flyout shells from live app — break flex layout in the clone. */
+.finance-app .slide-sidebar,
+.finance-app .sidebar-container {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* ── HubSpot-specific fixes ──────────────────────────────────────────────────
+   styled-components injects icon sizing at runtime; strip_scripts() empties
+   those <style> tags. These rules provide safe fallback sizing for all SVGs
+   that land in the static snapshot without explicit width/height attributes. */
+svg:not([width]):not([height]) {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+#hs-global-toolbar svg,
+#hs-nav-v4 svg,
+[data-test-id="nav-primary"] svg {
+    max-width: 32px !important;
+    max-height: 32px !important;
+    overflow: hidden !important;
+    flex-shrink: 0;
+}
+/* Toolbar must remain clickable for interaction wiring to work. */
+#hs-global-toolbar,
+#hs-global-toolbar * {
+    pointer-events: auto !important;
+}
+/* Live-only HubSpot widgets that are broken or distracting in the static clone. */
+#hs-feedback-fetcher,
+.growth-dynamic-namespace,
+#hs-nav-v4 iframe,
+.UIPlaceholderBubble__Placeholder-mfCgX {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot blanket pointer-events restore — nav, sidebar, buttons, tabs */
+#hs-nav-v4 a, #hs-nav-v4 button, #hs-nav-v4 [role="tab"],
+#hs-nav-v4 [role="menuitem"], #hs-nav-v4 li,
+[data-test-id="nav-primary"] a,
+[data-test-id="nav-primary"] button,
+[data-test-id="nav-primary"] [role="tab"],
+#hs-global-toolbar a, #hs-global-toolbar button,
+.private-page__outer button,
+.private-page__outer a,
+.private-page__outer [role="tab"],
+.private-page__outer [role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Kill invisible overlay divs that intercept clicks above interactive content */
+.UIOverlay--invisible,
+[data-overlay-type],
+.private-overlay--invisible {
+    pointer-events: none !important;
+    display: none !important;
+}
+/* HubSpot loading/skeleton states — API never resolves in the static clone */
+[data-test-id="loading-spinner"],
+.private-loading-page,
+.private-spinner-container,
+.loading-page-wrapper,
+.UIOverlay--blocker,
+[data-loading="true"] {
+    display: none !important;
+}
+/* Coaching popovers / tour highlights frozen open during crawl */
+body > [data-floating-ui-portal],
+.private-overlay-highlight {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot tour scrim overlay baked during crawl (e.g. AEO coaching walkthrough).
+   Only target .hDDpEi — do NOT hide [class*="Overlay__StyledInner"] globally;
+   legitimate modals (Schedule meeting, etc.) use the same overlay wrapper when
+   injected at runtime via .stitch-injected-ui. Baked .hDDpEi nodes are also
+   removed in _strip_baked_onboarding_ui(); this rule is a belt-and-suspenders
+   fallback for any that survive on main page snapshots. */
+.hDDpEi {
+    display: none !important;
+    pointer-events: none !important;
+}
+.stitch-tour-highlight-reset {
+    z-index: auto !important;
+    border: none !important;
+    margin-block: 0 !important;
+}
+
+/* HubSpot: hide live-only widgets; captured CSS handles layout when present. */
+#notificationBannerContainer,
+[data-test-id="notificationBannerContainer"],
+div#growth-dynamic-ui,
+#hs-feedback-fetcher,
+.copilot-sidebar-container,
+.quartz-grid-sidebar-container,
+iframe[name*="chatspot"],
+iframe[name*="mini-trial-guide"] {
+    display: none !important;
+}
+
+/* ── Stripe dashboard fixes ───────────────────────────────────────────────── */
+/* Full-viewport sail portal shells (inset:0, z-index:299) block all clicks. */
+body > .__sail-layer-containers:empty {
+    display: none !important;
+    pointer-events: none !important;
+}
+body > .__sail-layer-containers {
+    pointer-events: none !important;
+}
+/* Captured Stripe CSS sets .as-4g { pointer-events:none } on #chrome-layout. */
+#chrome-layout,
+#chrome-layout.as-4g,
+#chrome-layout *,
+.as-4g {
+    pointer-events: auto !important;
+}
+#dashboardRoot {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* Do not hide the whole Stripe shell when captured mid-load */
+#dashboardRoot [data-loading="true"],
+#dashboardRoot [aria-busy="true"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
+}
+#primary-nav,
+#primary-nav a,
+[data-testid="primary-nav"] a,
+a[data-stitch-page],
+#dashboardRoot a,
+#dashboardRoot button,
+#dashboardRoot [role="button"],
+#dashboardRoot [role="tab"],
+#dashboardRoot [role="menuitem"],
+[class*="db-Nav"] a,
+[class*="db-Nav"] button,
+[class*="sail-Nav"] a,
+[class*="sail-Nav"] button,
+[data-stitch-accordion],
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Invisible PressableCore overlays block button clicks in the static clone */
+.PressableCore-overlay,
+.PressableCore-overlay--isVisible {
+    pointer-events: none !important;
+}
+/* Stripe metrics iframe + hidden portal containers */
+iframe[name*="StripeMetrics"],
+iframe[name*="privateStripeMetrics"],
+.__sail-layer-containers[style*="display: none"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [class*="LoadingOverlay"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
+}
+#chrome-layout-backdrop,
+[data-testid="backdrop"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* Stripe Products section: prevent flex-grow / space-between from stretching nav rows. */
+#primary-nav [data-testid="workloads-nav"],
+[data-testid="primary-nav"] [data-testid="workloads-nav"],
+#primary-nav section:has([data-testid="workloads-nav"]) .primary-nav-section-header,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) .primary-nav-section-header {
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+    text-align: left !important;
+}
+#primary-nav [data-testid="workloads-nav-links"],
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"],
+#primary-nav section:has([data-testid="workloads-nav"]) > ul,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav section:has([data-testid="workloads-nav"]),
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+}
+
+/* Injected Stripe Products submenu (crawl snapshots omit collapsed panel HTML). */
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    display: list-item !important;
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel,
+[data-testid="primary-nav"] .stitch-workload-nav-panel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+#primary-nav .stitch-workload-nav-panel.show,
+[data-testid="primary-nav"] .stitch-workload-nav-panel.show {
+    display: block !important;
+    padding: 0 0 4px !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav .stitch-workload-nav-panel:not(.show),
+[data-testid="primary-nav"] .stitch-workload-nav-panel[hidden] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel > li,
+[data-testid="primary-nav"] .stitch-workload-nav-panel > li {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0 12px 0 36px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    flex: 0 0 auto !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav .stitch-workload-nav-panel a,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a {
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    --s--flex-y: 0 0 auto !important;
+    --s--object-width: auto !important;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: rgb(26, 44, 68) !important;
+    white-space: nowrap;
+    padding: 2px 8px;
+    border-radius: 6px;
+    min-height: 28px;
+    height: auto !important;
+    font-size: 14px;
+    line-height: 20px;
+}
+#primary-nav .stitch-workload-nav-panel a span,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a span {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}
+#primary-nav .stitch-workload-nav-panel a:hover,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a:hover {
+    background: rgba(26, 44, 68, 0.06);
+}
+#primary-nav .stitch-workload-nav-panel a[aria-current="page"],
+#primary-nav .stitch-workload-nav-panel a.stitch-nav-active,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a[aria-current="page"],
+[data-testid="primary-nav"] .stitch-workload-nav-panel a.stitch-nav-active {
+    background: rgb(246, 245, 255) !important;
+    color: rgb(99, 91, 255) !important;
+    font-weight: 500;
+}
+#primary-nav [data-testid^="toggle-workload-"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"],
+.toggle-workload-button {
+    cursor: pointer !important;
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    width: 100% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+}
+#primary-nav [data-testid^="toggle-workload-"] .as-6x,
+#primary-nav [data-testid^="toggle-workload-"] .as-20,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-6x,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-20,
+.toggle-workload-button .as-g.as-6x {
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] {
+    background: rgba(26, 44, 68, 0.06) !important;
+    border-radius: 6px;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Stripe account switcher dropdown (injected reconciliation fragment). */
+.stitch-injected-ui .sn-token-provider[role="menu"],
+.stitch-injected-ui [role="menu"].sn-token-provider {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: block !important;
+    pointer-events: auto !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    max-width: 320px !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px 0px,
+                rgba(48, 49, 61, 0.08) 0px 15px 35px 0px !important;
+    padding: 4px 0 8px !important;
+}
+.stitch-injected-ui [data-testid="account-switcher-workspace"] {
+    display: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="button"] {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 36px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    transform: none !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+.stitch-injected-ui .as-bm,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"] {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin: 8px 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 6px !important;
+    min-height: 36px !important;
+    background: #fff !important;
+    color: rgb(26, 44, 68) !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+}
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::before,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::after {
+    display: none !important;
+    content: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"]:hover {
+    background: rgba(26, 44, 68, 0.06) !important;
+}
+
+/* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
+[data-test-id="AvatarDisplay-avatarContent"] {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+.AvatarContent__HiddenSvg-cXPETG,
+[class*="AvatarContent__HiddenSvg"] {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+/* Likwid / Metronic sidebar accordions */
+#kt_app_sidebar .menu-item.menu-accordion:not(.show) > .menu-sub {
+    display: none !important;
+}
+#kt_app_sidebar .menu-item.menu-accordion.show > .menu-sub,
+#kt_app_sidebar .menu-item.menu-accordion > .menu-sub.show {
+    display: flex !important;
+    flex-direction: column;
+}
+#kt_app_sidebar .menu-link,
+#kt_app_sidebar [data-kt-menu-trigger],
+#kt_app_sidebar [data-stitch-accordion] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+.modal:not(.show) {
+    display: none !important;
+}</style></head>
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+<!--begin::Header-->
+<div class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-animation="false" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" id="kt_app_header">
+<!--begin::Header container-->
+<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+<!--begin::Sidebar mobile toggle-->
+<div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+<div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
+<i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+</div>
+<!--end::Sidebar mobile toggle-->
+<!--begin::Mobile logo-->
+<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+<a class="d-lg-none" data-stitch-page="home-v2" href="../home-v2/page.html">
+<img alt="Logo" class="h-30px" src="../assets/images/static_images_favicon-192x192_png.png"/>
+</a>
+</div>
+<!--end::Mobile logo-->
+<!--begin::Header wrapper-->
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+<!--begin::Menu wrapper-->
+<div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-direction="end" data-kt-drawer-name="app-header-menu" data-kt-drawer-overlay="true" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-drawer-width="250px" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+<!--begin::Menu-->
+<div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" data-kt-menu="true" id="kt_app_header_menu">
+<!--begin:Menu item-->
+<div class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2" data-kt-menu-placement="bottom-start" data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
+<!--begin:Menu link-->
+<h1 class="sitename">
+<span style="color: #1a1a1a;">Likwid</span><span style="background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">.AI</span></h1>
+<!--end:Menu link-->
+</div>
+</div>
+<!--end::Menu-->
+</div>
+<!--end::Menu wrapper-->
+<!--begin::Navbar-->
+<div class="app-navbar flex-shrink-0">
+<!--begin::Activities-->
+<div class="app-navbar-item ms-1 ms-md-4">
+<!--begin::Drawer toggle-->
+<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" id="kt_activities_toggle">
+<i class="ki-duotone ki-messages fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+</i>
+</div>
+<!--end::Drawer toggle-->
+</div>
+<!--end::Activities-->
+<!--begin::Theme mode-->
+<div class="app-navbar-item ms-1 ms-md-4">
+<!--begin::Menu toggle-->
+<a class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-trigger="{default:'click', lg: 'hover'}" href="#">
+<i class="ki-duotone ki-night-day theme-light-show fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+<span class="path6"></span>
+<span class="path7"></span>
+<span class="path8"></span>
+<span class="path9"></span>
+<span class="path10"></span>
+</i>
+<i class="ki-duotone ki-moon theme-dark-show fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</a>
+<!--begin::Menu toggle-->
+<!--begin::Menu-->
+<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-element="theme-mode-menu" data-kt-menu="true">
+<!--begin::Menu item-->
+<div class="menu-item px-3 my-0">
+<a class="menu-link px-3 py-2 active" data-kt-element="mode" data-kt-value="light" href="#">
+<span class="menu-icon" data-kt-element="icon">
+<i class="ki-duotone ki-night-day fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+<span class="path6"></span>
+<span class="path7"></span>
+<span class="path8"></span>
+<span class="path9"></span>
+<span class="path10"></span>
+</i>
+</span>
+<span class="menu-title">Light</span>
+</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-3 my-0">
+<a class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark" href="#">
+<span class="menu-icon" data-kt-element="icon">
+<i class="ki-duotone ki-moon fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Dark</span>
+</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-3 my-0">
+<a class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system" href="#">
+<span class="menu-icon" data-kt-element="icon">
+<i class="ki-duotone ki-screen fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+</i>
+</span>
+<span class="menu-title">System</span>
+</a>
+</div>
+<!--end::Menu item-->
+</div>
+<!--end::Menu-->
+</div>
+<!--end::Theme mode-->
+<!--begin::User menu-->
+<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
+<!--begin::Menu wrapper-->
+<div class="cursor-pointer symbol symbol-35px" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
+<img alt="user" class="rounded-3" src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260704%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260704T043305Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=a3545d599f47d3aa197fe664436d9c27b7fbe4e80a391bea654ec97527eecb05c77bba8ff442f9cf255b85c1c3ca2b4c26b4ad17340089641d0f6084251004f247552eb8f67768214b860d55ed47c8ae5e1364a563726f25927156f0f1c1c5289c3ccba66489e37bd456a7f774a196dcf205d8ad7aa9b20939df3e20651b02ffc2750f7dfc904086c05fb171a5c099de0bda42c470b3fa9ef73772b5fea7760e878d3ae70979e7da3006f15eea00554bc68e665cce3321bd3e8b63b7e8819265817b8bf78df42383eb14f269790c1b1af546628a38e8063148c91627957395bfed6b5899536a06f62d8aa9efd63915c58678e4114664ee3cdcaf10dad1f4b6b3"/>
+</div>
+<!--begin::User account menu-->
+<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+<!--begin::Menu item-->
+<div class="menu-item px-3">
+<div class="menu-content d-flex align-items-center px-3">
+<!--begin::Avatar-->
+<div class="symbol symbol-50px me-5">
+<img alt="Logo" src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260704%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260704T043305Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=a3545d599f47d3aa197fe664436d9c27b7fbe4e80a391bea654ec97527eecb05c77bba8ff442f9cf255b85c1c3ca2b4c26b4ad17340089641d0f6084251004f247552eb8f67768214b860d55ed47c8ae5e1364a563726f25927156f0f1c1c5289c3ccba66489e37bd456a7f774a196dcf205d8ad7aa9b20939df3e20651b02ffc2750f7dfc904086c05fb171a5c099de0bda42c470b3fa9ef73772b5fea7760e878d3ae70979e7da3006f15eea00554bc68e665cce3321bd3e8b63b7e8819265817b8bf78df42383eb14f269790c1b1af546628a38e8063148c91627957395bfed6b5899536a06f62d8aa9efd63915c58678e4114664ee3cdcaf10dad1f4b6b3"/>
+</div>
+<!--end::Avatar-->
+<!--begin::Username-->
+<div class="d-flex flex-column">
+<div class="fw-bold d-flex align-items-center fs-5">Bio Mac Lifesciences
+													
+													<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
+<a class="fw-semibold text-muted text-hover-primary fs-7" href="#">Pharmaceuticals &amp; Lifesciences</a>
+</div>
+<!--end::Username-->
+</div>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu separator-->
+<div class="separator my-2"></div>
+<!--end::Menu separator-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-page="rise-crm-leads-list" href="../rise-crm-leads-list/page.html">
+<span class="menu-text">Rise</span>
+</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-page="flow-ai-orders-orders-list" href="../flow-ai-orders-orders-list/page.html">Flow</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-page="spout-ai-production-jobs-pending" href="../spout-ai-production-jobs-pending/page.html">Spout</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu separator-->
+<div class="separator my-2"></div>
+<!--end::Menu separator-->
+<!--begin::Menu item-->
+<div class="menu-item px-5 my-1">
+<a class="menu-link px-5" data-stitch-page="edit-company-details" href="../edit-company-details/page.html">Account Settings</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-route="/signout/" data-stitch-unresolved="1" href="#">Sign Out</a>
+</div>
+<!--end::Menu item-->
+</div>
+<!--end::User account menu-->
+<!--end::Menu wrapper-->
+</div>
+<!--end::User menu-->
+<!--begin::Header menu toggle-->
+<div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
+<div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px" id="kt_app_header_menu_toggle">
+<i class="ki-duotone ki-element-4 fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+</div>
+<!--end::Header menu toggle-->
+<!--begin::Aside toggle-->
+<!--end::Header menu toggle-->
+</div>
+<!--end::Navbar-->
+</div>
+<!--end::Header wrapper-->
+</div>
+<!--end::Header container-->
+</div>
+<!--end::Header-->
+<!--begin::Wrapper-->
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+<!--begin::Sidebar-->
+<div class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-direction="start" data-kt-drawer-name="app-sidebar" data-kt-drawer-overlay="true" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle" data-kt-drawer-width="225px" id="kt_app_sidebar">
+<!--begin::Logo-->
+<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+<a data-stitch-page="home-v2" href="../home-v2/page.html">
+<img alt="Logo" class="h-25px app-sidebar-logo-default" src="../assets/images/static_images_android-chrome-512x512_png.png"/>
+<img alt="Logo" class="h-20px app-sidebar-logo-minimize" src="../assets/images/static_images_android-chrome-512x512_png.png"/>
+</a>
+<div class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-name="app-sidebar-minimize" data-kt-toggle-state="active" data-kt-toggle-target="body" id="kt_app_sidebar_toggle">
+<i class="ki-duotone ki-black-left-line fs-3 rotate-180">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+</div>
+<!--end::Logo-->
+<!--begin::sidebar menu-->
+<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+<div class="app-sidebar-wrapper" id="kt_app_sidebar_menu_wrapper">
+<div class="scroll-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-height="auto" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true" data-kt-scroll-wrappers="#kt_app_sidebar_menu" id="kt_app_sidebar_menu_scroll" style="height: 902px;">
+<!--begin::Menu-->
+<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" data-kt-menu="true" data-kt-menu-expand="false" id="#kt_app_sidebar_menu">
+<!--begin:Orders Order-->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-bi-dashboard-sales-intelligence" href="../flow-ai-bi-dashboard-sales-intelligence/page.html">
+<span class="menu-icon">
+<i class="bi bi-bar-chart-line fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Dashboard</span>
+</a>
+</div>
+<!--begin::Section-->
+<div class="menu-item pt-5">
+<div class="menu-content">
+<span class="menu-heading fw-bold text fs-7">Master Configuration</span>
+</div>
+</div>
+<!-- Customers -->
+<div class="menu-item">
+<a class="menu-link active bg-light-info" data-stitch-page="flow-ai-customers-list" href="../flow-ai-customers-list/page.html">
+<span class="menu-icon">
+<i class="bi bi-person-lines-fill fs-2"></i>
+</span>
+<span class="menu-title">Customers</span>
+</a>
+</div>
+<!-- Vendors -->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-vendors-vendor-list" href="../flow-ai-vendors-vendor-list/page.html">
+<span class="menu-icon">
+<i class="bi bi-ui-radios-grid fs-2"></i>
+</span>
+<span class="menu-title">Vendors</span>
+</a>
+</div>
+<!--begin::Section-->
+<div class="menu-item pt-5">
+<div class="menu-content">
+<span class="menu-heading fw-bold text fs-7">Sales &amp; Orders</span>
+</div>
+</div>
+<!--begin:Orders-->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-orders-orders-list" href="../flow-ai-orders-orders-list/page.html">
+<span class="menu-icon">
+<i class="ki-duotone ki-document fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Orders</span>
+</a>
+</div>
+<!--begin::Section-->
+<div class="menu-item pt-5">
+<div class="menu-content">
+<span class="menu-heading fw-bold text fs-7">Inventory &amp; Procurement</span>
+</div>
+</div>
+<!-- Inventory -->
+<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-22d050">
+<span class="menu-link">
+<span class="menu-icon">
+<i class="bi bi-boxes fs-2"></i>
+</span>
+<span class="menu-title">Inventory</span>
+<span class="menu-arrow"></span>
+</span>
+<div class="menu-sub menu-sub-accordion show" id="stitch-acc-22d050">
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-inventory-stock-list" href="../flow-ai-inventory-stock-list/page.html">
+<span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+<span class="menu-title">All Items</span>
+</a>
+</div>
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-inventory-stock-adjustments" href="../flow-ai-inventory-stock-adjustments/page.html">
+<span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+<span class="menu-title">Stock Adjustments</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Procurement (Indents + POs consolidated) -->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-procurement" href="../flow-ai-procurement/page.html">
+<span class="menu-icon">
+<i class="ki-duotone ki-purchase fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Procurement</span>
+</a>
+</div>
+</div>
+<!--end::Menu-->
+</div>
+</div>
+</div>
+<!--end::sidebar menu-->
+<!--begin::Footer-->
+<div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
+<a class="btn btn-flex flex-center btn-custom btn-info overflow-hidden text-nowrap px-0 h-40px w-100" data-bs-dismiss-="click" data-bs-original-title="Documentation" data-bs-toggle="tooltip" data-bs-trigger="hover" data-kt-initialized="1" href="">
+<span class="btn-label">Documentation</span>
+<i class="ki-duotone ki-document btn-icon fs-2 m-0">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</a>
+</div>
+<!--end::Footer-->
+</div>
+<!--end::Sidebar-->
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+<div class="d-flex flex-column flex-column-fluid">
+<div class="app-toolbar py-3 py-lg-6" id="kt_app_toolbar">
+<div class="app-container container-xxl d-flex flex-stack" id="kt_app_toolbar_container">
+<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Likwid Techserve</h1>
+<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+<li class="breadcrumb-item text-muted"><a class="text-muted text-hover-primary" data-stitch-page="home-v2" href="../home-v2/page.html">Home</a></li>
+<li class="breadcrumb-item"><span class="bullet bg-gray-500 w-5px h-2px"></span></li>
+<li class="breadcrumb-item text-muted"><a class="text-muted text-hover-primary" data-stitch-page="flow-ai-customers-list" href="../flow-ai-customers-list/page.html">Customers</a></li>
+<li class="breadcrumb-item"><span class="bullet bg-gray-500 w-5px h-2px"></span></li>
+<li class="breadcrumb-item text-muted">Likwid Techserve</li>
+</ul>
+</div>
+<div class="d-flex align-items-center gap-2">
+<a class="btn btn-sm btn-light" data-stitch-page="flow-ai-customers-list" href="../flow-ai-customers-list/page.html">
+<i class="ki-duotone ki-arrow-left fs-5"><span class="path1"></span><span class="path2"></span></i> Back
+                                </a>
+<button class="btn btn-sm btn-light" id="editDrawerBtn" type="button">
+<i class="ki-duotone ki-pencil fs-5"><span class="path1"></span><span class="path2"></span></i> Edit
+                                </button>
+<a class="btn btn-sm btn-light" data-stitch-route="/flow-ai/customer-view/9d983cfb-9317-4ebc-a1a2-81887d0a861e/export-csv" data-stitch-unresolved="1" href="#">
+<i class="ki-duotone ki-exit-down fs-5"><span class="path1"></span><span class="path2"></span></i>
+</a>
+<a class="btn btn-sm btn-dark" data-stitch-route="/flow-ai/orders/add-order/" data-stitch-unresolved="1" href="#">
+<i class="ki-duotone ki-plus fs-5"></i> New Order
+                                </a>
+</div>
+</div>
+</div>
+<div class="app-content flex-column-fluid" id="kt_app_content">
+<div class="app-container container-xxl" id="kt_app_content_container">
+<div class="d-flex gap-4 mb-5 flex-wrap">
+<div class="cv-stat-box">
+<div class="cv-stat-num">3</div>
+<div class="cv-stat-lbl">Total Orders</div>
+</div>
+<div class="cv-stat-box">
+<div class="cv-stat-num">₹171000</div>
+<div class="cv-stat-lbl">Total Order Value</div>
+</div>
+<div class="cv-stat-box">
+<div class="cv-stat-num">₹57000</div>
+<div class="cv-stat-lbl">Avg Order Value</div>
+</div>
+<div class="cv-stat-box">
+<div class="cv-stat-num">0</div>
+<div class="cv-stat-lbl">Sale Orders</div>
+</div>
+<div class="cv-stat-box">
+<div class="cv-stat-num">1</div>
+<div class="cv-stat-lbl">Orders (30d)</div>
+</div>
+<div class="cv-stat-box ms-auto" style="border-color:#50cd89;">
+<div class="cv-stat-num" style="font-size:.85rem;color:#50cd89;">
+                                        Active
+                                    </div>
+<div class="cv-stat-lbl">Status</div>
+</div>
+</div>
+<div class="row g-6">
+<div class="col-xl-8">
+<div class="card mb-5" style="border:1px solid #ebebeb;">
+<div class="card-body px-8 py-5">
+<div class="d-flex align-items-start gap-4">
+<div class="cv-avatar">L</div>
+<div class="flex-grow-1">
+<div class="d-flex align-items-center gap-2 mb-1">
+<span class="fw-bolder text-gray-900 fs-5">Likwid Techserve</span>
+<span class="badge badge-light fw-semibold fs-8">CLI-69-06014</span>
+<span class="badge badge-light-primary fw-semibold fs-8">TPM</span>
+</div>
+<div class="d-flex flex-wrap gap-4 mt-1">
+<span class="text-gray-500 fs-7"><i class="bi bi-person me-1"></i>Sidharth Sharma</span>
+<span class="text-gray-500 fs-7"><i class="bi bi-telephone me-1"></i>9876788808</span>
+<span class="text-gray-500 fs-7"><i class="bi bi-envelope me-1"></i>sidharth@likwid.co.in</span>
+<span class="text-gray-500 fs-7"><i class="bi bi-geo-alt me-1"></i>Derabassi, Punjab</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card" style="border:1px solid #ebebeb;">
+<div class="card-header px-8" style="border-bottom:1px solid #f0f0f0;min-height:52px;">
+<ul class="nav nav-line-tabs nav-line-tabs-2x fs-7 fw-semibold border-0" id="cvTabNav" role="tablist">
+<li class="nav-item" role="presentation"><a aria-selected="true" class="nav-link py-4 active" data-bs-toggle="tab" href="#cv-overview" role="tab">Overview</a></li>
+<li class="nav-item" role="presentation">
+<a aria-selected="false" class="nav-link py-4" data-bs-toggle="tab" href="#cv-orders" role="tab" tabindex="-1">
+                                                        Orders <span class="badge badge-light ms-1 fw-bold">3</span>
+</a>
+</li>
+<li class="nav-item" role="presentation">
+<a aria-selected="false" class="nav-link py-4" data-bs-toggle="tab" href="#cv-so" role="tab" tabindex="-1">
+                                                        Sale Orders <span class="badge badge-light ms-1 fw-bold">0</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="tab-content">
+<div class="tab-pane fade show active" id="cv-overview" role="tabpanel">
+<div class="card-body px-8 py-6">
+<div class="row g-6">
+<div class="col-md-6">
+<div class="cv-section-label mb-3">Billing Address</div>
+<div class="text-gray-700 fs-7" style="line-height:1.8;">
+                                                                1073, ATS Lifestyle<br/>
+                                                                Derabassi, Punjab<br/>
+                                                                India – 140507
+                                                            </div>
+</div>
+<div class="col-md-6">
+<div class="cv-section-label mb-3">Other Details</div>
+<table class="cv-detail-table">
+<tbody><tr><td class="cv-detail-key">Last Order</td><td class="cv-detail-val">18 Jun 2026</td></tr>
+<tr><td class="cv-detail-key">Customer Since</td><td class="cv-detail-val">05 Jan 2025</td></tr>
+</tbody></table>
+</div>
+<div class="col-12">
+<div style="border-top:1px solid #f5f5f5;padding-top:20px;">
+<div class="d-flex align-items-center justify-content-between mb-3">
+<div class="cv-section-label">Month-on-Month Orders</div>
+<div class="d-flex gap-3">
+<span class="cv-legend"><span style="background:#111;"></span>Orders</span>
+<span class="cv-legend"><span style="background:#d0d0d0;"></span>Value (₹)</span>
+</div>
+</div>
+<img data-stitch-frozen-chart="1" height="233" src="data:image/png;base64,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" style="display: block; box-sizing: border-box; height: 233px; width: 779px;" width="779"/>
+</div>
+</div>
+<div class="col-12">
+<div style="border-top:1px solid #f5f5f5;padding-top:20px;">
+<div class="cv-section-label mb-3">Top Products Ordered</div>
+<div class="d-flex flex-wrap gap-2">
+<div class="cv-product-chip">
+<span class="cv-product-name">Macashwajit 30 Caps</span>
+<span class="cv-product-count">1</span>
+</div>
+<div class="cv-product-chip">
+<span class="cv-product-name">Ashwagandha Caps - 30 Cap</span>
+<span class="cv-product-count">1</span>
+</div>
+<div class="cv-product-chip">
+<span class="cv-product-name">MacAlive Ds 200ml</span>
+<span class="cv-product-count">1</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade" id="cv-orders" role="tabpanel">
+<div class="table-responsive">
+<table class="table cv-table mb-0">
+<thead>
+<tr>
+<th>Order</th>
+<th>Product</th>
+<th>Received</th>
+<th>ETC</th>
+<th style="text-align:right;">Qty</th>
+<th style="text-align:right;">Value</th>
+<th>Status</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a class="fw-semibold text-gray-800 text-hover-primary fs-7" data-stitch-route="/flow-ai/orders/view-order/ORD-69-08159/" data-stitch-unresolved="1" href="#">ORD-69-08159</a>
+<div class="text-gray-400 fs-8">17089</div>
+</td>
+<td class="text-gray-600 fs-7"></td>
+<td class="text-gray-500 fs-7">18 Jun 2026</td>
+<td class="text-gray-500 fs-7">—</td>
+<td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">2000.00</td>
+<td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">₹36000.00</td>
+<td>
+<span class="cv-dot" style="background:#f1bc00;"></span><span class="fs-8 text-gray-500">Pending</span>
+</td>
+<td><a class="btn btn-sm btn-light-primary fw-semibold fs-8" data-stitch-route="/flow-ai/orders/view-order/ORD-69-08159/" data-stitch-unresolved="1" href="#">View</a></td>
+</tr>
+<tr>
+<td>
+<a class="fw-semibold text-gray-800 text-hover-primary fs-7" data-stitch-route="/flow-ai/orders/view-order/ORD-69-01454/" data-stitch-unresolved="1" href="#">ORD-69-01454</a>
+<div class="text-gray-400 fs-8">17089</div>
+</td>
+<td class="text-gray-600 fs-7"></td>
+<td class="text-gray-500 fs-7">04 May 2026</td>
+<td class="text-gray-500 fs-7">—</td>
+<td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">3000.00</td>
+<td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">₹90000.00</td>
+<td>
+<span class="cv-dot" style="background:#f1bc00;"></span><span class="fs-8 text-gray-500">Pending</span>
+</td>
+<td><a class="btn btn-sm btn-light-primary fw-semibold fs-8" data-stitch-route="/flow-ai/orders/view-order/ORD-69-01454/" data-stitch-unresolved="1" href="#">View</a></td>
+</tr>
+<tr>
+<td>
+<a class="fw-semibold text-gray-800 text-hover-primary fs-7" data-stitch-route="/flow-ai/orders/view-order/ORD-69-66427/" data-stitch-unresolved="1" href="#">ORD-69-66427</a>
+</td>
+<td class="text-gray-600 fs-7"></td>
+<td class="text-gray-500 fs-7">13 Mar 2025</td>
+<td class="text-gray-500 fs-7">—</td>
+<td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">30000.00</td>
+<td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">₹45000.00</td>
+<td>
+<span class="cv-dot" style="background:#f1bc00;"></span><span class="fs-8 text-gray-500">Pending</span>
+</td>
+<td><a class="btn btn-sm btn-light-primary fw-semibold fs-8" data-stitch-route="/flow-ai/orders/view-order/ORD-69-66427/" data-stitch-unresolved="1" href="#">View</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-pane fade" id="cv-so" role="tabpanel">
+<div class="table-responsive">
+<table class="table cv-table mb-0">
+<thead>
+<tr>
+<th>SO Code</th>
+<th>Reference</th>
+<th style="text-align:right;">Amount</th>
+<th style="text-align:right;">Tax</th>
+<th style="text-align:right;">Total</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="text-center py-10 text-gray-400 fs-7" colspan="6">No sale orders yet.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4">
+<div style="position:sticky;top:80px;display:flex;flex-direction:column;gap:16px;">
+<div class="card" style="border:1px solid #ebebeb;">
+<div class="card-body px-6 py-5">
+<div class="cv-section-label mb-4">Financial Summary</div>
+<div class="d-flex flex-column gap-0">
+<div class="cv-sb-row"><span class="cv-sb-lbl">Total Orders</span><span class="cv-sb-val">3</span></div>
+<div class="cv-sb-row"><span class="cv-sb-lbl">Total Value</span><span class="cv-sb-val">₹171000</span></div>
+<div class="cv-sb-row"><span class="cv-sb-lbl">Avg Order Value</span><span class="cv-sb-val">₹57000</span></div>
+<div class="cv-sb-row"><span class="cv-sb-lbl">Sale Orders</span><span class="cv-sb-val">0</span></div>
+<div class="cv-sb-row"><span class="cv-sb-lbl">Last Order</span><span class="cv-sb-val">18 Jun 2026</span></div>
+<div class="cv-sb-row" style="border-bottom:none;">
+<span class="cv-sb-lbl">Status</span>
+<span class="fw-semibold fs-8 text-success">
+                                                            ● Active
+                                                        </span>
+</div>
+</div>
+</div>
+</div>
+<div class="card" style="border:1px solid #ebebeb;">
+<div class="card-body px-6 py-5">
+<div class="cv-section-label mb-3">Quick Actions</div>
+<div class="d-flex flex-column gap-2">
+<button class="btn btn-sm btn-light w-100 text-start" id="editDrawerBtn2" type="button">
+<i class="ki-duotone ki-pencil fs-5 me-2"><span class="path1"></span><span class="path2"></span></i>Edit Customer
+                                                    </button>
+<a class="btn btn-sm btn-light w-100 text-start" data-stitch-route="/flow-ai/customer-view/9d983cfb-9317-4ebc-a1a2-81887d0a861e/export-csv" data-stitch-unresolved="1" href="#">
+<i class="ki-duotone ki-exit-down fs-5 me-2"><span class="path1"></span><span class="path2"></span></i>Export Report
+                                                    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--begin::Footer-->
+<div class="app-footer" id="kt_app_footer">
+<!--begin::Footer container-->
+<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+<!--begin::Copyright-->
+<div class="text-gray-900 order-2 order-md-1">
+<span class="text-muted fw-semibold me-1">2024©</span>
+<a class="text-hover-primary" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" style="color:#4154f1;" target="_blank">Likwid.Ai</a>
+</div>
+<!--end::Copyright-->
+<!--begin::Menu-->
+<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+<li class="menu-item">
+<a class="menu-link px-2" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" target="_blank">About</a>
+</li>
+<li class="menu-item">
+<a class="menu-link px-2" href="#" target="_blank">Support</a>
+</li>
+<li class="menu-item">
+<a class="menu-link px-2" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" target="_blank">Purchase</a>
+</li>
+</ul>
+<!--end::Menu-->
+</div>
+<!--end::Footer container-->
+</div>
+<!--end::Footer-->
+</div>
+</div>
+</div>
+<div class="cv-backdrop" id="cvEditBackdrop"></div>
+<div class="cv-drawer" id="cvEditDrawer">
+<div class="cv-drawer-header">
+<div>
+<div class="fw-bold text-gray-800 fs-6">Edit Customer</div>
+<div class="text-gray-400 fs-8">Likwid Techserve</div>
+</div>
+<button class="btn btn-icon btn-sm btn-light" id="cvDrawerClose" type="button">
+<i class="ki-duotone ki-cross fs-4"><span class="path1"></span><span class="path2"></span></i>
+</button>
+</div>
+<div class="cv-drawer-body">
+<form action="" method="POST">
+<input name="csrfmiddlewaretoken" type="hidden" value="54nTq5knRjXIk6yUqpDGSjbj52BcDU89fWXystqECYLsGnSGDrNDM6ACeRMuFjcq"/>
+<div class="row g-4">
+<div class="col-12">
+<label class="form-label fw-semibold fs-7">Company Name <span class="text-danger">*</span></label>
+<input class="form-control form-control-solid" id="id_cust_comname" name="cust_comname" required="" type="text" value="Likwid Techserve"/>
+</div>
+<div class="col-12">
+<label class="form-label fw-semibold fs-7">Category</label>
+<select class="form-select form-select-solid" id="id_category" name="category">
+<option value="">---------</option>
+<option selected="" value="7">TPM</option>
+<option value="9">PCD Franchise</option>
+<option value="14">Distributors</option>
+<option value="15">Retailers</option>
+<option value="18">Manual Dies</option>
+<option value="20">3D Printing</option>
+<option value="21">Global - APAC</option>
+<option value="29">TPM, PCD Franchise, Distributors, Retailers, Manual Dies, 3D Printing, Global - APAC</option>
+<option value="30">PCD</option>
+</select>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">First Name</label>
+<input class="form-control form-control-solid" id="id_first_name" name="first_name" required="" type="text" value="Sidharth"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">Last Name</label>
+<input class="form-control form-control-solid" id="id_last_name" name="last_name" required="" type="text" value="Sharma"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">Phone</label>
+<input class="form-control form-control-solid" id="id_cust_phn" max="9223372036854775807" min="-9223372036854775808" name="cust_phn" required="" type="number" value="9876788808"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">Email</label>
+<input class="form-control form-control-solid" id="id_cust_email" maxlength="254" name="cust_email" type="email" value="sidharth@likwid.co.in"/>
+</div>
+<div class="col-12">
+<label class="form-label fw-semibold fs-7">Address</label>
+<textarea class="form-control form-control-solid" cols="40" id="id_address" maxlength="5000" name="address" rows="3">1073, ATS Lifestyle</textarea>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">City</label>
+<input class="form-control form-control-solid" id="id_city" maxlength="254" name="city" type="text" value="Derabassi"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">State</label>
+<input class="form-control form-control-solid" id="id_state" maxlength="254" name="state" type="text" value="Punjab"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">PIN</label>
+<input class="form-control form-control-solid" id="id_pin" max="9223372036854775807" min="-9223372036854775808" name="pin" required="" type="number" value="140507"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">GSTIN</label>
+<input class="form-control form-control-solid" id="id_gstin" name="gstin" type="text"/>
+</div>
+<div class="col-12">
+<label class="form-label fw-semibold fs-7">License No.</label>
+<input class="form-control form-control-solid" id="id_lisc_no" name="lisc_no" type="text"/>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">Payment Terms</label>
+<select aria-describedby="id_payment_terms_helptext" class="form-select form-select-solid" id="id_payment_terms" name="payment_terms">
+<option selected="" value="0">Due on Receipt</option>
+<option value="15">Net 15</option>
+<option value="30">Net 30</option>
+<option value="45">Net 45</option>
+<option value="60">Net 60</option>
+<option value="90">Net 90</option>
+<option value="120">Net 120</option>
+<option value="150">Net 150</option>
+</select>
+</div>
+<div class="col-6">
+<label class="form-label fw-semibold fs-7">Opening Balance</label>
+<input aria-describedby="id_opening_balance_helptext" class="form-control form-control-solid" id="id_opening_balance" name="opening_balance" required="" step="0.01" type="number" value="0.00"/>
+</div>
+</div>
+<div class="d-flex gap-3 mt-6 pt-4" style="border-top:1px solid #f0f0f0;">
+<button class="btn btn-dark btn-sm flex-grow-1" type="submit">Save Changes</button>
+<button class="btn btn-light btn-sm" id="cvDrawerCancel" type="button">Cancel</button>
+</div>
+</form>
+</div>
+</div>
+<div class="scrolltop" data-kt-scrolltop="true" id="kt_scrolltop">
+<i class="ki-duotone ki-arrow-up"><span class="path1"></span><span class="path2"></span></i>
+</div>
+<!--begin::Javascript-->
+<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+<!--end::Global Javascript Bundle-->
+<!--begin::Vendors Javascript(used for this page only)-->
+<!--end::Vendors Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+<!--end::Vendors Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+<!--end::Custom Javascript-->
+<!--end::Javascript-->
+<style>
+.nav-line-tabs .nav-link.active { color:#111 !important; border-bottom-color:#111 !important; }
+
+/* Stat strip */
+.cv-stat-box { padding:12px 18px; border:1px solid #e8e8e8; border-radius:10px; min-width:100px; text-align:center; background:#fff; }
+.cv-stat-num { font-size:1.15rem; font-weight:700; color:#111; line-height:1.1; }
+.cv-stat-lbl { font-size:0.68rem; color:#aaa; text-transform:uppercase; letter-spacing:.06em; margin-top:3px; }
+
+/* Avatar */
+.cv-avatar { width:44px; height:44px; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:700; color:#555; flex-shrink:0; }
+
+/* Table */
+.cv-table { border-collapse:collapse !important; }
+.cv-table thead th { font-size:.68rem; color:#555; text-transform:uppercase; letter-spacing:.07em; font-weight:700; padding:12px 14px; border-bottom:2px solid #e8e8e8 !important; border-right:1px solid #e8e8e8 !important; white-space:nowrap; }
+.cv-table thead th:first-child { padding-left:24px; }
+.cv-table thead th:last-child { border-right:none !important; }
+.cv-table tbody td { font-size:.85rem; color:#333; padding:13px 14px; border-bottom:1px solid #e8e8e8 !important; border-right:1px solid #e8e8e8 !important; vertical-align:middle; }
+.cv-table tbody td:first-child { padding-left:24px; }
+.cv-table tbody td:last-child { border-right:none !important; }
+.cv-table tbody tr:last-child td { border-bottom:none !important; }
+.cv-table tbody tr:hover td { background:#fafafa; }
+.cv-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:5px; vertical-align:middle; }
+
+/* Overview detail table */
+.cv-detail-table { width:100%; }
+.cv-detail-key { font-size:.75rem; color:#aaa; text-transform:uppercase; letter-spacing:.05em; padding:6px 16px 6px 0; white-space:nowrap; width:130px; }
+.cv-detail-val { font-size:.85rem; color:#333; padding:6px 0; }
+.cv-section-label { font-size:.68rem; color:#aaa; text-transform:uppercase; letter-spacing:.07em; font-weight:700; }
+
+/* Chart legend */
+.cv-legend { display:inline-flex; align-items:center; gap:5px; font-size:.72rem; color:#888; }
+.cv-legend span { display:inline-block; width:10px; height:10px; border-radius:2px; }
+
+/* Top products */
+.cv-product-chip { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border:1px solid #e8e8e8; border-radius:20px; background:#fafafa; }
+.cv-product-name { font-size:.78rem; color:#444; }
+.cv-product-count { font-size:.72rem; font-weight:700; color:#111; background:#e8e8e8; border-radius:10px; padding:1px 7px; }
+
+/* Sidebar rows */
+.cv-sb-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #f5f5f5; }
+.cv-sb-lbl { font-size:.8rem; color:#888; }
+.cv-sb-val { font-size:.85rem; color:#111; font-weight:600; }
+
+/* Edit Drawer */
+.cv-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:1040; }
+.cv-drawer { position:fixed; top:0; right:-420px; width:400px; height:100vh; background:#fff; z-index:1050; box-shadow:-4px 0 24px rgba(0,0,0,.1); transition:right .25s ease; display:flex; flex-direction:column; }
+.cv-drawer.open { right:0; }
+.cv-drawer-header { display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid #f0f0f0; flex-shrink:0; }
+.cv-drawer-body { flex:1; overflow-y:auto; padding:24px; }
+</style>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../runtime.js"></script></body></html>

@@ -1,0 +1,23 @@
+[
+  {
+    "label": "New Category",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Add Contact",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "All contacts",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

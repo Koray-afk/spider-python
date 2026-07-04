@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Choose This",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-sm btn-primary mt-3 choice-btn w-100",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button class=\"btn btn-sm btn-primary mt-3 choice-btn w-100\" data-log-id=\"39\" data-choice=\"option_a\" data-crawl-id=\"1\">\n                                            Choose This\n                                        </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_content_container > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(4)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[4]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<span class=\"badge badge-light-info\">Running</span>\n<span class=\"badge badge-light-success\">Completed</span>\n<span class=\"text-muted\">\u2014</span>\n<span class=\"badge badge-light-info\">Running</span>\n<span class=\"text-muted\">\u2014</span>\n<span class=\"badge badge-light-success\">Completed</span>\n<span class=\"badge badge-light-info\">Running</span>\n<span class=\"fw-semibold text-gray-800\">ORD-69-32230</span>\n<span class=\"text-muted\">\u2014</span>\n<span class=\"fw-semibold text-gray-800\">ORD-69-51678</span>\n<span class=\"fw-semibold text-gray-800\">ORD-69-89448</span>\n<span class=\"fw-semibold text-gray-800\">ORD-69-79437</span>\n<svg height=\"0\" id=\"SvgjsSvg1001\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\" version=\"1.1\" width=\"2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svgjs=\"http://svgjs.dev\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path d=\"M0 0 \" id=\"SvgjsPath1004\"></path></svg>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

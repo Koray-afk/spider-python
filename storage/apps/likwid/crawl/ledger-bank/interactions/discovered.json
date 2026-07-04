@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Add Bank",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Add Bank",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filters",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Filters",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Post Opening Inventory",
+    "id": "",
+    "className": "btn btn-sm btn-light-primary",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Post Opening Inventory",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Delete",
+    "id": "",
+    "className": "tx-act border-0",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Delete",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

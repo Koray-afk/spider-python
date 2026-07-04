@@ -1,0 +1,55 @@
+[
+  {
+    "label": "Add Line",
+    "id": "add-line-btn",
+    "className": "btn btn-sm btn-light-primary mt-3",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Add Line",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "---------",
+    "id": "select2-id_fiscal_year-container",
+    "className": "select2-selection__rendered",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "source": "accessibility",
+    "ax_role": "textbox",
+    "ax_name": "---------",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u2014 Select Entry Type \u2014",
+    "id": "select2-id_entry_type-container",
+    "className": "select2-selection__rendered",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "source": "accessibility",
+    "ax_role": "textbox",
+    "ax_name": "\u2014 Select Entry Type \u2014",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u2014 Select Account \u2014",
+    "id": "select2-id_lines-0-account-container",
+    "className": "select2-selection__rendered",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "source": "accessibility",
+    "ax_role": "textbox",
+    "ax_name": "\u2014 Select Account \u2014",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save as Draft",
+    "id": "",
+    "className": "btn btn-primary flex-grow-1",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Save as Draft",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

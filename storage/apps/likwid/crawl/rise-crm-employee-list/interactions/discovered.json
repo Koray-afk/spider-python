@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Add Employee",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Add Employee",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Expand",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Expand",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Action",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Action",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

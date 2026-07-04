@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "All Status",
+  "triggerId": "",
+  "triggerClass": "select2-selection select2-selection--single form-select form-select-solid w-130px fs-7",
+  "selector": "[data-crawl-id=\"2\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "flow-ai-inventory-stock-adjustments",
+  "sourceUrl": "https://likwidai.com/flow-ai/inventory/stock-adjustments",
+  "beforeUrl": "https://likwidai.com/flow-ai/inventory/stock-adjustments/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/flow-ai/inventory/stock-adjustments/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "flow-ai-inventory-stock-adjustments/interactions/001-all-status",
+  "captured_at": "2026-07-03T07:58:40.017509+00:00"
+}

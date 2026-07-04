@@ -517,6 +517,34 @@ def _prepare_snapshot_dom(page, page_url: str) -> None:
     _strip_stripe_loading_elements(page, page_url)
     _bake_hubspot_computed_styles_in_page(page, page_url)
     _bake_stripe_computed_styles_in_page(page, page_url)
+    if "likwidai.com" in page_url.lower():
+        _freeze_chart_canvases(page)
+
+
+def _freeze_chart_canvases(page) -> None:
+    """Replace rendered <canvas> chart pixels with <img> so static HTML shows charts."""
+    try:
+        page.evaluate(
+            """() => {
+              document.querySelectorAll('canvas').forEach((canvas) => {
+                try {
+                  if (!canvas.width || !canvas.height) return;
+                  const data = canvas.toDataURL('image/png');
+                  if (!data || data.length < 200) return;
+                  const img = document.createElement('img');
+                  img.src = data;
+                  img.width = canvas.width;
+                  img.height = canvas.height;
+                  if (canvas.className) img.className = canvas.className;
+                  if (canvas.getAttribute('style')) img.setAttribute('style', canvas.getAttribute('style'));
+                  img.setAttribute('data-stitch-frozen-chart', '1');
+                  canvas.replaceWith(img);
+                } catch (e) {}
+              });
+            }"""
+        )
+    except Exception as exc:
+        print(f"[CHART] Canvas freeze skipped: {exc}")
 
 
 def _make_css_urls_absolute(html: str, page_url: str) -> str:

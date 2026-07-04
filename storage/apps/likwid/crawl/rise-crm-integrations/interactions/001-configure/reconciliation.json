@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Configure",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button class=\"btn btn-sm btn-light\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#panel-indiamart\" aria-expanded=\"false\" data-crawl-id=\"1\">\n                                                Configure <i class=\"ki-duotone ki-down fs-7 ms-1\"><span class=\"path1\"></span><span class=\"path2\"></span></i>\n                                            </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_content_container > div:nth-of-type(2) > div:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<div class=\"collapse show\" id=\"panel-indiamart\" style=\"\">\n<div class=\"int-panel\">\n<form action=\"/rise-crm/integrations/\" class=\"d-flex gap-3 align-items-end mb-5\" method=\"POST\">\n<input name=\"csrfmiddlewaretoken\" type=\"hidden\" value=\"AkZAOCluZb7ipIAikPykabrpe5fFScTMKczfQ0rLKQV2LZU4xRIh4YQInUqXUBX3\"/>\n<div class=\"flex-grow-1\">\n<label class=\"fs-7 fw-semibold text-muted mb-1 d-block\">API Key</label>\n<input class=\"form-control form-control-solid form-control-sm\" id=\"id_api_key\" maxlength=\"255\" name=\"api_key\" placeholder=\"Paste your IndiaMART API key\" required=\"\" type=\"text\"/>\n</div>\n<button class=\"btn btn-dark btn-sm\" name=\"addimkey\" type=\"submit\">Connect</button>\n</form>\n<div class=\"text-muted fs-7\">No connections yet.</div>\n</div>\n</div>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

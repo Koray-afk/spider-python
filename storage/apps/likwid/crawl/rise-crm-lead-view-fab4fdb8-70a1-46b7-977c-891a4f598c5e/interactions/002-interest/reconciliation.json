@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Interest",
+    "tagName": "button",
+    "id": "",
+    "className": "ld-stage ",
+    "selector": "[data-crawl-id=\"2\"]",
+    "outerHTML": "<button type=\"submit\" name=\"interest\" class=\"ld-stage \" data-crawl-id=\"2\"><span class=\"ld-stage-dot\"></span>Interest</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_body",
+    "parentXPath": "/html[1]/body[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<svg height=\"0\" id=\"SvgjsSvg1001\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\" version=\"1.1\" width=\"2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svgjs=\"http://svgjs.dev\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path d=\"M0 0 \" id=\"SvgjsPath1004\"></path></svg>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

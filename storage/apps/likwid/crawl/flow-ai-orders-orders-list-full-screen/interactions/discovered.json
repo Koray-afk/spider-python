@@ -1,0 +1,27 @@
+[
+  {
+    "label": "All",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "span",
+    "ax_name": "All",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All",
+    "id": "select2-status-f1-container",
+    "className": "select2-selection__rendered",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "span",
+    "source": "accessibility",
+    "ax_role": "textbox",
+    "ax_name": "All",
+    "llm_type": "interaction"
+  }
+]

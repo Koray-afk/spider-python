@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Add Company",
+    "id": "",
+    "className": "btn btn-primary btn-sm",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Add Company",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add to Lead",
+    "id": "",
+    "className": "btn btn-icon btn-light btn-active-light-info btn-sm me-1",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Add to Lead",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit Company",
+    "id": "",
+    "className": "btn btn-icon btn-light btn-active-light-primary btn-sm me-1",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Edit Company",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Delete Company",
+    "id": "",
+    "className": "btn btn-icon btn-light btn-active-light-danger btn-sm",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Delete Company",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

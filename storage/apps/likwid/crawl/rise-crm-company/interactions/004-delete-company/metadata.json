@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Delete Company",
+  "triggerId": "",
+  "triggerClass": "btn btn-icon btn-light btn-active-light-danger btn-sm",
+  "selector": "[data-crawl-id=\"4\"]",
+  "interactionType": "modal",
+  "sourcePage": "rise-crm-company",
+  "sourceUrl": "https://likwidai.com/rise-crm/company/",
+  "beforeUrl": "https://likwidai.com/rise-crm/company/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/rise-crm/company/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "rise-crm-company/interactions/004-delete-company",
+  "captured_at": "2026-07-03T08:28:01.149581+00:00"
+}

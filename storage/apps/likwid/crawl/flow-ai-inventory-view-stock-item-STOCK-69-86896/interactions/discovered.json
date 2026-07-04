@@ -1,0 +1,192 @@
+[
+  {
+    "label": "Machine",
+    "id": "",
+    "className": "btn btn-sm btn-light fs-8",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Machine",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Material",
+    "id": "",
+    "className": "btn btn-sm btn-light fs-8",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Material",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Add Stock",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Add Stock",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add Stage",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Add Stage",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "+ Add Stock",
+    "id": "",
+    "className": "btn btn-sm btn-dark w-100",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "+ Add Stock",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Finished Goods Godown",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "ax_name": "Finished Goods Godown",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "---------",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "span",
+    "ax_name": "---------",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Why is stock leaving?",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "span",
+    "ax_name": "Why is stock leaving?",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cost of Goods Sold (5001) \u2014 default",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "span",
+    "ax_name": "Cost of Goods Sold (5001) \u2014 default",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ashwagandha Caps - 30 Cap",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "span",
+    "ax_name": "Ashwagandha Caps - 30 Cap",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Record Transfer",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Record Transfer",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

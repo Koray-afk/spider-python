@@ -1,0 +1,40 @@
+[
+  {
+    "label": "All Status",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "span",
+    "ax_name": "All Status",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Types",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "span",
+    "ax_name": "All Types",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "View Details",
+    "id": "",
+    "className": "btn btn-sm btn-icon btn-light-info btn-action",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "View Details",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  }
+]

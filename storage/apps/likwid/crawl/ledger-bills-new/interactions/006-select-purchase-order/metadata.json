@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "\u2014 Select Purchase Order \u2014",
+  "triggerId": "",
+  "triggerClass": "select2-selection select2-selection--single form-select form-select-solid",
+  "selector": "[data-crawl-id=\"5\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "ledger-bills-new",
+  "sourceUrl": "https://likwidai.com/ledger/bills/new/",
+  "beforeUrl": "https://likwidai.com/ledger/bills/new/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/ledger/bills/new/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "ledger-bills-new/interactions/006-select-purchase-order",
+  "captured_at": "2026-07-03T11:03:43.098192+00:00"
+}

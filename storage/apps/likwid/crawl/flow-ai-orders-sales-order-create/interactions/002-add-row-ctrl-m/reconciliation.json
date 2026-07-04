@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Add Row Ctrl+M",
+    "tagName": "button",
+    "id": "add-more",
+    "className": "btn btn-sm btn-light btn-active-light-primary",
+    "selector": "[data-crawl-id=\"2\"]",
+    "outerHTML": "<button type=\"button\" class=\"btn btn-sm btn-light btn-active-light-primary\" id=\"add-more\" data-crawl-id=\"2\">\n                    <i class=\"ki-duotone ki-plus fs-4\"><span class=\"path1\"></span><span class=\"path2\"></span></i>\n                    Add Row <span class=\"text-gray-400 ms-1 fs-8\">Ctrl+M</span>\n                </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#formset",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[3]/table[1]/tbody[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<tr class=\"so-row\" data-kt-element=\"item\">\n<td class=\"pe-3\">\n<select aria-hidden=\"true\" class=\"form-select form-select-solid select2-hidden-accessible\" data-allow-clear=\"true\" data-control=\"select2\" data-kt-initialized=\"1\" data-placeholder=\"Select item\" data-select2-id=\"select2-data-id_form-2-inv_item\" id=\"id_form-2-inv_item\" name=\"form-2-inv_item\" tabindex=\"-1\">\n<option data-select2-id=\"select2-data-11-ly8t\" value=\"\"></option>\n<option value=\"332\">Macashwajit 30 Caps</option>\n<option value=\"348\">Acrylux - Wall Emulsion Exterior - Latex</option>\n<option value=\"349\">Tensav Acrylic Wall - 1 Liter</option>\n<option value=\"497\">ABCD</option>\n<option value=\"851\">Ashwagandha Caps - 30 Cap</option>\n<option value=\"852\">MacAlive Ds 200ml</option>\n<option value=\"860\">Mackoff - 100ml</option>\n<option value=\"861\">Maczyme - 200ml</option>\n<option value=\"864\">MacZion - 200ml</option>\n</select><span class=\"select2 select2-container select2-container--bootstrap5\" data-select2-id=\"select2-data-10-hch4\" dir=\"ltr\" style=\"width: 100%;\"><span class=\"selection\"><span aria-controls=\"select2-id_form-2-inv_item-container\" aria-disabled=\"false\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-labelledby=\"select2-id_form-2-inv_item-container\" class=\"select2-selection select2-selection--single form-select form-select-solid\" role=\"combobox\" tabindex=\"0\"><span aria-readonly=\"true\" class=\"select2-selection__rendered\" id=\"select2-id_form-2-inv_item-container\" role=\"textbox\" title=\"Select item\"><span class=\"select2-selection__placeholder\">Select item</span></span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span></span><span aria-hidden=\"true\" class=\"dropdown-wrapper\"></span></span>\n</td>\n<td class=\"pe-3\"><input class=\"form-control form-control-solid\" id=\"id_form-2-order_specification\" name=\"form-2-order_specification\" placeholder=\"Size, units\u2026\" type=\"text\"/></td>\n<td class=\"pe-3\"><input class=\"form-control form-control-solid\" id=\"id_form-2-order_quantity\" name=\"form-2-order_quantity\" placeholder=\"0\" type=\"number\"/></td>\n<td class=\"pe-3\"><input class=\"form-control form-control-solid\" id=\"id_form-2-order_rate\" name=\"form-2-order_rate\" placeholder=\"0.00\" step=\"0.01\" type=\"number\"/></td>\n<td class=\"pe-3\"><input class=\"form-control form-control-solid\" id=\"id_form-2-tax_rate\" name=\"form-2-tax_rate\" placeholder=\"0\" type=\"number\"/></td>\n<td class=\"pe-3\"><input class=\"form-control form-control-solid\" id=\"id_form-2-print_rate\" name=\"form-2-print_rate\" placeholder=\"0.00\" step=\"0.01\" type=\"number\"/></td>\n<td class=\"pe-3\"><input class=\"form-control form-control-solid\" id=\"id_form-2-remarks\" name=\"form-2-remarks\" placeholder=\"Notes\u2026\" type=\"text\"/></td>\n<td>\n<button class=\"btn btn-icon btn-sm btn-light btn-active-light-danger btn-delete-row\" title=\"Remove row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-4\">\n<span class=\"path1\"></span><span class=\"path2\"></span>\n<span class=\"path3\"></span><span class=\"path4\"></span><span class=\"path5\"></span>\n</i>\n</button>\n</td>\n</tr>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

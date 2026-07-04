@@ -1,0 +1,132 @@
+[
+  {
+    "label": "Leads\n10",
+    "id": "",
+    "className": "up-pipe-btn up-pipe-active",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Leads\n10",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Funnel\n11",
+    "id": "",
+    "className": "up-pipe-btn",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Funnel\n11",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Deals\n25",
+    "id": "",
+    "className": "up-pipe-btn",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Deals\n25",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Add Lead",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Add Lead",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Reminder",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Reminder",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quotation",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Quotation",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u00b7\u00b7\u00b7",
+    "id": "",
+    "className": "up-status-btn",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "\u00b7\u00b7\u00b7",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

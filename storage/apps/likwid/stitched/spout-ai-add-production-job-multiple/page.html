@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en"><!--begin::Head--><head>
+<title>Likwid.Ai</title>
+<!-- Google tag (gtag.js) -->
+<link href="https://likwidai.com/static/images/favicon-32x32.png" rel="shortcut icon"/>
+<link href="https://likwidai.com/static/images/apple-touch-icon.png" rel="shortcut icon"/>
+<!--begin::Fonts(mandatory for all pages)-->
+<link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" rel="stylesheet"/>
+<!--end::Fonts-->
+<!--begin::Vendor Stylesheets(used for this page only)-->
+<link href="../assets/css/static_suitestatic_assets_plugins_custom_datatables_datatables_bundle_css.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/static_suitestatic_assets_plugins_custom_vis-timeline_vis-timeline_bundle_css.css" rel="stylesheet" type="text/css"/>
+<!--end::Vendor Stylesheets-->
+<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+<link href="../assets/css/static_suitestatic_assets_plugins_global_plugins_bundle_css.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/static_suitestatic_assets_css_style_bundle_css.css" rel="stylesheet" type="text/css"/>
+<!--end::Global Stylesheets Bundle-->
+<style id="plotly.js-style-global"></style>
+<style>
+	.messages-container {
+		position: fixed;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 9999;
+		width: 25%;
+	}
+	</style><style type="text/css">.vis-time-axis{overflow:hidden;position:relative}.vis-time-axis.vis-foreground{left:0;top:0;width:100%}.vis-time-axis.vis-background{height:100%;left:0;position:absolute;top:0;width:100%}.vis-time-axis .vis-text{box-sizing:border-box;color:#4d4d4d;overflow:hidden;padding:3px;position:absolute;white-space:nowrap}.vis-time-axis .vis-text.vis-measure{margin-left:0;margin-right:0;padding-left:0;padding-right:0;position:absolute;visibility:hidden}.vis-time-axis .vis-grid.vis-vertical{border-left:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-vertical-rtl{border-right:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-minor{border-color:#e5e5e5}.vis-time-axis .vis-grid.vis-major{border-color:#bfbfbf}</style><style type="text/css">.vis .overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}.vis-active{box-shadow:0 0 10px #86d5f8}</style><style type="text/css">.vis-custom-time{background-color:#6e94ff;cursor:move;width:2px;z-index:1}.vis-custom-time>.vis-custom-time-marker{background-color:inherit;color:#fff;cursor:auto;font-size:12px;padding:3px 5px;top:0;white-space:nowrap;z-index:inherit}</style><style type="text/css">.vis-current-time{background-color:#ff7f6e;pointer-events:none;width:2px;z-index:1}.vis-rolling-mode-btn{background:#3876c2;border-radius:50%;color:#fff;cursor:pointer;font-size:28px;font-weight:700;height:40px;opacity:.8;position:absolute;right:20px;text-align:center;top:7px;width:40px}.vis-rolling-mode-btn:before{content:"\26F6"}.vis-rolling-mode-btn:hover{opacity:1}</style><style type="text/css">.vis-panel{box-sizing:border-box;margin:0;padding:0;position:absolute}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right,.vis-panel.vis-top{border:1px #bfbfbf}.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right{border-bottom-style:solid;border-top-style:solid;overflow:hidden}.vis-left.vis-panel.vis-vertical-scroll,.vis-right.vis-panel.vis-vertical-scroll{height:100%;overflow-x:hidden;overflow-y:scroll}.vis-left.vis-panel.vis-vertical-scroll{direction:rtl}.vis-left.vis-panel.vis-vertical-scroll .vis-content,.vis-right.vis-panel.vis-vertical-scroll{direction:ltr}.vis-right.vis-panel.vis-vertical-scroll .vis-content{direction:rtl}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-top{border-left-style:solid;border-right-style:solid}.vis-background{overflow:hidden}.vis-panel>.vis-content{position:relative}.vis-panel .vis-shadow{box-shadow:0 0 10px rgba(0,0,0,.8);height:1px;position:absolute;width:100%}.vis-panel .vis-shadow.vis-top{left:0;top:-1px}.vis-panel .vis-shadow.vis-bottom{bottom:-1px;left:0}</style><style type="text/css">.vis-graph-group0{fill:#4f81bd;fill-opacity:0;stroke-width:2px;stroke:#4f81bd}.vis-graph-group1{fill:#f79646;fill-opacity:0;stroke-width:2px;stroke:#f79646}.vis-graph-group2{fill:#8c51cf;fill-opacity:0;stroke-width:2px;stroke:#8c51cf}.vis-graph-group3{fill:#75c841;fill-opacity:0;stroke-width:2px;stroke:#75c841}.vis-graph-group4{fill:#ff0100;fill-opacity:0;stroke-width:2px;stroke:#ff0100}.vis-graph-group5{fill:#37d8e6;fill-opacity:0;stroke-width:2px;stroke:#37d8e6}.vis-graph-group6{fill:#042662;fill-opacity:0;stroke-width:2px;stroke:#042662}.vis-graph-group7{fill:#00ff26;fill-opacity:0;stroke-width:2px;stroke:#00ff26}.vis-graph-group8{fill:#f0f;fill-opacity:0;stroke-width:2px;stroke:#f0f}.vis-graph-group9{fill:#8f3938;fill-opacity:0;stroke-width:2px;stroke:#8f3938}.vis-timeline .vis-fill{fill-opacity:.1;stroke:none}.vis-timeline .vis-bar{fill-opacity:.5;stroke-width:1px}.vis-timeline .vis-point{stroke-width:2px;fill-opacity:1}.vis-timeline .vis-legend-background{stroke-width:1px;fill-opacity:.9;fill:#fff;stroke:#c2c2c2}.vis-timeline .vis-outline{stroke-width:1px;fill-opacity:1;fill:#fff;stroke:#e5e5e5}.vis-timeline .vis-icon-fill{fill-opacity:.3;stroke:none}</style><style type="text/css">.vis-timeline{border:1px solid #bfbfbf;box-sizing:border-box;margin:0;overflow:hidden;padding:0;position:relative}.vis-loading-screen{height:100%;left:0;position:absolute;top:0;width:100%}</style><style type="text/css">.vis [class*=span]{min-height:0;width:auto}</style><style type="text/css">.vis-item{background-color:#d5ddf6;border-color:#97b0f8;border-width:1px;color:#1a1a1a;display:inline-block;position:absolute;z-index:1}.vis-item.vis-selected{background-color:#fff785;border-color:#ffc200;z-index:2}.vis-editable.vis-selected{cursor:move}.vis-item.vis-point.vis-selected{background-color:#fff785}.vis-item.vis-box{border-radius:2px;border-style:solid;text-align:center}.vis-item.vis-point{background:none}.vis-item.vis-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}.vis-item.vis-range{border-radius:2px;border-style:solid;box-sizing:border-box}.vis-item.vis-background{background-color:rgba(213,221,246,.4);border:none;box-sizing:border-box;margin:0;padding:0}.vis-item .vis-item-overflow{height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%}.vis-item-visible-frame{white-space:nowrap}.vis-item.vis-range .vis-item-content{display:inline-block;position:relative}.vis-item.vis-background .vis-item-content{display:inline-block;position:absolute}.vis-item.vis-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item .vis-item-content{box-sizing:border-box;padding:5px;white-space:nowrap}.vis-item .vis-onUpdateTime-tooltip{background:#4f81bd;border-radius:1px;color:#fff;padding:5px;position:absolute;text-align:center;transition:.4s;-o-transition:.4s;-moz-transition:.4s;-webkit-transition:.4s;white-space:nowrap;width:200px}.vis-item .vis-delete,.vis-item .vis-delete-rtl{box-sizing:border-box;cursor:pointer;height:24px;padding:0 5px;position:absolute;top:0;-webkit-transition:background .2s linear;-moz-transition:background .2s linear;-ms-transition:background .2s linear;-o-transition:background .2s linear;transition:background .2s linear;width:24px}.vis-item .vis-delete{right:-24px}.vis-item .vis-delete-rtl{left:-24px}.vis-item .vis-delete-rtl:after,.vis-item .vis-delete:after{color:red;content:"\00D7";font-family:arial,sans-serif;font-size:22px;font-weight:700;-webkit-transition:color .2s linear;-moz-transition:color .2s linear;-ms-transition:color .2s linear;-o-transition:color .2s linear;transition:color .2s linear}.vis-item .vis-delete-rtl:hover,.vis-item .vis-delete:hover{background:red}.vis-item .vis-delete-rtl:hover:after,.vis-item .vis-delete:hover:after{color:#fff}.vis-item .vis-drag-center{cursor:move;height:100%;left:0;position:absolute;top:0;width:100%}.vis-item.vis-range .vis-drag-left{cursor:w-resize;left:-4px}.vis-item.vis-range .vis-drag-left,.vis-item.vis-range .vis-drag-right{height:100%;max-width:20%;min-width:2px;position:absolute;top:0;width:24px}.vis-item.vis-range .vis-drag-right{cursor:e-resize;right:-4px}.vis-range.vis-item.vis-readonly .vis-drag-left,.vis-range.vis-item.vis-readonly .vis-drag-right{cursor:auto}.vis-item.vis-cluster{border-radius:2px;border-style:solid;text-align:center;vertical-align:center}.vis-item.vis-cluster-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item.vis-cluster-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}</style><style type="text/css">div.vis-tooltip{background-color:#f5f4ed;border:1px solid #808074;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:3px 3px 10px rgba(0,0,0,.2);color:#000;font-family:verdana;font-size:14px;padding:5px;pointer-events:none;position:absolute;visibility:hidden;white-space:nowrap;z-index:5}</style><style type="text/css">.vis-itemset{box-sizing:border-box;margin:0;padding:0;position:relative}.vis-itemset .vis-background,.vis-itemset .vis-foreground{height:100%;overflow:visible;position:absolute;width:100%}.vis-axis{height:0;left:0;position:absolute;width:100%;z-index:1}.vis-foreground .vis-group{border-bottom:1px solid #bfbfbf;box-sizing:border-box;position:relative}.vis-foreground .vis-group:last-child{border-bottom:none}.vis-nesting-group{cursor:pointer}.vis-label.vis-nested-group.vis-group-level-unknown-but-gte1{background:#f5f5f5}.vis-label.vis-nested-group.vis-group-level-0{background-color:#fff}.vis-ltr .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-left:0}.vis-rtl .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-right:0}.vis-label.vis-nested-group.vis-group-level-1{background-color:rgba(0,0,0,.05)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-left:15px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-right:15px}.vis-label.vis-nested-group.vis-group-level-2{background-color:rgba(0,0,0,.1)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-left:30px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-right:30px}.vis-label.vis-nested-group.vis-group-level-3{background-color:rgba(0,0,0,.15)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-left:45px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-right:45px}.vis-label.vis-nested-group.vis-group-level-4{background-color:rgba(0,0,0,.2)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-left:60px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-right:60px}.vis-label.vis-nested-group.vis-group-level-5{background-color:rgba(0,0,0,.25)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-left:75px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-right:75px}.vis-label.vis-nested-group.vis-group-level-6{background-color:rgba(0,0,0,.3)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-left:90px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-right:90px}.vis-label.vis-nested-group.vis-group-level-7{background-color:rgba(0,0,0,.35)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-left:105px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-right:105px}.vis-label.vis-nested-group.vis-group-level-8{background-color:rgba(0,0,0,.4)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-left:120px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-right:120px}.vis-label.vis-nested-group.vis-group-level-9{background-color:rgba(0,0,0,.45)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-left:135px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-right:135px}.vis-label.vis-nested-group{background-color:rgba(0,0,0,.5)}.vis-ltr .vis-label.vis-nested-group .vis-inner{padding-left:150px}.vis-rtl .vis-label.vis-nested-group .vis-inner{padding-right:150px}.vis-group-level-unknown-but-gte1{border:1px solid red}.vis-label.vis-nesting-group:before{display:inline-block;width:15px}.vis-label.vis-nesting-group.expanded:before{content:"\25BC"}.vis-label.vis-nesting-group.collapsed:before{content:"\25B6"}.vis-rtl .vis-label.vis-nesting-group.collapsed:before{content:"\25C0"}.vis-ltr .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-left:15px}.vis-rtl .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-right:15px}.vis-overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}</style><style type="text/css">.vis-labelset{overflow:hidden}.vis-labelset,.vis-labelset .vis-label{box-sizing:border-box;position:relative}.vis-labelset .vis-label{border-bottom:1px solid #bfbfbf;color:#4d4d4d;left:0;top:0;width:100%}.vis-labelset .vis-label.draggable{cursor:pointer}.vis-group-is-dragging{background:rgba(0,0,0,.1)}.vis-labelset .vis-label:last-child{border-bottom:none}.vis-labelset .vis-label .vis-inner{display:inline-block;padding:5px}.vis-labelset .vis-label .vis-inner.vis-hidden{padding:0}</style><style type="text/css">div.vis-configuration{display:block;float:left;font-size:12px;position:relative}div.vis-configuration-wrapper{display:block;width:700px}div.vis-configuration-wrapper:after{clear:both;content:"";display:block}div.vis-configuration.vis-config-option-container{background-color:#fff;border:2px solid #f7f8fa;border-radius:4px;display:block;left:10px;margin-top:20px;padding-left:5px;width:495px}div.vis-configuration.vis-config-button{background-color:#f7f8fa;border:2px solid #ceced0;border-radius:4px;cursor:pointer;display:block;height:25px;left:10px;line-height:25px;margin-bottom:30px;margin-top:20px;padding-left:5px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-button.hover{background-color:#4588e6;border:2px solid #214373;color:#fff}div.vis-configuration.vis-config-item{display:block;float:left;height:25px;line-height:25px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-item.vis-config-s2{background-color:#f7f8fa;border-radius:3px;left:10px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s3{background-color:#e4e9f0;border-radius:3px;left:20px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s4{background-color:#cfd8e6;border-radius:3px;left:30px;padding-left:5px}div.vis-configuration.vis-config-header{font-size:18px;font-weight:700}div.vis-configuration.vis-config-label{height:25px;line-height:25px;width:120px}div.vis-configuration.vis-config-label.vis-config-s3{width:110px}div.vis-configuration.vis-config-label.vis-config-s4{width:100px}div.vis-configuration.vis-config-colorBlock{border:1px solid #444;border-radius:2px;cursor:pointer;height:19px;margin:0;padding:0;top:1px;width:30px}input.vis-configuration.vis-config-checkbox{left:-5px}input.vis-configuration.vis-config-rangeinput{margin:0;padding:1px;pointer-events:none;position:relative;top:-5px;width:60px}input.vis-configuration.vis-config-range{-webkit-appearance:none;background-color:transparent;border:0 solid #fff;height:20px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-runnable-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:5px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-thumb{-webkit-appearance:none;background:#3876c2;background:-moz-linear-gradient(top,#3876c2 0,#385380 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#3876c2),color-stop(100%,#385380));background:-webkit-linear-gradient(top,#3876c2,#385380);background:-o-linear-gradient(top,#3876c2 0,#385380 100%);background:-ms-linear-gradient(top,#3876c2 0,#385380 100%);background:linear-gradient(180deg,#3876c2 0,#385380);border:1px solid #14334b;border-radius:50%;box-shadow:0 0 1px 0 #111927;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#3876c2",endColorstr="#385380",GradientType=0);height:17px;margin-top:-7px;width:17px}input.vis-configuration.vis-config-range:focus{outline:none}input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track{background:#9d9d9d;background:-moz-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#9d9d9d),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#9d9d9d,#c8c8c8 99%);background:-o-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:linear-gradient(180deg,#9d9d9d 0,#c8c8c8 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9d9d9d",endColorstr="#c8c8c8",GradientType=0)}input.vis-configuration.vis-config-range::-moz-range-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:10px;width:300px}input.vis-configuration.vis-config-range::-moz-range-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:-moz-focusring{outline:1px solid #fff;outline-offset:-1px}input.vis-configuration.vis-config-range::-ms-track{background:transparent;border-color:transparent;border-width:6px 0;color:transparent;height:5px;width:300px}input.vis-configuration.vis-config-range::-ms-fill-lower{background:#777;border-radius:10px}input.vis-configuration.vis-config-range::-ms-fill-upper{background:#ddd;border-radius:10px}input.vis-configuration.vis-config-range::-ms-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:focus::-ms-fill-lower{background:#888}input.vis-configuration.vis-config-range:focus::-ms-fill-upper{background:#ccc}.vis-configuration-popup{background:rgba(57,76,89,.85);border:2px solid #f2faff;border-radius:4px;color:#fff;font-size:14px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:opacity .3s ease-in-out;-moz-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;width:150px}.vis-configuration-popup:after,.vis-configuration-popup:before{border:solid transparent;content:" ";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.vis-configuration-popup:after{border-color:rgba(136,183,213,0) rgba(136,183,213,0) rgba(136,183,213,0) rgba(57,76,89,.85);border-width:8px;margin-top:-8px}.vis-configuration-popup:before{border-color:rgba(194,225,245,0) rgba(194,225,245,0) rgba(194,225,245,0) #f2faff;border-width:12px;margin-top:-12px}</style><style type="text/css">.vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal{border-bottom:1px solid;height:0;position:absolute;width:100%}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor{border-color:#e5e5e5}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-major{border-color:#bfbfbf}.vis-data-axis .vis-y-axis.vis-major{color:#4d4d4d;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-major.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-minor{color:#bebebe;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-minor.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title{bottom:20px;color:#4d4d4d;position:absolute;text-align:center;white-space:nowrap}.vis-data-axis .vis-y-axis.vis-title.vis-measure{margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title.vis-left{bottom:0;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-o-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;-o-transform-origin:left top;transform-origin:left bottom}.vis-data-axis .vis-y-axis.vis-title.vis-right{bottom:0;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:right bottom;-moz-transform-origin:right bottom;-ms-transform-origin:right bottom;-o-transform-origin:right bottom;transform-origin:right bottom}.vis-legend{background-color:rgba(247,252,255,.65);border:1px solid #b3b3b3;box-shadow:2px 2px 10px hsla(0,0%,60%,.55);padding:5px}.vis-legend-text{display:inline-block;white-space:nowrap}</style><style id="stitch-interaction-fixes">#main-nav-tab,
+#main-nav-tab *,
+.main-nav-lhs,
+.main-nav-lhs * {
+    pointer-events:auto !important;
+}
+.quick-add-menu.dropdown-menu-center,
+.stitch-injected-ui .quick-add-menu.dropdown-menu-center {
+    position: fixed !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 2000;
+}
+.stitch-injected-ui .dropdown-menu,
+.stitch-injected-ui .dropdown-menu .dropdown-item,
+.stitch-injected-ui .dropdown-menu button,
+.stitch-injected-ui .dropdown-menu a,
+.stitch-injected-ui [role="menu"],
+.stitch-injected-ui [role="menuitem"],
+.stitch-injected-ui [role="menu"] button,
+.stitch-injected-ui [data-component-name="UIPopover"],
+.stitch-injected-ui [class*="AbstractDropdown__DropdownContent"],
+.stitch-injected-ui [class*="Popover__StyledPopoverContainer"],
+.stitch-injected-ui .popover-container,
+.stitch-injected-ui .popover {
+    pointer-events: auto !important;
+}
+/* HubSpot main content — keep toolbar, filters, and table rows clickable. */
+#hs-global-toolbar button,
+#hs-global-toolbar [role="button"],
+[data-test-id="filter-bar-container"] button,
+[data-test-id="filter-bar-container"] [role="button"],
+[data-selenium-test="FiltersBar-container"] button,
+.PrivateButton__StyledButton-eRHhiA,
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id],
+[role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* Production overlays/widgets — broken or distracting in the static clone. */
+#annmsgstrip,
+.zread_strip,
+books_svgs,
+.micshide,
+#zcwindows,
+.zcoverlay,
+.zsiq_theme1,
+#zsiq_float,
+#zsiq_chat_wrap,
+iframe#avcliqiframe,
+#wmstoolbar,
+#micsbackdrop,
+#tooltip-popover-wrapper,
+#zgs20_globalsearch,
+#zgs20_gsSearchResultsArea,
+#zgs20_gsResultsHolder,
+#zgs20_gsSearchTopBandHolder,
+.zgs19_gsOverlay,
+#zgs20_gsOverlay,
+.popover-container,
+.finance-app .rhs-sidebar,
+.finance-app .rhs-menu,
+.finance-app #rhs-menu-bar,
+.finance-app .rhs-sidebar-menu {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* Empty captured flyout shells from live app — break flex layout in the clone. */
+.finance-app .slide-sidebar,
+.finance-app .sidebar-container {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* ── HubSpot-specific fixes ──────────────────────────────────────────────────
+   styled-components injects icon sizing at runtime; strip_scripts() empties
+   those <style> tags. These rules provide safe fallback sizing for all SVGs
+   that land in the static snapshot without explicit width/height attributes. */
+svg:not([width]):not([height]) {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+#hs-global-toolbar svg,
+#hs-nav-v4 svg,
+[data-test-id="nav-primary"] svg {
+    max-width: 32px !important;
+    max-height: 32px !important;
+    overflow: hidden !important;
+    flex-shrink: 0;
+}
+/* Toolbar must remain clickable for interaction wiring to work. */
+#hs-global-toolbar,
+#hs-global-toolbar * {
+    pointer-events: auto !important;
+}
+/* Live-only HubSpot widgets that are broken or distracting in the static clone. */
+#hs-feedback-fetcher,
+.growth-dynamic-namespace,
+#hs-nav-v4 iframe,
+.UIPlaceholderBubble__Placeholder-mfCgX {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot blanket pointer-events restore — nav, sidebar, buttons, tabs */
+#hs-nav-v4 a, #hs-nav-v4 button, #hs-nav-v4 [role="tab"],
+#hs-nav-v4 [role="menuitem"], #hs-nav-v4 li,
+[data-test-id="nav-primary"] a,
+[data-test-id="nav-primary"] button,
+[data-test-id="nav-primary"] [role="tab"],
+#hs-global-toolbar a, #hs-global-toolbar button,
+.private-page__outer button,
+.private-page__outer a,
+.private-page__outer [role="tab"],
+.private-page__outer [role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Kill invisible overlay divs that intercept clicks above interactive content */
+.UIOverlay--invisible,
+[data-overlay-type],
+.private-overlay--invisible {
+    pointer-events: none !important;
+    display: none !important;
+}
+/* HubSpot loading/skeleton states — API never resolves in the static clone */
+[data-test-id="loading-spinner"],
+.private-loading-page,
+.private-spinner-container,
+.loading-page-wrapper,
+.UIOverlay--blocker,
+[data-loading="true"] {
+    display: none !important;
+}
+/* Coaching popovers / tour highlights frozen open during crawl */
+body > [data-floating-ui-portal],
+.private-overlay-highlight {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot tour scrim overlay baked during crawl (e.g. AEO coaching walkthrough).
+   Only target .hDDpEi — do NOT hide [class*="Overlay__StyledInner"] globally;
+   legitimate modals (Schedule meeting, etc.) use the same overlay wrapper when
+   injected at runtime via .stitch-injected-ui. Baked .hDDpEi nodes are also
+   removed in _strip_baked_onboarding_ui(); this rule is a belt-and-suspenders
+   fallback for any that survive on main page snapshots. */
+.hDDpEi {
+    display: none !important;
+    pointer-events: none !important;
+}
+.stitch-tour-highlight-reset {
+    z-index: auto !important;
+    border: none !important;
+    margin-block: 0 !important;
+}
+
+/* HubSpot: hide live-only widgets; captured CSS handles layout when present. */
+#notificationBannerContainer,
+[data-test-id="notificationBannerContainer"],
+div#growth-dynamic-ui,
+#hs-feedback-fetcher,
+.copilot-sidebar-container,
+.quartz-grid-sidebar-container,
+iframe[name*="chatspot"],
+iframe[name*="mini-trial-guide"] {
+    display: none !important;
+}
+
+/* ── Stripe dashboard fixes ───────────────────────────────────────────────── */
+/* Full-viewport sail portal shells (inset:0, z-index:299) block all clicks. */
+body > .__sail-layer-containers:empty {
+    display: none !important;
+    pointer-events: none !important;
+}
+body > .__sail-layer-containers {
+    pointer-events: none !important;
+}
+/* Captured Stripe CSS sets .as-4g { pointer-events:none } on #chrome-layout. */
+#chrome-layout,
+#chrome-layout.as-4g,
+#chrome-layout *,
+.as-4g {
+    pointer-events: auto !important;
+}
+#dashboardRoot {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* Do not hide the whole Stripe shell when captured mid-load */
+#dashboardRoot [data-loading="true"],
+#dashboardRoot [aria-busy="true"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
+}
+#primary-nav,
+#primary-nav a,
+[data-testid="primary-nav"] a,
+a[data-stitch-page],
+#dashboardRoot a,
+#dashboardRoot button,
+#dashboardRoot [role="button"],
+#dashboardRoot [role="tab"],
+#dashboardRoot [role="menuitem"],
+[class*="db-Nav"] a,
+[class*="db-Nav"] button,
+[class*="sail-Nav"] a,
+[class*="sail-Nav"] button,
+[data-stitch-accordion],
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Invisible PressableCore overlays block button clicks in the static clone */
+.PressableCore-overlay,
+.PressableCore-overlay--isVisible {
+    pointer-events: none !important;
+}
+/* Stripe metrics iframe + hidden portal containers */
+iframe[name*="StripeMetrics"],
+iframe[name*="privateStripeMetrics"],
+.__sail-layer-containers[style*="display: none"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [class*="LoadingOverlay"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
+}
+#chrome-layout-backdrop,
+[data-testid="backdrop"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* Stripe Products section: prevent flex-grow / space-between from stretching nav rows. */
+#primary-nav [data-testid="workloads-nav"],
+[data-testid="primary-nav"] [data-testid="workloads-nav"],
+#primary-nav section:has([data-testid="workloads-nav"]) .primary-nav-section-header,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) .primary-nav-section-header {
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+    text-align: left !important;
+}
+#primary-nav [data-testid="workloads-nav-links"],
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"],
+#primary-nav section:has([data-testid="workloads-nav"]) > ul,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav section:has([data-testid="workloads-nav"]),
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+}
+
+/* Injected Stripe Products submenu (crawl snapshots omit collapsed panel HTML). */
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    display: list-item !important;
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel,
+[data-testid="primary-nav"] .stitch-workload-nav-panel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+#primary-nav .stitch-workload-nav-panel.show,
+[data-testid="primary-nav"] .stitch-workload-nav-panel.show {
+    display: block !important;
+    padding: 0 0 4px !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav .stitch-workload-nav-panel:not(.show),
+[data-testid="primary-nav"] .stitch-workload-nav-panel[hidden] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel > li,
+[data-testid="primary-nav"] .stitch-workload-nav-panel > li {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0 12px 0 36px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    flex: 0 0 auto !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav .stitch-workload-nav-panel a,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a {
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    --s--flex-y: 0 0 auto !important;
+    --s--object-width: auto !important;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: rgb(26, 44, 68) !important;
+    white-space: nowrap;
+    padding: 2px 8px;
+    border-radius: 6px;
+    min-height: 28px;
+    height: auto !important;
+    font-size: 14px;
+    line-height: 20px;
+}
+#primary-nav .stitch-workload-nav-panel a span,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a span {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}
+#primary-nav .stitch-workload-nav-panel a:hover,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a:hover {
+    background: rgba(26, 44, 68, 0.06);
+}
+#primary-nav .stitch-workload-nav-panel a[aria-current="page"],
+#primary-nav .stitch-workload-nav-panel a.stitch-nav-active,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a[aria-current="page"],
+[data-testid="primary-nav"] .stitch-workload-nav-panel a.stitch-nav-active {
+    background: rgb(246, 245, 255) !important;
+    color: rgb(99, 91, 255) !important;
+    font-weight: 500;
+}
+#primary-nav [data-testid^="toggle-workload-"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"],
+.toggle-workload-button {
+    cursor: pointer !important;
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    width: 100% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+}
+#primary-nav [data-testid^="toggle-workload-"] .as-6x,
+#primary-nav [data-testid^="toggle-workload-"] .as-20,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-6x,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-20,
+.toggle-workload-button .as-g.as-6x {
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] {
+    background: rgba(26, 44, 68, 0.06) !important;
+    border-radius: 6px;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Stripe account switcher dropdown (injected reconciliation fragment). */
+.stitch-injected-ui .sn-token-provider[role="menu"],
+.stitch-injected-ui [role="menu"].sn-token-provider {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: block !important;
+    pointer-events: auto !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    max-width: 320px !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px 0px,
+                rgba(48, 49, 61, 0.08) 0px 15px 35px 0px !important;
+    padding: 4px 0 8px !important;
+}
+.stitch-injected-ui [data-testid="account-switcher-workspace"] {
+    display: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="button"] {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 36px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    transform: none !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+.stitch-injected-ui .as-bm,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"] {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin: 8px 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 6px !important;
+    min-height: 36px !important;
+    background: #fff !important;
+    color: rgb(26, 44, 68) !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+}
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::before,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::after {
+    display: none !important;
+    content: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"]:hover {
+    background: rgba(26, 44, 68, 0.06) !important;
+}
+
+/* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
+[data-test-id="AvatarDisplay-avatarContent"] {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+.AvatarContent__HiddenSvg-cXPETG,
+[class*="AvatarContent__HiddenSvg"] {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+/* Likwid / Metronic sidebar accordions */
+#kt_app_sidebar .menu-item.menu-accordion:not(.show) > .menu-sub {
+    display: none !important;
+}
+#kt_app_sidebar .menu-item.menu-accordion.show > .menu-sub,
+#kt_app_sidebar .menu-item.menu-accordion > .menu-sub.show {
+    display: flex !important;
+    flex-direction: column;
+}
+#kt_app_sidebar .menu-link,
+#kt_app_sidebar [data-kt-menu-trigger],
+#kt_app_sidebar [data-stitch-accordion] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+.modal:not(.show) {
+    display: none !important;
+}</style></head>
+<!--end::Head-->
+<!--begin::Body-->
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
+<!--begin::Theme mode setup on page load-->
+<!--end::Theme mode setup on page load-->
+<!--begin::App-->
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+<!--begin::Page-->
+<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+<br/>
+<br/>
+<!--begin::Main-->
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+<!--begin::Content wrapper-->
+<div class="d-flex flex-column flex-column-fluid">
+<!--begin::Toolbar-->
+<div class="app-toolbar py-3 py-lg-6" id="kt_app_toolbar">
+<!--begin::Toolbar container-->
+<div class="app-container container-xxl d-flex flex-stack" id="kt_app_toolbar_container">
+<!--begin::Page title-->
+<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+<!--begin::Title-->
+<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Create Multiple Production Plans</h1>
+<!--end::Title-->
+<!--begin::Breadcrumb-->
+<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+<!--begin::Item-->
+<li class="breadcrumb-item text-muted">
+<a class="text-muted text-hover-primary" data-stitch-page="flow-ai-orders-orders-list" href="../flow-ai-orders-orders-list/page.html">Home</a>
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="breadcrumb-item">
+<span class="bullet bg-gray-500 w-5px h-2px"></span>
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="breadcrumb-item text-muted">
+<a class="text-muted text-hover-primary" data-stitch-page="spout-ai-production-jobs-pending" href="../spout-ai-production-jobs-pending/page.html">Production Jobs</a>
+</li>
+<!--end::Item-->
+</ul>
+<!--end::Breadcrumb-->
+</div>
+<!--end::Page title-->
+</div>
+<!--end::Toolbar container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Content-->
+<div class="app-content flex-column-fluid" id="kt_app_content">
+<!--begin::Content container-->
+<div class="app-container container-xxl" id="kt_app_content_container">
+<!--begin::Layout-->
+<div class="app-content flex-column-fluid" id="kt_app_content">
+<!--begin::Content container-->
+<div class="app-container container-xxl" id="kt_app_content_container">
+<!--begin::Card-->
+<div class="card">
+<!--begin::Card body-->
+<div class="card-body p-12">
+<!--begin::Form-->
+<form action="" autocomplete="on" method="POST">
+<input name="csrfmiddlewaretoken" type="hidden" value="CwSDMN4WpDX3C5Un1XQsYAtsFs4ixdOpMosiObadaiLNYme9eZ0pSnSLOhfAzCSG"/>
+<!--begin::Wrapper-->
+<div class="d-flex flex-column align-items-start flex-xxl-row">
+<!--begin::Input group-->
+<div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" data-kt-initialized="1" title="">
+<span class="fs-2x fw-bold text-gray-800">Production Jobs</span>
+</div>
+<!--end::Input group-->
+</div>
+<!--end::Top-->
+<!--begin::Separator-->
+<div class="separator separator-dashed my-10"></div>
+<!--end::Separator-->
+<!--begin::Wrapper-->
+<div class="mb-0">
+<!--begin::Table wrapper-->
+<div class="table-responsive mb-10">
+<!--begin::Table-->
+<table class="table g-5 gs-0 mb-0 fw-bold text-gray-700" data-kt-element="items">
+<!--begin::Table head-->
+<thead>
+<tr class="border-bottom fs-7 fw-bold text-gray-700 text-uppercase">
+<th class="min-w-175px w-175px">Date</th>
+<th class="min-w-200px w-200px">Item</th>
+<th class="min-w-200px w-200px">Job Type</th>
+<th class="min-w-150px w-150px">Plan Method</th>
+<th class="min-w-150px w-150px">Capacity</th>
+<th class="min-w-150px w-150px">Units</th>
+<th class="min-w-50px w-50px">Remove Step</th>
+</tr>
+</thead>
+<!--end::Table head-->
+<!--begin::Table body-->
+<tbody id="formset">
+<input id="id_form-TOTAL_FORMS" name="form-TOTAL_FORMS" type="hidden" value="2"/><input id="id_form-INITIAL_FORMS" name="form-INITIAL_FORMS" type="hidden" value="0"/><input id="id_form-MIN_NUM_FORMS" name="form-MIN_NUM_FORMS" type="hidden" value="0"/><input id="id_form-MAX_NUM_FORMS" name="form-MAX_NUM_FORMS" type="hidden" value="1000"/>
+<tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+<td class="pe-7">
+<input class="form-control form-control-solid fw-bold pe-5" id="id_form-0-date" name="form-0-date" placeholder="" type="date" value="2026-07-03"/><input class="form-control form-control-solid fw-bold pe-5" id="initial-form-0-id_form-0-date" name="initial-form-0-date" type="hidden" value="2026-07-03 07:19:02+00:00"/>
+</td>
+<td class="ps-0">
+<select class="form-control form-control-solid fw-bold pe-5" data-control="select2" data-placeholder="Select item" id="id_form-0-inv_item" name="form-0-inv_item" placeholder="">
+<option selected="" value="">----------</option>
+<option value="855">200ml Brute Amber - 18 gm</option>
+<option value="497">ABCD</option>
+<option value="346">Acrylic Resin</option>
+<option value="348">Acrylux - Wall Emulsion Exterior - Latex</option>
+<option value="344">Additive - 102</option>
+<option value="211">Aluminium Sheets - 6*8</option>
+<option value="851">Ashwagandha Caps - 30 Cap</option>
+<option value="849">Ashwagandha Powder</option>
+<option value="5">Ashwagandha Raw Herb</option>
+<option value="246">Azithromycim I.P</option>
+<option value="350">Black HDPE Bucket - 1 Ltr</option>
+<option value="311">Black Laminate</option>
+<option value="310">Black Paint - Asian</option>
+<option value="850">Bottles - 200ml</option>
+<option value="286">Brown Board - 450gsm</option>
+<option value="32">Brown Paper</option>
+<option value="3">Brute Bottles - 200ml</option>
+<option value="503">Cooling Tower Fan - 100 Hp</option>
+<option value="333">Corrugated Boxes 100x30 Capsule</option>
+<option value="215">Coughenza Cartons</option>
+<option value="214">Coughenza Labels</option>
+<option value="498">Cyclical Pump - 510 Hp</option>
+<option value="342">Distilled Water</option>
+<option value="44">Femizion 200ml</option>
+<option value="304">Goodwill - Tyres</option>
+<option value="501">GS Steel Sheets - 8*4</option>
+<option value="34">Gum</option>
+<option value="26">Gynofree Cartons</option>
+<option value="30">Gynofree Labels - Arkedia</option>
+<option value="331">Hard Gelatin Capsules - Red 0</option>
+<option value="336">HDPE Jars - 90CC KP 165</option>
+<option value="33">Inks</option>
+<option value="290">Inks - XYZ</option>
+<option value="213">Label Plates</option>
+<option value="288">Lamination - 1mm</option>
+<option value="854">MacAlive Ds - 200ml - Cartons ( Box )</option>
+<option value="852">MacAlive Ds 200ml</option>
+<option value="42">Macalive DS 200ml</option>
+<option value="853">MacAlive Ds 200ml - Labels ( Arkedia )</option>
+<option value="332">Macashwajit 30 Caps</option>
+<option value="334">Macashwajit Cartons - Dripoff</option>
+<option value="335">Macashwajit Labels - Sticker</option>
+<option value="860">Mackoff - 100ml</option>
+<option value="858">Mackoff 100ml - Arkedia Labels</option>
+<option value="857">Mackoff 100ml - Boxes Metallic</option>
+<option value="31">Macortho Advance Flyers</option>
+<option value="1">Macortho Advance Ointment Tube - 30gm</option>
+<option value="856">Macortho Ointment Advance Tube</option>
+<option value="864">MacZion - 200ml</option>
+<option value="865">Maczion - 200ml Boxes Dripoff</option>
+<option value="866">Maczion - Labels 200ml</option>
+<option value="861">Maczyme - 200ml</option>
+<option value="862">Maczyme - 200ml Arkedia Labels</option>
+<option value="863">Maczyme - 200ml Boxed Dripoff</option>
+<option value="43">Maczyme 200ml</option>
+<option value="25">Measuring Caps -2ml</option>
+<option value="306">Nuts &amp; Bolts</option>
+<option value="859">Pet Bottle - 100ml Brute Round</option>
+<option value="28">Pipalimool Herb</option>
+<option value="307">Plywood Block - 8*4</option>
+<option value="502">Pump Motor - 200 Hp</option>
+<option value="6">Punarnava Raw Herb</option>
+<option value="4">Ropp Caps GMP - Silver 25mm</option>
+<option value="29">Shatavari Herb</option>
+<option value="291">Silver Foil</option>
+<option value="287">Source Glue - Fevicryl</option>
+<option value="212">SS Sheets **4</option>
+<option value="500">Stainless Steel Sheets - 8*4 - SS304</option>
+<option value="499">Stainless Steel Sheets - 8*4 - SS316</option>
+<option value="305">Steel Sheet - 8*4</option>
+<option value="283">Sticking Glue</option>
+<option value="347">Styrene Resin</option>
+<option value="351">Tensav Acrylic - Sticker Labels</option>
+<option value="349">Tensav Acrylic Wall - 1 Liter</option>
+<option value="343">Thickener - AD102</option>
+<option value="341">Titanium Dioxide - Resin</option>
+<option value="345">Titanium Dioxide Paste - 101</option>
+<option value="284">TMT Bar 4 mm</option>
+<option value="308">White Laminate - Eso</option>
+<option value="309">White Paint - Asian</option>
+<option value="289">White Paper - 250gsm</option>
+<option value="330">Yellow Dextrin IP</option>
+</select>
+</td>
+<td>
+<select class="form-control form-control-solid fw-bold pe-5" id="id_form-0-prod_type" name="form-0-prod_type" placeholder="">
+<option selected="" value="Made-to-Order">Made-to-Order</option>
+<option value="Made-to-Stock">Made-to-Stock</option>
+</select>
+</td>
+<td>
+<select aria-describedby="id_form-0-bom_cal_helptext" class="form-control form-control-solid fw-bold pe-5" id="id_form-0-bom_cal" name="form-0-bom_cal" placeholder="">
+<option selected="" value="Capacity">By Capacity</option>
+<option value="Output">By Output</option>
+</select>
+</td>
+<td>
+<input class="form-control form-control-solid fw-bold pe-5" id="id_form-0-capacity" min="0" name="form-0-capacity" placeholder="" step="0.0001" type="number" value="0"/>
+</td>
+<td>
+<select class="form-control form-control-solid fw-bold pe-5" data-control="select2" data-placeholder="Select unit" id="id_form-0-unit" name="form-0-unit" placeholder="">
+<option selected="" value="">---------</option>
+<option value="Kg">Kg</option>
+<option value="Grams">Grams</option>
+<option value="No">No</option>
+<option value="Mtr">Mtr</option>
+<option value="Ltr">Ltr</option>
+<option value="Tonne">Tonne</option>
+<option value="Metric Tonne">Metric Tonne</option>
+<option value="Quintal">Quintal</option>
+<option value="NA">NA</option>
+</select>
+</td>
+<td>
+<button class="btn btn-sm btn-icon btn-active-color-primary btn-delete-row" type="button">
+<i class="ki-duotone ki-trash fs-3">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+</i>
+</button>
+</td>
+</tr>
+<tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+<td class="pe-7">
+<input class="form-control form-control-solid fw-bold pe-5" id="id_form-1-date" name="form-1-date" placeholder="" type="date" value="2026-07-03"/><input class="form-control form-control-solid fw-bold pe-5" id="initial-form-1-id_form-1-date" name="initial-form-1-date" type="hidden" value="2026-07-03 07:19:02+00:00"/>
+</td>
+<td class="ps-0">
+<select class="form-control form-control-solid fw-bold pe-5" data-control="select2" data-placeholder="Select item" id="id_form-1-inv_item" name="form-1-inv_item" placeholder="">
+<option selected="" value="">----------</option>
+<option value="855">200ml Brute Amber - 18 gm</option>
+<option value="497">ABCD</option>
+<option value="346">Acrylic Resin</option>
+<option value="348">Acrylux - Wall Emulsion Exterior - Latex</option>
+<option value="344">Additive - 102</option>
+<option value="211">Aluminium Sheets - 6*8</option>
+<option value="851">Ashwagandha Caps - 30 Cap</option>
+<option value="849">Ashwagandha Powder</option>
+<option value="5">Ashwagandha Raw Herb</option>
+<option value="246">Azithromycim I.P</option>
+<option value="350">Black HDPE Bucket - 1 Ltr</option>
+<option value="311">Black Laminate</option>
+<option value="310">Black Paint - Asian</option>
+<option value="850">Bottles - 200ml</option>
+<option value="286">Brown Board - 450gsm</option>
+<option value="32">Brown Paper</option>
+<option value="3">Brute Bottles - 200ml</option>
+<option value="503">Cooling Tower Fan - 100 Hp</option>
+<option value="333">Corrugated Boxes 100x30 Capsule</option>
+<option value="215">Coughenza Cartons</option>
+<option value="214">Coughenza Labels</option>
+<option value="498">Cyclical Pump - 510 Hp</option>
+<option value="342">Distilled Water</option>
+<option value="44">Femizion 200ml</option>
+<option value="304">Goodwill - Tyres</option>
+<option value="501">GS Steel Sheets - 8*4</option>
+<option value="34">Gum</option>
+<option value="26">Gynofree Cartons</option>
+<option value="30">Gynofree Labels - Arkedia</option>
+<option value="331">Hard Gelatin Capsules - Red 0</option>
+<option value="336">HDPE Jars - 90CC KP 165</option>
+<option value="33">Inks</option>
+<option value="290">Inks - XYZ</option>
+<option value="213">Label Plates</option>
+<option value="288">Lamination - 1mm</option>
+<option value="854">MacAlive Ds - 200ml - Cartons ( Box )</option>
+<option value="852">MacAlive Ds 200ml</option>
+<option value="42">Macalive DS 200ml</option>
+<option value="853">MacAlive Ds 200ml - Labels ( Arkedia )</option>
+<option value="332">Macashwajit 30 Caps</option>
+<option value="334">Macashwajit Cartons - Dripoff</option>
+<option value="335">Macashwajit Labels - Sticker</option>
+<option value="860">Mackoff - 100ml</option>
+<option value="858">Mackoff 100ml - Arkedia Labels</option>
+<option value="857">Mackoff 100ml - Boxes Metallic</option>
+<option value="31">Macortho Advance Flyers</option>
+<option value="1">Macortho Advance Ointment Tube - 30gm</option>
+<option value="856">Macortho Ointment Advance Tube</option>
+<option value="864">MacZion - 200ml</option>
+<option value="865">Maczion - 200ml Boxes Dripoff</option>
+<option value="866">Maczion - Labels 200ml</option>
+<option value="861">Maczyme - 200ml</option>
+<option value="862">Maczyme - 200ml Arkedia Labels</option>
+<option value="863">Maczyme - 200ml Boxed Dripoff</option>
+<option value="43">Maczyme 200ml</option>
+<option value="25">Measuring Caps -2ml</option>
+<option value="306">Nuts &amp; Bolts</option>
+<option value="859">Pet Bottle - 100ml Brute Round</option>
+<option value="28">Pipalimool Herb</option>
+<option value="307">Plywood Block - 8*4</option>
+<option value="502">Pump Motor - 200 Hp</option>
+<option value="6">Punarnava Raw Herb</option>
+<option value="4">Ropp Caps GMP - Silver 25mm</option>
+<option value="29">Shatavari Herb</option>
+<option value="291">Silver Foil</option>
+<option value="287">Source Glue - Fevicryl</option>
+<option value="212">SS Sheets **4</option>
+<option value="500">Stainless Steel Sheets - 8*4 - SS304</option>
+<option value="499">Stainless Steel Sheets - 8*4 - SS316</option>
+<option value="305">Steel Sheet - 8*4</option>
+<option value="283">Sticking Glue</option>
+<option value="347">Styrene Resin</option>
+<option value="351">Tensav Acrylic - Sticker Labels</option>
+<option value="349">Tensav Acrylic Wall - 1 Liter</option>
+<option value="343">Thickener - AD102</option>
+<option value="341">Titanium Dioxide - Resin</option>
+<option value="345">Titanium Dioxide Paste - 101</option>
+<option value="284">TMT Bar 4 mm</option>
+<option value="308">White Laminate - Eso</option>
+<option value="309">White Paint - Asian</option>
+<option value="289">White Paper - 250gsm</option>
+<option value="330">Yellow Dextrin IP</option>
+</select>
+</td>
+<td>
+<select class="form-control form-control-solid fw-bold pe-5" id="id_form-1-prod_type" name="form-1-prod_type" placeholder="">
+<option selected="" value="Made-to-Order">Made-to-Order</option>
+<option value="Made-to-Stock">Made-to-Stock</option>
+</select>
+</td>
+<td>
+<select aria-describedby="id_form-1-bom_cal_helptext" class="form-control form-control-solid fw-bold pe-5" id="id_form-1-bom_cal" name="form-1-bom_cal" placeholder="">
+<option selected="" value="Capacity">By Capacity</option>
+<option value="Output">By Output</option>
+</select>
+</td>
+<td>
+<input class="form-control form-control-solid fw-bold pe-5" id="id_form-1-capacity" min="0" name="form-1-capacity" placeholder="" step="0.0001" type="number" value="0"/>
+</td>
+<td>
+<select class="form-control form-control-solid fw-bold pe-5" data-control="select2" data-placeholder="Select unit" id="id_form-1-unit" name="form-1-unit" placeholder="">
+<option selected="" value="">---------</option>
+<option value="Kg">Kg</option>
+<option value="Grams">Grams</option>
+<option value="No">No</option>
+<option value="Mtr">Mtr</option>
+<option value="Ltr">Ltr</option>
+<option value="Tonne">Tonne</option>
+<option value="Metric Tonne">Metric Tonne</option>
+<option value="Quintal">Quintal</option>
+<option value="NA">NA</option>
+</select>
+</td>
+<td>
+<button class="btn btn-sm btn-icon btn-active-color-primary btn-delete-row" type="button">
+<i class="ki-duotone ki-trash fs-3">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+</i>
+</button>
+</td>
+</tr>
+</tbody>
+<!--end::Table body-->
+<tbody><tr class="d-none" id="empty-form">
+<td class="pe-7"><input class="form-control form-control-solid" id="id_{{ item_formset.prefix }}-__prefix__-date" name="form-__prefix__-date" type="date" value="2026-07-03"/><input class="form-control form-control-solid" id="id_{{ item_formset.prefix }}-__prefix__-date" name="initial-form-__prefix__-date" type="hidden" value="2026-07-03 07:19:02+00:00"/></td>
+<td class="ps-0"><select class="form-control form-control-solid" data-control="select2" data-placeholder="Select item" id="id_{{ item_formset.prefix }}-__prefix__-inv_item" name="form-__prefix__-inv_item">
+<option selected="" value="">----------</option>
+<option value="855">200ml Brute Amber - 18 gm</option>
+<option value="497">ABCD</option>
+<option value="346">Acrylic Resin</option>
+<option value="348">Acrylux - Wall Emulsion Exterior - Latex</option>
+<option value="344">Additive - 102</option>
+<option value="211">Aluminium Sheets - 6*8</option>
+<option value="851">Ashwagandha Caps - 30 Cap</option>
+<option value="849">Ashwagandha Powder</option>
+<option value="5">Ashwagandha Raw Herb</option>
+<option value="246">Azithromycim I.P</option>
+<option value="350">Black HDPE Bucket - 1 Ltr</option>
+<option value="311">Black Laminate</option>
+<option value="310">Black Paint - Asian</option>
+<option value="850">Bottles - 200ml</option>
+<option value="286">Brown Board - 450gsm</option>
+<option value="32">Brown Paper</option>
+<option value="3">Brute Bottles - 200ml</option>
+<option value="503">Cooling Tower Fan - 100 Hp</option>
+<option value="333">Corrugated Boxes 100x30 Capsule</option>
+<option value="215">Coughenza Cartons</option>
+<option value="214">Coughenza Labels</option>
+<option value="498">Cyclical Pump - 510 Hp</option>
+<option value="342">Distilled Water</option>
+<option value="44">Femizion 200ml</option>
+<option value="304">Goodwill - Tyres</option>
+<option value="501">GS Steel Sheets - 8*4</option>
+<option value="34">Gum</option>
+<option value="26">Gynofree Cartons</option>
+<option value="30">Gynofree Labels - Arkedia</option>
+<option value="331">Hard Gelatin Capsules - Red 0</option>
+<option value="336">HDPE Jars - 90CC KP 165</option>
+<option value="33">Inks</option>
+<option value="290">Inks - XYZ</option>
+<option value="213">Label Plates</option>
+<option value="288">Lamination - 1mm</option>
+<option value="854">MacAlive Ds - 200ml - Cartons ( Box )</option>
+<option value="852">MacAlive Ds 200ml</option>
+<option value="42">Macalive DS 200ml</option>
+<option value="853">MacAlive Ds 200ml - Labels ( Arkedia )</option>
+<option value="332">Macashwajit 30 Caps</option>
+<option value="334">Macashwajit Cartons - Dripoff</option>
+<option value="335">Macashwajit Labels - Sticker</option>
+<option value="860">Mackoff - 100ml</option>
+<option value="858">Mackoff 100ml - Arkedia Labels</option>
+<option value="857">Mackoff 100ml - Boxes Metallic</option>
+<option value="31">Macortho Advance Flyers</option>
+<option value="1">Macortho Advance Ointment Tube - 30gm</option>
+<option value="856">Macortho Ointment Advance Tube</option>
+<option value="864">MacZion - 200ml</option>
+<option value="865">Maczion - 200ml Boxes Dripoff</option>
+<option value="866">Maczion - Labels 200ml</option>
+<option value="861">Maczyme - 200ml</option>
+<option value="862">Maczyme - 200ml Arkedia Labels</option>
+<option value="863">Maczyme - 200ml Boxed Dripoff</option>
+<option value="43">Maczyme 200ml</option>
+<option value="25">Measuring Caps -2ml</option>
+<option value="306">Nuts &amp; Bolts</option>
+<option value="859">Pet Bottle - 100ml Brute Round</option>
+<option value="28">Pipalimool Herb</option>
+<option value="307">Plywood Block - 8*4</option>
+<option value="502">Pump Motor - 200 Hp</option>
+<option value="6">Punarnava Raw Herb</option>
+<option value="4">Ropp Caps GMP - Silver 25mm</option>
+<option value="29">Shatavari Herb</option>
+<option value="291">Silver Foil</option>
+<option value="287">Source Glue - Fevicryl</option>
+<option value="212">SS Sheets **4</option>
+<option value="500">Stainless Steel Sheets - 8*4 - SS304</option>
+<option value="499">Stainless Steel Sheets - 8*4 - SS316</option>
+<option value="305">Steel Sheet - 8*4</option>
+<option value="283">Sticking Glue</option>
+<option value="347">Styrene Resin</option>
+<option value="351">Tensav Acrylic - Sticker Labels</option>
+<option value="349">Tensav Acrylic Wall - 1 Liter</option>
+<option value="343">Thickener - AD102</option>
+<option value="341">Titanium Dioxide - Resin</option>
+<option value="345">Titanium Dioxide Paste - 101</option>
+<option value="284">TMT Bar 4 mm</option>
+<option value="308">White Laminate - Eso</option>
+<option value="309">White Paint - Asian</option>
+<option value="289">White Paper - 250gsm</option>
+<option value="330">Yellow Dextrin IP</option>
+</select></td>
+<td><select class="form-control form-control-solid" id="id_{{ item_formset.prefix }}-__prefix__-prod_type" name="form-__prefix__-prod_type">
+<option selected="" value="Made-to-Order">Made-to-Order</option>
+<option value="Made-to-Stock">Made-to-Stock</option>
+</select></td>
+<td><select aria-describedby="id_form-__prefix__-bom_cal_helptext" class="form-control form-control-solid" id="id_{{ item_formset.prefix }}-__prefix__-bom_cal" name="form-__prefix__-bom_cal">
+<option selected="" value="Capacity">By Capacity</option>
+<option value="Output">By Output</option>
+</select></td>
+<td><input class="form-control form-control-solid" id="id_{{ item_formset.prefix }}-__prefix__-capacity" min="0" name="form-__prefix__-capacity" step="0.0001" type="number" value="0"/></td>
+<td><select class="form-control form-control-solid" data-control="select2" data-placeholder="Select unit" id="id_{{ item_formset.prefix }}-__prefix__-unit" name="form-__prefix__-unit">
+<option selected="" value="">---------</option>
+<option value="Kg">Kg</option>
+<option value="Grams">Grams</option>
+<option value="No">No</option>
+<option value="Mtr">Mtr</option>
+<option value="Ltr">Ltr</option>
+<option value="Tonne">Tonne</option>
+<option value="Metric Tonne">Metric Tonne</option>
+<option value="Quintal">Quintal</option>
+<option value="NA">NA</option>
+</select></td>
+<td>
+<button class="btn btn-sm btn-icon btn-active-color-primary btn-delete-row" type="button">
+<i class="ki-duotone ki-trash fs-3">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+</i>
+</button>
+</td>
+</tr>
+<!--begin::Table foot-->
+</tbody><tfoot>
+<tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
+<th class="text-primary">
+<button class="btn btn-link py-1" data-stitch-ui-id="interaction_1" id="add-more" type="button">Add Job (Ctrl + m)</button>
+</th>
+</tr>
+</tfoot>
+<!--end::Table foot-->
+</table>
+</div>
+<!--end::Table-->
+</div>
+<!--end::Wrapper-->
+<!--begin::Actions-->
+<div class="mb-0">
+<button class="btn btn-primary w-100" data-stitch-go="../spout-ai-production-jobs-pending/page.html" data-stitch-page="spout-ai-production-jobs-pending" type="submit">
+<i class="ki-duotone ki-triangle fs-3">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+</i>Create Jobs</button>
+</div>
+<!--end::Actions-->
+</form>
+<!--end::Form-->
+</div>
+<!--end::Card body-->
+</div>
+<!--end::Card-->
+</div>
+<!--end::Content-->
+</div>
+</div>
+<!--end::Layout-->
+<!--begin::Modal - Adjust Balance-->
+<div aria-hidden="true" class="modal fade" id="kt_customers_export_modal" tabindex="-1">
+<!--begin::Modal dialog-->
+<div class="modal-dialog modal-dialog-centered mw-650px">
+<!--begin::Modal content-->
+<div class="modal-content">
+<!--begin::Modal header-->
+<div class="modal-header">
+<!--begin::Modal title-->
+<h2 class="fw-bold">Export Customers</h2>
+<!--end::Modal title-->
+<!--begin::Close-->
+<div class="btn btn-icon btn-sm btn-active-icon-primary" id="kt_customers_export_close">
+<i class="ki-duotone ki-cross fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+<!--end::Close-->
+</div>
+<!--end::Modal header-->
+<!--begin::Modal body-->
+<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+<!--begin::Form-->
+<form action="#" class="form fv-plugins-bootstrap5 fv-plugins-framework" id="kt_customers_export_form">
+<!--begin::Input group-->
+<div class="fv-row mb-10">
+<!--begin::Label-->
+<label class="fs-5 fw-semibold form-label mb-5">Select Export Format:</label>
+<!--end::Label-->
+<!--begin::Input-->
+<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a format" name="format">
+<option value="excell">Excel</option>
+<option value="pdf">PDF</option>
+<option value="cvs">CVS</option>
+<option value="zip">ZIP</option>
+</select>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-10 fv-plugins-icon-container">
+<!--begin::Label-->
+<label class="fs-5 fw-semibold form-label mb-5">Select Date Range:</label>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" name="date" placeholder="Pick a date"/>
+<!--end::Input-->
+<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+<!--end::Input group-->
+<!--begin::Actions-->
+<div class="text-center">
+<button class="btn btn-light me-3" id="kt_customers_export_cancel" type="reset">Discard</button>
+<button class="btn btn-primary" id="kt_customers_export_submit" type="submit">
+<span class="indicator-label">Submit</span>
+<span class="indicator-progress">Please wait... 
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+</button>
+</div>
+<!--end::Actions-->
+</form>
+<!--end::Form-->
+</div>
+<!--end::Modal body-->
+</div>
+<!--end::Modal content-->
+</div>
+<!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Card-->
+<!--end::Modals-->
+</div>
+<!--end::Content container-->
+</div>
+<!--end::Content-->
+</div>
+<!--end::Content wrapper-->
+<!--begin::Footer-->
+<div class="app-footer" id="kt_app_footer">
+<!--begin::Footer container-->
+<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+<!--begin::Copyright-->
+<div class="text-gray-900 order-2 order-md-1">
+<span class="text-muted fw-semibold me-1">2024©</span>
+<a class="text-hover-primary" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" style="color:#4154f1;" target="_blank">Likwid.Ai</a>
+</div>
+<!--end::Copyright-->
+<!--begin::Menu-->
+<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+<li class="menu-item">
+<a class="menu-link px-2" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" target="_blank">About</a>
+</li>
+<li class="menu-item">
+<a class="menu-link px-2" href="#" target="_blank">Support</a>
+</li>
+<li class="menu-item">
+<a class="menu-link px-2" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" target="_blank">Purchase</a>
+</li>
+</ul>
+<!--end::Menu-->
+</div>
+<!--end::Footer container-->
+</div>
+<!--end::Footer-->
+</div>
+<!--end:::Main-->
+</div>
+<!--end::Wrapper-->
+<!--end::Page-->
+<!--end::App-->
+<style>
+/* ── Likwid AI full-content panel ── */
+#lkh-chat-overlay {
+	position: fixed;
+	top: 70px;
+	left: 265px;
+	right: 0;
+	bottom: 0;
+	z-index: 200;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: -4px 0 24px rgba(0,0,0,0.10);
+	transform: translateX(100%);
+	transition: transform 0.25s ease;
+}
+#lkh-chat-overlay.lkh-open { transform: translateX(0); }
+
+.lkh-chat-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 22px;
+	border-bottom: 1px solid #efefef;
+	flex-shrink: 0;
+	background: #fff;
+}
+.lkh-gradient-text {
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.lkh-chat-body {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+}
+
+/* Sidebar */
+.lkh-chat-sidebar {
+	width: 240px;
+	border-right: 1px solid #efefef;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	flex-shrink: 0;
+	background: #fafafa;
+}
+.lkh-sidebar-top {
+	padding: 12px 14px;
+	border-bottom: 1px solid #efefef;
+	flex-shrink: 0;
+}
+#lkh-conversations-list {
+	flex: 1;
+	overflow-y: auto;
+	padding: 8px 0;
+}
+.lkh-conv-item {
+	padding: 10px 14px;
+	cursor: pointer;
+	border-radius: 6px;
+	margin: 2px 8px;
+	font-size: 13px;
+	color: #5e6278;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: background 0.15s;
+}
+.lkh-conv-item:hover { background: #f1f1f4; color: #181c32; }
+.lkh-conv-item.active {
+	background: linear-gradient(135deg, rgba(126,68,238,0.12) 0%, rgba(0,89,252,0.08) 100%);
+	color: #7e44ee;
+	font-weight: 600;
+}
+
+/* Main chat area */
+.lkh-chat-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+#lkh-messages-erp {
+	flex: 1;
+	overflow-y: auto;
+	padding: 24px 32px;
+}
+
+/* Bubbles */
+.lkh-user-bubble {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+.lkh-user-bubble > div {
+	max-width: 72%;
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	color: #fff;
+	border-radius: 16px 16px 4px 16px;
+	padding: 12px 16px;
+	font-size: 14px;
+	line-height: 1.5;
+	word-break: break-word;
+}
+.lkh-ai-bubble {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+}
+.lkh-ai-bubble-inner {
+	max-width: 82%;
+}
+.lkh-ai-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 6px;
+}
+.lkh-ai-content {
+	background: #f8f6ff;
+	border: 1px solid rgba(126,68,238,0.12);
+	border-radius: 4px 16px 16px 16px;
+	padding: 14px 18px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #2d2d2d;
+	word-break: break-word;
+}
+.lkh-row-charts { margin-top: 10px; }
+
+/* Rich text elements */
+.lkh-blockquote {
+	border-left: 3px solid #7e44ee;
+	padding: 6px 12px;
+	margin: 6px 0;
+	background: rgba(126,68,238,0.04);
+	border-radius: 0 6px 6px 0;
+	color: #555;
+	font-size: 0.88em;
+}
+.lkh-chat-table { font-size: 0.82rem; border-color: #e8e0ff; }
+.lkh-chat-table thead th {
+	background: rgba(126,68,238,0.07);
+	color: #5a32d1;
+	border-color: #e8e0ff;
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+.lkh-chat-table td { border-color: #f0ecff; vertical-align: middle; }
+
+/* Footer */
+.lkh-chat-footer {
+	padding: 14px 22px;
+	border-top: 1px solid rgba(126,68,238,0.1);
+	background: rgba(255,255,255,0.97);
+	flex-shrink: 0;
+}
+.lkh-btn-send {
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	border: none;
+	border-radius: 12px;
+	color: white;
+	font-weight: 600;
+	padding: 10px 22px;
+	transition: all 0.2s ease;
+}
+.lkh-btn-send:disabled { opacity: 0.65; cursor: not-allowed; }
+.lkh-btn-send:not(:disabled):hover { filter: brightness(1.08); }
+
+.lkh-suggest-pill {
+	border: none;
+	background: rgba(126,68,238,0.07);
+	color: #7e44ee;
+	border-radius: 20px;
+	font-size: 12px;
+	padding: 6px 14px;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+.lkh-suggest-pill:hover { background: rgba(126,68,238,0.14); }
+
+@media (max-width: 991px) {
+	#lkh-chat-overlay { left: 0; top: 60px; }
+	.lkh-chat-sidebar { width: 200px; }
+}
+</style>
+<!--begin::Likwid AI full-content panel-->
+<div id="lkh-chat-overlay">
+<!--begin::Header-->
+<div class="lkh-chat-header">
+<div class="d-flex align-items-center gap-3">
+<i class="ki-duotone ki-ai fs-2 text-primary"><span class="path1"></span><span class="path2"></span></i>
+<span class="fs-5 fw-bold lkh-gradient-text">Likwid AI</span>
+<span class="badge badge-light-primary fs-8 ms-1" id="lkh-usage-badge"></span>
+</div>
+<button class="btn btn-sm btn-icon btn-active-light-primary" id="lkh-chat-close">
+<i class="ki-duotone ki-cross fs-2"><span class="path1"></span><span class="path2"></span></i>
+</button>
+</div>
+<!--end::Header-->
+<!--begin::Body-->
+<div class="lkh-chat-body">
+<!--begin::History sidebar-->
+<div class="lkh-chat-sidebar">
+<div class="lkh-sidebar-top">
+<button class="btn btn-sm w-100 lkh-btn-send" id="lkh-new-chat-btn" style="border-radius:10px;">
+<i class="ki-duotone ki-plus fs-5 me-1"><span class="path1"></span><span class="path2"></span></i>
+					New Chat
+				</button>
+</div>
+<div id="lkh-conversations-list">
+<div class="text-center text-muted fs-8 py-4">Loading...</div>
+</div>
+</div>
+<!--end::History sidebar-->
+<!--begin::Main chat area-->
+<div class="lkh-chat-main">
+<!--begin::Messages-->
+<div id="lkh-messages-erp">
+<div class="text-center py-12" id="lkh-empty-erp">
+<i class="ki-duotone ki-chart-line-up fs-4x text-primary opacity-50 mb-3"><span class="path1"></span><span class="path2"></span></i>
+<p class="text-muted fs-6 mb-4">Ask me anything about your live ERP data.</p>
+<div class="d-flex flex-wrap gap-2 justify-content-center" id="lkh-suggest-erp">
+<button class="lkh-suggest-pill">What is my total order value this month?</button>
+<button class="lkh-suggest-pill">Who are my top 10 customers?</button>
+<button class="lkh-suggest-pill">Which items are below reorder level?</button>
+<button class="lkh-suggest-pill">How's my business doing?</button>
+</div>
+</div>
+</div>
+<!--end::Messages-->
+<!--begin::Footer-->
+<div class="lkh-chat-footer">
+<div class="alert alert-warning d-none mb-3 py-2 px-3 fs-7" id="lkh-cap-banner">
+<i class="ki-duotone ki-information-5 fs-5 me-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+					Monthly limit reached. <a class="alert-link" data-stitch-page="subscription" href="../subscription/page.html">Upgrade to Pro</a> for unlimited access.
+				</div>
+<div class="d-flex align-items-end gap-3">
+<textarea class="form-control fs-6 flex-grow-1" id="lkh-input" placeholder="Ask about your live ERP data..." rows="2" style="resize:none; border:1px solid rgba(126,68,238,0.3); border-radius:12px; padding:10px 14px;"></textarea>
+<button class="lkh-btn-send" id="lkh-send-btn" style="min-width:100px;">
+<i class="ki-duotone ki-send fs-5 me-1"><span class="path1"></span><span class="path2"></span></i>
+						Ask AI
+					</button>
+</div>
+</div>
+<!--end::Footer-->
+</div>
+<!--end::Main chat area-->
+</div>
+<!--end::Body-->
+</div>
+<!--end::Likwid AI full-content panel-->
+<!--Load ApexCharts lazily if not already present-->
+<!--begin::Scrolltop-->
+<div class="scrolltop" data-kt-scrolltop="true" id="kt_scrolltop">
+<i class="ki-duotone ki-arrow-up">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+<!--end::Scrolltop-->
+<!--begin::Javascript-->
+<!--begin::Javascript-->
+<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+<!--end::Global Javascript Bundle-->
+<!--begin::Vendors Javascript(used for this page only)-->
+<!--end::Vendors Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+<!--end::Vendors Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+<!--end::Custom Javascript-->
+<!--end::Javascript-->
+<!--end::Javascript-->
+<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script>window.__STITCH_INTERACTIONS__ = {"interaction_1": {"type": "unknown", "parentSelector": "#formset", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[1]/table[1]/tbody[1]", "insertMethod": "append", "uiHtml": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-date\" name=\"form-2-date\" type=\"date\" value=\"2026-07-03\"/><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-date\" name=\"initial-form-2-date\" type=\"hidden\" value=\"2026-07-03 10:18:18+00:00\"/><\/td>\n<td class=\"ps-0\"><select class=\"form-control form-control-solid\" data-control=\"select2\" data-placeholder=\"Select item\" id=\"id_{{ item_formset.prefix }}-2-inv_item\" name=\"form-2-inv_item\">\n<option selected=\"\" value=\"\">----------<\/option>\n<option value=\"855\">200ml Brute Amber - 18 gm<\/option>\n<option value=\"497\">ABCD<\/option>\n<option value=\"346\">Acrylic Resin<\/option>\n<option value=\"348\">Acrylux - Wall Emulsion Exterior - Latex<\/option>\n<option value=\"344\">Additive - 102<\/option>\n<option value=\"211\">Aluminium Sheets - 6*8<\/option>\n<option value=\"851\">Ashwagandha Caps - 30 Cap<\/option>\n<option value=\"849\">Ashwagandha Powder<\/option>\n<option value=\"5\">Ashwagandha Raw Herb<\/option>\n<option value=\"246\">Azithromycim I.P<\/option>\n<option value=\"350\">Black HDPE Bucket - 1 Ltr<\/option>\n<option value=\"311\">Black Laminate<\/option>\n<option value=\"310\">Black Paint - Asian<\/option>\n<option value=\"850\">Bottles - 200ml<\/option>\n<option value=\"286\">Brown Board - 450gsm<\/option>\n<option value=\"32\">Brown Paper<\/option>\n<option value=\"3\">Brute Bottles - 200ml<\/option>\n<option value=\"503\">Cooling Tower Fan - 100 Hp<\/option>\n<option value=\"333\">Corrugated Boxes 100x30 Capsule<\/option>\n<option value=\"215\">Coughenza Cartons<\/option>\n<option value=\"214\">Coughenza Labels<\/option>\n<option value=\"498\">Cyclical Pump - 510 Hp<\/option>\n<option value=\"342\">Distilled Water<\/option>\n<option value=\"44\">Femizion 200ml<\/option>\n<option value=\"304\">Goodwill - Tyres<\/option>\n<option value=\"501\">GS Steel Sheets - 8*4<\/option>\n<option value=\"34\">Gum<\/option>\n<option value=\"26\">Gynofree Cartons<\/option>\n<option value=\"30\">Gynofree Labels - Arkedia<\/option>\n<option value=\"331\">Hard Gelatin Capsules - Red 0<\/option>\n<option value=\"336\">HDPE Jars - 90CC KP 165<\/option>\n<option value=\"33\">Inks<\/option>\n<option value=\"290\">Inks - XYZ<\/option>\n<option value=\"213\">Label Plates<\/option>\n<option value=\"288\">Lamination - 1mm<\/option>\n<option value=\"854\">MacAlive Ds - 200ml - Cartons ( Box )<\/option>\n<option value=\"852\">MacAlive Ds 200ml<\/option>\n<option value=\"42\">Macalive DS 200ml<\/option>\n<option value=\"853\">MacAlive Ds 200ml - Labels ( Arkedia )<\/option>\n<option value=\"332\">Macashwajit 30 Caps<\/option>\n<option value=\"334\">Macashwajit Cartons - Dripoff<\/option>\n<option value=\"335\">Macashwajit Labels - Sticker<\/option>\n<option value=\"860\">Mackoff - 100ml<\/option>\n<option value=\"858\">Mackoff 100ml - Arkedia Labels<\/option>\n<option value=\"857\">Mackoff 100ml - Boxes Metallic<\/option>\n<option value=\"31\">Macortho Advance Flyers<\/option>\n<option value=\"1\">Macortho Advance Ointment Tube - 30gm<\/option>\n<option value=\"864\">MacZion - 200ml<\/option>\n<option value=\"865\">Maczion - 200ml Boxes Dripoff<\/option>\n<option value=\"866\">Maczion - Labels 200ml<\/option>\n<option value=\"861\">Maczyme - 200ml<\/option>\n<option value=\"862\">Maczyme - 200ml Arkedia Labels<\/option>\n<option value=\"863\">Maczyme - 200ml Boxed Dripoff<\/option>\n<option value=\"43\">Maczyme 200ml<\/option>\n<option value=\"25\">Measuring Caps -2ml<\/option>\n<option value=\"306\">Nuts &amp; Bolts<\/option>\n<option value=\"859\">Pet Bottle - 100ml Brute Round<\/option>\n<option value=\"28\">Pipalimool Herb<\/option>\n<option value=\"307\">Plywood Block - 8*4<\/option>\n<option value=\"502\">Pump Motor - 200 Hp<\/option>\n<option value=\"6\">Punarnava Raw Herb<\/option>\n<option value=\"4\">Ropp Caps GMP - Silver 25mm<\/option>\n<option value=\"29\">Shatavari Herb<\/option>\n<option value=\"291\">Silver Foil<\/option>\n<option value=\"287\">Source Glue - Fevicryl<\/option>\n<option value=\"212\">SS Sheets **4<\/option>\n<option value=\"500\">Stainless Steel Sheets - 8*4 - SS304<\/option>\n<option value=\"499\">Stainless Steel Sheets - 8*4 - SS316<\/option>\n<option value=\"305\">Steel Sheet - 8*4<\/option>\n<option value=\"283\">Sticking Glue<\/option>\n<option value=\"347\">Styrene Resin<\/option>\n<option value=\"351\">Tensav Acrylic - Sticker Labels<\/option>\n<option value=\"349\">Tensav Acrylic Wall - 1 Liter<\/option>\n<option value=\"343\">Thickener - AD102<\/option>\n<option value=\"341\">Titanium Dioxide - Resin<\/option>\n<option value=\"345\">Titanium Dioxide Paste - 101<\/option>\n<option value=\"284\">TMT Bar 4 mm<\/option>\n<option value=\"308\">White Laminate - Eso<\/option>\n<option value=\"309\">White Paint - Asian<\/option>\n<option value=\"289\">White Paper - 250gsm<\/option>\n<option value=\"330\">Yellow Dextrin IP<\/option>\n<\/select><\/td>\n<td><select class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-prod_type\" name=\"form-2-prod_type\">\n<option selected=\"\" value=\"Made-to-Order\">Made-to-Order<\/option>\n<option value=\"Made-to-Stock\">Made-to-Stock<\/option>\n<\/select><\/td>\n<td><select aria-describedby=\"id_form-2-bom_cal_helptext\" class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-bom_cal\" name=\"form-2-bom_cal\">\n<option selected=\"\" value=\"Capacity\">By Capacity<\/option>\n<option value=\"Output\">By Output<\/option>\n<\/select><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-capacity\" min=\"0\" name=\"form-2-capacity\" step=\"0.0001\" type=\"number\" value=\"0\"/><\/td>\n<td><select class=\"form-control form-control-solid\" data-control=\"select2\" data-placeholder=\"Select unit\" id=\"id_{{ item_formset.prefix }}-2-unit\" name=\"form-2-unit\">\n<option selected=\"\" value=\"\">---------<\/option>\n<option value=\"Kg\">Kg<\/option>\n<option value=\"Grams\">Grams<\/option>\n<option value=\"No\">No<\/option>\n<option value=\"Mtr\">Mtr<\/option>\n<option value=\"Ltr\">Ltr<\/option>\n<option value=\"Tonne\">Tonne<\/option>\n<option value=\"Metric Tonne\">Metric Tonne<\/option>\n<option value=\"Quintal\">Quintal<\/option>\n<option value=\"NA\">NA<\/option>\n<\/select><\/td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"><\/span>\n<span class=\"path2\"><\/span>\n<span class=\"path3\"><\/span>\n<span class=\"path4\"><\/span>\n<span class=\"path5\"><\/span>\n<\/i>\n<\/button>\n<\/td>\n<\/tr>", "uiCss": "", "backdropHtml": "", "fallback": "interactions/001-add-job-ctrl-m/page.html"}, "interaction_2": {"type": "unknown", "parentSelector": "#formset", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[1]/table[1]/tbody[1]", "insertMethod": "append", "uiHtml": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-date\" name=\"form-2-date\" type=\"date\" value=\"2026-07-03\"/><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-date\" name=\"initial-form-2-date\" type=\"hidden\" value=\"2026-07-03 10:18:18+00:00\"/><\/td>\n<td class=\"ps-0\"><select class=\"form-control form-control-solid\" data-control=\"select2\" data-placeholder=\"Select item\" id=\"id_{{ item_formset.prefix }}-2-inv_item\" name=\"form-2-inv_item\">\n<option selected=\"\" value=\"\">----------<\/option>\n<option value=\"855\">200ml Brute Amber - 18 gm<\/option>\n<option value=\"497\">ABCD<\/option>\n<option value=\"346\">Acrylic Resin<\/option>\n<option value=\"348\">Acrylux - Wall Emulsion Exterior - Latex<\/option>\n<option value=\"344\">Additive - 102<\/option>\n<option value=\"211\">Aluminium Sheets - 6*8<\/option>\n<option value=\"851\">Ashwagandha Caps - 30 Cap<\/option>\n<option value=\"849\">Ashwagandha Powder<\/option>\n<option value=\"5\">Ashwagandha Raw Herb<\/option>\n<option value=\"246\">Azithromycim I.P<\/option>\n<option value=\"350\">Black HDPE Bucket - 1 Ltr<\/option>\n<option value=\"311\">Black Laminate<\/option>\n<option value=\"310\">Black Paint - Asian<\/option>\n<option value=\"850\">Bottles - 200ml<\/option>\n<option value=\"286\">Brown Board - 450gsm<\/option>\n<option value=\"32\">Brown Paper<\/option>\n<option value=\"3\">Brute Bottles - 200ml<\/option>\n<option value=\"503\">Cooling Tower Fan - 100 Hp<\/option>\n<option value=\"333\">Corrugated Boxes 100x30 Capsule<\/option>\n<option value=\"215\">Coughenza Cartons<\/option>\n<option value=\"214\">Coughenza Labels<\/option>\n<option value=\"498\">Cyclical Pump - 510 Hp<\/option>\n<option value=\"342\">Distilled Water<\/option>\n<option value=\"44\">Femizion 200ml<\/option>\n<option value=\"304\">Goodwill - Tyres<\/option>\n<option value=\"501\">GS Steel Sheets - 8*4<\/option>\n<option value=\"34\">Gum<\/option>\n<option value=\"26\">Gynofree Cartons<\/option>\n<option value=\"30\">Gynofree Labels - Arkedia<\/option>\n<option value=\"331\">Hard Gelatin Capsules - Red 0<\/option>\n<option value=\"336\">HDPE Jars - 90CC KP 165<\/option>\n<option value=\"33\">Inks<\/option>\n<option value=\"290\">Inks - XYZ<\/option>\n<option value=\"213\">Label Plates<\/option>\n<option value=\"288\">Lamination - 1mm<\/option>\n<option value=\"854\">MacAlive Ds - 200ml - Cartons ( Box )<\/option>\n<option value=\"852\">MacAlive Ds 200ml<\/option>\n<option value=\"42\">Macalive DS 200ml<\/option>\n<option value=\"853\">MacAlive Ds 200ml - Labels ( Arkedia )<\/option>\n<option value=\"332\">Macashwajit 30 Caps<\/option>\n<option value=\"334\">Macashwajit Cartons - Dripoff<\/option>\n<option value=\"335\">Macashwajit Labels - Sticker<\/option>\n<option value=\"860\">Mackoff - 100ml<\/option>\n<option value=\"858\">Mackoff 100ml - Arkedia Labels<\/option>\n<option value=\"857\">Mackoff 100ml - Boxes Metallic<\/option>\n<option value=\"31\">Macortho Advance Flyers<\/option>\n<option value=\"1\">Macortho Advance Ointment Tube - 30gm<\/option>\n<option value=\"864\">MacZion - 200ml<\/option>\n<option value=\"865\">Maczion - 200ml Boxes Dripoff<\/option>\n<option value=\"866\">Maczion - Labels 200ml<\/option>\n<option value=\"861\">Maczyme - 200ml<\/option>\n<option value=\"862\">Maczyme - 200ml Arkedia Labels<\/option>\n<option value=\"863\">Maczyme - 200ml Boxed Dripoff<\/option>\n<option value=\"43\">Maczyme 200ml<\/option>\n<option value=\"25\">Measuring Caps -2ml<\/option>\n<option value=\"306\">Nuts &amp; Bolts<\/option>\n<option value=\"859\">Pet Bottle - 100ml Brute Round<\/option>\n<option value=\"28\">Pipalimool Herb<\/option>\n<option value=\"307\">Plywood Block - 8*4<\/option>\n<option value=\"502\">Pump Motor - 200 Hp<\/option>\n<option value=\"6\">Punarnava Raw Herb<\/option>\n<option value=\"4\">Ropp Caps GMP - Silver 25mm<\/option>\n<option value=\"29\">Shatavari Herb<\/option>\n<option value=\"291\">Silver Foil<\/option>\n<option value=\"287\">Source Glue - Fevicryl<\/option>\n<option value=\"212\">SS Sheets **4<\/option>\n<option value=\"500\">Stainless Steel Sheets - 8*4 - SS304<\/option>\n<option value=\"499\">Stainless Steel Sheets - 8*4 - SS316<\/option>\n<option value=\"305\">Steel Sheet - 8*4<\/option>\n<option value=\"283\">Sticking Glue<\/option>\n<option value=\"347\">Styrene Resin<\/option>\n<option value=\"351\">Tensav Acrylic - Sticker Labels<\/option>\n<option value=\"349\">Tensav Acrylic Wall - 1 Liter<\/option>\n<option value=\"343\">Thickener - AD102<\/option>\n<option value=\"341\">Titanium Dioxide - Resin<\/option>\n<option value=\"345\">Titanium Dioxide Paste - 101<\/option>\n<option value=\"284\">TMT Bar 4 mm<\/option>\n<option value=\"308\">White Laminate - Eso<\/option>\n<option value=\"309\">White Paint - Asian<\/option>\n<option value=\"289\">White Paper - 250gsm<\/option>\n<option value=\"330\">Yellow Dextrin IP<\/option>\n<\/select><\/td>\n<td><select class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-prod_type\" name=\"form-2-prod_type\">\n<option selected=\"\" value=\"Made-to-Order\">Made-to-Order<\/option>\n<option value=\"Made-to-Stock\">Made-to-Stock<\/option>\n<\/select><\/td>\n<td><select aria-describedby=\"id_form-2-bom_cal_helptext\" class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-bom_cal\" name=\"form-2-bom_cal\">\n<option selected=\"\" value=\"Capacity\">By Capacity<\/option>\n<option value=\"Output\">By Output<\/option>\n<\/select><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-2-capacity\" min=\"0\" name=\"form-2-capacity\" step=\"0.0001\" type=\"number\" value=\"0\"/><\/td>\n<td><select class=\"form-control form-control-solid\" data-control=\"select2\" data-placeholder=\"Select unit\" id=\"id_{{ item_formset.prefix }}-2-unit\" name=\"form-2-unit\">\n<option selected=\"\" value=\"\">---------<\/option>\n<option value=\"Kg\">Kg<\/option>\n<option value=\"Grams\">Grams<\/option>\n<option value=\"No\">No<\/option>\n<option value=\"Mtr\">Mtr<\/option>\n<option value=\"Ltr\">Ltr<\/option>\n<option value=\"Tonne\">Tonne<\/option>\n<option value=\"Metric Tonne\">Metric Tonne<\/option>\n<option value=\"Quintal\">Quintal<\/option>\n<option value=\"NA\">NA<\/option>\n<\/select><\/td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"><\/span>\n<span class=\"path2\"><\/span>\n<span class=\"path3\"><\/span>\n<span class=\"path4\"><\/span>\n<span class=\"path5\"><\/span>\n<\/i>\n<\/button>\n<\/td>\n<\/tr>", "uiCss": "", "backdropHtml": "", "fallback": "interactions/001-add-job-ctrl-m/page.html"}};</script><script src="../runtime.js"></script></body><!--end::Body--></html>

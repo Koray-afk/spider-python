@@ -1,0 +1,34 @@
+{
+  "source_page": "flow-ai-vendors-purchase-po-create",
+  "source_url": "https://likwidai.com/flow-ai/vendors/purchase-po/create",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Add item (Ctrl + n)",
+    "id": "add-more",
+    "class_name": "btn btn-link py-1",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#add-more",
+    "crawl_selector": "[data-crawl-id=\"2\"]",
+    "xpath": "//*[@id=\"add-more\"]",
+    "outer_html": "<button type=\"button\" class=\"btn btn-link py-1\" id=\"add-more\" data-crawl-id=\"2\">Add item (Ctrl + n)</button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/flow-ai/vendors/purchase-po/create",
+    "slug": "flow-ai-vendors-purchase-po-create",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button type=\"button\" class=\"btn btn-link py-1\" id=\"add-more\" data-crawl-id=\"2\">Add item (Ctrl + n)</button>",
+  "trigger_label": "Add item (Ctrl + n)",
+  "trigger_id": "add-more",
+  "trigger_class": "btn btn-link py-1",
+  "target_url": "https://likwidai.com/flow-ai/vendors/purchase-po/create",
+  "target_slug": "flow-ai-vendors-purchase-po-create",
+  "target_title": "Likwid.Ai"
+}

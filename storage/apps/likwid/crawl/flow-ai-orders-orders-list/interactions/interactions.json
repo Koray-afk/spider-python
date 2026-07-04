@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Order",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/011-order",
+    "relationship_file": "interactions/011-order/relationship.json"
+  },
+  {
+    "label": "Customer",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/012-customer",
+    "relationship_file": "interactions/012-customer/relationship.json"
+  },
+  {
+    "label": "Manual Code",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/013-manual-code",
+    "relationship_file": "interactions/013-manual-code/relationship.json"
+  },
+  {
+    "label": "Product",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/014-product",
+    "relationship_file": "interactions/014-product/relationship.json"
+  },
+  {
+    "label": "Received",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/015-received",
+    "relationship_file": "interactions/015-received/relationship.json"
+  },
+  {
+    "label": "ETC",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/016-etc",
+    "relationship_file": "interactions/016-etc/relationship.json"
+  },
+  {
+    "label": "Value",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/017-value",
+    "relationship_file": "interactions/017-value/relationship.json"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Add Row Ctrl+M",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-add-row-ctrl-m",
+    "relationship_file": "interactions/002-add-row-ctrl-m/relationship.json"
+  },
+  {
+    "label": "Select a customer",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/004-select-a-customer",
+    "relationship_file": "interactions/004-select-a-customer/relationship.json"
+  },
+  {
+    "label": "Select item",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/005-select-item",
+    "relationship_file": "interactions/005-select-item/relationship.json"
+  },
+  {
+    "label": "Remove row",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/006-remove-row",
+    "relationship_file": "interactions/006-remove-row/relationship.json"
+  }
+]

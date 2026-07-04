@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add Line",
+  "triggerId": "add-line-btn",
+  "triggerClass": "btn btn-sm btn-light-primary mt-3",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "unknown",
+  "sourcePage": "ledger-journal-new",
+  "sourceUrl": "https://likwidai.com/ledger/journal/new/",
+  "beforeUrl": "https://likwidai.com/ledger/journal/new/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/ledger/journal/new/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "ledger-journal-new/interactions/001-add-line",
+  "captured_at": "2026-07-03T11:03:13.740474+00:00"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "label": "New Category",
+    "id": "",
+    "className": "btn btn-sm btn-light-primary d-flex align-items-center gap-1",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "New Category",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add Contact",
+    "id": "",
+    "className": "btn btn-primary btn-sm",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Add Contact",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All contacts",
+    "id": "contactsCatFilterBtn",
+    "className": "btn btn-sm btn-light d-flex align-items-center gap-2",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "All contacts",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

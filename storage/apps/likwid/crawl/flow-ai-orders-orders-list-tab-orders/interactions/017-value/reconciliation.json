@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Value",
+    "tagName": "span",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"18\"]",
+    "outerHTML": "<span class=\"dt-column-title\" role=\"button\" data-crawl-id=\"18\">Value</span>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_ecommerce_sales_table > thead:nth-of-type(1) > tr:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<th aria-label=\"Value: Activate to invert sorting\" aria-sort=\"ascending\" class=\"text-end dt-type-numeric dt-orderable-asc dt-orderable-desc dt-ordering-asc\" colspan=\"1\" data-dt-column=\"8\" rowspan=\"1\" tabindex=\"0\"><span class=\"dt-column-title\" data-crawl-id=\"18\" role=\"button\">Value</span><span class=\"dt-column-order\"></span></th>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">300.00</span>\n</td>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">1000.00</span>\n</td>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">1200.00</span>\n</td>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">2000.00</span>\n</td>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">2000.00</span>\n</td>\n<div style=\"margin-top:5px;\">\n<a class=\"btn btn-xs btn-light-primary\" href=\"/flow-ai/orders/delivery-order/create/ORD-69-12826/\" style=\"padding:2px 8px;font-size:11px;\">Create DO</a>\n</div>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">3400.00</span>\n</td>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">7000.00</span>\n</td>\n<div style=\"margin-top:5px;\">\n<a class=\"btn btn-xs btn-light-primary\" href=\"/flow-ai/orders/delivery-order/create/ORD-69-62606/\" style=\"padding:2px 8px;font-size:11px;\">Create DO</a>\n</div>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">7200.00</span>\n</td>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">7500.00</span>\n</td>\n<span class=\"badge badge-light-secondary ms-1\" style=\"font-size:10px;\" title=\"Part of Sale Order\">SO</span>\n<td class=\"text-end dt-type-numeric sorting_1\">\n<span class=\"orders-td-main fw-semibold\">7500.00</span>\n</td>\n<div style=\"margin-top:5px;\">\n<a class=\"btn btn-xs btn-light-primary\" href=\"/flow-ai/orders/delivery-order/create/ORD-69-51678/\" style=\"padding:2px 8px;font-size:11px;\">Create DO</a>\n</div>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

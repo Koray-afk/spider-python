@@ -1,0 +1,34 @@
+{
+  "source_page": "ledger-gl",
+  "source_url": "https://likwidai.com/ledger/gl/",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "span",
+    "text": "All periods",
+    "id": "",
+    "class_name": "select2-selection select2-selection--single form-select form-select-sm form-select-solid",
+    "name": "",
+    "role": "combobox",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#filter-form > div:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"1\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/span[1]/span[1]/span[1]",
+    "outer_html": "<span class=\"select2-selection select2-selection--single form-select form-select-sm form-select-solid\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\" aria-disabled=\"false\" aria-labelledby=\"select2-fy-nv-container\" aria-controls=\"select2-fy-nv-container\" data-crawl-id=\"1\"><span class=\"select2-selection__rendered\" id=\"select2-fy-nv-container\" role=\"textbox\" aria-readonly=\"true\" title=\"All periods\">All periods</span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span>"
+  },
+  "target": {
+    "url": "https://likwidai.com/ledger/gl/",
+    "slug": "ledger-gl",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<span class=\"select2-selection select2-selection--single form-select form-select-sm form-select-solid\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\" aria-disabled=\"false\" aria-labelledby=\"select2-fy-nv-container\" aria-controls=\"select2-fy-nv-container\" data-crawl-id=\"1\"><span class=\"select2-selection__rendered\" id=\"select2-fy-nv-container\" role=\"textbox\" aria-readonly=\"true\" title=\"All periods\">All periods</span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span>",
+  "trigger_label": "All periods",
+  "trigger_id": "",
+  "trigger_class": "select2-selection select2-selection--single form-select form-select-sm form-select-solid",
+  "target_url": "https://likwidai.com/ledger/gl/",
+  "target_slug": "ledger-gl",
+  "target_title": "Likwid.Ai"
+}

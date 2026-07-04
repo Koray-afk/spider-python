@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Purchase",
+    "tagName": "button",
+    "id": "",
+    "className": "ld-stage ",
+    "selector": "[data-crawl-id=\"4\"]",
+    "outerHTML": "<button type=\"submit\" name=\"convert\" class=\"ld-stage \" data-crawl-id=\"4\"><span class=\"ld-stage-dot\"></span>Purchase</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_content_container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<span class=\"badge badge-light-warning\">Decision</span>\n<button class=\"ld-stage ld-stage-active\" name=\"decision\" type=\"submit\"><span class=\"ld-stage-dot\"></span>Decision</button>\n<button class=\"ld-stage\" name=\"retain\" type=\"submit\"><span class=\"ld-stage-dot\"></span>Retain</button>\n<svg height=\"0\" id=\"SvgjsSvg1001\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\" version=\"1.1\" width=\"2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svgjs=\"http://svgjs.dev\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path d=\"M0 0 \" id=\"SvgjsPath1004\"></path></svg>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

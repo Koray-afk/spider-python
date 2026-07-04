@@ -1,0 +1,34 @@
+{
+  "source_page": "flow-ai-bi-dashboard-inventory-intelligence",
+  "source_url": "https://likwidai.com/flow-ai/bi-dashboard/inventory-intelligence/",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Categories",
+    "id": "",
+    "class_name": "filter-btn filter-btn-active",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#kt_app_content_container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(2)",
+    "crawl_selector": "[data-crawl-id=\"2\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[2]",
+    "outer_html": "<button class=\"filter-btn filter-btn-active\" data-crawl-id=\"2\">Categories</button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/flow-ai/bi-dashboard/inventory-intelligence/",
+    "slug": "flow-ai-bi-dashboard-inventory-intelligence",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button class=\"filter-btn filter-btn-active\" data-crawl-id=\"2\">Categories</button>",
+  "trigger_label": "Categories",
+  "trigger_id": "",
+  "trigger_class": "filter-btn filter-btn-active",
+  "target_url": "https://likwidai.com/flow-ai/bi-dashboard/inventory-intelligence/",
+  "target_slug": "flow-ai-bi-dashboard-inventory-intelligence",
+  "target_title": "Likwid.Ai"
+}

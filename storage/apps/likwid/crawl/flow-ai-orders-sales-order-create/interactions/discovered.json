@@ -1,0 +1,131 @@
+[
+  {
+    "label": "Create Sale Order",
+    "id": "",
+    "className": "btn btn-dark px-10",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Create Sale Order",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Add Row Ctrl+M",
+    "id": "add-more",
+    "className": "btn btn-sm btn-light btn-active-light-primary",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Add Row Ctrl+M",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select a customer",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Select a customer",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Select item",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid so-item-select",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "ax_name": "Select item",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Remove row",
+    "id": "",
+    "className": "btn btn-icon btn-sm btn-light btn-active-light-danger btn-delete-row",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Remove row",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "2",
+    "id": "id_ref_no",
+    "className": "form-control form-control-solid",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "input",
+    "source": "accessibility",
+    "ax_role": "input",
+    "ax_name": "2",
+    "llm_type": "interaction"
+  }
+]

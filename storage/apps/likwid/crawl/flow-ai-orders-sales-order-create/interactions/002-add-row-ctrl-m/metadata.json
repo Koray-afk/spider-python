@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add Row Ctrl+M",
+  "triggerId": "add-more",
+  "triggerClass": "btn btn-sm btn-light btn-active-light-primary",
+  "selector": "[data-crawl-id=\"2\"]",
+  "interactionType": "unknown",
+  "sourcePage": "flow-ai-orders-sales-order-create",
+  "sourceUrl": "https://likwidai.com/flow-ai/orders/sales-order/create/",
+  "beforeUrl": "https://likwidai.com/flow-ai/orders/sales-order/create/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/flow-ai/orders/sales-order/create/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "flow-ai-orders-sales-order-create/interactions/002-add-row-ctrl-m",
+  "captured_at": "2026-07-03T08:53:20.406577+00:00"
+}

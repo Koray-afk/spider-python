@@ -1,0 +1,113 @@
+[
+  {
+    "label": "Nov 30, 2025 - Dec 30, 2025",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Nov 30, 2025 - Dec 30, 2025",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Categories",
+    "id": "",
+    "className": "filter-btn filter-btn-active",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Categories",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Vendors",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Vendors",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "#",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "ax_name": "#",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Vendor",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "Vendor",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Lead Time",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "Lead Time",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "On-Time",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "On-Time",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Price Score",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Price Score",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Export",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Zoom Out",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "div",
+    "ax_name": "Zoom Out",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Zoom Out",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "div",
+    "source": "accessibility",
+    "ax_role": "button",
+    "ax_name": "Zoom Out",
+    "llm_type": "interaction"
+  }
+]

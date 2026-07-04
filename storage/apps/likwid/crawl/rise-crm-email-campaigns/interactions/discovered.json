@@ -1,0 +1,52 @@
+[
+  {
+    "label": "New Campaign",
+    "id": "",
+    "className": "btn btn-sm btn-primary",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "New Campaign",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "AI Generate",
+    "id": "",
+    "className": "btn btn-sm btn-light-primary",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "AI Generate",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "View Analytics",
+    "id": "",
+    "className": "btn btn-icon btn-light btn-active-light-primary btn-sm me-1",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "View Analytics",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit",
+    "id": "",
+    "className": "btn btn-icon btn-light btn-active-light-primary btn-sm me-1",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Edit",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Delete",
+    "id": "",
+    "className": "btn btn-icon btn-light btn-active-light-primary btn-sm",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Delete",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

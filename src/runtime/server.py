@@ -19,6 +19,7 @@ import threading
 import webbrowser
 from pathlib import Path
 
+from config import get_app_config
 from storage.storage_manager import get_stitched_dir
 
 DEFAULT_PORT = 8000
@@ -153,6 +154,9 @@ def _make_handler(stitched_dir: Path, entry_path: str, watch: bool):
             if self.command != "HEAD":
                 self.wfile.write(body)
 
+        def do_POST(self):
+            self.send_error(501, "Unsupported method ('POST')")
+
         def do_GET(self):
             path = self.path.split("?", 1)[0].split("#", 1)[0]
 
@@ -215,7 +219,11 @@ def serve_app(
             f"Run: python main.py stitch {app_name}"
         )
 
-    entry_path = _resolve_entry_path(stitched_dir)
+    entry_override = get_app_config(app_name).get("stitch_entry_slug")
+    if entry_override and (stitched_dir / entry_override / "page.html").exists():
+        entry_path = f"/{entry_override}/page.html"
+    else:
+        entry_path = _resolve_entry_path(stitched_dir)
     handler = _make_handler(stitched_dir, entry_path, watch)
 
     try:

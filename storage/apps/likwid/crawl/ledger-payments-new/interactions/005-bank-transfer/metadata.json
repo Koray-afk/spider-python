@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Bank Transfer",
+  "triggerId": "",
+  "triggerClass": "select2-selection select2-selection--single form-select form-select-solid",
+  "selector": "[data-crawl-id=\"5\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "ledger-payments-new",
+  "sourceUrl": "https://likwidai.com/ledger/payments/new/",
+  "beforeUrl": "https://likwidai.com/ledger/payments/new/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/ledger/payments/new/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "ledger-payments-new/interactions/005-bank-transfer",
+  "captured_at": "2026-07-03T11:03:36.209208+00:00"
+}

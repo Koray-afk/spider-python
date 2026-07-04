@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Status",
+  "triggerId": "",
+  "triggerClass": "select2-selection select2-selection--single form-select form-select-solid",
+  "selector": "[data-crawl-id=\"8\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "account-view-users",
+  "sourceUrl": "https://likwidai.com/account/view-users",
+  "beforeUrl": "https://likwidai.com/account/view-users/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/account/view-users/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "account-view-users/interactions/002-status",
+  "captured_at": "2026-07-03T08:18:16.500619+00:00"
+}

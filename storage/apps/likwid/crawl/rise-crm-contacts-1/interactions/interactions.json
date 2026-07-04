@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Campaign -Likwid ERP - Orders Problem Statement",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-campaign-likwid-erp-orders-problem-statement",
+    "relationship_file": "interactions/002-campaign-likwid-erp-orders-problem-statement/relationship.json"
+  },
+  {
+    "label": "Campaign -Likwid ERP - 3 stages of AI",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-campaign-likwid-erp-3-stages-of-ai",
+    "relationship_file": "interactions/003-campaign-likwid-erp-3-stages-of-ai/relationship.json"
+  },
+  {
+    "label": "Campaign -Cogent - CS 01",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-campaign-cogent-cs-01",
+    "relationship_file": "interactions/004-campaign-cogent-cs-01/relationship.json"
+  },
+  {
+    "label": "Campaign -Cogent Feedback",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/005-campaign-cogent-feedback",
+    "relationship_file": "interactions/005-campaign-cogent-feedback/relationship.json"
+  },
+  {
+    "label": "Campaign -Cogent Free Users - Offer",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/006-campaign-cogent-free-users-offer",
+    "relationship_file": "interactions/006-campaign-cogent-free-users-offer/relationship.json"
+  },
+  {
+    "label": "Campaign -Maturity Assessment- Phase 2",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/007-campaign-maturity-assessment-phase-2",
+    "relationship_file": "interactions/007-campaign-maturity-assessment-phase-2/relationship.json"
+  },
+  {
+    "label": "Campaign -V2.0 - Launch",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/008-campaign-v2-0-launch",
+    "relationship_file": "interactions/008-campaign-v2-0-launch/relationship.json"
+  }
+]

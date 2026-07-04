@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Save Assignment",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"6\"]",
+    "outerHTML": "<button type=\"submit\" name=\"assign\" class=\"btn btn-sm btn-dark\" data-crawl-id=\"6\">Save Assignment</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

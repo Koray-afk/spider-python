@@ -1,0 +1,505 @@
+[
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-container swal2-center swal2-backdrop-show",
+    "parentId": "kt_app_body",
+    "parentTag": "BODY"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "swal2-validation-message",
+    "cls": "swal2-validation-message"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-container swal2-center swal2-backdrop-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "UL",
+    "id": "",
+    "cls": "swal2-progress-steps"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon-content",
+    "parentId": "",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-icon swal2-question swal2-icon-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "IMG",
+    "id": "",
+    "cls": "swal2-image"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "H2",
+    "id": "swal2-title",
+    "cls": "swal2-title"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-close"
+  },
+  {
+    "kind": "added",
+    "tag": "STRONG",
+    "id": "",
+    "cls": "",
+    "parentId": "swal2-html-container",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "added",
+    "tag": "BR",
+    "id": "",
+    "cls": "",
+    "parentId": "swal2-html-container",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "added",
+    "tag": "BR",
+    "id": "",
+    "cls": "",
+    "parentId": "swal2-html-container",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "added",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "text-muted fs-7",
+    "parentId": "swal2-html-container",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "swal2-html-container",
+    "cls": "swal2-html-container"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "INPUT",
+    "id": "",
+    "cls": "swal2-input"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "INPUT",
+    "id": "",
+    "cls": "swal2-input"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "INPUT",
+    "id": "",
+    "cls": "swal2-input"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "INPUT",
+    "id": "",
+    "cls": "swal2-file"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "INPUT",
+    "id": "",
+    "cls": "swal2-file"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "INPUT",
+    "id": "",
+    "cls": "swal2-file"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-range"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-range"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SELECT",
+    "id": "",
+    "cls": "swal2-select"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SELECT",
+    "id": "",
+    "cls": "swal2-select"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "SELECT",
+    "id": "",
+    "cls": "swal2-select"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-radio"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-radio"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LABEL",
+    "id": "",
+    "cls": "swal2-checkbox"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "LABEL",
+    "id": "",
+    "cls": "swal2-checkbox"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "TEXTAREA",
+    "id": "",
+    "cls": "swal2-textarea"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "TEXTAREA",
+    "id": "",
+    "cls": "swal2-textarea"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "TEXTAREA",
+    "id": "",
+    "cls": "swal2-textarea"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-actions"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-confirm btn btn-info"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-confirm btn btn-info"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-confirm btn btn-info"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-confirm btn btn-info"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-confirm btn btn-info"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-deny"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-deny"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-cancel btn btn-light"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-cancel btn btn-light"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-cancel btn btn-light"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-cancel btn btn-light"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-confirm btn btn-info"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-deny"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "swal2-cancel btn btn-light"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-footer"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-container swal2-center swal2-backdrop-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default swal2-shown swal2-height-auto"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default swal2-shown swal2-height-auto"
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "SCRIPT",
+    "id": "",
+    "cls": ""
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "DIV",
+    "id": "kt_app_root",
+    "cls": "d-flex flex-column flex-root"
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "svg",
+    "id": "SvgjsSvg1001",
+    "cls": ""
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-container swal2-center swal2-backdrop-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-timer-progress-bar"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-popup swal2-modal swal2-icon-question"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-container swal2-center swal2-backdrop-show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "",
+    "cls": "swal2-container swal2-center swal2-backdrop-show"
+  }
+]

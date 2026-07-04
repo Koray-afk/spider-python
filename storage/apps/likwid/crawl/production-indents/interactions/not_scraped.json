@@ -1,0 +1,86 @@
+[
+  {
+    "label": "Actions",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "All Status",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "All Orders",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "Indent Code",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Order",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Product",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Order Qty",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Free Stock",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Indent Qty",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Created",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Status",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Expired",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

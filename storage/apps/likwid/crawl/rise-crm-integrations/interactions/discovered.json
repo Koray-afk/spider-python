@@ -1,0 +1,15 @@
+[
+  {
+    "label": "Configure",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Configure",
+    "ax_role": "button",
+    "ax_states": [
+      "collapsed"
+    ],
+    "llm_type": "tab_switch"
+  }
+]

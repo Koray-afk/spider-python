@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Packaging Material Store",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/008-packaging-material-store",
+    "relationship_file": "interactions/008-packaging-material-store/relationship.json"
+  },
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/009-interaction",
+    "relationship_file": "interactions/009-interaction/relationship.json"
+  },
+  {
+    "label": "Why is stock leaving?",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/010-why-is-stock-leaving",
+    "relationship_file": "interactions/010-why-is-stock-leaving/relationship.json"
+  },
+  {
+    "label": "Cost of Goods Sold (5001) \u2014 default",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/011-cost-of-goods-sold-5001-default",
+    "relationship_file": "interactions/011-cost-of-goods-sold-5001-default/relationship.json"
+  },
+  {
+    "label": "Pet Bottle - 100ml Brute Round",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/012-pet-bottle-100ml-brute-round",
+    "relationship_file": "interactions/012-pet-bottle-100ml-brute-round/relationship.json"
+  }
+]

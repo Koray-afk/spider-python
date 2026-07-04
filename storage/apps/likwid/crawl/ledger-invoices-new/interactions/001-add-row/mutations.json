@@ -1,0 +1,83 @@
+[
+  {
+    "kind": "added",
+    "tag": "TR",
+    "id": "",
+    "cls": "item-row",
+    "parentId": "items-tbody",
+    "parentTag": "TBODY"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SELECT",
+    "id": "id_items-0-inv_item",
+    "cls": "form-select form-select-solid item-select"
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "SELECT",
+    "id": "id_items-0-inv_item",
+    "cls": "form-select form-select-solid item-select"
+  },
+  {
+    "kind": "added",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5",
+    "parentId": "",
+    "parentTag": "TD"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "added",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-selection select2-selection--single form-select",
+    "parentId": "",
+    "parentTag": "SPAN"
+  },
+  {
+    "kind": "added",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-selection__placeholder",
+    "parentId": "select2-id_items-4-inv_item-container",
+    "parentTag": "SPAN"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SELECT",
+    "id": "id_items-4-inv_item",
+    "cls": "form-select form-select-solid item-select"
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "SELECT",
+    "id": "id_items-4-inv_item",
+    "cls": "form-select form-select-solid item-select"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  }
+]

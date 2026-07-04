@@ -39,6 +39,7 @@ from config import get_app_config
 from storage.storage_manager import (
     clean_stitched,
     get_crawl_dir,
+    get_metadata_dir,
     get_sitemap_path,
     get_stitched_dir,
 )
@@ -231,88 +232,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     return e.target;
   }
 
-  function showDemoHint(msg) {
-    if (document.getElementById("stitch-demo-hint")) return;
-    var el = document.createElement("div");
-    el.id = "stitch-demo-hint";
-    el.textContent = msg || "Demo mode \u2014 this action is outside the recorded path";
-    el.style.cssText = [
-      "position:fixed", "bottom:24px", "right:24px", "z-index:99999",
-      "background:rgba(30,30,30,0.88)", "color:#fff",
-      "padding:10px 18px", "border-radius:8px",
-      "font:13px/1.5 system-ui,sans-serif",
-      "pointer-events:none", "opacity:0",
-      "transition:opacity 0.2s",
-    ].join(";");
-    document.body.appendChild(el);
-    requestAnimationFrame(function () { el.style.opacity = "1"; });
-    setTimeout(function () {
-      el.style.opacity = "0";
-      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 250);
-    }, 3000);
-  }
-
-  var FORM_STORE_PREFIX = "stitch_form:";
-
-  function formStoreKey(form) {
-    if (form.id) return form.id;
-    var name = form.getAttribute("name");
-    if (name) return name;
-    var forms = document.querySelectorAll("form");
-    for (var i = 0; i < forms.length; i++) {
-      if (forms[i] === form) return "form_" + i;
-    }
-    return "form_0";
-  }
-
-  function loadFormStore() {
-    try {
-      return JSON.parse(localStorage.getItem(FORM_STORE_PREFIX + location.pathname) || "{}");
-    } catch (err) {
-      return {};
-    }
-  }
-
-  function saveFormFields(form) {
-    var data = {};
-    form.querySelectorAll("input[name], select[name], textarea[name]").forEach(function (el) {
-      if (!el.name || el.name === "csrfmiddlewaretoken") return;
-      if (el.type === "checkbox") data[el.name] = el.checked;
-      else if (el.type === "radio") {
-        if (el.checked) data[el.name] = el.value;
-      } else data[el.name] = el.value;
-    });
-    var all = loadFormStore();
-    all[formStoreKey(form)] = data;
-    localStorage.setItem(FORM_STORE_PREFIX + location.pathname, JSON.stringify(all));
-    return data;
-  }
-
-  function restoreFormFields() {
-    var all = loadFormStore();
-    document.querySelectorAll("form").forEach(function (form) {
-      var data = all[formStoreKey(form)];
-      if (!data) return;
-      Object.keys(data).forEach(function (name) {
-        var fields = form.querySelectorAll('[name="' + name + '"]');
-        if (!fields.length) return;
-        var sample = fields[0];
-        if (sample.type === "checkbox") {
-          fields.forEach(function (el) {
-            el.checked = !!data[name];
-          });
-        } else if (sample.type === "radio") {
-          fields.forEach(function (el) {
-            el.checked = el.value === data[name];
-          });
-        } else {
-          fields.forEach(function (el) {
-            el.value = data[name];
-          });
-        }
-      });
-    });
-  }
+  function showDemoHint(msg) {}
 
   function findPanel(toggle) {
     if (toggle.classList && toggle.classList.contains("menu-accordion")) {
@@ -440,9 +360,15 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       var form = e.target;
       if (!form || !form.tagName || form.tagName.toUpperCase() !== "FORM") return;
       var method = (form.getAttribute("method") || "get").toLowerCase();
+      if (method === "get" && typeof window.__stitchLikwidFlowSubmit === "function") {
+        if (window.__stitchLikwidFlowSubmit(form, e)) return;
+      }
       if (method !== "post") return;
       e.preventDefault();
       e.stopPropagation();
+      if (typeof window.__stitchLikwidFlowSubmit === "function" && window.__stitchLikwidFlowSubmit(form, e)) {
+        return;
+      }
       var sub = e.submitter || form.querySelector("[type='submit'], button:not([type])");
       if (sub && sub.classList.contains("ld-stage")) {
         activateLeadStage(sub);
@@ -452,9 +378,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         injectInteraction(sub);
         return;
       }
-      saveFormFields(form);
-      showDemoHint("Saved");
-      return;
+      showDemoHint();
     },
     true
   );
@@ -1268,7 +1192,6 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   })();
   // ── End Stripe sidebar shortcuts normalizer ───────────────────────────────
 
-  restoreFormFields();
   console.log("[STITCH] runtime ready");
 })();
 """
@@ -3209,11 +3132,28 @@ def _wire_tabs(
     return tabs_configs
 
 
+def _is_likwid_flows_slug(slug: str) -> bool:
+    if slug == "flow-ai-customers-list":
+        return True
+    if slug.startswith("flow-ai-orders-orders-list"):
+        return True
+    if slug == "flow-ai-orders-sales-order-create":
+        return True
+    if slug in ("flow-ai-vendors-add-vendor", "flow-ai-vendors-vendor-list"):
+        return True
+    if slug == "flow-ai-inventory-stock-list":
+        return True
+    return False
+
+
 def _inject_runtime(
     soup: BeautifulSoup,
     to_root: str,
     configs: dict[str, dict] | None = None,
     tabs_configs: dict[str, dict] | None = None,
+    *,
+    slug: str = "",
+    likwid_flows: dict | None = None,
 ) -> None:
     body = soup.body or soup
     if configs:
@@ -3228,6 +3168,12 @@ def _inject_runtime(
         tab_tag = soup.new_tag("script")
         tab_tag.string = f"window.__STITCH_TABS__ = {data};"
         body.append(tab_tag)
+    if likwid_flows and _is_likwid_flows_slug(slug):
+        data = json.dumps(likwid_flows, ensure_ascii=True).replace("</", "<\\/")
+        flow_tag = soup.new_tag("script")
+        flow_tag.string = f"window.__LIKWID_FLOWS__ = {data};"
+        body.append(flow_tag)
+        body.append(soup.new_tag("script", src=f"{to_root}likwid_flows.js"))
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
 
 
@@ -3403,6 +3349,7 @@ def _process_html(
     navigations: list[dict] | None = None,
     discovered: list[dict] | None = None,
     expand_sidebars: bool = True,
+    likwid_flows: dict | None = None,
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
     stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
@@ -3469,7 +3416,14 @@ def _process_html(
     likwid_forms = _neutralize_likwid_post_forms(soup)
     if likwid_forms:
         print(f"[STITCH] Neutralized {likwid_forms} Likwid POST stage button(s) on {page_dir.name if page_dir else '?'}")
-    _inject_runtime(soup, to_root, configs, tabs_configs)
+    _inject_runtime(
+        soup,
+        to_root,
+        configs,
+        tabs_configs,
+        slug=page_dir.name if page_dir is not None else "",
+        likwid_flows=likwid_flows,
+    )
     return _fix_svg_viewbox_html(str(soup)), page_links, inter_manifest, accordions, fixes
 
 
@@ -3862,6 +3816,20 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
 
     (stitched_dir / "runtime.js").write_text(RUNTIME_JS, encoding="utf-8")
 
+    flow_meta = get_metadata_dir(app_name) / "flow_replays.json"
+    likwid_flows = None
+    if app_name == "likwid" and flow_meta.is_file():
+        try:
+            likwid_flows = json.loads(flow_meta.read_text(encoding="utf-8"))
+        except Exception:
+            likwid_flows = None
+    flows_js = Path(__file__).resolve().parent / "src" / "runtime" / "likwid_flows.js"
+    if likwid_flows and flows_js.is_file():
+        (stitched_dir / "likwid_flows.js").write_text(
+            flows_js.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        print("[STITCH] Likwid flows layer enabled")
+
     fonts_dir = stitched_dir / "assets" / "fonts"
     fonts_dir.mkdir(parents=True, exist_ok=True)
     css_dir = stitched_dir / "assets" / "css"
@@ -3899,6 +3867,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             navigations=navigations,
             discovered=discovered,
             expand_sidebars=expand_sidebars,
+            likwid_flows=likwid_flows,
         )
         new_html = _localize_hubspot_css(new_html, css_dir, to_root="../", css_cdn_dirs=css_cdn_dirs)
         new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
@@ -3928,6 +3897,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 valid_slugs=valid_slugs,
                 navigations=navigations,
                 expand_sidebars=expand_sidebars,
+                likwid_flows=likwid_flows,
             )
             new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../", css_cdn_dirs=css_cdn_dirs)
             new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")

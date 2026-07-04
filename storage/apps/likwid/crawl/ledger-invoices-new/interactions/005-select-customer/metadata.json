@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "\u2014 Select Customer \u2014",
+  "triggerId": "",
+  "triggerClass": "select2-selection select2-selection--single form-select form-select-solid",
+  "selector": "[data-crawl-id=\"4\"]",
+  "interactionType": "dropdown",
+  "sourcePage": "ledger-invoices-new",
+  "sourceUrl": "https://likwidai.com/ledger/invoices/new/",
+  "beforeUrl": "https://likwidai.com/ledger/invoices/new/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/ledger/invoices/new/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "ledger-invoices-new/interactions/005-select-customer",
+  "captured_at": "2026-07-03T11:03:03.110595+00:00"
+}

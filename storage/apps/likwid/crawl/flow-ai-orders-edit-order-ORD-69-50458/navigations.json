@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Update",
+    "tag_name": "button",
+    "selector": "#kt_modal_add_customer_form > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://likwidai.com/flow-ai/orders/orders-list/",
+    "target_slug": "flow-ai-orders-orders-list",
+    "target_page": "../flow-ai-orders-orders-list/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Update",
+      "id": "",
+      "class_name": "btn btn-dark",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#kt_modal_add_customer_form > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/button[1]",
+      "outer_html": "<button type=\"submit\" class=\"btn btn-dark\" data-crawl-id=\"1\">Update</button>"
+    }
+  }
+]

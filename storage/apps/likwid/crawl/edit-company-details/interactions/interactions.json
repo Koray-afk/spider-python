@@ -1,0 +1,8 @@
+[
+  {
+    "label": "Select company type",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/002-select-company-type",
+    "relationship_file": "interactions/002-select-company-type/relationship.json"
+  }
+]

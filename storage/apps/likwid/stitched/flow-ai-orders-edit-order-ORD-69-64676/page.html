@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en"><!--begin::Head--><head>
+<title>Likwid.Ai</title>
+<!-- Google tag (gtag.js) -->
+<link href="https://likwidai.com/static/images/favicon-32x32.png" rel="shortcut icon"/>
+<link href="https://likwidai.com/static/images/apple-touch-icon.png" rel="shortcut icon"/>
+<!--begin::Fonts(mandatory for all pages)-->
+<link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" rel="stylesheet"/>
+<!--end::Fonts-->
+<!--begin::Vendor Stylesheets(used for this page only)-->
+<link href="../assets/css/static_suitestatic_assets_plugins_custom_datatables_datatables_bundle_css.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/static_suitestatic_assets_plugins_custom_vis-timeline_vis-timeline_bundle_css.css" rel="stylesheet" type="text/css"/>
+<!--end::Vendor Stylesheets-->
+<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+<link href="../assets/css/static_suitestatic_assets_plugins_global_plugins_bundle_css.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/static_suitestatic_assets_css_style_bundle_css.css" rel="stylesheet" type="text/css"/>
+<!--end::Global Stylesheets Bundle-->
+<style id="plotly.js-style-global"></style>
+<style>
+	.messages-container {
+		position: fixed;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 9999;
+		width: 25%;
+	}
+	</style><style type="text/css">.vis-time-axis{overflow:hidden;position:relative}.vis-time-axis.vis-foreground{left:0;top:0;width:100%}.vis-time-axis.vis-background{height:100%;left:0;position:absolute;top:0;width:100%}.vis-time-axis .vis-text{box-sizing:border-box;color:#4d4d4d;overflow:hidden;padding:3px;position:absolute;white-space:nowrap}.vis-time-axis .vis-text.vis-measure{margin-left:0;margin-right:0;padding-left:0;padding-right:0;position:absolute;visibility:hidden}.vis-time-axis .vis-grid.vis-vertical{border-left:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-vertical-rtl{border-right:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-minor{border-color:#e5e5e5}.vis-time-axis .vis-grid.vis-major{border-color:#bfbfbf}</style><style type="text/css">.vis .overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}.vis-active{box-shadow:0 0 10px #86d5f8}</style><style type="text/css">.vis-custom-time{background-color:#6e94ff;cursor:move;width:2px;z-index:1}.vis-custom-time>.vis-custom-time-marker{background-color:inherit;color:#fff;cursor:auto;font-size:12px;padding:3px 5px;top:0;white-space:nowrap;z-index:inherit}</style><style type="text/css">.vis-current-time{background-color:#ff7f6e;pointer-events:none;width:2px;z-index:1}.vis-rolling-mode-btn{background:#3876c2;border-radius:50%;color:#fff;cursor:pointer;font-size:28px;font-weight:700;height:40px;opacity:.8;position:absolute;right:20px;text-align:center;top:7px;width:40px}.vis-rolling-mode-btn:before{content:"\26F6"}.vis-rolling-mode-btn:hover{opacity:1}</style><style type="text/css">.vis-panel{box-sizing:border-box;margin:0;padding:0;position:absolute}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right,.vis-panel.vis-top{border:1px #bfbfbf}.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right{border-bottom-style:solid;border-top-style:solid;overflow:hidden}.vis-left.vis-panel.vis-vertical-scroll,.vis-right.vis-panel.vis-vertical-scroll{height:100%;overflow-x:hidden;overflow-y:scroll}.vis-left.vis-panel.vis-vertical-scroll{direction:rtl}.vis-left.vis-panel.vis-vertical-scroll .vis-content,.vis-right.vis-panel.vis-vertical-scroll{direction:ltr}.vis-right.vis-panel.vis-vertical-scroll .vis-content{direction:rtl}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-top{border-left-style:solid;border-right-style:solid}.vis-background{overflow:hidden}.vis-panel>.vis-content{position:relative}.vis-panel .vis-shadow{box-shadow:0 0 10px rgba(0,0,0,.8);height:1px;position:absolute;width:100%}.vis-panel .vis-shadow.vis-top{left:0;top:-1px}.vis-panel .vis-shadow.vis-bottom{bottom:-1px;left:0}</style><style type="text/css">.vis-graph-group0{fill:#4f81bd;fill-opacity:0;stroke-width:2px;stroke:#4f81bd}.vis-graph-group1{fill:#f79646;fill-opacity:0;stroke-width:2px;stroke:#f79646}.vis-graph-group2{fill:#8c51cf;fill-opacity:0;stroke-width:2px;stroke:#8c51cf}.vis-graph-group3{fill:#75c841;fill-opacity:0;stroke-width:2px;stroke:#75c841}.vis-graph-group4{fill:#ff0100;fill-opacity:0;stroke-width:2px;stroke:#ff0100}.vis-graph-group5{fill:#37d8e6;fill-opacity:0;stroke-width:2px;stroke:#37d8e6}.vis-graph-group6{fill:#042662;fill-opacity:0;stroke-width:2px;stroke:#042662}.vis-graph-group7{fill:#00ff26;fill-opacity:0;stroke-width:2px;stroke:#00ff26}.vis-graph-group8{fill:#f0f;fill-opacity:0;stroke-width:2px;stroke:#f0f}.vis-graph-group9{fill:#8f3938;fill-opacity:0;stroke-width:2px;stroke:#8f3938}.vis-timeline .vis-fill{fill-opacity:.1;stroke:none}.vis-timeline .vis-bar{fill-opacity:.5;stroke-width:1px}.vis-timeline .vis-point{stroke-width:2px;fill-opacity:1}.vis-timeline .vis-legend-background{stroke-width:1px;fill-opacity:.9;fill:#fff;stroke:#c2c2c2}.vis-timeline .vis-outline{stroke-width:1px;fill-opacity:1;fill:#fff;stroke:#e5e5e5}.vis-timeline .vis-icon-fill{fill-opacity:.3;stroke:none}</style><style type="text/css">.vis-timeline{border:1px solid #bfbfbf;box-sizing:border-box;margin:0;overflow:hidden;padding:0;position:relative}.vis-loading-screen{height:100%;left:0;position:absolute;top:0;width:100%}</style><style type="text/css">.vis [class*=span]{min-height:0;width:auto}</style><style type="text/css">.vis-item{background-color:#d5ddf6;border-color:#97b0f8;border-width:1px;color:#1a1a1a;display:inline-block;position:absolute;z-index:1}.vis-item.vis-selected{background-color:#fff785;border-color:#ffc200;z-index:2}.vis-editable.vis-selected{cursor:move}.vis-item.vis-point.vis-selected{background-color:#fff785}.vis-item.vis-box{border-radius:2px;border-style:solid;text-align:center}.vis-item.vis-point{background:none}.vis-item.vis-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}.vis-item.vis-range{border-radius:2px;border-style:solid;box-sizing:border-box}.vis-item.vis-background{background-color:rgba(213,221,246,.4);border:none;box-sizing:border-box;margin:0;padding:0}.vis-item .vis-item-overflow{height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%}.vis-item-visible-frame{white-space:nowrap}.vis-item.vis-range .vis-item-content{display:inline-block;position:relative}.vis-item.vis-background .vis-item-content{display:inline-block;position:absolute}.vis-item.vis-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item .vis-item-content{box-sizing:border-box;padding:5px;white-space:nowrap}.vis-item .vis-onUpdateTime-tooltip{background:#4f81bd;border-radius:1px;color:#fff;padding:5px;position:absolute;text-align:center;transition:.4s;-o-transition:.4s;-moz-transition:.4s;-webkit-transition:.4s;white-space:nowrap;width:200px}.vis-item .vis-delete,.vis-item .vis-delete-rtl{box-sizing:border-box;cursor:pointer;height:24px;padding:0 5px;position:absolute;top:0;-webkit-transition:background .2s linear;-moz-transition:background .2s linear;-ms-transition:background .2s linear;-o-transition:background .2s linear;transition:background .2s linear;width:24px}.vis-item .vis-delete{right:-24px}.vis-item .vis-delete-rtl{left:-24px}.vis-item .vis-delete-rtl:after,.vis-item .vis-delete:after{color:red;content:"\00D7";font-family:arial,sans-serif;font-size:22px;font-weight:700;-webkit-transition:color .2s linear;-moz-transition:color .2s linear;-ms-transition:color .2s linear;-o-transition:color .2s linear;transition:color .2s linear}.vis-item .vis-delete-rtl:hover,.vis-item .vis-delete:hover{background:red}.vis-item .vis-delete-rtl:hover:after,.vis-item .vis-delete:hover:after{color:#fff}.vis-item .vis-drag-center{cursor:move;height:100%;left:0;position:absolute;top:0;width:100%}.vis-item.vis-range .vis-drag-left{cursor:w-resize;left:-4px}.vis-item.vis-range .vis-drag-left,.vis-item.vis-range .vis-drag-right{height:100%;max-width:20%;min-width:2px;position:absolute;top:0;width:24px}.vis-item.vis-range .vis-drag-right{cursor:e-resize;right:-4px}.vis-range.vis-item.vis-readonly .vis-drag-left,.vis-range.vis-item.vis-readonly .vis-drag-right{cursor:auto}.vis-item.vis-cluster{border-radius:2px;border-style:solid;text-align:center;vertical-align:center}.vis-item.vis-cluster-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item.vis-cluster-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}</style><style type="text/css">div.vis-tooltip{background-color:#f5f4ed;border:1px solid #808074;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:3px 3px 10px rgba(0,0,0,.2);color:#000;font-family:verdana;font-size:14px;padding:5px;pointer-events:none;position:absolute;visibility:hidden;white-space:nowrap;z-index:5}</style><style type="text/css">.vis-itemset{box-sizing:border-box;margin:0;padding:0;position:relative}.vis-itemset .vis-background,.vis-itemset .vis-foreground{height:100%;overflow:visible;position:absolute;width:100%}.vis-axis{height:0;left:0;position:absolute;width:100%;z-index:1}.vis-foreground .vis-group{border-bottom:1px solid #bfbfbf;box-sizing:border-box;position:relative}.vis-foreground .vis-group:last-child{border-bottom:none}.vis-nesting-group{cursor:pointer}.vis-label.vis-nested-group.vis-group-level-unknown-but-gte1{background:#f5f5f5}.vis-label.vis-nested-group.vis-group-level-0{background-color:#fff}.vis-ltr .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-left:0}.vis-rtl .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-right:0}.vis-label.vis-nested-group.vis-group-level-1{background-color:rgba(0,0,0,.05)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-left:15px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-right:15px}.vis-label.vis-nested-group.vis-group-level-2{background-color:rgba(0,0,0,.1)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-left:30px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-right:30px}.vis-label.vis-nested-group.vis-group-level-3{background-color:rgba(0,0,0,.15)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-left:45px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-right:45px}.vis-label.vis-nested-group.vis-group-level-4{background-color:rgba(0,0,0,.2)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-left:60px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-right:60px}.vis-label.vis-nested-group.vis-group-level-5{background-color:rgba(0,0,0,.25)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-left:75px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-right:75px}.vis-label.vis-nested-group.vis-group-level-6{background-color:rgba(0,0,0,.3)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-left:90px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-right:90px}.vis-label.vis-nested-group.vis-group-level-7{background-color:rgba(0,0,0,.35)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-left:105px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-right:105px}.vis-label.vis-nested-group.vis-group-level-8{background-color:rgba(0,0,0,.4)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-left:120px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-right:120px}.vis-label.vis-nested-group.vis-group-level-9{background-color:rgba(0,0,0,.45)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-left:135px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-right:135px}.vis-label.vis-nested-group{background-color:rgba(0,0,0,.5)}.vis-ltr .vis-label.vis-nested-group .vis-inner{padding-left:150px}.vis-rtl .vis-label.vis-nested-group .vis-inner{padding-right:150px}.vis-group-level-unknown-but-gte1{border:1px solid red}.vis-label.vis-nesting-group:before{display:inline-block;width:15px}.vis-label.vis-nesting-group.expanded:before{content:"\25BC"}.vis-label.vis-nesting-group.collapsed:before{content:"\25B6"}.vis-rtl .vis-label.vis-nesting-group.collapsed:before{content:"\25C0"}.vis-ltr .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-left:15px}.vis-rtl .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-right:15px}.vis-overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}</style><style type="text/css">.vis-labelset{overflow:hidden}.vis-labelset,.vis-labelset .vis-label{box-sizing:border-box;position:relative}.vis-labelset .vis-label{border-bottom:1px solid #bfbfbf;color:#4d4d4d;left:0;top:0;width:100%}.vis-labelset .vis-label.draggable{cursor:pointer}.vis-group-is-dragging{background:rgba(0,0,0,.1)}.vis-labelset .vis-label:last-child{border-bottom:none}.vis-labelset .vis-label .vis-inner{display:inline-block;padding:5px}.vis-labelset .vis-label .vis-inner.vis-hidden{padding:0}</style><style type="text/css">div.vis-configuration{display:block;float:left;font-size:12px;position:relative}div.vis-configuration-wrapper{display:block;width:700px}div.vis-configuration-wrapper:after{clear:both;content:"";display:block}div.vis-configuration.vis-config-option-container{background-color:#fff;border:2px solid #f7f8fa;border-radius:4px;display:block;left:10px;margin-top:20px;padding-left:5px;width:495px}div.vis-configuration.vis-config-button{background-color:#f7f8fa;border:2px solid #ceced0;border-radius:4px;cursor:pointer;display:block;height:25px;left:10px;line-height:25px;margin-bottom:30px;margin-top:20px;padding-left:5px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-button.hover{background-color:#4588e6;border:2px solid #214373;color:#fff}div.vis-configuration.vis-config-item{display:block;float:left;height:25px;line-height:25px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-item.vis-config-s2{background-color:#f7f8fa;border-radius:3px;left:10px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s3{background-color:#e4e9f0;border-radius:3px;left:20px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s4{background-color:#cfd8e6;border-radius:3px;left:30px;padding-left:5px}div.vis-configuration.vis-config-header{font-size:18px;font-weight:700}div.vis-configuration.vis-config-label{height:25px;line-height:25px;width:120px}div.vis-configuration.vis-config-label.vis-config-s3{width:110px}div.vis-configuration.vis-config-label.vis-config-s4{width:100px}div.vis-configuration.vis-config-colorBlock{border:1px solid #444;border-radius:2px;cursor:pointer;height:19px;margin:0;padding:0;top:1px;width:30px}input.vis-configuration.vis-config-checkbox{left:-5px}input.vis-configuration.vis-config-rangeinput{margin:0;padding:1px;pointer-events:none;position:relative;top:-5px;width:60px}input.vis-configuration.vis-config-range{-webkit-appearance:none;background-color:transparent;border:0 solid #fff;height:20px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-runnable-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:5px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-thumb{-webkit-appearance:none;background:#3876c2;background:-moz-linear-gradient(top,#3876c2 0,#385380 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#3876c2),color-stop(100%,#385380));background:-webkit-linear-gradient(top,#3876c2,#385380);background:-o-linear-gradient(top,#3876c2 0,#385380 100%);background:-ms-linear-gradient(top,#3876c2 0,#385380 100%);background:linear-gradient(180deg,#3876c2 0,#385380);border:1px solid #14334b;border-radius:50%;box-shadow:0 0 1px 0 #111927;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#3876c2",endColorstr="#385380",GradientType=0);height:17px;margin-top:-7px;width:17px}input.vis-configuration.vis-config-range:focus{outline:none}input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track{background:#9d9d9d;background:-moz-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#9d9d9d),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#9d9d9d,#c8c8c8 99%);background:-o-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:linear-gradient(180deg,#9d9d9d 0,#c8c8c8 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9d9d9d",endColorstr="#c8c8c8",GradientType=0)}input.vis-configuration.vis-config-range::-moz-range-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:10px;width:300px}input.vis-configuration.vis-config-range::-moz-range-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:-moz-focusring{outline:1px solid #fff;outline-offset:-1px}input.vis-configuration.vis-config-range::-ms-track{background:transparent;border-color:transparent;border-width:6px 0;color:transparent;height:5px;width:300px}input.vis-configuration.vis-config-range::-ms-fill-lower{background:#777;border-radius:10px}input.vis-configuration.vis-config-range::-ms-fill-upper{background:#ddd;border-radius:10px}input.vis-configuration.vis-config-range::-ms-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:focus::-ms-fill-lower{background:#888}input.vis-configuration.vis-config-range:focus::-ms-fill-upper{background:#ccc}.vis-configuration-popup{background:rgba(57,76,89,.85);border:2px solid #f2faff;border-radius:4px;color:#fff;font-size:14px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:opacity .3s ease-in-out;-moz-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;width:150px}.vis-configuration-popup:after,.vis-configuration-popup:before{border:solid transparent;content:" ";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.vis-configuration-popup:after{border-color:rgba(136,183,213,0) rgba(136,183,213,0) rgba(136,183,213,0) rgba(57,76,89,.85);border-width:8px;margin-top:-8px}.vis-configuration-popup:before{border-color:rgba(194,225,245,0) rgba(194,225,245,0) rgba(194,225,245,0) #f2faff;border-width:12px;margin-top:-12px}</style><style type="text/css">.vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal{border-bottom:1px solid;height:0;position:absolute;width:100%}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor{border-color:#e5e5e5}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-major{border-color:#bfbfbf}.vis-data-axis .vis-y-axis.vis-major{color:#4d4d4d;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-major.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-minor{color:#bebebe;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-minor.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title{bottom:20px;color:#4d4d4d;position:absolute;text-align:center;white-space:nowrap}.vis-data-axis .vis-y-axis.vis-title.vis-measure{margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title.vis-left{bottom:0;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-o-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;-o-transform-origin:left top;transform-origin:left bottom}.vis-data-axis .vis-y-axis.vis-title.vis-right{bottom:0;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:right bottom;-moz-transform-origin:right bottom;-ms-transform-origin:right bottom;-o-transform-origin:right bottom;transform-origin:right bottom}.vis-legend{background-color:rgba(247,252,255,.65);border:1px solid #b3b3b3;box-shadow:2px 2px 10px hsla(0,0%,60%,.55);padding:5px}.vis-legend-text{display:inline-block;white-space:nowrap}</style><style id="stitch-interaction-fixes">#main-nav-tab,
+#main-nav-tab *,
+.main-nav-lhs,
+.main-nav-lhs * {
+    pointer-events:auto !important;
+}
+.quick-add-menu.dropdown-menu-center,
+.stitch-injected-ui .quick-add-menu.dropdown-menu-center {
+    position: fixed !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 2000;
+}
+.stitch-injected-ui .dropdown-menu,
+.stitch-injected-ui .dropdown-menu .dropdown-item,
+.stitch-injected-ui .dropdown-menu button,
+.stitch-injected-ui .dropdown-menu a,
+.stitch-injected-ui [role="menu"],
+.stitch-injected-ui [role="menuitem"],
+.stitch-injected-ui [role="menu"] button,
+.stitch-injected-ui [data-component-name="UIPopover"],
+.stitch-injected-ui [class*="AbstractDropdown__DropdownContent"],
+.stitch-injected-ui [class*="Popover__StyledPopoverContainer"],
+.stitch-injected-ui .popover-container,
+.stitch-injected-ui .popover {
+    pointer-events: auto !important;
+}
+/* HubSpot main content — keep toolbar, filters, and table rows clickable. */
+#hs-global-toolbar button,
+#hs-global-toolbar [role="button"],
+[data-test-id="filter-bar-container"] button,
+[data-test-id="filter-bar-container"] [role="button"],
+[data-selenium-test="FiltersBar-container"] button,
+.PrivateButton__StyledButton-eRHhiA,
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id],
+[role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* Production overlays/widgets — broken or distracting in the static clone. */
+#annmsgstrip,
+.zread_strip,
+books_svgs,
+.micshide,
+#zcwindows,
+.zcoverlay,
+.zsiq_theme1,
+#zsiq_float,
+#zsiq_chat_wrap,
+iframe#avcliqiframe,
+#wmstoolbar,
+#micsbackdrop,
+#tooltip-popover-wrapper,
+#zgs20_globalsearch,
+#zgs20_gsSearchResultsArea,
+#zgs20_gsResultsHolder,
+#zgs20_gsSearchTopBandHolder,
+.zgs19_gsOverlay,
+#zgs20_gsOverlay,
+.popover-container,
+.finance-app .rhs-sidebar,
+.finance-app .rhs-menu,
+.finance-app #rhs-menu-bar,
+.finance-app .rhs-sidebar-menu {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* Empty captured flyout shells from live app — break flex layout in the clone. */
+.finance-app .slide-sidebar,
+.finance-app .sidebar-container {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* ── HubSpot-specific fixes ──────────────────────────────────────────────────
+   styled-components injects icon sizing at runtime; strip_scripts() empties
+   those <style> tags. These rules provide safe fallback sizing for all SVGs
+   that land in the static snapshot without explicit width/height attributes. */
+svg:not([width]):not([height]) {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+#hs-global-toolbar svg,
+#hs-nav-v4 svg,
+[data-test-id="nav-primary"] svg {
+    max-width: 32px !important;
+    max-height: 32px !important;
+    overflow: hidden !important;
+    flex-shrink: 0;
+}
+/* Toolbar must remain clickable for interaction wiring to work. */
+#hs-global-toolbar,
+#hs-global-toolbar * {
+    pointer-events: auto !important;
+}
+/* Live-only HubSpot widgets that are broken or distracting in the static clone. */
+#hs-feedback-fetcher,
+.growth-dynamic-namespace,
+#hs-nav-v4 iframe,
+.UIPlaceholderBubble__Placeholder-mfCgX {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot blanket pointer-events restore — nav, sidebar, buttons, tabs */
+#hs-nav-v4 a, #hs-nav-v4 button, #hs-nav-v4 [role="tab"],
+#hs-nav-v4 [role="menuitem"], #hs-nav-v4 li,
+[data-test-id="nav-primary"] a,
+[data-test-id="nav-primary"] button,
+[data-test-id="nav-primary"] [role="tab"],
+#hs-global-toolbar a, #hs-global-toolbar button,
+.private-page__outer button,
+.private-page__outer a,
+.private-page__outer [role="tab"],
+.private-page__outer [role="menuitem"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Kill invisible overlay divs that intercept clicks above interactive content */
+.UIOverlay--invisible,
+[data-overlay-type],
+.private-overlay--invisible {
+    pointer-events: none !important;
+    display: none !important;
+}
+/* HubSpot loading/skeleton states — API never resolves in the static clone */
+[data-test-id="loading-spinner"],
+.private-loading-page,
+.private-spinner-container,
+.loading-page-wrapper,
+.UIOverlay--blocker,
+[data-loading="true"] {
+    display: none !important;
+}
+/* Coaching popovers / tour highlights frozen open during crawl */
+body > [data-floating-ui-portal],
+.private-overlay-highlight {
+    display: none !important;
+    pointer-events: none !important;
+}
+/* HubSpot tour scrim overlay baked during crawl (e.g. AEO coaching walkthrough).
+   Only target .hDDpEi — do NOT hide [class*="Overlay__StyledInner"] globally;
+   legitimate modals (Schedule meeting, etc.) use the same overlay wrapper when
+   injected at runtime via .stitch-injected-ui. Baked .hDDpEi nodes are also
+   removed in _strip_baked_onboarding_ui(); this rule is a belt-and-suspenders
+   fallback for any that survive on main page snapshots. */
+.hDDpEi {
+    display: none !important;
+    pointer-events: none !important;
+}
+.stitch-tour-highlight-reset {
+    z-index: auto !important;
+    border: none !important;
+    margin-block: 0 !important;
+}
+
+/* HubSpot: hide live-only widgets; captured CSS handles layout when present. */
+#notificationBannerContainer,
+[data-test-id="notificationBannerContainer"],
+div#growth-dynamic-ui,
+#hs-feedback-fetcher,
+.copilot-sidebar-container,
+.quartz-grid-sidebar-container,
+iframe[name*="chatspot"],
+iframe[name*="mini-trial-guide"] {
+    display: none !important;
+}
+
+/* ── Stripe dashboard fixes ───────────────────────────────────────────────── */
+/* Full-viewport sail portal shells (inset:0, z-index:299) block all clicks. */
+body > .__sail-layer-containers:empty {
+    display: none !important;
+    pointer-events: none !important;
+}
+body > .__sail-layer-containers {
+    pointer-events: none !important;
+}
+/* Captured Stripe CSS sets .as-4g { pointer-events:none } on #chrome-layout. */
+#chrome-layout,
+#chrome-layout.as-4g,
+#chrome-layout *,
+.as-4g {
+    pointer-events: auto !important;
+}
+#dashboardRoot {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* Do not hide the whole Stripe shell when captured mid-load */
+#dashboardRoot [data-loading="true"],
+#dashboardRoot [aria-busy="true"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
+}
+#primary-nav,
+#primary-nav a,
+[data-testid="primary-nav"] a,
+a[data-stitch-page],
+#dashboardRoot a,
+#dashboardRoot button,
+#dashboardRoot [role="button"],
+#dashboardRoot [role="tab"],
+#dashboardRoot [role="menuitem"],
+[class*="db-Nav"] a,
+[class*="db-Nav"] button,
+[class*="sail-Nav"] a,
+[class*="sail-Nav"] button,
+[data-stitch-accordion],
+[data-stitch-ui-id],
+[data-stitch-go],
+[data-stitch-tab-id] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+/* Invisible PressableCore overlays block button clicks in the static clone */
+.PressableCore-overlay,
+.PressableCore-overlay--isVisible {
+    pointer-events: none !important;
+}
+/* Stripe metrics iframe + hidden portal containers */
+iframe[name*="StripeMetrics"],
+iframe[name*="privateStripeMetrics"],
+.__sail-layer-containers[style*="display: none"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [class*="LoadingOverlay"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
+}
+#chrome-layout-backdrop,
+[data-testid="backdrop"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* Stripe Products section: prevent flex-grow / space-between from stretching nav rows. */
+#primary-nav [data-testid="workloads-nav"],
+[data-testid="primary-nav"] [data-testid="workloads-nav"],
+#primary-nav section:has([data-testid="workloads-nav"]) .primary-nav-section-header,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) .primary-nav-section-header {
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+    text-align: left !important;
+}
+#primary-nav [data-testid="workloads-nav-links"],
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"],
+#primary-nav section:has([data-testid="workloads-nav"]) > ul,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav section:has([data-testid="workloads-nav"]),
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+}
+
+/* Injected Stripe Products submenu (crawl snapshots omit collapsed panel HTML). */
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    display: list-item !important;
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel,
+[data-testid="primary-nav"] .stitch-workload-nav-panel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+#primary-nav .stitch-workload-nav-panel.show,
+[data-testid="primary-nav"] .stitch-workload-nav-panel.show {
+    display: block !important;
+    padding: 0 0 4px !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav .stitch-workload-nav-panel:not(.show),
+[data-testid="primary-nav"] .stitch-workload-nav-panel[hidden] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel > li,
+[data-testid="primary-nav"] .stitch-workload-nav-panel > li {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0 12px 0 36px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    flex: 0 0 auto !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav .stitch-workload-nav-panel a,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a {
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    --s--flex-y: 0 0 auto !important;
+    --s--object-width: auto !important;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: rgb(26, 44, 68) !important;
+    white-space: nowrap;
+    padding: 2px 8px;
+    border-radius: 6px;
+    min-height: 28px;
+    height: auto !important;
+    font-size: 14px;
+    line-height: 20px;
+}
+#primary-nav .stitch-workload-nav-panel a span,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a span {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}
+#primary-nav .stitch-workload-nav-panel a:hover,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a:hover {
+    background: rgba(26, 44, 68, 0.06);
+}
+#primary-nav .stitch-workload-nav-panel a[aria-current="page"],
+#primary-nav .stitch-workload-nav-panel a.stitch-nav-active,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a[aria-current="page"],
+[data-testid="primary-nav"] .stitch-workload-nav-panel a.stitch-nav-active {
+    background: rgb(246, 245, 255) !important;
+    color: rgb(99, 91, 255) !important;
+    font-weight: 500;
+}
+#primary-nav [data-testid^="toggle-workload-"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"],
+.toggle-workload-button {
+    cursor: pointer !important;
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    width: 100% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+}
+#primary-nav [data-testid^="toggle-workload-"] .as-6x,
+#primary-nav [data-testid^="toggle-workload-"] .as-20,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-6x,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-20,
+.toggle-workload-button .as-g.as-6x {
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] {
+    background: rgba(26, 44, 68, 0.06) !important;
+    border-radius: 6px;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Stripe account switcher dropdown (injected reconciliation fragment). */
+.stitch-injected-ui .sn-token-provider[role="menu"],
+.stitch-injected-ui [role="menu"].sn-token-provider {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: block !important;
+    pointer-events: auto !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    max-width: 320px !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px 0px,
+                rgba(48, 49, 61, 0.08) 0px 15px 35px 0px !important;
+    padding: 4px 0 8px !important;
+}
+.stitch-injected-ui [data-testid="account-switcher-workspace"] {
+    display: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="button"] {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 36px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    transform: none !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+.stitch-injected-ui .as-bm,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"] {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin: 8px 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 6px !important;
+    min-height: 36px !important;
+    background: #fff !important;
+    color: rgb(26, 44, 68) !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+}
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::before,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::after {
+    display: none !important;
+    content: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"]:hover {
+    background: rgba(26, 44, 68, 0.06) !important;
+}
+
+/* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
+[data-test-id="AvatarDisplay-avatarContent"] {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+.AvatarContent__HiddenSvg-cXPETG,
+[class*="AvatarContent__HiddenSvg"] {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+/* Likwid / Metronic sidebar accordions */
+#kt_app_sidebar .menu-item.menu-accordion:not(.show) > .menu-sub {
+    display: none !important;
+}
+#kt_app_sidebar .menu-item.menu-accordion.show > .menu-sub,
+#kt_app_sidebar .menu-item.menu-accordion > .menu-sub.show {
+    display: flex !important;
+    flex-direction: column;
+}
+#kt_app_sidebar .menu-link,
+#kt_app_sidebar [data-kt-menu-trigger],
+#kt_app_sidebar [data-stitch-accordion] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+.modal:not(.show) {
+    display: none !important;
+}</style></head>
+<!--end::Head-->
+<!--begin::Body-->
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
+<!--begin::Theme mode setup on page load-->
+<!--end::Theme mode setup on page load-->
+<!--begin::App-->
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+<!--begin::Page-->
+<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+<!--begin::Header-->
+<div class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-animation="false" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" id="kt_app_header">
+<!--begin::Header container-->
+<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+<!--begin::Sidebar mobile toggle-->
+<div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+<div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
+<i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+</div>
+<!--end::Sidebar mobile toggle-->
+<!--begin::Mobile logo-->
+<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+<a class="d-lg-none" data-stitch-page="home-v2" href="../home-v2/page.html">
+<img alt="Logo" class="h-30px" src="../assets/images/static_images_favicon-192x192_png.png"/>
+</a>
+</div>
+<!--end::Mobile logo-->
+<!--begin::Header wrapper-->
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+<!--begin::Menu wrapper-->
+<div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-direction="end" data-kt-drawer-name="app-header-menu" data-kt-drawer-overlay="true" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-drawer-width="250px" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+<!--begin::Menu-->
+<div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" data-kt-menu="true" id="kt_app_header_menu">
+<!--begin:Menu item-->
+<div class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2" data-kt-menu-placement="bottom-start" data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
+<!--begin:Menu link-->
+<h1 class="sitename">
+<span style="color: #1a1a1a;">Likwid</span><span style="background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">.AI</span></h1>
+<!--end:Menu link-->
+</div>
+</div>
+<!--end::Menu-->
+</div>
+<!--end::Menu wrapper-->
+<!--begin::Navbar-->
+<div class="app-navbar flex-shrink-0">
+<!--begin::Activities-->
+<div class="app-navbar-item ms-1 ms-md-4">
+<!--begin::Drawer toggle-->
+<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" id="kt_activities_toggle">
+<i class="ki-duotone ki-messages fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+</i>
+</div>
+<!--end::Drawer toggle-->
+</div>
+<!--end::Activities-->
+<!--begin::Theme mode-->
+<div class="app-navbar-item ms-1 ms-md-4">
+<!--begin::Menu toggle-->
+<a class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-trigger="{default:'click', lg: 'hover'}" href="#">
+<i class="ki-duotone ki-night-day theme-light-show fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+<span class="path6"></span>
+<span class="path7"></span>
+<span class="path8"></span>
+<span class="path9"></span>
+<span class="path10"></span>
+</i>
+<i class="ki-duotone ki-moon theme-dark-show fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</a>
+<!--begin::Menu toggle-->
+<!--begin::Menu-->
+<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-element="theme-mode-menu" data-kt-menu="true">
+<!--begin::Menu item-->
+<div class="menu-item px-3 my-0">
+<a class="menu-link px-3 py-2 active" data-kt-element="mode" data-kt-value="light" href="#">
+<span class="menu-icon" data-kt-element="icon">
+<i class="ki-duotone ki-night-day fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+<span class="path5"></span>
+<span class="path6"></span>
+<span class="path7"></span>
+<span class="path8"></span>
+<span class="path9"></span>
+<span class="path10"></span>
+</i>
+</span>
+<span class="menu-title">Light</span>
+</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-3 my-0">
+<a class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark" href="#">
+<span class="menu-icon" data-kt-element="icon">
+<i class="ki-duotone ki-moon fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Dark</span>
+</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-3 my-0">
+<a class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system" href="#">
+<span class="menu-icon" data-kt-element="icon">
+<i class="ki-duotone ki-screen fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+<span class="path4"></span>
+</i>
+</span>
+<span class="menu-title">System</span>
+</a>
+</div>
+<!--end::Menu item-->
+</div>
+<!--end::Menu-->
+</div>
+<!--end::Theme mode-->
+<!--begin::User menu-->
+<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
+<!--begin::Menu wrapper-->
+<div class="cursor-pointer symbol symbol-35px" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
+<img alt="user" class="rounded-3" src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T064911Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=210f0177a406f40098cf9b594698cfb0136e045009e81e5f4e276cac8c05bf1e79a6e4cb42bcc4a1fa3c9b8c8fb27e2c77c3d9097caf2c828b528b85ac53c517fbc8384d270ffd939121e0de594b174de40b864e9b946acc4acd522249d16eea5aa886f9e07a70f6eddaa1193a3be8542fbf73e6945d350afbe7c2ab7e58af1954d072dc9fb9fa74a01b17285c46e6ac36e011f4362237c31a95f82adf1e425afad6a5c16ea8f6817e443e5ae81e4964e29b7d56ba18d6defe9f3d43dd628903a103e62a950fc3ddbd7f217e5d194d6a85328d00c56d9547d9ddc2b3f6b739c31ea30262a82dec34cf01011dca470bd2395616f6615ce9892bfdca2e32a31427"/>
+</div>
+<!--begin::User account menu-->
+<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+<!--begin::Menu item-->
+<div class="menu-item px-3">
+<div class="menu-content d-flex align-items-center px-3">
+<!--begin::Avatar-->
+<div class="symbol symbol-50px me-5">
+<img alt="Logo" src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T064911Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=210f0177a406f40098cf9b594698cfb0136e045009e81e5f4e276cac8c05bf1e79a6e4cb42bcc4a1fa3c9b8c8fb27e2c77c3d9097caf2c828b528b85ac53c517fbc8384d270ffd939121e0de594b174de40b864e9b946acc4acd522249d16eea5aa886f9e07a70f6eddaa1193a3be8542fbf73e6945d350afbe7c2ab7e58af1954d072dc9fb9fa74a01b17285c46e6ac36e011f4362237c31a95f82adf1e425afad6a5c16ea8f6817e443e5ae81e4964e29b7d56ba18d6defe9f3d43dd628903a103e62a950fc3ddbd7f217e5d194d6a85328d00c56d9547d9ddc2b3f6b739c31ea30262a82dec34cf01011dca470bd2395616f6615ce9892bfdca2e32a31427"/>
+</div>
+<!--end::Avatar-->
+<!--begin::Username-->
+<div class="d-flex flex-column">
+<div class="fw-bold d-flex align-items-center fs-5">Bio Mac Lifesciences
+													
+													<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
+<a class="fw-semibold text-muted text-hover-primary fs-7" href="#">Pharmaceuticals &amp; Lifesciences</a>
+</div>
+<!--end::Username-->
+</div>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu separator-->
+<div class="separator my-2"></div>
+<!--end::Menu separator-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-page="rise-crm-leads-list" href="../rise-crm-leads-list/page.html">
+<span class="menu-text">Rise</span>
+</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-page="flow-ai-orders-orders-list" href="../flow-ai-orders-orders-list/page.html">Flow</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-page="spout-ai-production-jobs-pending" href="../spout-ai-production-jobs-pending/page.html">Spout</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu separator-->
+<div class="separator my-2"></div>
+<!--end::Menu separator-->
+<!--begin::Menu item-->
+<div class="menu-item px-5 my-1">
+<a class="menu-link px-5" data-stitch-page="edit-company-details" href="../edit-company-details/page.html">Account Settings</a>
+</div>
+<!--end::Menu item-->
+<!--begin::Menu item-->
+<div class="menu-item px-5">
+<a class="menu-link px-5" data-stitch-route="/signout/" data-stitch-unresolved="1" href="#">Sign Out</a>
+</div>
+<!--end::Menu item-->
+</div>
+<!--end::User account menu-->
+<!--end::Menu wrapper-->
+</div>
+<!--end::User menu-->
+<!--begin::Header menu toggle-->
+<div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
+<div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px" id="kt_app_header_menu_toggle">
+<i class="ki-duotone ki-element-4 fs-1">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+</div>
+<!--end::Header menu toggle-->
+<!--begin::Aside toggle-->
+<!--end::Header menu toggle-->
+</div>
+<!--end::Navbar-->
+</div>
+<!--end::Header wrapper-->
+</div>
+<!--end::Header container-->
+</div>
+<!--end::Header-->
+<!--begin::Wrapper-->
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+<!--begin::Sidebar-->
+<div class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-direction="start" data-kt-drawer-name="app-sidebar" data-kt-drawer-overlay="true" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle" data-kt-drawer-width="225px" id="kt_app_sidebar">
+<!--begin::Logo-->
+<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+<a data-stitch-page="home-v2" href="../home-v2/page.html">
+<img alt="Logo" class="h-25px app-sidebar-logo-default" src="../assets/images/static_images_android-chrome-512x512_png.png"/>
+<img alt="Logo" class="h-20px app-sidebar-logo-minimize" src="../assets/images/static_images_android-chrome-512x512_png.png"/>
+</a>
+<div class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-name="app-sidebar-minimize" data-kt-toggle-state="active" data-kt-toggle-target="body" id="kt_app_sidebar_toggle">
+<i class="ki-duotone ki-black-left-line fs-3 rotate-180">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+</div>
+<!--end::Logo-->
+<!--begin::sidebar menu-->
+<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+<div class="app-sidebar-wrapper" id="kt_app_sidebar_menu_wrapper">
+<div class="scroll-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-height="auto" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true" data-kt-scroll-wrappers="#kt_app_sidebar_menu" id="kt_app_sidebar_menu_scroll" style="height: 902px;">
+<!--begin::Menu-->
+<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" data-kt-menu="true" data-kt-menu-expand="false" id="#kt_app_sidebar_menu">
+<!--begin:Orders Order-->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-bi-dashboard-sales-intelligence" href="../flow-ai-bi-dashboard-sales-intelligence/page.html">
+<span class="menu-icon">
+<i class="bi bi-bar-chart-line fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Dashboard</span>
+</a>
+</div>
+<!--begin::Section-->
+<div class="menu-item pt-5">
+<div class="menu-content">
+<span class="menu-heading fw-bold text fs-7">Master Configuration</span>
+</div>
+</div>
+<!-- Customers -->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-customers-list" href="../flow-ai-customers-list/page.html">
+<span class="menu-icon">
+<i class="bi bi-person-lines-fill fs-2"></i>
+</span>
+<span class="menu-title">Customers</span>
+</a>
+</div>
+<!-- Vendors -->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-vendors-vendor-list" href="../flow-ai-vendors-vendor-list/page.html">
+<span class="menu-icon">
+<i class="bi bi-ui-radios-grid fs-2"></i>
+</span>
+<span class="menu-title">Vendors</span>
+</a>
+</div>
+<!--begin::Section-->
+<div class="menu-item pt-5">
+<div class="menu-content">
+<span class="menu-heading fw-bold text fs-7">Sales &amp; Orders</span>
+</div>
+</div>
+<!--begin:Orders-->
+<div class="menu-item">
+<a class="menu-link active bg-light-info" data-stitch-page="flow-ai-orders-orders-list" href="../flow-ai-orders-orders-list/page.html">
+<span class="menu-icon">
+<i class="ki-duotone ki-document fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Orders</span>
+</a>
+</div>
+<!--begin::Section-->
+<div class="menu-item pt-5">
+<div class="menu-content">
+<span class="menu-heading fw-bold text fs-7">Inventory &amp; Procurement</span>
+</div>
+</div>
+<!-- Inventory -->
+<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-3c8c50">
+<span class="menu-link">
+<span class="menu-icon">
+<i class="bi bi-boxes fs-2"></i>
+</span>
+<span class="menu-title">Inventory</span>
+<span class="menu-arrow"></span>
+</span>
+<div class="menu-sub menu-sub-accordion show" id="stitch-acc-3c8c50">
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-inventory-stock-list" href="../flow-ai-inventory-stock-list/page.html">
+<span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+<span class="menu-title">All Items</span>
+</a>
+</div>
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-inventory-stock-adjustments" href="../flow-ai-inventory-stock-adjustments/page.html">
+<span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+<span class="menu-title">Stock Adjustments</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Procurement (Indents + POs consolidated) -->
+<div class="menu-item">
+<a class="menu-link" data-stitch-page="flow-ai-procurement" href="../flow-ai-procurement/page.html">
+<span class="menu-icon">
+<i class="ki-duotone ki-purchase fs-2">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</span>
+<span class="menu-title">Procurement</span>
+</a>
+</div>
+</div>
+<!--end::Menu-->
+</div>
+</div>
+</div>
+<!--end::sidebar menu-->
+<!--begin::Footer-->
+<div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
+<a class="btn btn-flex flex-center btn-custom btn-info overflow-hidden text-nowrap px-0 h-40px w-100" data-bs-dismiss-="click" data-bs-original-title="Documentation" data-bs-toggle="tooltip" data-bs-trigger="hover" data-kt-initialized="1" href="">
+<span class="btn-label">Documentation</span>
+<i class="ki-duotone ki-document btn-icon fs-2 m-0">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</a>
+</div>
+<!--end::Footer-->
+</div>
+<!--end::Sidebar-->
+<!--begin::Main-->
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+<!--begin::Content wrapper-->
+<div class="d-flex flex-column flex-column-fluid">
+<!--begin::Toolbar-->
+<div class="app-toolbar py-3 py-lg-6" id="kt_app_toolbar">
+<!--begin::Toolbar container-->
+<div class="app-container container-xxl d-flex flex-stack" id="kt_app_toolbar_container">
+<!--begin::Page title-->
+<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+<!--begin::Title-->
+<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Add New Order</h1>
+<!--end::Title-->
+<!--begin::Breadcrumb-->
+<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+<!--begin::Item-->
+<li class="breadcrumb-item text-muted">
+<a class="text-muted text-hover-primary" href="">Home</a>
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="breadcrumb-item">
+<span class="bullet bg-gray-500 w-5px h-2px"></span>
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="breadcrumb-item text-muted">Orders</li>
+<!--end::Item-->
+</ul>
+<!--end::Breadcrumb-->
+</div>
+<!--end::Page title-->
+</div>
+<!--end::Toolbar container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Content-->
+<div class="app-content flex-column-fluid" id="kt_app_content">
+<!--begin::Content container-->
+<div class="app-container container-xxl" id="kt_app_content_container">
+<!--begin::Card-->
+<div class="card">
+<!--begin::Form-->
+<form action="" autocomplete="on" class="form" id="kt_modal_add_customer_form" method="POST">
+<input name="csrfmiddlewaretoken" type="hidden" value="2Lhq9deWjphnJK0plPSkQ7vvhF9RG5BscDR5bBkd445751kbyR2hKUUOquk9IuFJ"/>
+<!--end::Modal header-->
+<!--begin::Modal body-->
+<div class="modal-body py-10 px-lg-17">
+<!--begin::Scroll-->
+<div class="scroll-y me-n7 pe-7" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-max-height="auto" data-kt-scroll-offset="300px" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" id="kt_modal_add_customer_scroll" style="max-height: 780px;">
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Customer</label>
+<span aria-label="Add Customer if Customer does not exist" class="ms-1" data-bs-original-title="Add Customer if Customer does not exist" data-bs-toggle="tooltip" data-kt-initialized="1">
+<i class="ki-duotone ki-information fs-7">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+</i>
+</span>
+<!--end::Label-->
+<!--begin::Input-->
+<select class="form-control form-control-solid" id="id_customer" name="customer" placeholder="">
+<option value="">---------</option>
+<option value="00a779a5-8b21-48f6-9630-da9f7cae4493">Dang Feed, Tulsipur-Nepal</option>
+<option value="01e4d8bd-645e-4060-82d4-292c69538542">ASK</option>
+<option value="02ad93fb-ece5-4c6b-98e9-cb19bd2869be">Easy Feeds, Karnal</option>
+<option value="036b91ab-7377-4f81-893d-d78dd8b13fa4">SMC Agri Ltd. (Madhusudan), Hathras</option>
+<option value="04982d2d-8aaa-43ed-9d89-07a297e2c081">D And D Life Care</option>
+<option value="0584a9de-47b8-4d45-a48c-6ab7ee6645d2">Kuldeep Poultary, Dabwali</option>
+<option value="0584ecfd-9120-447c-b268-f90fbfb6cdd5">Lumbini Feeds, Butwal-Nepal</option>
+<option value="091042ac-cf86-43cc-9490-42ac11fad897">HD Poultry, Jaspur</option>
+<option selected="" value="0b14e42b-42b1-4333-8f3a-ab78491f0925">Likwid Techserve</option>
+<option value="0b32ffbb-5026-495d-abe2-b64e9fd348eb">Saurya Feeds, Hetauda</option>
+<option value="0b6bb76e-c081-4312-b3c7-322fbdbd3e44">Rendis Pharma India Pvt.Ltd.</option>
+<option value="0c0d88e7-2111-4f5f-9eac-f934aa894b75">Unnat Feeds, Panipat</option>
+<option value="0cfc31e8-5b52-4544-ad92-59897109e85d">Abbasi Medicose</option>
+<option value="0fc50d6f-d592-4b8a-a72f-887e20161b86">Mehta Feeds, Muzaffarpur</option>
+<option value="11fd1e7c-d532-44d4-ab61-d92582a745f5">Hardik Agrovet, Ahmedabad</option>
+<option value="12eed5e0-7c86-47b0-8f47-6be0763dd46f">QSA Poultry India Pvt. Ltd., Karnal</option>
+<option value="13394105-0487-417e-a095-71a1f7eeef56">Arora Feeds, Rajpura</option>
+<option value="14c11e9a-cbe8-4c88-bf9d-43058612d95f">Green Feeds, Janakpur-Nepal</option>
+<option value="14f91bc8-0da4-408f-a728-b97543298622">Shakti Agrotech, Jammu</option>
+<option value="15dcd3df-b275-4034-9613-47834c68163d">Booster Feeds, Butwal-Nepal</option>
+<option value="17d88421-44be-42c0-8564-c5e086c65d7a">Fohip Naturals Pvt.Ltd.</option>
+<option value="1846fa1e-ca4e-4f2b-943e-01b8cb7eb23a">SSV Breeders, Bidar</option>
+<option value="1aa69bd1-7981-4c14-b97b-7d5211945133">Health First Pharma</option>
+<option value="1af82c6e-1587-4c9f-8249-8c8eee49a5a9">Uniray Life Sciences</option>
+<option value="1b009f69-fe68-4ecb-b5d4-6d54a24f7f03">MS Enterprises</option>
+<option value="1c633353-5d22-4c26-8c9b-6b3ed8225bbf">Karma Feeds, Bhutan</option>
+<option value="1cbbdb04-87cf-4452-b30d-f05d5d522a14">C.K.Medical Agencies</option>
+<option value="1d0c3d05-8896-4fcc-88f5-5439fa017781">Venkys, Ambala</option>
+<option value="1ecd648b-0815-4278-90bb-7606cdf0d592">Parvat Wellness</option>
+<option value="206309d8-fc79-498e-b90d-398900419843">Akriti Foods, Bareilly</option>
+<option value="206f8fd9-18d0-4c13-a04b-02d90460b6c5">Sunjin (Korean Group), Rajpura</option>
+<option value="209d129f-9728-45d0-b822-efb572c3781c">Reliable Feeds, Siliguri</option>
+<option value="20af29ae-1d49-43dd-aecf-1390cae3eb31">Rohit Feeds, Barwala</option>
+<option value="233bd01a-8060-4db6-8fb0-ddb08396f87b">Suman Kamal Farms, Bharatpur</option>
+<option value="23d62047-85ce-4ae9-ba99-997d7eed2409">xyz</option>
+<option value="249fa2ac-ebad-44b2-9c72-958eadd64b9e">AOV Feeds, Hisar</option>
+<option value="27c38ae4-3e80-4dca-a0d2-ce20d69a0b0e">Easyfine Pharma</option>
+<option value="2c0e38cc-b39a-409a-8d1b-3c3ef11b03f3">Ratna Enterprises, Nashik</option>
+<option value="2e551093-84a8-4309-9667-48cbda54120a">Jai Bharat Feeds, Safidon</option>
+<option value="2e99fc43-a867-49c8-90b1-28961cccfe7e">Global Feeds, Chitwan-Nepal</option>
+<option value="30d7429b-b78b-4eee-a1b2-4468ef8b15f5">Tattav Essential</option>
+<option value="312a4754-3ad4-4d22-b176-45f92e7e0bfc">Apollo Feeds, Chitwan-Nepal</option>
+<option value="312eaba3-d750-48c4-b7f3-221582e00304">Suguna, Kharagpur</option>
+<option value="3290276d-a18d-40f4-8a87-55405f0188f6">Jai Ganesh Containers</option>
+<option value="3412472a-947b-4260-89e9-4e646b13816e">Wel N Innov Pharmaceuticals</option>
+<option value="3587de4e-f894-41b4-9999-fea16cbb3229">Nusmith Pharma Pvt. Ltd</option>
+<option value="35a06d80-792b-477f-aecf-e80e906645bc">Salva Agro, Jagdishpur</option>
+<option value="366ecc2f-68dc-465e-9cdd-367e3760a8ab">Sri Senthil Andavar Agencies</option>
+<option value="38e0fcb5-e178-4008-ad8d-caa1c0664b5f">Parsnath Speciality Clinics Pvt.Ltd.</option>
+<option value="3928ff30-8ada-4b4d-9e2a-a86018c042f4">Ekana Herbs Pvt.Ltd.</option>
+<option value="3b4b606d-8b87-4c7f-9f57-9050a73c0cc6">Amber clinic</option>
+<option value="3cb703c4-dfe2-4804-bfd5-9849c2097489">Sandhu Farms, Asandh</option>
+<option value="3ceeb940-1f28-4916-8717-19c0c116e358">Amulya Herbs Pvt.Ltd.</option>
+<option value="3e0c22e3-1316-40e7-bd0f-56a71a9abcc0">xyz</option>
+<option value="3ec5691b-cca4-465f-811d-145e9419465d">Arush Agency</option>
+<option value="3edc498a-e0b5-4191-965d-f86e491955b8">Herbal care</option>
+<option value="474ae1a0-fe6c-4d6e-ac9f-f04560def620">Lark Engg India Pvt Ltd</option>
+<option value="4c804f15-0dad-41b5-89e1-1bf665e63795">Havells</option>
+<option value="4d532c70-9a40-4d52-925e-a5fefea12f8c">Sufyan C Md Firaullah</option>
+<option value="4d646c85-d655-4bc1-bc58-dd478a3d8d03">Rosemary Biomedic</option>
+<option value="4eb5d7d0-a5c2-4c82-b0ca-866ff1febd2c">Ajooni Biotech, Khanna</option>
+<option value="4ee5aa56-cdaf-460d-88ac-b8a8a3e4c1e1">Kanhaiyaa Agro, Ahmednagar</option>
+<option value="50c23f4b-2efd-4931-8b38-ab8982e37561">OM Feed Mill, Kanina</option>
+<option value="50f0c203-b83d-4446-a23f-629546e84647">Nutrineeds Life Sciences Pvt.Ltd.</option>
+<option value="50f76f4b-d569-41e6-b9ff-c724bb9b95b6">ABCD Ltd</option>
+<option value="51d3daa3-08db-48f6-be10-827359d72b24">Likwid Techserve</option>
+<option value="51fc9006-cb79-43e4-9417-0b9f9ebb2fed">Asclepian Healthcare Pvt. Ltd.</option>
+<option value="52dc2933-f38d-413a-a5c4-9f441b08c238">Likwid Techserve</option>
+<option value="53b113a6-e380-4cc7-a2e0-3168a1ddcb9a">Ganga Foods, Panipat</option>
+<option value="53bde707-5588-4b31-8510-a2b8d714a56d">Ankita Feeds, Kolhapur</option>
+<option value="53ef6a78-7032-46df-ac40-f9e347614556">Maiina Herbal</option>
+<option value="54186424-8f4f-41f0-a18b-b14d612d347d">Matoshri Poultry Farm, Nashik</option>
+<option value="551b7a99-42ef-467d-b54f-0d51da67791f">Yash Feed, Haryana</option>
+<option value="56f4d3b0-af8f-4776-91ca-d480507bb385">xyz</option>
+<option value="5854da0b-781f-40dc-859b-73b06e4df95c">KC Feeds,Kolkatta -</option>
+<option value="5aa94e89-e0b8-4aa0-b19f-f02946e31b30">Velentia Healthcare</option>
+<option value="5c9d6ccf-2cd8-432e-8e85-6471c1c6a453">Aswani  Herbolife</option>
+<option value="5d42ebea-d800-41e2-b419-b2a6ca9633f9">S.K Goel</option>
+<option value="60acc3fd-0bd9-414f-a397-92eedced1e42">Dr.Jatinder Chawla</option>
+<option value="61449287-79fa-400b-be09-34f3556f5510">Kanhaiyaa Agro, Ahmednagar</option>
+<option value="625a5e01-81bd-49b3-b34b-34401d09cb61">Hitech Nutrisol, Hajipur</option>
+<option value="65490595-9c96-47d2-bc56-fcb6567d5bec">Shiv Shakti Feeds, Raxaul</option>
+<option value="6554d955-ee0e-458c-8fee-f3b0dd4ef5f6">Vibcare Healthcare Private Limited</option>
+<option value="66429e9b-5519-4326-aae2-4cca36a93157">BS Foods, Jind,</option>
+<option value="66509b3f-536a-4c6b-b2ee-0c265f328c0f">Likwid Techserve</option>
+<option value="67621c37-313a-41be-ba71-c73581462f19">Arvind medical &amp; pharma clinic</option>
+<option value="6bffa0be-5d47-4c55-a7f7-0a099085f994">MedScaler</option>
+<option value="6c412807-19d7-412d-a3c5-2aee18e0ac1f">Gorkha Feeds, Birgunj-Nepal</option>
+<option value="6d0a1dca-94c7-45c1-ac26-cf2f7df04fea">True Pinkk Wellness</option>
+<option value="6d4711ec-62c3-48ad-b248-2d212e98b296">Murugan Krishi, Lucknow</option>
+<option value="6e823d18-7249-454b-8833-81fb7b7c6ec7">Green Root Organic Private Limited</option>
+<option value="70881a39-61ca-4478-8819-e15fa26cff93">Hariom Feeds, Gopalganj</option>
+<option value="71bad724-15f3-4a34-807a-f96762e40735">Novus Veda</option>
+<option value="754f05ef-824e-450a-9514-accdf4733a61">Manhas Feed Mill, Pathankot</option>
+<option value="7554eb01-79c0-4f29-bd23-53bd22659f4b">Dairy Tech, Jaipur</option>
+<option value="7741eb49-c378-411e-ae2f-9c5f5420e3e7">Rajesh Kumar Thakur</option>
+<option value="7a199f89-4877-43b9-bc52-9b74e5b2a593">shashi pharma</option>
+<option value="7d585d2e-43c9-4329-9ee0-c651b9d882cb">Gosaikunda, Chitwan-Nepal</option>
+<option value="7e619310-5728-42a7-ac95-411d09e12025">P S Traders</option>
+<option value="7fa40edf-39a4-4a74-a8bd-3e982b911596">Anevay Pharmaceutical Pvt.Ltd.</option>
+<option value="80fe867e-62da-42a6-a688-ac862a32c204">Nutica Haerbocare</option>
+<option value="819f9315-65c3-4228-bd6a-0e4ad85702e4">Ved Karta Pharmaceutical</option>
+<option value="848f2703-f3e2-4440-b784-e81491618a66">Safal Feeds, Loharu</option>
+<option value="84f1b06e-1780-4ab4-b9ca-3f9b1c46bb98">Shweta Breeding, Amethi</option>
+<option value="85482ccc-d4d6-4522-9aee-b33c81ff3c2c">ALCAN FASHION</option>
+<option value="8888be1d-2c2a-4750-8ccc-58683da57053">Universal Feeds, Jind</option>
+<option value="89fb348c-840c-40bd-9431-926cc00d40c5">Ravi Breeders, Srilanka</option>
+<option value="8cb55038-1129-4d0b-88a8-656b853351ce">Kisan Feed Mill, Banke</option>
+<option value="8e06586e-108b-4588-b48e-79f506a3be24">Nutricare Biosciences Pvt.Ltd.</option>
+<option value="907314cf-5543-4e4d-ae90-763dfb3eff05">S K Distributors</option>
+<option value="92732c7e-5584-4c6b-9b9c-b4eac6923538">Athaveda Health care</option>
+<option value="94100223-c0e0-4404-8324-8936c144d3e9">Ankit pharma</option>
+<option value="942be407-01ad-4792-9fe2-ec45612d1485">SS Agrozone, Lucknow</option>
+<option value="95792951-dfaf-4243-9072-0e84da9cec15">Dhanraj Pharmacuticals</option>
+<option value="965f9058-dc67-4494-8f82-e954f7bc9d83">likwid</option>
+<option value="9751ba91-9cb6-460f-9237-f8da987730c9">Royal Farms, Uganda</option>
+<option value="99dd9519-9c93-4da5-9382-d15d332d0d11">Royal Feeds, Kailali-Nepal</option>
+<option value="9a424298-7844-4c75-ac37-2fdf7fc365bd">Kluvia Millers , Tanzania</option>
+<option value="9ca52767-9472-4586-b1d9-e6aadf582aee">Bodyark</option>
+<option value="9d983cfb-9317-4ebc-a1a2-81887d0a861e">Likwid Techserve</option>
+<option value="a13d8c70-0da9-4c5f-8080-7254eda97ab3">Jasco Labs Pvt.Ltd.</option>
+<option value="a243ea3b-043b-46fc-86f8-9de5d7e06634">Anevay Pharmaceuticals Pvt. Ltd.</option>
+<option value="a36c94c1-acb5-41fc-8c6f-489b59a06819">Murugan Krishi, Lucknow</option>
+<option value="a654b677-b6e2-46da-a11b-e40997ad9aba">Simran Agritech Pvt. Ltd., Indore</option>
+<option value="a6787fae-7c37-4448-a690-5c2caa1e749b">Narmada Poultry, Nashik</option>
+<option value="a6d741c6-037c-4845-927f-9bcb602586bd">Unimarck Pharma</option>
+<option value="a74f0243-2b4a-4a71-b579-d8d54be9e46d">Mandal Homeo Supplier</option>
+<option value="a8bcd872-eede-422c-9727-7c7d95bd3f8f">Morning Fresh, Tanzania</option>
+<option value="a9ad8bdd-a17e-4497-9da2-716b7c8c626e">Lavanya Biotech</option>
+<option value="aaad85cb-b3fd-41da-a2af-be2cc5e01bbc">C.K.Medical Agencies</option>
+<option value="abeae571-9c03-4f24-b9f8-63ef57fad158">Maha feeds, Rajpura</option>
+<option value="ad1a265e-4651-4f24-a022-ebf8f7c09429">XYZ</option>
+<option value="b00dc62a-8e65-4b14-90f3-e45418010ec3">ss cure</option>
+<option value="b3a087d2-51c2-42d1-b4e4-fe789e78893c">Swathi Hatecheries, Coimbtore</option>
+<option value="b6465e87-8350-47e2-93c2-dddf32efe9aa">Amulya Herbs Pvt Ltd</option>
+<option value="b7b308c1-7960-4f8f-b9f7-5cb9985e4333">Shree Veda Enterpries</option>
+<option value="b88c89da-dfa7-41a5-a421-c02cd4fa7224">Ovo Farms, Balangir</option>
+<option value="baff4a7c-8c56-4743-9e16-68b4c043ef3a">Strawberry ceramic</option>
+<option value="bc617f45-d539-408f-89b3-ae34aa3f382c">Prasad Joshi</option>
+<option value="bfc43c04-6e1e-4c3b-b780-e04dd1169fc4">Om Industries, Birgunj-Nepal</option>
+<option value="c00a16e5-3010-474e-9111-edf767260c80">Qgensun Healthcare</option>
+<option value="c29cefa3-ddb7-4de6-96c6-ec1db02e126a">S.P Pharma</option>
+<option value="c2fb832a-dacc-4c6d-a769-bfcb725b2b10">Animal Care, Tanzania</option>
+<option value="c3c8885f-3f44-4c17-bac0-35fa3c6c6d2f">Lavanya Biotech</option>
+<option value="c730bfbb-912d-4d16-82dd-dcd47da4fe69">Country Nirog Ayurveda Pvt.Ltd.</option>
+<option value="c7dd3a5b-e9a2-48a9-8be3-074d1bb47fe2">Biotics Lab Life Services Pvt.Ltd.</option>
+<option value="c820a0d3-23a5-414c-99ec-33cecfe297b1">Tepzen Enterprises, Kohima</option>
+<option value="cdad23eb-3a3c-460e-9e1f-b1b084cc0da5">Sheetal Feeds, Khanna</option>
+<option value="d2da34ee-bc51-4d63-bdb3-5f8d59ce2c80">Rajan Feeds, Jhajjar</option>
+<option value="d4a47ead-f2e1-4755-a250-89d3e64e800a">TechnoVision Solutions</option>
+<option value="d6daa368-4d90-4f00-a6a2-5fe126a30fbd">jivan jyoti</option>
+<option value="d75cd76f-ed08-469d-8e9f-8d2bd0390eb1">Vinakayaka Foods &amp; Feeds, Odisha</option>
+<option value="d974573e-3a65-46ca-8436-16cd788e807a">Sri Langta Baba, Giridh</option>
+<option value="dd17c77c-de38-49ec-aabb-b2b8c77b6062">Shyam Feeds, Kanina</option>
+<option value="dd3d0db2-c04b-40df-acd1-a05428f277f5">xyz</option>
+<option value="dd759569-64e3-427f-9469-27fd5efd80c9">xyz</option>
+<option value="dfd5a839-045a-4b64-a559-7b48d1a2a712">Tensav Pvt Ltd</option>
+<option value="dffc566e-ffe6-403c-ade7-cf060d688ab1">Prophet Pharma</option>
+<option value="e1c457c6-5508-4375-b6e9-3beea316598a">Profit Feeds, Taran Taran</option>
+<option value="e2087740-df5b-4c64-89a7-d5e85a34c770">Mac Bio Sciences Pvt Ltd</option>
+<option value="e339e830-af7b-4a6d-bb7c-7b97c55296cf">Unnat Feeds, Jaipur</option>
+<option value="e33fc542-fca0-4067-af30-c0b97e449c72">Capital Feeds, Lucknow</option>
+<option value="e5373195-126d-4689-a377-792fd330f270">xyz</option>
+<option value="e6fff025-1402-43ca-b01d-70383b9f7257">Kukuchic Limited, Uganda</option>
+<option value="e90c8ab5-36e9-4351-8265-4d84b4a3334e">J B Feeds, Chandigarh</option>
+<option value="e92c7b8d-4eeb-4d5f-86c6-db9c798d28d6">Garg Medical Hall</option>
+<option value="e94b57a9-2e79-46c0-b0c9-b40e46bf204e">French Organic</option>
+<option value="e96989a1-0254-4a94-858f-21d785ac226e">Valley Agrotech, Jhapa</option>
+<option value="eb73e034-6ab5-40ec-b138-910542291fb4">Bim Sales India Pvt.Ltd</option>
+<option value="eec49a79-d01b-49b2-a759-75e61113f2fd">Sample</option>
+<option value="f00ae2b6-371b-488a-8222-640b1c36ef0a">Deol Farms, Hoshiarpur</option>
+<option value="f0f25284-66c4-4e61-b1d1-620c87c5fde3">Shirish Medi Point</option>
+<option value="f15e7d09-70d3-43e2-8c5a-9f23d5fd2f02">Ap enterprises</option>
+<option value="f17a4602-7b37-4656-bd4a-63bf55d30354">Health Harmony Vedascripts</option>
+<option value="f284a40b-a906-446b-a1ef-02be76c4d79f">Malnad Herbs</option>
+<option value="f62cacc3-75e3-4283-bb2a-89278ee1dae4">Vee Remedis</option>
+<option value="f7b5e0d8-c397-475b-ab54-f2abc322bc8a">Sagar Feeds, Biratnagar-Nepal</option>
+<option value="f8b3238d-e5eb-4f20-8852-5edb804f0fd9">Bengal Breeders, Medinapore</option>
+<option value="f9031b01-16b7-457e-919b-d3e48b382029">Reliable Feeds - Unit</option>
+<option value="fab262ed-6cec-4587-8ad9-59b2e0a16962">xyz</option>
+</select>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Product Master</label>
+<span aria-label="Select Product Master for the Product" class="ms-1" data-bs-original-title="Select Product Master for the Product" data-bs-toggle="tooltip" data-kt-initialized="1">
+<i class="ki-duotone ki-information fs-7">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+</i>
+</span>
+<!--end::Label-->
+<!--begin::Input-->
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Brand Name / Product Name</label>
+<!--end::Label-->
+<!--begin::Input-->
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Order Specification</label>
+<span aria-label="Packaging Size/ Units" class="ms-1" data-bs-original-title="Packaging Size/ Units" data-bs-toggle="tooltip" data-kt-initialized="1">
+<i class="ki-duotone ki-information fs-7">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+</i>
+</span>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" id="id_order_specification" maxlength="254" name="order_specification" placeholder="" required="" type="text" value="NA"/>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Remarks</label>
+<span aria-label="Any specific instructions" class="ms-1" data-bs-original-title="Any specific instructions" data-bs-toggle="tooltip" data-kt-initialized="1">
+<i class="ki-duotone ki-information fs-7">
+<span class="path1"></span>
+<span class="path2"></span>
+<span class="path3"></span>
+</i>
+</span>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" id="id_remarks" maxlength="254" name="remarks" placeholder="" required="" type="text" value="NA"/>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Order Quantity</label>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" id="id_order_quantity" name="order_quantity" placeholder="" required="" step="0.01" type="number" value="30.00"/>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Order Rate</label>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" id="id_order_rate" name="order_rate" placeholder="" required="" step="0.01" type="number" value="10.00"/>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">Tax Rate</label>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" id="id_tax_rate" name="tax_rate" placeholder="" required="" step="any" type="number" value="5.0"/>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+<!--begin::Input group-->
+<div class="fv-row mb-7">
+<!--begin::Label-->
+<label class="required fs-6 fw-semibold mb-2">MRP or Print Rate</label>
+<!--end::Label-->
+<!--begin::Input-->
+<input class="form-control form-control-solid" id="id_print_rate" name="print_rate" placeholder="" required="" step="0.01" type="number" value="100.00"/>
+<!--end::Input-->
+</div>
+<!--end::Input group-->
+</div>
+<!--end::Modal body-->
+<!--begin::Modal footer-->
+<div class="modal-footer flex-center">
+<!--begin::Button-->
+<button class="btn btn-dark" data-stitch-go="../flow-ai-orders-orders-list/page.html" data-stitch-page="flow-ai-orders-orders-list" type="submit">Update</button>
+<!--end::Button-->
+</div>
+<!--end::Modal footer-->
+<!--end::Form-->
+<!--end::Form-->
+</div></form>
+</div>
+<!--end::Content container-->
+</div>
+<!--end::Content-->
+</div>
+<!--end::Content wrapper-->
+<!--begin::Footer-->
+<div class="app-footer" id="kt_app_footer">
+<!--begin::Footer container-->
+<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+<!--begin::Copyright-->
+<div class="text-gray-900 order-2 order-md-1">
+<span class="text-muted fw-semibold me-1">2024©</span>
+<a class="text-hover-primary" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" style="color:#4154f1;" target="_blank">Likwid.Ai</a>
+</div>
+<!--end::Copyright-->
+<!--begin::Menu-->
+<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+<li class="menu-item">
+<a class="menu-link px-2" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" target="_blank">About</a>
+</li>
+<li class="menu-item">
+<a class="menu-link px-2" href="#" target="_blank">Support</a>
+</li>
+<li class="menu-item">
+<a class="menu-link px-2" data-stitch-route="https://www.likwid.co.in/" data-stitch-unresolved="1" href="#" target="_blank">Purchase</a>
+</li>
+</ul>
+<!--end::Menu-->
+</div>
+<!--end::Footer container-->
+</div>
+<!--end::Footer-->
+</div>
+<!--end:::Main-->
+</div>
+<!--end::Wrapper-->
+</div>
+<!--end::Page-->
+</div>
+<!--end::App-->
+<style>
+/* ── Likwid AI full-content panel ── */
+#lkh-chat-overlay {
+	position: fixed;
+	top: 70px;
+	left: 265px;
+	right: 0;
+	bottom: 0;
+	z-index: 200;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: -4px 0 24px rgba(0,0,0,0.10);
+	transform: translateX(100%);
+	transition: transform 0.25s ease;
+}
+#lkh-chat-overlay.lkh-open { transform: translateX(0); }
+
+.lkh-chat-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 22px;
+	border-bottom: 1px solid #efefef;
+	flex-shrink: 0;
+	background: #fff;
+}
+.lkh-gradient-text {
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.lkh-chat-body {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+}
+
+/* Sidebar */
+.lkh-chat-sidebar {
+	width: 240px;
+	border-right: 1px solid #efefef;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	flex-shrink: 0;
+	background: #fafafa;
+}
+.lkh-sidebar-top {
+	padding: 12px 14px;
+	border-bottom: 1px solid #efefef;
+	flex-shrink: 0;
+}
+#lkh-conversations-list {
+	flex: 1;
+	overflow-y: auto;
+	padding: 8px 0;
+}
+.lkh-conv-item {
+	padding: 10px 14px;
+	cursor: pointer;
+	border-radius: 6px;
+	margin: 2px 8px;
+	font-size: 13px;
+	color: #5e6278;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: background 0.15s;
+}
+.lkh-conv-item:hover { background: #f1f1f4; color: #181c32; }
+.lkh-conv-item.active {
+	background: linear-gradient(135deg, rgba(126,68,238,0.12) 0%, rgba(0,89,252,0.08) 100%);
+	color: #7e44ee;
+	font-weight: 600;
+}
+
+/* Main chat area */
+.lkh-chat-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+#lkh-messages-erp {
+	flex: 1;
+	overflow-y: auto;
+	padding: 24px 32px;
+}
+
+/* Bubbles */
+.lkh-user-bubble {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+.lkh-user-bubble > div {
+	max-width: 72%;
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	color: #fff;
+	border-radius: 16px 16px 4px 16px;
+	padding: 12px 16px;
+	font-size: 14px;
+	line-height: 1.5;
+	word-break: break-word;
+}
+.lkh-ai-bubble {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+}
+.lkh-ai-bubble-inner {
+	max-width: 82%;
+}
+.lkh-ai-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 6px;
+}
+.lkh-ai-content {
+	background: #f8f6ff;
+	border: 1px solid rgba(126,68,238,0.12);
+	border-radius: 4px 16px 16px 16px;
+	padding: 14px 18px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #2d2d2d;
+	word-break: break-word;
+}
+.lkh-row-charts { margin-top: 10px; }
+
+/* Rich text elements */
+.lkh-blockquote {
+	border-left: 3px solid #7e44ee;
+	padding: 6px 12px;
+	margin: 6px 0;
+	background: rgba(126,68,238,0.04);
+	border-radius: 0 6px 6px 0;
+	color: #555;
+	font-size: 0.88em;
+}
+.lkh-chat-table { font-size: 0.82rem; border-color: #e8e0ff; }
+.lkh-chat-table thead th {
+	background: rgba(126,68,238,0.07);
+	color: #5a32d1;
+	border-color: #e8e0ff;
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+.lkh-chat-table td { border-color: #f0ecff; vertical-align: middle; }
+
+/* Footer */
+.lkh-chat-footer {
+	padding: 14px 22px;
+	border-top: 1px solid rgba(126,68,238,0.1);
+	background: rgba(255,255,255,0.97);
+	flex-shrink: 0;
+}
+.lkh-btn-send {
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	border: none;
+	border-radius: 12px;
+	color: white;
+	font-weight: 600;
+	padding: 10px 22px;
+	transition: all 0.2s ease;
+}
+.lkh-btn-send:disabled { opacity: 0.65; cursor: not-allowed; }
+.lkh-btn-send:not(:disabled):hover { filter: brightness(1.08); }
+
+.lkh-suggest-pill {
+	border: none;
+	background: rgba(126,68,238,0.07);
+	color: #7e44ee;
+	border-radius: 20px;
+	font-size: 12px;
+	padding: 6px 14px;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+.lkh-suggest-pill:hover { background: rgba(126,68,238,0.14); }
+
+@media (max-width: 991px) {
+	#lkh-chat-overlay { left: 0; top: 60px; }
+	.lkh-chat-sidebar { width: 200px; }
+}
+</style>
+<!--begin::Likwid AI full-content panel-->
+<div id="lkh-chat-overlay">
+<!--begin::Header-->
+<div class="lkh-chat-header">
+<div class="d-flex align-items-center gap-3">
+<i class="ki-duotone ki-ai fs-2 text-primary"><span class="path1"></span><span class="path2"></span></i>
+<span class="fs-5 fw-bold lkh-gradient-text">Likwid AI</span>
+<span class="badge badge-light-primary fs-8 ms-1" id="lkh-usage-badge"></span>
+</div>
+<button class="btn btn-sm btn-icon btn-active-light-primary" id="lkh-chat-close">
+<i class="ki-duotone ki-cross fs-2"><span class="path1"></span><span class="path2"></span></i>
+</button>
+</div>
+<!--end::Header-->
+<!--begin::Body-->
+<div class="lkh-chat-body">
+<!--begin::History sidebar-->
+<div class="lkh-chat-sidebar">
+<div class="lkh-sidebar-top">
+<button class="btn btn-sm w-100 lkh-btn-send" id="lkh-new-chat-btn" style="border-radius:10px;">
+<i class="ki-duotone ki-plus fs-5 me-1"><span class="path1"></span><span class="path2"></span></i>
+					New Chat
+				</button>
+</div>
+<div id="lkh-conversations-list">
+<div class="text-center text-muted fs-8 py-4">Loading...</div>
+</div>
+</div>
+<!--end::History sidebar-->
+<!--begin::Main chat area-->
+<div class="lkh-chat-main">
+<!--begin::Messages-->
+<div id="lkh-messages-erp">
+<div class="text-center py-12" id="lkh-empty-erp">
+<i class="ki-duotone ki-chart-line-up fs-4x text-primary opacity-50 mb-3"><span class="path1"></span><span class="path2"></span></i>
+<p class="text-muted fs-6 mb-4">Ask me anything about your live ERP data.</p>
+<div class="d-flex flex-wrap gap-2 justify-content-center" id="lkh-suggest-erp">
+<button class="lkh-suggest-pill">What is my total order value this month?</button>
+<button class="lkh-suggest-pill">Who are my top 10 customers?</button>
+<button class="lkh-suggest-pill">Which items are below reorder level?</button>
+<button class="lkh-suggest-pill">How's my business doing?</button>
+</div>
+</div>
+</div>
+<!--end::Messages-->
+<!--begin::Footer-->
+<div class="lkh-chat-footer">
+<div class="alert alert-warning d-none mb-3 py-2 px-3 fs-7" id="lkh-cap-banner">
+<i class="ki-duotone ki-information-5 fs-5 me-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+					Monthly limit reached. <a class="alert-link" data-stitch-page="subscription" href="../subscription/page.html">Upgrade to Pro</a> for unlimited access.
+				</div>
+<div class="d-flex align-items-end gap-3">
+<textarea class="form-control fs-6 flex-grow-1" id="lkh-input" placeholder="Ask about your live ERP data..." rows="2" style="resize:none; border:1px solid rgba(126,68,238,0.3); border-radius:12px; padding:10px 14px;"></textarea>
+<button class="lkh-btn-send" id="lkh-send-btn" style="min-width:100px;">
+<i class="ki-duotone ki-send fs-5 me-1"><span class="path1"></span><span class="path2"></span></i>
+						Ask AI
+					</button>
+</div>
+</div>
+<!--end::Footer-->
+</div>
+<!--end::Main chat area-->
+</div>
+<!--end::Body-->
+</div>
+<!--end::Likwid AI full-content panel-->
+<!--Load ApexCharts lazily if not already present-->
+<!--begin::Scrolltop-->
+<div class="scrolltop" data-kt-scrolltop="true" id="kt_scrolltop">
+<i class="ki-duotone ki-arrow-up">
+<span class="path1"></span>
+<span class="path2"></span>
+</i>
+</div>
+<!--end::Scrolltop-->
+<!--begin::Javascript-->
+<!--begin::Javascript-->
+<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+<!--end::Global Javascript Bundle-->
+<!--begin::Vendors Javascript(used for this page only)-->
+<!--end::Vendors Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+<!--end::Vendors Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+<!--end::Custom Javascript-->
+<!--end::Javascript-->
+<!--end::Javascript-->
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../runtime.js"></script></body><!--end::Body--></html>

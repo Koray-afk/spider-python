@@ -1,0 +1,102 @@
+[
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Run BOM Prediction",
+    "id": "run-bom-btn",
+    "className": "btn btn-light-primary btn-sm",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Run BOM Prediction",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Run Scan Now",
+    "id": "run-scan-btn",
+    "className": "btn btn-primary btn-sm",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Run Scan Now",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Approve",
+    "id": "",
+    "className": "btn btn-sm btn-success approve-btn w-100",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Approve",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Reject",
+    "id": "",
+    "className": "btn btn-sm btn-light-danger reject-btn w-100",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Reject",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

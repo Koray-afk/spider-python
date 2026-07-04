@@ -1,0 +1,81 @@
+[
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "kt_app_header",
+    "cls": "app-header"
+  },
+  {
+    "kind": "added",
+    "tag": "I",
+    "id": "",
+    "cls": "ki-duotone ki-code fs-5",
+    "parentId": "emailPreviewToggle",
+    "parentTag": "BUTTON"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default modal-open"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default modal-open"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "BODY",
+    "id": "kt_app_body",
+    "cls": "app-default modal-open"
+  },
+  {
+    "kind": "added",
+    "tag": "DIV",
+    "id": "",
+    "cls": "modal-backdrop fade show",
+    "parentId": "kt_app_body",
+    "parentTag": "BODY"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "",
+    "cls": "modal-backdrop fade show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "DIV",
+    "id": "kt_modal_email_preview",
+    "cls": "modal fade show"
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "DIV",
+    "id": "kt_modal_email_preview",
+    "cls": "modal fade show"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "DIV",
+    "id": "kt_modal_email_preview",
+    "cls": "modal fade show"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "IFRAME",
+    "id": "emailPreviewIframe",
+    "cls": ""
+  }
+]

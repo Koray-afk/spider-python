@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Add to Lead",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/002-add-to-lead",
+    "relationship_file": "interactions/002-add-to-lead/relationship.json"
+  },
+  {
+    "label": "Delete Company",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-delete-company",
+    "relationship_file": "interactions/004-delete-company/relationship.json"
+  }
+]

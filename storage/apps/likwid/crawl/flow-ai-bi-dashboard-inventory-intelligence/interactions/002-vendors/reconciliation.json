@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Vendors",
+    "tagName": "button",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"3\"]",
+    "outerHTML": "<button class=\"filter-btn\" data-crawl-id=\"3\">Vendors</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#priceVarianceBody > tr:nth-of-type(4) > td:nth-of-type(4)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[4]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<span class=\"text-success fw-bold\">+9.6%</span>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

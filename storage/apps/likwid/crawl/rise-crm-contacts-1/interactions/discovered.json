@@ -1,0 +1,82 @@
+[
+  {
+    "label": "Edit Contact",
+    "id": "",
+    "className": "btn btn-sm btn-primary",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Edit Contact",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Campaign -Likwid ERP - Orders Problem Statement",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -Likwid ERP - Orders Problem Statement",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Campaign -Likwid ERP - 3 stages of AI",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -Likwid ERP - 3 stages of AI",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Campaign -Cogent - CS 01",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -Cogent - CS 01",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Campaign -Cogent Feedback",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -Cogent Feedback",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Campaign -Cogent Free Users - Offer",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -Cogent Free Users - Offer",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Campaign -Maturity Assessment- Phase 2",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -Maturity Assessment- Phase 2",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Campaign -V2.0 - Launch",
+    "id": "",
+    "className": "btn btn-link p-0 text-gray-800 fw-bold fs-6 text-hover-primary text-start campaign-preview-btn",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Campaign -V2.0 - Launch",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  }
+]

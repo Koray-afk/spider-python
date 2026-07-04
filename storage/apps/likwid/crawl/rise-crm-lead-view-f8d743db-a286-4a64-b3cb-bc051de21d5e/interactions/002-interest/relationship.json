@@ -1,0 +1,34 @@
+{
+  "source_page": "rise-crm-lead-view-f8d743db-a286-4a64-b3cb-bc051de21d5e",
+  "source_url": "https://likwidai.com/rise-crm/lead-view/f8d743db-a286-4a64-b3cb-bc051de21d5e",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Interest",
+    "id": "",
+    "class_name": "ld-stage ",
+    "name": "interest",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#\\[object\\ HTMLInputElement\\] > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"2\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/form[2]/button[1]",
+    "outer_html": "<button type=\"submit\" name=\"interest\" class=\"ld-stage \" data-crawl-id=\"2\"><span class=\"ld-stage-dot\"></span>Interest</button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/rise-crm/lead-view/f8d743db-a286-4a64-b3cb-bc051de21d5e",
+    "slug": "rise-crm-lead-view-f8d743db-a286-4a64-b3cb-bc051de21d5e",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button type=\"submit\" name=\"interest\" class=\"ld-stage \" data-crawl-id=\"2\"><span class=\"ld-stage-dot\"></span>Interest</button>",
+  "trigger_label": "Interest",
+  "trigger_id": "",
+  "trigger_class": "ld-stage ",
+  "target_url": "https://likwidai.com/rise-crm/lead-view/f8d743db-a286-4a64-b3cb-bc051de21d5e",
+  "target_slug": "rise-crm-lead-view-f8d743db-a286-4a64-b3cb-bc051de21d5e",
+  "target_title": "Likwid.Ai"
+}

@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Awareness",
+    "tagName": "button",
+    "id": "",
+    "className": "ld-stage ld-stage-active",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button type=\"submit\" name=\"awareness\" class=\"ld-stage ld-stage-active\" data-crawl-id=\"1\"><span class=\"ld-stage-dot\"></span>Awareness</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

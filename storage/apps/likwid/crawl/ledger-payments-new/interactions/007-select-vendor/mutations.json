@@ -1,0 +1,190 @@
+[
+  {
+    "kind": "added",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-container select2-container--bootstrap5 select2-container--open",
+    "parentId": "kt_app_body",
+    "parentTag": "BODY"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-dropdown select2-dropdown--below"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-dropdown select2-dropdown--below"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-dropdown select2-dropdown--below"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-container select2-container--bootstrap5 select2-container--open"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-container select2-container--bootstrap5 select2-container--open"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-dropdown select2-dropdown--below"
+  },
+  {
+    "kind": "attr",
+    "attr": "aria-hidden",
+    "tag": "UL",
+    "id": "select2-id_vendor-results",
+    "cls": "select2-results__options"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2-search select2-search--dropdown"
+  },
+  {
+    "kind": "added",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-s1mw-98bd17a5-4265-4ec3-82cc-0af932b6c3d6",
+    "cls": "select2-results__option select2-results__option--selectable select2-results__option--highlighted",
+    "parentId": "select2-id_vendor-results",
+    "parentTag": "UL"
+  },
+  {
+    "kind": "added",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-i9ea-fbb6a393-e8c4-4ae1-8ae3-e1136ec8f02e",
+    "cls": "select2-results__option select2-results__option--selectable",
+    "parentId": "select2-id_vendor-results",
+    "parentTag": "UL"
+  },
+  {
+    "kind": "added",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-f0l7-3b348f93-9c3b-4cf1-ae62-605ce7e4ce7a",
+    "cls": "select2-results__option select2-results__option--selectable",
+    "parentId": "select2-id_vendor-results",
+    "parentTag": "UL"
+  },
+  {
+    "kind": "added",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-wl83-3d22ed68-3d77-4f09-8cbc-5d7c7d14dfd5",
+    "cls": "select2-results__option select2-results__option--selectable",
+    "parentId": "select2-id_vendor-results",
+    "parentTag": "UL"
+  },
+  {
+    "kind": "added",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-txop-a01e2ec7-ac9b-4706-bc2d-b6acdd960d5a",
+    "cls": "select2-results__option select2-results__option--selectable",
+    "parentId": "select2-id_vendor-results",
+    "parentTag": "UL"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-s1mw-98bd17a5-4265-4ec3-82cc-0af932b6c3d6",
+    "cls": "select2-results__option select2-results__option--selectable select2-results__option--highlighted"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-i9ea-fbb6a393-e8c4-4ae1-8ae3-e1136ec8f02e",
+    "cls": "select2-results__option select2-results__option--selectable"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-f0l7-3b348f93-9c3b-4cf1-ae62-605ce7e4ce7a",
+    "cls": "select2-results__option select2-results__option--selectable"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-wl83-3d22ed68-3d77-4f09-8cbc-5d7c7d14dfd5",
+    "cls": "select2-results__option select2-results__option--selectable"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-txop-a01e2ec7-ac9b-4706-bc2d-b6acdd960d5a",
+    "cls": "select2-results__option select2-results__option--selectable"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "LI",
+    "id": "select2-id_vendor-result-s1mw-98bd17a5-4265-4ec3-82cc-0af932b6c3d6",
+    "cls": "select2-results__option select2-results__option--selectable select2-results__option--highlighted"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "select2 select2-container select2-container--bootstrap5"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "rise-crm-add-quotation-new-quote",
+  "source_url": "https://likwidai.com/rise-crm/add-quotation/new-quote/",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Add item (Ctrl + m)",
+    "id": "add-more",
+    "class_name": "btn btn-link py-1",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#add-more",
+    "crawl_selector": "[data-crawl-id=\"2\"]",
+    "xpath": "//*[@id=\"add-more\"]",
+    "outer_html": "<button type=\"button\" class=\"btn btn-link py-1\" id=\"add-more\" data-crawl-id=\"2\">Add item (Ctrl + m)</button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/rise-crm/add-quotation/new-quote/",
+    "slug": "rise-crm-add-quotation-new-quote",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button type=\"button\" class=\"btn btn-link py-1\" id=\"add-more\" data-crawl-id=\"2\">Add item (Ctrl + m)</button>",
+  "trigger_label": "Add item (Ctrl + m)",
+  "trigger_id": "add-more",
+  "trigger_class": "btn btn-link py-1",
+  "target_url": "https://likwidai.com/rise-crm/add-quotation/new-quote/",
+  "target_slug": "rise-crm-add-quotation-new-quote",
+  "target_title": "Likwid.Ai"
+}
