@@ -3,7 +3,7 @@
 import sys
 
 from config import APPS, get_app_config
-from crawler_v2 import crawl_application, crawl_postauth, crawl_preauth
+from crawler_v2 import crawl_application, crawl_interaction_pass, crawl_postauth, crawl_preauth
 from reconciler import reconcile_app
 from src.runtime.server import DEFAULT_PORT, serve_app
 from stitcher_v1 import stitch_app
@@ -86,6 +86,7 @@ def usage() -> None:
     print("  python main.py crawl <app>           Pre-auth + post-auth crawl")
     print("  python main.py crawl-preauth <app>   Marketing pages only")
     print("  python main.py crawl-postauth <app>  Authenticated app only")
+    print("  python main.py crawl-interactions <app>  Interaction pass on discovered pages (hybrid phase 2)")
     print("  python main.py reconcile <app>       Extract per-interaction UI (reconciliation.json)")
     print("  python main.py stitch <app> [--no-expand-sidebars]")
     print("                                       Build navigable static clone")
@@ -142,6 +143,9 @@ def main() -> None:
         print(f"Done: {result['pages']} pages, {result['interactions_saved']} interactions saved")
     elif command == "crawl-postauth":
         result = crawl_postauth(app_name, cfg)
+        print(f"Done: {result['pages']} pages, {result['interactions_saved']} interactions saved")
+    elif command == "crawl-interactions":
+        result = crawl_interaction_pass(app_name, cfg)
         print(f"Done: {result['pages']} pages, {result['interactions_saved']} interactions saved")
     elif command == "reconcile":
         cmd_reconcile(app_name)
