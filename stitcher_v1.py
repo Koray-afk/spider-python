@@ -363,10 +363,16 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       if (method === "get" && typeof window.__stitchLikwidFlowSubmit === "function") {
         if (window.__stitchLikwidFlowSubmit(form, e)) return;
       }
+      if (method === "get" && typeof window.__stitchReplicaSubmit === "function") {
+        if (window.__stitchReplicaSubmit(form, e)) return;
+      }
       if (method !== "post") return;
       e.preventDefault();
       e.stopPropagation();
       if (typeof window.__stitchLikwidFlowSubmit === "function" && window.__stitchLikwidFlowSubmit(form, e)) {
+        return;
+      }
+      if (typeof window.__stitchReplicaSubmit === "function" && window.__stitchReplicaSubmit(form, e)) {
         return;
       }
       var sub = e.submitter || form.querySelector("[type='submit'], button:not([type])");
@@ -926,9 +932,12 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         return;
       }
 
-      // 0c. Bootstrap modals already present in the page snapshot.
+      // 0c. Bootstrap modals already present in the page snapshot. Takes
+      // priority over data-stitch-ui-id — if the modal target exists in the
+      // DOM, open it natively instead of replaying a (possibly mis-wired)
+      // captured interaction snapshot.
       var modalTrigger = t.closest("[data-bs-toggle='modal']");
-      if (modalTrigger && !modalTrigger.hasAttribute("data-stitch-ui-id")) {
+      if (modalTrigger) {
         var targetSel = modalTrigger.getAttribute("data-bs-target") || "";
         var modalEl = targetSel ? document.querySelector(targetSel) : null;
         if (modalEl) {
@@ -3174,6 +3183,7 @@ def _inject_runtime(
         flow_tag.string = f"window.__LIKWID_FLOWS__ = {data};"
         body.append(flow_tag)
         body.append(soup.new_tag("script", src=f"{to_root}likwid_flows.js"))
+    body.append(soup.new_tag("script", src=f"{to_root}replica_forms.js"))
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
 
 
@@ -3829,6 +3839,12 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             flows_js.read_text(encoding="utf-8"), encoding="utf-8"
         )
         print("[STITCH] Likwid flows layer enabled")
+
+    replica_js = Path(__file__).resolve().parent / "src" / "runtime" / "replica_forms.js"
+    if replica_js.is_file():
+        (stitched_dir / "replica_forms.js").write_text(
+            replica_js.read_text(encoding="utf-8"), encoding="utf-8"
+        )
 
     fonts_dir = stitched_dir / "assets" / "fonts"
     fonts_dir.mkdir(parents=True, exist_ok=True)

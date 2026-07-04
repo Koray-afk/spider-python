@@ -317,10 +317,16 @@
       if (method === "get" && typeof window.__stitchLikwidFlowSubmit === "function") {
         if (window.__stitchLikwidFlowSubmit(form, e)) return;
       }
+      if (method === "get" && typeof window.__stitchReplicaSubmit === "function") {
+        if (window.__stitchReplicaSubmit(form, e)) return;
+      }
       if (method !== "post") return;
       e.preventDefault();
       e.stopPropagation();
       if (typeof window.__stitchLikwidFlowSubmit === "function" && window.__stitchLikwidFlowSubmit(form, e)) {
+        return;
+      }
+      if (typeof window.__stitchReplicaSubmit === "function" && window.__stitchReplicaSubmit(form, e)) {
         return;
       }
       var sub = e.submitter || form.querySelector("[type='submit'], button:not([type])");
@@ -880,9 +886,12 @@
         return;
       }
 
-      // 0c. Bootstrap modals already present in the page snapshot.
+      // 0c. Bootstrap modals already present in the page snapshot. Takes
+      // priority over data-stitch-ui-id — if the modal target exists in the
+      // DOM, open it natively instead of replaying a (possibly mis-wired)
+      // captured interaction snapshot.
       var modalTrigger = t.closest("[data-bs-toggle='modal']");
-      if (modalTrigger && !modalTrigger.hasAttribute("data-stitch-ui-id")) {
+      if (modalTrigger) {
         var targetSel = modalTrigger.getAttribute("data-bs-target") || "";
         var modalEl = targetSel ? document.querySelector(targetSel) : null;
         if (modalEl) {

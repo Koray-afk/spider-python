@@ -101,14 +101,14 @@
         "label": "Categories",
         "type": "tab-switch",
         "ui_id": "interaction_1",
-        "has_ui": true,
+        "has_ui": false,
         "fallback": "interactions/001-categories/page.html"
       },
       {
         "label": "Vendors",
         "type": "tab-switch",
         "ui_id": "interaction_2",
-        "has_ui": true,
+        "has_ui": false,
         "fallback": "interactions/002-vendors/page.html"
       }
     ]
@@ -348,14 +348,14 @@
         "label": "Edit",
         "type": "tab-switch",
         "ui_id": "interaction_1",
-        "has_ui": true,
+        "has_ui": false,
         "fallback": "interactions/001-edit/page.html"
       },
       {
         "label": "Edit Customer",
         "type": "tab-switch",
         "ui_id": "interaction_2",
-        "has_ui": true,
+        "has_ui": false,
         "fallback": "interactions/002-edit-customer/page.html"
       }
     ]
