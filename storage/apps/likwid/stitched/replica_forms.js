@@ -327,10 +327,62 @@
     }
   };
 
-  // Keep showSuccessPopup for backward compatibility (quotation view page etc.)
+  // SweetAlert-style success modal (centered green check + "Ok, got it!"), used
+  // for flows whose real-site confirmation is a dialog rather than a toast
+  // (e.g. Add Company). Uses the native Swal if the page bundles it, otherwise
+  // renders a clone styled by the page's bundled swal2 CSS.
   ReplicaHelpers.showSuccessPopup = function (opts) {
     opts = opts || {};
-    ReplicaHelpers.showToast(opts.title || "Success");
+    var title = opts.title || "Success";
+    var text = opts.text || "";
+    var confirmText = opts.confirmButtonText || "Ok, got it!";
+
+    if (window.Swal && typeof window.Swal.fire === "function") {
+      window.Swal.fire({
+        icon: "success",
+        title: title,
+        text: text,
+        buttonsStyling: false,
+        confirmButtonText: confirmText,
+        customClass: { confirmButton: "btn btn-primary" },
+      });
+      return;
+    }
+
+    // Lightweight clone matching the swal2 markup/classes already styled by
+    // the page's bundled CSS.
+    var overlay = document.createElement("div");
+    overlay.className = "swal2-container swal2-center swal2-backdrop-show replica-swal";
+    overlay.innerHTML =
+      '<div class="swal2-popup swal2-modal swal2-icon-success swal2-show" role="dialog" style="display:grid;">' +
+      '<div class="swal2-icon swal2-success swal2-icon-show" style="display:flex;">' +
+      '<div class="swal2-success-circular-line-left"></div>' +
+      '<span class="swal2-success-line-tip"></span><span class="swal2-success-line-long"></span>' +
+      '<div class="swal2-success-ring"></div><div class="swal2-success-fix"></div>' +
+      '<div class="swal2-success-circular-line-right"></div>' +
+      "</div>" +
+      '<h2 class="swal2-title" style="display:block;">' + escapeHtml(title) + "</h2>" +
+      (text
+        ? '<div class="swal2-html-container" style="display:block;">' + escapeHtml(text) + "</div>"
+        : "") +
+      '<div class="swal2-actions" style="display:flex;">' +
+      '<button type="button" class="swal2-confirm btn btn-primary">' + escapeHtml(confirmText) + "</button>" +
+      "</div>" +
+      "</div>";
+    document.body.appendChild(overlay);
+
+    function close() {
+      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      document.removeEventListener("keydown", onKey, true);
+    }
+    function onKey(ev) {
+      if (ev.key === "Escape" || ev.keyCode === 27) close();
+    }
+    overlay.querySelector(".swal2-confirm").addEventListener("click", close);
+    overlay.addEventListener("click", function (ev) {
+      if (ev.target === overlay) close();
+    });
+    document.addEventListener("keydown", onKey, true);
   };
 
   window.ReplicaHelpers = ReplicaHelpers;
@@ -419,7 +471,11 @@
         );
       }
 
-      ReplicaHelpers.showToast(msg);
+      if (entity.successPopup) {
+        ReplicaHelpers.showSuccessPopup({ title: entity.successPopupText || msg });
+      } else {
+        ReplicaHelpers.showToast(msg);
+      }
       console.log("[STITCH] Replica create", entity.storeKey, data);
     }, delay);
 
@@ -533,6 +589,8 @@
     singularLabel: "company",
     pluralLabel: "companies",
     successMessage: "Company created successfully!",
+    successPopup: true,
+    successPopupText: "Company has been successfully added!",
     fillRow: fillCompanyRow,
     counters: [
       { label: "All Companies", delta: 1 },
@@ -613,6 +671,8 @@
     singularLabel: "contact",
     pluralLabel: "contacts",
     successMessage: "Contact created successfully!",
+    successPopup: true,
+    successPopupText: "Contact has been successfully added!",
     fillRow: fillContactRow,
   });
 
