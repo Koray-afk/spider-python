@@ -1,16 +1,35 @@
 // Replica forms — generic client-side "create record" simulation for the
 // stitched clone. There is no backend, so this layer intercepts form submits,
-// stores the submitted data in window.ReplicaStore, and updates the DOM
+// stores the submitted data in window.ReplicaStore (persisted to
+// localStorage so records survive full-page navigation), and updates the DOM
 // (table row, counters, pagination text, modal, success popup) so the app
 // *feels* like the real thing even though nothing is persisted server-side.
 //
-// Entities (company, contact, lead, ...) are added via ReplicaFlows.register()
-// with a small config object; the actual DOM wiring lives in the shared
-// ReplicaHelpers functions below so new entities never need to duplicate it.
+// Entities (company, contact, lead, quotation, ...) are added via
+// ReplicaFlows.register() with a small config object; the actual DOM wiring
+// lives in the shared ReplicaHelpers functions below so new entities never
+// need to duplicate it.
 (function () {
   "use strict";
 
-  window.ReplicaStore = window.ReplicaStore || {};
+  var STORAGE_KEY = "__stitchReplicaStore__";
+
+  function loadStore() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (err) {
+      return {};
+    }
+  }
+
+  window.ReplicaStore = loadStore();
+
+  function persistStore() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(window.ReplicaStore));
+    } catch (err) {}
+  }
 
   function escapeHtml(str) {
     return String(str == null ? "" : str).replace(/[&<>"']/g, function (ch) {
@@ -18,9 +37,53 @@
     });
   }
 
+  function pad2(n) {
+    return n < 10 ? "0" + n : String(n);
+  }
+
+  var MONTHS_LONG = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  var MONTHS_SHORT = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  ];
+
+  function formatDateShort(d) {
+    return d.getDate() + " " + MONTHS_SHORT[d.getMonth()] + " " + d.getFullYear();
+  }
+
+  function formatDateLong(d) {
+    var h = d.getHours();
+    var ampm = h >= 12 ? "p.m." : "a.m.";
+    var h12 = h % 12;
+    if (h12 === 0) h12 = 12;
+    return (
+      MONTHS_LONG[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() +
+      ", " + h12 + ":" + pad2(d.getMinutes()) + " " + ampm
+    );
+  }
+
+  function fakeCode(prefix) {
+    return prefix + "-69-" + String(Math.floor(10000 + Math.random() * 90000));
+  }
+
+  function newId() {
+    return "new-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+  }
+
+  function selectLabel(sel) {
+    if (!sel || sel.selectedIndex < 0) return "";
+    var opt = sel.options[sel.selectedIndex];
+    return opt ? opt.text.trim() : "";
+  }
+
   // ── Generic helpers (reusable across entities) ──────────────────────────
 
   var ReplicaHelpers = {};
+
+  ReplicaHelpers.persistStore = persistStore;
 
   ReplicaHelpers.readForm = function (form) {
     var data = {};
@@ -122,10 +185,29 @@
     }
   };
 
+  // Variant for the Leads stat strip: `<div class="ll-stat-num">14</div>
+  // <div class="ll-stat-lbl">Total Leads</div>` (value comes *before* label).
+  ReplicaHelpers.bumpStatBox = function (label, delta) {
+    if (!delta) return;
+    var labels = document.querySelectorAll(".ll-stat-lbl");
+    for (var i = 0; i < labels.length; i++) {
+      if ((labels[i].textContent || "").trim() === label) {
+        var valueEl = labels[i].previousElementSibling;
+        if (valueEl) {
+          var cur = parseInt((valueEl.textContent || "0").replace(/[^0-9-]/g, ""), 10) || 0;
+          valueEl.textContent = String(cur + delta);
+        }
+        return;
+      }
+    }
+  };
+
   ReplicaHelpers.updateCounters = function (counterConfigs, data) {
     (counterConfigs || []).forEach(function (c) {
       var delta = typeof c.deltaFor === "function" ? c.deltaFor(data) : (c.delta || 0);
-      ReplicaHelpers.bumpCounterCard(c.label, delta);
+      if (!delta) return;
+      if (c.type === "stat-box") ReplicaHelpers.bumpStatBox(c.label, delta);
+      else ReplicaHelpers.bumpCounterCard(c.label, delta);
     });
   };
 
@@ -215,10 +297,26 @@
     e.stopPropagation();
 
     var data = ReplicaHelpers.readForm(form);
-    var store = window.ReplicaStore[entity.storeKey] || (window.ReplicaStore[entity.storeKey] = []);
-    data.__id = "new-" + Date.now();
-    store.unshift(data);
+    data.__id = newId();
+    if (typeof entity.beforeSave === "function") entity.beforeSave(data, form);
 
+    var store = window.ReplicaStore[entity.storeKey] || (window.ReplicaStore[entity.storeKey] = []);
+    store.unshift(data);
+    persistStore();
+
+    var modalEl = entity.modalSelector ? document.querySelector(entity.modalSelector) : null;
+
+    // Pattern B: the form lives on its own page (no table to update here) —
+    // save + redirect to the real list page, which re-renders every
+    // persisted record (including this one) on load.
+    if (entity.redirectTo) {
+      ReplicaHelpers.closeModal(modalEl);
+      form.reset();
+      location.href = typeof entity.redirectTo === "function" ? entity.redirectTo(data) : entity.redirectTo;
+      return true;
+    }
+
+    // Pattern A: modal + table live on the same page — update in place.
     var rowEl = ReplicaHelpers.buildRow(entity, data, store.length);
     if (rowEl) ReplicaHelpers.prependTableRow(entity.tableBodySelector, rowEl);
 
@@ -234,7 +332,6 @@
       );
     }
 
-    var modalEl = entity.modalSelector ? document.querySelector(entity.modalSelector) : null;
     ReplicaHelpers.closeModal(modalEl);
     form.reset();
 
@@ -246,6 +343,38 @@
     console.log("[STITCH] Replica create", entity.storeKey, data);
     return true;
   };
+
+  // Re-render every persisted record for every entity that has a matching
+  // table on the *current* page. Runs once per page load — the DOM always
+  // starts from the crawled snapshot, so this is how records created on a
+  // previous page (redirect flows) or a previous visit reappear.
+  function renderPersistedOnLoad() {
+    for (var name in entities) {
+      if (!Object.prototype.hasOwnProperty.call(entities, name)) continue;
+      var cfg = entities[name];
+      if (!cfg.tableBodySelector || !cfg.storeKey) continue;
+      var tbody = document.querySelector(cfg.tableBodySelector);
+      if (!tbody) continue;
+      var records = window.ReplicaStore[cfg.storeKey] || [];
+      if (!records.length) continue;
+
+      for (var i = records.length - 1; i >= 0; i--) {
+        var rowEl = ReplicaHelpers.buildRow(cfg, records[i]);
+        if (rowEl) ReplicaHelpers.prependTableRow(cfg.tableBodySelector, rowEl);
+      }
+
+      if (cfg.counters) {
+        records.forEach(function (rec) {
+          ReplicaHelpers.updateCounters(cfg.counters, rec);
+        });
+      }
+
+      if (cfg.paginationInfoSelector) {
+        var total = ReplicaHelpers.countRows(cfg.tableBodySelector);
+        ReplicaHelpers.updatePaginationInfo(cfg.paginationInfoSelector, total, cfg.singularLabel, cfg.pluralLabel);
+      }
+    }
+  }
 
   // ── Entity: Rise CRM — Company ──────────────────────────────────────────
 
@@ -332,4 +461,353 @@
       { label: "Customers", deltaFor: function (d) { return d.company_stage === "Customer" ? 1 : 0; } },
     ],
   });
+
+  // ── Entity: Rise CRM — Contact (Pattern A: modal + table, same page) ────
+
+  function contactStatusBadgeClass(status) {
+    switch ((status || "").toLowerCase()) {
+      case "verified":
+        return "badge-light-success";
+      case "unverified":
+        return "badge-light-danger";
+      default:
+        return "badge-light-info";
+    }
+  }
+
+  function fillContactRow(row, data) {
+    var name = (data.contact_name || "New Contact").trim();
+    var email = data.contact_email || "";
+    var phone = data.contact_phone || "";
+    var source = data.contact_source || "";
+    var status = data.contact_status || "Pending";
+
+    row.removeAttribute("style");
+    row.setAttribute("data-contact-id", data.__id);
+    row.setAttribute("data-name", name);
+    row.setAttribute("data-email", email);
+    row.setAttribute("data-phone", phone);
+    row.setAttribute("data-source", source);
+    row.setAttribute("data-category-ids", "");
+    row.setAttribute("data-category-names", "");
+
+    var checkbox = row.querySelector('input.contact-checkbox');
+    if (checkbox) checkbox.value = data.__id;
+
+    var nameLink = row.querySelector("td:nth-child(2) a");
+    if (nameLink) {
+      nameLink.textContent = name;
+      nameLink.setAttribute("href", "#");
+      nameLink.removeAttribute("data-stitch-page");
+    }
+
+    var emailCell = row.querySelector("td:nth-child(3)");
+    if (emailCell) emailCell.textContent = email || "-";
+
+    var companyCell = row.querySelector("td:nth-child(4)");
+    if (companyCell) companyCell.textContent = "-";
+
+    var phoneCell = row.querySelector("td:nth-child(5)");
+    if (phoneCell) phoneCell.textContent = phone || "-";
+
+    var sourceCell = row.querySelector("td:nth-child(6)");
+    if (sourceCell) sourceCell.textContent = source || "-";
+
+    var dateCell = row.querySelector("td:nth-child(7)");
+    if (dateCell) dateCell.textContent = new Date().toISOString().slice(0, 10);
+
+    var statusBadge = row.querySelector("td:nth-child(8) .badge");
+    if (statusBadge) {
+      statusBadge.className = "badge " + contactStatusBadgeClass(status);
+      statusBadge.textContent = status;
+    }
+  }
+
+  ReplicaFlows.register("contact", {
+    formSelector: "#kt_modal_add_contact_form",
+    modalSelector: "#kt_modal_add_contact",
+    tableBodySelector: "#contactsTableBody",
+    storeKey: "contacts",
+    paginationInfoSelector: "#paginationInfo",
+    singularLabel: "contact",
+    pluralLabel: "contacts",
+    successTitle: "Contact Added",
+    successText: "The contact has been successfully added.",
+    fillRow: fillContactRow,
+  });
+
+  // ── Entity: Rise CRM — Lead (Pattern B: modal lives on its own page, then
+  //    redirects to the Leads list which re-renders persisted leads) ──────
+
+  function fillLeadRow(row, data) {
+    var name = ((data.first_name || "") + " " + (data.last_name || "")).trim() || "New Lead";
+    var email = data.lead_email || "";
+    var company = data.company_name || "-";
+    var phone = data.phn_num || "-";
+
+    var nameLink = row.querySelector("td:nth-child(1) a");
+    if (nameLink) {
+      nameLink.textContent = name;
+      nameLink.setAttribute("href", "#");
+      nameLink.removeAttribute("data-stitch-page");
+    }
+    var emailDiv = row.querySelector("td:nth-child(1) .text-muted.fs-7");
+    if (emailDiv) emailDiv.textContent = email;
+
+    var companyCell = row.querySelector("td:nth-child(2)");
+    if (companyCell) companyCell.textContent = company;
+
+    var phoneCell = row.querySelector("td:nth-child(3)");
+    if (phoneCell) phoneCell.textContent = phone;
+
+    var dateCell = row.querySelector("td:nth-child(4)");
+    if (dateCell) dateCell.textContent = formatDateShort(new Date());
+
+    var assignedCell = row.querySelector("td:nth-child(5)");
+    if (assignedCell) assignedCell.textContent = "—";
+
+    var statusBadge = row.querySelector("td:nth-child(6) .badge");
+    if (statusBadge) {
+      statusBadge.className = "badge badge-light-warning";
+      statusBadge.textContent = "New";
+    }
+
+    var quoteCell = row.querySelector("td:nth-child(7)");
+    if (quoteCell) quoteCell.innerHTML = '<span class="text-muted fs-8">—</span>';
+
+    var viewLink = row.querySelector("td:nth-child(8) a");
+    if (viewLink) {
+      viewLink.setAttribute("href", "#");
+      viewLink.removeAttribute("data-stitch-page");
+    }
+  }
+
+  ReplicaFlows.register("lead", {
+    formSelector: "#kt_modal_add_customer_form",
+    modalSelector: "#kt_modal_add_customer",
+    tableBodySelector: "#llTable tbody",
+    storeKey: "leads",
+    fillRow: fillLeadRow,
+    redirectTo: "../rise-crm-leads-list/page.html",
+    counters: [
+      { label: "Total Leads", delta: 1, type: "stat-box" },
+      { label: "Open", delta: 1, type: "stat-box" },
+    ],
+  });
+
+  // ── Entity: Rise CRM — Quotation ─────────────────────────────────────────
+  // "Custom Quotation" / "Generate Quote" is a real <button type="submit">
+  // but it sits *outside* the <form> that holds the customer/items/terms
+  // fields (a pre-existing quirk of the crawled markup), so no "submit"
+  // event ever fires for it. We wire it directly via a click handler
+  // instead of going through the generic form-submit entity path.
+
+  var QUOTE_VIEW_TEMPLATE = "rise-crm-quotations-97b29a31-94b4-4bdb-a6a6-7dc929777efe-view";
+
+  function quotationViewHref(id) {
+    return "../" + QUOTE_VIEW_TEMPLATE + "/page.html?replica=quotations:" + encodeURIComponent(id);
+  }
+
+  function fillQuotationRow(row, data) {
+    var codeLink = row.querySelector("td:nth-child(2) a");
+    if (codeLink) {
+      codeLink.textContent = data.__code;
+      codeLink.setAttribute("href", quotationViewHref(data.__id));
+      codeLink.removeAttribute("data-stitch-page");
+    }
+
+    var customerCell = row.querySelector("td:nth-child(3)");
+    if (customerCell) customerCell.textContent = data.__customerLabel || "Walk-in Customer";
+
+    var dateCell = row.querySelector("td:nth-child(4)");
+    if (dateCell) dateCell.textContent = data.__dateLabel;
+
+    var overviewCell = row.querySelector("td:nth-child(5)");
+    if (overviewCell) overviewCell.textContent = data.title || "Untitled Quotation";
+
+    var valueBadge = row.querySelector("td:nth-child(6) .badge");
+    if (valueBadge) valueBadge.textContent = data.__grandTotal.toFixed(2);
+
+    var statusBadge = row.querySelector("td:nth-child(7) .badge");
+    if (statusBadge) {
+      statusBadge.className = "badge badge-light-warning me-auto";
+      statusBadge.textContent = "Pending";
+    }
+  }
+
+  ReplicaFlows.register("quotation", {
+    tableBodySelector: "#kt_customers_table tbody",
+    storeKey: "quotations",
+    fillRow: fillQuotationRow,
+  });
+
+  function collectQuoteItems() {
+    var items = [];
+    document.querySelectorAll('input[name^="form-"][name$="-item_name"]').forEach(function (input) {
+      var m = /^form-(\d+)-item_name$/.exec(input.name);
+      if (!m) return;
+      var idx = m[1];
+      var name = (input.value || "").trim();
+      if (!name) return;
+      var qtyEl = document.querySelector('[name="form-' + idx + '-quantity"]');
+      var priceEl = document.querySelector('[name="form-' + idx + '-price"]');
+      var taxEl = document.querySelector('[name="form-' + idx + '-tax_rate"]');
+      var qty = parseFloat(qtyEl && qtyEl.value) || 0;
+      var price = parseFloat(priceEl && priceEl.value) || 0;
+      var taxRate = parseFloat(taxEl && taxEl.value) || 0;
+      var value = qty * price;
+      var taxValue = (value * taxRate) / 100;
+      items.push({
+        name: name,
+        quantity: qty,
+        price: price,
+        taxRate: taxRate,
+        value: value,
+        taxValue: taxValue,
+        itemTotal: value + taxValue,
+      });
+    });
+    return items;
+  }
+
+  function handleGenerateQuote() {
+    var customerSel = document.getElementById("id_customer");
+    var leadSel = document.getElementById("id_lead");
+    var customerLabel = selectLabel(customerSel) || selectLabel(leadSel) || "Walk-in Customer";
+    var titleEl = document.getElementById("id_title");
+    var termsEl = document.getElementById("id_terms");
+    var leadTimeEl = document.getElementById("id_lead_time");
+
+    var items = collectQuoteItems();
+    var subtotal = 0, gst = 0;
+    items.forEach(function (item) {
+      subtotal += item.value;
+      gst += item.taxValue;
+    });
+
+    var data = {
+      __id: newId(),
+      __code: fakeCode("QUO"),
+      __customerLabel: customerLabel,
+      __dateLabel: formatDateLong(new Date()),
+      __grandTotal: subtotal + gst,
+      title: (titleEl && titleEl.value.trim()) || "Quotation for " + customerLabel,
+      terms: termsEl ? termsEl.value.trim() : "",
+      lead_time: leadTimeEl ? leadTimeEl.value : "0",
+      items: items,
+    };
+
+    var store = window.ReplicaStore.quotations || (window.ReplicaStore.quotations = []);
+    store.unshift(data);
+    persistStore();
+
+    location.href = "../rise-crm-quotations-date-wise/page.html";
+  }
+
+  (function wireGenerateQuoteButton() {
+    if (!document.getElementById("id_customer")) return; // only on the add-quotation page
+    document.addEventListener(
+      "click",
+      function (e) {
+        var btn = e.target.closest && e.target.closest("button[type='submit']");
+        if (!btn || (btn.textContent || "").indexOf("Generate Quote") < 0) return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+        handleGenerateQuote();
+      },
+      true
+    );
+  })();
+
+  // ── Quotation view template — rewrites the invoice card when the URL
+  //    carries ?replica=quotations:<id> (see QUOTE_VIEW_TEMPLATE above).
+
+  function renderQuotationView(data) {
+    var idEl = document.getElementById("replicaQuoteId");
+    if (!idEl) return;
+
+    var h1 = document.querySelector(".page-heading");
+    if (h1) h1.textContent = "Quotation: " + data.__code;
+
+    var companyEl = document.getElementById("replicaQuoteCompany");
+    if (companyEl) companyEl.textContent = data.__customerLabel || "Customer";
+
+    var nameEl = document.getElementById("replicaQuoteCustomerName");
+    if (nameEl) nameEl.textContent = data.__customerLabel || "Customer";
+    var contactEl = document.getElementById("replicaQuoteCustomerContact");
+    if (contactEl) contactEl.textContent = "(—) | (—)";
+    var cityEl = document.getElementById("replicaQuoteCity");
+    if (cityEl) cityEl.textContent = "—";
+    var countryEl = document.getElementById("replicaQuoteCountry");
+    if (countryEl) countryEl.textContent = "—";
+
+    idEl.textContent = data.__code;
+    var dateEl = document.getElementById("replicaQuoteDate");
+    if (dateEl) dateEl.textContent = data.__dateLabel;
+    var leadTimeEl = document.getElementById("replicaQuoteLeadTime");
+    if (leadTimeEl) leadTimeEl.textContent = data.lead_time || "0";
+    var statusEl = document.getElementById("replicaQuoteStatus");
+    if (statusEl) statusEl.textContent = "Pending";
+
+    var detailsEl = document.getElementById("replicaQuoteCustomerDetails");
+    if (detailsEl) detailsEl.textContent = "(—) | (—)";
+
+    var tbody = document.getElementById("replicaQuoteItems");
+    if (tbody) {
+      while (tbody.children.length > 3) tbody.removeChild(tbody.firstChild);
+      var anchor = tbody.children[0];
+      var items = data.items || [];
+      var subtotal = 0, gst = 0;
+      items.forEach(function (item) {
+        subtotal += item.value;
+        gst += item.taxValue;
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + escapeHtml(item.name) + "</td>" +
+          '<td class="text-end">' + item.quantity + "</td>" +
+          '<td class="text-end">' + item.price.toFixed(2) + "</td>" +
+          '<td class="text-end">' + item.taxRate + "</td>" +
+          '<td class="text-end">' + item.value.toFixed(2) + "</td>" +
+          '<td class="text-end">' + item.taxValue.toFixed(2) + "</td>" +
+          '<td class="text-end">' + item.itemTotal.toFixed(2) + "</td>";
+        tbody.insertBefore(tr, anchor);
+      });
+      var subtotalEl = document.getElementById("replicaQuoteSubtotal");
+      if (subtotalEl) subtotalEl.textContent = subtotal.toFixed(2);
+      var gstEl = document.getElementById("replicaQuoteGst");
+      if (gstEl) gstEl.textContent = gst.toFixed(2);
+      var grandEl = document.getElementById("replicaQuoteGrandTotal");
+      if (grandEl) grandEl.textContent = (subtotal + gst).toFixed(2);
+    }
+
+    var titleEl = document.getElementById("replicaQuoteTitle");
+    if (titleEl) titleEl.textContent = "Title: " + (data.title || "");
+    var termsEl = document.getElementById("replicaQuoteTerms");
+    if (termsEl) termsEl.textContent = "Terms & Conditions: " + (data.terms || "");
+  }
+
+  (function bootstrapReplicaView() {
+    var params = new URLSearchParams(location.search);
+    var raw = params.get("replica");
+    if (!raw) return;
+    var sepIdx = raw.indexOf(":");
+    if (sepIdx < 0) return;
+    var storeKey = raw.slice(0, sepIdx);
+    var id = raw.slice(sepIdx + 1);
+    var records = window.ReplicaStore[storeKey] || [];
+    var record = null;
+    for (var i = 0; i < records.length; i++) {
+      if (records[i].__id === id) {
+        record = records[i];
+        break;
+      }
+    }
+    if (!record) return;
+    if (storeKey === "quotations") renderQuotationView(record);
+  })();
+
+  renderPersistedOnLoad();
+
+  console.log("[STITCH] replica forms ready");
 })();
