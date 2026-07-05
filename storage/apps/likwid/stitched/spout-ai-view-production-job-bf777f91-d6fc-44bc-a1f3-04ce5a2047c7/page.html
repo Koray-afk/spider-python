@@ -634,7 +634,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
 <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
@@ -1197,7 +1277,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="row g-3 align-items-end">
 <div class="col-md-4">
 <label class="wj-form-label">Distribution Plan *</label>
-<select class="form-select form-select-sm" name="dist_plan_id" required="">
+<select class="form-select form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-1" name="dist_plan_id" required="">
 <option value="">Select order / item…</option>
 <option data-type="Made-to-Order" value="1">
                                                         
@@ -1213,7 +1293,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-6 col-md-2">
 <label class="wj-form-label">Unit</label>
-<select class="form-select form-select-sm" name="unit">
+<select class="form-select form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-2" name="unit">
 <option value="Kg">Kg</option>
 <option value="Grams">Grams</option>
 <option value="No">No</option>
@@ -1231,7 +1311,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-6 col-md-2">
 <label class="wj-form-label">Pack Type</label>
-<select class="form-select form-select-sm" name="pack_type">
+<select class="form-select form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-3" name="pack_type">
 <option value="">—</option>
 <option value="Carton">Carton</option>
 <option value="Bag">Bag</option>
@@ -1405,15 +1485,15 @@ iframe[name*="privateStripeMetrics"],
 </td>
 <td class="text-gray-500">2 Hours</td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-1-79zw" multiple="" name="mach_1" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-1-79zw" data-stitch-select="stitch-select-4" multiple="" name="mach_1" tabindex="-1">
 <option value="2">Heidelberg - 20*28</option>
 <option value="3">Heidelberg - 20*28 - 6 Colour</option>
 <option value="4">Liquid Plant - Prod &amp; Packaging</option>
 <option value="1">Sheeting Cutting 650</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-a7jj" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-mach_1-rk-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_1-rk-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-a7jj" data-stitch-select-ui="stitch-select-4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-mach_1-rk-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_1-rk-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-3-byou" multiple="" name="emp_1" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-3-byou" data-stitch-select="stitch-select-5" multiple="" name="emp_1" tabindex="-1">
 <option value="3">
                                                                         Raghu
                                                                     </option>
@@ -1423,7 +1503,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="2">
                                                                         Shanu
                                                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-4-407w" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm select2-selection--clearable" role="combobox" tabindex="-1"><button aria-describedby="select2-emp_1-a5-container" aria-label="Remove all items" class="select2-selection__clear" data-select2-id="select2-data-7-ld4f" tabindex="-1" title="Remove all items" type="button"><span aria-hidden="true">×</span></button><ul class="select2-selection__rendered" id="select2-emp_1-a5-container"><li class="select2-selection__choice" data-select2-id="select2-data-6-o756" title="
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-4-407w" data-stitch-select-ui="stitch-select-5" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm select2-selection--clearable" role="combobox" tabindex="0"><button aria-describedby="select2-emp_1-a5-container" aria-label="Remove all items" class="select2-selection__clear" data-select2-id="select2-data-7-ld4f" tabindex="-1" title="Remove all items" type="button"><span aria-hidden="true">×</span></button><ul class="select2-selection__rendered" id="select2-emp_1-a5-container"><li class="select2-selection__choice" data-select2-id="select2-data-6-o756" title="
                                                                         Rajat Grover
                                                                     "><button aria-describedby="select2-emp_1-a5-container-choice-3vbs-1" aria-label="Remove item" class="select2-selection__choice__remove" tabindex="-1" title="Remove item" type="button"><span aria-hidden="true">×</span></button><span class="select2-selection__choice__display" id="select2-emp_1-a5-container-choice-3vbs-1">
                                                                         Rajat Grover
@@ -1440,15 +1520,15 @@ iframe[name*="privateStripeMetrics"],
 </td>
 <td class="text-gray-500">4 Hours</td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-8-29ty" multiple="" name="mach_2" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-8-29ty" data-stitch-select="stitch-select-6" multiple="" name="mach_2" tabindex="-1">
 <option value="2">Heidelberg - 20*28</option>
 <option value="3">Heidelberg - 20*28 - 6 Colour</option>
 <option value="4">Liquid Plant - Prod &amp; Packaging</option>
 <option value="1">Sheeting Cutting 650</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-9-ljmf" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-mach_2-4g-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_2-4g-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-9-ljmf" data-stitch-select-ui="stitch-select-6" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-mach_2-4g-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_2-4g-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-10-kt3i" multiple="" name="emp_2" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-10-kt3i" data-stitch-select="stitch-select-7" multiple="" name="emp_2" tabindex="-1">
 <option value="3">
                                                                         Raghu
                                                                     </option>
@@ -1458,7 +1538,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="2">
                                                                         Shanu
                                                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-11-rh5o" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm select2-selection--clearable" role="combobox" tabindex="-1"><button aria-describedby="select2-emp_2-un-container" aria-label="Remove all items" class="select2-selection__clear" data-select2-id="select2-data-14-byo9" tabindex="-1" title="Remove all items" type="button"><span aria-hidden="true">×</span></button><ul class="select2-selection__rendered" id="select2-emp_2-un-container"><li class="select2-selection__choice" data-select2-id="select2-data-13-e3xd" title="
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-11-rh5o" data-stitch-select-ui="stitch-select-7" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm select2-selection--clearable" role="combobox" tabindex="0"><button aria-describedby="select2-emp_2-un-container" aria-label="Remove all items" class="select2-selection__clear" data-select2-id="select2-data-14-byo9" tabindex="-1" title="Remove all items" type="button"><span aria-hidden="true">×</span></button><ul class="select2-selection__rendered" id="select2-emp_2-un-container"><li class="select2-selection__choice" data-select2-id="select2-data-13-e3xd" title="
                                                                         Rajat Grover
                                                                     "><button aria-describedby="select2-emp_2-un-container-choice-r3us-1" aria-label="Remove item" class="select2-selection__choice__remove" tabindex="-1" title="Remove item" type="button"><span aria-hidden="true">×</span></button><span class="select2-selection__choice__display" id="select2-emp_2-un-container-choice-r3us-1">
                                                                         Rajat Grover
@@ -1475,15 +1555,15 @@ iframe[name*="privateStripeMetrics"],
 </td>
 <td class="text-gray-500">4 Hours</td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-15-q9y5" multiple="" name="mach_3" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-15-q9y5" data-stitch-select="stitch-select-8" multiple="" name="mach_3" tabindex="-1">
 <option value="2">Heidelberg - 20*28</option>
 <option value="3">Heidelberg - 20*28 - 6 Colour</option>
 <option value="4">Liquid Plant - Prod &amp; Packaging</option>
 <option value="1">Sheeting Cutting 650</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-16-ynew" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-mach_3-wh-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_3-wh-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-16-ynew" data-stitch-select-ui="stitch-select-8" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-mach_3-wh-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_3-wh-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-17-a4px" multiple="" name="emp_3" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-17-a4px" data-stitch-select="stitch-select-9" multiple="" name="emp_3" tabindex="-1">
 <option value="3">
                                                                         Raghu
                                                                     </option>
@@ -1493,7 +1573,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="2">
                                                                         Shanu
                                                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-18-06ia" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm select2-selection--clearable" role="combobox" tabindex="-1"><button aria-describedby="select2-emp_3-ct-container" aria-label="Remove all items" class="select2-selection__clear" data-select2-id="select2-data-21-gvrl" tabindex="-1" title="Remove all items" type="button"><span aria-hidden="true">×</span></button><ul class="select2-selection__rendered" id="select2-emp_3-ct-container"><li class="select2-selection__choice" data-select2-id="select2-data-20-2k5a" title="
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-18-06ia" data-stitch-select-ui="stitch-select-9" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm select2-selection--clearable" role="combobox" tabindex="0"><button aria-describedby="select2-emp_3-ct-container" aria-label="Remove all items" class="select2-selection__clear" data-select2-id="select2-data-21-gvrl" tabindex="-1" title="Remove all items" type="button"><span aria-hidden="true">×</span></button><ul class="select2-selection__rendered" id="select2-emp_3-ct-container"><li class="select2-selection__choice" data-select2-id="select2-data-20-2k5a" title="
                                                                         Rajat Grover
                                                                     "><button aria-describedby="select2-emp_3-ct-container-choice-ovez-1" aria-label="Remove item" class="select2-selection__choice__remove" tabindex="-1" title="Remove item" type="button"><span aria-hidden="true">×</span></button><span class="select2-selection__choice__display" id="select2-emp_3-ct-container-choice-ovez-1">
                                                                         Rajat Grover
@@ -1510,15 +1590,15 @@ iframe[name*="privateStripeMetrics"],
 </td>
 <td class="text-gray-500">12 Hours</td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-22-i6tc" multiple="" name="mach_4" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-22-i6tc" data-stitch-select="stitch-select-10" multiple="" name="mach_4" tabindex="-1">
 <option value="2">Heidelberg - 20*28</option>
 <option value="3">Heidelberg - 20*28 - 6 Colour</option>
 <option value="4">Liquid Plant - Prod &amp; Packaging</option>
 <option value="1">Sheeting Cutting 650</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-23-9av8" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-mach_4-ee-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_4-ee-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-23-9av8" data-stitch-select-ui="stitch-select-10" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-mach_4-ee-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_4-ee-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-24-6ohh" multiple="" name="emp_4" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-24-6ohh" data-stitch-select="stitch-select-11" multiple="" name="emp_4" tabindex="-1">
 <option value="3">
                                                                         Raghu
                                                                     </option>
@@ -1528,7 +1608,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="2">
                                                                         Shanu
                                                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-25-rdqk" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-emp_4-nx-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-emp_4-nx-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Employees" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-25-rdqk" data-stitch-select-ui="stitch-select-11" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-emp_4-nx-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-emp_4-nx-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Employees" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 </tr>
 <tr>
@@ -1541,15 +1621,15 @@ iframe[name*="privateStripeMetrics"],
 </td>
 <td class="text-gray-500">4 Hours</td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-26-llt1" multiple="" name="mach_5" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Machinery" data-select2-id="select2-data-26-llt1" data-stitch-select="stitch-select-12" multiple="" name="mach_5" tabindex="-1">
 <option value="2">Heidelberg - 20*28</option>
 <option value="3">Heidelberg - 20*28 - 6 Colour</option>
 <option value="4">Liquid Plant - Prod &amp; Packaging</option>
 <option value="1">Sheeting Cutting 650</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-27-1p85" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-mach_5-2a-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_5-2a-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-27-1p85" data-stitch-select-ui="stitch-select-12" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-mach_5-2a-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-mach_5-2a-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Machinery" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 <td>
-<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-28-gwq7" multiple="" name="emp_5" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-sm select2-hidden-accessible" data-allow-clear="true" data-close-on-select="false" data-control="select2" data-kt-initialized="1" data-placeholder="Select Employees" data-select2-id="select2-data-28-gwq7" data-stitch-select="stitch-select-13" multiple="" name="emp_5" tabindex="-1">
 <option value="3">
                                                                         Raghu
                                                                     </option>
@@ -1559,7 +1639,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="2">
                                                                         Shanu
                                                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-29-pabq" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="-1"><ul class="select2-selection__rendered" id="select2-emp_5-z1-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-emp_5-z1-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Employees" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-29-pabq" data-stitch-select-ui="stitch-select-13" dir="ltr" style="width: 100%;"><span class="selection"><span aria-disabled="false" aria-expanded="false" aria-haspopup="true" class="select2-selection select2-selection--multiple form-select form-select-sm" role="combobox" tabindex="0"><ul class="select2-selection__rendered" id="select2-emp_5-z1-container"></ul><span class="select2-search select2-search--inline"><textarea aria-autocomplete="list" aria-describedby="select2-emp_5-z1-container" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" placeholder="Select Employees" role="searchbox" spellcheck="false" style="width: 100%;" tabindex="0" type="search"></textarea></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </td>
 </tr>
 </tbody>
@@ -1634,7 +1714,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="modal-body py-4">
 <div class="mb-3">
 <label class="wj-form-label">Order</label>
-<select class="form-select form-select-sm" id="id_order" name="order">
+<select class="form-select form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-14" id="id_order" name="order">
 <option selected="" value="">---------</option>
 <option value="9">Lanoliv DS-ORD-69-37492</option>
 <option value="20">Gynotree-ORD-69-66415</option>
@@ -1677,7 +1757,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="mb-3">
 <label class="wj-form-label">Unit</label>
-<select class="form-select form-select-sm" id="id_unit" name="unit">
+<select class="form-select form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-15" id="id_unit" name="unit">
 <option selected="" value="">---------</option>
 <option value="Kg">Kg</option>
 <option value="Grams">Grams</option>
@@ -1712,7 +1792,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="modal-body py-4">
 <div class="mb-3">
 <label class="wj-form-label">Inventory Item</label>
-<select class="form-select form-select-sm" id="id_inv_item" name="inv_item">
+<select class="form-select form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-16" id="id_inv_item" name="inv_item">
 <option selected="" value="">---------</option>
 <option value="1">Macortho Advance Ointment Tube - 30gm</option>
 <option value="3">Brute Bottles - 200ml</option>
@@ -1821,4 +1901,4 @@ iframe[name*="privateStripeMetrics"],
 <!--begin::Custom Javascript(used for this page only)-->
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
-</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../runtime.js"></script></body></html>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body></html>

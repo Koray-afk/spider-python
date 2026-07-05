@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--begin::Body-->
 <body class="app-default modal-open" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body" style="overflow: hidden; padding-right: 0px;">
 <!--begin::Theme mode setup-->
@@ -2677,7 +2757,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="fv-row mb-7">
 <label class="fw-semibold fs-6 mb-2">Source</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_edit_contact" data-kt-initialized="1" data-placeholder="Select a source" data-select2-id="select2-data-edit_source" id="edit_source" name="source" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_edit_contact" data-kt-initialized="1" data-placeholder="Select a source" data-select2-id="select2-data-edit_source" data-stitch-select="stitch-select-1" id="edit_source" name="source" tabindex="-1">
 <option value="">Select source...</option>
 <option value="Trade Show">Trade Show</option>
 <option value="Website Form">Website Form</option>
@@ -2685,7 +2765,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="LinkedIn">LinkedIn</option>
 <option value="Cold Email">Cold Email</option>
 <option value="Other">Other</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-1-2g3r" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-edit_source-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-edit_source-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-edit_source-container" role="textbox" title="Referral">Referral</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-1-2g3r" data-stitch-select-ui="stitch-select-1" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-edit_source-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-edit_source-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-edit_source-container" role="textbox" title="Referral">Referral</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--begin::Categories-->
 <div class="fv-row mb-7">
@@ -2822,4 +2902,4 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <!--end::Modal - Email Preview-->
 <!--begin::Javascript-->
-</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="modal-backdrop fade show"></div><script src="../../../runtime.js"></script></body></html>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="modal-backdrop fade show"></div><script src="../../../select_runtime.js"></script><script src="../../../runtime.js"></script></body></html>

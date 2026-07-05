@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
 <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
 <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
@@ -1234,4 +1314,4 @@ iframe[name*="privateStripeMetrics"],
     .tx-status { display:inline-flex; align-items:center; font-size:.8rem; color:#444; white-space:nowrap; }
     .tx-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; flex-shrink:0; }
     </style>
-</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script>window.__STITCH_INTERACTIONS__ = {"interaction_1": {"type": "modal", "parentSelector": "#kt_app_content_container", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]", "insertMethod": "append", "uiHtml": "<div aria-modal=\"true\" class=\"modal fade show\" id=\"stmt-modal\" role=\"dialog\" style=\"display: block;\" tabindex=\"-1\">\n<div class=\"modal-dialog modal-xl modal-dialog-scrollable\">\n<div class=\"modal-content\">\n<div class=\"modal-header pb-3\">\n<div>\n<h3 class=\"modal-title fw-bold fs-4\" id=\"stmt-title\">Statement \u2014 ABCD Ltd<\/h3>\n<div class=\"text-gray-400 fs-8\">Complete ledger of charges and payments<\/div>\n<\/div>\n<button class=\"btn-close\" data-bs-dismiss=\"modal\" type=\"button\"><\/button>\n<\/div>\n<div class=\"px-8 py-4 d-flex align-items-center gap-2 flex-wrap\" style=\"border-bottom:1px solid #f0f0f0;\">\n<span class=\"text-gray-400 fs-8 fw-semibold text-uppercase\" style=\"letter-spacing:.05em;\">Period<\/span>\n<input class=\"form-control form-control-solid form-control-sm fs-7 w-150px\" id=\"stmt-from\" type=\"date\"/>\n<span class=\"text-gray-400\">\u2192<\/span>\n<input class=\"form-control form-control-solid form-control-sm fs-7 w-150px\" id=\"stmt-to\" type=\"date\"/>\n<button class=\"btn btn-sm btn-dark\" id=\"stmt-apply\" type=\"button\">Apply<\/button>\n<button class=\"btn btn-sm btn-light\" id=\"stmt-clear\" type=\"button\">Clear<\/button>\n<\/div>\n<div class=\"modal-body px-8 py-5\" id=\"stmt-body\">\n<div class=\"d-flex gap-3 mb-5 flex-wrap\">\n<div class=\"rep-stat\"><div class=\"num\">\u20b90.00<\/div><div class=\"lbl\">Opening Balance<\/div><\/div>\n<div class=\"rep-stat\"><div class=\"num\">\u20b9109274.75<\/div><div class=\"lbl\">Invoiced<\/div><\/div>\n<div class=\"rep-stat\"><div class=\"num\">\u20b90.00<\/div><div class=\"lbl\">Received<\/div><\/div>\n<div class=\"rep-stat rep-stat--bad\"><div class=\"num\">\u20b9109274.75<\/div><div class=\"lbl\">Closing (Receivable)<\/div><\/div>\n<\/div>\n<div class=\"table-responsive\">\n<table class=\"inv-table mb-0\">\n<thead><tr class=\"inv-thead\">\n<th style=\"min-width:100px;\">Date<\/th>\n<th style=\"min-width:110px;\">Type<\/th>\n<th style=\"min-width:140px;\">Reference<\/th>\n<th class=\"text-end\" style=\"min-width:120px;\">Invoiced<\/th>\n<th class=\"text-end\" style=\"min-width:120px;\">Received<\/th>\n<th class=\"text-end\" style=\"min-width:130px;\">Balance<\/th>\n<\/tr><\/thead>\n<tbody>\n<tr class=\"inv-row rep-subhead\"><td colspan=\"5\">Opening Balance<\/td><td class=\"text-end\">\u20b90.00<\/td><\/tr>\n<tr class=\"inv-row\">\n<td class=\"text-gray-500 fs-7\">June 12, 2026<\/td>\n<td class=\"fs-7\"><span class=\"tx-status\"><span class=\"tx-dot\" style=\"background:#009ef7;\"><\/span>Invoice<\/span><\/td>\n<td><a class=\"fw-semibold text-gray-800 text-hover-primary fs-7\" data-stitch-route=\"/ledger/invoices/9afb2cc2-0915-4343-93cb-60be140562ac/\" data-stitch-unresolved=\"1\" href=\"#\">INV-202606-005<\/a><\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u20b93953.00<\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u2014<\/td>\n<td class=\"text-end fw-semibold text-gray-800 fs-7\">\u20b93953.00<\/td>\n<\/tr>\n<tr class=\"inv-row\">\n<td class=\"text-gray-500 fs-7\">June 15, 2026<\/td>\n<td class=\"fs-7\"><span class=\"tx-status\"><span class=\"tx-dot\" style=\"background:#009ef7;\"><\/span>Invoice<\/span><\/td>\n<td><a class=\"fw-semibold text-gray-800 text-hover-primary fs-7\" data-stitch-route=\"/ledger/invoices/ef112560-4c5c-4967-84f7-06724fab5de0/\" data-stitch-unresolved=\"1\" href=\"#\">INV-202606-002<\/a><\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u20b999303.75<\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u2014<\/td>\n<td class=\"text-end fw-semibold text-gray-800 fs-7\">\u20b9103256.75<\/td>\n<\/tr>\n<tr class=\"inv-row\">\n<td class=\"text-gray-500 fs-7\">June 30, 2026<\/td>\n<td class=\"fs-7\"><span class=\"tx-status\"><span class=\"tx-dot\" style=\"background:#009ef7;\"><\/span>Invoice<\/span><\/td>\n<td><a class=\"fw-semibold text-gray-800 text-hover-primary fs-7\" data-stitch-route=\"/ledger/invoices/5e61d855-c6b2-461f-937f-35a49f318326/\" data-stitch-unresolved=\"1\" href=\"#\">INV-202606-007<\/a><\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u20b96018.00<\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u2014<\/td>\n<td class=\"text-end fw-semibold text-gray-800 fs-7\">\u20b9109274.75<\/td>\n<\/tr>\n<tr class=\"inv-row rep-grand\"><td class=\"text-end fs-7\" colspan=\"3\">Closing Balance (Receivable)<\/td><td class=\"text-end fs-7\">\u20b9109274.75<\/td><td class=\"text-end fs-7\">\u20b90.00<\/td><td class=\"text-end fs-7\">\u20b9109274.75<\/td><\/tr>\n<\/tbody>\n<\/table>\n<\/div>\n<\/div>\n<\/div>\n<\/div>\n<\/div>", "uiCss": "", "backdropHtml": "<div class=\"modal-backdrop fade show\"><\/div>", "fallback": "interactions/001-ledger/page.html"}};</script><script src="../runtime.js"></script></body></html>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script>window.__STITCH_INTERACTIONS__ = {"interaction_1": {"type": "modal", "parentSelector": "#kt_app_content_container", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]", "insertMethod": "append", "uiHtml": "<div aria-modal=\"true\" class=\"modal fade show\" id=\"stmt-modal\" role=\"dialog\" style=\"display: block;\" tabindex=\"-1\">\n<div class=\"modal-dialog modal-xl modal-dialog-scrollable\">\n<div class=\"modal-content\">\n<div class=\"modal-header pb-3\">\n<div>\n<h3 class=\"modal-title fw-bold fs-4\" id=\"stmt-title\">Statement \u2014 ABCD Ltd<\/h3>\n<div class=\"text-gray-400 fs-8\">Complete ledger of charges and payments<\/div>\n<\/div>\n<button class=\"btn-close\" data-bs-dismiss=\"modal\" type=\"button\"><\/button>\n<\/div>\n<div class=\"px-8 py-4 d-flex align-items-center gap-2 flex-wrap\" style=\"border-bottom:1px solid #f0f0f0;\">\n<span class=\"text-gray-400 fs-8 fw-semibold text-uppercase\" style=\"letter-spacing:.05em;\">Period<\/span>\n<input class=\"form-control form-control-solid form-control-sm fs-7 w-150px\" id=\"stmt-from\" type=\"date\"/>\n<span class=\"text-gray-400\">\u2192<\/span>\n<input class=\"form-control form-control-solid form-control-sm fs-7 w-150px\" id=\"stmt-to\" type=\"date\"/>\n<button class=\"btn btn-sm btn-dark\" id=\"stmt-apply\" type=\"button\">Apply<\/button>\n<button class=\"btn btn-sm btn-light\" id=\"stmt-clear\" type=\"button\">Clear<\/button>\n<\/div>\n<div class=\"modal-body px-8 py-5\" id=\"stmt-body\">\n<div class=\"d-flex gap-3 mb-5 flex-wrap\">\n<div class=\"rep-stat\"><div class=\"num\">\u20b90.00<\/div><div class=\"lbl\">Opening Balance<\/div><\/div>\n<div class=\"rep-stat\"><div class=\"num\">\u20b9109274.75<\/div><div class=\"lbl\">Invoiced<\/div><\/div>\n<div class=\"rep-stat\"><div class=\"num\">\u20b90.00<\/div><div class=\"lbl\">Received<\/div><\/div>\n<div class=\"rep-stat rep-stat--bad\"><div class=\"num\">\u20b9109274.75<\/div><div class=\"lbl\">Closing (Receivable)<\/div><\/div>\n<\/div>\n<div class=\"table-responsive\">\n<table class=\"inv-table mb-0\">\n<thead><tr class=\"inv-thead\">\n<th style=\"min-width:100px;\">Date<\/th>\n<th style=\"min-width:110px;\">Type<\/th>\n<th style=\"min-width:140px;\">Reference<\/th>\n<th class=\"text-end\" style=\"min-width:120px;\">Invoiced<\/th>\n<th class=\"text-end\" style=\"min-width:120px;\">Received<\/th>\n<th class=\"text-end\" style=\"min-width:130px;\">Balance<\/th>\n<\/tr><\/thead>\n<tbody>\n<tr class=\"inv-row rep-subhead\"><td colspan=\"5\">Opening Balance<\/td><td class=\"text-end\">\u20b90.00<\/td><\/tr>\n<tr class=\"inv-row\">\n<td class=\"text-gray-500 fs-7\">June 12, 2026<\/td>\n<td class=\"fs-7\"><span class=\"tx-status\"><span class=\"tx-dot\" style=\"background:#009ef7;\"><\/span>Invoice<\/span><\/td>\n<td><a class=\"fw-semibold text-gray-800 text-hover-primary fs-7\" data-stitch-route=\"/ledger/invoices/9afb2cc2-0915-4343-93cb-60be140562ac/\" data-stitch-unresolved=\"1\" href=\"#\">INV-202606-005<\/a><\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u20b93953.00<\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u2014<\/td>\n<td class=\"text-end fw-semibold text-gray-800 fs-7\">\u20b93953.00<\/td>\n<\/tr>\n<tr class=\"inv-row\">\n<td class=\"text-gray-500 fs-7\">June 15, 2026<\/td>\n<td class=\"fs-7\"><span class=\"tx-status\"><span class=\"tx-dot\" style=\"background:#009ef7;\"><\/span>Invoice<\/span><\/td>\n<td><a class=\"fw-semibold text-gray-800 text-hover-primary fs-7\" data-stitch-route=\"/ledger/invoices/ef112560-4c5c-4967-84f7-06724fab5de0/\" data-stitch-unresolved=\"1\" href=\"#\">INV-202606-002<\/a><\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u20b999303.75<\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u2014<\/td>\n<td class=\"text-end fw-semibold text-gray-800 fs-7\">\u20b9103256.75<\/td>\n<\/tr>\n<tr class=\"inv-row\">\n<td class=\"text-gray-500 fs-7\">June 30, 2026<\/td>\n<td class=\"fs-7\"><span class=\"tx-status\"><span class=\"tx-dot\" style=\"background:#009ef7;\"><\/span>Invoice<\/span><\/td>\n<td><a class=\"fw-semibold text-gray-800 text-hover-primary fs-7\" data-stitch-route=\"/ledger/invoices/5e61d855-c6b2-461f-937f-35a49f318326/\" data-stitch-unresolved=\"1\" href=\"#\">INV-202606-007<\/a><\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u20b96018.00<\/td>\n<td class=\"text-end text-gray-700 fs-7\">\u2014<\/td>\n<td class=\"text-end fw-semibold text-gray-800 fs-7\">\u20b9109274.75<\/td>\n<\/tr>\n<tr class=\"inv-row rep-grand\"><td class=\"text-end fs-7\" colspan=\"3\">Closing Balance (Receivable)<\/td><td class=\"text-end fs-7\">\u20b9109274.75<\/td><td class=\"text-end fs-7\">\u20b90.00<\/td><td class=\"text-end fs-7\">\u20b9109274.75<\/td><\/tr>\n<\/tbody>\n<\/table>\n<\/div>\n<\/div>\n<\/div>\n<\/div>\n<\/div>", "uiCss": "", "backdropHtml": "<div class=\"modal-backdrop fade show\"><\/div>", "fallback": "interactions/001-ledger/page.html"}};</script><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body></html>

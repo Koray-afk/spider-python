@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--end::Head-->
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
@@ -1620,7 +1700,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="required fw-semibold fs-6 mb-2">Campaign Type</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Select campaign type" data-select2-id="select2-data-1-ygio" name="campaign_type" required="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Select campaign type" data-select2-id="select2-data-1-ygio" data-stitch-select="stitch-select-1" name="campaign_type" required="" tabindex="-1">
 <option data-select2-id="select2-data-3-gfx9" value="">Select campaign type...</option>
 <option value="Cold Outreach">Cold Outreach</option>
 <option value="Follow-up">Follow-up</option>
@@ -1628,7 +1708,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="Promotion">Promotion</option>
 <option value="Event">Event</option>
 <option value="Other">Other</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-478l" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-campaign_type-5k-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-campaign_type-5k-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-campaign_type-5k-container" role="textbox" title="Select campaign type"><span class="select2-selection__placeholder">Select campaign type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-478l" data-stitch-select-ui="stitch-select-1" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-campaign_type-5k-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-campaign_type-5k-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-campaign_type-5k-container" role="textbox" title="Select campaign type"><span class="select2-selection__placeholder">Select campaign type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 </div>
 <!--end::Input group-->
@@ -1638,7 +1718,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="fw-semibold fs-6 mb-2">Select Email Template (Optional)</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Choose a template to pre-fill content..." data-select2-id="select2-data-email_template_select" id="email_template_select" name="email_template" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Choose a template to pre-fill content..." data-select2-id="select2-data-email_template_select" data-stitch-select="stitch-select-2" id="email_template_select" name="email_template" tabindex="-1">
 <option data-select2-id="select2-data-5-vepr" value="">Write from scratch...</option>
 <option data-template-content="Check the updates" data-template-hyperlink-text="Try Now" data-template-hyperlink-url="https://cogent.likwid.ai/" data-template-logo="https://storage.googleapis.com/likwid-media/email_templates/logos/Logo_Typography_1.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T074218Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=7d6c95741b043dc5696ca88995efdbc270d8d57edbb632149d078f0ce14af106914dfc9a353f6ae3b330b356ae4031ef1eafeb4226755eb44bce76f80822fcae4720056004161c485f91e0a9b1211e3522e2002479729e3df70a08fc634b8d6a89d2d989f42d03e14eee90b955f67a245f8d8427f2a064530279d3cdcaa77d498bf2482a43d33d98679d487158b90ecf756a23e739b86c3df69aac3adf5efd436cc74b7a0fdb070fb0664208121e3a7f5c2898c3880d1f43b153cfefda9a8bba4519bc4351e0a78e3192893be7831e1b1e0846878d7abec141bc3c7cc4c471f57c7ebd2ea03324e09acb440d457eeea7404f77fecd40353ca502655f5c8417f8" data-template-subject="V1.02 is Live" data-template-type="Cold Outreach" value="5">
                                         Cogent - V2 (Cold Outreach)
@@ -1649,7 +1729,7 @@ iframe[name*="privateStripeMetrics"],
 <option data-template-content="Check out how we saved 6-7% of working capital" data-template-hyperlink-text="Read More" data-template-hyperlink-url="https://www.likwid.co.in/" data-template-logo="https://storage.googleapis.com/likwid-media/email_templates/logos/infor_logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T074218Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=802bfe0c469e014cd9ebfb8165e99dceaf99010c42e42aaead3550f8788aabf7da1c731800d8635e05537d89b08d93a05b38f85d2b83ca52572605b0be4f88a7736800c11e2b745244d0984b5e6c7433081461612e7e9e776c3a45e22cdba59c6d3693e69c94224296c8d6b495924c1455725e9a4715a00cdae13c733d58ea3ecc37e096db3a1a51c75b1feb5d14a65a2b20a94621ce762f45e35a83c62ce7e9194f487c062834727b84e8f9c26701d56c79a96409e5a84660f3d64d586d48725b756e4ebb8403d0f5d0cb47013c0d8a1b09fc11af57e86e3d581bbe8ac11fe60e40be2300e927ce34df46c974d67fd18cb3285e803b07ff915fe061493ca8dd" data-template-subject="Email Test" data-template-type="Cold Outreach" value="3">
                                         Outreach - Procurement (Cold Outreach)
                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-4-b30o" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-email_template_select-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-email_template_select-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-email_template_select-container" role="textbox" title="Choose a template to pre-fill content..."><span class="select2-selection__placeholder">Choose a template to pre-fill content...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-4-b30o" data-stitch-select-ui="stitch-select-2" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-email_template_select-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-email_template_select-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-email_template_select-container" role="textbox" title="Choose a template to pre-fill content..."><span class="select2-selection__placeholder">Choose a template to pre-fill content...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 <div class="form-text">Select a template to automatically fill all fields from template</div>
 </div>
@@ -1762,7 +1842,7 @@ Write your email content here..." required="" rows="8"></textarea>
 <label class="required fw-semibold fs-6 mb-2">Template Type</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_template" data-kt-initialized="1" data-placeholder="Select template type" data-select2-id="select2-data-6-s98n" name="template_type" required="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_template" data-kt-initialized="1" data-placeholder="Select template type" data-select2-id="select2-data-6-s98n" data-stitch-select="stitch-select-3" name="template_type" required="" tabindex="-1">
 <option data-select2-id="select2-data-8-fq8c" value="">Select template type...</option>
 <option value="Cold Outreach">Cold Outreach</option>
 <option value="Follow-up">Follow-up</option>
@@ -1770,7 +1850,7 @@ Write your email content here..." required="" rows="8"></textarea>
 <option value="Promotion">Promotion</option>
 <option value="Event">Event</option>
 <option value="Other">Other</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-7-vxuc" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-template_type-32-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-template_type-32-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-template_type-32-container" role="textbox" title="Select template type"><span class="select2-selection__placeholder">Select template type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-7-vxuc" data-stitch-select-ui="stitch-select-3" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-template_type-32-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-template_type-32-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-template_type-32-container" role="textbox" title="Select template type"><span class="select2-selection__placeholder">Select template type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 </div>
 <!--end::Input group-->
@@ -1880,4 +1960,4 @@ Write your email content here..." required="" rows="8"></textarea>
 <!--begin::Javascript-->
 <!--begin::Custom Javascript - CORRECTED VERSION WITH FULL TEMPLATE LOADING-->
 <!--end::Custom Javascript-->
-</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../runtime.js"></script></body></html>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body></html>

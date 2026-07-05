@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
 <!--begin::Theme mode setup on page load-->
@@ -1112,7 +1192,7 @@ iframe[name*="privateStripeMetrics"],
 <!--begin::Table container-->
 <div class="table-responsive">
 <!--begin::Table-->
-<div class="dt-container dt-bootstrap5 dt-empty-footer" id="lowStockTable_wrapper"><div class="table-responsive" id=""><table aria-describedby="lowStockTable_info" class="table align-middle table-row-dashed gy-5 dataTable" id="lowStockTable" style="width: 554.875px;"><colgroup><col data-dt-column="0" style="width: 116.859px;"/><col data-dt-column="1" style="width: 438.016px;"/></colgroup>
+<div class="dt-container dt-bootstrap5 dt-empty-footer" id="lowStockTable_wrapper" style="overflow-x:auto;max-width:100%;width:100%"><div class="table-responsive" id="" style="overflow-x:auto;max-width:100%"><table aria-describedby="lowStockTable_info" class="table align-middle table-row-dashed gy-5 dataTable" data-stitch-datatable="1" id="lowStockTable" style="width:100%;max-width:100%">
 <thead class="border-bottom border-gray-200 fs-7 fw-bold">
 <tr class="text-start text-muted text gs-0" role="row"><th aria-label="Product Master: Activate to invert sorting" aria-sort="ascending" class="min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc dt-ordering-asc" colspan="1" data-dt-column="0" rowspan="1" tabindex="0"><span class="dt-column-title" role="button">Product Master</span><span class="dt-column-order"></span></th><th aria-label="Ready for Production: Activate to sort" class="min-w-400px dt-orderable-asc dt-orderable-desc" colspan="1" data-dt-column="1" rowspan="1" tabindex="0"><span class="dt-column-title" role="button">Ready for Production</span><span class="dt-column-order"></span></th></tr>
 </thead>
@@ -1227,7 +1307,7 @@ iframe[name*="privateStripeMetrics"],
 <!--begin::Table container-->
 <div class="table-responsive">
 <!--begin::Table-->
-<div class="dt-container dt-bootstrap5 dt-empty-footer" id="highStockTable_wrapper"><div class="table-responsive" id=""><table aria-describedby="highStockTable_info" class="table align-middle table-row-dashed gy-5 dataTable" id="highStockTable" style="width: 591.195px;"><colgroup><col data-dt-column="0" style="width: 381.969px;"/><col data-dt-column="1" style="width: 209.227px;"/></colgroup>
+<div class="dt-container dt-bootstrap5 dt-empty-footer" id="highStockTable_wrapper" style="overflow-x:auto;max-width:100%;width:100%"><div class="table-responsive" id="" style="overflow-x:auto;max-width:100%"><table aria-describedby="highStockTable_info" class="table align-middle table-row-dashed gy-5 dataTable" data-stitch-datatable="1" id="highStockTable" style="width:100%;max-width:100%">
 <thead class="border-bottom border-gray-200 fs-7 fw-bold">
 <tr class="text-start text-muted text gs-0" role="row"><th aria-label="Production Job: Activate to invert sorting" aria-sort="ascending" class="min-w-100px dt-orderable-asc dt-orderable-desc dt-ordering-asc" colspan="1" data-dt-column="0" rowspan="1" tabindex="0"><span class="dt-column-title" role="button">Production Job</span><span class="dt-column-order"></span></th><th aria-label="Work Orders: Activate to sort" class="dt-orderable-asc dt-orderable-desc" colspan="1" data-dt-column="1" rowspan="1" tabindex="0"><span class="dt-column-title" role="button">Work Orders</span><span class="dt-column-order"></span></th></tr>
 </thead>
@@ -1336,7 +1416,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="card card-flush">
 <div class="card-body pt-3">
 <!--begin::Table-->
-<div class="dt-container dt-bootstrap5 dt-empty-footer" id="kt_profile_overview_table_wrapper"><div class="table-responsive" id=""><table class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold dataTable" id="kt_profile_overview_table" style="width: 0px;"><colgroup><col data-dt-column="0" style="width: 0px;"/><col data-dt-column="1" style="width: 0px;"/></colgroup>
+<div class="dt-container dt-bootstrap5 dt-empty-footer" id="kt_profile_overview_table_wrapper" style="overflow-x:auto;max-width:100%;width:100%"><div class="table-responsive" id="" style="overflow-x:auto;max-width:100%"><table class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold dataTable" data-stitch-datatable="1" id="kt_profile_overview_table" style="width:100%;max-width:100%">
 <thead class="fs-7 text-gray-500 text">
 <tr role="row"><th aria-label="Date: Activate to sort" class="min-w-150px dt-orderable-asc dt-orderable-desc" colspan="1" data-dt-column="0" rowspan="1" tabindex="0"><span class="dt-column-title" role="button">Date</span><span class="dt-column-order"></span></th><th aria-label="Insight: Activate to sort" class="min-w-450px dt-orderable-asc dt-orderable-desc" colspan="1" data-dt-column="1" rowspan="1" tabindex="0"><span class="dt-column-title" role="button">Insight</span><span class="dt-column-order"></span></th></tr>
 </thead>
@@ -2746,7 +2826,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="row fv-row fv-plugins-icon-container">
 <!--begin::Col-->
 <div class="col-6">
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Month" data-select2-id="select2-data-1-bwaw" name="card_expiry_month" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Month" data-select2-id="select2-data-1-bwaw" data-stitch-select="stitch-select-1" name="card_expiry_month" tabindex="-1">
 <option data-select2-id="select2-data-3-aobp"></option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -2760,12 +2840,12 @@ iframe[name*="privateStripeMetrics"],
 <option value="10">10</option>
 <option value="11">11</option>
 <option value="12">12</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-iw6o" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-card_expiry_month-s4-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-card_expiry_month-s4-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-card_expiry_month-s4-container" role="textbox" title="Month"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-iw6o" data-stitch-select-ui="stitch-select-1" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-card_expiry_month-s4-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-card_expiry_month-s4-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-card_expiry_month-s4-container" role="textbox" title="Month"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
 <!--end::Col-->
 <!--begin::Col-->
 <div class="col-6">
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Year" data-select2-id="select2-data-4-eftu" name="card_expiry_year" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Year" data-select2-id="select2-data-4-eftu" data-stitch-select="stitch-select-2" name="card_expiry_year" tabindex="-1">
 <option data-select2-id="select2-data-6-w4qo"></option>
 <option value="2024">2024</option>
 <option value="2025">2025</option>
@@ -2778,7 +2858,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="2032">2032</option>
 <option value="2033">2033</option>
 <option value="2034">2034</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-5-9yon" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-card_expiry_year-rp-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-card_expiry_year-rp-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-card_expiry_year-rp-container" role="textbox" title="Year"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-5-9yon" data-stitch-select-ui="stitch-select-2" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-card_expiry_year-rp-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-card_expiry_year-rp-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-card_expiry_year-rp-container" role="textbox" title="Year"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
 <!--end::Col-->
 </div>
@@ -3072,11 +3152,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-7-2jny" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-7-2jny" data-stitch-select="stitch-select-3" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-9-txfi" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-8-kl31" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-hd2k-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-hd2k-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-hd2k-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-8-kl31" data-stitch-select-ui="stitch-select-3" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-hd2k-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-hd2k-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-hd2k-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3108,11 +3188,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-10-sfes" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-10-sfes" data-stitch-select="stitch-select-4" tabindex="-1">
 <option data-select2-id="select2-data-12-o43z" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-11-776l" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-ydo4-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-ydo4-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-ydo4-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-11-776l" data-stitch-select-ui="stitch-select-4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-ydo4-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-ydo4-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-ydo4-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3144,11 +3224,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-13-ievq" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-13-ievq" data-stitch-select="stitch-select-5" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-15-f0dr" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-14-lxgw" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-kr4n-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-kr4n-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-kr4n-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-14-lxgw" data-stitch-select-ui="stitch-select-5" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-kr4n-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-kr4n-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-kr4n-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3180,11 +3260,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-16-se8a" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-16-se8a" data-stitch-select="stitch-select-6" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-18-uwi6" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-17-le6g" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-finh-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-finh-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-finh-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-17-le6g" data-stitch-select-ui="stitch-select-6" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-finh-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-finh-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-finh-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3216,11 +3296,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-19-b85z" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-19-b85z" data-stitch-select="stitch-select-7" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-21-1fjx" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-20-vm7i" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-uktc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-uktc-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-uktc-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-20-vm7i" data-stitch-select-ui="stitch-select-7" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-uktc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-uktc-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-uktc-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3252,11 +3332,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-22-yylu" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-22-yylu" data-stitch-select="stitch-select-8" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-24-bjrb" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-23-lewn" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-v35i-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-v35i-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-v35i-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-23-lewn" data-stitch-select-ui="stitch-select-8" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-v35i-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-v35i-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-v35i-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3288,11 +3368,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-25-wbzq" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-25-wbzq" data-stitch-select="stitch-select-9" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-27-lbd4" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-26-vv92" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-59ey-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-59ey-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-59ey-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-26-vv92" data-stitch-select-ui="stitch-select-9" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-59ey-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-59ey-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-59ey-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3324,11 +3404,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-28-le0o" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-28-le0o" data-stitch-select="stitch-select-10" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-30-322k" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-29-jq0m" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-ya4a-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-ya4a-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-ya4a-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-29-jq0m" data-stitch-select-ui="stitch-select-10" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-ya4a-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-ya4a-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-ya4a-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3360,11 +3440,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-31-zcrt" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-31-zcrt" data-stitch-select="stitch-select-11" tabindex="-1">
 <option data-select2-id="select2-data-33-8gas" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-32-ve7d" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-yigs-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-yigs-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-yigs-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-32-ve7d" data-stitch-select-ui="stitch-select-11" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-yigs-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-yigs-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-yigs-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3396,11 +3476,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-34-2ntm" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-34-2ntm" data-stitch-select="stitch-select-12" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-36-tzst" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-35-56tv" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-m277-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-m277-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-m277-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-35-56tv" data-stitch-select-ui="stitch-select-12" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-m277-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-m277-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-m277-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3432,11 +3512,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-37-wp2m" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-37-wp2m" data-stitch-select="stitch-select-13" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-39-x4wy" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-38-e3v0" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-6sgq-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-6sgq-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-6sgq-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-38-e3v0" data-stitch-select-ui="stitch-select-13" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-6sgq-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-6sgq-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-6sgq-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3468,11 +3548,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-40-29ez" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-40-29ez" data-stitch-select="stitch-select-14" tabindex="-1">
 <option data-select2-id="select2-data-42-9j4a" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-41-mwif" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-ki0o-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-ki0o-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-ki0o-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-41-mwif" data-stitch-select-ui="stitch-select-14" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-ki0o-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-ki0o-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-ki0o-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3504,11 +3584,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-43-df2c" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-43-df2c" data-stitch-select="stitch-select-15" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-45-gwme" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-44-q370" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-6xlf-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-6xlf-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-6xlf-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-44-q370" data-stitch-select-ui="stitch-select-15" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-6xlf-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-6xlf-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-6xlf-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3540,11 +3620,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-46-v2sd" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-46-v2sd" data-stitch-select="stitch-select-16" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-48-ijqp" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-47-c89v" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-x9fo-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-x9fo-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-x9fo-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-47-c89v" data-stitch-select-ui="stitch-select-16" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-x9fo-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-x9fo-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-x9fo-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3576,11 +3656,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-49-sut3" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-49-sut3" data-stitch-select="stitch-select-17" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-51-wjwy" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-50-i0km" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-5uxw-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-5uxw-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-5uxw-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-50-i0km" data-stitch-select-ui="stitch-select-17" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-5uxw-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-5uxw-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-5uxw-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3612,11 +3692,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-52-28vn" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-52-28vn" data-stitch-select="stitch-select-18" tabindex="-1">
 <option data-select2-id="select2-data-54-88qq" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-53-3bj4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-315q-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-315q-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-315q-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-53-3bj4" data-stitch-select-ui="stitch-select-18" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-315q-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-315q-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-315q-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3648,11 +3728,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-55-sisy" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-55-sisy" data-stitch-select="stitch-select-19" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-57-72ay" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-56-f95m" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-n0jx-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-n0jx-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-n0jx-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-56-f95m" data-stitch-select-ui="stitch-select-19" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-n0jx-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-n0jx-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-n0jx-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -3749,14 +3829,14 @@ iframe[name*="privateStripeMetrics"],
 <!--begin::Col-->
 <div class="col-md-6 fv-row fv-plugins-icon-container">
 <label class="required fs-6 fw-semibold mb-2">Assign</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Select a Team Member" data-select2-id="select2-data-58-d4vf" name="target_assign" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Select a Team Member" data-select2-id="select2-data-58-d4vf" data-stitch-select="stitch-select-20" name="target_assign" tabindex="-1">
 <option data-select2-id="select2-data-60-wxoq" value="">Select user...</option>
 <option value="1">Karina Clark</option>
 <option value="2">Robert Doe</option>
 <option value="3">Niel Owen</option>
 <option value="4">Olivia Wild</option>
 <option value="5">Sean Bean</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-59-bx4y" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-target_assign-a1-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-target_assign-a1-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-target_assign-a1-container" role="textbox" title="Select a Team Member"><span class="select2-selection__placeholder">Select a Team Member</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-59-bx4y" data-stitch-select-ui="stitch-select-20" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-target_assign-a1-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-target_assign-a1-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-target_assign-a1-container" role="textbox" title="Select a Team Member"><span class="select2-selection__placeholder">Select a Team Member</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
 <!--end::Col-->
 <!--begin::Col-->
@@ -4449,11 +4529,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-61-o535" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-61-o535" data-stitch-select="stitch-select-21" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-63-i2xq" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-62-69ol" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-xh92-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-xh92-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-xh92-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-62-69ol" data-stitch-select-ui="stitch-select-21" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-xh92-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-xh92-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-xh92-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4477,11 +4557,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-64-sdsa" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-64-sdsa" data-stitch-select="stitch-select-22" tabindex="-1">
 <option data-select2-id="select2-data-66-pnyp" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-65-e62i" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-b0mg-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-b0mg-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-b0mg-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-65-e62i" data-stitch-select-ui="stitch-select-22" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-b0mg-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-b0mg-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-b0mg-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4505,11 +4585,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-67-duqz" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-67-duqz" data-stitch-select="stitch-select-23" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-69-y97v" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-68-dvzj" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-tw0w-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-tw0w-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-tw0w-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-68-dvzj" data-stitch-select-ui="stitch-select-23" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-tw0w-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-tw0w-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-tw0w-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4533,11 +4613,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-70-9m8f" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-70-9m8f" data-stitch-select="stitch-select-24" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-72-t00z" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-71-f1np" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-u6o1-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-u6o1-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-u6o1-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-71-f1np" data-stitch-select-ui="stitch-select-24" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-u6o1-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-u6o1-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-u6o1-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4561,11 +4641,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-73-6um9" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-73-6um9" data-stitch-select="stitch-select-25" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-75-fpaa" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-74-a152" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-4fqc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-4fqc-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-4fqc-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-74-a152" data-stitch-select-ui="stitch-select-25" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-4fqc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-4fqc-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-4fqc-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4589,11 +4669,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-76-z2x5" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-76-z2x5" data-stitch-select="stitch-select-26" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-78-0373" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-77-9e7z" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-owtc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-owtc-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-owtc-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-77-9e7z" data-stitch-select-ui="stitch-select-26" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-owtc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-owtc-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-owtc-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4617,11 +4697,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-79-upc6" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-79-upc6" data-stitch-select="stitch-select-27" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-81-ogt0" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-80-bga0" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-zy70-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-zy70-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-zy70-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-80-bga0" data-stitch-select-ui="stitch-select-27" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-zy70-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-zy70-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-zy70-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4645,11 +4725,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-82-5a7d" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-82-5a7d" data-stitch-select="stitch-select-28" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-84-etfb" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-83-24r4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-wd8g-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-wd8g-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-wd8g-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-83-24r4" data-stitch-select-ui="stitch-select-28" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-wd8g-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-wd8g-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-wd8g-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4673,11 +4753,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-85-174c" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-85-174c" data-stitch-select="stitch-select-29" tabindex="-1">
 <option data-select2-id="select2-data-87-xwni" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-86-qwmw" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-7rbj-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-7rbj-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-7rbj-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-86-qwmw" data-stitch-select-ui="stitch-select-29" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-7rbj-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-7rbj-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-7rbj-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4701,11 +4781,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-88-jirx" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-88-jirx" data-stitch-select="stitch-select-30" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-90-m8w2" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-89-3loi" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-p9ze-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-p9ze-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-p9ze-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-89-3loi" data-stitch-select-ui="stitch-select-30" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-p9ze-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-p9ze-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-p9ze-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4729,11 +4809,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-91-w1ez" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-91-w1ez" data-stitch-select="stitch-select-31" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-93-d9lg" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-92-mdwm" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-dgq8-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-dgq8-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-dgq8-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-92-mdwm" data-stitch-select-ui="stitch-select-31" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-dgq8-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-dgq8-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-dgq8-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4757,11 +4837,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-94-1fpd" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-94-1fpd" data-stitch-select="stitch-select-32" tabindex="-1">
 <option data-select2-id="select2-data-96-h4yu" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-95-odt0" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-d1zb-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-d1zb-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-d1zb-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-95-odt0" data-stitch-select-ui="stitch-select-32" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-d1zb-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-d1zb-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-d1zb-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4785,11 +4865,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-97-ij2a" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-97-ij2a" data-stitch-select="stitch-select-33" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-99-3pkr" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-98-o1w7" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-27oh-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-27oh-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-27oh-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-98-o1w7" data-stitch-select-ui="stitch-select-33" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-27oh-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-27oh-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-27oh-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4813,11 +4893,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-100-7t92" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-100-7t92" data-stitch-select="stitch-select-34" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-102-o8zl" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-101-dt58" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-3e8y-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-3e8y-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-3e8y-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-101-dt58" data-stitch-select-ui="stitch-select-34" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-3e8y-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-3e8y-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-3e8y-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4841,11 +4921,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-103-kn00" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-103-kn00" data-stitch-select="stitch-select-35" tabindex="-1">
 <option value="1">Guest</option>
 <option data-select2-id="select2-data-105-2usa" selected="selected" value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-104-nlcv" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-9uu2-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-9uu2-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-9uu2-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-104-nlcv" data-stitch-select-ui="stitch-select-35" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-9uu2-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-9uu2-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-9uu2-container" role="textbox" title="Owner">Owner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4869,11 +4949,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-106-x2mm" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-106-x2mm" data-stitch-select="stitch-select-36" tabindex="-1">
 <option data-select2-id="select2-data-108-ub6o" selected="selected" value="1">Guest</option>
 <option value="2">Owner</option>
 <option value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-107-umm8" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-kdia-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-kdia-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-kdia-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-107-umm8" data-stitch-select-ui="stitch-select-36" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-kdia-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-kdia-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-kdia-container" role="textbox" title="Guest">Guest</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4897,11 +4977,11 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Details-->
 <!--begin::Access menu-->
 <div class="ms-2 w-100px">
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-109-ez2c" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true" data-kt-initialized="1" data-select2-id="select2-data-109-ez2c" data-stitch-select="stitch-select-37" tabindex="-1">
 <option value="1">Guest</option>
 <option value="2">Owner</option>
 <option data-select2-id="select2-data-111-tgm8" selected="selected" value="3">Can Edit</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-110-770t" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-e29a-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-e29a-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-e29a-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-110-770t" data-stitch-select-ui="stitch-select-37" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-e29a-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-e29a-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-e29a-container" role="textbox" title="Can Edit">Can Edit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <!--end::Access menu-->
 </div>
@@ -4949,8 +5029,8 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 <!--end::Javascript-->
-<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="flatpickr-calendar hasTime animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select aria-label="Month" class="flatpickr-monthDropdown-months" tabindex="-1"><option class="flatpickr-monthDropdown-month" tabindex="-1" value="0">January</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="1">February</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="2">March</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="3">April</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="4">May</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="5">June</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="6">July</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="7">August</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="8">September</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="9">October</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="10">November</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="11">December</option></select><div class="numInputWrapper"><input aria-label="Year" class="numInput cur-year" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="flatpickr-calendar hasTime animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select aria-label="Month" class="flatpickr-monthDropdown-months" data-stitch-native-select="1" data-stitch-select="stitch-select-38"><option class="flatpickr-monthDropdown-month" tabindex="-1" value="0">January</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="1">February</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="2">March</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="3">April</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="4">May</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="5">June</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="6">July</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="7">August</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="8">September</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="9">October</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="10">November</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="11">December</option></select><div class="numInputWrapper"><input aria-label="Year" class="numInput cur-year" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
 <span class="flatpickr-weekday">
         Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
       </span>
-</div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span aria-label="June 28, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">28</span><span aria-label="June 29, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">29</span><span aria-label="June 30, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">30</span><span aria-label="July 1, 2026" class="flatpickr-day" tabindex="-1">1</span><span aria-label="July 2, 2026" class="flatpickr-day" tabindex="-1">2</span><span aria-current="date" aria-label="July 3, 2026" class="flatpickr-day today" tabindex="-1">3</span><span aria-label="July 4, 2026" class="flatpickr-day" tabindex="-1">4</span><span aria-label="July 5, 2026" class="flatpickr-day" tabindex="-1">5</span><span aria-label="July 6, 2026" class="flatpickr-day" tabindex="-1">6</span><span aria-label="July 7, 2026" class="flatpickr-day" tabindex="-1">7</span><span aria-label="July 8, 2026" class="flatpickr-day" tabindex="-1">8</span><span aria-label="July 9, 2026" class="flatpickr-day" tabindex="-1">9</span><span aria-label="July 10, 2026" class="flatpickr-day" tabindex="-1">10</span><span aria-label="July 11, 2026" class="flatpickr-day" tabindex="-1">11</span><span aria-label="July 12, 2026" class="flatpickr-day" tabindex="-1">12</span><span aria-label="July 13, 2026" class="flatpickr-day" tabindex="-1">13</span><span aria-label="July 14, 2026" class="flatpickr-day" tabindex="-1">14</span><span aria-label="July 15, 2026" class="flatpickr-day" tabindex="-1">15</span><span aria-label="July 16, 2026" class="flatpickr-day" tabindex="-1">16</span><span aria-label="July 17, 2026" class="flatpickr-day" tabindex="-1">17</span><span aria-label="July 18, 2026" class="flatpickr-day" tabindex="-1">18</span><span aria-label="July 19, 2026" class="flatpickr-day" tabindex="-1">19</span><span aria-label="July 20, 2026" class="flatpickr-day" tabindex="-1">20</span><span aria-label="July 21, 2026" class="flatpickr-day" tabindex="-1">21</span><span aria-label="July 22, 2026" class="flatpickr-day" tabindex="-1">22</span><span aria-label="July 23, 2026" class="flatpickr-day" tabindex="-1">23</span><span aria-label="July 24, 2026" class="flatpickr-day" tabindex="-1">24</span><span aria-label="July 25, 2026" class="flatpickr-day" tabindex="-1">25</span><span aria-label="July 26, 2026" class="flatpickr-day" tabindex="-1">26</span><span aria-label="July 27, 2026" class="flatpickr-day" tabindex="-1">27</span><span aria-label="July 28, 2026" class="flatpickr-day" tabindex="-1">28</span><span aria-label="July 29, 2026" class="flatpickr-day" tabindex="-1">29</span><span aria-label="July 30, 2026" class="flatpickr-day" tabindex="-1">30</span><span aria-label="July 31, 2026" class="flatpickr-day" tabindex="-1">31</span><span aria-label="August 1, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">1</span><span aria-label="August 2, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">2</span><span aria-label="August 3, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">3</span><span aria-label="August 4, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">4</span><span aria-label="August 5, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">5</span><span aria-label="August 6, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">6</span><span aria-label="August 7, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">7</span><span aria-label="August 8, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">8</span></div></div></div></div><div class="flatpickr-time" tabindex="-1"><div class="numInputWrapper"><input aria-label="Hour" class="numInput flatpickr-hour" max="12" maxlength="2" min="1" step="1" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div><span class="flatpickr-time-separator">:</span><div class="numInputWrapper"><input aria-label="Minute" class="numInput flatpickr-minute" max="59" maxlength="2" min="0" step="5" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div><span class="flatpickr-am-pm" tabindex="-1" title="Click to toggle">PM</span></div></div><svg id="js-plotly-tester" style="position: absolute; left: -10000px; top: -10000px; width: 9000px; height: 9000px; z-index: 1;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="js-reference-point" d="M0,0H1V1H0Z" style="stroke-width: 0; fill: black;"></path></svg><script src="../runtime.js"></script></body><!--end::Body--></html>
+</div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span aria-label="June 28, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">28</span><span aria-label="June 29, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">29</span><span aria-label="June 30, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">30</span><span aria-label="July 1, 2026" class="flatpickr-day" tabindex="-1">1</span><span aria-label="July 2, 2026" class="flatpickr-day" tabindex="-1">2</span><span aria-current="date" aria-label="July 3, 2026" class="flatpickr-day today" tabindex="-1">3</span><span aria-label="July 4, 2026" class="flatpickr-day" tabindex="-1">4</span><span aria-label="July 5, 2026" class="flatpickr-day" tabindex="-1">5</span><span aria-label="July 6, 2026" class="flatpickr-day" tabindex="-1">6</span><span aria-label="July 7, 2026" class="flatpickr-day" tabindex="-1">7</span><span aria-label="July 8, 2026" class="flatpickr-day" tabindex="-1">8</span><span aria-label="July 9, 2026" class="flatpickr-day" tabindex="-1">9</span><span aria-label="July 10, 2026" class="flatpickr-day" tabindex="-1">10</span><span aria-label="July 11, 2026" class="flatpickr-day" tabindex="-1">11</span><span aria-label="July 12, 2026" class="flatpickr-day" tabindex="-1">12</span><span aria-label="July 13, 2026" class="flatpickr-day" tabindex="-1">13</span><span aria-label="July 14, 2026" class="flatpickr-day" tabindex="-1">14</span><span aria-label="July 15, 2026" class="flatpickr-day" tabindex="-1">15</span><span aria-label="July 16, 2026" class="flatpickr-day" tabindex="-1">16</span><span aria-label="July 17, 2026" class="flatpickr-day" tabindex="-1">17</span><span aria-label="July 18, 2026" class="flatpickr-day" tabindex="-1">18</span><span aria-label="July 19, 2026" class="flatpickr-day" tabindex="-1">19</span><span aria-label="July 20, 2026" class="flatpickr-day" tabindex="-1">20</span><span aria-label="July 21, 2026" class="flatpickr-day" tabindex="-1">21</span><span aria-label="July 22, 2026" class="flatpickr-day" tabindex="-1">22</span><span aria-label="July 23, 2026" class="flatpickr-day" tabindex="-1">23</span><span aria-label="July 24, 2026" class="flatpickr-day" tabindex="-1">24</span><span aria-label="July 25, 2026" class="flatpickr-day" tabindex="-1">25</span><span aria-label="July 26, 2026" class="flatpickr-day" tabindex="-1">26</span><span aria-label="July 27, 2026" class="flatpickr-day" tabindex="-1">27</span><span aria-label="July 28, 2026" class="flatpickr-day" tabindex="-1">28</span><span aria-label="July 29, 2026" class="flatpickr-day" tabindex="-1">29</span><span aria-label="July 30, 2026" class="flatpickr-day" tabindex="-1">30</span><span aria-label="July 31, 2026" class="flatpickr-day" tabindex="-1">31</span><span aria-label="August 1, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">1</span><span aria-label="August 2, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">2</span><span aria-label="August 3, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">3</span><span aria-label="August 4, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">4</span><span aria-label="August 5, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">5</span><span aria-label="August 6, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">6</span><span aria-label="August 7, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">7</span><span aria-label="August 8, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">8</span></div></div></div></div><div class="flatpickr-time" tabindex="-1"><div class="numInputWrapper"><input aria-label="Hour" class="numInput flatpickr-hour" max="12" maxlength="2" min="1" step="1" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div><span class="flatpickr-time-separator">:</span><div class="numInputWrapper"><input aria-label="Minute" class="numInput flatpickr-minute" max="59" maxlength="2" min="0" step="5" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div><span class="flatpickr-am-pm" tabindex="-1" title="Click to toggle">PM</span></div></div><svg id="js-plotly-tester" style="position: absolute; left: -10000px; top: -10000px; width: 9000px; height: 9000px; z-index: 1;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="js-reference-point" d="M0,0H1V1H0Z" style="stroke-width: 0; fill: black;"></path></svg><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body><!--end::Body--></html>

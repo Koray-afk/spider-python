@@ -148,6 +148,7 @@ python main.py catalog zoho
 python main.py workflows zoho
 python main.py modules zoho
 python main.py preview zoho
+python main.py capture-interactions likwid --url https://likwidai.com/home/v2/
 python main.py api
 ```
 

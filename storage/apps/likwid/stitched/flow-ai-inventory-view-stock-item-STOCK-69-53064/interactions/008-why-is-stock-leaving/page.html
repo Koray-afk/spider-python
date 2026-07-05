@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--end::Head-->
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-header-minimize="on" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" data-kt-sticky-app-header-minimize="on" data-select2-id="select2-data-kt_app_body" id="kt_app_body">
@@ -870,7 +950,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 </div>
 <!-- Inventory -->
-<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-9a6e50">
+<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-ad1d50">
 <span class="menu-link">
 <span class="menu-icon">
 <i class="bi bi-boxes fs-2"></i>
@@ -878,7 +958,7 @@ iframe[name*="privateStripeMetrics"],
 <span class="menu-title">Inventory</span>
 <span class="menu-arrow"></span>
 </span>
-<div class="menu-sub menu-sub-accordion show" id="stitch-acc-9a6e50">
+<div class="menu-sub menu-sub-accordion show" id="stitch-acc-ad1d50">
 <div class="menu-item">
 <a class="menu-link active bg-light-info" data-stitch-page="flow-ai-inventory-stock-list" href="../../../flow-ai-inventory-stock-list/page.html">
 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
@@ -1234,7 +1314,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="row g-3">
 <div class="col-md-6">
 <label class="iv-label">Inventory Item</label>
-<select aria-hidden="false" class="form-select form-select-solid form-select-sm" data-control="select2" data-kt-initialized="1" id="id_inv_item" name="inv_item" required="" tabindex="0">
+<select aria-hidden="false" class="form-select form-select-solid form-select-sm" data-control="select2" data-kt-initialized="1" data-stitch-native-select="1" data-stitch-select="stitch-select-1" id="id_inv_item" name="inv_item" required="" tabindex="0">
 <option value="">---------</option>
 <option value="1">Macortho Advance Ointment Tube - 30gm</option>
 <option value="3">Brute Bottles - 200ml</option>
@@ -1321,7 +1401,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-6">
 <label class="iv-label">From Store</label>
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_from_store" id="id_from_store" name="from_store" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_from_store" data-stitch-select="stitch-select-2" id="id_from_store" name="from_store" tabindex="-1">
 <option value="">---------</option>
 <option value="3">Finished Goods Godown</option>
 <option value="4">Delivery Bay</option>
@@ -1329,11 +1409,11 @@ iframe[name*="privateStripeMetrics"],
 <option value="6">Herbs Store</option>
 <option value="23">Finished Goods Godown, Delivery Bay, Packaging Material Store, Herbs Store</option>
 <option value="27">Global Warehouse</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-3-2wwq" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_from_store-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_from_store-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="13" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_from_store-container" role="textbox" title="Packaging Material Store">Packaging Material Store</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-3-2wwq" data-stitch-select-ui="stitch-select-2" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_from_store-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_from_store-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="13" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_from_store-container" role="textbox" title="Packaging Material Store">Packaging Material Store</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-6">
 <label class="iv-label">Move To Store</label>
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_move_to_store" id="id_move_to_store" name="move_to_store" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_move_to_store" data-stitch-select="stitch-select-3" id="id_move_to_store" name="move_to_store" tabindex="-1">
 <option data-select2-id="select2-data-6-xc8l" selected="" value="">---------</option>
 <option value="3">Finished Goods Godown</option>
 <option value="4">Delivery Bay</option>
@@ -1341,7 +1421,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="6">Herbs Store</option>
 <option value="23">Finished Goods Godown, Delivery Bay, Packaging Material Store, Herbs Store</option>
 <option value="27">Global Warehouse</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-5-3qb4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_move_to_store-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_move_to_store-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="14" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_move_to_store-container" role="textbox" title="---------">---------</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-5-3qb4" data-stitch-select-ui="stitch-select-3" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_move_to_store-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_move_to_store-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="14" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_move_to_store-container" role="textbox" title="---------">---------</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <a class="fs-9 text-primary mt-1 d-inline-block" data-stitch-page="flow-ai-inventory-add-store" href="../../../flow-ai-inventory-add-store/page.html">+ Add New Store</a>
 </div>
 <div class="col-md-3">
@@ -1354,7 +1434,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-6" data-select2-id="select2-data-130-o6oy">
 <label class="iv-label">Reason</label>
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Why is stock leaving?" data-select2-id="select2-data-id_reason" id="id_reason" name="reason" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Why is stock leaving?" data-select2-id="select2-data-id_reason" data-stitch-select="stitch-select-4" id="id_reason" name="reason" tabindex="-1">
 <option data-select2-id="select2-data-8-rco5" selected="" value="">---------</option>
 <option data-select2-id="select2-data-136-9j13" value="adjustment">Stock Adjustment</option>
 <option data-select2-id="select2-data-137-e3q2" value="wastage">Wastage</option>
@@ -1365,17 +1445,17 @@ iframe[name*="privateStripeMetrics"],
 <option data-select2-id="select2-data-142-cvtj" value="marketing">Marketing / Promo</option>
 <option data-select2-id="select2-data-143-73vd" value="donation">Donation</option>
 <option data-select2-id="select2-data-144-nvq1" value="other">Other</option>
-</select><span class="select2 select2-container select2-container--bootstrap5 select2-container--above select2-container--open" data-select2-id="select2-data-7-4zgs" dir="ltr" style="width: 100%;"><span class="selection"><span aria-activedescendant="select2-id_reason-result-wrcb-adjustment" aria-controls="select2-id_reason-container" aria-disabled="false" aria-expanded="true" aria-haspopup="true" aria-labelledby="select2-id_reason-container" aria-owns="select2-id_reason-results" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="15" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_reason-container" role="textbox" title="Why is stock leaving?"><span class="select2-selection__placeholder">Why is stock leaving?</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5 select2-container--above select2-container--open" data-select2-id="select2-data-7-4zgs" data-stitch-select-ui="stitch-select-4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-activedescendant="select2-id_reason-result-wrcb-adjustment" aria-controls="select2-id_reason-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_reason-container" aria-owns="select2-id_reason-results" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="15" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_reason-container" role="textbox" title="Why is stock leaving?"><span class="select2-selection__placeholder">Why is stock leaving?</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-6">
 <label class="iv-label">Cost Account</label>
-<select aria-describedby="id_cost_account_code_helptext" aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_cost_account_code" id="id_cost_account_code" name="cost_account_code" tabindex="-1">
+<select aria-describedby="id_cost_account_code_helptext" aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_cost_account_code" data-stitch-select="stitch-select-5" id="id_cost_account_code" name="cost_account_code" tabindex="-1">
 <option data-select2-id="select2-data-10-o6uf" selected="" value="">Cost of Goods Sold (5001) — default</option>
 <option value="5001">5001 — Cost of Goods Sold</option>
 <option value="5002">5002 — Purchases</option>
 <option value="5100">5100 — Salary Expense</option>
 <option value="5200">5200 — Maintenance Expense</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-9-ew0n" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_cost_account_code-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_cost_account_code-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="16" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_cost_account_code-container" role="textbox" title="Cost of Goods Sold (5001) — default">Cost of Goods Sold (5001) — default</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-9-ew0n" data-stitch-select-ui="stitch-select-5" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_cost_account_code-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_cost_account_code-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="16" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_cost_account_code-container" role="textbox" title="Cost of Goods Sold (5001) — default">Cost of Goods Sold (5001) — default</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <div class="fs-9 text-muted mt-1">Where this is expensed in the ledger. Leave default for stock write-offs.</div>
 </div>
 <div class="col-12">
@@ -1398,7 +1478,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="row g-3">
 <div class="col-md-6">
 <label class="iv-label">Inventory Item</label>
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_inv_item" id="id_inv_item" name="inv_item" required="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_inv_item" data-stitch-select="stitch-select-6" id="id_inv_item" name="inv_item" required="" tabindex="-1">
 <option value="">---------</option>
 <option value="1">Macortho Advance Ointment Tube - 30gm</option>
 <option value="3">Brute Bottles - 200ml</option>
@@ -1481,11 +1561,11 @@ iframe[name*="privateStripeMetrics"],
 <option value="864">MacZion - 200ml</option>
 <option value="865">Maczion - 200ml Boxes Dripoff</option>
 <option value="866">Maczion - Labels 200ml</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-92-ewa0" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_inv_item-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_inv_item-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="17" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_inv_item-container" role="textbox" title="200ml Brute Amber - 18 gm">200ml Brute Amber - 18 gm</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-92-ewa0" data-stitch-select-ui="stitch-select-6" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_inv_item-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_inv_item-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" data-crawl-id="17" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_inv_item-container" role="textbox" title="200ml Brute Amber - 18 gm">200ml Brute Amber - 18 gm</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-6">
 <label class="iv-label">Store</label>
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_add_to_store" id="id_add_to_store" name="add_to_store" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-select2-id="select2-data-id_add_to_store" data-stitch-select="stitch-select-7" id="id_add_to_store" name="add_to_store" tabindex="-1">
 <option value="">---------</option>
 <option value="3">Finished Goods Godown</option>
 <option value="4">Delivery Bay</option>
@@ -1493,7 +1573,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="6">Herbs Store</option>
 <option value="23">Finished Goods Godown, Delivery Bay, Packaging Material Store, Herbs Store</option>
 <option value="27">Global Warehouse</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-94-h4us" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_add_to_store-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_add_to_store-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_add_to_store-container" role="textbox" title="Packaging Material Store">Packaging Material Store</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-94-h4us" data-stitch-select-ui="stitch-select-7" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-id_add_to_store-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-id_add_to_store-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-id_add_to_store-container" role="textbox" title="Packaging Material Store">Packaging Material Store</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-4">
 <label class="iv-label">Quantity</label>
@@ -1564,7 +1644,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="row g-2 mb-4">
 <div class="col-6">
 <label class="iv-label">Expiry Month</label>
-<select class="form-control form-control-solid form-control-sm" id="id_expiry_month" name="expiry_month">
+<select class="form-control form-control-solid form-control-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-8" id="id_expiry_month" name="expiry_month">
 <option selected="" value="">Month</option>
 <option value="1">January</option>
 <option value="2">February</option>
@@ -1582,7 +1662,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-6">
 <label class="iv-label">Expiry Year</label>
-<select class="form-control form-control-solid form-control-sm" id="id_expiry_year" name="expiry_year">
+<select class="form-control form-control-solid form-control-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-9" id="id_expiry_year" name="expiry_year">
 <option selected="" value="">Year</option>
 <option value="2026">2026</option>
 <option value="2027">2027</option>
@@ -1720,7 +1800,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-3">
 <label class="form-label fs-7 fw-semibold">TAT Unit</label>
-<select class="form-select form-select-solid form-select-sm" name="tat_choice">
+<select class="form-select form-select-solid form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-10" name="tat_choice">
 <option value="Hours">Hours</option>
 <option value="Days">Days</option>
 <option value="Minutes">Minutes</option>
@@ -1730,14 +1810,14 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-3">
 <label class="form-label fs-7 fw-semibold">Quality Parameter</label>
-<select class="form-select form-select-solid form-select-sm" name="quality_metric">
+<select class="form-select form-select-solid form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-11" name="quality_metric">
 <option value="">None</option>
 <option value="1">PH - Value 3</option>
 </select>
 </div>
 <div class="col-md-3">
 <label class="form-label fs-7 fw-semibold">Depends On</label>
-<select class="form-select form-select-solid form-select-sm" name="depends_on_stage">
+<select class="form-select form-select-solid form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-12" name="depends_on_stage">
 <option value="">None (First stage)</option>
 </select>
 </div>
@@ -1759,7 +1839,7 @@ iframe[name*="privateStripeMetrics"],
 <div class="row g-3">
 <div class="col-md-8">
 <label class="form-label fs-7 fw-semibold">Source Inventory Item <span class="text-danger">*</span></label>
-<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Choose an item…" data-select2-id="select2-data-126-5cyj" name="source_master_id" required="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid form-select-sm select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Choose an item…" data-select2-id="select2-data-126-5cyj" data-stitch-select="stitch-select-13" name="source_master_id" required="" tabindex="-1">
 <option data-select2-id="select2-data-128-1p06" value="">Choose an item…</option>
 <option value="52">Acrylux - Wall Emulsion Exterior - Latex (Waterproof)</option>
 <option value="22">Aluminium Juicer - 500ml</option>
@@ -1788,7 +1868,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="51">Titanium Dioxide Paste</option>
 <option value="39">TMT Bar 4 mm</option>
 <option value="41">White Jug - 500ml</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-127-19xy" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-source_master_id-ld-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-source_master_id-ld-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-source_master_id-ld-container" role="textbox" title="Choose an item…"><span class="select2-selection__placeholder">Choose an item…</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-127-19xy" data-stitch-select-ui="stitch-select-13" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-source_master_id-ld-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-source_master_id-ld-container" class="select2-selection select2-selection--single form-select form-select-solid form-select-sm" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-source_master_id-ld-container" role="textbox" title="Choose an item…"><span class="select2-selection__placeholder">Choose an item…</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-4">
 <label class="form-label fs-7 fw-semibold">Start Stage Number <span class="text-danger">*</span></label>
@@ -2187,4 +2267,4 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 <!--end::Javascript-->
-<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><span class="select2-container select2-container--bootstrap5 select2-container--open" style="position: absolute; top: 739.703px; left: 485.5px;"><span class="select2-dropdown select2-dropdown--above" dir="ltr" style="width: 388.875px;"><span class="select2-search select2-search--dropdown"><input aria-activedescendant="select2-id_reason-result-wrcb-adjustment" aria-autocomplete="list" aria-controls="select2-id_reason-results" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" role="searchbox" spellcheck="false" tabindex="0" type="search"/></span><span class="select2-results"><ul aria-expanded="true" aria-hidden="false" class="select2-results__options" id="select2-id_reason-results" role="listbox"><li aria-selected="true" class="select2-results__option select2-results__option--selectable select2-results__option--highlighted" data-select2-id="select2-data-select2-id_reason-result-wrcb-adjustment" id="select2-id_reason-result-wrcb-adjustment" role="option">Stock Adjustment</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-kjcm-wastage" id="select2-id_reason-result-kjcm-wastage" role="option">Wastage</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-1eke-damage" id="select2-id_reason-result-1eke-damage" role="option">Damage / Expiry</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-o5ex-sample" id="select2-id_reason-result-o5ex-sample" role="option">Sample</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-3wc1-internal_use" id="select2-id_reason-result-3wc1-internal_use" role="option">Internal Use</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-5az4-rnd" id="select2-id_reason-result-5az4-rnd" role="option">R&amp;D</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-r9hr-marketing" id="select2-id_reason-result-r9hr-marketing" role="option">Marketing / Promo</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-07rc-donation" id="select2-id_reason-result-07rc-donation" role="option">Donation</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-l28y-other" id="select2-id_reason-result-l28y-other" role="option">Other</li></ul></span></span></span><script src="../../../runtime.js"></script></body><!--end::Body--></html>
+<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><span class="select2-container select2-container--bootstrap5 select2-container--open" style="position: absolute; top: 739.703px; left: 485.5px;"><span class="select2-dropdown select2-dropdown--above" dir="ltr" style="width: 388.875px;"><span class="select2-search select2-search--dropdown"><input aria-activedescendant="select2-id_reason-result-wrcb-adjustment" aria-autocomplete="list" aria-controls="select2-id_reason-results" aria-label="Search" autocapitalize="none" autocomplete="off" autocorrect="off" class="select2-search__field" role="searchbox" spellcheck="false" tabindex="0" type="search"/></span><span class="select2-results"><ul aria-expanded="true" aria-hidden="false" class="select2-results__options" id="select2-id_reason-results" role="listbox"><li aria-selected="true" class="select2-results__option select2-results__option--selectable select2-results__option--highlighted" data-select2-id="select2-data-select2-id_reason-result-wrcb-adjustment" id="select2-id_reason-result-wrcb-adjustment" role="option">Stock Adjustment</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-kjcm-wastage" id="select2-id_reason-result-kjcm-wastage" role="option">Wastage</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-1eke-damage" id="select2-id_reason-result-1eke-damage" role="option">Damage / Expiry</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-o5ex-sample" id="select2-id_reason-result-o5ex-sample" role="option">Sample</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-3wc1-internal_use" id="select2-id_reason-result-3wc1-internal_use" role="option">Internal Use</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-5az4-rnd" id="select2-id_reason-result-5az4-rnd" role="option">R&amp;D</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-r9hr-marketing" id="select2-id_reason-result-r9hr-marketing" role="option">Marketing / Promo</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-07rc-donation" id="select2-id_reason-result-07rc-donation" role="option">Donation</li><li aria-selected="false" class="select2-results__option select2-results__option--selectable" data-select2-id="select2-data-select2-id_reason-result-l28y-other" id="select2-id_reason-result-l28y-other" role="option">Other</li></ul></span></span></span><script src="../../../select_runtime.js"></script><script src="../../../runtime.js"></script></body><!--end::Body--></html>

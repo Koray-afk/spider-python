@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
 <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
 <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
@@ -864,7 +944,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 </div>
 <!-- Inventory -->
-<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-637d50">
+<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-5c4850">
 <span class="menu-link">
 <span class="menu-icon">
 <i class="bi bi-boxes fs-2"></i>
@@ -872,7 +952,7 @@ iframe[name*="privateStripeMetrics"],
 <span class="menu-title">Inventory</span>
 <span class="menu-arrow"></span>
 </span>
-<div class="menu-sub menu-sub-accordion show" id="stitch-acc-637d50">
+<div class="menu-sub menu-sub-accordion show" id="stitch-acc-5c4850">
 <div class="menu-item">
 <a class="menu-link" data-stitch-page="flow-ai-inventory-stock-list" href="../flow-ai-inventory-stock-list/page.html">
 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
@@ -1209,7 +1289,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-12">
 <label class="form-label fw-semibold fs-7">Category</label>
-<select class="form-select form-select-solid" id="id_category" name="category">
+<select class="form-select form-select-solid" data-stitch-native-select="1" data-stitch-select="stitch-select-1" id="id_category" name="category">
 <option selected="" value="">---------</option>
 <option value="7">TPM</option>
 <option value="9">PCD Franchise</option>
@@ -1264,7 +1344,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-6">
 <label class="form-label fw-semibold fs-7">Payment Terms</label>
-<select aria-describedby="id_payment_terms_helptext" class="form-select form-select-solid" id="id_payment_terms" name="payment_terms">
+<select aria-describedby="id_payment_terms_helptext" class="form-select form-select-solid" data-stitch-native-select="1" data-stitch-select="stitch-select-2" id="id_payment_terms" name="payment_terms">
 <option selected="" value="0">Due on Receipt</option>
 <option value="15">Net 15</option>
 <option value="30">Net 30</option>
@@ -1350,4 +1430,4 @@ iframe[name*="privateStripeMetrics"],
 .cv-drawer-header { display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid #f0f0f0; flex-shrink:0; }
 .cv-drawer-body { flex:1; overflow-y:auto; padding:24px; }
 </style>
-</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../runtime.js"></script></body></html>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body></html>

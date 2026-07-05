@@ -36,6 +36,13 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup, Tag
 
 from config import get_app_config
+from stitch_charts import fix_frozen_chart_layout, inject_chart_fix_css
+from stitch_datatables import fix_datatables_layout, inject_datatables_fix_css
+from stitch_selects import (
+    SELECT_RUNTIME_JS,
+    inject_select_fix_css,
+    wire_select_dropdowns,
+)
 from storage.storage_manager import (
     clean_stitched,
     get_crawl_dir,
@@ -3174,6 +3181,7 @@ def _inject_runtime(
         flow_tag.string = f"window.__LIKWID_FLOWS__ = {data};"
         body.append(flow_tag)
         body.append(soup.new_tag("script", src=f"{to_root}likwid_flows.js"))
+    body.append(soup.new_tag("script", src=f"{to_root}select_runtime.js"))
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
 
 
@@ -3350,7 +3358,7 @@ def _process_html(
     discovered: list[dict] | None = None,
     expand_sidebars: bool = True,
     likwid_flows: dict | None = None,
-) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
+) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int], int]:
     soup = BeautifulSoup(html, "html.parser")
     stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
     page_links = _rewrite_anchors(soup, route_index, to_root)
@@ -3416,6 +3424,12 @@ def _process_html(
     likwid_forms = _neutralize_likwid_post_forms(soup)
     if likwid_forms:
         print(f"[STITCH] Neutralized {likwid_forms} Likwid POST stage button(s) on {page_dir.name if page_dir else '?'}")
+    selects_wired = wire_select_dropdowns(soup)
+    inject_select_fix_css(soup)
+    charts_fixed = fix_frozen_chart_layout(soup)
+    inject_chart_fix_css(soup)
+    datatables_fixed = fix_datatables_layout(soup)
+    inject_datatables_fix_css(soup)
     _inject_runtime(
         soup,
         to_root,
@@ -3424,7 +3438,16 @@ def _process_html(
         slug=page_dir.name if page_dir is not None else "",
         likwid_flows=likwid_flows,
     )
-    return _fix_svg_viewbox_html(str(soup)), page_links, inter_manifest, accordions, fixes
+    return (
+        _fix_svg_viewbox_html(str(soup)),
+        page_links,
+        inter_manifest,
+        accordions,
+        fixes,
+        selects_wired,
+        charts_fixed,
+        datatables_fixed,
+    )
 
 
 def _load_json_list(path: Path) -> list[dict]:
@@ -3815,6 +3838,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     stitched_dir.mkdir(parents=True, exist_ok=True)
 
     (stitched_dir / "runtime.js").write_text(RUNTIME_JS, encoding="utf-8")
+    (stitched_dir / "select_runtime.js").write_text(SELECT_RUNTIME_JS, encoding="utf-8")
 
     flow_meta = get_metadata_dir(app_name) / "flow_replays.json"
     likwid_flows = None
@@ -3845,6 +3869,9 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     accordions_total = 0
     pointer_events_fixed = 0
     controls_restored = 0
+    selects_wired_total = 0
+    charts_fixed_total = 0
+    datatables_fixed_total = 0
 
     for page_dir in page_dirs:
         slug = page_dir.name
@@ -3857,7 +3884,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
         html = _fix_escaped_attr_quotes(
             (page_dir / "page.html").read_text(encoding="utf-8")
         )
-        new_html, page_links, inter_manifest, accordions, fixes = _process_html(
+        new_html, page_links, inter_manifest, accordions, fixes, selects_wired, charts_fixed, datatables_fixed = _process_html(
             html,
             to_root="../",
             route_index=route_index,
@@ -3869,6 +3896,9 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             expand_sidebars=expand_sidebars,
             likwid_flows=likwid_flows,
         )
+        selects_wired_total += selects_wired
+        charts_fixed_total += charts_fixed
+        datatables_fixed_total += datatables_fixed
         new_html = _localize_hubspot_css(new_html, css_dir, to_root="../", css_cdn_dirs=css_cdn_dirs)
         new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
         new_html = _localize_remote_images(new_html, images_dir, to_root="../")
@@ -3890,7 +3920,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             dst = out_dir / item["path"]
             dst.parent.mkdir(parents=True, exist_ok=True)
             ihtml = _fix_escaped_attr_quotes(src.read_text(encoding="utf-8"))
-            new_ihtml, _, _, _, ifixes = _process_html(
+            new_ihtml, _, _, _, ifixes, iselects, icharts, idtables = _process_html(
                 ihtml,
                 to_root="../../../",
                 route_index=route_index,
@@ -3899,6 +3929,9 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 expand_sidebars=expand_sidebars,
                 likwid_flows=likwid_flows,
             )
+            selects_wired_total += iselects
+            charts_fixed_total += icharts
+            datatables_fixed_total += idtables
             new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../", css_cdn_dirs=css_cdn_dirs)
             new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")
             new_ihtml = _localize_remote_images(new_ihtml, images_dir, to_root="../../../")
@@ -3948,7 +3981,10 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
 
     print(
         f"[STITCH] Interaction fixes: {pointer_events_fixed} pointer-events:none removed, "
-        f"{controls_restored} disabled controls restored"
+        f"{controls_restored} disabled controls restored, "
+        f"{selects_wired_total} select/dropdown controls wired, "
+        f"{charts_fixed_total} frozen chart layout fixes, "
+        f"{datatables_fixed_total} DataTables layout fixes"
     )
     print(f"[STITCH] Output: {stitched_dir.resolve()}")
     return {

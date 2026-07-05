@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--end::Head-->
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
@@ -870,7 +950,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 </div>
 <!-- Inventory -->
-<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-ce6550">
+<div aria-expanded="true" class="menu-item menu-accordion show" data-kt-menu-trigger="click" data-stitch-accordion="stitch-acc-13d550">
 <span class="menu-link">
 <span class="menu-icon">
 <i class="bi bi-boxes fs-2"></i>
@@ -878,7 +958,7 @@ iframe[name*="privateStripeMetrics"],
 <span class="menu-title">Inventory</span>
 <span class="menu-arrow"></span>
 </span>
-<div class="menu-sub menu-sub-accordion show" id="stitch-acc-ce6550">
+<div class="menu-sub menu-sub-accordion show" id="stitch-acc-13d550">
 <div class="menu-item">
 <a class="menu-link" data-stitch-page="flow-ai-inventory-stock-list" href="../flow-ai-inventory-stock-list/page.html">
 <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
@@ -1272,15 +1352,15 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="mb-5">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Category</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="All categories" data-select2-id="select2-data-1-gyef" name="filter_cat" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="All categories" data-select2-id="select2-data-1-gyef" data-stitch-select="stitch-select-1" name="filter_cat" tabindex="-1">
 <option data-select2-id="select2-data-3-nin3" value=""></option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-6wxj" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-filter_cat-ao-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-filter_cat-ao-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-filter_cat-ao-container" role="textbox" title="All categories"><span class="select2-selection__placeholder">All categories</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-6wxj" data-stitch-select-ui="stitch-select-1" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-filter_cat-ao-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-filter_cat-ao-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-filter_cat-ao-container" role="textbox" title="All categories"><span class="select2-selection__placeholder">All categories</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="mb-2">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Store Location</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="All stores" data-select2-id="select2-data-4-b1c9" name="filter_store" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="All stores" data-select2-id="select2-data-4-b1c9" data-stitch-select="stitch-select-2" name="filter_store" tabindex="-1">
 <option data-select2-id="select2-data-6-8cxc" value=""></option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-5-swzs" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-filter_store-x4-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-filter_store-x4-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-filter_store-x4-container" role="textbox" title="All stores"><span class="select2-selection__placeholder">All stores</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-5-swzs" data-stitch-select-ui="stitch-select-2" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-filter_store-x4-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-filter_store-x4-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-filter_store-x4-container" role="textbox" title="All stores"><span class="select2-selection__placeholder">All stores</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 </div>
 <div class="modal-footer border-0 pt-0 px-8 pb-6">
@@ -1314,25 +1394,25 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-6">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Item Type <span class="text-danger">*</span></label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Select type" data-select2-id="select2-data-7-wzww" name="" tabindex="-1">
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-8-98nu" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--o9-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--o9-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--o9-container" role="textbox" title="Select type"><span class="select2-selection__placeholder">Select type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Select type" data-select2-id="select2-data-7-wzww" data-stitch-select="stitch-select-3" name="" tabindex="-1">
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-8-98nu" data-stitch-select-ui="stitch-select-3" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--o9-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--o9-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--o9-container" role="textbox" title="Select type"><span class="select2-selection__placeholder">Select type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-6">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Category</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="Select category" data-select2-id="select2-data-9-eswi" name="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="Select category" data-select2-id="select2-data-9-eswi" data-stitch-select="stitch-select-4" name="" tabindex="-1">
 <option data-select2-id="select2-data-11-xzfk" value=""></option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-10-wfuv" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--39-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--39-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--39-container" role="textbox" title="Select category"><span class="select2-selection__placeholder">Select category</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-10-wfuv" data-stitch-select-ui="stitch-select-4" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--39-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--39-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--39-container" role="textbox" title="Select category"><span class="select2-selection__placeholder">Select category</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-6">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Store Location</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="Select store" data-select2-id="select2-data-12-29kd" name="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="Select store" data-select2-id="select2-data-12-29kd" data-stitch-select="stitch-select-5" name="" tabindex="-1">
 <option data-select2-id="select2-data-14-uqwg" value=""></option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-13-8a44" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--z8-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--z8-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--z8-container" role="textbox" title="Select store"><span class="select2-selection__placeholder">Select store</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-13-8a44" data-stitch-select-ui="stitch-select-5" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--z8-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--z8-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--z8-container" role="textbox" title="Select store"><span class="select2-selection__placeholder">Select store</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-md-6">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Evaluation Method</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Select method" data-select2-id="select2-data-15-syyp" name="" tabindex="-1">
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-16-bngb" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--ov-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--ov-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--ov-container" role="textbox" title="Select method"><span class="select2-selection__placeholder">Select method</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-kt-initialized="1" data-placeholder="Select method" data-select2-id="select2-data-15-syyp" data-stitch-select="stitch-select-6" name="" tabindex="-1">
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-16-bngb" data-stitch-select-ui="stitch-select-6" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--ov-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--ov-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--ov-container" role="textbox" title="Select method"><span class="select2-selection__placeholder">Select method</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 <div class="col-12">
 <div class="d-flex align-items-center gap-3">
@@ -1419,9 +1499,9 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="mb-2">
 <label class="form-label fw-semibold fs-7 text-gray-500 text-uppercase mb-2" style="letter-spacing:.05em;">Category</label>
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="Select category" data-select2-id="select2-data-17-jh43" name="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-allow-clear="true" data-control="select2" data-kt-initialized="1" data-placeholder="Select category" data-select2-id="select2-data-17-jh43" data-stitch-select="stitch-select-7" name="" tabindex="-1">
 <option data-select2-id="select2-data-19-ce8m" value=""></option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-18-fj71" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--xs-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--xs-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--xs-container" role="textbox" title="Select category"><span class="select2-selection__placeholder">Select category</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-18-fj71" data-stitch-select-ui="stitch-select-7" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2--xs-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2--xs-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2--xs-container" role="textbox" title="Select category"><span class="select2-selection__placeholder">Select category</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 </div>
 </div>
 <div class="modal-footer border-0 pt-0 px-8 pb-6">
@@ -1549,12 +1629,12 @@ iframe[name*="privateStripeMetrics"],
 <label class="fs-5 fw-semibold form-label mb-5">Select Export Format:</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Select a format" data-select2-id="select2-data-20-u0x0" name="format" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-kt-initialized="1" data-placeholder="Select a format" data-select2-id="select2-data-20-u0x0" data-stitch-select="stitch-select-8" name="format" tabindex="-1">
 <option data-select2-id="select2-data-22-w8pw" value="excell">Excel</option>
 <option value="pdf">PDF</option>
 <option value="cvs">CVS</option>
 <option value="zip">ZIP</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-21-e1g6" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-format-fc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-format-fc-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-format-fc-container" role="textbox" title="Excel">Excel</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-21-e1g6" data-stitch-select-ui="stitch-select-8" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-format-fc-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-format-fc-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-format-fc-container" role="textbox" title="Excel">Excel</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 </div>
 <!--end::Input group-->
@@ -1907,8 +1987,8 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 <!--end::Javascript-->
-<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="flatpickr-calendar rangeMode animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select aria-label="Month" class="flatpickr-monthDropdown-months" tabindex="-1"><option class="flatpickr-monthDropdown-month" tabindex="-1" value="0">January</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="1">February</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="2">March</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="3">April</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="4">May</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="5">June</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="6">July</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="7">August</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="8">September</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="9">October</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="10">November</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="11">December</option></select><div class="numInputWrapper"><input aria-label="Year" class="numInput cur-year" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="flatpickr-calendar rangeMode animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select aria-label="Month" class="flatpickr-monthDropdown-months" data-stitch-native-select="1" data-stitch-select="stitch-select-9"><option class="flatpickr-monthDropdown-month" tabindex="-1" value="0">January</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="1">February</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="2">March</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="3">April</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="4">May</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="5">June</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="6">July</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="7">August</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="8">September</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="9">October</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="10">November</option><option class="flatpickr-monthDropdown-month" tabindex="-1" value="11">December</option></select><div class="numInputWrapper"><input aria-label="Year" class="numInput cur-year" tabindex="-1" type="number"/><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
 <span class="flatpickr-weekday">
         Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
       </span>
-</div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span aria-label="June 28, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">28</span><span aria-label="June 29, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">29</span><span aria-label="June 30, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">30</span><span aria-label="July 1, 2026" class="flatpickr-day" tabindex="-1">1</span><span aria-label="July 2, 2026" class="flatpickr-day" tabindex="-1">2</span><span aria-current="date" aria-label="July 3, 2026" class="flatpickr-day today" tabindex="-1">3</span><span aria-label="July 4, 2026" class="flatpickr-day" tabindex="-1">4</span><span aria-label="July 5, 2026" class="flatpickr-day" tabindex="-1">5</span><span aria-label="July 6, 2026" class="flatpickr-day" tabindex="-1">6</span><span aria-label="July 7, 2026" class="flatpickr-day" tabindex="-1">7</span><span aria-label="July 8, 2026" class="flatpickr-day" tabindex="-1">8</span><span aria-label="July 9, 2026" class="flatpickr-day" tabindex="-1">9</span><span aria-label="July 10, 2026" class="flatpickr-day" tabindex="-1">10</span><span aria-label="July 11, 2026" class="flatpickr-day" tabindex="-1">11</span><span aria-label="July 12, 2026" class="flatpickr-day" tabindex="-1">12</span><span aria-label="July 13, 2026" class="flatpickr-day" tabindex="-1">13</span><span aria-label="July 14, 2026" class="flatpickr-day" tabindex="-1">14</span><span aria-label="July 15, 2026" class="flatpickr-day" tabindex="-1">15</span><span aria-label="July 16, 2026" class="flatpickr-day" tabindex="-1">16</span><span aria-label="July 17, 2026" class="flatpickr-day" tabindex="-1">17</span><span aria-label="July 18, 2026" class="flatpickr-day" tabindex="-1">18</span><span aria-label="July 19, 2026" class="flatpickr-day" tabindex="-1">19</span><span aria-label="July 20, 2026" class="flatpickr-day" tabindex="-1">20</span><span aria-label="July 21, 2026" class="flatpickr-day" tabindex="-1">21</span><span aria-label="July 22, 2026" class="flatpickr-day" tabindex="-1">22</span><span aria-label="July 23, 2026" class="flatpickr-day" tabindex="-1">23</span><span aria-label="July 24, 2026" class="flatpickr-day" tabindex="-1">24</span><span aria-label="July 25, 2026" class="flatpickr-day" tabindex="-1">25</span><span aria-label="July 26, 2026" class="flatpickr-day" tabindex="-1">26</span><span aria-label="July 27, 2026" class="flatpickr-day" tabindex="-1">27</span><span aria-label="July 28, 2026" class="flatpickr-day" tabindex="-1">28</span><span aria-label="July 29, 2026" class="flatpickr-day" tabindex="-1">29</span><span aria-label="July 30, 2026" class="flatpickr-day" tabindex="-1">30</span><span aria-label="July 31, 2026" class="flatpickr-day" tabindex="-1">31</span><span aria-label="August 1, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">1</span><span aria-label="August 2, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">2</span><span aria-label="August 3, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">3</span><span aria-label="August 4, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">4</span><span aria-label="August 5, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">5</span><span aria-label="August 6, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">6</span><span aria-label="August 7, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">7</span><span aria-label="August 8, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">8</span></div></div></div></div></div><script src="../runtime.js"></script></body><!--end::Body--></html>
+</div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span aria-label="June 28, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">28</span><span aria-label="June 29, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">29</span><span aria-label="June 30, 2026" class="flatpickr-day prevMonthDay" tabindex="-1">30</span><span aria-label="July 1, 2026" class="flatpickr-day" tabindex="-1">1</span><span aria-label="July 2, 2026" class="flatpickr-day" tabindex="-1">2</span><span aria-current="date" aria-label="July 3, 2026" class="flatpickr-day today" tabindex="-1">3</span><span aria-label="July 4, 2026" class="flatpickr-day" tabindex="-1">4</span><span aria-label="July 5, 2026" class="flatpickr-day" tabindex="-1">5</span><span aria-label="July 6, 2026" class="flatpickr-day" tabindex="-1">6</span><span aria-label="July 7, 2026" class="flatpickr-day" tabindex="-1">7</span><span aria-label="July 8, 2026" class="flatpickr-day" tabindex="-1">8</span><span aria-label="July 9, 2026" class="flatpickr-day" tabindex="-1">9</span><span aria-label="July 10, 2026" class="flatpickr-day" tabindex="-1">10</span><span aria-label="July 11, 2026" class="flatpickr-day" tabindex="-1">11</span><span aria-label="July 12, 2026" class="flatpickr-day" tabindex="-1">12</span><span aria-label="July 13, 2026" class="flatpickr-day" tabindex="-1">13</span><span aria-label="July 14, 2026" class="flatpickr-day" tabindex="-1">14</span><span aria-label="July 15, 2026" class="flatpickr-day" tabindex="-1">15</span><span aria-label="July 16, 2026" class="flatpickr-day" tabindex="-1">16</span><span aria-label="July 17, 2026" class="flatpickr-day" tabindex="-1">17</span><span aria-label="July 18, 2026" class="flatpickr-day" tabindex="-1">18</span><span aria-label="July 19, 2026" class="flatpickr-day" tabindex="-1">19</span><span aria-label="July 20, 2026" class="flatpickr-day" tabindex="-1">20</span><span aria-label="July 21, 2026" class="flatpickr-day" tabindex="-1">21</span><span aria-label="July 22, 2026" class="flatpickr-day" tabindex="-1">22</span><span aria-label="July 23, 2026" class="flatpickr-day" tabindex="-1">23</span><span aria-label="July 24, 2026" class="flatpickr-day" tabindex="-1">24</span><span aria-label="July 25, 2026" class="flatpickr-day" tabindex="-1">25</span><span aria-label="July 26, 2026" class="flatpickr-day" tabindex="-1">26</span><span aria-label="July 27, 2026" class="flatpickr-day" tabindex="-1">27</span><span aria-label="July 28, 2026" class="flatpickr-day" tabindex="-1">28</span><span aria-label="July 29, 2026" class="flatpickr-day" tabindex="-1">29</span><span aria-label="July 30, 2026" class="flatpickr-day" tabindex="-1">30</span><span aria-label="July 31, 2026" class="flatpickr-day" tabindex="-1">31</span><span aria-label="August 1, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">1</span><span aria-label="August 2, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">2</span><span aria-label="August 3, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">3</span><span aria-label="August 4, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">4</span><span aria-label="August 5, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">5</span><span aria-label="August 6, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">6</span><span aria-label="August 7, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">7</span><span aria-label="August 8, 2026" class="flatpickr-day nextMonthDay" tabindex="-1">8</span></div></div></div></div></div><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body><!--end::Body--></html>

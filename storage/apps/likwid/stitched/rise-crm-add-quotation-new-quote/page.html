@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--end::Head-->
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
@@ -1059,7 +1139,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Customer:</label>
 <!--begin::Input group-->
 <div class="mb-5">
-<select class="form-control form-control-solid fw-bold pe-5" id="id_customer" name="customer" placeholder="">
+<select class="form-control form-control-solid fw-bold pe-5" data-stitch-native-select="1" data-stitch-select="stitch-select-1" id="id_customer" name="customer" placeholder="">
 <option selected="" value="">---------</option>
 <option value="0b14e42b-42b1-4333-8f3a-ab78491f0925">Likwid Techserve</option>
 <option value="50f76f4b-d569-41e6-b9ff-c724bb9b95b6">ABCD Ltd</option>
@@ -1080,7 +1160,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Lead:</label>
 <!--begin::Input group-->
 <div class="mb-5">
-<select class="form-control form-control-solid fw-bold pe-5" id="id_lead" name="lead" placeholder="">
+<select class="form-control form-control-solid fw-bold pe-5" data-stitch-native-select="1" data-stitch-select="stitch-select-2" id="id_lead" name="lead" placeholder="">
 <option selected="" value="">---------</option>
 <option value="1317c185-2490-4d3e-99c8-d49579b8862b">Likwid</option>
 <option value="2ae1615f-93ca-47ca-b0a4-0020750e698f">Likwid Techserve</option>
@@ -1110,7 +1190,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Select Employee:</label>
 <!--begin::Input group-->
 <div class="mb-5">
-<select class="form-control form-control-solid fw-bold pe-5" id="id_employee" name="employee" placeholder="">
+<select class="form-control form-control-solid fw-bold pe-5" data-stitch-native-select="1" data-stitch-select="stitch-select-3" id="id_employee" name="employee" placeholder="">
 <option value="">---------</option>
 <option value="6">Ishika</option>
 <option value="7">Neha</option>
@@ -1298,7 +1378,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="fs-5 fw-semibold form-label mb-5">Select Export Format:</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a format" name="format">
+<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a format" data-stitch-native-select="1" data-stitch-select="stitch-select-4" name="format">
 <option value="excell">Excel</option>
 <option value="pdf">PDF</option>
 <option value="cvs">CVS</option>
@@ -1656,4 +1736,4 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 <!--end::Javascript-->
-<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script>window.__STITCH_INTERACTIONS__ = {"interaction_1": {"type": "unknown", "parentSelector": "#formset", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[3]/table[1]/tbody[1]", "insertMethod": "append", "uiHtml": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-item_name\" maxlength=\"250\" name=\"form-1-item_name\" type=\"text\"/>\n<br/>\n<textarea class=\"form-control form-control-solid\" cols=\"40\" id=\"id_{{ item_formset.prefix }}-1-item_details\" name=\"form-1-item_details\" placeholder=\"Description for the product or offering\" rows=\"2\"><\/textarea>\n<\/td>\n<td class=\"ps-0\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-quantity\" name=\"form-1-quantity\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-price\" name=\"form-1-price\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-tax_rate\" name=\"form-1-tax_rate\" step=\"any\" type=\"number\"/><\/td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"><\/span>\n<span class=\"path2\"><\/span>\n<span class=\"path3\"><\/span>\n<span class=\"path4\"><\/span>\n<span class=\"path5\"><\/span>\n<\/i>\n<\/button>\n<\/td>\n<\/tr>", "uiCss": "", "backdropHtml": "", "fallback": "interactions/001-add-item-ctrl-m/page.html"}, "interaction_2": {"type": "unknown", "parentSelector": "#formset", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[3]/table[1]/tbody[1]", "insertMethod": "append", "uiHtml": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-item_name\" maxlength=\"250\" name=\"form-1-item_name\" type=\"text\"/>\n<br/>\n<textarea class=\"form-control form-control-solid\" cols=\"40\" id=\"id_{{ item_formset.prefix }}-1-item_details\" name=\"form-1-item_details\" placeholder=\"Description for the product or offering\" rows=\"2\"><\/textarea>\n<\/td>\n<td class=\"ps-0\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-quantity\" name=\"form-1-quantity\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-price\" name=\"form-1-price\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-tax_rate\" name=\"form-1-tax_rate\" step=\"any\" type=\"number\"/><\/td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"><\/span>\n<span class=\"path2\"><\/span>\n<span class=\"path3\"><\/span>\n<span class=\"path4\"><\/span>\n<span class=\"path5\"><\/span>\n<\/i>\n<\/button>\n<\/td>\n<\/tr>", "uiCss": "", "backdropHtml": "", "fallback": "interactions/001-add-item-ctrl-m/page.html"}};</script><script src="../runtime.js"></script></body><!--end::Body--></html>
+<svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script>window.__STITCH_INTERACTIONS__ = {"interaction_1": {"type": "unknown", "parentSelector": "#formset", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[3]/table[1]/tbody[1]", "insertMethod": "append", "uiHtml": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-item_name\" maxlength=\"250\" name=\"form-1-item_name\" type=\"text\"/>\n<br/>\n<textarea class=\"form-control form-control-solid\" cols=\"40\" id=\"id_{{ item_formset.prefix }}-1-item_details\" name=\"form-1-item_details\" placeholder=\"Description for the product or offering\" rows=\"2\"><\/textarea>\n<\/td>\n<td class=\"ps-0\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-quantity\" name=\"form-1-quantity\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-price\" name=\"form-1-price\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-tax_rate\" name=\"form-1-tax_rate\" step=\"any\" type=\"number\"/><\/td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"><\/span>\n<span class=\"path2\"><\/span>\n<span class=\"path3\"><\/span>\n<span class=\"path4\"><\/span>\n<span class=\"path5\"><\/span>\n<\/i>\n<\/button>\n<\/td>\n<\/tr>", "uiCss": "", "backdropHtml": "", "fallback": "interactions/001-add-item-ctrl-m/page.html"}, "interaction_2": {"type": "unknown", "parentSelector": "#formset", "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[3]/table[1]/tbody[1]", "insertMethod": "append", "uiHtml": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-item_name\" maxlength=\"250\" name=\"form-1-item_name\" type=\"text\"/>\n<br/>\n<textarea class=\"form-control form-control-solid\" cols=\"40\" id=\"id_{{ item_formset.prefix }}-1-item_details\" name=\"form-1-item_details\" placeholder=\"Description for the product or offering\" rows=\"2\"><\/textarea>\n<\/td>\n<td class=\"ps-0\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-quantity\" name=\"form-1-quantity\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-price\" name=\"form-1-price\" step=\"0.01\" type=\"number\"/><\/td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-tax_rate\" name=\"form-1-tax_rate\" step=\"any\" type=\"number\"/><\/td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"><\/span>\n<span class=\"path2\"><\/span>\n<span class=\"path3\"><\/span>\n<span class=\"path4\"><\/span>\n<span class=\"path5\"><\/span>\n<\/i>\n<\/button>\n<\/td>\n<\/tr>", "uiCss": "", "backdropHtml": "", "fallback": "interactions/001-add-item-ctrl-m/page.html"}};</script><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body><!--end::Body--></html>

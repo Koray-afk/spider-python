@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--begin::Body-->
 <body class="app-default swal2-shown swal2-height-auto" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
 <!--begin::Theme mode setup-->
@@ -1053,7 +1133,7 @@ iframe[name*="privateStripeMetrics"],
 </i>
 <input class="form-control form-control-solid w-100 ps-12" id="searchCompanies" placeholder="Search companies by name, industry, or email..." type="text"/>
 </div>
-<select class="form-select form-select-solid w-200px" id="stageFilter">
+<select class="form-select form-select-solid w-200px" data-stitch-native-select="1" data-stitch-select="stitch-select-1" id="stageFilter">
 <option value="">All Stages</option>
 <option value="cold">Cold</option>
 <option value="warm">Warm</option>
@@ -1203,7 +1283,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-6 fv-row">
 <label class="required fs-6 fw-semibold form-label mb-2">Funnel Stage</label>
-<select class="form-select form-select-solid" name="company_stage">
+<select class="form-select form-select-solid" data-stitch-native-select="1" data-stitch-select="stitch-select-2" name="company_stage">
 <option selected="" value="Cold">Cold</option>
 <option value="Warm">Warm</option>
 <option value="Lead">Lead</option>
@@ -1265,7 +1345,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 <div class="col-md-6 fv-row">
 <label class="required fs-6 fw-semibold form-label mb-2">Funnel Stage</label>
-<select class="form-select form-select-solid" id="edit_stage" name="stage">
+<select class="form-select form-select-solid" data-stitch-native-select="1" data-stitch-select="stitch-select-3" id="edit_stage" name="stage">
 <option value="Cold">Cold</option>
 <option value="Warm">Warm</option>
 <option value="Lead">Lead</option>
@@ -1317,4 +1397,4 @@ iframe[name*="privateStripeMetrics"],
 <span class="text-muted fs-7">
                        The first contact of this company will be added to your Lead list
                        and the company stage will be updated to <strong>Lead</strong>.
-                   </span></div><input class="swal2-input" style="display: none;"/><input class="swal2-file" style="display: none;" type="file"/><div class="swal2-range" style="display: none;"><input type="range"/><output></output></div><select class="swal2-select" style="display: none;"></select><div class="swal2-radio" style="display: none;"></div><label class="swal2-checkbox" for="swal2-checkbox" style="display: none;"><input type="checkbox"/><span class="swal2-label"></span></label><textarea class="swal2-textarea" style="display: none;"></textarea><div class="swal2-validation-message" id="swal2-validation-message" style="display: none;"></div><div class="swal2-actions" style="display: flex;"><div class="swal2-loader"></div><button aria-label="" class="swal2-confirm btn btn-info me-3" style="display: inline-block;" type="button">Yes, Add to Lead!</button><button aria-label="" class="swal2-deny" style="display: none;" type="button">No</button><button aria-label="" class="swal2-cancel btn btn-light" style="display: inline-block;" type="button">Cancel</button></div><div class="swal2-footer" style="display: none;"></div><div class="swal2-timer-progress-bar-container"><div class="swal2-timer-progress-bar" style="display: none;"></div></div></div></div><script src="../../../runtime.js"></script></body></html>
+                   </span></div><input class="swal2-input" style="display: none;"/><input class="swal2-file" style="display: none;" type="file"/><div class="swal2-range" style="display: none;"><input type="range"/><output></output></div><select class="swal2-select" data-stitch-native-select="1" data-stitch-select="stitch-select-4" style="display: none;"></select><div class="swal2-radio" style="display: none;"></div><label class="swal2-checkbox" for="swal2-checkbox" style="display: none;"><input type="checkbox"/><span class="swal2-label"></span></label><textarea class="swal2-textarea" style="display: none;"></textarea><div class="swal2-validation-message" id="swal2-validation-message" style="display: none;"></div><div class="swal2-actions" style="display: flex;"><div class="swal2-loader"></div><button aria-label="" class="swal2-confirm btn btn-info me-3" style="display: inline-block;" type="button">Yes, Add to Lead!</button><button aria-label="" class="swal2-deny" style="display: none;" type="button">No</button><button aria-label="" class="swal2-cancel btn btn-light" style="display: inline-block;" type="button">Cancel</button></div><div class="swal2-footer" style="display: none;"></div><div class="swal2-timer-progress-bar-container"><div class="swal2-timer-progress-bar" style="display: none;"></div></div></div></div><script src="../../../select_runtime.js"></script><script src="../../../runtime.js"></script></body></html>

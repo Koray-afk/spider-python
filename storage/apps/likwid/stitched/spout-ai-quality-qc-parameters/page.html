@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--end::Head-->
 <!--begin::Body-->
 <body class="app-default" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
@@ -961,7 +1041,7 @@ iframe[name*="privateStripeMetrics"],
 <!--begin::Card body-->
 <div class="card-body pt-0">
 <!--begin::Table-->
-<div class="dt-container dt-bootstrap5 dt-empty-footer" id="kt_customers_table_wrapper"><div class="table-responsive" id=""><table class="table align-middle table-row-dashed fs-6 gy-5 dataTable" id="kt_customers_table" style="width: 726.492px;"><colgroup><col data-dt-column="0" style="width: 36.3984px;"/><col data-dt-column="1" style="width: 109.984px;"/><col data-dt-column="2" style="width: 100.484px;"/><col data-dt-column="3" style="width: 77.6797px;"/><col data-dt-column="4" style="width: 75.3594px;"/><col data-dt-column="5" style="width: 75.3594px;"/><col data-dt-column="6" style="width: 150.727px;"/><col data-dt-column="7" style="width: 100.5px;"/></colgroup>
+<div class="dt-container dt-bootstrap5 dt-empty-footer" id="kt_customers_table_wrapper" style="overflow-x:auto;max-width:100%;width:100%"><div class="table-responsive" id="" style="overflow-x:auto;max-width:100%"><table class="table align-middle table-row-dashed fs-6 gy-5 dataTable" data-stitch-datatable="1" id="kt_customers_table" style="width:100%;max-width:100%">
 <thead>
 <tr class="text-start text-info fw-bold fs-7 text gs-0" role="row"><th aria-label="
                                 
@@ -1017,7 +1097,7 @@ iframe[name*="privateStripeMetrics"],
 </div>
 </td>
 </tr></tbody>
-<tfoot></tfoot></table></div><div class="row" id=""><div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" id=""><div><select aria-controls="kt_customers_table" class="form-select form-select-solid form-select-sm" id="dt-length-0" name="kt_customers_table_length"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><label for="dt-length-0"></label></div></div><div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end" id=""><div class="dt-paging paging_simple_numbers"><ul class="pagination"><li class="dt-paging-button page-item disabled"><a aria-controls="kt_customers_table" aria-label="Previous" class="page-link previous" data-dt-idx="previous" tabindex="-1"><i class="previous"></i></a></li><li class="dt-paging-button page-item active"><a aria-controls="kt_customers_table" aria-current="page" class="page-link" data-dt-idx="0" href="#" tabindex="0">1</a></li><li class="dt-paging-button page-item disabled"><a aria-controls="kt_customers_table" aria-label="Next" class="page-link next" data-dt-idx="next" tabindex="-1"><i class="next"></i></a></li></ul></div></div></div></div>
+<tfoot></tfoot></table></div><div class="row" id=""><div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" id=""><div><select aria-controls="kt_customers_table" class="form-select form-select-solid form-select-sm" data-stitch-native-select="1" data-stitch-select="stitch-select-1" id="dt-length-0" name="kt_customers_table_length"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><label for="dt-length-0"></label></div></div><div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end" id=""><div class="dt-paging paging_simple_numbers"><ul class="pagination"><li class="dt-paging-button page-item disabled"><a aria-controls="kt_customers_table" aria-label="Previous" class="page-link previous" data-dt-idx="previous" tabindex="-1"><i class="previous"></i></a></li><li class="dt-paging-button page-item active"><a aria-controls="kt_customers_table" aria-current="page" class="page-link" data-dt-idx="0" href="#" tabindex="0">1</a></li><li class="dt-paging-button page-item disabled"><a aria-controls="kt_customers_table" aria-label="Next" class="page-link next" data-dt-idx="next" tabindex="-1"><i class="next"></i></a></li></ul></div></div></div></div>
 <!--end::Table-->
 </div>
 <!--end::Card body-->
@@ -1341,4 +1421,4 @@ iframe[name*="privateStripeMetrics"],
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 <!--end::Javascript-->
-</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../runtime.js"></script></body><!--end::Body--></html>
+</div><svg height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><script src="../select_runtime.js"></script><script src="../runtime.js"></script></body><!--end::Body--></html>

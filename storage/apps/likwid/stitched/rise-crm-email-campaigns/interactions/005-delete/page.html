@@ -558,7 +558,87 @@ iframe[name*="privateStripeMetrics"],
 }
 .modal:not(.show) {
     display: none !important;
-}</style></head>
+}</style><style id="stitch-select-fixes">
+/* Select2 + native selects — keep clickable in the static clone */
+[data-stitch-select-ui],
+[data-stitch-select-ui] .select2-selection,
+[data-stitch-native-select],
+select[data-stitch-native-select] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+[data-stitch-select-ui] {
+    position: relative !important;
+}
+.stitch-select2-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 2px;
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 0.475rem;
+    box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+}
+.stitch-select2-dropdown.show {
+    display: block !important;
+}
+.stitch-select2-dropdown .dropdown-item {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    white-space: normal;
+}
+.stitch-select2-dropdown .dropdown-item.active,
+.stitch-select2-dropdown .dropdown-item:hover {
+    background-color: #f1faff;
+}
+select[data-stitch-native-select] {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+}
+</style><style data-stitch-chart-fix="1">
+/* Frozen AmCharts layers — clip to card, scale with container width */
+.chart-container:has([data-stitch-frozen-chart]),
+.chart-container:has(img[class*="am5-layer"]),
+[id$="Chart"]:has([data-stitch-frozen-chart]),
+[id$="Chart"]:has(img[class*="am5-layer"]) {
+    overflow: hidden !important;
+    position: relative !important;
+}
+[data-stitch-frozen-chart],
+img[class*="am5-layer"][src^="data:image/png"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+</style><style data-stitch-datatable-fix="1">
+/* DataTables — drop baked pixel widths, scroll inside wrapper not page */
+.dt-container:has(table.dataTable),
+.dataTables_wrapper:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.table-responsive:has(table.dataTable) {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+table.dataTable[data-stitch-datatable="1"],
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+</style></head>
 <!--end::Head-->
 <!--begin::Body-->
 <body class="app-default swal2-shown swal2-height-auto" data-kt-app-header-fixed="true" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-toolbar-enabled="true" id="kt_app_body">
@@ -1620,7 +1700,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="required fw-semibold fs-6 mb-2">Campaign Type</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Select campaign type" data-select2-id="select2-data-1-v4yx" name="campaign_type" required="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Select campaign type" data-select2-id="select2-data-1-v4yx" data-stitch-select="stitch-select-1" name="campaign_type" required="" tabindex="-1">
 <option data-select2-id="select2-data-3-w6u6" value="">Select campaign type...</option>
 <option value="Cold Outreach">Cold Outreach</option>
 <option value="Follow-up">Follow-up</option>
@@ -1628,7 +1708,7 @@ iframe[name*="privateStripeMetrics"],
 <option value="Promotion">Promotion</option>
 <option value="Event">Event</option>
 <option value="Other">Other</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-xvfb" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-campaign_type-rz-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-campaign_type-rz-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-campaign_type-rz-container" role="textbox" title="Select campaign type"><span class="select2-selection__placeholder">Select campaign type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-2-xvfb" data-stitch-select-ui="stitch-select-1" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-campaign_type-rz-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-campaign_type-rz-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-campaign_type-rz-container" role="textbox" title="Select campaign type"><span class="select2-selection__placeholder">Select campaign type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 </div>
 <!--end::Input group-->
@@ -1638,7 +1718,7 @@ iframe[name*="privateStripeMetrics"],
 <label class="fw-semibold fs-6 mb-2">Select Email Template (Optional)</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Choose a template to pre-fill content..." data-select2-id="select2-data-email_template_select" id="email_template_select" name="email_template" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_campaign" data-kt-initialized="1" data-placeholder="Choose a template to pre-fill content..." data-select2-id="select2-data-email_template_select" data-stitch-select="stitch-select-2" id="email_template_select" name="email_template" tabindex="-1">
 <option data-select2-id="select2-data-5-jiu1" value="">Write from scratch...</option>
 <option data-template-content="Check the updates" data-template-hyperlink-text="Try Now" data-template-hyperlink-url="https://cogent.likwid.ai/" data-template-logo="https://storage.googleapis.com/likwid-media/email_templates/logos/Logo_Typography_1.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T083343Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=0c073682f76789cd5a355bf969bef704dc03b13a4541e83404e9c89a14cb387ca3056f929078568ee1c081c2d9954d85bd31cd9ae95b2520f60e6b9184248a2a130bcd381deb5311bc17e9ee292174e3fb124cb3026889bbea02938c21dd3cb4a160fd3010e71f9add3806d6f42e071b2b534fbc187e44572b1dfc07623c2819b7187fd7f79f3e9dec51d7a256f512b2ef9296a5abb1014adb9551b583753cf713b08df479ff78bbad235bb684937a502ecc51c39f83c3b20533987b8113acaa42f70f1559c68ba8ecdc5a0148165f2ecad05cba9cb2a729de57bd4c5749535052c764793f066093127b8fcacd4c6db701cbace508520849e721bbfc4394bf3f" data-template-subject="V1.02 is Live" data-template-type="Cold Outreach" value="5">
                                         Cogent - V2 (Cold Outreach)
@@ -1649,7 +1729,7 @@ iframe[name*="privateStripeMetrics"],
 <option data-template-content="Check out how we saved 6-7% of working capital" data-template-hyperlink-text="Read More" data-template-hyperlink-url="https://www.likwid.co.in/" data-template-logo="https://storage.googleapis.com/likwid-media/email_templates/logos/infor_logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T083343Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=3d381d99f2e9607730abc7bf661cf48e74c35580dbec517ae71abf6ef72086df8d1a323e51ff6ee95b90b43f551ac8d69171ca59ac0e65f4f65105258098ed87486307bd9212e5b6362b50e8ef24fc6900c82f435a179a4881ca560224769dfc6c89669fe1641e6b88876f3c23369d66cbc76385dca55ae0ecf7f14483fffb7669c595c7dbfebf1aa00e4184c1e1d8f9909411246bb0f2954ecc8adc0e0e25e984c41dc2ee1dab05939ff3fffbda87715c10c63bcc2db87bd3ce945ff28589da2fb7ed0fd2d7ca8bdf1e151841c393ea0e637c2774ec9e547a450bd19afee49e98fead5ff14978de5e49b03d07aed2e6727f4458081ba3ce8e193f27c1059aed" data-template-subject="Email Test" data-template-type="Cold Outreach" value="3">
                                         Outreach - Procurement (Cold Outreach)
                                     </option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-4-8con" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-email_template_select-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-email_template_select-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-email_template_select-container" role="textbox" title="Choose a template to pre-fill content..."><span class="select2-selection__placeholder">Choose a template to pre-fill content...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-4-8con" data-stitch-select-ui="stitch-select-2" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-email_template_select-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-email_template_select-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-email_template_select-container" role="textbox" title="Choose a template to pre-fill content..."><span class="select2-selection__placeholder">Choose a template to pre-fill content...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 <div class="form-text">Select a template to automatically fill all fields from template</div>
 </div>
@@ -1762,7 +1842,7 @@ Write your email content here..." required="" rows="8"></textarea>
 <label class="required fw-semibold fs-6 mb-2">Template Type</label>
 <!--end::Label-->
 <!--begin::Input-->
-<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_template" data-kt-initialized="1" data-placeholder="Select template type" data-select2-id="select2-data-6-ur2v" name="template_type" required="" tabindex="-1">
+<select aria-hidden="true" class="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-dropdown-parent="#kt_modal_create_template" data-kt-initialized="1" data-placeholder="Select template type" data-select2-id="select2-data-6-ur2v" data-stitch-select="stitch-select-3" name="template_type" required="" tabindex="-1">
 <option data-select2-id="select2-data-8-ic6x" value="">Select template type...</option>
 <option value="Cold Outreach">Cold Outreach</option>
 <option value="Follow-up">Follow-up</option>
@@ -1770,7 +1850,7 @@ Write your email content here..." required="" rows="8"></textarea>
 <option value="Promotion">Promotion</option>
 <option value="Event">Event</option>
 <option value="Other">Other</option>
-</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-7-bpbf" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-template_type-vd-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-template_type-vd-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-template_type-vd-container" role="textbox" title="Select template type"><span class="select2-selection__placeholder">Select template type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
+</select><span class="select2 select2-container select2-container--bootstrap5" data-select2-id="select2-data-7-bpbf" data-stitch-select-ui="stitch-select-3" dir="ltr" style="width: 100%;"><span class="selection"><span aria-controls="select2-template_type-vd-container" aria-disabled="false" aria-expanded="false" aria-haspopup="true" aria-labelledby="select2-template_type-vd-container" class="select2-selection select2-selection--single form-select form-select-solid" role="combobox" tabindex="0"><span aria-readonly="true" class="select2-selection__rendered" id="select2-template_type-vd-container" role="textbox" title="Select template type"><span class="select2-selection__placeholder">Select template type</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span aria-hidden="true" class="dropdown-wrapper"></span></span>
 <!--end::Input-->
 </div>
 <!--end::Input group-->
@@ -1880,4 +1960,4 @@ Write your email content here..." required="" rows="8"></textarea>
 <!--begin::Javascript-->
 <!--begin::Custom Javascript - CORRECTED VERSION WITH FULL TEMPLATE LOADING-->
 <!--end::Custom Javascript-->
-</div><svg aria-hidden="true" height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="swal2-container swal2-center swal2-backdrop-show" style="overflow-y: auto;"><div aria-describedby="swal2-html-container" aria-labelledby="swal2-title" aria-live="assertive" aria-modal="true" class="swal2-popup swal2-modal swal2-icon-warning swal2-show" role="dialog" style="display: grid;" tabindex="-1"><button aria-label="Close this dialog" class="swal2-close" style="display: none;" type="button">×</button><ul class="swal2-progress-steps" style="display: none;"></ul><div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;"><div class="swal2-icon-content">!</div></div><img class="swal2-image" style="display: none;"/><h2 class="swal2-title" id="swal2-title" style="display: none;"></h2><div class="swal2-html-container" id="swal2-html-container" style="display: block;">Delete campaign?</div><input class="swal2-input" style="display: none;"/><input class="swal2-file" style="display: none;" type="file"/><div class="swal2-range" style="display: none;"><input type="range"/><output></output></div><select class="swal2-select" style="display: none;"></select><div class="swal2-radio" style="display: none;"></div><label class="swal2-checkbox" for="swal2-checkbox" style="display: none;"><input type="checkbox"/><span class="swal2-label"></span></label><textarea class="swal2-textarea" style="display: none;"></textarea><div class="swal2-validation-message" id="swal2-validation-message" style="display: none;"></div><div class="swal2-actions" style="display: flex;"><div class="swal2-loader"></div><button aria-label="" class="swal2-confirm btn btn-danger" style="display: inline-block;" type="button">Yes!</button><button aria-label="" class="swal2-deny" style="display: none;" type="button">No</button><button aria-label="" class="swal2-cancel btn btn-light" style="display: inline-block;" type="button">Cancel</button></div><div class="swal2-footer" style="display: none;"></div><div class="swal2-timer-progress-bar-container"><div class="swal2-timer-progress-bar" style="display: none;"></div></div></div></div><script src="../../../runtime.js"></script></body></html>
+</div><svg aria-hidden="true" height="0" id="SvgjsSvg1001" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;" version="1.1" width="2" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.dev" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path d="M0 0 " id="SvgjsPath1004"></path></svg><div class="swal2-container swal2-center swal2-backdrop-show" style="overflow-y: auto;"><div aria-describedby="swal2-html-container" aria-labelledby="swal2-title" aria-live="assertive" aria-modal="true" class="swal2-popup swal2-modal swal2-icon-warning swal2-show" role="dialog" style="display: grid;" tabindex="-1"><button aria-label="Close this dialog" class="swal2-close" style="display: none;" type="button">×</button><ul class="swal2-progress-steps" style="display: none;"></ul><div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;"><div class="swal2-icon-content">!</div></div><img class="swal2-image" style="display: none;"/><h2 class="swal2-title" id="swal2-title" style="display: none;"></h2><div class="swal2-html-container" id="swal2-html-container" style="display: block;">Delete campaign?</div><input class="swal2-input" style="display: none;"/><input class="swal2-file" style="display: none;" type="file"/><div class="swal2-range" style="display: none;"><input type="range"/><output></output></div><select class="swal2-select" data-stitch-native-select="1" data-stitch-select="stitch-select-4" style="display: none;"></select><div class="swal2-radio" style="display: none;"></div><label class="swal2-checkbox" for="swal2-checkbox" style="display: none;"><input type="checkbox"/><span class="swal2-label"></span></label><textarea class="swal2-textarea" style="display: none;"></textarea><div class="swal2-validation-message" id="swal2-validation-message" style="display: none;"></div><div class="swal2-actions" style="display: flex;"><div class="swal2-loader"></div><button aria-label="" class="swal2-confirm btn btn-danger" style="display: inline-block;" type="button">Yes!</button><button aria-label="" class="swal2-deny" style="display: none;" type="button">No</button><button aria-label="" class="swal2-cancel btn btn-light" style="display: inline-block;" type="button">Cancel</button></div><div class="swal2-footer" style="display: none;"></div><div class="swal2-timer-progress-bar-container"><div class="swal2-timer-progress-bar" style="display: none;"></div></div></div></div><script src="../../../select_runtime.js"></script><script src="../../../runtime.js"></script></body></html>

@@ -40,5 +40,12 @@
     "selector": "[data-crawl-id=\"18\"]",
     "interaction_path": "interactions/017-value",
     "relationship_file": "interactions/017-value/relationship.json"
+  },
+  {
+    "label": "Create Order",
+    "selector": "",
+    "interaction_path": "interactions/M001-create-order",
+    "relationship_file": "interactions/M001-create-order/relationship.json",
+    "capture_mode": "manual"
   }
 ]
