@@ -94,6 +94,12 @@
       if (el.type === "checkbox") data[el.name] = el.checked;
       else if (el.type === "radio") {
         if (el.checked) data[el.name] = el.value;
+      } else if (el.tagName === "SELECT" && el.multiple) {
+        var vals = [];
+        Array.prototype.forEach.call(el.options, function (o) {
+          if (o.selected && o.value) vals.push(o.textContent.trim() || o.value);
+        });
+        data[el.name] = vals.join(", ");
       } else data[el.name] = el.value;
     });
     return data;
@@ -163,6 +169,24 @@
     var tbody = document.querySelector(tableBodySelector);
     if (!tbody || !rowEl) return;
     tbody.insertBefore(rowEl, tbody.firstChild);
+  };
+
+  // Card-grid analogue of buildRow: clones the first existing card in a
+  // container (so it inherits the exact markup/classes), then lets the
+  // entity's `fillCard` callback populate it with the submitted data.
+  ReplicaHelpers.buildCard = function (entity, data, seq) {
+    var container = document.querySelector(entity.containerSelector);
+    if (!container) return null;
+    var template = container.firstElementChild;
+    var card = template ? template.cloneNode(true) : document.createElement("div");
+    if (typeof entity.fillCard === "function") entity.fillCard(card, data, seq);
+    return card;
+  };
+
+  ReplicaHelpers.prependCard = function (containerSelector, cardEl) {
+    var container = document.querySelector(containerSelector);
+    if (!container || !cardEl) return;
+    container.insertBefore(cardEl, container.firstChild);
   };
 
   ReplicaHelpers.countRows = function (tableBodySelector) {
@@ -450,14 +474,20 @@
       return true;
     }
 
-    // Pattern A: modal + table on the same page — update DOM after the fake loading delay.
+    // Pattern A: modal + table (or card grid) on the same page — update DOM
+    // after the fake loading delay.
     setTimeout(function () {
       ReplicaHelpers.closeModal(modalEl);
       form.reset();
       ReplicaHelpers.restoreButton(btn);
 
-      var rowEl = ReplicaHelpers.buildRow(entity, data, store.length);
-      if (rowEl) ReplicaHelpers.prependTableRow(entity.tableBodySelector, rowEl);
+      if (entity.tableBodySelector) {
+        var rowEl = ReplicaHelpers.buildRow(entity, data, store.length);
+        if (rowEl) ReplicaHelpers.prependTableRow(entity.tableBodySelector, rowEl);
+      } else if (entity.containerSelector) {
+        var cardEl = ReplicaHelpers.buildCard(entity, data, store.length);
+        if (cardEl) ReplicaHelpers.prependCard(entity.containerSelector, cardEl);
+      }
 
       if (entity.counters) ReplicaHelpers.updateCounters(entity.counters, data);
 
@@ -490,15 +520,21 @@
     for (var name in entities) {
       if (!Object.prototype.hasOwnProperty.call(entities, name)) continue;
       var cfg = entities[name];
-      if (!cfg.tableBodySelector || !cfg.storeKey) continue;
-      var tbody = document.querySelector(cfg.tableBodySelector);
-      if (!tbody) continue;
+      if (!cfg.storeKey) continue;
+      if (!cfg.tableBodySelector && !cfg.containerSelector) continue;
+      var host = document.querySelector(cfg.tableBodySelector || cfg.containerSelector);
+      if (!host) continue;
       var records = window.ReplicaStore[cfg.storeKey] || [];
       if (!records.length) continue;
 
       for (var i = records.length - 1; i >= 0; i--) {
-        var rowEl = ReplicaHelpers.buildRow(cfg, records[i]);
-        if (rowEl) ReplicaHelpers.prependTableRow(cfg.tableBodySelector, rowEl);
+        if (cfg.tableBodySelector) {
+          var rowEl = ReplicaHelpers.buildRow(cfg, records[i]);
+          if (rowEl) ReplicaHelpers.prependTableRow(cfg.tableBodySelector, rowEl);
+        } else if (cfg.containerSelector) {
+          var cardEl = ReplicaHelpers.buildCard(cfg, records[i]);
+          if (cardEl) ReplicaHelpers.prependCard(cfg.containerSelector, cardEl);
+        }
       }
 
       if (cfg.counters) {
@@ -783,6 +819,168 @@
     successMessage: "Quotation created successfully!",
   });
 
+  // ── Entity: Account — User (Pattern A: modal + table, same page) ────────
+
+  function setCellText(cell, text) {
+    if (!cell) return;
+    var span = cell.querySelector("span, a");
+    if (span) span.textContent = text;
+    else cell.textContent = text;
+  }
+
+  function fillUserRow(row, data) {
+    row.removeAttribute("style");
+    var cells = row.querySelectorAll("td");
+    var name = ((data.first_name || "") + " " + (data.last_name || "")).trim() || "New User";
+    var uid = "6" + Math.floor(100 + Math.random() * 900);
+
+    if (cells[0]) {
+      var idLink = cells[0].querySelector("a");
+      if (idLink) { idLink.textContent = uid; idLink.setAttribute("href", "#"); }
+    }
+    setCellText(cells[2], name);            // Name
+    setCellText(cells[3], data.email || "-"); // Email
+    setCellText(cells[4], formatDateLong(new Date())); // Created
+    setCellText(cells[5], data.user_type || "Employee"); // Category
+
+    if (cells[6]) {                          // Access badge (from multi-select)
+      var badge = cells[6].querySelector(".badge");
+      if (badge) badge.textContent = data.app_access || "None";
+    }
+    if (cells[7]) {                          // Status badge → Active
+      var sb = cells[7].querySelector(".badge");
+      if (sb) { sb.className = "badge badge-success"; sb.textContent = "Active"; }
+    }
+    var delId = row.querySelector('input[name="user_id"]');
+    if (delId) delId.value = uid;
+  }
+
+  ReplicaFlows.register("user", {
+    formSelector: "#kt_modal_add_user_form",
+    modalSelector: "#kt_modal_add_user",
+    tableBodySelector: "#kt_ecommerce_sales_table tbody",
+    storeKey: "users",
+    successMessage: "User created successfully!",
+    successPopup: true,
+    successPopupText: "User has been successfully added!",
+    fillRow: fillUserRow,
+  });
+
+  // ── Entity: Rise CRM — Email Campaign (Pattern A: modal + table) ────────
+
+  function fillCampaignRow(row, data) {
+    row.removeAttribute("style");
+    row.removeAttribute("data-campaign-url");
+    var cells = row.querySelectorAll("td");
+    var name = (data.campaign_name || "New Campaign").trim();
+    var subject = data.email_subject || "";
+    var type = data.campaign_type || "General";
+
+    if (cells[0]) {
+      var spans = cells[0].querySelectorAll("span");
+      if (spans[0]) spans[0].textContent = name;
+      if (spans[1]) spans[1].textContent = subject;
+    }
+    if (cells[1]) cells[1].textContent = type;
+    if (cells[2]) {
+      var badge = cells[2].querySelector(".badge");
+      if (badge) { badge.className = "badge badge-light-warning"; badge.textContent = "Draft"; }
+    }
+    if (cells[3]) cells[3].textContent = "0"; // Recipients
+    if (cells[4]) cells[4].textContent = "0"; // Sent
+    if (cells[5]) cells[5].textContent = "0"; // Opens
+    if (cells[6]) cells[6].textContent = "0"; // Replies
+  }
+
+  ReplicaFlows.register("campaign", {
+    formSelector: "#kt_modal_create_campaign_form",
+    modalSelector: "#kt_modal_create_campaign",
+    tableBodySelector: "#campaignsTableBody",
+    storeKey: "campaigns",
+    successMessage: "Campaign created successfully!",
+    fillRow: fillCampaignRow,
+  });
+
+  // ── Entity: Rise CRM — Email Template (Pattern A: modal + card grid) ────
+
+  function fillTemplateCard(card, data) {
+    card.removeAttribute("data-template-id");
+    var name = (data.template_name || "New Template").trim();
+    var subject = data.template_subject || "";
+    var content = data.template_content || "";
+
+    var title = card.querySelector(".card-title");
+    if (title) title.textContent = name;
+
+    // A from-scratch template has no logo — drop the cloned logo image.
+    var logoImg = card.querySelector(".card-body img");
+    if (logoImg) {
+      var logoWrap = logoImg.closest(".text-center") || logoImg.parentNode;
+      if (logoWrap && logoWrap.parentNode) logoWrap.parentNode.removeChild(logoWrap);
+    }
+
+    var paras = card.querySelectorAll(".card-body p");
+    // paras: [0]="Subject:" label, [1]=subject value, [2]=content preview
+    if (paras[1]) paras[1].textContent = subject;
+    if (paras[2]) paras[2].textContent = content;
+
+    var used = card.querySelector("small.text-muted");
+    if (used) used.textContent = "Used 0 times";
+
+    // Point the leftover action buttons at nothing meaningful.
+    card.querySelectorAll(".use-template-btn, .delete-template-btn").forEach(function (b) {
+      b.removeAttribute("data-template-id");
+    });
+  }
+
+  ReplicaFlows.register("template", {
+    formSelector: "#kt_modal_create_template_form",
+    modalSelector: "#kt_modal_create_template",
+    containerSelector: "#templatesContainer",
+    storeKey: "templates",
+    successMessage: "Template created successfully!",
+    fillCard: fillTemplateCard,
+  });
+
+  // ── Entity: Flow AI — Customer Category (Pattern A: modal + table) ──────
+
+  function fillCategoryRow(row, data) {
+    row.removeAttribute("style");
+    var cells = row.querySelectorAll("td");
+    var name = (data.cust_category || "New Category").trim();
+
+    if (cells[1]) {                          // Category name link
+      var link = cells[1].querySelector("a");
+      if (link) {
+        link.textContent = name;
+        link.setAttribute("href", "#");
+        link.removeAttribute("data-stitch-page");
+      } else {
+        cells[1].textContent = name;
+      }
+    }
+    if (cells[2]) {                          // Added date
+      var dLink = cells[2].querySelector("a");
+      if (dLink) dLink.textContent = formatDateLong(new Date());
+      else cells[2].textContent = formatDateLong(new Date());
+    }
+    if (cells[3]) {                          // Orders percentage → 0
+      var pctSpan = cells[3].querySelector("span");
+      if (pctSpan) pctSpan.textContent = "0";
+      var bar = cells[3].querySelector(".progress-bar");
+      if (bar) { bar.style.width = "0%"; bar.setAttribute("aria-valuenow", "0"); }
+    }
+  }
+
+  ReplicaFlows.register("customerCategory", {
+    formSelector: "#kt_modal_add_customer_category_form",
+    modalSelector: "#kt_modal_add_client_category",
+    tableBodySelector: "#customerCategoriesTableBody",
+    storeKey: "customerCategories",
+    successMessage: "Customer category added successfully!",
+    fillRow: fillCategoryRow,
+  });
+
   function collectQuoteItems() {
     var items = [];
     document.querySelectorAll('input[name^="form-"][name$="-item_name"]').forEach(function (input) {
@@ -962,6 +1160,237 @@
     setTimeout(function () {
       ReplicaHelpers.showToast(msg);
     }, 150);
+  })();
+
+  // ── Select2 shim ────────────────────────────────────────────────────────
+  // The crawler captured Select2 dropdowns in their already-initialized state:
+  // the real <select> is hidden (.select2-hidden-accessible) and a fake
+  // <span> box is shown in its place. The Select2 library / jQuery are not
+  // present in the clone, so those boxes are inert. This shim revives them —
+  // clicking a box opens a native-looking panel built from the <select>'s
+  // options; picking one writes the value back, updates the box label, and
+  // dispatches a real `change` event so downstream listeners (auto-fill) run.
+  (function select2Shim() {
+    var open = null; // { panel, container, box, select }
+
+    function realSelectFor(container) {
+      // Select2 inserts its container immediately after the <select>.
+      var prev = container.previousElementSibling;
+      if (prev && prev.tagName === "SELECT") return prev;
+      return null;
+    }
+
+    function close() {
+      if (!open) return;
+      if (open.panel && open.panel.parentNode) {
+        open.panel.parentNode.removeChild(open.panel);
+      }
+      if (open.container) open.container.classList.remove("select2-container--open");
+      document.removeEventListener("mousedown", onDocDown, true);
+      document.removeEventListener("keydown", onKey, true);
+      window.removeEventListener("resize", close, true);
+      window.removeEventListener("scroll", close, true);
+      open = null;
+    }
+
+    function onDocDown(e) {
+      if (open && (open.panel.contains(e.target) || open.box.contains(e.target))) return;
+      close();
+    }
+
+    function onKey(e) {
+      if (e.key === "Escape" || e.keyCode === 27) close();
+    }
+
+    function fireChange(select) {
+      var evt;
+      try {
+        evt = new Event("change", { bubbles: true });
+      } catch (err) {
+        evt = document.createEvent("Event");
+        evt.initEvent("change", true, false);
+      }
+      select.dispatchEvent(evt);
+    }
+
+    // Single-select: set the value and update the single rendered label.
+    function commit(select, container, opt) {
+      select.value = opt.value;
+      var rendered = container.querySelector(".select2-selection__rendered");
+      if (rendered) {
+        var label = (opt.textContent || "").trim() || opt.value;
+        rendered.setAttribute("title", label);
+        rendered.textContent = label;
+      }
+      fireChange(select);
+    }
+
+    // Multi-select: toggle the option and rebuild the choice "chips" in the
+    // rendered <ul>, preserving the inline search box Select2 keeps at the end.
+    function commitMultiple(select, container, opt) {
+      opt.selected = !opt.selected;
+      var rendered = container.querySelector("ul.select2-selection__rendered");
+      if (rendered) {
+        var search = rendered.querySelector(".select2-search--inline");
+        Array.prototype.slice
+          .call(rendered.querySelectorAll(".select2-selection__choice"))
+          .forEach(function (c) { rendered.removeChild(c); });
+        Array.prototype.forEach.call(select.options, function (o) {
+          if (!o.selected || !o.value) return;
+          var li = document.createElement("li");
+          li.className = "select2-selection__choice";
+          li.setAttribute("title", o.textContent.trim());
+          var disp = document.createElement("span");
+          disp.className = "select2-selection__choice__display";
+          disp.textContent = o.textContent.trim();
+          li.appendChild(disp);
+          rendered.insertBefore(li, search || null);
+        });
+      }
+      fireChange(select);
+    }
+
+    function openFor(box) {
+      var container = box.closest(".select2-container");
+      if (!container) return;
+      var select = realSelectFor(container);
+      if (!select) return;
+
+      // Toggle: clicking the same box that's already open just closes it.
+      var wasSame = open && open.box === box;
+      close();
+      if (wasSame) return;
+
+      var rect = box.getBoundingClientRect();
+      var panel = document.createElement("span");
+      panel.className =
+        "select2-container select2-container--bootstrap5 select2-container--open replica-select2-panel";
+      panel.style.cssText =
+        "position:fixed;z-index:100000;left:" + rect.left + "px;top:" + rect.bottom +
+        "px;width:" + rect.width + "px;";
+
+      var dd = document.createElement("span");
+      dd.className = "select2-dropdown select2-dropdown--below";
+      dd.style.width = rect.width + "px";
+
+      var results = document.createElement("span");
+      results.className = "select2-results";
+      var ul = document.createElement("ul");
+      ul.className = "select2-results__options";
+      ul.setAttribute("role", "listbox");
+
+      Array.prototype.forEach.call(select.options, function (opt) {
+        var li = document.createElement("li");
+        li.className = "select2-results__option";
+        li.setAttribute("role", "option");
+        li.textContent = (opt.textContent || "").trim() || opt.value;
+        if (opt.selected) li.classList.add("select2-results__option--selected");
+        li.addEventListener("mouseenter", function () {
+          Array.prototype.forEach.call(ul.children, function (c) {
+            c.classList.remove("select2-results__option--highlighted");
+          });
+          li.classList.add("select2-results__option--highlighted");
+        });
+        li.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (select.multiple) {
+            commitMultiple(select, container, opt);
+            li.classList.toggle("select2-results__option--selected", opt.selected);
+            // keep the panel open so more can be picked
+          } else {
+            commit(select, container, opt);
+            close();
+          }
+        });
+        ul.appendChild(li);
+      });
+
+      results.appendChild(ul);
+      dd.appendChild(results);
+      panel.appendChild(dd);
+      document.body.appendChild(panel);
+      container.classList.add("select2-container--open");
+
+      open = { panel: panel, container: container, box: box, select: select };
+      document.addEventListener("mousedown", onDocDown, true);
+      document.addEventListener("keydown", onKey, true);
+      window.addEventListener("resize", close, true);
+      window.addEventListener("scroll", close, true);
+    }
+
+    // Capture-phase click: runs before runtime.js's generic handler (this file
+    // is injected first), and stopImmediatePropagation keeps that handler from
+    // treating the click as an "unwired" control.
+    document.addEventListener(
+      "click",
+      function (e) {
+        var box = e.target && e.target.closest && e.target.closest(".select2-selection");
+        if (!box) return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+        openFor(box);
+      },
+      true
+    );
+  })();
+
+  // ── Email-template auto-fill ────────────────────────────────────────────
+  // When a template is chosen in the Create Email Campaign modal, populate the
+  // subject / content / logo / hyperlink fields from the option's data-* attrs,
+  // matching the real site. Selecting "Write from scratch" clears them.
+  (function emailTemplateAutofill() {
+    var sel = document.getElementById("email_template_select");
+    if (!sel) return;
+
+    function setVal(id, val) {
+      var el = document.getElementById(id);
+      if (el) el.value = val || "";
+    }
+
+    sel.addEventListener("change", function () {
+      var opt = sel.options[sel.selectedIndex];
+      if (!opt) return;
+
+      var subject = opt.getAttribute("data-template-subject") || "";
+      var content = opt.getAttribute("data-template-content") || "";
+      var logo = opt.getAttribute("data-template-logo") || "";
+      var hlUrl = opt.getAttribute("data-template-hyperlink-url") || "";
+      var hlText = opt.getAttribute("data-template-hyperlink-text") || "";
+      var type = opt.getAttribute("data-template-type") || "";
+
+      setVal("email_subject", subject);
+      setVal("email_content", content);
+      setVal("campaign_logo_url", logo);
+      setVal("campaign_hyperlink_url", hlUrl);
+      setVal("campaign_hyperlink_text", hlText);
+
+      var prev = document.getElementById("campaign_logo_preview");
+      var img = document.getElementById("campaign_logo_preview_img");
+      if (logo) {
+        if (img) img.src = logo;
+        if (prev) prev.style.display = "";
+      } else {
+        if (prev) prev.style.display = "none";
+      }
+
+      // Reflect the template's campaign type in its own Select2 box.
+      if (type) {
+        var typeSel = document.querySelector('select[name="campaign_type"]');
+        if (typeSel) {
+          typeSel.value = type;
+          var typeContainer = typeSel.nextElementSibling;
+          if (typeContainer && typeContainer.classList.contains("select2-container")) {
+            var r = typeContainer.querySelector(".select2-selection__rendered");
+            if (r) {
+              r.setAttribute("title", type);
+              r.textContent = type;
+            }
+          }
+        }
+      }
+    });
   })();
 
   renderPersistedOnLoad();
