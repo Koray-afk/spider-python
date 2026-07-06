@@ -154,10 +154,34 @@
         "}",
         ".modal:not(.show) { display: none !important; }",
         ".modal.show { display: block !important; }",
+        // Frozen amCharts snapshots (pie/radar charts baked as <img> at crawl
+        // time) carry hardcoded desktop pixel widths (e.g. 1199px) on an
+        // absolutely-positioned wrapper div. Left alone, that wrapper forces
+        // horizontal overflow on any narrower viewport, regardless of
+        // breakpoint, so this is unscoped from the media query below.
+        "[aria-hidden='true']:has(img[data-stitch-frozen-chart]) {",
+        "  max-width: 100% !important; width: auto !important;",
+        "}",
+        "img[data-stitch-frozen-chart] {",
+        "  max-width: 100% !important; width: auto !important; height: auto !important;",
+        "}",
+        ".stitch-table-scroll {",
+        "  overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch;",
+        "}",
         "@media (max-width: 991.98px) {",
+        // Belt-and-suspenders: once the real viewport meta is honored, any
+        // other baked desktop-width element (fixed-pixel panels, absolute
+        // chart wrappers we didn't catch above, etc.) would otherwise force
+        // real horizontal scrolling/shifting instead of just being clipped.
+        "  html, body { overflow-x: hidden !important; max-width: 100vw; }",
+        "  #lkh-chat-overlay { max-width: 100vw; }",
+        // The drawer must stay BELOW the header (not top:0) — otherwise it
+        // physically covers the hamburger button that opened it, and the
+        // only way to close is tapping the dimmed overlay.
+        "  #kt_app_header, #kt_app_sidebar_mobile_toggle { position: relative; z-index: 1201; }",
         "  #kt_app_sidebar {",
-        "    display: flex !important; position: fixed !important; top: 0; left: 0; bottom: 0;",
-        "    width: 225px; max-width: 85vw; height: 100vh !important; z-index: 1200;",
+        "    display: flex !important; position: fixed !important; top: 60px; left: 0; bottom: 0;",
+        "    width: 225px; max-width: 85vw; z-index: 1200;",
         "    transform: translateX(-100%); transition: transform .3s ease;",
         "    box-shadow: 8px 0 24px rgba(0, 0, 0, .25);",
         "  }",
@@ -181,6 +205,19 @@
         }
       }
     );
+
+    // Wide data tables were captured at desktop width with no Bootstrap
+    // `.table-responsive` wrapper. Rather than letting them force page-wide
+    // horizontal scroll (or silently clipping columns via overflow-x:hidden
+    // on body), wrap each one in its own horizontally-scrollable container
+    // so the rest of the page stays put and no data becomes unreachable.
+    Array.prototype.forEach.call(document.querySelectorAll("table"), function (table) {
+      if (table.closest(".table-responsive, .stitch-table-scroll")) return;
+      var wrapper = document.createElement("div");
+      wrapper.className = "table-responsive stitch-table-scroll";
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    });
 
     // Mobile hamburger → open/close the sidebar as a slide-in drawer with an
     // overlay backdrop. Metronic normally ships this via KTDrawer.js, which
