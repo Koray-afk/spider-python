@@ -1,95 +1,27 @@
 # Spider Python
 
-A Playwright crawler and static clone builder for SaaS applications.
+**What is this?**
 
-The pipeline has four stages:
+Imagine you have a website (like Zoho Books or another app). Spider Python visits that website, takes pictures of every page, saves what everything looks like, and then builds a **copy you can open on your computer** — even when you're offline.
 
-1. **Crawl** — capture pages, sidebar navigation, and UI interactions (HTML, screenshots, metadata)
-2. **Reconcile** — diff each interaction against its parent page to extract the UI the click introduced
-3. **Stitch** — rewrite links, wire accordions/tabs/interactions, inject a small runtime
-4. **Serve** — host the clone locally over HTTP
-
-Optional LLM stages (`html-clean` → `analyze` → …) turn stitched pages into business/semantic analysis JSON.
+Think of it like making a **photo album of a whole app** that you can click through at home.
 
 ---
 
-## What it captures
+## The 4 steps (in order)
 
-Every page is saved as a **static UI snapshot**. Before writing `page.html` the
-crawler runs three steps:
+Do these one at a time, like levels in a game:
 
-1. `make_assets_absolute()` — relative CSS/image/font URLs become absolute CDN URLs
-2. `remove_base_tag()` — drops `<base>` so absolute asset URLs resolve correctly
-3. `strip_scripts()` — removes all `<script>`, module/script preloads, and inline
-   `on*` event handlers
+| Step | Command | What it does (simple) |
+|------|---------|------------------------|
+| 1. **Crawl** | `python main.py crawl zoho` | Go to the website and save pages + screenshots |
+| 2. **Reconcile** | `python main.py reconcile zoho` | Figure out what changed when you clicked a button |
+| 3. **Stitch** | `python main.py stitch zoho` | Glue everything together so links and buttons work |
+| 4. **Serve** | `python main.py serve zoho` | Open the copy in your browser at `http://localhost:8000` |
 
-The result _looks_ like production (styling, fonts, images, layout, and any
-captured modal/dropdown all render) but does **not** behave like production —
-no JavaScript runs, so there are no API calls, websocket connections, or
-"can't connect to server" errors. CSS, images, fonts, and SVG are always kept.
+Replace `zoho` with your app name (the name you set in `config.py`).
 
-```
-page_slug/
-  page.html          DOM snapshot; asset URLs absolutized to original CDN
-  screenshot.png     Full-page screenshot
-  metadata.json      URL, title, timestamp, page type
-  interactions/
-    discovered.json  All clickable elements found on the page (with llm_type when ranked)
-    interactions.json Registry of saved interaction captures
-    not_scraped.json Candidates skipped (over budget, anchor nav, no DOM change, …)
-    001-new-item/
-      page.html
-      screenshot.png
-      metadata.json
-      relationship.json
-```
-
----
-
-## Setup
-
-### 1. Virtual environment
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-playwright install chrome
-```
-
-### 3. Chrome
-
-Playwright uses the system Chrome channel on macOS. Install Google Chrome at:
-
-```
-/Applications/Google Chrome.app
-```
-
-On Linux:
-
-```bash
-playwright install-deps chrome
-```
-
-### 4. (Optional) Gemini API key
-
-Create a `.env` file at the project root:
-
-```
-GEMINI_API_KEY=your_api_key_here
-```
-
-Used for:
-
-- **Crawl** — LLM interaction ranking (selects the most demo-worthy triggers per page; falls back to the full list if missing)
-- **Analysis** — `html-clean`, `analyze`, `semantic_tree`, `component_tree`, `catalog`, `workflows`, `modules`
-
-### 5. First run
+**The full recipe:**
 
 ```bash
 python main.py crawl zoho
@@ -98,45 +30,117 @@ python main.py stitch zoho
 python main.py serve zoho
 ```
 
-Post-auth crawl opens Chrome for manual login on the first run. Press Enter in the terminal after logging in.
+---
+
+## What gets saved?
+
+Each page becomes a folder with files inside:
+
+```
+page_slug/
+  page.html          ← what the page looks like (saved as HTML)
+  screenshot.png     ← a picture of the whole page
+  metadata.json      ← info: URL, title, when it was saved
+  interactions/      ← stuff that happens when you click buttons
+    discovered.json
+    interactions.json
+    not_scraped.json
+    001-new-item/
+      page.html
+      screenshot.png
+      metadata.json
+      relationship.json
+```
+
+**Important:** The saved pages **look** like the real website (colors, fonts, pictures) but they **don't talk to the real server**. No live data, no "can't connect" errors — just a frozen snapshot you can browse.
 
 ---
 
-## Commands
+## Getting started
 
-Every command requires an app name (configured in `config.py`), except `api`.
+### Step 1: Make a virtual environment
 
-| Command | Description |
-| --- | --- |
-| `python main.py crawl <app>` | Pre-auth + post-auth crawl |
-| `python main.py crawl-preauth <app>` | Marketing / public pages only |
-| `python main.py crawl-postauth <app>` | Authenticated app pages only |
-| `python main.py reconcile <app>` | Extract per-interaction UI (`reconciliation.json`) |
-| `python main.py stitch <app>` | Build a navigable static clone from crawl output |
-| `python main.py serve <app>` | Serve the stitched clone locally (`--port N`, `--watch`, `--no-open`) |
-| `python main.py status <app>` | Pages crawled, interactions, storage size, checkpoint |
-| `python main.py coverage <app>` | Audit dead buttons, missing routes, unwired dropdowns |
-| `python main.py clean <app>` | Delete crawl output, checkpoint, and sidebar order |
-| `python main.py html-clean <app>` | `stitched_html/` → `cleaned_html/` (for LLM analysis) |
-| `python main.py analyze <app>` | `cleaned_html/` → `business_json/` (requires `GEMINI_API_KEY`) |
-| `python main.py semantic_tree <app>` | Semantic UI tree → `semantic_tree/` (requires `GEMINI_API_KEY`) |
-| `python main.py component_tree <app>` | React component tree → `component_tree/` (requires `GEMINI_API_KEY`) |
-| `python main.py catalog <app>` | Application catalog → `app_catalog/catalog.json` (requires `GEMINI_API_KEY`) |
-| `python main.py workflows <app>` | Business workflows → `app_catalog/workflows.json` (requires `GEMINI_API_KEY`) |
-| `python main.py modules <app>` | Business modules → `app_catalog/modules.json` (requires `GEMINI_API_KEY`) |
-| `python main.py preview <app>` | Serve `stitched_html/` locally |
-| `python main.py api` | Start FastAPI on port 8000 |
+This keeps this project's tools separate from other Python projects.
 
-### Examples
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 2: Install what you need
+
+```bash
+pip install -r requirements.txt
+playwright install chrome
+```
+
+### Step 3: Install Chrome
+
+Spider uses Google Chrome to visit websites.
+
+- **Mac:** Install Chrome at `/Applications/Google Chrome.app`
+- **Linux:** Run `playwright install-deps chrome`
+
+### Step 4: (Optional) Add a Gemini API key
+
+Some extra steps use AI (Google Gemini). If you want those, create a file named `.env` in the project folder:
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
+
+Without this key, crawling and stitching still work. You just skip the AI analysis steps.
+
+### Step 5: First run
 
 ```bash
 python main.py crawl zoho
-python main.py crawl-preauth zoho
-python main.py crawl-postauth zoho
 python main.py reconcile zoho
 python main.py stitch zoho
-python main.py serve zoho                # http://localhost:8000
-python main.py serve zoho --port 9000 --watch
+python main.py serve zoho
+```
+
+**First time logging in:** Chrome will open. Log in to the app yourself, then go back to the terminal and press **Enter**. Your login is saved so you don't have to do it every time.
+
+---
+
+## All commands
+
+Every command needs an app name (like `zoho`), except `api`.
+
+| Command | What it does |
+|---------|--------------|
+| `python main.py crawl <app>` | Save public pages + logged-in pages |
+| `python main.py crawl-preauth <app>` | Save only public pages (no login) |
+| `python main.py crawl-postauth <app>` | Save only logged-in pages |
+| `python main.py reconcile <app>` | Find what each click added to the page |
+| `python main.py stitch <app>` | Build the clickable offline copy |
+| `python main.py serve <app>` | Start a local website to view the copy |
+| `python main.py status <app>` | Show how many pages were saved |
+| `python main.py coverage <app>` | Find broken links and dead buttons |
+| `python main.py clean <app>` | Delete saved data and start fresh |
+| `python main.py preview <app>` | View an older style of stitched pages |
+| `python main.py api` | Start a web API on port 8000 |
+
+**Extra AI commands** (need `GEMINI_API_KEY` in `.env`):
+
+| Command | What it does |
+|---------|--------------|
+| `python main.py html-clean <app>` | Clean up HTML for the AI to read |
+| `python main.py analyze <app>` | AI describes what each page is for |
+| `python main.py semantic_tree <app>` | AI builds a tree of UI parts |
+| `python main.py component_tree <app>` | AI maps React-style components |
+| `python main.py catalog <app>` | AI makes a catalog of the whole app |
+| `python main.py workflows <app>` | AI finds business workflows |
+| `python main.py modules <app>` | AI groups pages into modules |
+
+**Examples:**
+
+```bash
+python main.py crawl zoho
+python main.py serve zoho                  # opens http://localhost:8000
+python main.py serve zoho --port 9000      # use a different port
+python main.py serve zoho --watch          # auto-refresh when files change
 python main.py status zoho
 python main.py coverage zoho
 python main.py clean zoho
@@ -152,11 +156,7 @@ python main.py capture-interactions likwid --url https://likwidai.com/home/v2/
 python main.py api
 ```
 
-End-to-end crawl + clone: **`crawl` → `reconcile` → `stitch` → `serve`**.
-
-Optional LLM analysis (after `html-clean`): **`analyze` → `semantic_tree` → `component_tree` → `catalog` → `workflows` → `modules`**.
-
-Help:
+**Need help?**
 
 ```bash
 python main.py --help
@@ -164,391 +164,170 @@ python main.py --help
 
 ---
 
-## Crawl flow
+## How crawling works (simple version)
 
-Post-auth crawls use **sidebar-first BFS**: the left nav is read once (in DOM order), saved to `_sidebar_order.json`, and walked top-to-bottom before deferred link discovery. Progress is checkpointed to `metadata/crawl_checkpoint.json` after every page — interrupt and re-run to resume (`crawl_resume: true` in config; `clean` resets).
+1. Spider opens Chrome and goes to the app.
+2. It walks through the **sidebar menu** first (top to bottom), like reading a table of contents.
+3. On each page it saves HTML, a screenshot, and info about the page.
+4. It finds **clickable things** (buttons, tabs, menus) and clicks them to see what pops up.
+5. It saves those pop-ups too (modals, dropdowns, drawers, etc.).
+6. If you stop it, you can run crawl again — it picks up where it left off.
 
-```
-sidebar_queue = [post_auth_home]
-deferred_queue = [seed routes from config]
+**What counts as an "interaction"?**
 
-while queue and pages < max:
-    visit page (sidebar queue first, then deferred)
-    save page.html + screenshot.png + metadata.json
-    discover interactions → rank with LLM (optional) → click each
-    discover same-origin links → add to deferred queue
-    save checkpoint
-```
+When you click something and **stay on the same page** but **something new appears** (a menu, a popup, a side panel) — that's an interaction.
 
-- **Sidebar-first BFS** — crawls each nav module in order instead of arbitrary link depth-first order
-- **Seed routes** — `seed_url_patterns` in config pre-queue important hash routes (e.g. `#/invoices/new`)
-- **Skip patterns** — `skip_url_patterns` drop low-value routes that would eat the page budget
-- **Link limits** — `list_detail_link_limits`, `global_link_limits`, and `link_cross_page_rules` cap repetitive detail pages
-- **BFS owns page links** — same-origin `a[href]` links drive deferred discovery; anchors are never clicked as interactions
-- **Interactions own UI states** — discovery targets non-anchor triggers (`button`, `[role="tab"]`, `[aria-haspopup]`, `[role="button"]`, `input[type="submit"]`, `input[type="button"]`). Anchors skipped during interaction replay are logged in `not_scraped.json` with reason `anchor_navigation`.
-- **LLM ranking** — when `GEMINI_API_KEY` is set, `ranker/interaction_ranker.py` calls Gemini once per page to pick the top N candidates and tag each with `llm_type`: `navigation`, `tab_switch`, or `interaction`. Tab/detail labels from `mandatory_tab_labels` are always included. Without a key, candidates are capped by `max_ranked_interactions` in discovery order.
-- **Tab switches always run** — every `llm_type="tab_switch"` candidate is clicked even if it exceeds `max_interactions_per_page`; other types fill the remaining budget
-- Interaction triggers are capped at `max_interactions_per_page` (default `15` in the Zoho config)
-- **Interaction captures** are saved as child folders; they never enter the BFS queue
+When you click and **go to a new page** — that's normal navigation, not an interaction.
 
-### Network policy
-
-During crawl, **all network traffic is allowed** — HTML, CSS, JS, images, fonts, fetch, xhr, and websocket — so the page loads and behaves exactly as users see it while being captured. JavaScript is stripped only from the **saved** `page.html` (via `strip_scripts()`), turning each capture into a static snapshot. The live page is fully scripted during the crawl; the saved file is not.
-
-### Interaction types
-
-Each interaction capture is a **UI state** (no page navigation) classified as one of:
-
-`modal` · `drawer` · `sidebar` · `dropdown` · `popover` · `tooltip` · `overlay` · `tab-switch` · `unknown`
-
-An interaction is saved **only if** the URL did not change **and** the DOM changed (tab switches are saved even when the DOM delta is small). If a click navigates to a new URL, no interaction is saved — instead the edge is recorded in the page's `navigations.json` (so non-anchor triggers become clickable in the clone) and the destination is queued for BFS to crawl.
+**Types of interactions:** modal, drawer, sidebar, dropdown, popover, tooltip, overlay, tab-switch
 
 ---
 
-## Storage layout
+## Where files live
+
+Everything goes under `storage/apps/`:
 
 ```
 storage/apps/
-└── zoho/
-    ├── metadata/
-    │   ├── auth.json
-    │   ├── sitemap.json
-    │   ├── crawl_checkpoint.json       resume state (deleted when queue exhausts)
-    │   └── pipeline_status.json
-    ├── crawl/
-    │   ├── _sidebar_order.json         left-nav module URLs in DOM order
-    │   ├── in-books/
-    │   │   ├── page.html
-    │   │   ├── screenshot.png
-    │   │   ├── metadata.json
-    │   │   ├── navigations.json          non-anchor nav edges (div/li/role=menuitem → page)
-    │   │   └── interactions/
-    │   │       ├── discovered.json       includes llm_type when ranked
-    │   │       ├── interactions.json
-    │   │       ├── not_scraped.json      skipped candidates + reason
-    │   │       └── 001-pricing/
-    │   │           ├── page.html
-    │   │           ├── screenshot.png
-    │   │           ├── metadata.json
-    │   │           ├── relationship.json
-    │   │           └── reconciliation.json   (added by `reconcile`)
-    │   └── app-home-dashboard/
-    │       ├── page.html
-    │       ├── screenshot.png
-    │       └── metadata.json
-    ├── stitched/                         navigable static clone (from `stitch`)
-    ├── stitched_html/                    legacy stitched pages (from `preview` / analyzer)
-    ├── cleaned_html/                     flat simplified HTML for LLM analysis
-    ├── business_json/                    Gemini business analysis JSON per page
-    ├── semantic_tree/                    semantic UI component tree JSON per page
-    ├── component_tree/                   high-level React component tree JSON per page
-    └── app_catalog/                      global application map
-        ├── catalog.json
-        ├── workflows.json
-        └── modules.json
+└── zoho/                          ← your app name
+    ├── metadata/                  ← login info, sitemap, progress
+    ├── crawl/                     ← raw saved pages (from crawl)
+    ├── stitched/                  ← the clickable copy (from stitch)
+    ├── cleaned_html/              ← cleaned pages (for AI)
+    ├── business_json/             ← AI analysis results
+    └── app_catalog/               ← AI app map
 ```
 
-| Directory | Written by | Purpose |
-| --- | --- | --- |
-| `crawl/` | Crawler | Raw page captures + interactions |
-| `stitched/` | Stitcher v1 | Navigable static clone with runtime |
-| `stitched_html/` | Legacy stitcher | Offline-viewable stitched pages |
-| `cleaned_html/` | HTML cleaner | Token-efficient HTML for LLMs |
-| `business_json/` | Analyzer | Per-page business analysis JSON from Gemini |
-| `semantic_tree/` | Semantic tree analyzer | Hierarchical UI component tree |
-| `component_tree/` | Component tree analyzer | Compressed React-oriented component tree |
-| `app_catalog/` | Catalog analyzer | Global app map: pages, modules, workflows |
-| `metadata/` | Crawler / pipeline | Sitemap, auth, crawl checkpoint, pipeline status |
+| Folder | Who writes it | What's inside |
+|--------|---------------|---------------|
+| `crawl/` | Crawler | Raw page saves |
+| `stitched/` | Stitcher | The offline app you can click through |
+| `metadata/` | Crawler | Login, sitemap, checkpoints |
+| `cleaned_html/` | html-clean | Simpler HTML for AI |
+| `business_json/` | analyze | AI descriptions per page |
 
 ---
 
-## Reconciliation (`reconcile`)
+## What "reconcile" does
 
-`python main.py reconcile <app>` diffs each main page DOM against its
-interaction page DOM and extracts **only the UI the click introduced** (modal /
-dropdown / sidebar / drawer / popover / tooltip / overlay / tab panel / backdrop).
-It is deterministic — pure BeautifulSoup tree diffing, **no LLM**.
+When you click "Show menu", the page changes a little. **Reconcile** compares:
 
-It writes exactly **one file per interaction** — no delta directory, no reports,
-no debug artifacts:
+- the page **before** the click
+- the page **after** the click
+
+…and saves **only the new part** (the menu, popup, etc.) in one file:
 
 ```
 interactions/002-show-dropdown-menu/reconciliation.json
 ```
 
-That single file contains everything the stitcher needs:
-
-```json
-{
-  "trigger": {
-    "label": "Show dropdown menu",
-    "tagName": "button",
-    "id": "",
-    "className": "dropdown-toggle no-caret",
-    "selector": "[data-crawl-id=\"2\"]",
-    "outerHTML": "<button …>…</button>"
-  },
-  "interaction_type": "dropdown",
-  "location": {
-    "parentSelector": "#tooltip-popover-wrapper",
-    "parentXPath": "/html[1]/body[1]/div[6]/div[1]",
-    "insertMethod": "append"
-  },
-  "ui_html": "<div class=\"dropdown-menu show\">…</div>",
-  "backdrop_html": "",
-  "tab_content_html": "<div class=\"tab-pane\">…</div>",
-  "tab_content_selector": "#overview-tab-panel"
-}
-```
-
-- **`trigger`** — the element that was clicked, taken from `relationship.json`:
-  `label`, `tagName`, `id`, `className`, `selector`, and the **full `outerHTML`**.
-- **`interaction_type`** — `modal` / `dropdown` / `sidebar` / `drawer` /
-  `popover` / `tooltip` / `overlay` / `tab-switch` / `unknown`, inferred from the added DOM's
-  class tokens and roles.
-- **`location`** — where to inject: parent CSS `parentSelector`, `parentXPath`,
-  and `insertMethod` (`append` or `insert`).
-- **`ui_html`** — the newly introduced panel/menu/dialog, classes and attributes
-  preserved exactly.
-- **`backdrop_html`** — any scrim/overlay sibling, separated out from the UI.
-- **`tab_content_html`** / **`tab_content_selector`** — for tab switches, the
-  panel innerHTML and CSS selector so the stitcher can swap tab content in place
-  without a page reload.
-
-**How the diff works** — both DOMs are matched child-by-child using a
-_structural signature_ (tag + classes + role + type) that ignores volatile
-attributes (regenerated `id`s, `aria-controls`, etc.). Unmatched interaction
-subtrees are the additions; the added roots are split into `ui_html` and
-`backdrop_html`. This compares real DOM structure, not text.
-
-The stitcher can operate using **only** `page.html`, `relationship.json`, and
-`reconciliation.json` — nothing else.
+No AI needed — it's just comparing two saved pages.
 
 ---
 
-## Stitcher (`stitch`)
+## What "stitch" does
 
-`python main.py stitch <app>` turns the raw crawl output into a **navigable
-static clone** under `storage/apps/<app>/stitched/`:
+Stitch takes all the saved pages and makes them work together like a mini website:
 
-1. **Page navigation** — every `<a href="#/route">` (including ones hidden
-   inside collapsed sidebar menus) is rewritten to the local page it maps to
-   (`../<slug>/page.html`). Routes are resolved from each crawled page's own
-   `metadata.json` url (the sitemap is merged in as aliases), so any crawled
-   page is linkable even if the sitemap is incomplete. Routes that were never
-   crawled, and any absolute production URL, are neutralized to `#` so
-   navigation can never escape the clone. Asset links keep their CDN URLs.
-2. **Sidebar accordions** — collapsible in-page menus (Bootstrap-style
-   `accordion-button` / `accordion-title`, or any element whose `aria-controls`
-   / `aria-expanded` toggles an in-page panel) are wired with
-   `data-stitch-accordion`. The runtime expands/collapses the panel client-side
-   (toggles `aria-expanded`, the `hidden` attribute, the `show`/`collapsed`
-   classes). These are **never** treated as interactions and **never** load a
-   snapshot — the submenu already lives in the same page. With
-   `--expand-sidebars` (the default) every menu is expanded at stitch time so
-   all nested links are immediately visible; pass `--no-expand-sidebars` to keep
-   them collapsed and rely on the runtime toggle.
-3. **Tab switches** — in-page tabs (`llm_type="tab_switch"` in `discovered.json`)
-   are tagged with `data-stitch-tab-id`. Clicking swaps the panel innerHTML from
-   `reconciliation.json` (`tab_content_html` → `tab_content_selector`) via
-   `window.__STITCH_TABS__` — no reload. Active tab styling (`active`,
-   `aria-selected`) is updated client-side.
-4. **Interaction UI injection** — each trigger is matched (by stable attributes
-   from `relationship.json` / `discovered.json`) and tagged with
-   `data-stitch-ui-id`. Clicking it **injects the reconciled `ui_html`**
-   (from `reconciliation.json`) into the current page — **no reload** — at
-   `location.parentSelector` using `insertMethod` (`append` → `beforeend`,
-   `insert`/`prepend` → `afterbegin`, `replace` → `innerHTML`). The injected
-   content is wrapped in `.stitch-injected-ui` and the captured snapshot is used
-   only as a **fallback** (see below). See "Interaction injection" for the
-   manifest and close behavior.
-5. **Non-anchor navigation** — modern SaaS apps navigate from `div` / `li` /
-   `span` / `[role=menuitem]` / `button` / custom components, not just `<a>`.
-   During the crawl, any click that changes the URL is recorded as a navigation
-   edge in `navigations.json` (label + full trigger metadata + target slug) and
-   its destination is fed back into BFS. The stitcher matches those triggers
-   (same attribute scoring) and tags them with `data-stitch-go` → the local
-   target page, so they become clickable even though they aren't anchors. This
-   is generic — it works for any app, driven entirely by crawl data.
-6. **Interaction-state cleanup** — pages are often crawled mid-load while the
-   app is temporarily frozen (e.g. `<nav id="main-nav-tab" style="pointer-events:none">`),
-   which would leave sidebar links and accordion buttons permanently dead in the
-   clone. A final pass over the whole document strips `pointer-events:none` /
-   `user-select:none` from inline styles, removes `disabled` and
-   `aria-disabled="true"` from `a`/`button`/`input`/`select`/`textarea`, and
-   injects a `<style id="stitch-interaction-fixes">` override forcing
-   `pointer-events:auto` on the nav containers. The stitch log reports how many
-   `pointer-events:none` declarations and disabled controls were restored.
+1. **Links** — clicking a menu item opens the right saved page on your computer
+2. **Sidebar menus** — expand and collapse when you click them
+3. **Tabs** — switch tab content without reloading
+4. **Buttons** — popups and dropdowns appear when you click (using the reconciled HTML)
+5. **Fixes** — turns off "disabled" buttons that were frozen during the crawl
 
-**Accordion vs. interaction** is decided generically, with no app-specific
-selectors: a toggle whose `aria-controls` target (or sibling panel) exists *in
-the same page* is an accordion (toggle in-place); a trigger whose content is
-created on click — dropdown, modal, popover, drawer overlay — has no in-page
-target, so it keeps its captured snapshot.
-
-A tiny `runtime.js` is injected into every page to toggle accordions, inject
-interaction UI, handle non-anchor navigation, and block any leftover production
-link. A `navigation.json` manifest maps each page to its local page links and
-interaction states.
-
-```
-storage/apps/zoho/stitched/
-├── runtime.js
-├── navigation.json
-├── app-60073668069-home/
-│   ├── page.html                 anchors localized, triggers tagged, runtime + config injected
-│   └── interactions/
-│       └── 002-show-dropdown-menu/
-│           └── page.html         full interaction snapshot (fallback only)
-└── app-60073668069-inventory-product-index/
-    └── page.html
-```
-
-### Interaction injection
-
-Instead of navigating to a snapshot, each page embeds an interaction manifest:
-
-```html
-<script>window.__STITCH_INTERACTIONS__ = {
-  "interaction_15": {
-    "type": "overlay",
-    "parentSelector": "#flyout-with-topbar",
-    "parentXPath": "/html[1]/body[1]/div[6]/div[5]",
-    "insertMethod": "append",
-    "uiHtml": "<div class=\"slide-sidebar-left\">…</div>",
-    "backdropHtml": "",
-    "fallback": "interactions/024-testing/page.html"
-  }
-};</script>
-```
-
-On click, the runtime looks up the trigger's `data-stitch-ui-id`, finds
-`parentSelector`, injects `backdropHtml` then `uiHtml` inside a
-`.stitch-injected-ui` wrapper, and leaves the current page loaded. A second
-click on the same trigger closes it (toggle).
-
-**Generic close behavior** (no app-specific code):
-- **click outside** the injected UI (and not on the trigger) removes it;
-- **ESC** removes it;
-- close affordances inside the UI are auto-bound: `.close`, `.sidebar-close`,
-  `.modal-close`, `[data-dismiss]`, `[data-bs-dismiss]`, `[aria-label*=close]`,
-  and any backdrop/overlay-mask element.
-
-**Fallback** — if `uiHtml` is empty, `parentSelector` isn't found, or injection
-throws, the runtime navigates to the captured snapshot
-(`interactions/NNN-.../page.html`) instead. Those snapshot pages are still
-stitched and copied for exactly this purpose.
-
-The runtime also logs `[STITCH] Accordion Toggle <panelId>` and `[STITCH]
-Sidebar Link <href>` (and flags unresolved sidebar routes) to help diagnose
-navigation that doesn't resolve to a crawled page.
-
-Open `stitched/<slug>/page.html` and click around: links load other local
-pages, sidebar accordions expand/collapse in place, and interaction triggers
-inject their reconciled UI on top of the current page. Everything runs locally
-with no production navigation, APIs, or JavaScript execution.
-
-> V1 scope: navigation + in-page accordions + tab switches + reconciled UI
-> injection with generic close behaviour (outside click, ESC, close buttons,
-> backdrop). Browser history for injected overlays is intentionally not handled yet.
+After stitching, open `storage/apps/zoho/stitched/` or run `serve` to browse it.
 
 ---
 
-## Coverage audit (`coverage`)
+## What "serve" does
 
-`python main.py coverage <app>` compares crawl data against the stitched clone
-and reports gaps — useful after a large crawl or when buttons feel dead in the
-clone.
+`serve` starts a tiny web server on your computer so you can open the copy in Chrome like a real website:
+
+```bash
+python main.py serve zoho                 # → http://localhost:8000
+python main.py serve zoho --port 9000     # different port
+python main.py serve zoho --watch         # reload when files change
+python main.py serve zoho --no-open       # don't open browser automatically
+```
+
+- `/` goes to the dashboard (or the first page)
+- Missing pages show a nice 404 page
+- Everything stays on your computer — no calls to the real app
+
+---
+
+## Coverage check
+
+If buttons don't work or pages are missing, run:
 
 ```bash
 python main.py coverage zoho
 ```
 
-It prints:
+It tells you:
+- How many pages were saved vs how many routes exist
+- Which links are broken
+- Which buttons weren't wired up
 
-- Pages crawled vs routes in the stitcher's route index
-- Navigation edges resolved vs missing (with top missing hash routes to add to `seed_url_patterns`)
-- Button/trigger wiring breakdown: interaction, navigation, tab, accordion, and ~dead (unwired)
-- Dead sidebar links (`a[data-stitch-unresolved]`)
-- Pages with the most unwired dropdown triggers
+To fix gaps, crawl more pages (maybe raise `max_pages_post_auth` in `config.py`), then reconcile and stitch again.
 
-Suggested fix loop (printed at the end):
+---
+
+## Logging in
+
+Login info is saved here:
+
+```
+storage/apps/zoho/metadata/auth.json
+```
+
+**First time:**
+1. No auth file → Chrome opens
+2. You log in
+3. Press Enter in the terminal
+4. Done — saved for next time
+
+**Force a new login:**
 
 ```bash
-# 1. Raise max_pages_post_auth + add seed_url_patterns in config.py
+rm storage/apps/zoho/metadata/auth.json
 python main.py crawl-postauth zoho
-python main.py reconcile zoho
-python main.py stitch zoho
 ```
 
 ---
 
-## Local server (`serve`)
+## Adding a new app
 
-`python main.py serve <app>` serves the stitched clone over HTTP so the whole
-thing behaves like a real local app — no `file://` URLs, no manual opening of
-HTML files. Implemented with the stdlib `http.server` (no extra deps) in
-`src/runtime/server.py`.
+Edit `config.py` and add your app to `APPS`:
+
+```python
+APPS = {
+    "myapp": {
+        "pre_auth_home": "https://example.com/",
+        "login_url": "https://example.com/login",
+        "post_auth_home": "https://app.example.com",
+        "max_pages_pre_auth": 5,
+        "max_pages_post_auth": 120,
+        "max_interactions_per_page": 15,
+        # ... more settings (see zoho example in config.py)
+    },
+}
+```
+
+Then run:
 
 ```bash
-python main.py serve zoho                 # → http://localhost:8000
-python main.py serve zoho --port 9000     # custom port
-python main.py serve zoho --watch         # auto-reload tabs on file changes
-python main.py serve zoho --no-open       # don't auto-open the browser
+python main.py crawl myapp
+python main.py reconcile myapp
+python main.py stitch myapp
+python main.py serve myapp
 ```
-
-- **Routing** — `/` redirects to the entry page (the page whose title contains
-  "Dashboard", else the first crawled page). All other paths are served as
-  static files from `storage/apps/<app>/stitched/`.
-- **404** — a missing page returns the styled `404.html` ("Missing stitched
-  page") with a real 404 status, never a raw browser error.
-- **No caching** — responses are sent `no-store` so edits show immediately.
-- **`--watch`** — injects a 1s live-reload poller into served HTML and exposes
-  `/__stitch_version`; when any stitched file changes, open tabs reload.
-
-Everything stays on `localhost`: anchors load other local pages, tab switches
-swap panel content in place, interaction triggers inject reconciled UI (with
-snapshot fallback), and the injected `runtime.js` blocks any leftover production
-link. No production navigation, no production APIs.
-
-### Page metadata
-
-```json
-{
-  "url": "https://books.zoho.in/app/...#/home/dashboard",
-  "title": "Dashboard | Zoho Books",
-  "captured_at": "2026-06-10T12:00:00+00:00",
-  "page_type": "post_auth"
-}
-```
-
-`page_type` is `pre_auth` or `post_auth`.
-
-### Interaction metadata
-
-Each interaction folder includes `metadata.json` and `relationship.json`:
-
-```json
-{
-  "source_page": "app-home-dashboard",
-  "source_url": "https://books.zoho.in/...",
-  "trigger_label": "New Item",
-  "trigger_id": "",
-  "trigger_class": "btn btn-primary",
-  "target_url": "https://books.zoho.in/...",
-  "target_slug": "app-items-new",
-  "target_title": "New Item | Zoho Books",
-  "interaction_type": "modal"
-}
-```
-
-Each page also has `interactions/interactions.json` — a registry of all saved interaction captures for stitching.
 
 ---
 
-## LLM analysis pipeline
+## Optional: AI analysis pipeline
 
-After crawling and stitching, run the optional analysis stages:
+After crawl + stitch, you can ask AI to describe the app:
 
 ```bash
 python main.py html-clean zoho
@@ -560,107 +339,30 @@ python main.py workflows zoho
 python main.py modules zoho
 ```
 
-Each stage skips pages already processed. Check progress in
-`storage/apps/{app}/metadata/pipeline_status.json`.
+You need `GEMINI_API_KEY` in `.env`. Progress is in `storage/apps/{app}/metadata/pipeline_status.json`.
 
 ---
 
-## Authentication
-
-Auth is stored per app:
-
-```
-storage/apps/zoho/metadata/auth.json
-```
-
-### First post-auth crawl
-
-1. No `auth.json` exists → Chrome opens for manual login
-2. Log in in the browser window
-3. Press **Enter** in the terminal
-4. Session is saved to `auth.json`
-
-### Subsequent runs
-
-Auth is reused automatically — login is skipped.
-
-### Force re-login
-
-```bash
-rm storage/apps/zoho/metadata/auth.json
-python main.py crawl-postauth zoho
-```
-
----
-
-## Adding a new app
-
-Edit `config.py`:
-
-```python
-APPS = {
-    "zoho": {
-        "pre_auth_home": "https://www.zoho.com/in/books/",
-        "login_url": "https://accounts.zoho.com/signin?...",
-        "post_auth_home": "https://books.zoho.in",
-        "max_pages_pre_auth": 5,
-        "max_pages_post_auth": 120,
-        "max_interactions_per_page": 15,
-        "max_ranked_interactions": 18,
-        "max_interaction_depth": None,       # None = interactions at all depths
-        "crawl_skip_screenshots": True,
-        "crawl_wait_after_load_ms": 2000,
-        "crawl_use_networkidle": True,
-        "crawl_sidebar_first": True,         # walk left nav top-to-bottom
-        "crawl_resume": True,                # resume from crawl_checkpoint.json
-        "priority_url_patterns": ["#/home/dashboard", "#/invoices", "/new"],
-        "seed_url_patterns": ["#/home/dashboard", "#/invoices/new", ...],
-        "skip_url_patterns": ["/settings/", "reports-", ...],
-        "mandatory_tab_labels": ["Overview", "Transactions", "Statement", ...],
-        "list_detail_link_limits": [...],    # cap detail pages per list
-        "global_link_limits": [...],
-        "link_cross_page_rules": [...],
-    },
-}
-```
-
-Then crawl:
-
-```bash
-python main.py crawl hubspot
-```
-
-Output is written to `storage/apps/hubspot/crawl/`. Run `coverage` after stitching to find gaps.
-
----
-
-## Project structure
+## Project files (what's what)
 
 ```
 spider-python/
-├── main.py                 CLI entrypoint (+ FastAPI via `api` command)
-├── crawler_v2.py           Sidebar-first BFS crawler + interaction capture
-├── crawler_scripts.json    Browser-side discovery/classification scripts
-├── ranker/
-│   └── interaction_ranker.py  LLM prefilter for interaction candidates
-├── reconciler.py           Interaction DOM diffing → reconciliation.json
-├── stitcher_v1.py          Static clone builder (nav, accordions, tabs, injection)
-├── coverage.py             Crawl/stitch coverage audit
-├── page_stitch.py          Legacy stitcher (stitched_html/)
-├── config.py               Per-app crawl settings
-├── pipeline.py             LLM analysis pipeline orchestration
-├── pipeline_io.py          Pipeline stage I/O logging
-├── analyzer/               Gemini analyzers (business, semantic, catalog, …)
-├── api/routes.py           FastAPI routes
-├── storage/
-│   └── storage_manager.py  Path helpers
-└── src/runtime/server.py   Local HTTP server for stitched clone
+├── main.py                 ← run commands from here
+├── crawler_v2.py           ← visits websites and saves pages
+├── reconciler.py           ← finds what clicks added
+├── stitcher_v1.py          ← builds the offline copy
+├── coverage.py             ← finds missing/broken stuff
+├── config.py               ← settings for each app
+├── pipeline.py             ← runs AI analysis steps
+├── analyzer/               ← AI tools
+├── api/routes.py           ← web API
+└── src/runtime/server.py   ← local server for serve command
 ```
 
 ---
 
-## Experiments
+## Experiments folder
 
-`experiments/` contains the original prototype. Do not modify it. Production code lives in the root modules, `analyzer/`, and `pipeline.py`.
+The `experiments/` folder is an old prototype. **Don't change it.** All real code lives in the root folder and `analyzer/`.
 
-FastAPI runs via `python main.py api` on `http://localhost:8000`. See `api/routes.py` for endpoints.
+To start the API: `python main.py api` → `http://localhost:8000`
