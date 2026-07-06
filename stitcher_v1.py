@@ -204,6 +204,56 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   })();
   // ── End Likwid bootstrap ───────────────────────────────────────────────────
 
+  // ── Salesforge static-clone bootstrap ─────────────────────────────────────
+  (function bootstrapSalesforgeLayout() {
+    if (window.location.hostname.indexOf("salesforge.ai") === -1 &&
+        !document.querySelector('[data-testid="salesforge-app"]') &&
+        !document.title.toLowerCase().includes("salesforge")) {
+      return;
+    }
+
+    // Ensure left sidebar nav links are clickable in the static clone.
+    if (!document.getElementById("stitch-salesforge-nav-style")) {
+      var sfStyle = document.createElement("style");
+      sfStyle.id = "stitch-salesforge-nav-style";
+      sfStyle.textContent = [
+        "nav a, aside a, [role='navigation'] a {",
+        "  pointer-events: auto !important; cursor: pointer !important;",
+        "}",
+        "button, [role='tab'], [role='button'] {",
+        "  pointer-events: auto !important; cursor: pointer !important;",
+        "}",
+        // Hide bottom-right chat/support widget — prevents click-blocking overlay.
+        "#gleap-frame-container, #gleap-button-container,",
+        "[id*='gleap'], [class*='gleap'],",
+        "[id*='intercom'], [class*='intercom-'],",
+        "#launcher, .intercom-lightweight-app,",
+        "#crisp-chatbox, .crisp-client,",
+        "[class*='chat-widget'], [class*='chatWidget'],",
+        "[class*='support-widget'] {",
+        "  display: none !important; pointer-events: none !important;",
+        "}",
+        // Hide React portal/backdrop shells that block clicks.
+        "[data-radix-portal] > :empty, [data-overlay-container] > :empty {",
+        "  display: none !important;",
+        "}",
+      ].join("\\n");
+      document.head.appendChild(sfStyle);
+    }
+
+    // Remove any full-screen invisible overlay elements left by React portals.
+    Array.prototype.forEach.call(
+      document.querySelectorAll("[data-radix-portal], [data-overlay-container]"),
+      function (portal) {
+        if (!portal.children.length) {
+          portal.style.display = "none";
+          portal.style.pointerEvents = "none";
+        }
+      }
+    );
+  })();
+  // ── End Salesforge bootstrap ───────────────────────────────────────────────
+
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
     return all[id] || null;
@@ -232,7 +282,43 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     return e.target;
   }
 
-  function showDemoHint(msg) {}
+  function showDemoHint(msg) {
+    var text = msg || "This section is outside the recorded demo path";
+    var existing = document.getElementById("__stitch_demo_hint__");
+    if (existing) {
+      existing.textContent = text;
+      existing.style.opacity = "1";
+      clearTimeout(existing._hideTimer);
+      existing._hideTimer = setTimeout(function() {
+        existing.style.opacity = "0";
+      }, 2800);
+      return;
+    }
+    var el = document.createElement("div");
+    el.id = "__stitch_demo_hint__";
+    el.textContent = text;
+    el.style.cssText = [
+      "position:fixed",
+      "bottom:24px",
+      "left:50%",
+      "transform:translateX(-50%)",
+      "background:rgba(30,30,30,0.88)",
+      "color:#fff",
+      "font-size:13px",
+      "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif",
+      "padding:8px 18px",
+      "border-radius:8px",
+      "box-shadow:0 4px 18px rgba(0,0,0,0.28)",
+      "z-index:2147483647",
+      "pointer-events:none",
+      "transition:opacity 0.35s ease",
+      "white-space:nowrap",
+    ].join(";");
+    document.body.appendChild(el);
+    el._hideTimer = setTimeout(function() {
+      el.style.opacity = "0";
+    }, 2800);
+  }
 
   function findPanel(toggle) {
     if (toggle.classList && toggle.classList.contains("menu-accordion")) {
@@ -2749,6 +2835,38 @@ def _wire_flyout_close(
             el["data-stitch-go"] = rel
 
 
+_SALESFORGE_TAB_SLUGS: dict[str, str] = {
+    "senders": "abhiman-kingdom-senders",
+    "mailboxes": "abhiman-kingdom-senders-mailboxes",
+}
+
+
+def _wire_salesforge_tabs(
+    soup: BeautifulSoup,
+    slug: str,
+    valid_slugs: set[str],
+    to_root: str,
+    used: set[int],
+) -> None:
+    """Wire Senders/Mailboxes tab buttons as local page navigation.
+
+    Salesforge uses React <button role=\"tab\"> elements (not <a href>), so
+    sidebar-style anchor rewriting never applies. Each tab maps to a separate
+    crawled route: /senders and /senders/mailboxes.
+    """
+    for tab in soup.select('[role="tab"]'):
+        if id(tab) in used:
+            continue
+        label = (tab.get_text() or "").strip().lower()
+        target_slug = _SALESFORGE_TAB_SLUGS.get(label)
+        if not target_slug or target_slug not in valid_slugs:
+            continue
+        used.add(id(tab))
+        rel = f"{to_root}{target_slug}/page.html"
+        tab["data-stitch-go"] = rel
+        tab["data-stitch-page"] = target_slug
+
+
 def _normalize_trigger(trigger: dict) -> dict:
     """Map a reconciliation-style trigger (camelCase) to the snake_case keys
     `_find_trigger` expects. Pass-through for already snake_case triggers."""
@@ -3395,6 +3513,8 @@ def _process_html(
 
     if valid_slugs is not None and page_dir is not None:
         _wire_flyout_close(soup, page_dir.name, valid_slugs, to_root, used)
+        if app_name == "salesforge":
+            _wire_salesforge_tabs(soup, page_dir.name, valid_slugs, to_root, used)
 
     inter_manifest: list[dict] = []
     configs: dict[str, dict] = {}
@@ -3556,6 +3676,7 @@ _FONT_CDN_MARKERS = (
     "fonts.gstatic.com",
     "b.stripecdn.com",
     "stripe.com",
+    "salesforge.ai",
 )
 
 
@@ -3565,10 +3686,13 @@ _CDN_CSS_MARKERS = (
     "b.stripecdn.com",
     "dashboard.stripe.com",
     "likwidai.com",
+    "app.salesforge.ai",
+    "salesforge.ai",
 )
 
 _CDN_IMAGE_MARKERS = (
     "likwidai.com/static/",
+    "salesforge.ai/static/",
 )
 
 def _maybe_gunzip(data: bytes) -> bytes:
@@ -3679,6 +3803,9 @@ def _localize_hubspot_css(
 
         local_href = f"{to_root}assets/css/{local_name}"
         new_tag = re.sub(r'\bhref=(["\'])[^"\']+\1', f'href="{local_href}"', tag)
+        # Remote SRI/crossorigin break once CSS is served locally.
+        new_tag = re.sub(r'\s+crossorigin(?:="[^"]*"|=\'[^\']*\'|=\S+)?', "", new_tag)
+        new_tag = re.sub(r'\s+integrity="[^"]*"', "", new_tag)
         return new_tag
 
     # Match any <link> tag that contains a stylesheet rel, regardless of attribute order.
