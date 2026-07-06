@@ -366,6 +366,9 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       if (method === "get" && typeof window.__stitchReplicaSubmit === "function") {
         if (window.__stitchReplicaSubmit(form, e)) return;
       }
+      if (method === "get" && typeof window.__stitchGenericSubmit === "function") {
+        if (window.__stitchGenericSubmit(form, e)) return;
+      }
       if (method !== "post") return;
       e.preventDefault();
       e.stopPropagation();
@@ -373,6 +376,9 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         return;
       }
       if (typeof window.__stitchReplicaSubmit === "function" && window.__stitchReplicaSubmit(form, e)) {
+        return;
+      }
+      if (typeof window.__stitchGenericSubmit === "function" && window.__stitchGenericSubmit(form, e)) {
         return;
       }
       var sub = e.submitter || form.querySelector("[type='submit'], button:not([type])");
@@ -3155,6 +3161,19 @@ def _is_likwid_flows_slug(slug: str) -> bool:
     return False
 
 
+BROWSER_CONTROL_HELPER_URL = (
+    "https://api.insurgeai.com/static/browser-control-helper.js"
+)
+
+
+def _inject_browser_control_helper(soup: BeautifulSoup) -> None:
+    head = soup.head or soup.body or soup
+    for tag in head.find_all("script", src=True):
+        if BROWSER_CONTROL_HELPER_URL in (tag.get("src") or ""):
+            return
+    head.append(soup.new_tag("script", src=BROWSER_CONTROL_HELPER_URL))
+
+
 def _inject_runtime(
     soup: BeautifulSoup,
     to_root: str,
@@ -3360,6 +3379,7 @@ def _process_html(
     discovered: list[dict] | None = None,
     expand_sidebars: bool = True,
     likwid_flows: dict | None = None,
+    app_name: str = "",
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
     stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
@@ -3426,6 +3446,8 @@ def _process_html(
     likwid_forms = _neutralize_likwid_post_forms(soup)
     if likwid_forms:
         print(f"[STITCH] Neutralized {likwid_forms} Likwid POST stage button(s) on {page_dir.name if page_dir else '?'}")
+    if app_name == "likwid":
+        _inject_browser_control_helper(soup)
     _inject_runtime(
         soup,
         to_root,
@@ -3884,6 +3906,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             discovered=discovered,
             expand_sidebars=expand_sidebars,
             likwid_flows=likwid_flows,
+            app_name=app_name,
         )
         new_html = _localize_hubspot_css(new_html, css_dir, to_root="../", css_cdn_dirs=css_cdn_dirs)
         new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
@@ -3914,6 +3937,7 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 navigations=navigations,
                 expand_sidebars=expand_sidebars,
                 likwid_flows=likwid_flows,
+                app_name=app_name,
             )
             new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../", css_cdn_dirs=css_cdn_dirs)
             new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")
