@@ -14,7 +14,9 @@ from playwright.sync_api import sync_playwright
 from crawler_v2 import (
     CLASSIFY_JS,
     _goto_clean,
+    _restore_firebase_idb,
     ensure_auth,
+    is_login_page,
     normalize_url,
     page_slug,
     prepare_context,
@@ -284,7 +286,7 @@ def run_manual_capture(app_name: str, cfg: dict, args: list[str]) -> None:
     print("[MANUAL] Use the Chrome window Playwright opens (not a separate browser tab).")
     print("[MANUAL] Click to record trigger — you'll see 'Recorded click: ...' in this terminal.")
     print("[MANUAL] Type 'capture' to save HTML + screenshot.")
-    print("[MANUAL] Commands: capture | status | goto <url> | quit")
+    print("[MANUAL] Commands: capture | status | click <label> | goto <url> | quit")
     print()
 
     with sync_playwright() as p:
@@ -296,6 +298,8 @@ def run_manual_capture(app_name: str, cfg: dict, args: list[str]) -> None:
             storage_state=auth_file,
         )
         prepare_context(context)
+        if "salesforge.ai" in cfg.get("login_url", ""):
+            _restore_firebase_idb(context, cfg.get("post_auth_home", start_url))
         page = context.new_page()
 
         def _on_click(_click) -> None:
@@ -320,6 +324,11 @@ def run_manual_capture(app_name: str, cfg: dict, args: list[str]) -> None:
                 wait_for_stripe_content=wait_for_stripe,
             )
             _install_click_listeners(page)
+            if is_login_page(page):
+                print("[MANUAL] WARNING: Login page detected — session may have expired.")
+                print("[MANUAL] Delete metadata/auth.json, re-login, then retry.")
+            else:
+                print(f"[MANUAL] Page loaded: {page.title()}")
 
         try:
             while True:
@@ -351,10 +360,25 @@ def run_manual_capture(app_name: str, cfg: dict, args: list[str]) -> None:
                         wait_for_stripe_content=wait_for_stripe,
                     )
                     _install_click_listeners(page)
+                elif cmd == "click" and rest:
+                    print(f"[MANUAL] Clicking: {rest!r}")
+                    try:
+                        page.get_by_text(rest, exact=False).first.click(timeout=8000)
+                    except Exception as exc:
+                        print(f"[MANUAL] Click failed: {exc}")
+                        continue
+                    page.wait_for_timeout(800)
+                    _install_click_listeners(page)
+                    data = _read_last_click(page)
+                    element = data.get("element")
+                    if element:
+                        print(f"[MANUAL] Recorded click: {_click_label(element)[:80]}")
+                    else:
+                        print("[MANUAL] Clicked but no element recorded — type 'capture' anyway if UI changed.")
                 elif cmd == "goto":
                     print("[MANUAL] Usage: goto <url>")
                 else:
-                    print("[MANUAL] Unknown command. Use: capture | status | goto <url> | quit")
+                    print("[MANUAL] Unknown command. Use: capture | status | click <label> | goto <url> | quit")
 
         finally:
             context.close()

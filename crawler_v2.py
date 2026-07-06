@@ -81,6 +81,37 @@ _STRIPE_SIDEBAR_LINKS_JS = """() => {
   return out;
 }"""
 
+# Salesforge uses a left sidebar with nav/aside containing anchor links.
+# Try common React left-nav patterns; fall back to any nav column with links.
+_SALESFORGE_SIDEBAR_LINKS_JS = """() => {
+  const candidates = [
+    document.querySelector('nav[aria-label]'),
+    document.querySelector('aside nav'),
+    document.querySelector('[role="navigation"]'),
+    document.querySelector('nav'),
+    document.querySelector('aside'),
+  ];
+  let root = null;
+  for (const c of candidates) {
+    if (c && c.querySelectorAll('a[href]').length > 2) { root = c; break; }
+  }
+  if (!root) return [];
+  const out = [], seen = new Set();
+  for (const a of root.querySelectorAll('a[href]')) {
+    const href = (a.getAttribute('href') || '').trim();
+    if (!href || href.startsWith('javascript:') || href === '#') continue;
+    // Skip external links (help / marketing site)
+    if (/^https?:\\/\\//.test(href) && !href.includes('salesforge.ai')) continue;
+    const label = (a.innerText || a.getAttribute('aria-label') || a.getAttribute('title') || '')
+      .trim().replace(/\\s+/g, ' ').slice(0, 80);
+    const key = href + '|' + label;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ href, label });
+  }
+  return out;
+}"""
+
 MUTATION_OBSERVER_SETUP_JS = """() => {
   window.__stitch_muts = [];
   window.__stitch_mo = new MutationObserver(function(recs) {
@@ -399,6 +430,36 @@ _WAIT_FOR_STRIPE_CONTENT_JS = """
 })
 """
 
+_WAIT_FOR_SALESFORGE_CONTENT_JS = """
+() => new Promise(function(resolve) {
+  var deadline = Date.now() + 30000;
+  function hasSkeleton(root) {
+    // Tailwind animate-pulse is used exclusively for loading placeholders in
+    // Salesforge. If any such element exists inside main the page is still
+    // in its loading state.
+    return root.querySelector('.animate-pulse') !== null;
+  }
+  function ready() {
+    var main = document.querySelector("main") || document.querySelector('[role="main"]');
+    if (!main) return false;
+    var text = (main.innerText || "").trim();
+    if (!text || /loading\\.\\.\\./i.test(text)) return false;
+    // Require no skeleton loaders before declaring ready.
+    if (hasSkeleton(main)) return false;
+    if (text.length > 80) return true;
+    return !!main.querySelector("table tbody tr, button, [role='tabpanel'], img");
+  }
+  function check() {
+    if (ready() || Date.now() > deadline) {
+      resolve(ready());
+      return;
+    }
+    setTimeout(check, 400);
+  }
+  check();
+})
+"""
+
 
 def _strip_hubspot_loading_elements(page, page_url: str) -> None:
     """Remove HubSpot loading spinners and skeleton screens from the live DOM.
@@ -604,12 +665,79 @@ def static_snapshot_html(html: str, page_url: str, *, page=None) -> str:
     return html
 
 
+_SALESFORGE_SECTIONS = frozenset({
+    "agent",
+    "sequences",
+    "contacts",
+    "primebox",
+    "senders",
+    "forge-ai",
+    "settings",
+    "academy",
+    "multichannel",
+    "products",
+})
+
+
+def _canonical_salesforge_url(url: str) -> str | None:
+    """Normalize Salesforge workspace URLs to /{workspace}/{section}/{sub?}.
+
+    Fixes malformed nested paths like /forge-ai/primebox/all/primebox/all by
+    keeping only the workspace, the last known section, and at most one subpath.
+    Returns None when the URL cannot be normalized to a valid app route.
+    """
+    p = urlparse(url.split("?")[0].split("#")[0])
+    if "salesforge.ai" not in (p.netloc or "").lower():
+        return url
+    parts = [s for s in p.path.split("/") if s]
+    if len(parts) < 2:
+        return None
+    workspace = parts[0]
+    section_idx = None
+    for i, part in enumerate(parts[1:], 1):
+        if part in _SALESFORGE_SECTIONS:
+            section_idx = i
+    if section_idx is None:
+        return None
+    section = parts[section_idx]
+    subparts = parts[section_idx + 1 :]
+    if len(subparts) > 1:
+        subparts = subparts[-1:]
+    sub = "/" + subparts[0] if subparts else ""
+    return f"{p.scheme}://{p.netloc}/{workspace}/{section}{sub}"
+
+
 def abs_url(url: str, base: str) -> str | None:
     if not url or url.startswith(("data:", "javascript:", "blob:", "mailto:", "tel:")):
         return None
     if url.startswith("#"):
         return base.split("#")[0] + url
-    return url if url.startswith("http") else urljoin(base, url)
+    if url.startswith("http"):
+        if "salesforge.ai" in url:
+            return _canonical_salesforge_url(url)
+        return url
+    # Salesforge workspace SPA: relative hrefs like "primebox/all" or "sequences"
+    # are sibling routes under /{workspace}/, not children of the current path.
+    if "salesforge.ai" in base and not url.startswith("/"):
+        p = urlparse(base)
+        parts = [s for s in p.path.split("/") if s]
+        if parts:
+            workspace = parts[0]
+            return _canonical_salesforge_url(
+                f"{p.scheme}://{p.netloc}/{workspace}/{url.lstrip('/')}"
+            )
+    if "salesforge.ai" in base and url.startswith("/"):
+        p = urlparse(base)
+        parts = [s for s in p.path.split("/") if s]
+        if parts:
+            workspace = parts[0]
+            path = url if url.startswith(f"/{workspace}/") else f"/{workspace}{url}"
+            return _canonical_salesforge_url(f"{p.scheme}://{p.netloc}{path}")
+    clean_base = base.rstrip("/")
+    resolved = urljoin(clean_base, url)
+    if "salesforge.ai" in resolved:
+        return _canonical_salesforge_url(resolved)
+    return resolved
 
 
 def normalize_url(url: str) -> str:
@@ -674,11 +802,94 @@ def ensure_auth(playwright, login_url: str, app_name: str) -> str:
     page = context.pages[0] if context.pages else context.new_page()
     page.goto(login_url)
     input("\n  Log in, then press Enter...")
+
+    # Copy Firebase IndexedDB auth token to localStorage so storage_state captures it.
+    # Salesforge (and other Firebase-based apps) store the JWT in IndexedDB which
+    # storage_state() does not save. We mirror it into a special localStorage key here,
+    # then restore it back to IndexedDB before the first crawl navigation.
+    try:
+        saved = page.evaluate("""
+        async () => {
+            const records = await new Promise(resolve => {
+                const req = indexedDB.open('firebaseLocalStorageDb');
+                req.onsuccess = e => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains('firebaseLocalStorage')) {
+                        resolve([]); return;
+                    }
+                    const req2 = db.transaction('firebaseLocalStorage', 'readonly')
+                        .objectStore('firebaseLocalStorage').getAll();
+                    req2.onsuccess = () => resolve(req2.result);
+                    req2.onerror  = () => resolve([]);
+                };
+                req.onerror = () => resolve([]);
+            });
+            if (records.length) {
+                localStorage.setItem('__stitch_firebase_idb', JSON.stringify(records));
+            }
+            return records.length;
+        }
+        """)
+        if saved:
+            print(f"[AUTH] Firebase IndexedDB: {saved} record(s) mirrored to localStorage")
+    except Exception as _idb_exc:
+        print(f"[AUTH] Firebase IndexedDB mirror skipped: {_idb_exc}")
+
     context.storage_state(path=str(auth_path))
     _release_browser(browser)
     chrome.terminate()
     print(f"[AUTH] Session saved to {auth_path}")
     return str(auth_path)
+
+
+def _restore_firebase_idb(context, origin_url: str) -> None:
+    """Restore Firebase IndexedDB auth token from the localStorage mirror.
+
+    During ensure_auth() the token was copied from IndexedDB to localStorage under
+    '__stitch_firebase_idb'. Here we open a throw-away page on the same origin,
+    read that key, and write the records back into IndexedDB so Firebase's SDK
+    finds a valid session on subsequent navigations.
+    """
+    page = context.new_page()
+    try:
+        # Navigate to the app's origin so we have permission to write its IndexedDB.
+        page.goto(origin_url, timeout=20000, wait_until="domcontentloaded")
+        page.wait_for_timeout(2000)
+        restored = page.evaluate("""
+        async () => {
+            const raw = localStorage.getItem('__stitch_firebase_idb');
+            if (!raw) return 0;
+            let records;
+            try { records = JSON.parse(raw); } catch(e) { return 0; }
+            if (!records.length) return 0;
+            return await new Promise(resolve => {
+                const req = indexedDB.open('firebaseLocalStorageDb', 1);
+                req.onupgradeneeded = e => {
+                    try {
+                        e.target.result.createObjectStore(
+                            'firebaseLocalStorage', {keyPath: 'fbase_key'});
+                    } catch(ex) {}
+                };
+                req.onsuccess = e => {
+                    const db = e.target.result;
+                    const tx = db.transaction('firebaseLocalStorage', 'readwrite');
+                    const store = tx.objectStore('firebaseLocalStorage');
+                    for (const rec of records) store.put(rec);
+                    tx.oncomplete = () => resolve(records.length);
+                    tx.onerror   = () => resolve(0);
+                };
+                req.onerror = () => resolve(0);
+            });
+        }
+        """)
+        if restored:
+            print(f"[AUTH] Firebase IndexedDB restored: {restored} record(s) — session active")
+        else:
+            print("[AUTH] Firebase IndexedDB cache not found in localStorage — session may fail")
+    except Exception as exc:
+        print(f"[AUTH] Firebase IndexedDB restore skipped: {exc}")
+    finally:
+        page.close()
 
 
 def post_auth_start_url(auth_file: str, fallback: str) -> str:
@@ -687,8 +898,8 @@ def post_auth_start_url(auth_file: str, fallback: str) -> str:
         o = origin.get("origin", "")
         if not o:
             continue
-        # HubSpot / Stripe / Likwid: use configured post_auth_home after manual login.
-        if "hubspot.com" in o or "dashboard.stripe.com" in o or "likwidai.com" in o:
+        # HubSpot / Stripe / Likwid / Salesforge: use configured post_auth_home after manual login.
+        if "hubspot.com" in o or "dashboard.stripe.com" in o or "likwidai.com" in o or "salesforge.ai" in o:
             return fallback.rstrip("/")
         for item in origin.get("localStorage", []):
             if item.get("name") == "workspaceconf":
@@ -707,14 +918,42 @@ def is_login_page(page) -> bool:
     p = urlparse(page.url)
     if p.netloc.lower().startswith("accounts."):
         return True
-    return any(x in p.path.lower() for x in ("/signin", "/login", "/sign-in"))
+    if any(x in p.path.lower() for x in ("/signin", "/login", "/sign-in")):
+        return True
+    try:
+        title = (page.title() or "").lower()
+        if "log into" in title or "log in to" in title:
+            return True
+    except Exception:
+        pass
+    return False
 
 
 def prepare_context(context) -> None:
     context.add_init_script(STEALTH_SCRIPT)
 
 
+def _has_looping_path(url: str, max_repeats: int = 1) -> bool:
+    """Return True if any path segment appears more than max_repeats times.
+
+    This catches infinite URL loops caused by relative hrefs being appended to
+    an already-visited path (e.g. /mailboxes/primebox/all/primebox/all/...).
+    max_repeats=1 means any segment that appears twice or more is flagged.
+    """
+    parts = [s for s in urlparse(url).path.split("/") if s]
+    seen: dict[str, int] = {}
+    for part in parts:
+        seen[part] = seen.get(part, 0) + 1
+        if seen[part] > max_repeats:
+            return True
+    return False
+
+
 def _should_skip_url(url: str, patterns: list[str]) -> bool:
+    if _has_looping_path(url):
+        return True
+    if "salesforge.ai" in url and _canonical_salesforge_url(url) is None:
+        return True
     return bool(patterns) and any(p in url for p in patterns)
 
 
@@ -867,6 +1106,16 @@ def _wait_for_stripe_content(page, page_url: str) -> bool:
         return False
 
 
+def _wait_for_salesforge_content(page, page_url: str) -> bool:
+    """Poll until Salesforge SPA main content is past the Loading… shell."""
+    if "salesforge.ai" not in page_url.lower():
+        return True
+    try:
+        return bool(page.evaluate(_WAIT_FOR_SALESFORGE_CONTENT_JS))
+    except Exception:
+        return False
+
+
 def _stabilize_page(
     page,
     *,
@@ -884,6 +1133,10 @@ def _stabilize_page(
         ready = _wait_for_stripe_content(page, page.url)
         if not ready:
             print(f"[STRIPE] Content wait timed out for {page.url}")
+    else:
+        ready = _wait_for_salesforge_content(page, page.url)
+        if not ready and "salesforge.ai" in page.url.lower():
+            print(f"[SALESFORGE] Content wait timed out for {page.url}")
     if wait_ms > 0:
         page.wait_for_timeout(wait_ms)
 
@@ -1130,6 +1383,8 @@ def collect_sidebar_links(page, page_url: str, base_domain: str) -> list[dict]:
         js = _STRIPE_SIDEBAR_LINKS_JS
     elif "likwidai.com" in url_lower:
         js = _LIKWID_SIDEBAR_LINKS_JS
+    elif "salesforge.ai" in url_lower:
+        js = _SALESFORGE_SIDEBAR_LINKS_JS
     else:
         js = SIDEBAR_LINKS_JS
     try:
@@ -1160,6 +1415,8 @@ _LOGIN_PAGE_MARKERS = (
     "data-error-type=\"SESSION_TIMED_OUT\"",
     "Your authentication has expired",
     "Sign in to HubSpot",
+    "Log Into Your Salesforge Account",
+    "Log in with Google",
 )
 
 
@@ -1202,6 +1459,33 @@ def _visited_from_disk(crawl_root: Path) -> set[str]:
         except Exception:
             pass
     return norms
+
+
+def _sitemap_from_disk(crawl_root: Path, page_type: str) -> list[dict]:
+    """Rebuild sitemap.json entries from saved crawl page metadata."""
+    entries: list[dict] = []
+    if not crawl_root.is_dir():
+        return entries
+    for page_dir in sorted(crawl_root.iterdir()):
+        meta_path = page_dir / "metadata.json"
+        html_path = page_dir / "page.html"
+        if not page_dir.is_dir() or not meta_path.is_file() or not html_path.is_file():
+            continue
+        try:
+            if _is_login_html(html_path.read_text(encoding="utf-8", errors="ignore")[:4000]):
+                continue
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            entries.append(
+                {
+                    "slug": page_dir.name,
+                    "url": meta.get("url", ""),
+                    "title": meta.get("title", ""),
+                    "page_type": meta.get("page_type", page_type),
+                }
+            )
+        except Exception:
+            pass
+    return entries
 
 
 def _load_checkpoint(path: Path) -> dict | None:
@@ -1328,6 +1612,7 @@ def crawl_interactions(
     use_networkidle: bool = True,
     skip_screenshots: bool = False,
     wait_for_stripe_content: bool = False,
+    mandatory_interaction_labels: list[str] | None = None,
 ) -> dict:
     """Replay each discovered trigger, reusing one tab (reload between clicks)."""
     interactions_dir = page_dir / "interactions"
@@ -1365,8 +1650,15 @@ def crawl_interactions(
             if not selector:
                 not_scraped.append(_not_scraped_entry(item, "no_selector"))
                 continue
-            # Anchors are navigation — BFS owns them. Never click/capture here.
-            if (item.get("elementType") or "").lower() == "a":
+            # Anchors are usually navigation — skip unless label is a mandatory interaction
+            # (e.g. Salesforge "Add a mailbox" is an <a> that opens a modal).
+            label_lower = (item.get("label") or "").strip().lower()
+            is_mandatory_anchor = (
+                (item.get("elementType") or "").lower() == "a"
+                and mandatory_interaction_labels
+                and any(m.lower() in label_lower for m in mandatory_interaction_labels)
+            )
+            if (item.get("elementType") or "").lower() == "a" and not is_mandatory_anchor:
                 not_scraped.append(_not_scraped_entry(item, "anchor_navigation"))
                 continue
 
@@ -1378,6 +1670,10 @@ def crawl_interactions(
                     wait_ms=wait_after_load_ms,
                     wait_for_stripe_content=wait_for_stripe_content,
                 )
+                if is_login_page(ipage):
+                    print(f"[IXP] Session expired mid-capture on {source_slug} — stopping")
+                    break
+
                 ipage.evaluate(DISCOVER_JS)
 
                 locator = ipage.locator(selector).first
@@ -1577,6 +1873,7 @@ def bfs_crawl(
     resume: bool = True,
     hash_routes: bool = True,
     wait_for_stripe_content: bool = False,
+    follow_page_links: bool = True,
 ) -> dict:
     checkpoint_path = get_crawl_checkpoint_path(app_name)
     start_norm = normalize_url(start_url)
@@ -1586,7 +1883,11 @@ def bfs_crawl(
     deferred_queue: list[tuple[str, int]] = []
     sidebar_discovered = False
     link_counters: dict[str, dict[str, int]] = {}
-    sitemap: list[dict] = []
+    sitemap: list[dict] = _sitemap_from_disk(crawl_root, page_type)
+    if sitemap:
+        get_sitemap_path(app_name).write_text(
+            json.dumps(sitemap, indent=2), encoding="utf-8"
+        )
 
     ckpt = _load_checkpoint(checkpoint_path) if resume else None
     if ckpt:
@@ -1707,6 +2008,13 @@ def bfs_crawl(
         if not nxt:
             break
         url, depth = nxt
+        if "salesforge.ai" in url:
+            canonical = _canonical_salesforge_url(url)
+            if not canonical:
+                print(f"[BFS] Skipped invalid Salesforge URL: {url}")
+                visited.add(normalize_url(url))
+                continue
+            url = canonical
         norm = normalize_url(url)
         if norm in visited:
             continue
@@ -1811,8 +2119,11 @@ def bfs_crawl(
 
             links = collect_links(page, page.url, base_domain)
             print(f"[BFS] Links Found: {len(links)}")
-            for link in links:
-                _enqueue_deferred(link, url, depth + 1)
+            if follow_page_links:
+                for link in links:
+                    _enqueue_deferred(link, url, depth + 1)
+            else:
+                print("[BFS] Page link discovery disabled — seeds/sidebar only")
 
             page.close()
             page = None
@@ -1861,6 +2172,7 @@ def bfs_crawl(
                     use_networkidle=use_networkidle,
                     skip_screenshots=skip_screenshots,
                     wait_for_stripe_content=wait_for_stripe_content,
+                    mandatory_interaction_labels=mandatory_interaction_labels,
                 )
                 interactions_found += ix["found"]
                 interactions_saved += ix["saved"]
@@ -1934,7 +2246,10 @@ def _get_hybrid_checkpoint_path(app_name: str) -> Path:
 
 
 _IXP_SKIP_CLASSES = {"accordion-button", "accordion-title"}
-_IXP_SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing", "Developers"}
+_IXP_SKIP_LABELS = {
+    "button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing", "Developers",
+    "Log in", "Log in with Google", "Sign in", "Sign in with Google",
+}
 
 
 def _ixp_process_slug(
@@ -1966,6 +2281,10 @@ def _ixp_process_slug(
             wait_ms=wait_after_load_ms,
             wait_for_stripe_content=wait_for_stripe_content,
         )
+        if is_login_page(page):
+            print(f"[IXP] Session expired on {slug} — delete metadata/auth.json and re-run")
+            return {"found": 0, "saved": 0, "nav_targets": []}
+
         page_title = page.title()
 
         candidates = discover_with_scroll(page)
@@ -2006,6 +2325,7 @@ def _ixp_process_slug(
             use_networkidle=use_networkidle,
             skip_screenshots=skip_screenshots,
             wait_for_stripe_content=wait_for_stripe_content,
+            mandatory_interaction_labels=mandatory_interaction_labels,
         )
     except Exception as exc:
         print(f"[IXP] Failed ({slug}): {exc}")
@@ -2034,6 +2354,17 @@ def _ixp_worker_entry(task: dict) -> dict:
             storage_state=task["auth_file"],
         )
         prepare_context(context)
+        auth_data = {}
+        try:
+            auth_data = json.loads(Path(task["auth_file"]).read_text(encoding="utf-8"))
+        except Exception:
+            pass
+        post_auth_home = task.get("post_auth_home", "")
+        if post_auth_home and any(
+            "salesforge.ai" in (o.get("origin") or "")
+            for o in auth_data.get("origins", [])
+        ):
+            _restore_firebase_idb(context, post_auth_home)
         try:
             if task.get("save_page_if_missing"):
                 page_dir = crawl_root / slug
@@ -2099,6 +2430,37 @@ def _interactions_saved_on_disk(interactions_dir: Path) -> bool:
         return False
 
 
+def _interactions_are_login_only(interactions_dir: Path) -> bool:
+    """True when every saved interaction capture is a login/auth redirect page."""
+    reg = interactions_dir / "interactions.json"
+    if not reg.is_file():
+        return False
+    try:
+        data = json.loads(reg.read_text(encoding="utf-8"))
+    except Exception:
+        return False
+    if not data:
+        return False
+    page_dir = interactions_dir.parent
+    for item in data:
+        rel = (item.get("interaction_path") or "").strip()
+        if not rel:
+            return False
+        html_path = page_dir / rel / "page.html"
+        if not html_path.is_file():
+            return False
+        if not _is_login_html(html_path.read_text(encoding="utf-8", errors="ignore")[:4000]):
+            return False
+    return True
+
+
+def _interactions_done(interactions_dir: Path) -> bool:
+    """Skip interaction pass only when real (non-login) captures exist."""
+    return _interactions_saved_on_disk(interactions_dir) and not _interactions_are_login_only(
+        interactions_dir
+    )
+
+
 def _clear_page_interactions(page_dir: Path) -> None:
     """Remove saved interaction captures so the interaction pass can re-run."""
     interactions_dir = page_dir / "interactions"
@@ -2133,6 +2495,7 @@ def run_interaction_pass(
     redo_depth2_interactions: bool = False,
     redo_all_interactions: bool = False,
     workers: int = 1,
+    post_auth_home: str = "",
 ) -> dict:
     """Phase 2 of a hybrid crawl: run interactions on all BFS-discovered pages.
 
@@ -2147,6 +2510,16 @@ def run_interaction_pass(
         return {"interactions_saved": 0}
 
     sitemap: list[dict] = json.loads(sitemap_path.read_text(encoding="utf-8"))
+
+    cleared_login = 0
+    for entry in sitemap:
+        page_dir = crawl_root / entry["slug"]
+        ix_dir = page_dir / "interactions"
+        if _interactions_are_login_only(ix_dir):
+            _clear_page_interactions(page_dir)
+            cleared_login += 1
+    if cleared_login:
+        print(f"[IXP] Cleared login-only junk interactions on {cleared_login} page(s)")
 
     if redo_all_interactions:
         cleared = 0
@@ -2243,6 +2616,7 @@ def run_interaction_pass(
                         "url": t["url"],
                         "crawl_root": str(crawl_root),
                         "auth_file": auth_path,
+                        "post_auth_home": post_auth_home,
                         "headless": True,
                         "save_page_if_missing": t.get("save_page_if_missing", False),
                         "opts": opts,
@@ -2276,7 +2650,7 @@ def run_interaction_pass(
             url = entry["url"]
             slug = entry["slug"]
             interactions_dir = (crawl_root / slug) / "interactions"
-            if slug in completed or _interactions_saved_on_disk(interactions_dir):
+            if slug in completed or _interactions_done(interactions_dir):
                 completed.add(slug)
                 continue
             task = {"slug": slug, "url": url}
@@ -2292,7 +2666,7 @@ def run_interaction_pass(
             if nav_slug in completed or nav_slug in seen_nav_slugs:
                 continue
             nav_ix_dir = (crawl_root / nav_slug) / "interactions"
-            if (nav_ix_dir / "interactions.json").is_file() and _interactions_saved_on_disk(nav_ix_dir):
+            if (nav_ix_dir / "interactions.json").is_file() and _interactions_done(nav_ix_dir):
                 completed.add(nav_slug)
                 seen_nav_slugs.add(nav_slug)
                 continue
@@ -2306,13 +2680,14 @@ def run_interaction_pass(
         _run_parallel_batch(nav_tasks)
         _run_parallel_batch(rest_tasks)
     else:
+        print("[IXP] Sequential interaction pass (1 worker — shared browser session)")
         for entry in sitemap_sorted:
             url = entry["url"]
             slug = entry["slug"]
             page_dir = crawl_root / slug
             interactions_dir = page_dir / "interactions"
 
-            if slug in completed or _interactions_saved_on_disk(interactions_dir):
+            if slug in completed or _interactions_done(interactions_dir):
                 completed.add(slug)
                 continue
 
@@ -2331,7 +2706,7 @@ def run_interaction_pass(
                         continue
                     nav_page_dir = crawl_root / nav_slug
                     nav_ix_dir = nav_page_dir / "interactions"
-                    if (nav_ix_dir / "interactions.json").is_file() and _interactions_saved_on_disk(nav_ix_dir):
+                    if (nav_ix_dir / "interactions.json").is_file() and _interactions_done(nav_ix_dir):
                         completed.add(nav_slug)
                         continue
 
@@ -2410,6 +2785,12 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
             ctx_kwargs["storage_state"] = auth_file
         context = browser.new_context(**ctx_kwargs)
         prepare_context(context)
+
+        # Salesforge uses Firebase Auth — token lives in IndexedDB (not cookies/localStorage).
+        # Restore it from the localStorage mirror saved during ensure_auth().
+        if auth_file and "salesforge.ai" in cfg.get("login_url", ""):
+            _restore_firebase_idb(context, cfg.get("post_auth_home", ""))
+
         priority_url_patterns = cfg.get("priority_url_patterns") or []
         seed_url_patterns = cfg.get("seed_url_patterns") or []
         wait_for_stripe_content = bool(cfg.get("crawl_wait_for_stripe_content", False))
@@ -2455,6 +2836,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                     ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
                     ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
                     wait_for_stripe_content=wait_for_stripe_content,
+                    follow_page_links=bool(cfg.get("crawl_follow_page_links", True)),
                 )
                 bfs_pages = bfs_result["pages"]
                 hybrid_ckpt_path.write_text(
@@ -2492,6 +2874,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                     redo_depth2_interactions=bool(cfg.get("crawl_redo_depth2_interactions", False)),
                     redo_all_interactions=bool(cfg.get("crawl_redo_interactions", False)),
                     workers=int(cfg.get("crawl_workers", 1)),
+                    post_auth_home=cfg.get("post_auth_home", ""),
                 )
 
             if hybrid_ckpt_path.exists():
@@ -2535,6 +2918,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                 ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
                 ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
                 wait_for_stripe_content=wait_for_stripe_content,
+                follow_page_links=bool(cfg.get("crawl_follow_page_links", True)),
             )
 
         context.close()
@@ -2557,13 +2941,16 @@ def crawl_interaction_pass(app_name: str, cfg: dict) -> dict:
 
     with sync_playwright() as p:
         auth_file = ensure_auth(p, cfg["login_url"], app_name)
-        browser = p.chromium.launch(headless=False, channel="chrome")
+        ix_headless = bool(cfg.get("crawl_interaction_headless", False))
+        browser = p.chromium.launch(headless=ix_headless, channel="chrome")
         context = browser.new_context(
             viewport={"width": 1920, "height": 1080},
             user_agent=USER_AGENT,
             storage_state=auth_file,
         )
         prepare_context(context)
+        if "salesforge.ai" in cfg.get("login_url", ""):
+            _restore_firebase_idb(context, cfg.get("post_auth_home", ""))
         print(f"[IXP] Phase 2 only — {len(sitemap)} page(s) in sitemap")
         ix_result = run_interaction_pass(
             context,
@@ -2584,6 +2971,7 @@ def crawl_interaction_pass(app_name: str, cfg: dict) -> dict:
             redo_depth2_interactions=bool(cfg.get("crawl_redo_depth2_interactions", False)),
             redo_all_interactions=bool(cfg.get("crawl_redo_interactions", False)),
             workers=int(cfg.get("crawl_workers", 1)),
+            post_auth_home=cfg.get("post_auth_home", ""),
         )
         browser.close()
     return {
