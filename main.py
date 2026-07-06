@@ -87,6 +87,8 @@ def usage() -> None:
     print("  python main.py crawl-preauth <app>   Marketing pages only")
     print("  python main.py crawl-postauth <app>  Authenticated app only")
     print("  python main.py crawl-interactions <app>  Interaction pass on discovered pages (hybrid phase 2)")
+    print("  python main.py capture-interactions <app> [--url URL]")
+    print("                                       Manual interaction capture (interactive browser)")
     print("  python main.py reconcile <app>       Extract per-interaction UI (reconciliation.json)")
     print("  python main.py stitch <app> [--no-expand-sidebars]")
     print("                                       Build navigable static clone")
@@ -147,6 +149,10 @@ def main() -> None:
     elif command == "crawl-interactions":
         result = crawl_interaction_pass(app_name, cfg)
         print(f"Done: {result['pages']} pages, {result['interactions_saved']} interactions saved")
+    elif command == "capture-interactions":
+        from manual_capture import run_manual_capture
+
+        run_manual_capture(app_name, cfg, sys.argv[3:])
     elif command == "reconcile":
         cmd_reconcile(app_name)
     elif command == "stitch":

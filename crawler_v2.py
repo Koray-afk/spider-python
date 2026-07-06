@@ -519,10 +519,23 @@ def _prepare_snapshot_dom(page, page_url: str) -> None:
     _bake_stripe_computed_styles_in_page(page, page_url)
     if "likwidai.com" in page_url.lower():
         _freeze_chart_canvases(page)
+    _normalize_datatables(page)
+
+
+def _normalize_datatables(page) -> None:
+    """Strip DataTables baked pixel widths before static HTML capture."""
+    from stitch_datatables import DATATABLES_LAYOUT_JS
+
+    try:
+        page.evaluate(DATATABLES_LAYOUT_JS)
+    except Exception as exc:
+        print(f"[DATATABLE] Layout normalize skipped: {exc}")
 
 
 def _freeze_chart_canvases(page) -> None:
     """Replace rendered <canvas> chart pixels with <img> so static HTML shows charts."""
+    from stitch_charts import CHART_LAYOUT_JS
+
     try:
         page.evaluate(
             """() => {
@@ -533,16 +546,14 @@ def _freeze_chart_canvases(page) -> None:
                   if (!data || data.length < 200) return;
                   const img = document.createElement('img');
                   img.src = data;
-                  img.width = canvas.width;
-                  img.height = canvas.height;
                   if (canvas.className) img.className = canvas.className;
-                  if (canvas.getAttribute('style')) img.setAttribute('style', canvas.getAttribute('style'));
                   img.setAttribute('data-stitch-frozen-chart', '1');
                   canvas.replaceWith(img);
                 } catch (e) {}
               });
             }"""
         )
+        page.evaluate(CHART_LAYOUT_JS)
     except Exception as exc:
         print(f"[CHART] Canvas freeze skipped: {exc}")
 
