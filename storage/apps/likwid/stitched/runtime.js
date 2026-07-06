@@ -124,6 +124,17 @@
   // ── Likwid / Metronic static-clone bootstrap ───────────────────────────────
   (function bootstrapLikwidLayout() {
     if (!document.querySelector("#kt_app_sidebar")) return;
+
+    // Ensure a real viewport meta tag so mobile browsers use the actual
+    // device width instead of the ~980px desktop fallback — without this,
+    // none of Metronic's responsive @media rules ever activate.
+    if (!document.querySelector('meta[name="viewport"]')) {
+      var viewportMeta = document.createElement("meta");
+      viewportMeta.setAttribute("name", "viewport");
+      viewportMeta.setAttribute("content", "width=device-width, initial-scale=1, shrink-to-fit=no");
+      document.head.insertBefore(viewportMeta, document.head.firstChild);
+    }
+
     if (!document.getElementById("stitch-likwid-nav-style")) {
       var lkStyle = document.createElement("style");
       lkStyle.id = "stitch-likwid-nav-style";
@@ -143,6 +154,45 @@
         "}",
         ".modal:not(.show) { display: none !important; }",
         ".modal.show { display: block !important; }",
+        // Frozen amCharts snapshots (pie/radar charts baked as <img> at crawl
+        // time) carry hardcoded desktop pixel widths (e.g. 1199px) on an
+        // absolutely-positioned wrapper div. Left alone, that wrapper forces
+        // horizontal overflow on any narrower viewport, regardless of
+        // breakpoint, so this is unscoped from the media query below.
+        "[aria-hidden='true']:has(img[data-stitch-frozen-chart]) {",
+        "  max-width: 100% !important; width: auto !important;",
+        "}",
+        "img[data-stitch-frozen-chart] {",
+        "  max-width: 100% !important; width: auto !important; height: auto !important;",
+        "}",
+        ".stitch-table-scroll {",
+        "  overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch;",
+        "}",
+        "@media (max-width: 991.98px) {",
+        // Belt-and-suspenders: once the real viewport meta is honored, any
+        // other baked desktop-width element (fixed-pixel panels, absolute
+        // chart wrappers we didn't catch above, etc.) would otherwise force
+        // real horizontal scrolling/shifting instead of just being clipped.
+        "  html, body { overflow-x: hidden !important; max-width: 100vw; }",
+        "  #lkh-chat-overlay { max-width: 100vw; }",
+        // The drawer must stay BELOW the header (not top:0) — otherwise it
+        // physically covers the hamburger button that opened it, and the
+        // only way to close is tapping the dimmed overlay.
+        "  #kt_app_header, #kt_app_sidebar_mobile_toggle { position: relative; z-index: 1201; }",
+        "  #kt_app_sidebar {",
+        "    display: flex !important; position: fixed !important; top: 60px; left: 0; bottom: 0;",
+        "    width: 225px; max-width: 85vw; z-index: 1200;",
+        "    transform: translateX(-100%); transition: transform .3s ease;",
+        "    box-shadow: 8px 0 24px rgba(0, 0, 0, .25);",
+        "  }",
+        "  #kt_app_sidebar.stitch-sidebar-open { transform: translateX(0); }",
+        "  #stitch-sidebar-overlay {",
+        "    position: fixed; inset: 0; background: rgba(0, 0, 0, .35); z-index: 1150;",
+        "    opacity: 0; visibility: hidden; transition: opacity .2s ease;",
+        "  }",
+        "  #stitch-sidebar-overlay.show { opacity: 1; visibility: visible; }",
+        "  body.stitch-sidebar-drawer-open { overflow: hidden; }",
+        "}",
       ].join("\n");
       document.head.appendChild(lkStyle);
     }
@@ -155,6 +205,86 @@
         }
       }
     );
+
+    // Wide data tables were captured at desktop width with no Bootstrap
+    // `.table-responsive` wrapper. Rather than letting them force page-wide
+    // horizontal scroll (or silently clipping columns via overflow-x:hidden
+    // on body), wrap each one in its own horizontally-scrollable container
+    // so the rest of the page stays put and no data becomes unreachable.
+    Array.prototype.forEach.call(document.querySelectorAll("table"), function (table) {
+      if (table.closest(".table-responsive, .stitch-table-scroll")) return;
+      var wrapper = document.createElement("div");
+      wrapper.className = "table-responsive stitch-table-scroll";
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    });
+
+    // Mobile hamburger → open/close the sidebar as a slide-in drawer with an
+    // overlay backdrop. Metronic normally ships this via KTDrawer.js, which
+    // isn't bundled in the static clone, so we reimplement the minimum here.
+    var sidebarEl = document.getElementById("kt_app_sidebar");
+    var mobileToggle = document.getElementById("kt_app_sidebar_mobile_toggle");
+    if (sidebarEl && mobileToggle && !mobileToggle.__stitchDrawerBound) {
+      mobileToggle.__stitchDrawerBound = true;
+      var overlayEl = null;
+
+      var isMobileWidth = function () {
+        return window.matchMedia("(max-width: 991.98px)").matches;
+      };
+
+      var getOverlay = function () {
+        if (overlayEl) return overlayEl;
+        overlayEl = document.createElement("div");
+        overlayEl.id = "stitch-sidebar-overlay";
+        document.body.appendChild(overlayEl);
+        overlayEl.addEventListener("click", closeSidebarDrawer);
+        return overlayEl;
+      };
+
+      var openSidebarDrawer = function () {
+        sidebarEl.classList.add("stitch-sidebar-open");
+        document.body.classList.add("stitch-sidebar-drawer-open");
+        getOverlay().classList.add("show");
+        mobileToggle.setAttribute("aria-expanded", "true");
+      };
+
+      var closeSidebarDrawer = function () {
+        sidebarEl.classList.remove("stitch-sidebar-open");
+        document.body.classList.remove("stitch-sidebar-drawer-open");
+        if (overlayEl) overlayEl.classList.remove("show");
+        mobileToggle.setAttribute("aria-expanded", "false");
+      };
+
+      mobileToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (sidebarEl.classList.contains("stitch-sidebar-open")) {
+          closeSidebarDrawer();
+        } else {
+          openSidebarDrawer();
+        }
+      });
+
+      // Tapping a real nav link inside the open drawer should close it
+      // (but not accordion parents, which only expand/collapse a submenu).
+      sidebarEl.addEventListener("click", function (e) {
+        if (!isMobileWidth() || !sidebarEl.classList.contains("stitch-sidebar-open")) return;
+        var link = e.target.closest
+          ? e.target.closest("a[data-stitch-page], a[data-stitch-go], a[href]:not([href='#'])")
+          : null;
+        if (link && !link.closest(".menu-accordion")) closeSidebarDrawer();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if ((e.key === "Escape" || e.keyCode === 27) && sidebarEl.classList.contains("stitch-sidebar-open")) {
+          closeSidebarDrawer();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (!isMobileWidth()) closeSidebarDrawer();
+      });
+    }
   })();
   // ── End Likwid bootstrap ───────────────────────────────────────────────────
 
