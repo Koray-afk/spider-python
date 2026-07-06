@@ -170,6 +170,17 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   // ── Likwid / Metronic static-clone bootstrap ───────────────────────────────
   (function bootstrapLikwidLayout() {
     if (!document.querySelector("#kt_app_sidebar")) return;
+
+    // Ensure a real viewport meta tag so mobile browsers use the actual
+    // device width instead of the ~980px desktop fallback — without this,
+    // none of Metronic's responsive @media rules ever activate.
+    if (!document.querySelector('meta[name="viewport"]')) {
+      var viewportMeta = document.createElement("meta");
+      viewportMeta.setAttribute("name", "viewport");
+      viewportMeta.setAttribute("content", "width=device-width, initial-scale=1, shrink-to-fit=no");
+      document.head.insertBefore(viewportMeta, document.head.firstChild);
+    }
+
     if (!document.getElementById("stitch-likwid-nav-style")) {
       var lkStyle = document.createElement("style");
       lkStyle.id = "stitch-likwid-nav-style";
@@ -189,6 +200,21 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         "}",
         ".modal:not(.show) { display: none !important; }",
         ".modal.show { display: block !important; }",
+        "@media (max-width: 991.98px) {",
+        "  #kt_app_sidebar {",
+        "    display: flex !important; position: fixed !important; top: 0; left: 0; bottom: 0;",
+        "    width: 225px; max-width: 85vw; height: 100vh !important; z-index: 1200;",
+        "    transform: translateX(-100%); transition: transform .3s ease;",
+        "    box-shadow: 8px 0 24px rgba(0, 0, 0, .25);",
+        "  }",
+        "  #kt_app_sidebar.stitch-sidebar-open { transform: translateX(0); }",
+        "  #stitch-sidebar-overlay {",
+        "    position: fixed; inset: 0; background: rgba(0, 0, 0, .35); z-index: 1150;",
+        "    opacity: 0; visibility: hidden; transition: opacity .2s ease;",
+        "  }",
+        "  #stitch-sidebar-overlay.show { opacity: 1; visibility: visible; }",
+        "  body.stitch-sidebar-drawer-open { overflow: hidden; }",
+        "}",
       ].join("\\n");
       document.head.appendChild(lkStyle);
     }
@@ -201,6 +227,73 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         }
       }
     );
+
+    // Mobile hamburger → open/close the sidebar as a slide-in drawer with an
+    // overlay backdrop. Metronic normally ships this via KTDrawer.js, which
+    // isn't bundled in the static clone, so we reimplement the minimum here.
+    var sidebarEl = document.getElementById("kt_app_sidebar");
+    var mobileToggle = document.getElementById("kt_app_sidebar_mobile_toggle");
+    if (sidebarEl && mobileToggle && !mobileToggle.__stitchDrawerBound) {
+      mobileToggle.__stitchDrawerBound = true;
+      var overlayEl = null;
+
+      var isMobileWidth = function () {
+        return window.matchMedia("(max-width: 991.98px)").matches;
+      };
+
+      var getOverlay = function () {
+        if (overlayEl) return overlayEl;
+        overlayEl = document.createElement("div");
+        overlayEl.id = "stitch-sidebar-overlay";
+        document.body.appendChild(overlayEl);
+        overlayEl.addEventListener("click", closeSidebarDrawer);
+        return overlayEl;
+      };
+
+      var openSidebarDrawer = function () {
+        sidebarEl.classList.add("stitch-sidebar-open");
+        document.body.classList.add("stitch-sidebar-drawer-open");
+        getOverlay().classList.add("show");
+        mobileToggle.setAttribute("aria-expanded", "true");
+      };
+
+      var closeSidebarDrawer = function () {
+        sidebarEl.classList.remove("stitch-sidebar-open");
+        document.body.classList.remove("stitch-sidebar-drawer-open");
+        if (overlayEl) overlayEl.classList.remove("show");
+        mobileToggle.setAttribute("aria-expanded", "false");
+      };
+
+      mobileToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (sidebarEl.classList.contains("stitch-sidebar-open")) {
+          closeSidebarDrawer();
+        } else {
+          openSidebarDrawer();
+        }
+      });
+
+      // Tapping a real nav link inside the open drawer should close it
+      // (but not accordion parents, which only expand/collapse a submenu).
+      sidebarEl.addEventListener("click", function (e) {
+        if (!isMobileWidth() || !sidebarEl.classList.contains("stitch-sidebar-open")) return;
+        var link = e.target.closest
+          ? e.target.closest("a[data-stitch-page], a[data-stitch-go], a[href]:not([href='#'])")
+          : null;
+        if (link && !link.closest(".menu-accordion")) closeSidebarDrawer();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if ((e.key === "Escape" || e.keyCode === 27) && sidebarEl.classList.contains("stitch-sidebar-open")) {
+          closeSidebarDrawer();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (!isMobileWidth()) closeSidebarDrawer();
+      });
+    }
   })();
   // ── End Likwid bootstrap ───────────────────────────────────────────────────
 
