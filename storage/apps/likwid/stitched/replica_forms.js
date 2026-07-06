@@ -436,7 +436,7 @@
   // ── Submit handler shared by every registered entity ────────────────────
 
   window.__stitchReplicaSubmit = function (form, e) {
-    if (!form || !form.id) return false;
+    if (!form || !form.tagName || form.tagName.toUpperCase() !== "FORM") return false;
     var entity = ReplicaFlows.findByForm(form);
     if (!entity) return false;
 
@@ -866,6 +866,58 @@
     fillRow: fillUserRow,
   });
 
+  // ── Entity: Likwid — Employee (Pattern A: modal + table) ────────────────
+  // The crawled form has no id (only the parent modal does), which is why
+  // formSelector below is a descendant selector rather than a plain "#id".
+
+  function fillEmployeeRow(row, data) {
+    row.removeAttribute("style");
+    var name = (data.emp_name || "New Employee").trim();
+    var designation = (data.designation || "").trim();
+    var initials = name
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(function (w) { return w.charAt(0).toUpperCase(); })
+      .join("") || "NE";
+
+    var avatar = row.querySelector(".ts-avatar");
+    if (avatar) avatar.textContent = initials;
+
+    var nameEl = row.querySelector(".fw-semibold");
+    if (nameEl) nameEl.textContent = name;
+
+    var statusBadge = row.querySelector("td:nth-child(1) .badge");
+    if (statusBadge) {
+      statusBadge.className = "badge badge-light-success mt-1";
+      statusBadge.textContent = "Active";
+    }
+
+    var designationCell = row.querySelector("td:nth-child(2)");
+    if (designationCell) designationCell.textContent = designation || "—";
+
+    // Assigned / Converted / Not Converted start at zero for a brand-new employee.
+    ["3", "4", "5", "6"].forEach(function (n) {
+      var badge = row.querySelector("td:nth-child(" + n + ") .badge");
+      if (badge) badge.textContent = "0";
+    });
+    var rateBadge = row.querySelector("td:nth-child(7) .badge");
+    if (rateBadge) rateBadge.textContent = "0.0%";
+
+    row.querySelectorAll('input[name="id"]').forEach(function (input) {
+      input.value = data.__id;
+    });
+  }
+
+  ReplicaFlows.register("employee", {
+    formSelector: "#modalAddEmployee form",
+    modalSelector: "#modalAddEmployee",
+    tableBodySelector: "#ts-table tbody",
+    storeKey: "employees",
+    successMessage: "Employee added successfully!",
+    fillRow: fillEmployeeRow,
+  });
+
   // ── Entity: Rise CRM — Email Campaign (Pattern A: modal + table) ────────
 
   function fillCampaignRow(row, data) {
@@ -980,6 +1032,268 @@
     successMessage: "Customer category added successfully!",
     fillRow: fillCategoryRow,
   });
+
+  // ── Generic fallback — handles any create-like form with no registered
+  //    entity above. Reads whatever fields exist, fakes the loading delay,
+  //    then best-effort matches each field to a table column by comparing
+  //    its <label> text with the table's <th> text, and falls back to a
+  //    plain toast + modal close when no reasonable table can be found.
+  //    Runs *after* likwid_flows.js and the registered entities above, so it
+  //    only ever sees forms nothing else already claimed. ────────────────
+
+  var GENERIC_STORE_KEY = "genericForms";
+  var GENERIC_SKIP_LABEL_RE =
+    /^(activate|deactivate|delete|remove|archive|restore|approve|reject|decline|duplicate|clone|log ?out|sign ?out|filter|apply(\s+filters?)?|search|sort|export|print|download|cancel|close|reset|discard)$/i;
+  var GENERIC_VERBS_RE = /^(add|create|save|new|generate|update|submit|ok|confirm|yes|done|continue|next|proceed)$/i;
+
+  function submitLabel(form, e) {
+    var btn = (e && e.submitter) || form.querySelector("button[type='submit'], input[type='submit']");
+    if (!btn) return "";
+    var indicator = btn.querySelector && btn.querySelector(".indicator-label");
+    var text = indicator ? indicator.textContent : (btn.value || btn.textContent || "");
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function isGenericSkippable(form, label) {
+    if (form.hasAttribute("data-stitch-skip-generic")) return true;
+
+    var visible = Array.prototype.filter.call(
+      form.querySelectorAll("input, select, textarea"),
+      function (el) { return el.type !== "hidden" && !el.disabled; }
+    );
+    if (!visible.length) return true; // e.g. row-action forms — only a hidden id + a button.
+    if (label && GENERIC_SKIP_LABEL_RE.test(label)) return true;
+
+    var hasFreeText = visible.some(function (el) {
+      return el.tagName === "TEXTAREA" ||
+        (el.tagName === "INPUT" && !/^(checkbox|radio|hidden|submit|button)$/.test(el.type));
+    });
+    if (!hasFreeText && (form.getAttribute("method") || "get").toLowerCase() === "get") {
+      return true; // select/checkbox-only GET form — almost certainly a filter.
+    }
+    if (visible.length === 1) {
+      var el = visible[0];
+      var name = (el.name || "").toLowerCase();
+      var placeholder = (el.getAttribute("placeholder") || "").toLowerCase();
+      if (el.type === "search" || /search|query|^q$|filter/.test(name) || /search|filter/.test(placeholder)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function humanizeFieldName(name) {
+    return String(name || "")
+      .replace(/^id_/, "")
+      .replace(/[_-]+/g, " ")
+      .replace(/\b\w/g, function (c) { return c.toUpperCase(); })
+      .trim();
+  }
+
+  function labelForField(form, el) {
+    if (el.id) {
+      var lbl = form.querySelector('label[for="' + el.id + '"]');
+      if (lbl) return (lbl.textContent || "").replace(/[*:\s]+$/, "").trim();
+    }
+    var wrap = el.closest("label");
+    if (wrap) return (wrap.textContent || "").replace(/[*:\s]+$/, "").trim();
+    return humanizeFieldName(el.name);
+  }
+
+  // Snapshot the form's meaningful fields *now* (label + display value) so the
+  // row-fill step later can run safely after form.reset() without re-reading
+  // stale/cleared inputs.
+  function collectDisplayFields(form) {
+    var fields = [];
+    Array.prototype.forEach.call(form.querySelectorAll("input, select, textarea"), function (el) {
+      if (!el.name || el.name === "csrfmiddlewaretoken" || el.type === "hidden" || el.type === "file") return;
+      var value;
+      if (el.type === "checkbox") {
+        if (!el.checked) return;
+        value = "Yes";
+      } else if (el.type === "radio") {
+        if (!el.checked) return;
+        value = el.value;
+      } else if (el.tagName === "SELECT") {
+        value = el.multiple
+          ? Array.prototype.filter.call(el.options, function (o) { return o.selected; })
+              .map(function (o) { return o.textContent.trim(); }).join(", ")
+          : selectLabel(el);
+      } else {
+        value = el.value;
+      }
+      value = (value == null ? "" : String(value)).trim();
+      if (!value) return;
+      fields.push({ name: el.name, label: labelForField(form, el), value: value });
+    });
+    return fields;
+  }
+
+  function guessToastMessage(label, fields) {
+    var cleaned = label ? label.replace(/^(add|create|save|new|generate|update)\s+/i, "").trim() : "";
+    if (cleaned && !GENERIC_VERBS_RE.test(cleaned) && cleaned.toLowerCase() !== (label || "").toLowerCase()) {
+      return cleaned + " added successfully!";
+    }
+    var first = fields.length ? fields[0].value : "";
+    if (first) {
+      return (first.length > 40 ? first.slice(0, 40) + "…" : first) + " saved successfully!";
+    }
+    return "Saved successfully!";
+  }
+
+  function findTriggerFor(modalEl) {
+    if (!modalEl || !modalEl.id) return null;
+    try {
+      return document.querySelector(
+        '[data-bs-target="#' + modalEl.id + '"], [data-bs-toggle="modal"][href="#' + modalEl.id + '"]'
+      );
+    } catch (err) {
+      return null;
+    }
+  }
+
+  // Prefer the table that lives in the same card as whatever button opened
+  // this modal (works for the common "card with toolbar button + table"
+  // layout); fall back to the first non-empty table on the page.
+  function findGenericTable(form, modalEl) {
+    var trigger = findTriggerFor(modalEl);
+    var scope = (trigger && trigger.closest(".card")) ||
+      (modalEl && modalEl.closest(".card")) ||
+      form.closest(".card");
+    var tbody = scope ? scope.querySelector("table tbody") : null;
+    if (tbody && tbody.querySelector("tr")) return tbody;
+    var all = document.querySelectorAll("table tbody");
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].querySelector("tr")) return all[i];
+    }
+    return null;
+  }
+
+  function tableHeaders(tbody) {
+    var table = tbody.closest("table");
+    var headRow = table ? table.querySelector("thead tr") : null;
+    if (!headRow) return [];
+    return Array.prototype.map.call(headRow.children, function (th) {
+      return (th.textContent || "").trim().toLowerCase();
+    });
+  }
+
+  // Blanks out badges/progress bars in columns we couldn't match a field to,
+  // so a new row doesn't confusingly show stats copied from the cloned
+  // template row. Leaves Actions/Details columns alone.
+  function neutralizeUnmatchedCell(cell) {
+    Array.prototype.forEach.call(cell.querySelectorAll(".badge"), function (b) {
+      var t = (b.textContent || "").trim();
+      if (/^[\d.,]+%?$/.test(t)) b.textContent = t.indexOf("%") >= 0 ? "0.0%" : "0";
+    });
+    Array.prototype.forEach.call(cell.querySelectorAll(".progress-bar"), function (bar) {
+      bar.style.width = "0%";
+      bar.setAttribute("aria-valuenow", "0");
+    });
+    Array.prototype.forEach.call(cell.querySelectorAll("span"), function (s) {
+      var t = (s.textContent || "").trim();
+      if (/^\d+(\.\d+)?%$/.test(t)) s.textContent = "0.0%";
+    });
+  }
+
+  function fillGenericRow(row, headers, fields) {
+    var cells = row.querySelectorAll("td");
+    var usedCols = {};
+    fields.forEach(function (f) {
+      var words = f.label.toLowerCase().split(/\s+/).filter(function (w) { return w.length > 2; });
+      if (!words.length) return;
+      var bestIdx = -1, bestScore = 0;
+      for (var i = 0; i < headers.length; i++) {
+        if (usedCols[i] || !headers[i]) continue;
+        var score = 0;
+        words.forEach(function (w) { if (headers[i].indexOf(w) >= 0) score++; });
+        if (score > bestScore) { bestScore = score; bestIdx = i; }
+      }
+      if (bestIdx >= 0 && cells[bestIdx]) {
+        setCellText(cells[bestIdx], f.value);
+        usedCols[bestIdx] = true;
+      }
+    });
+    for (var ci = 0; ci < cells.length; ci++) {
+      if (usedCols[ci]) continue;
+      if (/action|detail|manage|option/i.test(headers[ci] || "")) continue;
+      neutralizeUnmatchedCell(cells[ci]);
+    }
+  }
+
+  function renderGenericRow(form, modalEl, fields) {
+    var tbody = findGenericTable(form, modalEl);
+    if (!tbody) return;
+    var template = tbody.querySelector("tr");
+    if (!template) return;
+    var headers = tableHeaders(tbody);
+    var row = template.cloneNode(true);
+    fillGenericRow(row, headers, fields);
+    tbody.insertBefore(row, tbody.firstChild);
+  }
+
+  // Best-effort stable key for a form that may have no id/name — index among
+  // all forms on the page is deterministic for a given static page.html.
+  function formIdentity(form) {
+    var forms = document.forms;
+    var idx = -1;
+    for (var i = 0; i < forms.length; i++) {
+      if (forms[i] === form) { idx = i; break; }
+    }
+    var key = form.id || form.getAttribute("name") || form.getAttribute("action") || ("form-" + idx);
+    return location.pathname + "::" + key;
+  }
+
+  window.__stitchGenericSubmit = function (form, e) {
+    if (!form || !form.tagName || form.tagName.toUpperCase() !== "FORM") return false;
+    var label = submitLabel(form, e);
+    if (isGenericSkippable(form, label)) return false;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var btn = (e && e.submitter) || form.querySelector("button[type='submit'], input[type='submit']");
+    ReplicaHelpers.setButtonLoading(btn);
+
+    var fields = collectDisplayFields(form);
+    var rawData = ReplicaHelpers.readForm(form);
+    rawData.__id = newId();
+    rawData.__fields = fields;
+
+    var identity = formIdentity(form);
+    var store = window.ReplicaStore[GENERIC_STORE_KEY] || (window.ReplicaStore[GENERIC_STORE_KEY] = {});
+    var bucket = store[identity] || (store[identity] = []);
+    bucket.unshift(rawData);
+    persistStore();
+
+    var modalEl = form.closest(".modal");
+    var msg = guessToastMessage(label, fields);
+
+    setTimeout(function () {
+      ReplicaHelpers.closeModal(modalEl);
+      form.reset();
+      ReplicaHelpers.restoreButton(btn);
+      renderGenericRow(form, modalEl, fields);
+      ReplicaHelpers.showToast(msg);
+      console.log("[STITCH] Generic create", identity, rawData);
+    }, LOADING_MS);
+
+    return true;
+  };
+
+  function renderGenericPersistedOnLoad() {
+    var store = window.ReplicaStore[GENERIC_STORE_KEY];
+    if (!store) return;
+    Array.prototype.forEach.call(document.forms, function (form) {
+      var identity = formIdentity(form);
+      var records = store[identity];
+      if (!records || !records.length) return;
+      var modalEl = form.closest(".modal");
+      for (var i = records.length - 1; i >= 0; i--) {
+        renderGenericRow(form, modalEl, records[i].__fields || []);
+      }
+    });
+  }
 
   function collectQuoteItems() {
     var items = [];
@@ -1394,6 +1708,7 @@
   })();
 
   renderPersistedOnLoad();
+  renderGenericPersistedOnLoad();
 
   console.log("[STITCH] replica forms ready");
 })();

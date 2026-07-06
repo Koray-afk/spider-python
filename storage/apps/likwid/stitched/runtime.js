@@ -320,6 +320,9 @@
       if (method === "get" && typeof window.__stitchReplicaSubmit === "function") {
         if (window.__stitchReplicaSubmit(form, e)) return;
       }
+      if (method === "get" && typeof window.__stitchGenericSubmit === "function") {
+        if (window.__stitchGenericSubmit(form, e)) return;
+      }
       if (method !== "post") return;
       e.preventDefault();
       e.stopPropagation();
@@ -327,6 +330,9 @@
         return;
       }
       if (typeof window.__stitchReplicaSubmit === "function" && window.__stitchReplicaSubmit(form, e)) {
+        return;
+      }
+      if (typeof window.__stitchGenericSubmit === "function" && window.__stitchGenericSubmit(form, e)) {
         return;
       }
       var sub = e.submitter || form.querySelector("[type='submit'], button:not([type])");
