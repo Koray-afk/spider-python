@@ -1,0 +1,26 @@
+[
+  {
+    "label": "FY2026-27",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm fs-7 w-200px",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "span",
+    "ax_name": "FY2026-27",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Apply",
+    "id": "",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Apply",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

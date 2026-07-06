@@ -1,0 +1,79 @@
+[
+  {
+    "label": "Nov 30, 2025 - Dec 30, 2025",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Item",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Current",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Min Stock",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Days to Stockout",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Value at Risk",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Export",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Zoom Out",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Zoom Out",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "Actual; Press ENTER to toggle",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "Forecast; Press ENTER to toggle",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  }
+]

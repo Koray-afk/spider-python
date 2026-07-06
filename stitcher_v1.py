@@ -25,17 +25,21 @@ close behavior (click-outside, ESC, and `.close`/`.sidebar-close`/`[data-dismiss
 `window.__STITCH_INTERACTIONS__`.
 """
 
+import gzip
 import json
 import re
+import ssl
 import urllib.request
 from pathlib import Path
 from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Tag
 
+from config import get_app_config
 from storage.storage_manager import (
     clean_stitched,
     get_crawl_dir,
+    get_metadata_dir,
     get_sitemap_path,
     get_stitched_dir,
 )
@@ -105,8 +109,100 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         el.style.pointerEvents = "none";
       }
     );
+
+    if (!document.getElementById("stitch-workload-nav-style")) {
+      var wlStyle = document.createElement("style");
+      wlStyle.id = "stitch-workload-nav-style";
+      wlStyle.textContent = [
+        "#primary-nav [data-testid='workloads-nav-links'] > li,",
+        "[data-testid='primary-nav'] [data-testid='workloads-nav-links'] > li,",
+        "#primary-nav section:has([data-testid='workloads-nav']) > ul > li,",
+        "[data-testid='primary-nav'] section:has([data-testid='workloads-nav']) > ul > li {",
+        "  display: list-item !important; flex: 0 0 auto !important; flex-shrink: 0 !important; width: 100% !important;",
+        "}",
+        "a[data-testid^='toggle-workload-'], .toggle-workload-button {",
+        "  flex: 0 0 auto !important; flex-grow: 0 !important; width: 100% !important;",
+        "  height: 30px !important; min-height: 30px !important; max-height: 30px !important;",
+        "  cursor: pointer !important; pointer-events: auto !important;",
+        "}",
+        "a[data-testid^='toggle-workload-'] .as-6x,",
+        "a[data-testid^='toggle-workload-'] .as-20,",
+        ".toggle-workload-button .as-g.as-6x {",
+        "  width: auto !important; max-width: none !important; overflow: visible !important;",
+        "  opacity: 1 !important; visibility: visible !important;",
+        "}",
+        "a[data-testid^='toggle-workload-'][aria-expanded='true'] {",
+        "  background: rgba(26, 44, 68, 0.06) !important; border-radius: 6px;",
+        "}",
+        "a[data-testid^='toggle-workload-'][aria-expanded='true'] [data-arrow='true'] svg {",
+        "  transform: rotate(180deg);",
+        "}",
+        "#primary-nav .stitch-workload-nav-panel.show,",
+        "[data-testid='primary-nav'] .stitch-workload-nav-panel.show {",
+        "  display: block !important; visibility: visible !important; overflow: visible !important;",
+        "}",
+        "#primary-nav .stitch-workload-nav-panel > li,",
+        "[data-testid='primary-nav'] .stitch-workload-nav-panel > li {",
+        "  display: block !important; width: 100% !important;",
+        "}",
+        "#primary-nav .stitch-workload-nav-panel a,",
+        "[data-testid='primary-nav'] .stitch-workload-nav-panel a {",
+        "  width: 100% !important; max-width: 100% !important; min-width: 0 !important;",
+        "  flex: 1 1 auto !important; --s--flex-x: 1 1 auto !important; --s--flex-y: 0 0 auto !important;",
+        "  --s--object-width: auto !important; height: auto !important; min-height: 28px !important;",
+        "  color: rgb(26, 44, 68) !important;",
+        "}",
+        "#primary-nav .stitch-workload-nav-panel a span,",
+        "[data-testid='primary-nav'] .stitch-workload-nav-panel a span {",
+        "  width: auto !important; max-width: none !important; overflow: visible !important;",
+        "  opacity: 1 !important; visibility: visible !important; color: inherit !important;",
+        "}",
+        "#primary-nav .stitch-workload-nav-panel:not(.show),",
+        "[data-testid='primary-nav'] .stitch-workload-nav-panel[hidden] {",
+        "  display: none !important; height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important;",
+        "}",
+      ].join("\\n");
+      document.head.appendChild(wlStyle);
+    }
   })();
   // ── End Stripe bootstrap ──────────────────────────────────────────────────
+
+  // ── Likwid / Metronic static-clone bootstrap ───────────────────────────────
+  (function bootstrapLikwidLayout() {
+    if (!document.querySelector("#kt_app_sidebar")) return;
+    if (!document.getElementById("stitch-likwid-nav-style")) {
+      var lkStyle = document.createElement("style");
+      lkStyle.id = "stitch-likwid-nav-style";
+      lkStyle.textContent = [
+        "#kt_app_sidebar .menu-link,",
+        "#kt_app_sidebar [data-kt-menu-trigger],",
+        "#kt_app_sidebar [data-stitch-accordion],",
+        "#kt_app_sidebar a[data-stitch-go] {",
+        "  pointer-events: auto !important; cursor: pointer !important;",
+        "}",
+        "#kt_app_sidebar .menu-item.menu-accordion:not(.show) > .menu-sub {",
+        "  display: none !important;",
+        "}",
+        "#kt_app_sidebar .menu-item.menu-accordion.show > .menu-sub,",
+        "#kt_app_sidebar .menu-item.menu-accordion > .menu-sub.show {",
+        "  display: flex !important; flex-direction: column;",
+        "}",
+        ".modal:not(.show) { display: none !important; }",
+        ".modal.show { display: block !important; }",
+      ].join("\\n");
+      document.head.appendChild(lkStyle);
+    }
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".modal.fade"),
+      function (modal) {
+        if (!modal.classList.contains("show")) {
+          modal.style.display = "none";
+          modal.setAttribute("aria-hidden", "true");
+        }
+      }
+    );
+  })();
+  // ── End Likwid bootstrap ───────────────────────────────────────────────────
 
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
@@ -136,28 +232,13 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     return e.target;
   }
 
-  function showDemoHint(msg) {
-    if (document.getElementById("stitch-demo-hint")) return;
-    var el = document.createElement("div");
-    el.id = "stitch-demo-hint";
-    el.textContent = msg || "Demo mode \u2014 this action is outside the recorded path";
-    el.style.cssText = [
-      "position:fixed", "bottom:24px", "right:24px", "z-index:99999",
-      "background:rgba(30,30,30,0.88)", "color:#fff",
-      "padding:10px 18px", "border-radius:8px",
-      "font:13px/1.5 system-ui,sans-serif",
-      "pointer-events:none", "opacity:0",
-      "transition:opacity 0.2s",
-    ].join(";");
-    document.body.appendChild(el);
-    requestAnimationFrame(function () { el.style.opacity = "1"; });
-    setTimeout(function () {
-      el.style.opacity = "0";
-      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 250);
-    }, 3000);
-  }
+  function showDemoHint(msg) {}
 
   function findPanel(toggle) {
+    if (toggle.classList && toggle.classList.contains("menu-accordion")) {
+      var sub = toggle.querySelector(".menu-sub");
+      if (sub) return sub;
+    }
     var id = toggle.getAttribute("data-stitch-accordion");
     var panel = id ? document.getElementById(id) : null;
     if (!panel) {
@@ -166,6 +247,182 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     }
     if (!panel) panel = toggle.nextElementSibling;
     return panel;
+  }
+
+  function showBootstrapModal(modal) {
+    if (!modal) return;
+    modal.classList.add("show");
+    modal.style.display = "block";
+    modal.removeAttribute("aria-hidden");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("role", "dialog");
+    document.body.classList.add("modal-open");
+    var backdrop = document.createElement("div");
+    backdrop.className = "modal-backdrop fade show";
+    backdrop.setAttribute("data-stitch-modal-backdrop", modal.id || "");
+    document.body.appendChild(backdrop);
+  }
+
+  function hideBootstrapModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    modal.removeAttribute("aria-modal");
+    var id = modal.id || "";
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-stitch-modal-backdrop="' + id + '"]'),
+      function (el) { if (el.parentNode) el.parentNode.removeChild(el); }
+    );
+    if (!document.querySelector(".modal.show")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+
+  function activateBootstrapTab(tabLink) {
+    var href = tabLink.getAttribute("href") || "";
+    if (!href || href.charAt(0) !== "#") return;
+    var pane = document.querySelector(href);
+    if (!pane) return;
+    var nav = tabLink.closest('[role="tablist"]');
+    if (nav) {
+      Array.prototype.forEach.call(nav.querySelectorAll("[data-bs-toggle='tab']"), function (t) {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+        t.setAttribute("tabindex", "-1");
+      });
+    }
+    tabLink.classList.add("active");
+    tabLink.setAttribute("aria-selected", "true");
+    tabLink.removeAttribute("tabindex");
+    var container = pane.parentElement;
+    if (container) {
+      Array.prototype.forEach.call(container.querySelectorAll(".tab-pane"), function (p) {
+        p.classList.remove("show", "active");
+      });
+    }
+    pane.classList.add("show", "active");
+  }
+
+  function switchLikwidPipeline(pipeBtn) {
+    var boards = { leads: "pipe-leads", funnel: "pipe-funnel", deals: "pipe-deals" };
+    var text = (pipeBtn.textContent || "").toLowerCase();
+    var key = text.indexOf("funnel") >= 0 ? "funnel" : text.indexOf("deal") >= 0 ? "deals" : "leads";
+    Object.keys(boards).forEach(function (k) {
+      var el = document.getElementById(boards[k]);
+      if (el) el.style.display = k === key ? "" : "none";
+    });
+    document.querySelectorAll(".up-pipe-btn").forEach(function (b) {
+      b.classList.remove("up-pipe-active");
+    });
+    pipeBtn.classList.add("up-pipe-active");
+  }
+
+  function activateLeadStage(btn) {
+    document.querySelectorAll("button.ld-stage").forEach(function (b) {
+      b.classList.remove("ld-stage-active");
+    });
+    btn.classList.add("ld-stage-active");
+  }
+
+  function toggleBootstrapDropdown(toggle) {
+    var dd = toggle.closest(".dropdown") || toggle.parentElement;
+    var menu = dd && dd.querySelector(".dropdown-menu");
+    if (!menu) return;
+    var open = menu.classList.contains("show");
+    document.querySelectorAll(".dropdown-menu.show").forEach(function (m) {
+      m.classList.remove("show");
+    });
+    if (!open) menu.classList.add("show");
+  }
+
+  function switchEmployeeTab(tabLink) {
+    var text = (tabLink.textContent || "").toLowerCase();
+    var team = document.getElementById("tab-team");
+    var rules = document.getElementById("tab-rules");
+    if (!team || !rules) return;
+    var showRules = text.indexOf("assignment") >= 0 || text.indexOf("rules") >= 0;
+    team.style.display = showRules ? "none" : "";
+    rules.style.display = showRules ? "" : "none";
+    var nav = tabLink.closest(".nav");
+    if (nav) {
+      nav.querySelectorAll(".nav-link").forEach(function (a) {
+        a.classList.remove("active");
+      });
+    }
+    tabLink.classList.add("active");
+  }
+
+  // Block POST forms — static server returns 501; handle in-page instead.
+  document.addEventListener(
+    "submit",
+    function (e) {
+      var form = e.target;
+      if (!form || !form.tagName || form.tagName.toUpperCase() !== "FORM") return;
+      var method = (form.getAttribute("method") || "get").toLowerCase();
+      if (method === "get" && typeof window.__stitchLikwidFlowSubmit === "function") {
+        if (window.__stitchLikwidFlowSubmit(form, e)) return;
+      }
+      if (method === "get" && typeof window.__stitchReplicaSubmit === "function") {
+        if (window.__stitchReplicaSubmit(form, e)) return;
+      }
+      if (method === "get" && typeof window.__stitchGenericSubmit === "function") {
+        if (window.__stitchGenericSubmit(form, e)) return;
+      }
+      if (method !== "post") return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof window.__stitchLikwidFlowSubmit === "function" && window.__stitchLikwidFlowSubmit(form, e)) {
+        return;
+      }
+      if (typeof window.__stitchReplicaSubmit === "function" && window.__stitchReplicaSubmit(form, e)) {
+        return;
+      }
+      if (typeof window.__stitchGenericSubmit === "function" && window.__stitchGenericSubmit(form, e)) {
+        return;
+      }
+      var sub = e.submitter || form.querySelector("[type='submit'], button:not([type])");
+      if (sub && sub.classList.contains("ld-stage")) {
+        activateLeadStage(sub);
+        return;
+      }
+      if (sub && sub.hasAttribute("data-stitch-ui-id")) {
+        injectInteraction(sub);
+        return;
+      }
+      showDemoHint();
+    },
+    true
+  );
+
+  function collapseWorkloadPanel(toggle) {
+    if (!toggle) return;
+    toggle.setAttribute("aria-expanded", "false");
+    var panelId = toggle.getAttribute("aria-controls");
+    var panel = panelId ? document.getElementById(panelId) : null;
+    if (panel) {
+      panel.classList.remove("show");
+      panel.setAttribute("hidden", "true");
+      panel.setAttribute("aria-hidden", "true");
+    }
+  }
+
+  function expandWorkloadPanel(toggle) {
+    if (!toggle) return;
+    toggle.setAttribute("aria-expanded", "true");
+    var panelId = toggle.getAttribute("aria-controls");
+    var panel = panelId ? document.getElementById(panelId) : null;
+    if (panel) {
+      panel.classList.add("show");
+      panel.removeAttribute("hidden");
+      panel.setAttribute("aria-hidden", "false");
+    }
+  }
+
+  function toggleStripeWorkloadNav(toggle) {
+    var expanded = toggle.getAttribute("aria-expanded") === "true";
+    if (expanded) collapseWorkloadPanel(toggle);
+    else expandWorkloadPanel(toggle);
   }
 
   function clearPopperStyles(el) {
@@ -206,6 +463,72 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       panel.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - menuWidth - 8)) + "px";
     }
     panel.style.right = "auto";
+  }
+
+  function repositionStripeAccountMenu(panel, trigger) {
+    var pop = panel.querySelector('[data-testid="popover-layer"]');
+    var target = pop || panel;
+    clearPopperStyles(panel);
+    panel.style.position = "static";
+    panel.style.height = "auto";
+    panel.style.maxHeight = "none";
+    panel.style.overflow = "visible";
+    panel.style.width = "auto";
+    panel.style.transform = "none";
+    panel.style.pointerEvents = "none";
+    if (pop) {
+      clearPopperStyles(pop);
+      pop.style.overflow = "visible";
+      pop.style.height = "auto";
+      pop.style.maxHeight = "none";
+      pop.style.display = "block";
+    }
+    Array.prototype.forEach.call(
+      panel.querySelectorAll(
+        '[role="menuitem"], [data-testid="exit-legacy-testmode-button"], .as-bm'
+      ),
+      function (el) {
+        el.style.position = "static";
+        el.style.transform = "none";
+        el.style.inset = "";
+        el.style.top = "";
+        el.style.left = "";
+        el.style.right = "";
+        el.style.bottom = "";
+        el.style.width = "";
+        el.style.display = el.getAttribute("data-testid") === "exit-legacy-testmode-button"
+          ? "flex"
+          : "flex";
+        el.style.alignItems = "center";
+        el.style.width = el.getAttribute("data-testid") === "exit-legacy-testmode-button"
+          ? "calc(100% - 24px)"
+          : "100%";
+        el.style.maxWidth = "100%";
+        el.style.height = "auto";
+        el.style.minHeight = "36px";
+        el.style.gridTemplateColumns = "none";
+        el.style.margin = el.getAttribute("data-testid") === "exit-legacy-testmode-button"
+          ? "8px 12px"
+          : "0";
+        el.style.boxSizing = "border-box";
+      }
+    );
+    target.style.position = "fixed";
+    target.style.zIndex = "2000";
+    target.style.margin = "0";
+    target.style.transform = "none";
+    target.style.pointerEvents = "auto";
+    target.style.display = "block";
+    target.style.width = "288px";
+    target.style.minWidth = "288px";
+    target.style.maxWidth = "320px";
+    target.style.boxSizing = "border-box";
+    var rect = trigger.getBoundingClientRect();
+    var menuWidth = target.offsetWidth || target.getBoundingClientRect().width || 288;
+    target.style.top = (rect.bottom + 4) + "px";
+    target.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - menuWidth - 8)) + "px";
+    target.style.right = "auto";
+    target.style.bottom = "auto";
   }
 
   function isCenteredPanel(panel) {
@@ -285,6 +608,27 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         ) {
           panel.style.display = "block";
         }
+        // Stripe Sail menus ship with popper translate()/fixed coords baked in.
+        if (panel.classList.contains("sn-token-provider") || panel.querySelector('[data-testid="popover-layer"]')) {
+          clearPopperStyles(panel);
+          Array.prototype.forEach.call(panel.querySelectorAll("[style]"), function (node) {
+            if (/transform|position:\s*fixed/i.test(node.getAttribute("style") || "")) {
+              clearPopperStyles(node);
+            }
+          });
+        }
+        // Stripe account switcher: outer role=menu is a shell; content lives in popover-layer.
+        if (
+          panel.getAttribute("role") === "menu" &&
+          (panel.querySelector('[data-testid="popover-layer"]') ||
+            panel.querySelector('[data-testid="exit-legacy-testmode-button"]'))
+        ) {
+          repositionStripeAccountMenu(panel, trigger);
+          panel.querySelectorAll("a, button, [role='menuitem']").forEach(function (el) {
+            el.style.pointerEvents = "auto";
+          });
+          return;
+        }
         if (isCenteredPanel(panel)) {
           repositionCenteredPanel(panel);
         } else {
@@ -332,6 +676,21 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         window.location.assign(href);
         return true;
       }
+    }
+
+    // Stripe account menu flyouts (workspace/sandbox/create) are not in the clone.
+    var acctFlyout = t.closest(
+      '[data-testid="account-switcher-sandboxes-menu"],' +
+      '[data-testid="account-switcher-create-button"],' +
+      '[data-testid="account-switcher-workspace"],' +
+      '[data-testid="account-switcher-sign-out-button"]'
+    );
+    if (acctFlyout) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("[STITCH] Account menu (no flyout)", acctFlyout.getAttribute("data-testid") || "");
+      showDemoHint("Demo mode — account flyouts are outside the recorded path");
+      return true;
     }
 
     var menuItem = t.closest(".dropdown-item, [role='menuitem'], [role='option']");
@@ -542,15 +901,153 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
       // Clicks inside an open injected overlay: navigate local links / demo-select items.
       if (handleInjectedUIClick(e, t)) return;
 
+      // Stripe Products sidebar (Payments, Billing, Reporting, Apps, More).
+      var workloadToggle = t.closest("[data-testid^='toggle-workload-']");
+      if (workloadToggle) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleStripeWorkloadNav(workloadToggle);
+        console.log(
+          "[STITCH] Products nav",
+          workloadToggle.getAttribute("data-testid"),
+          workloadToggle.getAttribute("aria-expanded") === "true" ? "expanded" : "collapsed"
+        );
+        return;
+      }
+
+      // 0. Bootstrap modal dismiss (close button / backdrop).
+      var dismiss = t.closest("[data-bs-dismiss='modal'], .modal .btn-close");
+      if (dismiss) {
+        var openModal = dismiss.closest(".modal.show") ||
+          (dismiss.getAttribute("data-bs-dismiss") === "modal" && document.querySelector(".modal.show"));
+        if (openModal) {
+          e.preventDefault();
+          e.stopPropagation();
+          hideBootstrapModal(openModal);
+          return;
+        }
+      }
+
+      // 0b. Bootstrap tabs (Metronic nav-tabs).
+      var tabLink = t.closest("[data-bs-toggle='tab']");
+      if (tabLink && tabLink.getAttribute("href")) {
+        e.preventDefault();
+        e.stopPropagation();
+        activateBootstrapTab(tabLink);
+        console.log("[STITCH] Tab", tabLink.getAttribute("href"));
+        return;
+      }
+
+      // 0c. Bootstrap modals already present in the page snapshot. Takes
+      // priority over data-stitch-ui-id — if the modal target exists in the
+      // DOM, open it natively instead of replaying a (possibly mis-wired)
+      // captured interaction snapshot.
+      var modalTrigger = t.closest("[data-bs-toggle='modal']");
+      if (modalTrigger) {
+        var targetSel = modalTrigger.getAttribute("data-bs-target") || "";
+        var modalEl = targetSel ? document.querySelector(targetSel) : null;
+        if (modalEl) {
+          e.preventDefault();
+          e.stopPropagation();
+          showBootstrapModal(modalEl);
+          console.log("[STITCH] Modal", targetSel);
+          return;
+        }
+      }
+
+      // 0d. Likwid pipeline view switcher (Leads / Funnel / Deals).
+      var pipeBtn = t.closest(".up-pipe-btn");
+      if (pipeBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        switchLikwidPipeline(pipeBtn);
+        console.log("[STITCH] Pipeline", (pipeBtn.textContent || "").trim());
+        return;
+      }
+
+      // 0e. Bootstrap dropdown toggles (pipeline cards, employee menus, etc.).
+      var ddToggle = t.closest("[data-bs-toggle='dropdown']");
+      if (ddToggle && !ddToggle.hasAttribute("data-stitch-ui-id")) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleBootstrapDropdown(ddToggle);
+        return;
+      }
+
+      // 0f. Lead detail stage buttons (NVS) — avoid POST submit.
+      var stageBtn = t.closest("button.ld-stage");
+      if (stageBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        activateLeadStage(stageBtn);
+        console.log("[STITCH] Lead stage", stageBtn.getAttribute("name") || "");
+        return;
+      }
+
+      // 0g. Employee list — Sales Team vs Assignment Rules tabs.
+      var empTab = t.closest(".nav-line-tabs a.nav-link, .nav-line-tabs-2x a.nav-link");
+      if (empTab && document.getElementById("tab-team") && document.getElementById("tab-rules")) {
+        e.preventDefault();
+        e.stopPropagation();
+        switchEmployeeTab(empTab);
+        return;
+      }
+
+      // 0h. BI dashboard filter chips (Categories / Vendors / date).
+      var filterBtn = t.closest("button.filter-btn");
+      if (filterBtn && !filterBtn.closest(".stitch-injected-ui")) {
+        e.preventDefault();
+        e.stopPropagation();
+        var bar = filterBtn.closest(".filters-left, .filters-bar, .card-toolbar") || filterBtn.parentElement;
+        if (bar) {
+          bar.querySelectorAll(".filter-btn").forEach(function (b) {
+            b.classList.remove("filter-btn-active");
+          });
+        }
+        filterBtn.classList.add("filter-btn-active");
+        console.log("[STITCH] Filter", (filterBtn.textContent || "").trim());
+        return;
+      }
+
+      // 0i. Likwid Flow sidebar links (Inventory submenu, Procurement, etc.) — must run
+      // before accordion handler, which also matches clicks inside [data-stitch-accordion].
+      var likwidSideNav = t.closest("#kt_app_sidebar a[data-stitch-page], #kt_app_sidebar a[data-stitch-go]");
+      if (likwidSideNav) {
+        if (likwidSideNav.hasAttribute("data-stitch-unresolved")) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log("[STITCH] Sidebar Link (unresolved route)", likwidSideNav.getAttribute("data-stitch-route") || "#");
+          showDemoHint();
+          return;
+        }
+        var likwidHref = likwidSideNav.getAttribute("data-stitch-go") || likwidSideNav.getAttribute("href") || "";
+        if (likwidHref && likwidHref !== "#" && likwidHref.indexOf("javascript:") !== 0) {
+          if (isExternalHref(likwidHref)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.assign(likwidHref);
+          console.log("[STITCH] Sidebar Link", likwidHref);
+          return;
+        }
+      }
+
       // 1. Sidebar accordion toggle — purely in-page, never loads a snapshot.
       var acc = t.closest("[data-stitch-accordion]");
-      if (acc) {
+      if (acc && !t.closest(".menu-sub a")) {
         e.preventDefault();
         e.stopPropagation();
         var expanded = acc.getAttribute("aria-expanded") === "true";
         acc.setAttribute("aria-expanded", expanded ? "false" : "true");
         if (expanded) acc.classList.add("collapsed");
         else acc.classList.remove("collapsed");
+        if (acc.classList.contains("menu-accordion")) {
+          if (expanded) acc.classList.remove("show");
+          else acc.classList.add("show");
+        }
         var panel = findPanel(acc);
         if (panel) {
           if (expanded) {
@@ -592,7 +1089,7 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 
       // 2. Interaction → inject reconciled UI into the current page (no reload).
       var uiTrigger = t.closest("[data-stitch-ui-id]");
-      if (uiTrigger && !uiTrigger.classList.contains("stitch-injected-ui")) {
+      if (uiTrigger && !uiTrigger.classList.contains("stitch-injected-ui") && !uiTrigger.classList.contains("up-pipe-btn")) {
         e.preventDefault();
         e.stopPropagation();
         injectInteraction(uiTrigger);
@@ -734,6 +1231,7 @@ _ACCORDION_CLASS_TOKENS = {
     "accordion-toggle",
     "accordion-header",
     "accordion-trigger",
+    "menu-accordion",
 }
 
 # Inline style declarations that freeze interactivity. Pages crawled mid-load
@@ -939,6 +1437,19 @@ body > .__sail-layer-containers {
 }
 #dashboardRoot {
     pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* Do not hide the whole Stripe shell when captured mid-load */
+#dashboardRoot [data-loading="true"],
+#dashboardRoot [aria-busy="true"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [role="progressbar"] {
+    display: none !important;
 }
 #primary-nav,
 #primary-nav a,
@@ -972,15 +1483,258 @@ iframe[name*="privateStripeMetrics"],
     display: none !important;
     pointer-events: none !important;
 }
-[class*="Spinner"],
-[class*="LoadingOverlay"],
-[aria-busy="true"] {
+#dashboardRoot [class*="Spinner"],
+#dashboardRoot [class*="LoadingOverlay"],
+#dashboardRoot [role="progressbar"] {
     display: none !important;
 }
 #chrome-layout-backdrop,
 [data-testid="backdrop"] {
     display: none !important;
     pointer-events: none !important;
+}
+
+/* Stripe Products section: prevent flex-grow / space-between from stretching nav rows. */
+#primary-nav [data-testid="workloads-nav"],
+[data-testid="primary-nav"] [data-testid="workloads-nav"],
+#primary-nav section:has([data-testid="workloads-nav"]) .primary-nav-section-header,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) .primary-nav-section-header {
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+    text-align: left !important;
+}
+#primary-nav [data-testid="workloads-nav-links"],
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"],
+#primary-nav section:has([data-testid="workloads-nav"]) > ul,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav section:has([data-testid="workloads-nav"]),
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) {
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+}
+
+/* Injected Stripe Products submenu (crawl snapshots omit collapsed panel HTML). */
+#primary-nav [data-testid="workloads-nav-links"] > li,
+[data-testid="primary-nav"] [data-testid="workloads-nav-links"] > li,
+#primary-nav section:has([data-testid="workloads-nav"]) > ul > li,
+[data-testid="primary-nav"] section:has([data-testid="workloads-nav"]) > ul > li {
+    display: list-item !important;
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel,
+[data-testid="primary-nav"] .stitch-workload-nav-panel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+#primary-nav .stitch-workload-nav-panel.show,
+[data-testid="primary-nav"] .stitch-workload-nav-panel.show {
+    display: block !important;
+    padding: 0 0 4px !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+    --s--distribute: flex-start !important;
+}
+#primary-nav .stitch-workload-nav-panel:not(.show),
+[data-testid="primary-nav"] .stitch-workload-nav-panel[hidden] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#primary-nav .stitch-workload-nav-panel > li,
+[data-testid="primary-nav"] .stitch-workload-nav-panel > li {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0 12px 0 36px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    flex: 0 0 auto !important;
+    --s--flex-y: 0 0 auto !important;
+}
+#primary-nav .stitch-workload-nav-panel a,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a {
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    --s--flex-y: 0 0 auto !important;
+    --s--object-width: auto !important;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: rgb(26, 44, 68) !important;
+    white-space: nowrap;
+    padding: 2px 8px;
+    border-radius: 6px;
+    min-height: 28px;
+    height: auto !important;
+    font-size: 14px;
+    line-height: 20px;
+}
+#primary-nav .stitch-workload-nav-panel a span,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a span {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    flex: 1 1 auto !important;
+    --s--flex-x: 1 1 auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}
+#primary-nav .stitch-workload-nav-panel a:hover,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a:hover {
+    background: rgba(26, 44, 68, 0.06);
+}
+#primary-nav .stitch-workload-nav-panel a[aria-current="page"],
+#primary-nav .stitch-workload-nav-panel a.stitch-nav-active,
+[data-testid="primary-nav"] .stitch-workload-nav-panel a[aria-current="page"],
+[data-testid="primary-nav"] .stitch-workload-nav-panel a.stitch-nav-active {
+    background: rgb(246, 245, 255) !important;
+    color: rgb(99, 91, 255) !important;
+    font-weight: 500;
+}
+#primary-nav [data-testid^="toggle-workload-"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"],
+.toggle-workload-button {
+    cursor: pointer !important;
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    width: 100% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+}
+#primary-nav [data-testid^="toggle-workload-"] .as-6x,
+#primary-nav [data-testid^="toggle-workload-"] .as-20,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-6x,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"] .as-20,
+.toggle-workload-button .as-g.as-6x {
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"],
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] {
+    background: rgba(26, 44, 68, 0.06) !important;
+    border-radius: 6px;
+}
+#primary-nav [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg,
+[data-testid="primary-nav"] [data-testid^="toggle-workload-"][aria-expanded="true"] [data-arrow="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Stripe account switcher dropdown (injected reconciliation fragment). */
+.stitch-injected-ui .sn-token-provider[role="menu"],
+.stitch-injected-ui [role="menu"].sn-token-provider {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: block !important;
+    pointer-events: auto !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    max-width: 320px !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px 0px,
+                rgba(48, 49, 61, 0.08) 0px 15px 35px 0px !important;
+    padding: 4px 0 8px !important;
+}
+.stitch-injected-ui [data-testid="account-switcher-workspace"] {
+    display: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="menuitem"],
+.stitch-injected-ui [data-testid="popover-layer"] a[role="button"] {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 36px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    transform: none !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin-left: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+.stitch-injected-ui .as-bm,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"] {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    margin: 8px 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgb(212, 222, 233) !important;
+    border-radius: 6px !important;
+    min-height: 36px !important;
+    background: #fff !important;
+    color: rgb(26, 44, 68) !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+}
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::before,
+.stitch-injected-ui [data-testid="exit-legacy-testmode-button"]::after {
+    display: none !important;
+    content: none !important;
+}
+.stitch-injected-ui [data-testid="popover-layer"] [role="menuitem"]:hover {
+    background: rgba(26, 44, 68, 0.06) !important;
 }
 
 /* ── CRM list/table fallbacks (thin captures only) ─────────────────────────── */
@@ -1003,6 +1757,24 @@ iframe[name*="privateStripeMetrics"],
     overflow: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+}
+/* Likwid / Metronic sidebar accordions */
+#kt_app_sidebar .menu-item.menu-accordion:not(.show) > .menu-sub {
+    display: none !important;
+}
+#kt_app_sidebar .menu-item.menu-accordion.show > .menu-sub,
+#kt_app_sidebar .menu-item.menu-accordion > .menu-sub.show {
+    display: flex !important;
+    flex-direction: column;
+}
+#kt_app_sidebar .menu-link,
+#kt_app_sidebar [data-kt-menu-trigger],
+#kt_app_sidebar [data-stitch-accordion] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+.modal:not(.show) {
+    display: none !important;
 }"""
 
 FALLBACK_404 = """<!doctype html>
@@ -1201,13 +1973,198 @@ def _hubspot_extra_route_keys(url: str, slug: str) -> list[str]:
     return [_norm_route(k) for k in keys if k]
 
 
+# Stripe Products sidebar: panel ids referenced by toggle-workload-* aria-controls.
+# Injected at stitch time when crawl snapshots omit collapsed submenu HTML.
+_STRIPE_WORKLOAD_NAV: dict[str, list[tuple[str, str]]] = {
+    "payments-navigation-links": [
+        ("/test/acceptance", "Analytics"),
+        ("/test/disputes", "Disputes"),
+        ("/test/radar", "Radar"),
+        ("/test/payment-links", "Payment Links"),
+        ("/test/terminal", "Terminal"),
+    ],
+    "billing-navigation-links": [
+        ("/test/billing", "Overview"),
+        ("/test/subscriptions", "Subscriptions"),
+        ("/test/invoices", "Invoices"),
+        ("/test/revenue-recovery", "Revenue recovery"),
+        ("/test/billing/revenue", "Revenue"),
+    ],
+    "reporting-navigation-links": [
+        ("/test/reports", "Reports"),
+        ("/test/sigma/queries", "Sigma"),
+        ("/test/revenue-recognition", "Revenue Recognition"),
+        ("/test/data-management", "Data management"),
+        ("/test/reporting", "Overview"),
+    ],
+    "apps-navigation-links": [
+        ("/test/apps/installed", "Installed"),
+        ("/test/apps/created", "Created"),
+    ],
+    "more-navigation-links": [
+        ("/test/tax/reporting", "Tax"),
+        ("/test/features", "Features"),
+        ("/test/sigma/queries", "Sigma"),
+        ("/test/sandboxes", "Sandboxes"),
+        ("/test/optimization", "Optimization"),
+    ],
+}
+
+# Minimal submenu markup — avoid as-6s/as-69 Sail classes that pin links to 24px icon width.
+_STRIPE_WORKLOAD_SUB_LINK_CLASSES = ["stitch-workload-nav-link"]
+_STRIPE_WORKLOAD_SUB_LINK_OUTER_CLASSES = ["stitch-workload-nav-link-outer"]
+_STRIPE_WORKLOAD_SUB_LINK_LABEL_CLASSES = ["stitch-workload-nav-link-label"]
+_STRIPE_WORKLOAD_PANEL_CLASSES = ["stitch-workload-nav-panel"]
+
+
+def _make_stripe_workload_nav_link(soup: BeautifulSoup, href: str, label: str):
+    """Build a Products submenu row matching Stripe primary-nav link markup."""
+    li = soup.new_tag("li", attrs={"class": ["⚙", "as-g"]})
+    a = soup.new_tag("a", href=href)
+    a["class"] = list(_STRIPE_WORKLOAD_SUB_LINK_CLASSES)
+    a["tabindex"] = "1"
+    outer = soup.new_tag("span", attrs={"class": list(_STRIPE_WORKLOAD_SUB_LINK_OUTER_CLASSES)})
+    label_span = soup.new_tag("span", attrs={"class": list(_STRIPE_WORKLOAD_SUB_LINK_LABEL_CLASSES)})
+    label_span.string = label
+    outer.append(label_span)
+    a.append(outer)
+    li.append(a)
+    return li
+
+
+def _resolve_stripe_nav_slug(route: str, route_index: dict[str, str]) -> str | None:
+    """Return crawled slug for a Stripe sidebar route pattern, if any."""
+    for key in (_norm_route(route), _norm_route(route.split("?")[0])):
+        if key and key in route_index:
+            return route_index[key]
+    norm = _norm_route(route)
+    if norm:
+        for key, slug in route_index.items():
+            if key == norm or key.endswith(norm):
+                return slug
+    return None
+
+
+def _inject_stripe_workload_nav_panels(
+    soup: BeautifulSoup, route_index: dict[str, str]
+) -> int:
+    """Create missing Products submenu panels so workload toggles can accordion."""
+    if not soup.find(id="dashboardRoot"):
+        return 0
+    injected = 0
+    for toggle in soup.find_all(attrs={"data-testid": re.compile(r"^toggle-workload-")}):
+        panel_id = (toggle.get("aria-controls") or "").strip()
+        if not panel_id:
+            continue
+        items = _STRIPE_WORKLOAD_NAV.get(panel_id)
+        panel = soup.find(id=panel_id)
+        if panel is not None and "stitch-workload-nav-panel" in (panel.get("class") or []):
+            if not items:
+                continue
+            panel.clear()
+            panel["class"] = list(_STRIPE_WORKLOAD_PANEL_CLASSES)
+            for route, label in items:
+                if not _resolve_stripe_nav_slug(route, route_index):
+                    continue
+                panel.append(_make_stripe_workload_nav_link(soup, route, label))
+            injected += 1
+            continue
+        if panel is None:
+            if not items:
+                continue
+            panel = soup.new_tag("ul", id=panel_id)
+            panel["class"] = list(_STRIPE_WORKLOAD_PANEL_CLASSES)
+            for route, label in items:
+                if not _resolve_stripe_nav_slug(route, route_index):
+                    continue
+                panel.append(_make_stripe_workload_nav_link(soup, route, label))
+            if not panel.contents:
+                continue
+            host = toggle.find_parent("li") or toggle.parent
+            if host is None:
+                continue
+            host.append(panel)
+            injected += 1
+            continue
+        if not items:
+            continue
+        existing_routes = {
+            _norm_route(a.get("data-stitch-route") or a.get("href") or "")
+            for a in panel.find_all("a", href=True)
+        }
+        for route, label in items:
+            if _norm_route(route) in existing_routes:
+                continue
+            if not _resolve_stripe_nav_slug(route, route_index):
+                continue
+            panel.append(_make_stripe_workload_nav_link(soup, route, label))
+            injected += 1
+    return injected
+
+
+def _collapse_panel(panel) -> None:
+    """Hide an accordion panel and clear stitch visibility classes."""
+    panel["hidden"] = "true"
+    panel["aria-hidden"] = "true"
+    classes = panel.get("class") or []
+    if isinstance(classes, str):
+        classes = classes.split()
+    panel["class"] = [c for c in classes if c != "show"]
+
+
+def _stripe_slug_matches(page_slug: str, link_slug: str) -> bool:
+    """True when two crawled slugs refer to the same Stripe page."""
+    if page_slug == link_slug:
+        return True
+    prefix = "acct-1Tn1qNH9lf8tLTJg-"
+
+    def _short(slug: str) -> str:
+        return slug[len(prefix):] if slug.startswith(prefix) else slug
+
+    return _short(page_slug) == _short(link_slug)
+
+
+def _finalize_stripe_workload_nav(
+    soup: BeautifulSoup, page_slug: str | None, route_index: dict[str, str] | None = None
+) -> None:
+    """Expand only the Products submenu that contains the current page."""
+    if not page_slug or not soup.find(id="dashboardRoot"):
+        return
+    active_panel_id = ""
+    for panel in soup.find_all("ul", class_=lambda c: c and "stitch-workload-nav-panel" in c):
+        for link in panel.find_all("a", attrs={"data-stitch-page": True}):
+            link_slug = link.get("data-stitch-page") or ""
+            if _stripe_slug_matches(page_slug, link_slug):
+                link["aria-current"] = "page"
+                link["class"] = list(dict.fromkeys(
+                    (link.get("class") or []) + ["stitch-nav-active"]
+                ))
+                active_panel_id = panel.get("id") or active_panel_id
+    for toggle in soup.find_all(attrs={"data-testid": re.compile(r"^toggle-workload-")}):
+        panel_id = (toggle.get("aria-controls") or "").strip()
+        panel = soup.find(id=panel_id) if panel_id else None
+        if panel is None:
+            continue
+        expanded = panel_id == active_panel_id
+        toggle["aria-expanded"] = "true" if expanded else "false"
+        if expanded:
+            _show_panel(panel)
+        else:
+            _collapse_panel(panel)
+
+
 def _stripe_extra_route_keys(url: str, slug: str) -> list[str]:
     """Map Stripe sidebar routes to crawled page slugs when paths differ."""
     path = urlparse(url or "").path
     keys: list[str] = []
-    # Products → Payments sub-nav aliases
-    if "payments-analytics" in slug or path.endswith("/payments/analytics"):
-        keys += ["/test/payments/analytics", "/payments/analytics"]
+    # Products → Payments sub-nav aliases (acceptance is the real analytics page)
+    if "acceptance" in slug or path.endswith("/acceptance"):
+        keys += [
+            "/test/acceptance",
+            "/acceptance",
+            "/test/payments/analytics",
+            "/payments/analytics",
+        ]
     if "disputes" in slug and "payments" not in slug:
         keys += ["/test/disputes", "/disputes"]
     if "payment-links" in slug:
@@ -1218,6 +2175,42 @@ def _stripe_extra_route_keys(url: str, slug: str) -> list[str]:
         keys += ["/test/dashboard", "/dashboard"]
     if "test-payments" in slug and "analytics" not in slug and "disputes" not in slug:
         keys += ["/test/payments", "/payments"]
+    if "coupons" in slug:
+        keys += ["/test/coupons", "/coupons"]
+    if "subscriptions" in slug and "create" not in slug and "simulations" not in slug:
+        keys += ["/test/subscriptions", "/subscriptions"]
+    if "invoices" in slug and "create" not in slug:
+        keys += ["/test/invoices", "/invoices"]
+    if slug.endswith("test-billing") or path.endswith("/billing"):
+        keys += ["/test/billing", "/billing"]
+    if "billing-revenue" in slug or path.endswith("/billing/revenue"):
+        keys += ["/test/billing/revenue", "/billing/revenue"]
+    if "test-reporting" in slug or path.rstrip("/") == "/test/reporting":
+        keys += ["/test/reporting", "/reporting"]
+    if "test-reports" in slug and "hub" not in slug and "balance" not in slug:
+        keys += ["/test/reports", "/reports"]
+    if "reports-hub" in slug or path.endswith("/reports/hub"):
+        keys += ["/test/reports/hub", "/reports/hub"]
+    if "reports-balance" in slug or path.endswith("/reports/balance"):
+        keys += ["/test/reports/balance", "/reports/balance"]
+    if "reports-reconciliation" in slug or path.endswith("/reports/reconciliation"):
+        keys += ["/test/reports/reconciliation", "/reports/reconciliation"]
+    if "revenue-recognition" in slug:
+        keys += ["/test/revenue-recognition", "/revenue-recognition"]
+    if "apps-installed" in slug or path.endswith("/apps/installed"):
+        keys += ["/test/apps/installed", "/apps/installed"]
+    if "apps-created" in slug or path.endswith("/apps/created"):
+        keys += ["/test/apps/created", "/apps/created"]
+    if "tax-reporting" in slug or path.endswith("/tax/reporting"):
+        keys += ["/test/tax/reporting", "/tax/reporting"]
+    if "test-features" in slug or path.endswith("/features"):
+        keys += ["/test/features", "/features"]
+    if "sigma-queries" in slug or "/sigma/queries" in path:
+        keys += ["/test/sigma/queries", "/sigma/queries"]
+    if "test-sandboxes" in slug or path.endswith("/sandboxes"):
+        keys += ["/test/sandboxes", "/sandboxes"]
+    if "test-optimization" in slug or path.endswith("/optimization"):
+        keys += ["/test/optimization", "/optimization"]
     return [_norm_route(k) for k in keys if k]
 
 
@@ -1282,7 +2275,7 @@ def _rewrite_anchors(soup: BeautifulSoup, route_index: dict[str, str], to_root: 
             continue
         href = (a.get("href") or "").strip()
         low = href.lower()
-        if low in ("", "#") or low.startswith(_INERT_PREFIXES):
+        if low in ("", "#") or low.startswith("#") or low.startswith(_INERT_PREFIXES):
             continue
 
         slug = _resolve_anchor(href, route_index)
@@ -1344,18 +2337,32 @@ def _show_panel(panel) -> None:
 def _resolve_panel(soup: BeautifulSoup, toggle, is_class_toggle: bool):
     """Find the in-page panel a toggle controls.
 
-    Priority: `aria-controls` → element with that id (must exist in this page
-    and not be a descendant of the toggle). For class-based accordions without
-    a resolvable aria-controls, fall back to the next element sibling.
+    Priority: Metronic `.menu-sub` child → `aria-controls` → element with that id
+    (must exist in this page and not be a descendant of the toggle). For class-based
+    accordions without a resolvable aria-controls, fall back to the next element sibling.
 
     Returns None when the controlled content does not exist in the page — that
     is the signal it's a dynamic interaction trigger (dropdown/modal/popover),
     not a sidebar accordion.
     """
+    classes = set(_norm_class(toggle.get("class")).split())
+    if "menu-accordion" in classes:
+        panel = toggle.find(class_=lambda c: c and "menu-sub" in _norm_class(c).split())
+        if panel is not None:
+            return panel
+
     ac = toggle.get("aria-controls")
     if ac:
         target = soup.find(id=ac)
-        if target is not None and not _is_descendant(target, toggle):
+        if target is not None:
+            if _is_descendant(target, toggle):
+                return None
+            if target.name in ("table", "tbody", "thead"):
+                return None
+            if (target.get("role") or "").lower() in ("grid", "table", "tabpanel"):
+                return None
+            if not is_class_toggle and not toggle.has_attr("aria-expanded"):
+                return None
             return target
         # aria-controls present but target absent → dynamic content. Only a
         # class-marked accordion may fall through to sibling resolution.
@@ -1366,6 +2373,33 @@ def _resolve_panel(soup: BeautifulSoup, toggle, is_class_toggle: bool):
         if sib is not None and not _is_descendant(sib, toggle):
             return sib
     return None
+
+
+def _skip_accordion_toggle(el) -> bool:
+    """Exclude DataTables pagination, selects, and comboboxes from accordion wiring."""
+    name = getattr(el, "name", None) or ""
+    if name in ("select", "option", "textarea", "input"):
+        return True
+    role = (el.get("role") or "").lower()
+    if role in ("combobox", "listbox", "option", "gridcell"):
+        return True
+    classes = set(_norm_class(el.get("class")).split())
+    if classes & {"page-link", "select2-selection", "select2-selection__arrow"}:
+        return True
+    if el.find_parent(class_=lambda c: c and "dt-paging" in _norm_class(c)):
+        return True
+    if el.find_parent(class_=lambda c: c and "select2" in _norm_class(c)):
+        return True
+    return False
+
+
+def _ensure_panel_id(panel, prefix: str = "stitch-acc") -> str:
+    pid = (panel.get("id") or "").strip()
+    if pid:
+        return pid
+    pid = f"{prefix}-{id(panel) & 0xFFFFFF:06x}"
+    panel["id"] = pid
+    return pid
 
 
 def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) -> int:
@@ -1381,10 +2415,19 @@ def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) 
     for el in soup.find_all(True):
         if id(el) in used:
             continue
+        if _skip_accordion_toggle(el):
+            continue
         classes = set(_norm_class(el.get("class")).split())
         is_class_toggle = bool(classes & _ACCORDION_CLASS_TOKENS)
-        has_aria = el.has_attr("aria-controls") or el.has_attr("aria-expanded")
+        has_aria = (
+            el.has_attr("aria-expanded")
+            and el.has_attr("aria-controls")
+            and not _skip_accordion_toggle(el)
+        )
         if not (is_class_toggle or has_aria):
+            continue
+        testid = el.get("data-testid") or ""
+        if testid.startswith("toggle-workload-"):
             continue
 
         panel = _resolve_panel(soup, el, is_class_toggle)
@@ -1394,7 +2437,8 @@ def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) 
             continue  # already covered by an outer toggle for this panel
 
         wired_panels.add(id(panel))
-        el["data-stitch-accordion"] = panel.get("id") or ""
+        panel_id = _ensure_panel_id(panel)
+        el["data-stitch-accordion"] = panel_id
         used.add(id(el))
         count += 1
 
@@ -1402,10 +2446,22 @@ def _wire_accordions(soup: BeautifulSoup, used: set[int], expand_default: bool) 
             el["class"] = [c for c in (el.get("class") or []) if c != "collapsed"]
         if expand_default:
             el["aria-expanded"] = "true"
+            if "menu-accordion" in classes:
+                el_classes = list(el.get("class") or [])
+                if "show" not in el_classes:
+                    el_classes.append("show")
+                el["class"] = el_classes
             _show_panel(panel)
         elif el.has_attr("aria-expanded"):
             el["aria-expanded"] = "false"
     return count
+
+
+def _unwire_stripe_workload_accordions(soup: BeautifulSoup) -> None:
+    """Products workload headers keep a fixed expand state per page — no accordion toggle."""
+    for toggle in soup.find_all(attrs={"data-testid": re.compile(r"^toggle-workload-")}):
+        if toggle.has_attr("data-stitch-accordion"):
+            del toggle["data-stitch-accordion"]
 
 
 _OVERSIZED_TRIGGER_IDS = frozenset({
@@ -1508,6 +2564,13 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
     aria-label, text, name, role, type) and assign each interaction to the best
     not-yet-used element in document order.
     """
+    outer = trigger.get("outer_html") or trigger.get("outerHTML") or ""
+    testid = _testid_from_trigger_outer(outer)
+    if testid:
+        el = soup.find(attrs={"data-testid": testid})
+        if el is not None and id(el) not in used and not _is_oversized_interaction_trigger(el):
+            return el
+
     for key in ("crawl_selector", "selector", "css_selector"):
         sel = (trigger.get(key) or "").strip()
         if not sel or sel.startswith("/"):
@@ -1713,6 +2776,51 @@ def _rewrite_fragment_anchors(html: str, route_index: dict[str, str], to_root: s
     return str(frag)
 
 
+def _testid_from_trigger_outer(outer: str) -> str | None:
+    """Extract data-testid from a saved trigger outerHTML (Stripe/React)."""
+    m = re.search(r'data-testid=(["\'])([^"\']+)\1', outer or "")
+    return m.group(2) if m else None
+
+
+def _sanitize_stripe_dropdown_html(html: str) -> str:
+    """Clean Stripe popover fragments before injection into the static clone."""
+    if not html or ("role=\"menu\"" not in html and "account-switcher" not in html):
+        return html
+    frag = BeautifulSoup(html, "html.parser")
+    for node in frag.find_all(style=True):
+        style = node.get("style") or ""
+        if not re.search(r"position\s*:\s*fixed|transform\s*:", style, flags=re.I):
+            continue
+        cleaned = re.sub(r"position\s*:\s*fixed\s*;?", "", style, flags=re.I)
+        cleaned = re.sub(r"transform\s*:\s*[^;]+;?", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"(top|left|right|bottom)\s*:\s*[^;]+;?", "", cleaned, flags=re.I)
+        cleaned = cleaned.strip(" ;")
+        if cleaned:
+            node["style"] = cleaned
+        else:
+            del node["style"]
+    for flyout in frag.find_all(attrs={"data-testid": "account-switcher-workspace"}):
+        flyout.decompose()
+    for item in frag.find_all(attrs={"role": "menuitem"}):
+        item["style"] = "transform:none;position:static;width:100%;"
+        if item.has_attr("title"):
+            del item["title"]
+    for btn in frag.find_all(attrs={"data-testid": "exit-legacy-testmode-button"}):
+        btn["style"] = "transform:none;position:static;display:flex;width:100%;"
+        wrap = btn.find_parent("div", class_=lambda c: c and "as-bm" in " ".join(c if isinstance(c, list) else [c]))
+        if wrap is not None:
+            wrap["style"] = "position:static;display:block;width:100%;transform:none;"
+    for menu in frag.find_all(attrs={"role": "menu"}):
+        style = menu.get("style") or ""
+        if style:
+            cleaned = re.sub(r"max-height\s*:\s*[^;]+;?", "", style, flags=re.I).strip(" ;")
+            if cleaned:
+                menu["style"] = cleaned
+            else:
+                del menu["style"]
+    return str(frag)
+
+
 def _interaction_config_from_recon(
     recon: dict,
     *,
@@ -1725,6 +2833,7 @@ def _interaction_config_from_recon(
     ui_html = recon.get("ui_html", "") or ""
     backdrop_html = recon.get("backdrop_html", "") or ""
     ui_css = recon.get("ui_css", "") or ""
+    ui_html = _sanitize_stripe_dropdown_html(ui_html)
     return {
         "type": itype or recon.get("interaction_type", "unknown") or "unknown",
         "parentSelector": loc.get("parentSelector", "") or "",
@@ -1802,7 +2911,23 @@ def _wire_from_discovered(
             "class_name": entry.get("className", ""),
             "text": entry.get("label", ""),
         }
-        el = _find_trigger(soup, trigger_dict, used)
+        match_trigger = trigger_dict
+        if llm_type in ("interaction", "tab_switch"):
+            item = inter_idx.get(selector)
+            if item:
+                rel_path = page_dir / item.get(
+                    "relationship_file",
+                    f"{item.get('interaction_path', '')}/relationship.json",
+                )
+                if rel_path.exists():
+                    try:
+                        rel = json.loads(rel_path.read_text(encoding="utf-8"))
+                        rel_trigger = _normalize_trigger(rel.get("trigger", {}) or {})
+                        if rel_trigger:
+                            match_trigger = rel_trigger
+                    except Exception:
+                        pass
+        el = _find_trigger(soup, match_trigger, used)
         if el is None:
             continue
 
@@ -2022,11 +3147,41 @@ def _wire_tabs(
     return tabs_configs
 
 
+def _is_likwid_flows_slug(slug: str) -> bool:
+    if slug == "flow-ai-customers-list":
+        return True
+    if slug.startswith("flow-ai-orders-orders-list"):
+        return True
+    if slug == "flow-ai-orders-sales-order-create":
+        return True
+    if slug in ("flow-ai-vendors-add-vendor", "flow-ai-vendors-vendor-list"):
+        return True
+    if slug == "flow-ai-inventory-stock-list":
+        return True
+    return False
+
+
+BROWSER_CONTROL_HELPER_URL = (
+    "https://api.insurgeai.com/static/browser-control-helper.js"
+)
+
+
+def _inject_browser_control_helper(soup: BeautifulSoup) -> None:
+    head = soup.head or soup.body or soup
+    for tag in head.find_all("script", src=True):
+        if BROWSER_CONTROL_HELPER_URL in (tag.get("src") or ""):
+            return
+    head.append(soup.new_tag("script", src=BROWSER_CONTROL_HELPER_URL))
+
+
 def _inject_runtime(
     soup: BeautifulSoup,
     to_root: str,
     configs: dict[str, dict] | None = None,
     tabs_configs: dict[str, dict] | None = None,
+    *,
+    slug: str = "",
+    likwid_flows: dict | None = None,
 ) -> None:
     body = soup.body or soup
     if configs:
@@ -2041,7 +3196,32 @@ def _inject_runtime(
         tab_tag = soup.new_tag("script")
         tab_tag.string = f"window.__STITCH_TABS__ = {data};"
         body.append(tab_tag)
+    if likwid_flows and _is_likwid_flows_slug(slug):
+        data = json.dumps(likwid_flows, ensure_ascii=True).replace("</", "<\\/")
+        flow_tag = soup.new_tag("script")
+        flow_tag.string = f"window.__LIKWID_FLOWS__ = {data};"
+        body.append(flow_tag)
+        body.append(soup.new_tag("script", src=f"{to_root}likwid_flows.js"))
+    body.append(soup.new_tag("script", src=f"{to_root}replica_forms.js"))
     body.append(soup.new_tag("script", src=f"{to_root}runtime.js"))
+
+
+def _neutralize_likwid_post_forms(soup: BeautifulSoup) -> int:
+    """Prevent POST form submits in the static clone (server returns 501).
+
+    Likwid uses Django POST forms for lead stages, employee toggles, etc.
+    Convert stage submit buttons to type=button so click handlers work.
+    """
+    fixed = 0
+    for form in soup.find_all("form"):
+        method = (form.get("method") or "get").lower()
+        if method != "post":
+            continue
+        for btn in form.find_all("button"):
+            if "ld-stage" in _norm_class(btn.get("class")):
+                btn["type"] = "button"
+                fixed += 1
+    return fixed
 
 
 def _strip_cross_origin_iframes(soup: BeautifulSoup) -> int:
@@ -2198,13 +3378,20 @@ def _process_html(
     navigations: list[dict] | None = None,
     discovered: list[dict] | None = None,
     expand_sidebars: bool = True,
+    likwid_flows: dict | None = None,
+    app_name: str = "",
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
+    stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
     page_links = _rewrite_anchors(soup, route_index, to_root)
     used: set[int] = set()
     # Accordions first: claim sidebar toggles so interaction wiring never
     # rebinds them to a snapshot, and rewritten submenu anchors stay reachable.
     accordions = _wire_accordions(soup, used, expand_sidebars)
+    _unwire_stripe_workload_accordions(soup)
+    _finalize_stripe_workload_nav(
+        soup, page_dir.name if page_dir is not None else None, route_index
+    )
 
     if valid_slugs is not None and page_dir is not None:
         _wire_flyout_close(soup, page_dir.name, valid_slugs, to_root, used)
@@ -2256,7 +3443,19 @@ def _process_html(
     stripe_layers = _prepare_stripe_stitched_dom(soup)
     if stripe_layers:
         print(f"[STITCH] Removed {stripe_layers} empty sail-layer shell(s) on {page_dir.name if page_dir else '?'}")
-    _inject_runtime(soup, to_root, configs, tabs_configs)
+    likwid_forms = _neutralize_likwid_post_forms(soup)
+    if likwid_forms:
+        print(f"[STITCH] Neutralized {likwid_forms} Likwid POST stage button(s) on {page_dir.name if page_dir else '?'}")
+    if app_name == "likwid":
+        _inject_browser_control_helper(soup)
+    _inject_runtime(
+        soup,
+        to_root,
+        configs,
+        tabs_configs,
+        slug=page_dir.name if page_dir is not None else "",
+        likwid_flows=likwid_flows,
+    )
     return _fix_svg_viewbox_html(str(soup)), page_links, inter_manifest, accordions, fixes
 
 
@@ -2270,14 +3469,84 @@ def _load_json_list(path: Path) -> list[dict]:
         return []
 
 
+def _rebuild_interactions_registry(page_dir: Path) -> list[dict]:
+    """Rebuild interactions.json from per-interaction relationship.json files.
+
+    Crawl passes can crash after saving captures but before writing the registry;
+    stitching still needs the join keys for discovered.json wiring.
+    """
+    interactions_dir = page_dir / "interactions"
+    if not interactions_dir.is_dir():
+        return []
+    registry: list[dict] = []
+    for sub in sorted(interactions_dir.iterdir()):
+        if not sub.is_dir() or not (sub / "relationship.json").is_file():
+            continue
+        try:
+            rel = json.loads((sub / "relationship.json").read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        trigger = rel.get("trigger", {}) or {}
+        selector = (
+            trigger.get("crawl_selector")
+            or trigger.get("selector")
+            or ""
+        ).strip()
+        label = (
+            rel.get("trigger_label")
+            or trigger.get("text")
+            or sub.name
+        )
+        rel_path = f"interactions/{sub.name}"
+        registry.append(
+            {
+                "label": label,
+                "selector": selector,
+                "interaction_path": rel_path,
+                "relationship_file": f"{rel_path}/relationship.json",
+            }
+        )
+    return registry
+
+
+def _repair_interactions_registry(page_dir: Path) -> None:
+    """Persist a merged interactions.json when captures exist but registry is missing."""
+    rebuilt = _rebuild_interactions_registry(page_dir)
+    if not rebuilt:
+        return
+    interactions_dir = page_dir / "interactions"
+    interactions_dir.mkdir(parents=True, exist_ok=True)
+    f = interactions_dir / "interactions.json"
+    existing: list[dict] = []
+    if f.exists():
+        try:
+            existing = json.loads(f.read_text(encoding="utf-8")) or []
+        except Exception:
+            existing = []
+    if not existing:
+        merged = rebuilt
+    else:
+        paths = {item.get("interaction_path") for item in existing}
+        merged = list(existing)
+        for item in rebuilt:
+            if item.get("interaction_path") not in paths:
+                merged.append(item)
+    if len(merged) > len(existing):
+        f.write_text(json.dumps(merged, indent=2), encoding="utf-8")
+
+
 def _load_interactions(page_dir: Path) -> list[dict]:
+    _repair_interactions_registry(page_dir)
     f = page_dir / "interactions" / "interactions.json"
     if not f.exists():
-        return []
+        return _rebuild_interactions_registry(page_dir)
     try:
-        return json.loads(f.read_text(encoding="utf-8"))
+        registry = json.loads(f.read_text(encoding="utf-8")) or []
     except Exception:
-        return []
+        registry = []
+    if registry:
+        return registry
+    return _rebuild_interactions_registry(page_dir)
 
 
 _FONT_EXTS = {".woff", ".woff2", ".ttf", ".eot", ".otf"}
@@ -2295,7 +3564,55 @@ _CDN_CSS_MARKERS = (
     "hubspot.com",
     "b.stripecdn.com",
     "dashboard.stripe.com",
+    "likwidai.com",
 )
+
+_CDN_IMAGE_MARKERS = (
+    "likwidai.com/static/",
+)
+
+def _maybe_gunzip(data: bytes) -> bytes:
+    if len(data) >= 2 and data[0] == 0x1F and data[1] == 0x8B:
+        return gzip.decompress(data)
+    return data
+
+
+def _write_downloaded_asset(dest: Path, resp) -> None:
+    """Save a downloaded asset, decompressing gzip if the CDN returned compressed bytes."""
+    raw = resp.read()
+    encoding = (resp.headers.get("Content-Encoding") or "").lower()
+    if "gzip" in encoding:
+        raw = gzip.decompress(raw)
+    else:
+        raw = _maybe_gunzip(raw)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(raw)
+
+
+def _ensure_plain_asset_file(dest: Path) -> None:
+    """Fix assets saved as gzip blobs without Content-Encoding (Likwid CDN does this)."""
+    if not dest.is_file():
+        return
+    data = dest.read_bytes()
+    plain = _maybe_gunzip(data)
+    if plain is not data:
+        dest.write_bytes(plain)
+
+
+def _urlopen_asset(req: urllib.request.Request, timeout: int = 20):
+    """Download CDN assets; fall back to unverified SSL on macOS Python installs."""
+    try:
+        import certifi
+
+        ctx = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx = ssl.create_default_context()
+    try:
+        return urllib.request.urlopen(req, timeout=timeout, context=ctx)
+    except ssl.SSLError:
+        return urllib.request.urlopen(
+            req, timeout=timeout, context=ssl._create_unverified_context()
+        )
 
 
 def _fix_escaped_attr_quotes(html: str) -> str:
@@ -2313,7 +3630,12 @@ def _fix_escaped_attr_quotes(html: str) -> str:
     return re.sub(r"<link\b[^>]*>", _fix_link_tag, html, flags=re.IGNORECASE)
 
 
-def _localize_hubspot_css(html: str, css_dir: Path, to_root: str) -> str:
+def _localize_hubspot_css(
+    html: str,
+    css_dir: Path,
+    to_root: str,
+    css_cdn_dirs: dict[str, str] | None = None,
+) -> str:
     """Download CDN CSS files and rewrite <link> tags to local paths.
 
     External CSS from HubSpot / Stripe CDNs can fail from localhost (referrer
@@ -2337,19 +3659,23 @@ def _localize_hubspot_css(html: str, css_dir: Path, to_root: str) -> str:
             stem = re.sub(r"[^a-zA-Z0-9_\-]", "_", path_part.lstrip("/"))[:80]
             local_name = stem + ".css"
             dest = css_dir / local_name
+            if dest.exists():
+                _ensure_plain_asset_file(dest)
             if not dest.exists():
                 try:
                     req = urllib.request.Request(
                         base_url,
-                        headers={"User-Agent": "Mozilla/5.0"},
+                        headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "identity"},
                     )
-                    with urllib.request.urlopen(req, timeout=20) as resp:
-                        dest.write_bytes(resp.read())
+                    with _urlopen_asset(req, timeout=20) as resp:
+                        _write_downloaded_asset(dest, resp)
                     print(f"[CSS] Downloaded {local_name}")
                 except Exception as exc:
                     print(f"[CSS] Failed {base_url}: {exc}")
                     return tag
             seen[base_url] = local_name
+            if css_cdn_dirs is not None:
+                css_cdn_dirs[local_name] = base_url.rsplit("/", 1)[0] + "/"
 
         local_href = f"{to_root}assets/css/{local_name}"
         new_tag = re.sub(r'\bhref=(["\'])[^"\']+\1', f'href="{local_href}"', tag)
@@ -2389,14 +3715,16 @@ def _localize_fonts(html: str, fonts_dir: Path, to_root: str) -> str:
             stem = re.sub(r"[^a-zA-Z0-9_\-]", "_", Path(urlparse(raw_url).path).stem)[:48]
             local_name = f"{stem}{suffix}"
             dest = fonts_dir / local_name
+            if dest.exists():
+                _ensure_plain_asset_file(dest)
             if not dest.exists():
                 try:
                     req = urllib.request.Request(
                         raw_url,
-                        headers={"User-Agent": "Mozilla/5.0"},
+                        headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "identity"},
                     )
-                    with urllib.request.urlopen(req, timeout=15) as resp:
-                        dest.write_bytes(resp.read())
+                    with _urlopen_asset(req, timeout=15) as resp:
+                        _write_downloaded_asset(dest, resp)
                     print(f"[FONTS] Downloaded {local_name}")
                 except Exception as exc:
                     print(f"[FONTS] Failed {raw_url}: {exc}")
@@ -2420,6 +3748,86 @@ def _localize_fonts(html: str, fonts_dir: Path, to_root: str) -> str:
     )
 
 
+def _localize_remote_images(html: str, images_dir: Path, to_root: str) -> str:
+    """Download remote logo/image URLs and rewrite <img src> to local paths."""
+    seen: dict[str, str] = {}
+
+    def _rewrite_img(m: re.Match) -> str:
+        tag = m.group(0)
+        src_m = re.search(r'\bsrc=(["\'])(https?://[^"\']+)\1', tag, re.IGNORECASE)
+        if not src_m:
+            return tag
+        url = src_m.group(2)
+        if not any(marker in url for marker in _CDN_IMAGE_MARKERS):
+            return tag
+        base_url = url.split("?")[0]
+        if base_url in seen:
+            local_name = seen[base_url]
+        else:
+            path_part = urlparse(base_url).path
+            stem = re.sub(r"[^a-zA-Z0-9_\-]", "_", path_part.lstrip("/"))[:80]
+            suffix = Path(path_part).suffix.lower() or ".png"
+            local_name = stem + suffix
+            dest = images_dir / local_name
+            if dest.exists():
+                _ensure_plain_asset_file(dest)
+            if not dest.exists():
+                try:
+                    req = urllib.request.Request(
+                        base_url,
+                        headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "identity"},
+                    )
+                    with _urlopen_asset(req, timeout=20) as resp:
+                        _write_downloaded_asset(dest, resp)
+                    print(f"[IMG] Downloaded {local_name}")
+                except Exception as exc:
+                    print(f"[IMG] Failed {base_url}: {exc}")
+                    return tag
+            seen[base_url] = local_name
+
+        local_src = f"{to_root}assets/images/{local_name}"
+        return re.sub(r'\bsrc=(["\'])[^"\']+\1', f'src="{local_src}"', tag, count=1)
+
+    return re.sub(r"<img\b[^>]*>", _rewrite_img, html, flags=re.IGNORECASE)
+
+
+_CSS_REL_FONT_URL = re.compile(
+    r'url\((["\']?)(?!data:)(fonts/[^)\'"]+)\1\)',
+    re.IGNORECASE,
+)
+
+
+def _localize_css_bundle_fonts(css_dir: Path, css_cdn_dirs: dict[str, str]) -> None:
+    """Download icon/web fonts referenced as url(fonts/...) inside localized CSS bundles."""
+    for local_name, cdn_dir in css_cdn_dirs.items():
+        css_path = css_dir / local_name
+        if not css_path.is_file():
+            continue
+        seen_paths: set[str] = set()
+        text = css_path.read_text(encoding="utf-8", errors="ignore")
+        for m in _CSS_REL_FONT_URL.finditer(text):
+            ref = m.group(2)
+            path_only = ref.split("?")[0].split("#")[0]
+            if path_only in seen_paths:
+                continue
+            seen_paths.add(path_only)
+            dest = css_dir / path_only
+            if dest.exists():
+                _ensure_plain_asset_file(dest)
+                continue
+            remote = cdn_dir + path_only
+            try:
+                req = urllib.request.Request(
+                    remote,
+                    headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "identity"},
+                )
+                with _urlopen_asset(req, timeout=20) as resp:
+                    _write_downloaded_asset(dest, resp)
+                print(f"[FONTS] Downloaded {path_only}")
+            except Exception as exc:
+                print(f"[FONTS] Failed {remote}: {exc}")
+
+
 def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     crawl_dir = get_crawl_dir(app_name)
     if not crawl_dir.is_dir():
@@ -2440,10 +3848,33 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
 
     (stitched_dir / "runtime.js").write_text(RUNTIME_JS, encoding="utf-8")
 
+    flow_meta = get_metadata_dir(app_name) / "flow_replays.json"
+    likwid_flows = None
+    if app_name == "likwid" and flow_meta.is_file():
+        try:
+            likwid_flows = json.loads(flow_meta.read_text(encoding="utf-8"))
+        except Exception:
+            likwid_flows = None
+    flows_js = Path(__file__).resolve().parent / "src" / "runtime" / "likwid_flows.js"
+    if likwid_flows and flows_js.is_file():
+        (stitched_dir / "likwid_flows.js").write_text(
+            flows_js.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        print("[STITCH] Likwid flows layer enabled")
+
+    replica_js = Path(__file__).resolve().parent / "src" / "runtime" / "replica_forms.js"
+    if replica_js.is_file():
+        (stitched_dir / "replica_forms.js").write_text(
+            replica_js.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+
     fonts_dir = stitched_dir / "assets" / "fonts"
     fonts_dir.mkdir(parents=True, exist_ok=True)
     css_dir = stitched_dir / "assets" / "css"
     css_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = stitched_dir / "assets" / "images"
+    images_dir.mkdir(parents=True, exist_ok=True)
+    css_cdn_dirs: dict[str, str] = {}
 
     navigation: dict[str, dict] = {}
     pages_done = 0
@@ -2474,9 +3905,12 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             navigations=navigations,
             discovered=discovered,
             expand_sidebars=expand_sidebars,
+            likwid_flows=likwid_flows,
+            app_name=app_name,
         )
-        new_html = _localize_hubspot_css(new_html, css_dir, to_root="../")
+        new_html = _localize_hubspot_css(new_html, css_dir, to_root="../", css_cdn_dirs=css_cdn_dirs)
         new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
+        new_html = _localize_remote_images(new_html, images_dir, to_root="../")
         (out_dir / "page.html").write_text(new_html, encoding="utf-8")
         pages_done += 1
         accordions_total += accordions
@@ -2502,9 +3936,12 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 valid_slugs=valid_slugs,
                 navigations=navigations,
                 expand_sidebars=expand_sidebars,
+                likwid_flows=likwid_flows,
+                app_name=app_name,
             )
-            new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../")
+            new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../", css_cdn_dirs=css_cdn_dirs)
             new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")
+            new_ihtml = _localize_remote_images(new_ihtml, images_dir, to_root="../../../")
             pointer_events_fixed += ifixes[0]
             controls_restored += ifixes[1]
             dst.write_text(new_ihtml, encoding="utf-8")
@@ -2536,10 +3973,18 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
     )
     (stitched_dir / "404.html").write_text(FALLBACK_404, encoding="utf-8")
 
-    entry_slug = _resolve_entry(navigation, valid_slugs, stitched_dir=stitched_dir)
+    stitch_cfg = get_app_config(app_name)
+    entry_override = stitch_cfg.get("stitch_entry_slug")
+    entry_slug = (
+        entry_override
+        if entry_override and entry_override in valid_slugs
+        else _resolve_entry(navigation, valid_slugs, stitched_dir=stitched_dir)
+    )
     if entry_slug:
         _write_entry_redirect(stitched_dir, entry_slug)
         print(f"[STITCH] Entry page: {entry_slug}")
+
+    _localize_css_bundle_fonts(css_dir, css_cdn_dirs)
 
     print(
         f"[STITCH] Interaction fixes: {pointer_events_fixed} pointer-events:none removed, "

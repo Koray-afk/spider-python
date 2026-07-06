@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Edit",
+    "tagName": "button",
+    "id": "editDrawerBtn",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "outerHTML": "<button type=\"button\" class=\"btn btn-sm btn-light\" id=\"editDrawerBtn\" data-crawl-id=\"1\">\n                                    <i class=\"ki-duotone ki-pencil fs-5\"><span class=\"path1\"></span><span class=\"path2\"></span></i> Edit\n                                </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

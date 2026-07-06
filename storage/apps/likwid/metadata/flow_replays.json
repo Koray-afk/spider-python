@@ -1,0 +1,14 @@
+{
+  "toasts": {
+    "add_customer": "{{cust_comname}} added successfully.",
+    "add_order": "Order {{order_id}} created successfully.",
+    "add_sale_order": "Sale order created successfully.",
+    "add_vendor": "{{vend_comname}} added successfully.",
+    "add_item": "{{item_name}} added successfully.",
+    "apply_filters": "Filters applied."
+  },
+  "redirects": {
+    "after_vendor": "../flow-ai-vendors-vendor-list/page.html",
+    "after_sale_order": "../flow-ai-orders-orders-list/page.html"
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "label": "Create PO",
+    "id": "",
+    "className": "btn btn-sm btn-dark ai-procure-btn",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Create PO",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Run PR",
+    "id": "predictPIBtn",
+    "className": "btn btn-dark",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Run PR",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Bulk POs",
+    "id": "pcSendPoBtn",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Bulk POs",
+    "ax_role": "button",
+    "ax_states": [
+      "disabled"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Procurement Autopilot",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Procurement Autopilot",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cancel",
+    "id": "apDrawerCancelBtn",
+    "className": "btn btn-light btn-sm flex-grow-1",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Cancel",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Send PO",
+    "id": "apDrawerCreateBtn",
+    "className": "btn btn-dark btn-sm flex-grow-1",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Send PO",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

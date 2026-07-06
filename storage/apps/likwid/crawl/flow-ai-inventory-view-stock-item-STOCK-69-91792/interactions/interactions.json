@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Packaging Material Store",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/006-packaging-material-store",
+    "relationship_file": "interactions/006-packaging-material-store/relationship.json"
+  },
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/007-interaction",
+    "relationship_file": "interactions/007-interaction/relationship.json"
+  },
+  {
+    "label": "Why is stock leaving?",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/008-why-is-stock-leaving",
+    "relationship_file": "interactions/008-why-is-stock-leaving/relationship.json"
+  },
+  {
+    "label": "Cost of Goods Sold (5001) \u2014 default",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/009-cost-of-goods-sold-5001-default",
+    "relationship_file": "interactions/009-cost-of-goods-sold-5001-default/relationship.json"
+  },
+  {
+    "label": "MacAlive Ds - 200ml - Cartons ( Box )",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/010-macalive-ds-200ml-cartons-box",
+    "relationship_file": "interactions/010-macalive-ds-200ml-cartons-box/relationship.json"
+  }
+]

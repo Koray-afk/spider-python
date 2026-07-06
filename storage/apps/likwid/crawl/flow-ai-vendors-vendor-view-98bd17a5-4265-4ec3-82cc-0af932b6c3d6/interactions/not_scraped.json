@@ -1,0 +1,61 @@
+[
+  {
+    "label": "Add the first item \u2192",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Map New Item",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Map Item",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Edit Vendor",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Save Changes",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"7\\\"]\").first\n    - locator resolved to <button type=\"submit\" data-crawl-id=\"7\" name=\"update_vendor\" class=\"btn btn-dark btn-sm flex-grow-1\">Save Changes</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Save Mapping",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"9\\\"]\").first\n    - locator resolved to <button type=\"submit\" data-crawl-id=\"9\" name=\"add_vendor_item\" class=\"btn btn-dark btn-sm flex-grow-1\">Save Mapping</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"8\\\"]\").first\n    - locator resolved to <button type=\"button\" id=\"vvEditCancel\" data-crawl-id=\"8\" class=\"btn btn-light btn-sm\">Cancel</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  }
+]

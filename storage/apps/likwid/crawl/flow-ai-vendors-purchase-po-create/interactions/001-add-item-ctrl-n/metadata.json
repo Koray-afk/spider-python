@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add item (Ctrl + n)",
+  "triggerId": "add-more",
+  "triggerClass": "btn btn-link py-1",
+  "selector": "[data-crawl-id=\"2\"]",
+  "interactionType": "unknown",
+  "sourcePage": "flow-ai-vendors-purchase-po-create",
+  "sourceUrl": "https://likwidai.com/flow-ai/vendors/purchase-po/create",
+  "beforeUrl": "https://likwidai.com/flow-ai/vendors/purchase-po/create",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/flow-ai/vendors/purchase-po/create",
+  "title": "Likwid.Ai",
+  "resultPagePath": "flow-ai-vendors-purchase-po-create/interactions/001-add-item-ctrl-n",
+  "captured_at": "2026-07-03T08:11:02.136670+00:00"
+}

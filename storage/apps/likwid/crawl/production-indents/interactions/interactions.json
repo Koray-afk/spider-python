@@ -1,0 +1,20 @@
+[
+  {
+    "label": "All Status",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-all-status",
+    "relationship_file": "interactions/002-all-status/relationship.json"
+  },
+  {
+    "label": "All",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-all",
+    "relationship_file": "interactions/003-all/relationship.json"
+  },
+  {
+    "label": "All Orders",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-all-orders",
+    "relationship_file": "interactions/004-all-orders/relationship.json"
+  }
+]

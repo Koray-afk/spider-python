@@ -1,0 +1,30 @@
+[
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\u2014 Select Entry Type \u2014",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\u2014 Select Account \u2014",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "Save as Draft",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  }
+]

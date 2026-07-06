@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Edit",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Edit Customer",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Save Changes",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"4\\\"]\").first\n    - locator resolved to <button type=\"submit\" data-crawl-id=\"4\" class=\"btn btn-dark btn-sm flex-grow-1\">Save Changes</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"5\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"5\" id=\"cvDrawerCancel\" class=\"btn btn-light btn-sm\">Cancel</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  }
+]

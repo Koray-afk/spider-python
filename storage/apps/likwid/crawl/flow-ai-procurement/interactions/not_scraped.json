@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Create PO",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Run PR",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Bulk POs",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Cancel",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"6\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"6\" id=\"apDrawerCancelBtn\" class=\"btn btn-light btn-sm flex-grow-1\">Cancel</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Send PO",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"7\\\"]\").first\n    - locator resolved to <button type=\"button\" data-crawl-id=\"7\" id=\"apDrawerCreateBtn\" class=\"btn btn-dark btn-sm flex-grow-1\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  }
+]

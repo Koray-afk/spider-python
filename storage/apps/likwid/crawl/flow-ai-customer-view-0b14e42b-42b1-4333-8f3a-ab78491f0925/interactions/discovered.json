@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Edit",
+    "id": "editDrawerBtn",
+    "className": "btn btn-sm btn-light",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Edit",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Edit Customer",
+    "id": "editDrawerBtn2",
+    "className": "btn btn-sm btn-light w-100 text-start",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Edit Customer",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save Changes",
+    "id": "",
+    "className": "btn btn-dark btn-sm flex-grow-1",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Save Changes",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cancel",
+    "id": "cvDrawerCancel",
+    "className": "btn btn-light btn-sm",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Cancel",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

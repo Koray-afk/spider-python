@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Edit Customer",
+    "tagName": "button",
+    "id": "editDrawerBtn2",
+    "className": "btn btn-sm btn-light w-100 text-start",
+    "selector": "[data-crawl-id=\"2\"]",
+    "outerHTML": "<button type=\"button\" class=\"btn btn-sm btn-light w-100 text-start\" id=\"editDrawerBtn2\" data-crawl-id=\"2\">\n                                                        <i class=\"ki-duotone ki-pencil fs-5 me-2\"><span class=\"path1\"></span><span class=\"path2\"></span></i>Edit Customer\n                                                    </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

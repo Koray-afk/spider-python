@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Categories",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-categories",
+    "relationship_file": "interactions/001-categories/relationship.json"
+  },
+  {
+    "label": "Vendors",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/002-vendors",
+    "relationship_file": "interactions/002-vendors/relationship.json"
+  }
+]

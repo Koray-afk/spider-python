@@ -1,0 +1,106 @@
+[
+  {
+    "label": "Add Row",
+    "id": "add-item-row",
+    "className": "btn btn-sm btn-light-primary",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Add Row",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Draft",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "ax_name": "Draft",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "---------",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "ax_name": "---------",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save Bill",
+    "id": "",
+    "className": "btn btn-primary px-8",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Save Bill",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "\u2014 Select Vendor \u2014",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "span",
+    "ax_name": "\u2014 Select Vendor \u2014",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u2014 Select Purchase Order \u2014",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "ax_name": "\u2014 Select Purchase Order \u2014",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Intrastate (CGST + SGST)",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "Intrastate (CGST + SGST)",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u2014 Select Inv Item \u2014",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid item-select",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "\u2014 Select Inv Item \u2014",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  }
+]

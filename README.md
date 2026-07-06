@@ -144,6 +144,16 @@ python main.py serve zoho --watch          # auto-refresh when files change
 python main.py status zoho
 python main.py coverage zoho
 python main.py clean zoho
+python main.py html-clean zoho
+python main.py analyze zoho
+python main.py semantic_tree zoho
+python main.py component_tree zoho
+python main.py catalog zoho
+python main.py workflows zoho
+python main.py modules zoho
+python main.py preview zoho
+python main.py capture-interactions likwid --url https://likwidai.com/home/v2/
+python main.py api
 ```
 
 **Need help?**

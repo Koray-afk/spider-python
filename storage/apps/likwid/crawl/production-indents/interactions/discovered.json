@@ -1,0 +1,166 @@
+[
+  {
+    "label": "Actions",
+    "id": "",
+    "className": "btn btn-sm btn-light btn-active-light-primary",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Actions",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Status",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-sm form-select-solid w-150px",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "span",
+    "ax_name": "All Status",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-sm form-select-solid w-120px",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "span",
+    "ax_name": "All",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Orders",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-sm form-select-solid w-180px",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "span",
+    "ax_name": "All Orders",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Status",
+    "id": "select2-status-fr-container",
+    "className": "select2-selection__rendered",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "source": "accessibility",
+    "ax_role": "textbox",
+    "ax_name": "All Status",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All Orders",
+    "id": "select2-order-2c-container",
+    "className": "select2-selection__rendered",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "span",
+    "source": "accessibility",
+    "ax_role": "textbox",
+    "ax_name": "All Orders",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Indent Code",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "ax_name": "Indent Code",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Order",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "ax_name": "Order",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Product",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "ax_name": "Product",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Order Qty",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "Order Qty",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Free Stock",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "Free Stock",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Indent Qty",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "Indent Qty",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Created",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Created",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Status",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "ax_name": "Status",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Expired",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "span",
+    "ax_name": "Expired",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

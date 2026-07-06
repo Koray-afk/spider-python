@@ -1,0 +1,132 @@
+[
+  {
+    "label": "Quote Overview",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "ax_name": "Quote Overview",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quotation-Code",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "Quotation-Code",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Customer/Lead",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "Customer/Lead",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Date",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Date",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quote Value",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "span",
+    "ax_name": "Quote Value",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Update",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "ax_name": "Update",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Action",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "span",
+    "ax_name": "Action",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

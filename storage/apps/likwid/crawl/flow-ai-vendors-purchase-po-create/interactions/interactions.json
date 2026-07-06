@@ -1,0 +1,8 @@
+[
+  {
+    "label": "Add item (Ctrl + n)",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-add-item-ctrl-n",
+    "relationship_file": "interactions/001-add-item-ctrl-n/relationship.json"
+  }
+]

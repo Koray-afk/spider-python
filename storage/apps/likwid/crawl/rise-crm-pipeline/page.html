@@ -1,0 +1,2442 @@
+<!DOCTYPE html><html lang="en" data-bs-theme="light"><!--begin::Head--><head>
+		<title>Likwid.Ai</title>
+
+
+		 <!-- Google tag (gtag.js) -->
+		 
+		 
+
+
+		<link rel="shortcut icon" href="https://likwidai.com/static/images/favicon-32x32.png">
+  		<link rel="shortcut icon" href="https://likwidai.com/static/images/apple-touch-icon.png">
+		<!--begin::Fonts(mandatory for all pages)-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700">
+		<!--end::Fonts-->
+		<!--begin::Vendor Stylesheets(used for this page only)-->
+		
+		<link href="https://likwidai.com/static/suitestatic/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+		<link href="https://likwidai.com/static/suitestatic/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Vendor Stylesheets-->
+		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+		<link href="https://likwidai.com/static/suitestatic/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+		<link href="https://likwidai.com/static/suitestatic/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Global Stylesheets Bundle-->
+		<style id="plotly.js-style-global"></style>
+		
+		
+	<style>
+	.messages-container {
+		position: fixed;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 9999;
+		width: 25%;
+	}
+	</style><style type="text/css">.vis-time-axis{overflow:hidden;position:relative}.vis-time-axis.vis-foreground{left:0;top:0;width:100%}.vis-time-axis.vis-background{height:100%;left:0;position:absolute;top:0;width:100%}.vis-time-axis .vis-text{box-sizing:border-box;color:#4d4d4d;overflow:hidden;padding:3px;position:absolute;white-space:nowrap}.vis-time-axis .vis-text.vis-measure{margin-left:0;margin-right:0;padding-left:0;padding-right:0;position:absolute;visibility:hidden}.vis-time-axis .vis-grid.vis-vertical{border-left:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-vertical-rtl{border-right:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-minor{border-color:#e5e5e5}.vis-time-axis .vis-grid.vis-major{border-color:#bfbfbf}</style><style type="text/css">.vis .overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}.vis-active{box-shadow:0 0 10px #86d5f8}</style><style type="text/css">.vis-custom-time{background-color:#6e94ff;cursor:move;width:2px;z-index:1}.vis-custom-time>.vis-custom-time-marker{background-color:inherit;color:#fff;cursor:auto;font-size:12px;padding:3px 5px;top:0;white-space:nowrap;z-index:inherit}</style><style type="text/css">.vis-current-time{background-color:#ff7f6e;pointer-events:none;width:2px;z-index:1}.vis-rolling-mode-btn{background:#3876c2;border-radius:50%;color:#fff;cursor:pointer;font-size:28px;font-weight:700;height:40px;opacity:.8;position:absolute;right:20px;text-align:center;top:7px;width:40px}.vis-rolling-mode-btn:before{content:"\26F6"}.vis-rolling-mode-btn:hover{opacity:1}</style><style type="text/css">.vis-panel{box-sizing:border-box;margin:0;padding:0;position:absolute}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right,.vis-panel.vis-top{border:1px #bfbfbf}.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right{border-bottom-style:solid;border-top-style:solid;overflow:hidden}.vis-left.vis-panel.vis-vertical-scroll,.vis-right.vis-panel.vis-vertical-scroll{height:100%;overflow-x:hidden;overflow-y:scroll}.vis-left.vis-panel.vis-vertical-scroll{direction:rtl}.vis-left.vis-panel.vis-vertical-scroll .vis-content,.vis-right.vis-panel.vis-vertical-scroll{direction:ltr}.vis-right.vis-panel.vis-vertical-scroll .vis-content{direction:rtl}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-top{border-left-style:solid;border-right-style:solid}.vis-background{overflow:hidden}.vis-panel>.vis-content{position:relative}.vis-panel .vis-shadow{box-shadow:0 0 10px rgba(0,0,0,.8);height:1px;position:absolute;width:100%}.vis-panel .vis-shadow.vis-top{left:0;top:-1px}.vis-panel .vis-shadow.vis-bottom{bottom:-1px;left:0}</style><style type="text/css">.vis-graph-group0{fill:#4f81bd;fill-opacity:0;stroke-width:2px;stroke:#4f81bd}.vis-graph-group1{fill:#f79646;fill-opacity:0;stroke-width:2px;stroke:#f79646}.vis-graph-group2{fill:#8c51cf;fill-opacity:0;stroke-width:2px;stroke:#8c51cf}.vis-graph-group3{fill:#75c841;fill-opacity:0;stroke-width:2px;stroke:#75c841}.vis-graph-group4{fill:#ff0100;fill-opacity:0;stroke-width:2px;stroke:#ff0100}.vis-graph-group5{fill:#37d8e6;fill-opacity:0;stroke-width:2px;stroke:#37d8e6}.vis-graph-group6{fill:#042662;fill-opacity:0;stroke-width:2px;stroke:#042662}.vis-graph-group7{fill:#00ff26;fill-opacity:0;stroke-width:2px;stroke:#00ff26}.vis-graph-group8{fill:#f0f;fill-opacity:0;stroke-width:2px;stroke:#f0f}.vis-graph-group9{fill:#8f3938;fill-opacity:0;stroke-width:2px;stroke:#8f3938}.vis-timeline .vis-fill{fill-opacity:.1;stroke:none}.vis-timeline .vis-bar{fill-opacity:.5;stroke-width:1px}.vis-timeline .vis-point{stroke-width:2px;fill-opacity:1}.vis-timeline .vis-legend-background{stroke-width:1px;fill-opacity:.9;fill:#fff;stroke:#c2c2c2}.vis-timeline .vis-outline{stroke-width:1px;fill-opacity:1;fill:#fff;stroke:#e5e5e5}.vis-timeline .vis-icon-fill{fill-opacity:.3;stroke:none}</style><style type="text/css">.vis-timeline{border:1px solid #bfbfbf;box-sizing:border-box;margin:0;overflow:hidden;padding:0;position:relative}.vis-loading-screen{height:100%;left:0;position:absolute;top:0;width:100%}</style><style type="text/css">.vis [class*=span]{min-height:0;width:auto}</style><style type="text/css">.vis-item{background-color:#d5ddf6;border-color:#97b0f8;border-width:1px;color:#1a1a1a;display:inline-block;position:absolute;z-index:1}.vis-item.vis-selected{background-color:#fff785;border-color:#ffc200;z-index:2}.vis-editable.vis-selected{cursor:move}.vis-item.vis-point.vis-selected{background-color:#fff785}.vis-item.vis-box{border-radius:2px;border-style:solid;text-align:center}.vis-item.vis-point{background:none}.vis-item.vis-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}.vis-item.vis-range{border-radius:2px;border-style:solid;box-sizing:border-box}.vis-item.vis-background{background-color:rgba(213,221,246,.4);border:none;box-sizing:border-box;margin:0;padding:0}.vis-item .vis-item-overflow{height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%}.vis-item-visible-frame{white-space:nowrap}.vis-item.vis-range .vis-item-content{display:inline-block;position:relative}.vis-item.vis-background .vis-item-content{display:inline-block;position:absolute}.vis-item.vis-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item .vis-item-content{box-sizing:border-box;padding:5px;white-space:nowrap}.vis-item .vis-onUpdateTime-tooltip{background:#4f81bd;border-radius:1px;color:#fff;padding:5px;position:absolute;text-align:center;transition:.4s;-o-transition:.4s;-moz-transition:.4s;-webkit-transition:.4s;white-space:nowrap;width:200px}.vis-item .vis-delete,.vis-item .vis-delete-rtl{box-sizing:border-box;cursor:pointer;height:24px;padding:0 5px;position:absolute;top:0;-webkit-transition:background .2s linear;-moz-transition:background .2s linear;-ms-transition:background .2s linear;-o-transition:background .2s linear;transition:background .2s linear;width:24px}.vis-item .vis-delete{right:-24px}.vis-item .vis-delete-rtl{left:-24px}.vis-item .vis-delete-rtl:after,.vis-item .vis-delete:after{color:red;content:"\00D7";font-family:arial,sans-serif;font-size:22px;font-weight:700;-webkit-transition:color .2s linear;-moz-transition:color .2s linear;-ms-transition:color .2s linear;-o-transition:color .2s linear;transition:color .2s linear}.vis-item .vis-delete-rtl:hover,.vis-item .vis-delete:hover{background:red}.vis-item .vis-delete-rtl:hover:after,.vis-item .vis-delete:hover:after{color:#fff}.vis-item .vis-drag-center{cursor:move;height:100%;left:0;position:absolute;top:0;width:100%}.vis-item.vis-range .vis-drag-left{cursor:w-resize;left:-4px}.vis-item.vis-range .vis-drag-left,.vis-item.vis-range .vis-drag-right{height:100%;max-width:20%;min-width:2px;position:absolute;top:0;width:24px}.vis-item.vis-range .vis-drag-right{cursor:e-resize;right:-4px}.vis-range.vis-item.vis-readonly .vis-drag-left,.vis-range.vis-item.vis-readonly .vis-drag-right{cursor:auto}.vis-item.vis-cluster{border-radius:2px;border-style:solid;text-align:center;vertical-align:center}.vis-item.vis-cluster-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item.vis-cluster-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}</style><style type="text/css">div.vis-tooltip{background-color:#f5f4ed;border:1px solid #808074;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:3px 3px 10px rgba(0,0,0,.2);color:#000;font-family:verdana;font-size:14px;padding:5px;pointer-events:none;position:absolute;visibility:hidden;white-space:nowrap;z-index:5}</style><style type="text/css">.vis-itemset{box-sizing:border-box;margin:0;padding:0;position:relative}.vis-itemset .vis-background,.vis-itemset .vis-foreground{height:100%;overflow:visible;position:absolute;width:100%}.vis-axis{height:0;left:0;position:absolute;width:100%;z-index:1}.vis-foreground .vis-group{border-bottom:1px solid #bfbfbf;box-sizing:border-box;position:relative}.vis-foreground .vis-group:last-child{border-bottom:none}.vis-nesting-group{cursor:pointer}.vis-label.vis-nested-group.vis-group-level-unknown-but-gte1{background:#f5f5f5}.vis-label.vis-nested-group.vis-group-level-0{background-color:#fff}.vis-ltr .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-left:0}.vis-rtl .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-right:0}.vis-label.vis-nested-group.vis-group-level-1{background-color:rgba(0,0,0,.05)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-left:15px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-right:15px}.vis-label.vis-nested-group.vis-group-level-2{background-color:rgba(0,0,0,.1)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-left:30px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-right:30px}.vis-label.vis-nested-group.vis-group-level-3{background-color:rgba(0,0,0,.15)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-left:45px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-right:45px}.vis-label.vis-nested-group.vis-group-level-4{background-color:rgba(0,0,0,.2)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-left:60px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-right:60px}.vis-label.vis-nested-group.vis-group-level-5{background-color:rgba(0,0,0,.25)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-left:75px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-right:75px}.vis-label.vis-nested-group.vis-group-level-6{background-color:rgba(0,0,0,.3)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-left:90px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-right:90px}.vis-label.vis-nested-group.vis-group-level-7{background-color:rgba(0,0,0,.35)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-left:105px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-right:105px}.vis-label.vis-nested-group.vis-group-level-8{background-color:rgba(0,0,0,.4)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-left:120px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-right:120px}.vis-label.vis-nested-group.vis-group-level-9{background-color:rgba(0,0,0,.45)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-left:135px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-right:135px}.vis-label.vis-nested-group{background-color:rgba(0,0,0,.5)}.vis-ltr .vis-label.vis-nested-group .vis-inner{padding-left:150px}.vis-rtl .vis-label.vis-nested-group .vis-inner{padding-right:150px}.vis-group-level-unknown-but-gte1{border:1px solid red}.vis-label.vis-nesting-group:before{display:inline-block;width:15px}.vis-label.vis-nesting-group.expanded:before{content:"\25BC"}.vis-label.vis-nesting-group.collapsed:before{content:"\25B6"}.vis-rtl .vis-label.vis-nesting-group.collapsed:before{content:"\25C0"}.vis-ltr .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-left:15px}.vis-rtl .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-right:15px}.vis-overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}</style><style type="text/css">.vis-labelset{overflow:hidden}.vis-labelset,.vis-labelset .vis-label{box-sizing:border-box;position:relative}.vis-labelset .vis-label{border-bottom:1px solid #bfbfbf;color:#4d4d4d;left:0;top:0;width:100%}.vis-labelset .vis-label.draggable{cursor:pointer}.vis-group-is-dragging{background:rgba(0,0,0,.1)}.vis-labelset .vis-label:last-child{border-bottom:none}.vis-labelset .vis-label .vis-inner{display:inline-block;padding:5px}.vis-labelset .vis-label .vis-inner.vis-hidden{padding:0}</style><style type="text/css">div.vis-configuration{display:block;float:left;font-size:12px;position:relative}div.vis-configuration-wrapper{display:block;width:700px}div.vis-configuration-wrapper:after{clear:both;content:"";display:block}div.vis-configuration.vis-config-option-container{background-color:#fff;border:2px solid #f7f8fa;border-radius:4px;display:block;left:10px;margin-top:20px;padding-left:5px;width:495px}div.vis-configuration.vis-config-button{background-color:#f7f8fa;border:2px solid #ceced0;border-radius:4px;cursor:pointer;display:block;height:25px;left:10px;line-height:25px;margin-bottom:30px;margin-top:20px;padding-left:5px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-button.hover{background-color:#4588e6;border:2px solid #214373;color:#fff}div.vis-configuration.vis-config-item{display:block;float:left;height:25px;line-height:25px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-item.vis-config-s2{background-color:#f7f8fa;border-radius:3px;left:10px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s3{background-color:#e4e9f0;border-radius:3px;left:20px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s4{background-color:#cfd8e6;border-radius:3px;left:30px;padding-left:5px}div.vis-configuration.vis-config-header{font-size:18px;font-weight:700}div.vis-configuration.vis-config-label{height:25px;line-height:25px;width:120px}div.vis-configuration.vis-config-label.vis-config-s3{width:110px}div.vis-configuration.vis-config-label.vis-config-s4{width:100px}div.vis-configuration.vis-config-colorBlock{border:1px solid #444;border-radius:2px;cursor:pointer;height:19px;margin:0;padding:0;top:1px;width:30px}input.vis-configuration.vis-config-checkbox{left:-5px}input.vis-configuration.vis-config-rangeinput{margin:0;padding:1px;pointer-events:none;position:relative;top:-5px;width:60px}input.vis-configuration.vis-config-range{-webkit-appearance:none;background-color:transparent;border:0 solid #fff;height:20px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-runnable-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:5px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-thumb{-webkit-appearance:none;background:#3876c2;background:-moz-linear-gradient(top,#3876c2 0,#385380 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#3876c2),color-stop(100%,#385380));background:-webkit-linear-gradient(top,#3876c2,#385380);background:-o-linear-gradient(top,#3876c2 0,#385380 100%);background:-ms-linear-gradient(top,#3876c2 0,#385380 100%);background:linear-gradient(180deg,#3876c2 0,#385380);border:1px solid #14334b;border-radius:50%;box-shadow:0 0 1px 0 #111927;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#3876c2",endColorstr="#385380",GradientType=0);height:17px;margin-top:-7px;width:17px}input.vis-configuration.vis-config-range:focus{outline:none}input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track{background:#9d9d9d;background:-moz-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#9d9d9d),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#9d9d9d,#c8c8c8 99%);background:-o-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:linear-gradient(180deg,#9d9d9d 0,#c8c8c8 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9d9d9d",endColorstr="#c8c8c8",GradientType=0)}input.vis-configuration.vis-config-range::-moz-range-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:10px;width:300px}input.vis-configuration.vis-config-range::-moz-range-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:-moz-focusring{outline:1px solid #fff;outline-offset:-1px}input.vis-configuration.vis-config-range::-ms-track{background:transparent;border-color:transparent;border-width:6px 0;color:transparent;height:5px;width:300px}input.vis-configuration.vis-config-range::-ms-fill-lower{background:#777;border-radius:10px}input.vis-configuration.vis-config-range::-ms-fill-upper{background:#ddd;border-radius:10px}input.vis-configuration.vis-config-range::-ms-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:focus::-ms-fill-lower{background:#888}input.vis-configuration.vis-config-range:focus::-ms-fill-upper{background:#ccc}.vis-configuration-popup{background:rgba(57,76,89,.85);border:2px solid #f2faff;border-radius:4px;color:#fff;font-size:14px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:opacity .3s ease-in-out;-moz-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;width:150px}.vis-configuration-popup:after,.vis-configuration-popup:before{border:solid transparent;content:" ";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.vis-configuration-popup:after{border-color:rgba(136,183,213,0) rgba(136,183,213,0) rgba(136,183,213,0) rgba(57,76,89,.85);border-width:8px;margin-top:-8px}.vis-configuration-popup:before{border-color:rgba(194,225,245,0) rgba(194,225,245,0) rgba(194,225,245,0) #f2faff;border-width:12px;margin-top:-12px}</style><style type="text/css">.vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal{border-bottom:1px solid;height:0;position:absolute;width:100%}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor{border-color:#e5e5e5}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-major{border-color:#bfbfbf}.vis-data-axis .vis-y-axis.vis-major{color:#4d4d4d;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-major.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-minor{color:#bebebe;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-minor.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title{bottom:20px;color:#4d4d4d;position:absolute;text-align:center;white-space:nowrap}.vis-data-axis .vis-y-axis.vis-title.vis-measure{margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title.vis-left{bottom:0;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-o-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;-o-transform-origin:left top;transform-origin:left bottom}.vis-data-axis .vis-y-axis.vis-title.vis-right{bottom:0;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:right bottom;-moz-transform-origin:right bottom;-ms-transform-origin:right bottom;-o-transform-origin:right bottom;transform-origin:right bottom}.vis-legend{background-color:rgba(247,252,255,.65);border:1px solid #b3b3b3;box-shadow:2px 2px 10px hsla(0,0%,60%,.55);padding:5px}.vis-legend-text{display:inline-block;white-space:nowrap}</style></head>
+
+	
+
+	
+
+
+<body id="kt_app_body" data-kt-app-layout="light-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+    
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+            
+                <!--begin::Header-->
+				<div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+					<!--begin::Header container-->
+					<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+						<!--begin::Sidebar mobile toggle-->
+						<div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+							<div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
+								<i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</div>
+						</div>
+						<!--end::Sidebar mobile toggle-->
+						<!--begin::Mobile logo-->
+						<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+							<a href="/home/v2/" class="d-lg-none">
+								<img alt="Logo" src="https://likwidai.com/static/images/favicon-192x192.png" class="h-30px">
+							</a>
+						</div>
+						<!--end::Mobile logo-->
+						<!--begin::Header wrapper-->
+						<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+							<!--begin::Menu wrapper-->
+							<div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+								<!--begin::Menu-->
+								<div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+									<!--begin:Menu item-->
+					
+									<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+										<!--begin:Menu link-->
+										<h1 class="sitename">
+										<span style="color: #1a1a1a;">Likwid</span><span style="background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">.AI</span></h1>
+										
+										<!--end:Menu link-->
+									</div>
+
+								</div>
+								<!--end::Menu-->
+							</div>
+							<!--end::Menu wrapper-->
+							<!--begin::Navbar-->
+							<div class="app-navbar flex-shrink-0">
+								<!--begin::Activities-->
+								<div class="app-navbar-item ms-1 ms-md-4">
+									<!--begin::Drawer toggle-->
+									<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" id="kt_activities_toggle">
+										<i class="ki-duotone ki-messages fs-2">
+											<span class="path1"></span>
+											<span class="path2"></span>
+											<span class="path3"></span>
+											<span class="path4"></span>
+											<span class="path5"></span>
+										</i>
+									</div>
+									<!--end::Drawer toggle-->
+								</div>
+								<!--end::Activities-->
+
+
+								
+								<!--begin::Theme mode-->
+								<div class="app-navbar-item ms-1 ms-md-4">
+									<!--begin::Menu toggle-->
+									<a href="#" class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+										<i class="ki-duotone ki-night-day theme-light-show fs-1">
+											<span class="path1"></span>
+											<span class="path2"></span>
+											<span class="path3"></span>
+											<span class="path4"></span>
+											<span class="path5"></span>
+											<span class="path6"></span>
+											<span class="path7"></span>
+											<span class="path8"></span>
+											<span class="path9"></span>
+											<span class="path10"></span>
+										</i>
+										<i class="ki-duotone ki-moon theme-dark-show fs-1">
+											<span class="path1"></span>
+											<span class="path2"></span>
+										</i>
+									</a>
+									<!--begin::Menu toggle-->
+									<!--begin::Menu-->
+									<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-menu="true" data-kt-element="theme-mode-menu">
+										<!--begin::Menu item-->
+										<div class="menu-item px-3 my-0">
+											<a href="#" class="menu-link px-3 py-2 active" data-kt-element="mode" data-kt-value="light">
+												<span class="menu-icon" data-kt-element="icon">
+													<i class="ki-duotone ki-night-day fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+														<span class="path3"></span>
+														<span class="path4"></span>
+														<span class="path5"></span>
+														<span class="path6"></span>
+														<span class="path7"></span>
+														<span class="path8"></span>
+														<span class="path9"></span>
+														<span class="path10"></span>
+													</i>
+												</span>
+												<span class="menu-title">Light</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-3 my-0">
+											<a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
+												<span class="menu-icon" data-kt-element="icon">
+													<i class="ki-duotone ki-moon fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</span>
+												<span class="menu-title">Dark</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-3 my-0">
+											<a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
+												<span class="menu-icon" data-kt-element="icon">
+													<i class="ki-duotone ki-screen fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+														<span class="path3"></span>
+														<span class="path4"></span>
+													</i>
+												</span>
+												<span class="menu-title">System</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+									</div>
+									<!--end::Menu-->
+								</div>
+								<!--end::Theme mode-->
+								<!--begin::User menu-->
+								<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
+									<!--begin::Menu wrapper-->
+									<div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+										
+										<img src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T064143Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=28a95dbf57861907662206807b0ec81fbce45fc4d547771029878846c2782697bed70878f05d5e5faa9f46050ba394ebf8d1df4d53025825a39057f90589990f3127bb0d97da82f9d9dc4fa7524bbf5bd893e2a03ddf24b35f6f70486980626521aa6c4de1fb6d82c99df4de662d0f7ac2646e3ba62a8712bb74f5787f1123177e67833d2946a5bb2d11880f0558ed26252535092f020ed614541a602e1fa146eaf25e75421cdbe4deb7241815ef5934517be8a13acfa6ca4c121458c248e9534eec35045c8651f6e6304734b0bcb459390515b0cfea10b40e66cc61928a93947c66f6b674fdf00203eac08ae5b736363efb2b690d7a70baebdf90439851047b" class="rounded-3" alt="user">
+										
+									</div>
+									<!--begin::User account menu-->
+									<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+										<!--begin::Menu item-->
+										<div class="menu-item px-3">
+											<div class="menu-content d-flex align-items-center px-3">
+												<!--begin::Avatar-->
+												<div class="symbol symbol-50px me-5">
+													
+													<img alt="Logo" src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260703%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260703T064143Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=28a95dbf57861907662206807b0ec81fbce45fc4d547771029878846c2782697bed70878f05d5e5faa9f46050ba394ebf8d1df4d53025825a39057f90589990f3127bb0d97da82f9d9dc4fa7524bbf5bd893e2a03ddf24b35f6f70486980626521aa6c4de1fb6d82c99df4de662d0f7ac2646e3ba62a8712bb74f5787f1123177e67833d2946a5bb2d11880f0558ed26252535092f020ed614541a602e1fa146eaf25e75421cdbe4deb7241815ef5934517be8a13acfa6ca4c121458c248e9534eec35045c8651f6e6304734b0bcb459390515b0cfea10b40e66cc61928a93947c66f6b674fdf00203eac08ae5b736363efb2b690d7a70baebdf90439851047b">
+													
+												</div>
+												<!--end::Avatar-->
+												<!--begin::Username-->
+												<div class="d-flex flex-column">
+													
+													<div class="fw-bold d-flex align-items-center fs-5">Bio Mac Lifesciences
+													
+													<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
+													
+													<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">Pharmaceuticals &amp; Lifesciences</a>
+													
+												</div>
+												<!--end::Username-->
+											</div>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu separator-->
+										<div class="separator my-2"></div>
+										<!--end::Menu separator-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/rise-crm/leads-list" class="menu-link px-5">
+												<span class="menu-text">Rise</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+					
+										<!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/flow-ai/orders/orders-list/" class="menu-link px-5">Flow</a>
+										</div>
+										<!--end::Menu item-->
+                                        <!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/spout-ai/production-jobs/pending/" class="menu-link px-5">Spout</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu separator-->
+										<div class="separator my-2"></div>
+										<!--end::Menu separator-->
+										
+										<!--begin::Menu item-->
+										<div class="menu-item px-5 my-1">
+											<a href="/edit-company-details/" class="menu-link px-5">Account Settings</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/signout/" class="menu-link px-5">Sign Out</a>
+										</div>
+										<!--end::Menu item-->
+									</div>
+									<!--end::User account menu-->
+									<!--end::Menu wrapper-->
+								</div>
+								<!--end::User menu-->
+								<!--begin::Header menu toggle-->
+								<div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
+									<div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px" id="kt_app_header_menu_toggle">
+										<i class="ki-duotone ki-element-4 fs-1">
+											<span class="path1"></span>
+											<span class="path2"></span>
+										</i>
+									</div>
+								</div>
+								<!--end::Header menu toggle-->
+								<!--begin::Aside toggle-->
+								<!--end::Header menu toggle-->
+							</div>
+							<!--end::Navbar-->
+						</div>
+						<!--end::Header wrapper-->
+					</div>
+					<!--end::Header container-->
+				</div>
+				<!--end::Header-->
+            
+
+<!--begin::Wrapper-->
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Sidebar-->
+    <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+        <!--begin::Logo-->
+        <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+            <!--begin::Logo image-->
+            <a href="/home/v2/">
+                <img alt="Logo" src="https://likwidai.com/static/images/android-chrome-512x512.png" class="h-25px app-sidebar-logo-default">
+                <img alt="Logo" src="https://likwidai.com/static/images/android-chrome-512x512.png" class="h-20px app-sidebar-logo-minimize">
+            </a>
+            <!--end::Logo image-->
+            <!--begin::Sidebar toggle-->
+            <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+                <i class="ki-duotone ki-black-left-line fs-3 rotate-180">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+            </div>
+            <!--end::Sidebar toggle-->
+        </div>
+        <!--end::Logo-->
+        <!--begin::sidebar menu-->
+        <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+            <!--begin::Menu wrapper-->
+            <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper">
+                <!--begin::Scroll wrapper-->
+                <div id="kt_app_sidebar_menu_scroll" class="scroll-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true" style="height: 902px;">
+                    <!--begin::Menu-->
+                    <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                        
+                        <!--begin::Section-->
+                        <div class="menu-item pt-5">
+                            <div class="menu-content">
+                                <span class="menu-heading fw-bold text fs-7">Main</span>
+                            </div>
+                        </div>
+
+                        
+                        <!--begin:Menu item - Company-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/rise-crm/company/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-office-bag fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                        <span class="path3"></span>
+                                        <span class="path4"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Companies</span>
+                            </a>
+                        </div>
+                        <!--end:Menu item-->
+
+                        
+                        <!--begin:Menu item - Contacts-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/rise-crm/contacts/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-badge fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                        <span class="path3"></span>
+                                        <span class="path4"></span>
+                                        <span class="path5"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Contacts</span>
+                            </a>
+                        </div>
+                        <!--end:Menu item-->
+
+
+                        
+<div class="menu-item">
+    <a class="menu-link " href="/rise-crm/leads-list">
+        <span class="menu-icon">
+            <i class="ki-duotone ki-profile-user fs-2">
+                <span class="path1"></span>
+                <span class="path2"></span>
+            </i>
+        </span>
+        <span class="menu-title">Leads</span>
+    </a>
+</div>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/rise-crm/quotations/date-wise">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-document fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Quotations</span>
+                            </a>
+                        </div>
+                        <!--end:Menu item-->
+
+                        
+
+
+
+
+                        <!--begin:Menu item - Email Campaigns-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/rise-crm/email-campaigns/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-sms fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Email Campaigns</span>
+                            </a>
+                        </div>
+                        
+                        <!--begin:Menu item-->
+
+                        <!--begin:Menu item - Jack Agent Chats-->
+<div class="menu-item">
+    <a class="menu-link " href="/rise-crm/jack-chats/">
+        <span class="menu-icon">
+            <i class="ki-duotone ki-technology-2 fs-2">
+                <span class="path1"></span>
+                <span class="path2"></span>
+            </i>
+        </span>
+        <span class="menu-title">AI Agent Chats</span>
+    </a>
+</div>
+<!--end:Menu item-->
+
+                        <!--begin::Section-->
+                        <div class="menu-item pt-5">
+                            <div class="menu-content">
+                                <span class="menu-heading fw-bold text fs-7">Reports &amp; Analytics</span>
+                            </div>
+                        </div>
+
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <a class="menu-link active bg-light-info" href="/rise-crm/pipeline/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-chart-pie-simple fs-2"><span class="path1"></span><span class="path2"></span></i>
+                                </span>
+                                <span class="menu-title">Pipeline</span>
+                            </a>
+                        </div>
+                        <!--end:Menu item-->
+
+
+                        
+
+                        <!--begin::Section-->
+                        <div class="menu-item pt-5">
+                            <div class="menu-content">
+                                <span class="menu-heading fw-bold text fs-7">Settings &amp; Configuration</span>
+                            </div>
+                        </div>
+
+                        
+
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/rise-crm/employee-list/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-people fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                        <span class="path3"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Team Settings</span>
+                            </a>
+                        </div>
+                        <!--end:Menu item-->
+
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/rise-crm/integrations/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-switch fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Integrations</span>
+                            </a>
+                        </div>
+                        <!--end:Menu item-->
+
+                        
+
+                    </div>
+                    <!--end::Menu-->
+                </div>
+                <!--end::Scroll wrapper-->
+            </div>
+            <!--end::Menu wrapper-->
+        </div>
+        <!--end::sidebar menu-->
+
+        <!--begin::Footer-->
+        <div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
+            <a href="" class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" data-bs-original-title="View Documentation" data-kt-initialized="1">
+                <span class="btn-label">Documentation</span>
+                <i class="ki-duotone ki-document btn-icon fs-2 m-0">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+            </a>
+        </div>
+        <!--end::Footer-->
+    </div>
+    <!--end::Sidebar-->
+
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <div class="d-flex flex-column flex-column-fluid">
+
+                    <!-- Toolbar -->
+                    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                        <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
+                            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Pipeline</h1>
+                                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                    <li class="breadcrumb-item text-muted"><a href="/home/v2/" class="text-muted text-hover-primary">Home</a></li>
+                                    <li class="breadcrumb-item"><span class="bullet bg-gray-500 w-5px h-2px"></span></li>
+                                    <li class="breadcrumb-item text-muted">Rise</li>
+                                    <li class="breadcrumb-item"><span class="bullet bg-gray-500 w-5px h-2px"></span></li>
+                                    <li class="breadcrumb-item text-muted">Pipeline</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#modalAddReminder">
+                                    <i class="ki-duotone ki-calendar-add fs-4"><span class="path1"></span><span class="path2"></span></i>Reminder
+                                </button>
+                                <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#modalAddQuotation">
+                                    <i class="ki-duotone ki-document fs-4"><span class="path1"></span><span class="path2"></span></i>Quotation
+                                </button>
+                                <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#modalAddLead">
+                                    <i class="ki-duotone ki-plus fs-4"></i>Add Lead
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Body -->
+                    <div id="kt_app_content" class="app-content flex-column-fluid">
+                        <div class="d-flex h-100" style="padding: 0 20px 20px;">
+
+                            <!-- Left Sidebar -->
+                            <div class="up-sidebar me-5">
+
+                                <!-- Pipeline Selector -->
+                                <div class="up-section-title">PIPELINES</div>
+                                <div class="d-flex flex-column gap-1 mb-6">
+                                    <button class="up-pipe-btn up-pipe-active">
+                                        <span class="up-pipe-dot" style="background:#f6c000;"></span>
+                                        <span>Leads</span>
+                                        <span class="up-pipe-count">10</span>
+                                    </button>
+                                    <button class="up-pipe-btn">
+                                        <span class="up-pipe-dot" style="background:#7239ea;"></span>
+                                        <span>Funnel</span>
+                                        <span class="up-pipe-count">11</span>
+                                    </button>
+                                    <button class="up-pipe-btn">
+                                        <span class="up-pipe-dot" style="background:#50cd89;"></span>
+                                        <span>Deals</span>
+                                        <span class="up-pipe-count">25</span>
+                                    </button>
+                                </div>
+
+                                <div class="up-divider"></div>
+
+                                <!-- Upcoming Reminders -->
+                                <div class="up-section-title mt-4">REMINDERS</div>
+                                
+                                <div class="d-flex flex-column gap-3">
+                                    
+                                    <a href="/rise-crm/lead-view/b54b5420-3407-4914-a244-299a8068bbd8" class="up-reminder-item text-decoration-none">
+                                        <div class="up-rem-title">na</div>
+                                        <div class="up-rem-meta">
+                                            <span>Sidharth Sharma</span>
+                                            <span class="up-rem-date">June 24, 2026, midnight</span>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                                
+
+                            </div>
+                            <!-- end sidebar -->
+
+                            <!-- Kanban Area -->
+                            <div class="flex-grow-1 overflow-auto">
+
+                                <!-- LEADS PIPELINE -->
+                                <div id="pipe-leads" class="up-board">
+                                    <div class="up-col" id="leads-col-pending" style="--col-color:#f6c000;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Pending</span>
+                                            <span class="up-col-count" id="count-pending">10</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="614ae479-76d2-49ac-a966-cfe9d4d29893" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">harshitkhemani</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="614ae479-76d2-49ac-a966-cfe9d4d29893" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="614ae479-76d2-49ac-a966-cfe9d4d29893" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/614ae479-76d2-49ac-a966-cfe9d4d29893" class="up-card-name">Harshit Khemani</a>
+                                            <div class="up-card-req">Pippete, Petri Dishes</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Neha</span>
+                                                <span class="up-card-date">25 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="f8d743db-a286-4a64-b3cb-bc051de21d5e" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">test</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="f8d743db-a286-4a64-b3cb-bc051de21d5e" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="f8d743db-a286-4a64-b3cb-bc051de21d5e" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/f8d743db-a286-4a64-b3cb-bc051de21d5e" class="up-card-name">John Doe</a>
+                                            <div class="up-card-req">test</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Arjun Sharma</span>
+                                                <span class="up-card-date">25 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="fb7b8a9b-b26f-40bc-89c4-286fd7949c69" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid.AI</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="fb7b8a9b-b26f-40bc-89c4-286fd7949c69" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="fb7b8a9b-b26f-40bc-89c4-286fd7949c69" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/fb7b8a9b-b26f-40bc-89c4-286fd7949c69" class="up-card-name">RVSS Manoj</a>
+                                            <div class="up-card-req">test</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Monika Sharma</span>
+                                                <span class="up-card-date">11 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="52ec7882-f8b6-4b41-92c5-71600ff03423" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="52ec7882-f8b6-4b41-92c5-71600ff03423" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="52ec7882-f8b6-4b41-92c5-71600ff03423" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/52ec7882-f8b6-4b41-92c5-71600ff03423" class="up-card-name">Harshit Khemani</a>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Amulya Sharma</span>
+                                                <span class="up-card-date">16 May</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">Test Again</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Arjun Sharma</span>
+                                                <span class="up-card-date">08 Feb</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="fab4fdb8-70a1-46b7-977c-891a4f598c5e" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="fab4fdb8-70a1-46b7-977c-891a4f598c5e" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="fab4fdb8-70a1-46b7-977c-891a4f598c5e" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/fab4fdb8-70a1-46b7-977c-891a4f598c5e" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">Everything owns</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Monika Sharma</span>
+                                                <span class="up-card-date">08 Feb</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="2ae1615f-93ca-47ca-b0a4-0020750e698f" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="2ae1615f-93ca-47ca-b0a4-0020750e698f" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="2ae1615f-93ca-47ca-b0a4-0020750e698f" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/2ae1615f-93ca-47ca-b0a4-0020750e698f" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">NA</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Amulya Sharma</span>
+                                                <span class="up-card-date">30 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="b54b5420-3407-4914-a244-299a8068bbd8" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="b54b5420-3407-4914-a244-299a8068bbd8" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="b54b5420-3407-4914-a244-299a8068bbd8" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/b54b5420-3407-4914-a244-299a8068bbd8" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">na</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Neha</span>
+                                                <span class="up-card-date">29 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="b9470211-ed7f-4180-bdce-42d156933e8d" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="b9470211-ed7f-4180-bdce-42d156933e8d" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="b9470211-ed7f-4180-bdce-42d156933e8d" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/b9470211-ed7f-4180-bdce-42d156933e8d" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">Nil</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Monika Sharma</span>
+                                                <span class="up-card-date">29 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="569bc722-f7b1-4704-a883-debff8ebe95a" data-status="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">XYZ</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="569bc722-f7b1-4704-a883-debff8ebe95a" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="569bc722-f7b1-4704-a883-debff8ebe95a" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/569bc722-f7b1-4704-a883-debff8ebe95a" class="up-card-name">Manthan Kumar</a>
+                                            <div class="up-card-req">I have inquired about herbal products of hair care in priva…</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Amulya Sharma</span>
+                                                <span class="up-card-date">10 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="up-col" id="leads-col-won" style="--col-color:#50cd89;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Won</span>
+                                            <span class="up-col-count" id="count-won">2</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" data-status="won">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" data-status="Open" data-col="pending">↩ Pending</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">Required xyz</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Arjun Sharma</span>
+                                                <span class="up-card-date">05 Jan</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="52337dc7-8333-422c-b4f1-7d53e1b37690" data-status="won">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">XYZ</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="52337dc7-8333-422c-b4f1-7d53e1b37690" data-status="Open" data-col="pending">↩ Pending</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="52337dc7-8333-422c-b4f1-7d53e1b37690" data-status="Failed" data-col="lost">✗ Lost</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/52337dc7-8333-422c-b4f1-7d53e1b37690" class="up-card-name">Akansha Chetiwal</a>
+                                            <div class="up-card-req">we are looking for new range of skin and hair care for our …</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Ishika</span>
+                                                <span class="up-card-date">10 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="up-col" id="leads-col-lost" style="--col-color:#f1416c;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Lost</span>
+                                            <span class="up-col-count" id="count-lost">2</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="1317c185-2490-4d3e-99c8-d49579b8862b" data-status="lost">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="1317c185-2490-4d3e-99c8-d49579b8862b" data-status="Open" data-col="pending">↩ Pending</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="1317c185-2490-4d3e-99c8-d49579b8862b" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/1317c185-2490-4d3e-99c8-d49579b8862b" class="up-card-name">Harshit Khemani</a>
+                                            <div class="up-card-req">Pippetes, petri dishes,etc.</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Ishika</span>
+                                                <span class="up-card-date">25 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="3d5b0f61-f7b8-4c21-8dd8-569993631f87" data-status="lost">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">ChocolateX</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="3d5b0f61-f7b8-4c21-8dd8-569993631f87" data-status="Open" data-col="pending">↩ Pending</a></li>
+                                                        <li><a class="dropdown-item up-move-btn" data-lead-id="3d5b0f61-f7b8-4c21-8dd8-569993631f87" data-status="Closed" data-col="won">✓ Won</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/3d5b0f61-f7b8-4c21-8dd8-569993631f87" class="up-card-name">Kaushik Kumar</a>
+                                            <div class="up-card-req">Required rigid boxes</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">Ishika</span>
+                                                <span class="up-card-date">28 Jan</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- FUNNEL PIPELINE -->
+                                <div id="pipe-funnel" class="up-board" style="display:none;">
+                                    <!-- Awareness -->
+                                    <div class="up-col" id="funnel-col-awareness" style="--col-color:#7239ea;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Awareness</span>
+                                            <span class="up-col-count">1</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="569bc722-f7b1-4704-a883-debff8ebe95a" data-col="awareness">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">XYZ</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="569bc722-f7b1-4704-a883-debff8ebe95a" data-status="Interest" data-col="interest">↑ Interest</a></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="569bc722-f7b1-4704-a883-debff8ebe95a" data-status="Decision" data-col="decision">↑ Decision</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/569bc722-f7b1-4704-a883-debff8ebe95a" class="up-card-name">Manthan Kumar</a>
+                                            <div class="up-card-req">I have inquired about herbal products of hair care in priva…</div>
+                                            <div class="up-card-badge" style="background:#f3ebff;color:#7239ea;">Followup</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">10 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- Interest -->
+                                    <div class="up-col" id="funnel-col-interest" style="--col-color:#009ef7;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Interest</span>
+                                            <span class="up-col-count">2</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="fb7b8a9b-b26f-40bc-89c4-286fd7949c69" data-col="interest">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid.AI</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="fb7b8a9b-b26f-40bc-89c4-286fd7949c69" data-status="Awareness" data-col="awareness">↓ Awareness</a></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="fb7b8a9b-b26f-40bc-89c4-286fd7949c69" data-status="Decision" data-col="decision">↑ Decision</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/fb7b8a9b-b26f-40bc-89c4-286fd7949c69" class="up-card-name">RVSS Manoj</a>
+                                            <div class="up-card-req">test</div>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">11 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" data-col="interest">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" data-status="Awareness" data-col="awareness">↓ Awareness</a></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" data-status="Decision" data-col="decision">↑ Decision</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/e05d1c92-bf3e-4426-9d06-16cf0bedfd7d" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-req">Test Again</div>
+                                            <div class="up-card-badge" style="background:#e8f4ff;color:#009ef7;">High</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">08 Feb</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- Decision -->
+                                    <div class="up-col" id="funnel-col-decision" style="--col-color:#f6c000;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Decision</span>
+                                            <span class="up-col-count">0</span>
+                                        </div>
+                                        <div class="up-empty">No leads</div>
+                                    </div>
+                                    <!-- Purchase -->
+                                    <div class="up-col" id="funnel-col-purchase" style="--col-color:#50cd89;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Purchase</span>
+                                            <span class="up-col-count">2</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="3d5b0f61-f7b8-4c21-8dd8-569993631f87" data-col="purchase">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">ChocolateX</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="3d5b0f61-f7b8-4c21-8dd8-569993631f87" data-status="Decision" data-col="decision">↓ Decision</a></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="3d5b0f61-f7b8-4c21-8dd8-569993631f87" data-status="Retain" data-col="retain">↑ Retain</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/3d5b0f61-f7b8-4c21-8dd8-569993631f87" class="up-card-name">Kaushik Kumar</a>
+                                            
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">28 Jan</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="52337dc7-8333-422c-b4f1-7d53e1b37690" data-col="purchase">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">XYZ</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="52337dc7-8333-422c-b4f1-7d53e1b37690" data-status="Decision" data-col="decision">↓ Decision</a></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="52337dc7-8333-422c-b4f1-7d53e1b37690" data-status="Retain" data-col="retain">↑ Retain</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/52337dc7-8333-422c-b4f1-7d53e1b37690" class="up-card-name">Akansha Chetiwal</a>
+                                            <div class="up-card-fov">₹ 25000</div>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">10 Sep</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- Retain -->
+                                    <div class="up-col" id="funnel-col-retain" style="--col-color:#111;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Retain</span>
+                                            <span class="up-col-count">6</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="614ae479-76d2-49ac-a966-cfe9d4d29893" data-col="retain">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">harshitkhemani</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="614ae479-76d2-49ac-a966-cfe9d4d29893" data-status="Purchase" data-col="purchase">↓ Purchase</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/614ae479-76d2-49ac-a966-cfe9d4d29893" class="up-card-name">Harshit Khemani</a>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">25 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="1317c185-2490-4d3e-99c8-d49579b8862b" data-col="retain">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="1317c185-2490-4d3e-99c8-d49579b8862b" data-status="Purchase" data-col="purchase">↓ Purchase</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/1317c185-2490-4d3e-99c8-d49579b8862b" class="up-card-name">Harshit Khemani</a>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">25 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="f8d743db-a286-4a64-b3cb-bc051de21d5e" data-col="retain">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">test</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="f8d743db-a286-4a64-b3cb-bc051de21d5e" data-status="Purchase" data-col="purchase">↓ Purchase</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/f8d743db-a286-4a64-b3cb-bc051de21d5e" class="up-card-name">John Doe</a>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">25 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="52ec7882-f8b6-4b41-92c5-71600ff03423" data-col="retain">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="52ec7882-f8b6-4b41-92c5-71600ff03423" data-status="Purchase" data-col="purchase">↓ Purchase</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/52ec7882-f8b6-4b41-92c5-71600ff03423" class="up-card-name">Harshit Khemani</a>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">16 May</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="fab4fdb8-70a1-46b7-977c-891a4f598c5e" data-col="retain">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="fab4fdb8-70a1-46b7-977c-891a4f598c5e" data-status="Purchase" data-col="purchase">↓ Purchase</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/fab4fdb8-70a1-46b7-977c-891a4f598c5e" class="up-card-name">Sidharth Sharma</a>
+                                            
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">08 Feb</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-lead-id="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" data-col="retain">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:140px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-funnel-btn" data-lead-id="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" data-status="Purchase" data-col="purchase">↓ Purchase</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/lead-view/ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d" class="up-card-name">Sidharth Sharma</a>
+                                            <div class="up-card-fov">₹ 50000</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-date">05 Jan</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- DEALS PIPELINE -->
+                                <div id="pipe-deals" class="up-board" style="display:none;">
+                                    <div class="up-col" id="deals-col-pending" style="--col-color:#f6c000;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Pending</span>
+                                            <span class="up-col-count">23</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="97b29a31-94b4-4bdb-a6a6-7dc929777efe" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="97b29a31-94b4-4bdb-a6a6-7dc929777efe" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="97b29a31-94b4-4bdb-a6a6-7dc929777efe" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/97b29a31-94b4-4bdb-a6a6-7dc929777efe/view" class="up-card-name">QUO-69-64092</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani — Pippetes, petri dishes,etc.</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="cf36e8cd-1af4-4c28-b6d6-049d56593623" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">harshitkhemani</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="cf36e8cd-1af4-4c28-b6d6-049d56593623" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="cf36e8cd-1af4-4c28-b6d6-049d56593623" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/cf36e8cd-1af4-4c28-b6d6-049d56593623/view" class="up-card-name">QUO-69-77046</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani — Pippete, Petri Dishes</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="af9d2211-53b1-4a3b-8621-9944297c3438" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">XYZ</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="af9d2211-53b1-4a3b-8621-9944297c3438" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="af9d2211-53b1-4a3b-8621-9944297c3438" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/af9d2211-53b1-4a3b-8621-9944297c3438/view" class="up-card-name">QUO-69-08017</a>
+                                            <div class="up-card-req">Quotation for Manthan Kumar — I have inquired about herbal …</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="0eb0f2de-2a00-421e-8b07-588bbace3fd8" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">XYZ</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="0eb0f2de-2a00-421e-8b07-588bbace3fd8" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="0eb0f2de-2a00-421e-8b07-588bbace3fd8" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/0eb0f2de-2a00-421e-8b07-588bbace3fd8/view" class="up-card-name">QUO-69-89138</a>
+                                            <div class="up-card-req">Quotation for Akansha Chetiwal — we are looking for new ran…</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="2222bd56-fb6a-453d-b1fe-2d2522fcf784" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="2222bd56-fb6a-453d-b1fe-2d2522fcf784" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="2222bd56-fb6a-453d-b1fe-2d2522fcf784" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/2222bd56-fb6a-453d-b1fe-2d2522fcf784/view" class="up-card-name">QUO-69-91667</a>
+                                            <div class="up-card-req">Quotation for Sidharth Sharma — Nil</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="8ce8c1cd-ed29-43fb-882c-9c6a26fadcd3" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="8ce8c1cd-ed29-43fb-882c-9c6a26fadcd3" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="8ce8c1cd-ed29-43fb-882c-9c6a26fadcd3" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/8ce8c1cd-ed29-43fb-882c-9c6a26fadcd3/view" class="up-card-name">QUO-69-54889</a>
+                                            <div class="up-card-req">Quotation for Sidharth Sharma — na</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="b9bfb78e-5ad6-41f7-ae2e-76f8b2d5ad94" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="b9bfb78e-5ad6-41f7-ae2e-76f8b2d5ad94" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="b9bfb78e-5ad6-41f7-ae2e-76f8b2d5ad94" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/b9bfb78e-5ad6-41f7-ae2e-76f8b2d5ad94/view" class="up-card-name">QUO-69-53867</a>
+                                            <div class="up-card-req">Quotation for Sidharth Sharma — NA</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="3d70623c-ae33-4d5d-88ca-90ba3c35ebdb" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="3d70623c-ae33-4d5d-88ca-90ba3c35ebdb" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="3d70623c-ae33-4d5d-88ca-90ba3c35ebdb" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/3d70623c-ae33-4d5d-88ca-90ba3c35ebdb/view" class="up-card-name">QUO-69-78891</a>
+                                            <div class="up-card-req">Quotation for Sidharth Sharma — Required xyz</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="56934bb1-e2f3-40e8-b45c-4ce26ffe2111" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">ChocolateX</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="56934bb1-e2f3-40e8-b45c-4ce26ffe2111" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="56934bb1-e2f3-40e8-b45c-4ce26ffe2111" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/56934bb1-e2f3-40e8-b45c-4ce26ffe2111/view" class="up-card-name">QUO-69-98091</a>
+                                            <div class="up-card-req">Quotation for Kaushik Kumar — Required rigid boxes</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="97c26c20-42b0-436b-b52a-c2e941ce4fc7" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="97c26c20-42b0-436b-b52a-c2e941ce4fc7" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="97c26c20-42b0-436b-b52a-c2e941ce4fc7" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/97c26c20-42b0-436b-b52a-c2e941ce4fc7/view" class="up-card-name">QUO-69-33241</a>
+                                            <div class="up-card-req">Quotation for Sidharth Sharma — Test Again</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="eecbb950-05e1-42d2-9be0-fb8735b38058" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="eecbb950-05e1-42d2-9be0-fb8735b38058" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="eecbb950-05e1-42d2-9be0-fb8735b38058" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/eecbb950-05e1-42d2-9be0-fb8735b38058/view" class="up-card-name">QUO-69-83753</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="a098e0c1-966b-40df-a86f-0f9d941a7efc" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid.AI</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="a098e0c1-966b-40df-a86f-0f9d941a7efc" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="a098e0c1-966b-40df-a86f-0f9d941a7efc" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/a098e0c1-966b-40df-a86f-0f9d941a7efc/view" class="up-card-name">QUO-69-67690</a>
+                                            <div class="up-card-req">Quotation for RVSS Manoj — test</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="524f36ce-7c5e-40f0-8724-80d7db46d379" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">test</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="524f36ce-7c5e-40f0-8724-80d7db46d379" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="524f36ce-7c5e-40f0-8724-80d7db46d379" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/524f36ce-7c5e-40f0-8724-80d7db46d379/view" class="up-card-name">QUO-69-06999</a>
+                                            <div class="up-card-req">Quotation for John Doe — test</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="a2348243-e826-408d-9cff-b1351dea80e3" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="a2348243-e826-408d-9cff-b1351dea80e3" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="a2348243-e826-408d-9cff-b1351dea80e3" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/a2348243-e826-408d-9cff-b1351dea80e3/view" class="up-card-name">QUO-69-83294</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani — Pippetes, petri dishes,etc.</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="114a4dc5-b496-42ac-848e-c4dd24a1de6b" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">harshitkhemani</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="114a4dc5-b496-42ac-848e-c4dd24a1de6b" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="114a4dc5-b496-42ac-848e-c4dd24a1de6b" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/114a4dc5-b496-42ac-848e-c4dd24a1de6b/view" class="up-card-name">QUO-69-83305</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani — Pippete, Petri Dishes</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="77c6571e-67b0-4da5-8bfa-d5a26a55c4e6" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid.AI</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="77c6571e-67b0-4da5-8bfa-d5a26a55c4e6" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="77c6571e-67b0-4da5-8bfa-d5a26a55c4e6" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/77c6571e-67b0-4da5-8bfa-d5a26a55c4e6/view" class="up-card-name">QUO-69-34025</a>
+                                            <div class="up-card-req">Quotation for RVSS Manoj — test</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="9429318d-6b53-4b28-a867-7c7ab9bee835" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">test</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="9429318d-6b53-4b28-a867-7c7ab9bee835" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="9429318d-6b53-4b28-a867-7c7ab9bee835" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/9429318d-6b53-4b28-a867-7c7ab9bee835/view" class="up-card-name">QUO-69-80901</a>
+                                            <div class="up-card-req">Quotation for John Doe — test</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="6cf2d428-76ca-4c42-9186-217ed7445c94" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="6cf2d428-76ca-4c42-9186-217ed7445c94" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="6cf2d428-76ca-4c42-9186-217ed7445c94" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/6cf2d428-76ca-4c42-9186-217ed7445c94/view" class="up-card-name">QUO-69-42612</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani — Pippetes, petri dishes,etc.</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="13fad054-4c7b-435c-893f-64299b9e6a36" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">harshitkhemani</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="13fad054-4c7b-435c-893f-64299b9e6a36" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="13fad054-4c7b-435c-893f-64299b9e6a36" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/13fad054-4c7b-435c-893f-64299b9e6a36/view" class="up-card-name">QUO-69-07594</a>
+                                            <div class="up-card-req">Quotation for Harshit Khemani — Pippete, Petri Dishes</div>
+                                            <div class="up-card-footer">
+                                                
+                                                <span class="up-card-date">02 Jul</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="9f8d7fcb-c1e1-41fb-ad6f-7dc3a1712b57" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <div class="up-card-company mb-0">Likwid Techserve</div>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="9f8d7fcb-c1e1-41fb-ad6f-7dc3a1712b57" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="9f8d7fcb-c1e1-41fb-ad6f-7dc3a1712b57" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/9f8d7fcb-c1e1-41fb-ad6f-7dc3a1712b57/view" class="up-card-name">QUO-69-36582</a>
+                                            <div class="up-card-req">Quotation for Sidharth Sharma — Everything owns</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp fw-semibold">₹ 58800.00</span>
+                                                <span class="up-card-date">15 Jun</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="8115b05a-a55e-438f-a9be-ba6f24717833" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <span></span>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="8115b05a-a55e-438f-a9be-ba6f24717833" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="8115b05a-a55e-438f-a9be-ba6f24717833" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/8115b05a-a55e-438f-a9be-ba6f24717833/view" class="up-card-name">QUO-69-66880</a>
+                                            <div class="up-card-req">Test</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp fw-semibold">₹ 260544.00</span>
+                                                <span class="up-card-date">23 Aug</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="e1dfd04c-2073-475c-a6e5-476c47f303c9" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <span></span>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="e1dfd04c-2073-475c-a6e5-476c47f303c9" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="e1dfd04c-2073-475c-a6e5-476c47f303c9" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/e1dfd04c-2073-475c-a6e5-476c47f303c9/view" class="up-card-name">QUO-69-90946</a>
+                                            <div class="up-card-req">Test</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp fw-semibold">₹ 21240.00</span>
+                                                <span class="up-card-date">08 Aug</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="d8307703-3e60-4871-bc65-c10e136f4cf3" data-col="pending">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <span></span>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="d8307703-3e60-4871-bc65-c10e136f4cf3" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="d8307703-3e60-4871-bc65-c10e136f4cf3" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/d8307703-3e60-4871-bc65-c10e136f4cf3/view" class="up-card-name">QUO-69-47851</a>
+                                            <div class="up-card-req">Hard Board Carton</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp fw-semibold">₹ 141600.00</span>
+                                                <span class="up-card-date">06 Feb</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="up-col" id="deals-col-converted" style="--col-color:#50cd89;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Converted</span>
+                                            <span class="up-col-count">1</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="83de2da9-9173-4eeb-9175-1ae0fb5bcf6a" data-col="converted">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <span></span>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="83de2da9-9173-4eeb-9175-1ae0fb5bcf6a" data-status="Pending" data-col="pending">↩ Pending</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="83de2da9-9173-4eeb-9175-1ae0fb5bcf6a" data-status="Cancelled" data-col="cancelled">✗ Cancelled</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/83de2da9-9173-4eeb-9175-1ae0fb5bcf6a/view" class="up-card-name">QUO-69-90271</a>
+                                            <div class="up-card-req">Dining Set</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp fw-semibold text-success">₹ 195408.00</span>
+                                                <span class="up-card-date">31 Jan</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="up-col" id="deals-col-cancelled" style="--col-color:#f1416c;">
+                                        <div class="up-col-header">
+                                            <span class="up-col-title">Cancelled</span>
+                                            <span class="up-col-count">1</span>
+                                        </div>
+                                        
+                                        <div class="up-card" data-quo-id="052a49ee-00b7-4a8b-b9f6-d2231aa34835" data-col="cancelled">
+                                            <div class="d-flex align-items-start justify-content-between mb-1">
+                                                <span></span>
+                                                <div class="up-status-menu dropdown">
+                                                    <button class="up-status-btn" data-bs-toggle="dropdown">···</button>
+                                                    <ul class="dropdown-menu dropdown-menu-end py-2" style="min-width:150px;">
+                                                        <li><span class="dropdown-item-text text-muted" style="font-size:0.7rem;">Move to</span></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="052a49ee-00b7-4a8b-b9f6-d2231aa34835" data-status="Pending" data-col="pending">↩ Pending</a></li>
+                                                        <li><a class="dropdown-item up-deal-btn" data-quo-id="052a49ee-00b7-4a8b-b9f6-d2231aa34835" data-status="Converted" data-col="converted">✓ Converted</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="/rise-crm/quotations/052a49ee-00b7-4a8b-b9f6-d2231aa34835/view" class="up-card-name">QUO-69-87756</a>
+                                            <div class="up-card-req">Milling Plant - 1000 TPD</div>
+                                            <div class="up-card-footer">
+                                                <span class="up-card-emp">₹ 175867.20</span>
+                                                <span class="up-card-date">23 Aug</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- end kanban -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                						
+                        <!--begin::Footer-->
+						<div id="kt_app_footer" class="app-footer">
+							<!--begin::Footer container-->
+							<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+								<!--begin::Copyright-->
+								<div class="text-gray-900 order-2 order-md-1">
+									<span class="text-muted fw-semibold me-1">2024©</span>
+									<a href="https://www.likwid.co.in/" target="_blank" class="text-hover-primary" style="color:#4154f1;">Likwid.Ai</a>
+								</div>
+								<!--end::Copyright-->
+								<!--begin::Menu-->
+								<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+									<li class="menu-item">
+										<a href="https://www.likwid.co.in/" target="_blank" class="menu-link px-2">About</a>
+									</li>
+									<li class="menu-item">
+										<a href="#" target="_blank" class="menu-link px-2">Support</a>
+									</li>
+									<li class="menu-item">
+										<a href="https://www.likwid.co.in/" target="_blank" class="menu-link px-2">Purchase</a>
+									</li>
+								</ul>
+								<!--end::Menu-->
+							</div>
+							<!--end::Footer container-->
+						</div>
+						<!--end::Footer-->
+            </div>
+        </div>
+    </div>
+
+    
+
+<style>
+/* ── Likwid AI full-content panel ── */
+#lkh-chat-overlay {
+	position: fixed;
+	top: 70px;
+	left: 265px;
+	right: 0;
+	bottom: 0;
+	z-index: 200;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: -4px 0 24px rgba(0,0,0,0.10);
+	transform: translateX(100%);
+	transition: transform 0.25s ease;
+}
+#lkh-chat-overlay.lkh-open { transform: translateX(0); }
+
+.lkh-chat-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 22px;
+	border-bottom: 1px solid #efefef;
+	flex-shrink: 0;
+	background: #fff;
+}
+.lkh-gradient-text {
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.lkh-chat-body {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+}
+
+/* Sidebar */
+.lkh-chat-sidebar {
+	width: 240px;
+	border-right: 1px solid #efefef;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	flex-shrink: 0;
+	background: #fafafa;
+}
+.lkh-sidebar-top {
+	padding: 12px 14px;
+	border-bottom: 1px solid #efefef;
+	flex-shrink: 0;
+}
+#lkh-conversations-list {
+	flex: 1;
+	overflow-y: auto;
+	padding: 8px 0;
+}
+.lkh-conv-item {
+	padding: 10px 14px;
+	cursor: pointer;
+	border-radius: 6px;
+	margin: 2px 8px;
+	font-size: 13px;
+	color: #5e6278;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: background 0.15s;
+}
+.lkh-conv-item:hover { background: #f1f1f4; color: #181c32; }
+.lkh-conv-item.active {
+	background: linear-gradient(135deg, rgba(126,68,238,0.12) 0%, rgba(0,89,252,0.08) 100%);
+	color: #7e44ee;
+	font-weight: 600;
+}
+
+/* Main chat area */
+.lkh-chat-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+#lkh-messages-erp {
+	flex: 1;
+	overflow-y: auto;
+	padding: 24px 32px;
+}
+
+/* Bubbles */
+.lkh-user-bubble {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+.lkh-user-bubble > div {
+	max-width: 72%;
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	color: #fff;
+	border-radius: 16px 16px 4px 16px;
+	padding: 12px 16px;
+	font-size: 14px;
+	line-height: 1.5;
+	word-break: break-word;
+}
+.lkh-ai-bubble {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+}
+.lkh-ai-bubble-inner {
+	max-width: 82%;
+}
+.lkh-ai-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 6px;
+}
+.lkh-ai-content {
+	background: #f8f6ff;
+	border: 1px solid rgba(126,68,238,0.12);
+	border-radius: 4px 16px 16px 16px;
+	padding: 14px 18px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #2d2d2d;
+	word-break: break-word;
+}
+.lkh-row-charts { margin-top: 10px; }
+
+/* Rich text elements */
+.lkh-blockquote {
+	border-left: 3px solid #7e44ee;
+	padding: 6px 12px;
+	margin: 6px 0;
+	background: rgba(126,68,238,0.04);
+	border-radius: 0 6px 6px 0;
+	color: #555;
+	font-size: 0.88em;
+}
+.lkh-chat-table { font-size: 0.82rem; border-color: #e8e0ff; }
+.lkh-chat-table thead th {
+	background: rgba(126,68,238,0.07);
+	color: #5a32d1;
+	border-color: #e8e0ff;
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+.lkh-chat-table td { border-color: #f0ecff; vertical-align: middle; }
+
+/* Footer */
+.lkh-chat-footer {
+	padding: 14px 22px;
+	border-top: 1px solid rgba(126,68,238,0.1);
+	background: rgba(255,255,255,0.97);
+	flex-shrink: 0;
+}
+.lkh-btn-send {
+	background: linear-gradient(135deg, #7e44ee 0%, #0059fc 100%);
+	border: none;
+	border-radius: 12px;
+	color: white;
+	font-weight: 600;
+	padding: 10px 22px;
+	transition: all 0.2s ease;
+}
+.lkh-btn-send:disabled { opacity: 0.65; cursor: not-allowed; }
+.lkh-btn-send:not(:disabled):hover { filter: brightness(1.08); }
+
+.lkh-suggest-pill {
+	border: none;
+	background: rgba(126,68,238,0.07);
+	color: #7e44ee;
+	border-radius: 20px;
+	font-size: 12px;
+	padding: 6px 14px;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+.lkh-suggest-pill:hover { background: rgba(126,68,238,0.14); }
+
+@media (max-width: 991px) {
+	#lkh-chat-overlay { left: 0; top: 60px; }
+	.lkh-chat-sidebar { width: 200px; }
+}
+</style>
+
+<!--begin::Likwid AI full-content panel-->
+<div id="lkh-chat-overlay">
+
+	<!--begin::Header-->
+	<div class="lkh-chat-header">
+		<div class="d-flex align-items-center gap-3">
+			<i class="ki-duotone ki-ai fs-2 text-primary"><span class="path1"></span><span class="path2"></span></i>
+			<span class="fs-5 fw-bold lkh-gradient-text">Likwid AI</span>
+			<span id="lkh-usage-badge" class="badge badge-light-primary fs-8 ms-1"></span>
+		</div>
+		<button class="btn btn-sm btn-icon btn-active-light-primary" id="lkh-chat-close">
+			<i class="ki-duotone ki-cross fs-2"><span class="path1"></span><span class="path2"></span></i>
+		</button>
+	</div>
+	<!--end::Header-->
+
+	<!--begin::Body-->
+	<div class="lkh-chat-body">
+
+		<!--begin::History sidebar-->
+		<div class="lkh-chat-sidebar">
+			<div class="lkh-sidebar-top">
+				<button class="btn btn-sm w-100 lkh-btn-send" id="lkh-new-chat-btn" style="border-radius:10px;">
+					<i class="ki-duotone ki-plus fs-5 me-1"><span class="path1"></span><span class="path2"></span></i>
+					New Chat
+				</button>
+			</div>
+			<div id="lkh-conversations-list">
+				<div class="text-center text-muted fs-8 py-4">Loading...</div>
+			</div>
+		</div>
+		<!--end::History sidebar-->
+
+		<!--begin::Main chat area-->
+		<div class="lkh-chat-main">
+
+			<!--begin::Messages-->
+			<div id="lkh-messages-erp">
+				<div id="lkh-empty-erp" class="text-center py-12">
+					<i class="ki-duotone ki-chart-line-up fs-4x text-primary opacity-50 mb-3"><span class="path1"></span><span class="path2"></span></i>
+					<p class="text-muted fs-6 mb-4">Ask me anything about your live ERP data.</p>
+					<div class="d-flex flex-wrap gap-2 justify-content-center" id="lkh-suggest-erp">
+						<button class="lkh-suggest-pill">What is my total order value this month?</button>
+						<button class="lkh-suggest-pill">Who are my top 10 customers?</button>
+						<button class="lkh-suggest-pill">Which items are below reorder level?</button>
+						<button class="lkh-suggest-pill">How's my business doing?</button>
+					</div>
+				</div>
+			</div>
+			<!--end::Messages-->
+
+			<!--begin::Footer-->
+			<div class="lkh-chat-footer">
+				<div id="lkh-cap-banner" class="alert alert-warning d-none mb-3 py-2 px-3 fs-7">
+					<i class="ki-duotone ki-information-5 fs-5 me-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+					Monthly limit reached. <a href="/subscription/" class="alert-link">Upgrade to Pro</a> for unlimited access.
+				</div>
+				<div class="d-flex align-items-end gap-3">
+					<textarea id="lkh-input" class="form-control fs-6 flex-grow-1" rows="2" placeholder="Ask about your live ERP data..." style="resize:none; border:1px solid rgba(126,68,238,0.3); border-radius:12px; padding:10px 14px;"></textarea>
+					<button id="lkh-send-btn" class="lkh-btn-send" style="min-width:100px;">
+						<i class="ki-duotone ki-send fs-5 me-1"><span class="path1"></span><span class="path2"></span></i>
+						Ask AI
+					</button>
+				</div>
+			</div>
+			<!--end::Footer-->
+
+		</div>
+		<!--end::Main chat area-->
+
+	</div>
+	<!--end::Body-->
+
+</div>
+<!--end::Likwid AI full-content panel-->
+
+<!--Load ApexCharts lazily if not already present-->
+
+
+
+
+
+    <!-- Modal: Add Lead -->
+    <div class="modal fade" id="modalAddLead" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mw-700px">
+            <div class="modal-content">
+                <form method="POST" action="/rise-crm/pipeline/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="Din0vOndKtsrB7UO3lkp1yHTZbTAwtuDNaXFxctuv8gbXoeAgnumVl6c804SySyU">
+                    <div class="modal-header">
+                        <h2 class="fw-bold fs-4">Add New Lead</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">First Name <span class="text-danger">*</span></label>
+                                <input type="text" name="first_name" class="form-control form-control-solid" required="">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Last Name <span class="text-danger">*</span></label>
+                                <input type="text" name="last_name" class="form-control form-control-solid" required="">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Company <span class="text-danger">*</span></label>
+                                <input type="text" name="company_name" class="form-control form-control-solid" required="">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Phone</label>
+                                <input type="text" name="phn_num" class="form-control form-control-solid">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Email</label>
+                                <input type="email" name="lead_email" class="form-control form-control-solid">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Source</label>
+                                <input type="text" name="source" class="form-control form-control-solid" placeholder="e.g. LinkedIn, Referral">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">City</label>
+                                <input type="text" name="city" class="form-control form-control-solid">
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">State</label>
+                                <input type="text" name="state" class="form-control form-control-solid">
+                            </div>
+                            <div class="col-12">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Requirement</label>
+                                <textarea name="requirement" class="form-control form-control-solid" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 pt-0">
+                        <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" name="addlead" class="btn btn-dark btn-sm">Add Lead</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add Reminder -->
+    <div class="modal fade" id="modalAddReminder" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mw-550px">
+            <div class="modal-content">
+                <form method="POST" action="/rise-crm/pipeline/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="Din0vOndKtsrB7UO3lkp1yHTZbTAwtuDNaXFxctuv8gbXoeAgnumVl6c804SySyU">
+                    <div class="modal-header">
+                        <h2 class="fw-bold fs-4">Add Reminder</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Lead <span class="text-danger">*</span></label>
+                                <select name="reminder_lead_id" class="form-select form-select-solid" required="">
+                                    <option value="">— Select a lead —</option>
+                                    
+                                    <option value="52337dc7-8333-422c-b4f1-7d53e1b37690">Akansha Chetiwal · XYZ</option>
+                                    
+                                    <option value="1317c185-2490-4d3e-99c8-d49579b8862b">Harshit Khemani · Likwid</option>
+                                    
+                                    <option value="52ec7882-f8b6-4b41-92c5-71600ff03423">Harshit Khemani · Likwid</option>
+                                    
+                                    <option value="614ae479-76d2-49ac-a966-cfe9d4d29893">Harshit Khemani · harshitkhemani</option>
+                                    
+                                    <option value="f8d743db-a286-4a64-b3cb-bc051de21d5e">John Doe · test</option>
+                                    
+                                    <option value="3d5b0f61-f7b8-4c21-8dd8-569993631f87">Kaushik Kumar · ChocolateX</option>
+                                    
+                                    <option value="569bc722-f7b1-4704-a883-debff8ebe95a">Manthan Kumar · XYZ</option>
+                                    
+                                    <option value="fb7b8a9b-b26f-40bc-89c4-286fd7949c69">RVSS Manoj · Likwid.AI</option>
+                                    
+                                    <option value="2ae1615f-93ca-47ca-b0a4-0020750e698f">Sidharth Sharma · Likwid Techserve</option>
+                                    
+                                    <option value="b54b5420-3407-4914-a244-299a8068bbd8">Sidharth Sharma · Likwid Techserve</option>
+                                    
+                                    <option value="b9470211-ed7f-4180-bdce-42d156933e8d">Sidharth Sharma · Likwid Techserve</option>
+                                    
+                                    <option value="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d">Sidharth Sharma · Likwid Techserve</option>
+                                    
+                                    <option value="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d">Sidharth Sharma · Likwid Techserve</option>
+                                    
+                                    <option value="fab4fdb8-70a1-46b7-977c-891a4f598c5e">Sidharth Sharma · Likwid Techserve</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Category</label>
+                                <select name="rem_category" class="form-select form-select-solid">
+                                    <option value="Call">Call</option>
+                                    <option value="Email">Email</option>
+                                    <option value="Meeting">Meeting</option>
+                                    <option value="Follow-up">Follow-up</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Date</label>
+                                <input type="date" name="rem_date" class="form-control form-control-solid">
+                            </div>
+                            <div class="col-12">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Title <span class="text-danger">*</span></label>
+                                <input type="text" name="rem_title" class="form-control form-control-solid" required="">
+                            </div>
+                            <div class="col-12">
+                                <label class="fs-7 fw-semibold text-muted mb-1 d-block">Description</label>
+                                <textarea name="rem_description" class="form-control form-control-solid" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 pt-0">
+                        <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" name="addreminder" class="btn btn-dark btn-sm">Save Reminder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add Quotation (lead selector → navigate) -->
+    <div class="modal fade" id="modalAddQuotation" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mw-450px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="fw-bold fs-4">Create Quotation</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="fs-7 fw-semibold text-muted mb-2 d-block">Select a lead to create a quotation for:</label>
+                    <select id="quoteLeadSelect" class="form-select form-select-solid">
+                        <option value="">— Select a lead —</option>
+                        
+                        <option value="52337dc7-8333-422c-b4f1-7d53e1b37690">Akansha Chetiwal · XYZ</option>
+                        
+                        <option value="1317c185-2490-4d3e-99c8-d49579b8862b">Harshit Khemani · Likwid</option>
+                        
+                        <option value="52ec7882-f8b6-4b41-92c5-71600ff03423">Harshit Khemani · Likwid</option>
+                        
+                        <option value="614ae479-76d2-49ac-a966-cfe9d4d29893">Harshit Khemani · harshitkhemani</option>
+                        
+                        <option value="f8d743db-a286-4a64-b3cb-bc051de21d5e">John Doe · test</option>
+                        
+                        <option value="3d5b0f61-f7b8-4c21-8dd8-569993631f87">Kaushik Kumar · ChocolateX</option>
+                        
+                        <option value="569bc722-f7b1-4704-a883-debff8ebe95a">Manthan Kumar · XYZ</option>
+                        
+                        <option value="fb7b8a9b-b26f-40bc-89c4-286fd7949c69">RVSS Manoj · Likwid.AI</option>
+                        
+                        <option value="2ae1615f-93ca-47ca-b0a4-0020750e698f">Sidharth Sharma · Likwid Techserve</option>
+                        
+                        <option value="b54b5420-3407-4914-a244-299a8068bbd8">Sidharth Sharma · Likwid Techserve</option>
+                        
+                        <option value="b9470211-ed7f-4180-bdce-42d156933e8d">Sidharth Sharma · Likwid Techserve</option>
+                        
+                        <option value="ca7e4a8e-40a2-4ee6-90b4-26bd8862ec9d">Sidharth Sharma · Likwid Techserve</option>
+                        
+                        <option value="e05d1c92-bf3e-4426-9d06-16cf0bedfd7d">Sidharth Sharma · Likwid Techserve</option>
+                        
+                        <option value="fab4fdb8-70a1-46b7-977c-891a4f598c5e">Sidharth Sharma · Likwid Techserve</option>
+                        
+                    </select>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-dark btn-sm" id="quoteGoBtn" disabled="">Create Quotation →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up"><span class="path1"></span><span class="path2"></span></i>
+    </div>
+
+    
+        <!--begin::Javascript-->
+	
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		
+		
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Vendors Javascript(used for this page only)-->
+		
+		
+		<!--end::Vendors Javascript-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--end::Vendors Javascript-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+		
+		
+		
+		
+
+
+		<!--end::Custom Javascript-->
+		<!--end::Javascript-->
+
+		
+
+
+    <style>
+        /* Sidebar */
+        .up-sidebar {
+            width: 210px;
+            min-width: 210px;
+            padding-top: 4px;
+        }
+        .up-section-title {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #a1a5b7;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+        .up-divider { border-top: 1px solid #f0f0f0; }
+
+        /* Pipeline selector buttons */
+        .up-pipe-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            padding: 8px 10px;
+            border: none;
+            border-radius: 7px;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #555;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.12s;
+        }
+        .up-pipe-btn:hover { background: #f5f5f5; }
+        .up-pipe-active { background: #f5f5f5 !important; color: #111; font-weight: 600; }
+        .up-pipe-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .up-pipe-count {
+            margin-left: auto;
+            background: #f0f0f0;
+            color: #555;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 1px 7px;
+        }
+
+        /* Reminders */
+        .up-reminder-item {
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .up-reminder-item:last-child { border-bottom: none; }
+        .up-rem-title { font-size: 0.8rem; font-weight: 600; color: #333; line-height: 1.3; }
+        .up-rem-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 3px; }
+        .up-rem-meta span:first-child { font-size: 0.72rem; color: #888; }
+        .up-rem-date { font-size: 0.7rem; color: #aaa; }
+
+        /* Kanban board */
+        .up-board {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            min-height: calc(100vh - 200px);
+        }
+
+        /* Kanban column */
+        .up-col {
+            min-width: 260px;
+            width: 260px;
+            flex-shrink: 0;
+            background: #f4f5f7;
+            border-radius: 10px;
+            padding: 12px;
+        }
+        .up-col-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 4px 12px;
+        }
+        .up-col-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .up-col-title::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--col-color, #ccc);
+            flex-shrink: 0;
+        }
+        .up-col-count {
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(0,0,0,0.07);
+            color: #555;
+            border-radius: 10px;
+            padding: 2px 8px;
+        }
+
+        /* Cards */
+        .up-card {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            transition: box-shadow 0.15s, transform 0.1s;
+        }
+        .up-card:last-child { margin-bottom: 0; }
+        .up-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.09); transform: translateY(-1px); }
+        .up-card-company {
+            font-size: 0.7rem;
+            color: #a1a5b7;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
+        }
+        .up-card-name {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #111;
+            text-decoration: none;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        .up-card-name:hover { color: #009ef7; }
+        .up-card-req {
+            font-size: 0.78rem;
+            color: #7e8299;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .up-card-fov {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #17a948;
+            margin-bottom: 8px;
+        }
+        .up-card-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 2px 8px;
+            margin-bottom: 8px;
+        }
+        .up-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 8px;
+            margin-top: 4px;
+        }
+        .up-card-emp {
+            font-size: 0.72rem;
+            color: #555;
+            background: #f5f5f5;
+            border-radius: 4px;
+            padding: 2px 7px;
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .up-card-date { font-size: 0.7rem; color: #bbb; }
+        .up-empty { font-size: 0.78rem; color: #bbb; text-align: center; padding: 20px 0; }
+
+        /* Status dropdown button on cards */
+        .up-status-btn {
+            background: none;
+            border: none;
+            padding: 0 4px;
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: color 0.1s, background 0.1s;
+            flex-shrink: 0;
+        }
+        .up-status-btn:hover { color: #555; background: #f0f0f0; }
+        .up-card:hover .up-status-btn { color: #aaa; }
+    </style>
+
+    
+
+
+</div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

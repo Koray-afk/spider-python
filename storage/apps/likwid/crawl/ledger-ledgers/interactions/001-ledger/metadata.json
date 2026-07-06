@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Ledger",
+  "triggerId": "",
+  "triggerClass": "btn btn-sm btn-light view-ledger",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "ledger-ledgers",
+  "sourceUrl": "https://likwidai.com/ledger/ledgers/",
+  "beforeUrl": "https://likwidai.com/ledger/ledgers/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/ledger/ledgers/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "ledger-ledgers/interactions/001-ledger",
+  "captured_at": "2026-07-03T11:00:38.241375+00:00"
+}

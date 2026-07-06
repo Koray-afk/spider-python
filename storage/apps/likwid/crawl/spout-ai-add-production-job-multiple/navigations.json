@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Create Jobs",
+    "tag_name": "button",
+    "selector": "#kt_app_content_container > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(1)",
+    "target_url": "https://likwidai.com/spout-ai/production-jobs/pending/",
+    "target_slug": "spout-ai-production-jobs-pending",
+    "target_page": "../spout-ai-production-jobs-pending/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Create Jobs",
+      "id": "",
+      "class_name": "btn btn-primary w-100",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#kt_app_content_container > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[4]/button[1]",
+      "outer_html": "<button type=\"submit\" class=\"btn btn-primary w-100\" data-crawl-id=\"3\">\n                                                            <i class=\"ki-duotone ki-triangle fs-3\">\n                                                                <span class=\"path1\"></span>\n                                                                <span class=\"path2\"></span>\n                                                                <span class=\"path3\"></span>\n                                                            </i>Create Jobs</button>"
+    }
+  }
+]

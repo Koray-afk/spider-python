@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add Row",
+  "triggerId": "add-item-row",
+  "triggerClass": "btn btn-sm btn-light-primary",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "unknown",
+  "sourcePage": "ledger-invoices-new",
+  "sourceUrl": "https://likwidai.com/ledger/invoices/new/",
+  "beforeUrl": "https://likwidai.com/ledger/invoices/new/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/ledger/invoices/new/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "ledger-invoices-new/interactions/001-add-row",
+  "captured_at": "2026-07-03T11:02:32.896209+00:00"
+}

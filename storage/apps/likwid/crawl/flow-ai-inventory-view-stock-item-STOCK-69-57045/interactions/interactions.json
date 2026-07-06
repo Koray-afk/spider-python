@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Machine",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/001-machine",
+    "relationship_file": "interactions/001-machine/relationship.json"
+  },
+  {
+    "label": "Material",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/002-material",
+    "relationship_file": "interactions/002-material/relationship.json"
+  },
+  {
+    "label": "Finished Goods Godown",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/007-finished-goods-godown",
+    "relationship_file": "interactions/007-finished-goods-godown/relationship.json"
+  },
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/008-interaction",
+    "relationship_file": "interactions/008-interaction/relationship.json"
+  },
+  {
+    "label": "Why is stock leaving?",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/009-why-is-stock-leaving",
+    "relationship_file": "interactions/009-why-is-stock-leaving/relationship.json"
+  },
+  {
+    "label": "Cost of Goods Sold (5001) \u2014 default",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/010-cost-of-goods-sold-5001-default",
+    "relationship_file": "interactions/010-cost-of-goods-sold-5001-default/relationship.json"
+  },
+  {
+    "label": "Mackoff - 100ml",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/011-mackoff-100ml",
+    "relationship_file": "interactions/011-mackoff-100ml/relationship.json"
+  }
+]

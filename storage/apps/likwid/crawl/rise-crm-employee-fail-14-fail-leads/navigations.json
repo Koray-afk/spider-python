@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Add Lead",
+    "tag_name": "button",
+    "selector": "#kt_app_content_container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://likwidai.com/rise-crm/add-lead",
+    "target_slug": "rise-crm-add-lead",
+    "target_page": "../rise-crm-add-lead/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Add Lead",
+      "id": "",
+      "class_name": "btn btn-sm btn-outline d-block",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#kt_app_content_container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]",
+      "outer_html": "<button type=\"button\" class=\"btn btn-sm btn-outline d-block\" data-crawl-id=\"1\"><a href=\"/rise-crm/add-lead\">Add Lead</a></button>"
+    }
+  }
+]

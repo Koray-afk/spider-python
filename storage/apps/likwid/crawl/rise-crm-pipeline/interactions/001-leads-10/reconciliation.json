@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Leads\n10",
+    "tagName": "button",
+    "id": "",
+    "className": "up-pipe-btn up-pipe-active",
+    "selector": "[data-crawl-id=\"4\"]",
+    "outerHTML": "<button class=\"up-pipe-btn up-pipe-active\" onclick=\"switchPipeline('leads', this)\" data-crawl-id=\"4\">\n                                        <span class=\"up-pipe-dot\" style=\"background:#f6c000;\"></span>\n                                        <span>Leads</span>\n                                        <span class=\"up-pipe-count\">10</span>\n                                    </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

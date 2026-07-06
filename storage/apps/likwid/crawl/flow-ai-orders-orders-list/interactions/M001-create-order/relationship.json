@@ -1,0 +1,35 @@
+{
+  "source_page": "flow-ai-orders-orders-list",
+  "source_url": "https://likwidai.com/flow-ai/orders/orders-list",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Create Order",
+    "id": "",
+    "class_name": "btn btn-dark",
+    "name": "add_order",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#add_order_form > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(2)",
+    "crawl_selector": "",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[1]/button[2]",
+    "outer_html": "<button type=\"submit\" name=\"add_order\" class=\"btn btn-dark\">Create Order</button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/flow-ai/orders/orders-list/",
+    "slug": "flow-ai-orders-orders-list",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button type=\"submit\" name=\"add_order\" class=\"btn btn-dark\">Create Order</button>",
+  "trigger_label": "Create Order",
+  "trigger_id": "",
+  "trigger_class": "btn btn-dark",
+  "target_url": "https://likwidai.com/flow-ai/orders/orders-list/",
+  "target_slug": "flow-ai-orders-orders-list",
+  "target_title": "Likwid.Ai",
+  "capture_mode": "manual"
+}

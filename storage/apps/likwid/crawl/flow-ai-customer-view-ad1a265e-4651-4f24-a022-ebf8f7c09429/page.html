@@ -1,0 +1,1009 @@
+<!DOCTYPE html><html lang="en" data-bs-theme="light"><!--begin::Head--><head>
+		<title>Likwid.Ai</title>
+
+
+		 <!-- Google tag (gtag.js) -->
+		 
+		 
+
+
+		<link rel="shortcut icon" href="https://likwidai.com/static/images/favicon-32x32.png">
+  		<link rel="shortcut icon" href="https://likwidai.com/static/images/apple-touch-icon.png">
+		<!--begin::Fonts(mandatory for all pages)-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700">
+		<!--end::Fonts-->
+		<!--begin::Vendor Stylesheets(used for this page only)-->
+		
+		<link href="https://likwidai.com/static/suitestatic/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+		<link href="https://likwidai.com/static/suitestatic/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Vendor Stylesheets-->
+		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+		<link href="https://likwidai.com/static/suitestatic/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+		<link href="https://likwidai.com/static/suitestatic/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Global Stylesheets Bundle-->
+		<style id="plotly.js-style-global"></style>
+		
+		
+	<style>
+	.messages-container {
+		position: fixed;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 9999;
+		width: 25%;
+	}
+	</style><style type="text/css">.vis-time-axis{overflow:hidden;position:relative}.vis-time-axis.vis-foreground{left:0;top:0;width:100%}.vis-time-axis.vis-background{height:100%;left:0;position:absolute;top:0;width:100%}.vis-time-axis .vis-text{box-sizing:border-box;color:#4d4d4d;overflow:hidden;padding:3px;position:absolute;white-space:nowrap}.vis-time-axis .vis-text.vis-measure{margin-left:0;margin-right:0;padding-left:0;padding-right:0;position:absolute;visibility:hidden}.vis-time-axis .vis-grid.vis-vertical{border-left:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-vertical-rtl{border-right:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-minor{border-color:#e5e5e5}.vis-time-axis .vis-grid.vis-major{border-color:#bfbfbf}</style><style type="text/css">.vis .overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}.vis-active{box-shadow:0 0 10px #86d5f8}</style><style type="text/css">.vis-custom-time{background-color:#6e94ff;cursor:move;width:2px;z-index:1}.vis-custom-time>.vis-custom-time-marker{background-color:inherit;color:#fff;cursor:auto;font-size:12px;padding:3px 5px;top:0;white-space:nowrap;z-index:inherit}</style><style type="text/css">.vis-current-time{background-color:#ff7f6e;pointer-events:none;width:2px;z-index:1}.vis-rolling-mode-btn{background:#3876c2;border-radius:50%;color:#fff;cursor:pointer;font-size:28px;font-weight:700;height:40px;opacity:.8;position:absolute;right:20px;text-align:center;top:7px;width:40px}.vis-rolling-mode-btn:before{content:"\26F6"}.vis-rolling-mode-btn:hover{opacity:1}</style><style type="text/css">.vis-panel{box-sizing:border-box;margin:0;padding:0;position:absolute}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right,.vis-panel.vis-top{border:1px #bfbfbf}.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right{border-bottom-style:solid;border-top-style:solid;overflow:hidden}.vis-left.vis-panel.vis-vertical-scroll,.vis-right.vis-panel.vis-vertical-scroll{height:100%;overflow-x:hidden;overflow-y:scroll}.vis-left.vis-panel.vis-vertical-scroll{direction:rtl}.vis-left.vis-panel.vis-vertical-scroll .vis-content,.vis-right.vis-panel.vis-vertical-scroll{direction:ltr}.vis-right.vis-panel.vis-vertical-scroll .vis-content{direction:rtl}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-top{border-left-style:solid;border-right-style:solid}.vis-background{overflow:hidden}.vis-panel>.vis-content{position:relative}.vis-panel .vis-shadow{box-shadow:0 0 10px rgba(0,0,0,.8);height:1px;position:absolute;width:100%}.vis-panel .vis-shadow.vis-top{left:0;top:-1px}.vis-panel .vis-shadow.vis-bottom{bottom:-1px;left:0}</style><style type="text/css">.vis-graph-group0{fill:#4f81bd;fill-opacity:0;stroke-width:2px;stroke:#4f81bd}.vis-graph-group1{fill:#f79646;fill-opacity:0;stroke-width:2px;stroke:#f79646}.vis-graph-group2{fill:#8c51cf;fill-opacity:0;stroke-width:2px;stroke:#8c51cf}.vis-graph-group3{fill:#75c841;fill-opacity:0;stroke-width:2px;stroke:#75c841}.vis-graph-group4{fill:#ff0100;fill-opacity:0;stroke-width:2px;stroke:#ff0100}.vis-graph-group5{fill:#37d8e6;fill-opacity:0;stroke-width:2px;stroke:#37d8e6}.vis-graph-group6{fill:#042662;fill-opacity:0;stroke-width:2px;stroke:#042662}.vis-graph-group7{fill:#00ff26;fill-opacity:0;stroke-width:2px;stroke:#00ff26}.vis-graph-group8{fill:#f0f;fill-opacity:0;stroke-width:2px;stroke:#f0f}.vis-graph-group9{fill:#8f3938;fill-opacity:0;stroke-width:2px;stroke:#8f3938}.vis-timeline .vis-fill{fill-opacity:.1;stroke:none}.vis-timeline .vis-bar{fill-opacity:.5;stroke-width:1px}.vis-timeline .vis-point{stroke-width:2px;fill-opacity:1}.vis-timeline .vis-legend-background{stroke-width:1px;fill-opacity:.9;fill:#fff;stroke:#c2c2c2}.vis-timeline .vis-outline{stroke-width:1px;fill-opacity:1;fill:#fff;stroke:#e5e5e5}.vis-timeline .vis-icon-fill{fill-opacity:.3;stroke:none}</style><style type="text/css">.vis-timeline{border:1px solid #bfbfbf;box-sizing:border-box;margin:0;overflow:hidden;padding:0;position:relative}.vis-loading-screen{height:100%;left:0;position:absolute;top:0;width:100%}</style><style type="text/css">.vis [class*=span]{min-height:0;width:auto}</style><style type="text/css">.vis-item{background-color:#d5ddf6;border-color:#97b0f8;border-width:1px;color:#1a1a1a;display:inline-block;position:absolute;z-index:1}.vis-item.vis-selected{background-color:#fff785;border-color:#ffc200;z-index:2}.vis-editable.vis-selected{cursor:move}.vis-item.vis-point.vis-selected{background-color:#fff785}.vis-item.vis-box{border-radius:2px;border-style:solid;text-align:center}.vis-item.vis-point{background:none}.vis-item.vis-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}.vis-item.vis-range{border-radius:2px;border-style:solid;box-sizing:border-box}.vis-item.vis-background{background-color:rgba(213,221,246,.4);border:none;box-sizing:border-box;margin:0;padding:0}.vis-item .vis-item-overflow{height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%}.vis-item-visible-frame{white-space:nowrap}.vis-item.vis-range .vis-item-content{display:inline-block;position:relative}.vis-item.vis-background .vis-item-content{display:inline-block;position:absolute}.vis-item.vis-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item .vis-item-content{box-sizing:border-box;padding:5px;white-space:nowrap}.vis-item .vis-onUpdateTime-tooltip{background:#4f81bd;border-radius:1px;color:#fff;padding:5px;position:absolute;text-align:center;transition:.4s;-o-transition:.4s;-moz-transition:.4s;-webkit-transition:.4s;white-space:nowrap;width:200px}.vis-item .vis-delete,.vis-item .vis-delete-rtl{box-sizing:border-box;cursor:pointer;height:24px;padding:0 5px;position:absolute;top:0;-webkit-transition:background .2s linear;-moz-transition:background .2s linear;-ms-transition:background .2s linear;-o-transition:background .2s linear;transition:background .2s linear;width:24px}.vis-item .vis-delete{right:-24px}.vis-item .vis-delete-rtl{left:-24px}.vis-item .vis-delete-rtl:after,.vis-item .vis-delete:after{color:red;content:"\00D7";font-family:arial,sans-serif;font-size:22px;font-weight:700;-webkit-transition:color .2s linear;-moz-transition:color .2s linear;-ms-transition:color .2s linear;-o-transition:color .2s linear;transition:color .2s linear}.vis-item .vis-delete-rtl:hover,.vis-item .vis-delete:hover{background:red}.vis-item .vis-delete-rtl:hover:after,.vis-item .vis-delete:hover:after{color:#fff}.vis-item .vis-drag-center{cursor:move;height:100%;left:0;position:absolute;top:0;width:100%}.vis-item.vis-range .vis-drag-left{cursor:w-resize;left:-4px}.vis-item.vis-range .vis-drag-left,.vis-item.vis-range .vis-drag-right{height:100%;max-width:20%;min-width:2px;position:absolute;top:0;width:24px}.vis-item.vis-range .vis-drag-right{cursor:e-resize;right:-4px}.vis-range.vis-item.vis-readonly .vis-drag-left,.vis-range.vis-item.vis-readonly .vis-drag-right{cursor:auto}.vis-item.vis-cluster{border-radius:2px;border-style:solid;text-align:center;vertical-align:center}.vis-item.vis-cluster-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item.vis-cluster-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}</style><style type="text/css">div.vis-tooltip{background-color:#f5f4ed;border:1px solid #808074;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:3px 3px 10px rgba(0,0,0,.2);color:#000;font-family:verdana;font-size:14px;padding:5px;pointer-events:none;position:absolute;visibility:hidden;white-space:nowrap;z-index:5}</style><style type="text/css">.vis-itemset{box-sizing:border-box;margin:0;padding:0;position:relative}.vis-itemset .vis-background,.vis-itemset .vis-foreground{height:100%;overflow:visible;position:absolute;width:100%}.vis-axis{height:0;left:0;position:absolute;width:100%;z-index:1}.vis-foreground .vis-group{border-bottom:1px solid #bfbfbf;box-sizing:border-box;position:relative}.vis-foreground .vis-group:last-child{border-bottom:none}.vis-nesting-group{cursor:pointer}.vis-label.vis-nested-group.vis-group-level-unknown-but-gte1{background:#f5f5f5}.vis-label.vis-nested-group.vis-group-level-0{background-color:#fff}.vis-ltr .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-left:0}.vis-rtl .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-right:0}.vis-label.vis-nested-group.vis-group-level-1{background-color:rgba(0,0,0,.05)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-left:15px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-right:15px}.vis-label.vis-nested-group.vis-group-level-2{background-color:rgba(0,0,0,.1)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-left:30px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-right:30px}.vis-label.vis-nested-group.vis-group-level-3{background-color:rgba(0,0,0,.15)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-left:45px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-right:45px}.vis-label.vis-nested-group.vis-group-level-4{background-color:rgba(0,0,0,.2)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-left:60px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-right:60px}.vis-label.vis-nested-group.vis-group-level-5{background-color:rgba(0,0,0,.25)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-left:75px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-right:75px}.vis-label.vis-nested-group.vis-group-level-6{background-color:rgba(0,0,0,.3)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-left:90px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-right:90px}.vis-label.vis-nested-group.vis-group-level-7{background-color:rgba(0,0,0,.35)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-left:105px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-right:105px}.vis-label.vis-nested-group.vis-group-level-8{background-color:rgba(0,0,0,.4)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-left:120px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-right:120px}.vis-label.vis-nested-group.vis-group-level-9{background-color:rgba(0,0,0,.45)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-left:135px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-right:135px}.vis-label.vis-nested-group{background-color:rgba(0,0,0,.5)}.vis-ltr .vis-label.vis-nested-group .vis-inner{padding-left:150px}.vis-rtl .vis-label.vis-nested-group .vis-inner{padding-right:150px}.vis-group-level-unknown-but-gte1{border:1px solid red}.vis-label.vis-nesting-group:before{display:inline-block;width:15px}.vis-label.vis-nesting-group.expanded:before{content:"\25BC"}.vis-label.vis-nesting-group.collapsed:before{content:"\25B6"}.vis-rtl .vis-label.vis-nesting-group.collapsed:before{content:"\25C0"}.vis-ltr .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-left:15px}.vis-rtl .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-right:15px}.vis-overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}</style><style type="text/css">.vis-labelset{overflow:hidden}.vis-labelset,.vis-labelset .vis-label{box-sizing:border-box;position:relative}.vis-labelset .vis-label{border-bottom:1px solid #bfbfbf;color:#4d4d4d;left:0;top:0;width:100%}.vis-labelset .vis-label.draggable{cursor:pointer}.vis-group-is-dragging{background:rgba(0,0,0,.1)}.vis-labelset .vis-label:last-child{border-bottom:none}.vis-labelset .vis-label .vis-inner{display:inline-block;padding:5px}.vis-labelset .vis-label .vis-inner.vis-hidden{padding:0}</style><style type="text/css">div.vis-configuration{display:block;float:left;font-size:12px;position:relative}div.vis-configuration-wrapper{display:block;width:700px}div.vis-configuration-wrapper:after{clear:both;content:"";display:block}div.vis-configuration.vis-config-option-container{background-color:#fff;border:2px solid #f7f8fa;border-radius:4px;display:block;left:10px;margin-top:20px;padding-left:5px;width:495px}div.vis-configuration.vis-config-button{background-color:#f7f8fa;border:2px solid #ceced0;border-radius:4px;cursor:pointer;display:block;height:25px;left:10px;line-height:25px;margin-bottom:30px;margin-top:20px;padding-left:5px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-button.hover{background-color:#4588e6;border:2px solid #214373;color:#fff}div.vis-configuration.vis-config-item{display:block;float:left;height:25px;line-height:25px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-item.vis-config-s2{background-color:#f7f8fa;border-radius:3px;left:10px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s3{background-color:#e4e9f0;border-radius:3px;left:20px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s4{background-color:#cfd8e6;border-radius:3px;left:30px;padding-left:5px}div.vis-configuration.vis-config-header{font-size:18px;font-weight:700}div.vis-configuration.vis-config-label{height:25px;line-height:25px;width:120px}div.vis-configuration.vis-config-label.vis-config-s3{width:110px}div.vis-configuration.vis-config-label.vis-config-s4{width:100px}div.vis-configuration.vis-config-colorBlock{border:1px solid #444;border-radius:2px;cursor:pointer;height:19px;margin:0;padding:0;top:1px;width:30px}input.vis-configuration.vis-config-checkbox{left:-5px}input.vis-configuration.vis-config-rangeinput{margin:0;padding:1px;pointer-events:none;position:relative;top:-5px;width:60px}input.vis-configuration.vis-config-range{-webkit-appearance:none;background-color:transparent;border:0 solid #fff;height:20px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-runnable-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:5px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-thumb{-webkit-appearance:none;background:#3876c2;background:-moz-linear-gradient(top,#3876c2 0,#385380 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#3876c2),color-stop(100%,#385380));background:-webkit-linear-gradient(top,#3876c2,#385380);background:-o-linear-gradient(top,#3876c2 0,#385380 100%);background:-ms-linear-gradient(top,#3876c2 0,#385380 100%);background:linear-gradient(180deg,#3876c2 0,#385380);border:1px solid #14334b;border-radius:50%;box-shadow:0 0 1px 0 #111927;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#3876c2",endColorstr="#385380",GradientType=0);height:17px;margin-top:-7px;width:17px}input.vis-configuration.vis-config-range:focus{outline:none}input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track{background:#9d9d9d;background:-moz-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#9d9d9d),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#9d9d9d,#c8c8c8 99%);background:-o-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:linear-gradient(180deg,#9d9d9d 0,#c8c8c8 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9d9d9d",endColorstr="#c8c8c8",GradientType=0)}input.vis-configuration.vis-config-range::-moz-range-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:10px;width:300px}input.vis-configuration.vis-config-range::-moz-range-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:-moz-focusring{outline:1px solid #fff;outline-offset:-1px}input.vis-configuration.vis-config-range::-ms-track{background:transparent;border-color:transparent;border-width:6px 0;color:transparent;height:5px;width:300px}input.vis-configuration.vis-config-range::-ms-fill-lower{background:#777;border-radius:10px}input.vis-configuration.vis-config-range::-ms-fill-upper{background:#ddd;border-radius:10px}input.vis-configuration.vis-config-range::-ms-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:focus::-ms-fill-lower{background:#888}input.vis-configuration.vis-config-range:focus::-ms-fill-upper{background:#ccc}.vis-configuration-popup{background:rgba(57,76,89,.85);border:2px solid #f2faff;border-radius:4px;color:#fff;font-size:14px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:opacity .3s ease-in-out;-moz-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;width:150px}.vis-configuration-popup:after,.vis-configuration-popup:before{border:solid transparent;content:" ";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.vis-configuration-popup:after{border-color:rgba(136,183,213,0) rgba(136,183,213,0) rgba(136,183,213,0) rgba(57,76,89,.85);border-width:8px;margin-top:-8px}.vis-configuration-popup:before{border-color:rgba(194,225,245,0) rgba(194,225,245,0) rgba(194,225,245,0) #f2faff;border-width:12px;margin-top:-12px}</style><style type="text/css">.vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal{border-bottom:1px solid;height:0;position:absolute;width:100%}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor{border-color:#e5e5e5}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-major{border-color:#bfbfbf}.vis-data-axis .vis-y-axis.vis-major{color:#4d4d4d;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-major.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-minor{color:#bebebe;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-minor.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title{bottom:20px;color:#4d4d4d;position:absolute;text-align:center;white-space:nowrap}.vis-data-axis .vis-y-axis.vis-title.vis-measure{margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title.vis-left{bottom:0;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-o-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;-o-transform-origin:left top;transform-origin:left bottom}.vis-data-axis .vis-y-axis.vis-title.vis-right{bottom:0;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:right bottom;-moz-transform-origin:right bottom;-ms-transform-origin:right bottom;-o-transform-origin:right bottom;transform-origin:right bottom}.vis-legend{background-color:rgba(247,252,255,.65);border:1px solid #b3b3b3;box-shadow:2px 2px 10px hsla(0,0%,60%,.55);padding:5px}.vis-legend-text{display:inline-block;white-space:nowrap}</style></head>
+
+	
+
+	
+
+
+<body id="kt_app_body" data-kt-app-layout="light-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+    
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+            
+                <!--begin::Header-->
+				<div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+					<!--begin::Header container-->
+					<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+						<!--begin::Sidebar mobile toggle-->
+						<div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+							<div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
+								<i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</div>
+						</div>
+						<!--end::Sidebar mobile toggle-->
+						<!--begin::Mobile logo-->
+						<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+							<a href="/home/v2/" class="d-lg-none">
+								<img alt="Logo" src="https://likwidai.com/static/images/favicon-192x192.png" class="h-30px">
+							</a>
+						</div>
+						<!--end::Mobile logo-->
+						<!--begin::Header wrapper-->
+						<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+							<!--begin::Menu wrapper-->
+							<div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+								<!--begin::Menu-->
+								<div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+									<!--begin:Menu item-->
+					
+									<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+										<!--begin:Menu link-->
+										<h1 class="sitename">
+										<span style="color: #1a1a1a;">Likwid</span><span style="background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">.AI</span></h1>
+										
+										<!--end:Menu link-->
+									</div>
+
+								</div>
+								<!--end::Menu-->
+							</div>
+							<!--end::Menu wrapper-->
+							<!--begin::Navbar-->
+							<div class="app-navbar flex-shrink-0">
+								<!--begin::Activities-->
+								<div class="app-navbar-item ms-1 ms-md-4">
+									<!--begin::Drawer toggle-->
+									<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" id="kt_activities_toggle">
+										<i class="ki-duotone ki-messages fs-2">
+											<span class="path1"></span>
+											<span class="path2"></span>
+											<span class="path3"></span>
+											<span class="path4"></span>
+											<span class="path5"></span>
+										</i>
+									</div>
+									<!--end::Drawer toggle-->
+								</div>
+								<!--end::Activities-->
+
+
+								
+								<!--begin::Theme mode-->
+								<div class="app-navbar-item ms-1 ms-md-4">
+									<!--begin::Menu toggle-->
+									<a href="#" class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+										<i class="ki-duotone ki-night-day theme-light-show fs-1">
+											<span class="path1"></span>
+											<span class="path2"></span>
+											<span class="path3"></span>
+											<span class="path4"></span>
+											<span class="path5"></span>
+											<span class="path6"></span>
+											<span class="path7"></span>
+											<span class="path8"></span>
+											<span class="path9"></span>
+											<span class="path10"></span>
+										</i>
+										<i class="ki-duotone ki-moon theme-dark-show fs-1">
+											<span class="path1"></span>
+											<span class="path2"></span>
+										</i>
+									</a>
+									<!--begin::Menu toggle-->
+									<!--begin::Menu-->
+									<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-menu="true" data-kt-element="theme-mode-menu">
+										<!--begin::Menu item-->
+										<div class="menu-item px-3 my-0">
+											<a href="#" class="menu-link px-3 py-2 active" data-kt-element="mode" data-kt-value="light">
+												<span class="menu-icon" data-kt-element="icon">
+													<i class="ki-duotone ki-night-day fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+														<span class="path3"></span>
+														<span class="path4"></span>
+														<span class="path5"></span>
+														<span class="path6"></span>
+														<span class="path7"></span>
+														<span class="path8"></span>
+														<span class="path9"></span>
+														<span class="path10"></span>
+													</i>
+												</span>
+												<span class="menu-title">Light</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-3 my-0">
+											<a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
+												<span class="menu-icon" data-kt-element="icon">
+													<i class="ki-duotone ki-moon fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</span>
+												<span class="menu-title">Dark</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-3 my-0">
+											<a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
+												<span class="menu-icon" data-kt-element="icon">
+													<i class="ki-duotone ki-screen fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+														<span class="path3"></span>
+														<span class="path4"></span>
+													</i>
+												</span>
+												<span class="menu-title">System</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+									</div>
+									<!--end::Menu-->
+								</div>
+								<!--end::Theme mode-->
+								<!--begin::User menu-->
+								<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
+									<!--begin::Menu wrapper-->
+									<div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+										
+										<img src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260704%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260704T043316Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=87effa89f78da06bffca5e49cc600a10da579cc77094654b09e0fe6d7121f63c32d4d7947227c66202d27a0501e8f0949abdaf1468b0d7b932180f625491f727ba99420bdfe428cd941b7866517c9669dad198c87dc41f64fafce484411f969971d137cfa52f51c5074811ceefec529a414ccfb154b39d54b0f7802e2bd781e02ff39ba502e9188a1c787a4dbfb95c3fbd164b7634297ccea2bd6da9c515c95027b57ac53a8ecfaacfe06a098bff0e692628123297212eebdfc41194d66a432fe0d9d0d3cef4643b53aecc0fd0d6ae624544a7216fea85a69df914a494c69256431bc3dd63432ce5a68a5b8077c2c72eb9718783d5c422ea1cde5afbbebb6a63" class="rounded-3" alt="user">
+										
+									</div>
+									<!--begin::User account menu-->
+									<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+										<!--begin::Menu item-->
+										<div class="menu-item px-3">
+											<div class="menu-content d-flex align-items-center px-3">
+												<!--begin::Avatar-->
+												<div class="symbol symbol-50px me-5">
+													
+													<img alt="Logo" src="https://storage.googleapis.com/likwid-media/media/users/Profile-Pictures/WhatsApp_Image_2024-01-26_at_13.14.38.jpeg?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=likwid-app-alpha%40appspot.gserviceaccount.com%2F20260704%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20260704T043316Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=87effa89f78da06bffca5e49cc600a10da579cc77094654b09e0fe6d7121f63c32d4d7947227c66202d27a0501e8f0949abdaf1468b0d7b932180f625491f727ba99420bdfe428cd941b7866517c9669dad198c87dc41f64fafce484411f969971d137cfa52f51c5074811ceefec529a414ccfb154b39d54b0f7802e2bd781e02ff39ba502e9188a1c787a4dbfb95c3fbd164b7634297ccea2bd6da9c515c95027b57ac53a8ecfaacfe06a098bff0e692628123297212eebdfc41194d66a432fe0d9d0d3cef4643b53aecc0fd0d6ae624544a7216fea85a69df914a494c69256431bc3dd63432ce5a68a5b8077c2c72eb9718783d5c422ea1cde5afbbebb6a63">
+													
+												</div>
+												<!--end::Avatar-->
+												<!--begin::Username-->
+												<div class="d-flex flex-column">
+													
+													<div class="fw-bold d-flex align-items-center fs-5">Bio Mac Lifesciences
+													
+													<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
+													
+													<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">Pharmaceuticals &amp; Lifesciences</a>
+													
+												</div>
+												<!--end::Username-->
+											</div>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu separator-->
+										<div class="separator my-2"></div>
+										<!--end::Menu separator-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/rise-crm/leads-list" class="menu-link px-5">
+												<span class="menu-text">Rise</span>
+											</a>
+										</div>
+										<!--end::Menu item-->
+					
+										<!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/flow-ai/orders/orders-list/" class="menu-link px-5">Flow</a>
+										</div>
+										<!--end::Menu item-->
+                                        <!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/spout-ai/production-jobs/pending/" class="menu-link px-5">Spout</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu separator-->
+										<div class="separator my-2"></div>
+										<!--end::Menu separator-->
+										
+										<!--begin::Menu item-->
+										<div class="menu-item px-5 my-1">
+											<a href="/edit-company-details/" class="menu-link px-5">Account Settings</a>
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item px-5">
+											<a href="/signout/" class="menu-link px-5">Sign Out</a>
+										</div>
+										<!--end::Menu item-->
+									</div>
+									<!--end::User account menu-->
+									<!--end::Menu wrapper-->
+								</div>
+								<!--end::User menu-->
+								<!--begin::Header menu toggle-->
+								<div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
+									<div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px" id="kt_app_header_menu_toggle">
+										<i class="ki-duotone ki-element-4 fs-1">
+											<span class="path1"></span>
+											<span class="path2"></span>
+										</i>
+									</div>
+								</div>
+								<!--end::Header menu toggle-->
+								<!--begin::Aside toggle-->
+								<!--end::Header menu toggle-->
+							</div>
+							<!--end::Navbar-->
+						</div>
+						<!--end::Header wrapper-->
+					</div>
+					<!--end::Header container-->
+				</div>
+				<!--end::Header-->
+            
+
+<!--begin::Wrapper-->
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <!--begin::Sidebar-->
+    <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+        <!--begin::Logo-->
+        <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+            <a href="/home/v2/">
+                <img alt="Logo" src="https://likwidai.com/static/images/android-chrome-512x512.png" class="h-25px app-sidebar-logo-default">
+                <img alt="Logo" src="https://likwidai.com/static/images/android-chrome-512x512.png" class="h-20px app-sidebar-logo-minimize">
+            </a>
+            <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+                <i class="ki-duotone ki-black-left-line fs-3 rotate-180">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+            </div>
+        </div>
+        <!--end::Logo-->
+        
+        <!--begin::sidebar menu-->
+        <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+            <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper">
+                <div id="kt_app_sidebar_menu_scroll" class="scroll-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true" style="height: 902px;">
+                    <!--begin::Menu-->
+                    <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                        
+                        <!--begin:Orders Order-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/flow-ai/bi-dashboard/sales-intelligence/">
+                                <span class="menu-icon">
+                                    <i class="bi bi-bar-chart-line fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </div>
+
+
+                        <!--begin::Section-->
+                        <div class="menu-item pt-5">
+                            <div class="menu-content">
+                                <span class="menu-heading fw-bold text fs-7">Master Configuration</span>
+                            </div>
+                        </div>
+
+                       
+                        <!-- Customers -->
+                        <div class="menu-item">
+                            <a class="menu-link active bg-light-info" href="/flow-ai/customers-list/">
+                                <span class="menu-icon">
+                                    <i class="bi bi-person-lines-fill fs-2"></i>
+                                </span>
+                                <span class="menu-title">Customers</span>
+                            </a>
+                        </div>
+                        <!-- Vendors -->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/flow-ai/vendors/vendor-list/">
+                                <span class="menu-icon">
+                                    <i class="bi bi-ui-radios-grid fs-2"></i>
+                                </span>
+                                <span class="menu-title">Vendors</span>
+                            </a>
+                        </div>
+
+                        <!--begin::Section-->
+                        <div class="menu-item pt-5">
+                            <div class="menu-content">
+                                <span class="menu-heading fw-bold text fs-7">Sales &amp; Orders</span>
+                            </div>
+                        </div>
+
+                        <!--begin:Orders-->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/flow-ai/orders/orders-list/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-document fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Orders</span>
+                            </a>
+                        </div>
+                         
+
+                        
+                        
+                        <!--begin::Section-->
+                        <div class="menu-item pt-5">
+                            <div class="menu-content">
+                                <span class="menu-heading fw-bold text fs-7">Inventory &amp; Procurement</span>
+                            </div>
+                        </div>
+
+                        <!-- Inventory -->
+                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion ">
+                            <span class="menu-link">
+                                <span class="menu-icon">
+                                    <i class="bi bi-boxes fs-2"></i>
+                                </span>
+                                <span class="menu-title">Inventory</span>
+                                <span class="menu-arrow"></span>
+                            </span>
+                            <div class="menu-sub menu-sub-accordion">
+
+                                
+                                <div class="menu-item">
+                                    <a class="menu-link " href="/flow-ai/inventory/stock-list/">
+                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                        <span class="menu-title">All Items</span>
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link " href="/flow-ai/inventory/stock-adjustments/">
+                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                        <span class="menu-title">Stock Adjustments</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Procurement (Indents + POs consolidated) -->
+                        <div class="menu-item">
+                            <a class="menu-link " href="/flow-ai/procurement/">
+                                <span class="menu-icon">
+                                    <i class="ki-duotone ki-purchase fs-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </span>
+                                <span class="menu-title">Procurement</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end::Menu-->
+                </div>
+            </div>
+        </div>
+        <!--end::sidebar menu-->
+        
+        <!--begin::Footer-->
+        <div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
+            <a href="" class="btn btn-flex flex-center btn-custom btn-info overflow-hidden text-nowrap px-0 h-40px w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" data-bs-original-title="Documentation" data-kt-initialized="1">
+                <span class="btn-label">Documentation</span>
+                <i class="ki-duotone ki-document btn-icon fs-2 m-0">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+            </a>
+        </div>
+        <!--end::Footer-->
+    </div>
+    <!--end::Sidebar-->
+
+
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <div class="d-flex flex-column flex-column-fluid">
+
+                    
+                    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">XYZ</h1>
+                                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                    <li class="breadcrumb-item text-muted"><a href="/home/v2/" class="text-muted text-hover-primary">Home</a></li>
+                                    <li class="breadcrumb-item"><span class="bullet bg-gray-500 w-5px h-2px"></span></li>
+                                    <li class="breadcrumb-item text-muted"><a href="/flow-ai/customers-list/" class="text-muted text-hover-primary">Customers</a></li>
+                                    <li class="breadcrumb-item"><span class="bullet bg-gray-500 w-5px h-2px"></span></li>
+                                    <li class="breadcrumb-item text-muted">XYZ</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="/flow-ai/customers-list/" class="btn btn-sm btn-light">
+                                    <i class="ki-duotone ki-arrow-left fs-5"><span class="path1"></span><span class="path2"></span></i> Back
+                                </a>
+                                <button type="button" class="btn btn-sm btn-light" id="editDrawerBtn">
+                                    <i class="ki-duotone ki-pencil fs-5"><span class="path1"></span><span class="path2"></span></i> Edit
+                                </button>
+                                <a href="/flow-ai/customer-view/ad1a265e-4651-4f24-a022-ebf8f7c09429/export-csv" class="btn btn-sm btn-light">
+                                    <i class="ki-duotone ki-exit-down fs-5"><span class="path1"></span><span class="path2"></span></i>
+                                </a>
+                                <a href="/flow-ai/orders/add-order/" class="btn btn-sm btn-dark">
+                                    <i class="ki-duotone ki-plus fs-5"></i> New Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="kt_app_content" class="app-content flex-column-fluid">
+                        <div id="kt_app_content_container" class="app-container container-xxl">
+
+                            
+                            <div class="d-flex gap-4 mb-5 flex-wrap">
+                                <div class="cv-stat-box">
+                                    <div class="cv-stat-num">1</div>
+                                    <div class="cv-stat-lbl">Total Orders</div>
+                                </div>
+                                <div class="cv-stat-box">
+                                    <div class="cv-stat-num">₹60000</div>
+                                    <div class="cv-stat-lbl">Total Order Value</div>
+                                </div>
+                                <div class="cv-stat-box">
+                                    <div class="cv-stat-num">₹60000</div>
+                                    <div class="cv-stat-lbl">Avg Order Value</div>
+                                </div>
+                                <div class="cv-stat-box">
+                                    <div class="cv-stat-num">0</div>
+                                    <div class="cv-stat-lbl">Sale Orders</div>
+                                </div>
+                                <div class="cv-stat-box">
+                                    <div class="cv-stat-num">1</div>
+                                    <div class="cv-stat-lbl">Orders (30d)</div>
+                                </div>
+                                <div class="cv-stat-box ms-auto" style="border-color:#50cd89;">
+                                    <div class="cv-stat-num" style="font-size:.85rem;color:#50cd89;">
+                                        Active
+                                    </div>
+                                    <div class="cv-stat-lbl">Status</div>
+                                </div>
+                            </div>
+
+                            <div class="row g-6">
+
+                                
+                                <div class="col-xl-8">
+
+                                    
+                                    <div class="card mb-5" style="border:1px solid #ebebeb;">
+                                        <div class="card-body px-8 py-5">
+                                            <div class="d-flex align-items-start gap-4">
+                                                <div class="cv-avatar">X</div>
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                                        <span class="fw-bolder text-gray-900 fs-5">XYZ</span>
+                                                        <span class="badge badge-light fw-semibold fs-8">CLI-69-38862</span>
+                                                        <span class="badge badge-light-primary fw-semibold fs-8">PCD</span>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap gap-4 mt-1">
+                                                        <span class="text-gray-500 fs-7"><i class="bi bi-person me-1"></i>X Y</span>
+                                                        <span class="text-gray-500 fs-7"><i class="bi bi-telephone me-1"></i>88888888888</span>
+                                                        <span class="text-gray-500 fs-7"><i class="bi bi-envelope me-1"></i>xy@gmail.com</span>
+                                                        <span class="text-gray-500 fs-7"><i class="bi bi-geo-alt me-1"></i>Delhi, Delhi</span>
+                                                        <span class="text-gray-500 fs-7"><i class="bi bi-building me-1"></i>nan</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="card" style="border:1px solid #ebebeb;">
+                                        <div class="card-header px-8" style="border-bottom:1px solid #f0f0f0;min-height:52px;">
+                                            <ul class="nav nav-line-tabs nav-line-tabs-2x fs-7 fw-semibold border-0" id="cvTabNav" role="tablist">
+                                                <li class="nav-item" role="presentation"><a class="nav-link py-4 active" data-bs-toggle="tab" href="#cv-overview" aria-selected="true" role="tab">Overview</a></li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link py-4" data-bs-toggle="tab" href="#cv-orders" aria-selected="false" tabindex="-1" role="tab">
+                                                        Orders <span class="badge badge-light ms-1 fw-bold">1</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link py-4" data-bs-toggle="tab" href="#cv-so" aria-selected="false" tabindex="-1" role="tab">
+                                                        Sale Orders <span class="badge badge-light ms-1 fw-bold">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="tab-content">
+
+                                            
+                                            <div class="tab-pane fade show active" id="cv-overview" role="tabpanel">
+                                                <div class="card-body px-8 py-6">
+                                                    <div class="row g-6">
+                                                        
+                                                        <div class="col-md-6">
+                                                            <div class="cv-section-label mb-3">Billing Address</div>
+                                                            
+                                                            <div class="text-gray-700 fs-7" style="line-height:1.8;">
+                                                                Delhi<br>
+                                                                Delhi, Delhi<br>
+                                                                India – 110064
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                        <div class="col-md-6">
+                                                            <div class="cv-section-label mb-3">Other Details</div>
+                                                            <table class="cv-detail-table">
+                                                                <tbody><tr><td class="cv-detail-key">GSTIN</td><td class="cv-detail-val">nan</td></tr>
+                                                                <tr><td class="cv-detail-key">License No.</td><td class="cv-detail-val">nan</td></tr>
+                                                                <tr><td class="cv-detail-key">Last Order</td><td class="cv-detail-val">19 Jun 2026</td></tr>
+                                                                <tr><td class="cv-detail-key">Customer Since</td><td class="cv-detail-val">12 Jan 2026</td></tr>
+                                                            </tbody></table>
+                                                        </div>
+
+                                                        
+                                                        <div class="col-12">
+                                                            <div style="border-top:1px solid #f5f5f5;padding-top:20px;">
+                                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                                    <div class="cv-section-label">Month-on-Month Orders</div>
+                                                                    <div class="d-flex gap-3">
+                                                                        <span class="cv-legend"><span style="background:#111;"></span>Orders</span>
+                                                                        <span class="cv-legend"><span style="background:#d0d0d0;"></span>Value (₹)</span>
+                                                                    </div>
+                                                                </div>
+                                                                <img src="data:image/png;base64,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" width="779" height="233" style="display: block; box-sizing: border-box; height: 233px; width: 779px;" data-stitch-frozen-chart="1">
+                                                            </div>
+                                                        </div>
+
+                                                        
+                                                        
+                                                        <div class="col-12">
+                                                            <div style="border-top:1px solid #f5f5f5;padding-top:20px;">
+                                                                <div class="cv-section-label mb-3">Top Products Ordered</div>
+                                                                <div class="d-flex flex-wrap gap-2">
+                                                                    
+                                                                    <div class="cv-product-chip">
+                                                                        <span class="cv-product-name">MacAlive Ds 200ml</span>
+                                                                        <span class="cv-product-count">1</span>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div class="tab-pane fade" id="cv-orders" role="tabpanel">
+                                                <div class="table-responsive">
+                                                    <table class="table cv-table mb-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Order</th>
+                                                                <th>Product</th>
+                                                                <th>Received</th>
+                                                                <th>ETC</th>
+                                                                <th style="text-align:right;">Qty</th>
+                                                                <th style="text-align:right;">Value</th>
+                                                                <th>Status</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="/flow-ai/orders/view-order/ORD-69-88879/" class="fw-semibold text-gray-800 text-hover-primary fs-7">ORD-69-88879</a>
+                                                                    <div class="text-gray-400 fs-8">17089</div>
+                                                                </td>
+                                                                <td class="text-gray-600 fs-7"></td>
+                                                                <td class="text-gray-500 fs-7">19 Jun 2026</td>
+                                                                <td class="text-gray-500 fs-7">—</td>
+                                                                <td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">4000.00</td>
+                                                                <td class="text-gray-700 fs-7 fw-semibold" style="text-align:right;">₹60000.00</td>
+                                                                <td>
+                                                                    <span class="cv-dot" style="background:#f1bc00;"></span><span class="fs-8 text-gray-500">Pending</span>
+                                                                    
+                                                                </td>
+                                                                <td><a href="/flow-ai/orders/view-order/ORD-69-88879/" class="btn btn-sm btn-light-primary fw-semibold fs-8">View</a></td>
+                                                            </tr>
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                
+                                                
+                                            </div>
+
+                                            
+                                            <div class="tab-pane fade" id="cv-so" role="tabpanel">
+                                                <div class="table-responsive">
+                                                    <table class="table cv-table mb-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>SO Code</th>
+                                                                <th>Reference</th>
+                                                                <th style="text-align:right;">Amount</th>
+                                                                <th style="text-align:right;">Tax</th>
+                                                                <th style="text-align:right;">Total</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                            <tr><td colspan="6" class="text-center py-10 text-gray-400 fs-7">No sale orders yet.</td></tr>
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="col-xl-4">
+                                    <div style="position:sticky;top:80px;display:flex;flex-direction:column;gap:16px;">
+
+                                        
+                                        <div class="card" style="border:1px solid #ebebeb;">
+                                            <div class="card-body px-6 py-5">
+                                                <div class="cv-section-label mb-4">Financial Summary</div>
+                                                <div class="d-flex flex-column gap-0">
+                                                    <div class="cv-sb-row"><span class="cv-sb-lbl">Total Orders</span><span class="cv-sb-val">1</span></div>
+                                                    <div class="cv-sb-row"><span class="cv-sb-lbl">Total Value</span><span class="cv-sb-val">₹60000</span></div>
+                                                    <div class="cv-sb-row"><span class="cv-sb-lbl">Avg Order Value</span><span class="cv-sb-val">₹60000</span></div>
+                                                    <div class="cv-sb-row"><span class="cv-sb-lbl">Sale Orders</span><span class="cv-sb-val">0</span></div>
+                                                    <div class="cv-sb-row"><span class="cv-sb-lbl">Last Order</span><span class="cv-sb-val">19 Jun 2026</span></div>
+                                                    <div class="cv-sb-row" style="border-bottom:none;">
+                                                        <span class="cv-sb-lbl">Status</span>
+                                                        <span class="fw-semibold fs-8 text-success">
+                                                            ● Active
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="card" style="border:1px solid #ebebeb;">
+                                            <div class="card-body px-6 py-5">
+                                                <div class="cv-section-label mb-3">Quick Actions</div>
+                                                <div class="d-flex flex-column gap-2">
+                                                    <button type="button" class="btn btn-sm btn-light w-100 text-start" id="editDrawerBtn2">
+                                                        <i class="ki-duotone ki-pencil fs-5 me-2"><span class="path1"></span><span class="path2"></span></i>Edit Customer
+                                                    </button>
+                                                    <a href="/flow-ai/customer-view/ad1a265e-4651-4f24-a022-ebf8f7c09429/export-csv" class="btn btn-sm btn-light w-100 text-start">
+                                                        <i class="ki-duotone ki-exit-down fs-5 me-2"><span class="path1"></span><span class="path2"></span></i>Export Report
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                						
+                        <!--begin::Footer-->
+						<div id="kt_app_footer" class="app-footer">
+							<!--begin::Footer container-->
+							<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+								<!--begin::Copyright-->
+								<div class="text-gray-900 order-2 order-md-1">
+									<span class="text-muted fw-semibold me-1">2024©</span>
+									<a href="https://www.likwid.co.in/" target="_blank" class="text-hover-primary" style="color:#4154f1;">Likwid.Ai</a>
+								</div>
+								<!--end::Copyright-->
+								<!--begin::Menu-->
+								<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+									<li class="menu-item">
+										<a href="https://www.likwid.co.in/" target="_blank" class="menu-link px-2">About</a>
+									</li>
+									<li class="menu-item">
+										<a href="#" target="_blank" class="menu-link px-2">Support</a>
+									</li>
+									<li class="menu-item">
+										<a href="https://www.likwid.co.in/" target="_blank" class="menu-link px-2">Purchase</a>
+									</li>
+								</ul>
+								<!--end::Menu-->
+							</div>
+							<!--end::Footer container-->
+						</div>
+						<!--end::Footer-->
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="cvEditBackdrop" class="cv-backdrop"></div>
+    <div id="cvEditDrawer" class="cv-drawer">
+        <div class="cv-drawer-header">
+            <div>
+                <div class="fw-bold text-gray-800 fs-6">Edit Customer</div>
+                <div class="text-gray-400 fs-8">XYZ</div>
+            </div>
+            <button type="button" class="btn btn-icon btn-sm btn-light" id="cvDrawerClose">
+                <i class="ki-duotone ki-cross fs-4"><span class="path1"></span><span class="path2"></span></i>
+            </button>
+        </div>
+        <div class="cv-drawer-body">
+            <form method="POST" action="">
+                <input type="hidden" name="csrfmiddlewaretoken" value="Hxa3SrPxG81WIkq0zNyEJL88cqVXEDyQRpKIUPVOrNPG4BKMMPIBDyxrlf6fG2C7">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <label class="form-label fw-semibold fs-7">Company Name <span class="text-danger">*</span></label>
+                        <input type="text" name="cust_comname" value="XYZ" class="form-control form-control-solid" required="" id="id_cust_comname">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-semibold fs-7">Category</label>
+                        <select name="category" class="form-select form-select-solid" id="id_category">
+  <option value="">---------</option>
+
+  <option value="7">TPM</option>
+
+  <option value="9">PCD Franchise</option>
+
+  <option value="14">Distributors</option>
+
+  <option value="15">Retailers</option>
+
+  <option value="18">Manual Dies</option>
+
+  <option value="20">3D Printing</option>
+
+  <option value="21">Global - APAC</option>
+
+  <option value="29">TPM, PCD Franchise, Distributors, Retailers, Manual Dies, 3D Printing, Global - APAC</option>
+
+  <option value="30" selected="">PCD</option>
+
+</select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">First Name</label>
+                        <input type="text" name="first_name" value="X" class="form-control form-control-solid" required="" id="id_first_name">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">Last Name</label>
+                        <input type="text" name="last_name" value="Y" class="form-control form-control-solid" required="" id="id_last_name">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">Phone</label>
+                        <input type="number" name="cust_phn" value="88888888888" min="-9223372036854775808" max="9223372036854775807" class="form-control form-control-solid" required="" id="id_cust_phn">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">Email</label>
+                        <input type="email" name="cust_email" value="xy@gmail.com" maxlength="254" class="form-control form-control-solid" id="id_cust_email">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-semibold fs-7">Address</label>
+                        <textarea name="address" cols="40" rows="3" maxlength="5000" class="form-control form-control-solid" id="id_address">Delhi</textarea>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">City</label>
+                        <input type="text" name="city" value="Delhi" maxlength="254" class="form-control form-control-solid" id="id_city">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">State</label>
+                        <input type="text" name="state" value="Delhi" maxlength="254" class="form-control form-control-solid" id="id_state">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">PIN</label>
+                        <input type="number" name="pin" value="110064" min="-9223372036854775808" max="9223372036854775807" class="form-control form-control-solid" required="" id="id_pin">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">GSTIN</label>
+                        <input type="text" name="gstin" value="nan" class="form-control form-control-solid" id="id_gstin">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-semibold fs-7">License No.</label>
+                        <input type="text" name="lisc_no" value="nan" class="form-control form-control-solid" id="id_lisc_no">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">Payment Terms</label>
+                        <select name="payment_terms" class="form-select form-select-solid" aria-describedby="id_payment_terms_helptext" id="id_payment_terms">
+  <option value="0" selected="">Due on Receipt</option>
+
+  <option value="15">Net 15</option>
+
+  <option value="30">Net 30</option>
+
+  <option value="45">Net 45</option>
+
+  <option value="60">Net 60</option>
+
+  <option value="90">Net 90</option>
+
+  <option value="120">Net 120</option>
+
+  <option value="150">Net 150</option>
+
+</select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-semibold fs-7">Opening Balance</label>
+                        <input type="number" name="opening_balance" value="0.00" step="0.01" class="form-control form-control-solid" required="" aria-describedby="id_opening_balance_helptext" id="id_opening_balance">
+                    </div>
+                </div>
+                <div class="d-flex gap-3 mt-6 pt-4" style="border-top:1px solid #f0f0f0;">
+                    <button type="submit" class="btn btn-dark btn-sm flex-grow-1">Save Changes</button>
+                    <button type="button" class="btn btn-light btn-sm" id="cvDrawerCancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up"><span class="path1"></span><span class="path2"></span></i>
+    </div>
+
+    
+    
+        <!--begin::Javascript-->
+	
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		
+		
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Vendors Javascript(used for this page only)-->
+		
+		
+		<!--end::Vendors Javascript-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--end::Vendors Javascript-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+		
+		
+		
+		
+
+
+		<!--end::Custom Javascript-->
+		<!--end::Javascript-->
+
+		
+
+
+
+
+
+
+
+<style>
+.nav-line-tabs .nav-link.active { color:#111 !important; border-bottom-color:#111 !important; }
+
+/* Stat strip */
+.cv-stat-box { padding:12px 18px; border:1px solid #e8e8e8; border-radius:10px; min-width:100px; text-align:center; background:#fff; }
+.cv-stat-num { font-size:1.15rem; font-weight:700; color:#111; line-height:1.1; }
+.cv-stat-lbl { font-size:0.68rem; color:#aaa; text-transform:uppercase; letter-spacing:.06em; margin-top:3px; }
+
+/* Avatar */
+.cv-avatar { width:44px; height:44px; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:700; color:#555; flex-shrink:0; }
+
+/* Table */
+.cv-table { border-collapse:collapse !important; }
+.cv-table thead th { font-size:.68rem; color:#555; text-transform:uppercase; letter-spacing:.07em; font-weight:700; padding:12px 14px; border-bottom:2px solid #e8e8e8 !important; border-right:1px solid #e8e8e8 !important; white-space:nowrap; }
+.cv-table thead th:first-child { padding-left:24px; }
+.cv-table thead th:last-child { border-right:none !important; }
+.cv-table tbody td { font-size:.85rem; color:#333; padding:13px 14px; border-bottom:1px solid #e8e8e8 !important; border-right:1px solid #e8e8e8 !important; vertical-align:middle; }
+.cv-table tbody td:first-child { padding-left:24px; }
+.cv-table tbody td:last-child { border-right:none !important; }
+.cv-table tbody tr:last-child td { border-bottom:none !important; }
+.cv-table tbody tr:hover td { background:#fafafa; }
+.cv-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:5px; vertical-align:middle; }
+
+/* Overview detail table */
+.cv-detail-table { width:100%; }
+.cv-detail-key { font-size:.75rem; color:#aaa; text-transform:uppercase; letter-spacing:.05em; padding:6px 16px 6px 0; white-space:nowrap; width:130px; }
+.cv-detail-val { font-size:.85rem; color:#333; padding:6px 0; }
+.cv-section-label { font-size:.68rem; color:#aaa; text-transform:uppercase; letter-spacing:.07em; font-weight:700; }
+
+/* Chart legend */
+.cv-legend { display:inline-flex; align-items:center; gap:5px; font-size:.72rem; color:#888; }
+.cv-legend span { display:inline-block; width:10px; height:10px; border-radius:2px; }
+
+/* Top products */
+.cv-product-chip { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border:1px solid #e8e8e8; border-radius:20px; background:#fafafa; }
+.cv-product-name { font-size:.78rem; color:#444; }
+.cv-product-count { font-size:.72rem; font-weight:700; color:#111; background:#e8e8e8; border-radius:10px; padding:1px 7px; }
+
+/* Sidebar rows */
+.cv-sb-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #f5f5f5; }
+.cv-sb-lbl { font-size:.8rem; color:#888; }
+.cv-sb-val { font-size:.85rem; color:#111; font-weight:600; }
+
+/* Edit Drawer */
+.cv-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:1040; }
+.cv-drawer { position:fixed; top:0; right:-420px; width:400px; height:100vh; background:#fff; z-index:1050; box-shadow:-4px 0 24px rgba(0,0,0,.1); transition:right .25s ease; display:flex; flex-direction:column; }
+.cv-drawer.open { right:0; }
+.cv-drawer-header { display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid #f0f0f0; flex-shrink:0; }
+.cv-drawer-body { flex:1; overflow-y:auto; padding:24px; }
+</style>
+
+
+
+
+</div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

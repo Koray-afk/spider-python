@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Add item (Ctrl + m)",
+    "tagName": "button",
+    "id": "add-more",
+    "className": "btn btn-link py-1",
+    "selector": "[data-crawl-id=\"2\"]",
+    "outerHTML": "<button type=\"button\" class=\"btn btn-link py-1\" id=\"add-more\" data-crawl-id=\"2\">Add item (Ctrl + m)</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#formset",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[3]/table[1]/tbody[1]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<tr class=\"\">\n<td class=\"pe-7\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-item_name\" maxlength=\"250\" name=\"form-1-item_name\" type=\"text\"/>\n<br/>\n<textarea class=\"form-control form-control-solid\" cols=\"40\" id=\"id_{{ item_formset.prefix }}-1-item_details\" name=\"form-1-item_details\" placeholder=\"Description for the product or offering\" rows=\"2\"></textarea>\n</td>\n<td class=\"ps-0\"><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-quantity\" name=\"form-1-quantity\" step=\"0.01\" type=\"number\"/></td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-price\" name=\"form-1-price\" step=\"0.01\" type=\"number\"/></td>\n<td><input class=\"form-control form-control-solid\" id=\"id_{{ item_formset.prefix }}-1-tax_rate\" name=\"form-1-tax_rate\" step=\"any\" type=\"number\"/></td>\n<td>\n<button class=\"btn btn-sm btn-icon btn-active-color-primary btn-delete-row\" type=\"button\">\n<i class=\"ki-duotone ki-trash fs-3\">\n<span class=\"path1\"></span>\n<span class=\"path2\"></span>\n<span class=\"path3\"></span>\n<span class=\"path4\"></span>\n<span class=\"path5\"></span>\n</i>\n</button>\n</td>\n</tr>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

@@ -1,0 +1,34 @@
+{
+  "source_page": "production-plan-list-full-screen",
+  "source_url": "https://likwidai.com/production-plan-list-full-screen/",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "span",
+    "text": "All Types",
+    "id": "",
+    "class_name": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "name": "",
+    "role": "combobox",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#typeFilterForm > span:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"3\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[1]/span[1]/span[1]",
+    "outer_html": "<span class=\"select2-selection select2-selection--single form-select form-select-solid form-select-sm\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\" aria-disabled=\"false\" aria-labelledby=\"select2-prod_type-5f-container\" aria-controls=\"select2-prod_type-5f-container\" data-crawl-id=\"3\"><span class=\"select2-selection__rendered\" id=\"select2-prod_type-5f-container\" role=\"textbox\" aria-readonly=\"true\" title=\"All Types\">All Types</span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span>"
+  },
+  "target": {
+    "url": "https://likwidai.com/production-plan-list-full-screen/",
+    "slug": "production-plan-list-full-screen",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<span class=\"select2-selection select2-selection--single form-select form-select-solid form-select-sm\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\" aria-disabled=\"false\" aria-labelledby=\"select2-prod_type-5f-container\" aria-controls=\"select2-prod_type-5f-container\" data-crawl-id=\"3\"><span class=\"select2-selection__rendered\" id=\"select2-prod_type-5f-container\" role=\"textbox\" aria-readonly=\"true\" title=\"All Types\">All Types</span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span>",
+  "trigger_label": "All Types",
+  "trigger_id": "",
+  "trigger_class": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+  "target_url": "https://likwidai.com/production-plan-list-full-screen/",
+  "target_slug": "production-plan-list-full-screen",
+  "target_title": "Likwid.Ai"
+}

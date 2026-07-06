@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "---------",
+    "tagName": "span",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid form-select-sm",
+    "selector": "[data-crawl-id=\"13\"]",
+    "outerHTML": "<span class=\"select2-selection select2-selection--single form-select form-select-solid form-select-sm\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\" aria-disabled=\"false\" aria-labelledby=\"select2-id_req_type-container\" aria-controls=\"select2-id_req_type-container\" data-crawl-id=\"13\"><span class=\"select2-selection__rendered\" id=\"select2-id_req_type-container\" role=\"textbox\" aria-readonly=\"true\" title=\"---------\">---------</span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_content_container > div:nth-of-type(2)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<a class=\"o360-step-link active\" href=\"#phase-workorders\">\n<span class=\"o360-phase-num\">3</span>\n<span class=\"label\">Work Orders</span>\n</a>\n<div class=\"o360-card-body text-center py-10\">\n<div class=\"text-gray-400 fs-7\">No work orders have been scheduled for this order yet.</div>\n</div>\n<div class=\"o360-card-body text-center py-8\">\n<div class=\"text-gray-400 fs-7\">No production data available.</div>\n</div>\n<span class=\"select2 select2-container select2-container--bootstrap5 select2-container--below select2-container--open\" data-select2-id=\"select2-data-3-3cu3\" dir=\"ltr\" style=\"width: 100%;\"><span class=\"selection\"><span aria-controls=\"select2-id_req_type-container\" aria-disabled=\"false\" aria-expanded=\"true\" aria-haspopup=\"true\" aria-labelledby=\"select2-id_req_type-container\" aria-owns=\"select2-id_req_type-results\" class=\"select2-selection select2-selection--single form-select form-select-solid form-select-sm\" data-crawl-id=\"13\" role=\"combobox\" tabindex=\"0\"><span aria-readonly=\"true\" class=\"select2-selection__rendered\" id=\"select2-id_req_type-container\" role=\"textbox\" title=\"---------\">---------</span><span class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></span></span></span><span aria-hidden=\"true\" class=\"dropdown-wrapper\"></span></span>\n<span class=\"select2-container select2-container--bootstrap5 select2-container--open\" style=\"position: absolute; top: 1772.97px; left: 950.219px;\"><span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" style=\"width: 188.562px;\"><span class=\"select2-search select2-search--dropdown\"><input aria-autocomplete=\"list\" aria-controls=\"select2-id_req_type-results\" aria-label=\"Search\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" class=\"select2-search__field\" role=\"searchbox\" spellcheck=\"false\" tabindex=\"0\" type=\"search\"/></span><span class=\"select2-results\"><ul aria-expanded=\"true\" aria-hidden=\"false\" class=\"select2-results__options\" id=\"select2-id_req_type-results\" role=\"listbox\"><li aria-selected=\"true\" class=\"select2-results__option select2-results__option--selectable select2-results__option--selected select2-results__option--highlighted\" data-select2-id=\"select2-data-17-ps54\" role=\"option\">---------</li><li aria-selected=\"false\" class=\"select2-results__option select2-results__option--selectable\" data-select2-id=\"select2-data-select2-id_req_type-result-yw8h-Dynamic\" id=\"select2-id_req_type-result-yw8h-Dynamic\" role=\"option\">Dynamic</li><li aria-selected=\"false\" class=\"select2-results__option select2-results__option--selectable\" data-select2-id=\"select2-data-select2-id_req_type-result-dsb2-Fixed\" id=\"select2-id_req_type-result-dsb2-Fixed\" role=\"option\">Fixed</li></ul></span></span></span>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

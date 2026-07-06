@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Remove row",
+  "triggerId": "",
+  "triggerClass": "btn btn-icon btn-sm btn-light btn-active-light-danger btn-delete-row",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "unknown",
+  "sourcePage": "flow-ai-orders-sales-order-create",
+  "sourceUrl": "https://likwidai.com/flow-ai/orders/sales-order/create/",
+  "beforeUrl": "https://likwidai.com/flow-ai/orders/sales-order/create/",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/flow-ai/orders/sales-order/create/",
+  "title": "Likwid.Ai",
+  "resultPagePath": "flow-ai-orders-sales-order-create/interactions/006-remove-row",
+  "captured_at": "2026-07-03T08:53:57.108148+00:00"
+}

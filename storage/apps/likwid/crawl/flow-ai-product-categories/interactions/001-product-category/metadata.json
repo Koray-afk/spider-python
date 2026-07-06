@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Product Category",
+  "triggerId": "",
+  "triggerClass": "btn btn-sm btn-light btn-active-info",
+  "selector": "[data-crawl-id=\"1\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "flow-ai-product-categories",
+  "sourceUrl": "https://likwidai.com/flow-ai/product-categories",
+  "beforeUrl": "https://likwidai.com/flow-ai/product-categories",
+  "beforeTitle": "Likwid.Ai",
+  "url": "https://likwidai.com/flow-ai/product-categories",
+  "title": "Likwid.Ai",
+  "resultPagePath": "flow-ai-product-categories/interactions/001-product-category",
+  "captured_at": "2026-07-03T11:22:56.529000+00:00"
+}

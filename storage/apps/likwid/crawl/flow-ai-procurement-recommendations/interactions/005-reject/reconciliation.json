@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Reject",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-sm btn-light-danger reject-btn w-100",
+    "selector": "[data-crawl-id=\"4\"]",
+    "outerHTML": "<button class=\"btn btn-sm btn-light-danger reject-btn w-100\" data-rec-id=\"44\" data-crawl-id=\"4\">\n                                <i class=\"ki-duotone ki-cross fs-5\"><span class=\"path1\"></span><span class=\"path2\"></span></i> Reject\n                            </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_content_container > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(6) > td:nth-of-type(4)",
+    "parentXPath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/table[1]/tbody[1]/tr[6]/td[4]",
+    "insertMethod": "append"
+  },
+  "ui_html": "<span class=\"badge badge-light-danger\">Rejected</span>\n<tr>\n<td class=\"fw-semibold text-gray-800\">HDPE Jars - 90CC KP 165</td>\n<td class=\"text-gray-600\">Tirpuati Herbs</td>\n<td class=\"text-gray-600\">1000.000 No</td>\n<td>\n<span class=\"badge badge-light-success\">Approved</span>\n</td>\n<td class=\"text-muted\">15 Jun 2026</td>\n</tr>\n<svg height=\"0\" id=\"SvgjsSvg1001\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\" version=\"1.1\" width=\"2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svgjs=\"http://svgjs.dev\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path d=\"M0 0 \" id=\"SvgjsPath1004\"></path></svg>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

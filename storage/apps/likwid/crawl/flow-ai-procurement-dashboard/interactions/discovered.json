@@ -1,0 +1,152 @@
+[
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "PO Date",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "PO Date",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "PO",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "PO",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Vendor",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "Vendor",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Status",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Status",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Delivery Period",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "ax_name": "Delivery Period",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Item",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "span",
+    "ax_name": "Item",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quantity",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "ax_name": "Quantity",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Unit",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "span",
+    "ax_name": "Unit",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quantity Received",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "span",
+    "ax_name": "Quantity Received",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

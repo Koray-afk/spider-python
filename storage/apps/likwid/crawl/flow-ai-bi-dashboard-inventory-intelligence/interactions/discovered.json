@@ -1,0 +1,141 @@
+[
+  {
+    "label": "Categories",
+    "id": "",
+    "className": "filter-btn filter-btn-active",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Categories",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Vendors",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Vendors",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Nov 30, 2025 - Dec 30, 2025",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Nov 30, 2025 - Dec 30, 2025",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Item",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "ax_name": "Item",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Current",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "Current",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Min Stock",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "Min Stock",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Days to Stockout",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "Days to Stockout",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Value at Risk",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Value at Risk",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Export",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Export",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Zoom Out",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "div",
+    "ax_name": "Zoom Out",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Zoom Out",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "div",
+    "source": "accessibility",
+    "ax_role": "button",
+    "ax_name": "Zoom Out",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Actual; Press ENTER to toggle",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "div",
+    "source": "accessibility",
+    "ax_role": "checkbox",
+    "ax_name": "Actual; Press ENTER to toggle",
+    "ax_states": [
+      "checked"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Forecast; Press ENTER to toggle",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "div",
+    "source": "accessibility",
+    "ax_role": "checkbox",
+    "ax_name": "Forecast; Press ENTER to toggle",
+    "ax_states": [
+      "checked"
+    ],
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Add Row",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-add-row",
+    "relationship_file": "interactions/001-add-row/relationship.json"
+  },
+  {
+    "label": "Draft",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/002-draft",
+    "relationship_file": "interactions/002-draft/relationship.json"
+  },
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/003-interaction",
+    "relationship_file": "interactions/003-interaction/relationship.json"
+  },
+  {
+    "label": "\u2014 Select Vendor \u2014",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/005-select-vendor",
+    "relationship_file": "interactions/005-select-vendor/relationship.json"
+  },
+  {
+    "label": "\u2014 Select Purchase Order \u2014",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/006-select-purchase-order",
+    "relationship_file": "interactions/006-select-purchase-order/relationship.json"
+  },
+  {
+    "label": "Intrastate (CGST + SGST)",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/007-intrastate-cgst-sgst",
+    "relationship_file": "interactions/007-intrastate-cgst-sgst/relationship.json"
+  },
+  {
+    "label": "\u2014 Select Inv Item \u2014",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/008-select-inv-item",
+    "relationship_file": "interactions/008-select-inv-item/relationship.json"
+  }
+]

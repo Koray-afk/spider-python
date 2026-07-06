@@ -1,0 +1,34 @@
+{
+  "source_page": "flow-ai-inventory-view-stock-item-STOCK-69-54995",
+  "source_url": "https://likwidai.com/flow-ai/inventory/view-stock-item/STOCK-69-54995/",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Material",
+    "id": "",
+    "class_name": "btn btn-sm btn-light fs-8",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#section-workflow > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2)",
+    "crawl_selector": "[data-crawl-id=\"4\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[4]/div[2]/div[1]/div[2]/button[2]",
+    "outer_html": "<button type=\"button\" class=\"btn btn-sm btn-light fs-8\" data-bs-toggle=\"modal\" data-bs-target=\"#add_material_modal_79\" data-crawl-id=\"4\">\n                                <i class=\"ki-duotone ki-plus fs-6\"><span class=\"path1\"></span></i>\n                                Material\n                            </button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/flow-ai/inventory/view-stock-item/STOCK-69-54995/",
+    "slug": "flow-ai-inventory-view-stock-item-STOCK-69-54995",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button type=\"button\" class=\"btn btn-sm btn-light fs-8\" data-bs-toggle=\"modal\" data-bs-target=\"#add_material_modal_79\" data-crawl-id=\"4\">\n                                <i class=\"ki-duotone ki-plus fs-6\"><span class=\"path1\"></span></i>\n                                Material\n                            </button>",
+  "trigger_label": "Material",
+  "trigger_id": "",
+  "trigger_class": "btn btn-sm btn-light fs-8",
+  "target_url": "https://likwidai.com/flow-ai/inventory/view-stock-item/STOCK-69-54995/",
+  "target_slug": "flow-ai-inventory-view-stock-item-STOCK-69-54995",
+  "target_title": "Likwid.Ai"
+}

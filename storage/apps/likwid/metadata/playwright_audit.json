@@ -1,0 +1,907 @@
+{
+  "pages_audited": 6,
+  "top_failed_urls": [
+    [
+      "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+      8
+    ],
+    [
+      "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+      8
+    ],
+    [
+      "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+      7
+    ],
+    [
+      "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+      7
+    ]
+  ],
+  "top_console_errors": [
+    [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      30
+    ]
+  ],
+  "pages": [
+    {
+      "requested": "/",
+      "final_url": "http://127.0.0.1:8000/flow-ai-bi-dashboard-inventory-intelligence/page.html",
+      "http_status": 200,
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "title": "Likwid.Ai",
+      "bodyChars": 2313,
+      "imgTotal": 5,
+      "brokenImgs": [],
+      "linkCount": 31,
+      "cssSheetCount": 24,
+      "cssLoadErrors": 1,
+      "hasSidebar": true,
+      "hasRuntime": true
+    },
+    {
+      "requested": "/home-v2/page.html",
+      "final_url": "http://127.0.0.1:8000/flow-ai-bi-dashboard-sales-intelligence/page.html",
+      "http_status": 200,
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "title": "Likwid.Ai",
+      "bodyChars": 1995,
+      "imgTotal": 5,
+      "brokenImgs": [],
+      "linkCount": 30,
+      "cssSheetCount": 24,
+      "cssLoadErrors": 1,
+      "hasSidebar": true,
+      "hasRuntime": true
+    },
+    {
+      "requested": "/flow-ai-bi-dashboard-inventory-intelligence/page.html",
+      "final_url": "http://127.0.0.1:8000/flow-ai-customers-list/page.html",
+      "http_status": 200,
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "title": "Likwid.Ai",
+      "bodyChars": 1271,
+      "imgTotal": 5,
+      "brokenImgs": [],
+      "linkCount": 56,
+      "cssSheetCount": 24,
+      "cssLoadErrors": 1,
+      "hasSidebar": true,
+      "hasRuntime": true
+    },
+    {
+      "requested": "/flow-ai-customers-list/page.html",
+      "final_url": "http://127.0.0.1:8000/flow-ai-customers-list/page.html",
+      "http_status": 200,
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "title": "Likwid.Ai",
+      "bodyChars": 1271,
+      "imgTotal": 5,
+      "brokenImgs": [],
+      "linkCount": 56,
+      "cssSheetCount": 24,
+      "cssLoadErrors": 1,
+      "hasSidebar": true,
+      "hasRuntime": true
+    },
+    {
+      "requested": "/rise-crm-leads-list/page.html",
+      "final_url": "http://127.0.0.1:8000/rise-crm-leads-list/page.html",
+      "http_status": 200,
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "title": "Likwid.Ai",
+      "bodyChars": 1772,
+      "imgTotal": 5,
+      "brokenImgs": [],
+      "linkCount": 71,
+      "cssSheetCount": 24,
+      "cssLoadErrors": 1,
+      "hasSidebar": true,
+      "hasRuntime": true
+    },
+    {
+      "requested": "/flow-ai-inventory-stock-list/page.html",
+      "final_url": "http://127.0.0.1:8000/flow-ai-inventory-stock-list/page.html#",
+      "http_status": 200,
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/bootstrap-icons/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.ttf?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8000/assets/css/fonts/keenicons/keenicons-duotone.woff?eut7fk",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "title": "Likwid.Ai",
+      "bodyChars": 3557,
+      "imgTotal": 5,
+      "brokenImgs": [],
+      "linkCount": 139,
+      "cssSheetCount": 25,
+      "cssLoadErrors": 1,
+      "hasSidebar": true,
+      "hasRuntime": true
+    }
+  ]
+}

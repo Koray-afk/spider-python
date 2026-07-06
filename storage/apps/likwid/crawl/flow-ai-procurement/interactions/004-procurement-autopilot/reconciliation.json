@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Procurement Autopilot",
+    "tagName": "button",
+    "id": "",
+    "className": "btn btn-sm btn-dark",
+    "selector": "[data-crawl-id=\"3\"]",
+    "outerHTML": "<button type=\"submit\" name=\"trigger_ai_procurement\" value=\"1\" class=\"btn btn-sm btn-dark\" data-crawl-id=\"3\">\n                        <i class=\"ki-duotone ki-rocket fs-5\"><span class=\"path1\"></span><span class=\"path2\"></span></i>\n                        Procurement Autopilot\n                    </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "#kt_app_body",
+    "parentXPath": "/html[1]/body[1]",
+    "insertMethod": "insert"
+  },
+  "ui_html": "<div class=\"messages-container\">\n<div class=\"alert alert-error alert-dismissible fade show\" role=\"alert\">\n                Failed to initiate AI procurement: 'most_similar_item'\n                <button aria-label=\"Close\" class=\"btn-close\" data-bs-dismiss=\"alert\" type=\"button\"></button>\n</div>\n</div>\n<style>\n\t.messages-container {\n\t\tposition: fixed;\n\t\ttop: 10px;\n\t\tleft: 50%;\n\t\ttransform: translateX(-50%);\n\t\tz-index: 9999;\n\t\twidth: 25%;\n\t}\n\t</style>",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

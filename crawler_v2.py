@@ -3,9 +3,11 @@
 import json
 import os
 import re
+import shutil
 import subprocess
 import time
 import traceback
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -32,6 +34,52 @@ EXTRACT_ELEMENT_JS = _SCRIPTS["extract_element"]
 ACTIVE_TABS_JS = _SCRIPTS["active_tabs"]
 ACTIVE_TAB_PANEL_JS = _SCRIPTS["active_tab_panel"]
 SIDEBAR_LINKS_JS = _SCRIPTS["sidebar_links"]
+
+# Stripe primary nav + Products submenu (after _expand_stripe_nav opens panels).
+_LIKWID_SIDEBAR_LINKS_JS = """() => {
+  const root = document.querySelector('#kt_app_sidebar');
+  if (!root) return [];
+  const out = [], seen = new Set();
+  for (const a of root.querySelectorAll('a.menu-link[href]')) {
+    const href = (a.getAttribute('href') || '').trim();
+    if (!href || href === '#' || href.startsWith('javascript:')) continue;
+    const label = (a.innerText || a.getAttribute('title') || a.getAttribute('aria-label') || '')
+      .trim().replace(/\\s+/g, ' ').slice(0, 80);
+    const key = href + '|' + label;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ href, label });
+  }
+  return out;
+}"""
+
+_LIKWID_NAV_EXPAND_JS = """() => {
+  let expanded = 0;
+  document.querySelectorAll('#kt_app_sidebar .menu-accordion').forEach(function(acc) {
+    if (acc.classList.contains('show') || acc.classList.contains('hover')) return;
+    const trigger = acc.querySelector('[data-kt-menu-trigger]');
+    if (trigger) { trigger.click(); expanded++; }
+  });
+  return expanded;
+}"""
+
+_STRIPE_SIDEBAR_LINKS_JS = """() => {
+  const root = document.querySelector('#primary-nav') ||
+    document.querySelector('[data-testid="primary-nav"]');
+  if (!root) return [];
+  const out = [], seen = new Set();
+  for (const a of root.querySelectorAll('a[href]')) {
+    const href = (a.getAttribute('href') || '').trim();
+    if (!href || href.startsWith('javascript:') || href === '#') continue;
+    const label = (a.innerText || a.getAttribute('aria-label') || a.getAttribute('title') || '')
+      .trim().replace(/\\s+/g, ' ').slice(0, 80);
+    const key = href + '|' + label;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ href, label });
+  }
+  return out;
+}"""
 
 MUTATION_OBSERVER_SETUP_JS = """() => {
   window.__stitch_muts = [];
@@ -303,6 +351,16 @@ _HUBSPOT_LOADING_REMOVE_JS = """() => {
 
 
 _STRIPE_LOADING_REMOVE_JS = """() => {
+  function contentReady() {
+    var root = document.querySelector('#dashboardRoot') ||
+      document.querySelector('[class*="DashboardRoot"]');
+    if (!root) return false;
+    var main = root.querySelector('main') || root;
+    var text = (main.innerText || '').trim();
+    if (text.length > 80) return true;
+    return !!root.querySelector('table, [class*="Chart"], [class*="Metric"], [data-testid]');
+  }
+  if (!contentReady()) return;
   var sels = [
     '[class*="Spinner"]',
     '[class*="Loading"]',
@@ -317,6 +375,29 @@ _STRIPE_LOADING_REMOVE_JS = """() => {
     });
   });
 }"""
+
+_WAIT_FOR_STRIPE_CONTENT_JS = """
+() => new Promise(function(resolve) {
+  var deadline = Date.now() + 20000;
+  function ready() {
+    var root = document.querySelector('#dashboardRoot') ||
+      document.querySelector('[class*="DashboardRoot"]');
+    if (!root) return false;
+    var main = root.querySelector('main') || root;
+    var text = (main.innerText || '').trim();
+    if (text.length > 80) return true;
+    return !!root.querySelector('table, [class*="Chart"], [class*="Metric"], [data-testid]');
+  }
+  function check() {
+    if (ready() || Date.now() > deadline) {
+      resolve(ready());
+      return;
+    }
+    setTimeout(check, 400);
+  }
+  check();
+})
+"""
 
 
 def _strip_hubspot_loading_elements(page, page_url: str) -> None:
@@ -396,6 +477,20 @@ _STRIPE_NAV_EXPAND_JS = """
 """
 
 
+def _expand_likwid_nav(page, page_url: str) -> int:
+    """Expand Metronic sidebar accordions on Likwid ERP pages before capture."""
+    if "likwidai.com" not in page_url.lower():
+        return 0
+    try:
+        count = int(page.evaluate(_LIKWID_NAV_EXPAND_JS) or 0)
+        if count:
+            page.wait_for_timeout(600)
+        return count
+    except Exception as exc:
+        print(f"[LIKWID] Nav expansion failed: {exc}")
+        return 0
+
+
 def _expand_stripe_nav(page, page_url: str) -> int:
     """Expand all collapsed sidebar nav groups on Stripe pages before capture.
 
@@ -422,6 +517,45 @@ def _prepare_snapshot_dom(page, page_url: str) -> None:
     _strip_stripe_loading_elements(page, page_url)
     _bake_hubspot_computed_styles_in_page(page, page_url)
     _bake_stripe_computed_styles_in_page(page, page_url)
+    if "likwidai.com" in page_url.lower():
+        _freeze_chart_canvases(page)
+    _normalize_datatables(page)
+
+
+def _normalize_datatables(page) -> None:
+    """Strip DataTables baked pixel widths before static HTML capture."""
+    from stitch_datatables import DATATABLES_LAYOUT_JS
+
+    try:
+        page.evaluate(DATATABLES_LAYOUT_JS)
+    except Exception as exc:
+        print(f"[DATATABLE] Layout normalize skipped: {exc}")
+
+
+def _freeze_chart_canvases(page) -> None:
+    """Replace rendered <canvas> chart pixels with <img> so static HTML shows charts."""
+    from stitch_charts import CHART_LAYOUT_JS
+
+    try:
+        page.evaluate(
+            """() => {
+              document.querySelectorAll('canvas').forEach((canvas) => {
+                try {
+                  if (!canvas.width || !canvas.height) return;
+                  const data = canvas.toDataURL('image/png');
+                  if (!data || data.length < 200) return;
+                  const img = document.createElement('img');
+                  img.src = data;
+                  if (canvas.className) img.className = canvas.className;
+                  img.setAttribute('data-stitch-frozen-chart', '1');
+                  canvas.replaceWith(img);
+                } catch (e) {}
+              });
+            }"""
+        )
+        page.evaluate(CHART_LAYOUT_JS)
+    except Exception as exc:
+        print(f"[CHART] Canvas freeze skipped: {exc}")
 
 
 def _make_css_urls_absolute(html: str, page_url: str) -> str:
@@ -553,8 +687,8 @@ def post_auth_start_url(auth_file: str, fallback: str) -> str:
         o = origin.get("origin", "")
         if not o:
             continue
-        # HubSpot / Stripe: use configured post_auth_home after manual login.
-        if "hubspot.com" in o or "dashboard.stripe.com" in o:
+        # HubSpot / Stripe / Likwid: use configured post_auth_home after manual login.
+        if "hubspot.com" in o or "dashboard.stripe.com" in o or "likwidai.com" in o:
             return fallback.rstrip("/")
         for item in origin.get("localStorage", []):
             if item.get("name") == "workspaceconf":
@@ -723,25 +857,68 @@ def _should_enqueue_link(
     return True
 
 
+def _wait_for_stripe_content(page, page_url: str) -> bool:
+    """Poll until Stripe dashboard main content is rendered (up to 20 s)."""
+    if "dashboard.stripe.com" not in page_url.lower():
+        return True
+    try:
+        return bool(page.evaluate(_WAIT_FOR_STRIPE_CONTENT_JS))
+    except Exception:
+        return False
+
+
 def _stabilize_page(
     page,
     *,
     wait_ms: int,
     use_networkidle: bool = False,
     networkidle_ms: int = NETWORKIDLE_TIMEOUT_MS,
+    wait_for_stripe_content: bool = False,
 ) -> None:
     if use_networkidle:
         try:
             page.wait_for_load_state("networkidle", timeout=networkidle_ms)
         except Exception:
             pass
+    if wait_for_stripe_content:
+        ready = _wait_for_stripe_content(page, page.url)
+        if not ready:
+            print(f"[STRIPE] Content wait timed out for {page.url}")
     if wait_ms > 0:
         page.wait_for_timeout(wait_ms)
 
 
-def _goto_clean(page, url: str, *, use_networkidle: bool, wait_ms: int) -> None:
-    page.goto(url, wait_until="domcontentloaded", timeout=60000)
-    _stabilize_page(page, wait_ms=wait_ms, use_networkidle=use_networkidle)
+def _goto_clean(
+    page,
+    url: str,
+    *,
+    use_networkidle: bool,
+    wait_ms: int,
+    wait_for_stripe_content: bool = False,
+) -> None:
+    last_exc = None
+    for attempt in range(3):
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=60000)
+            last_exc = None
+            break
+        except Exception as exc:
+            last_exc = exc
+            if "ERR_NETWORK_CHANGED" not in str(exc) or attempt == 2:
+                raise
+            page.wait_for_timeout(2000)
+    if last_exc:
+        raise last_exc
+    if "dashboard.stripe.com" in url.lower():
+        _expand_stripe_nav(page, url)
+    elif "likwidai.com" in url.lower():
+        _expand_likwid_nav(page, url)
+    _stabilize_page(
+        page,
+        wait_ms=wait_ms,
+        use_networkidle=use_networkidle,
+        wait_for_stripe_content=wait_for_stripe_content,
+    )
 
 
 def save_page_capture(
@@ -948,8 +1125,15 @@ def collect_links(page, page_url: str, base_domain: str) -> list[str]:
 
 def collect_sidebar_links(page, page_url: str, base_domain: str) -> list[dict]:
     """Left-nav module links in DOM order (skips quick-add /new shortcuts)."""
+    url_lower = (page_url or "").lower()
+    if "dashboard.stripe.com" in url_lower:
+        js = _STRIPE_SIDEBAR_LINKS_JS
+    elif "likwidai.com" in url_lower:
+        js = _LIKWID_SIDEBAR_LINKS_JS
+    else:
+        js = SIDEBAR_LINKS_JS
     try:
-        raw = page.evaluate(SIDEBAR_LINKS_JS) or []
+        raw = page.evaluate(js) or []
     except Exception:
         return []
     out: list[dict] = []
@@ -1143,6 +1327,7 @@ def crawl_interactions(
     wait_after_load_ms: int = WAIT_AFTER_LOAD_MS,
     use_networkidle: bool = True,
     skip_screenshots: bool = False,
+    wait_for_stripe_content: bool = False,
 ) -> dict:
     """Replay each discovered trigger, reusing one tab (reload between clicks)."""
     interactions_dir = page_dir / "interactions"
@@ -1191,6 +1376,7 @@ def crawl_interactions(
                     page_url,
                     use_networkidle=use_networkidle,
                     wait_ms=wait_after_load_ms,
+                    wait_for_stripe_content=wait_for_stripe_content,
                 )
                 ipage.evaluate(DISCOVER_JS)
 
@@ -1225,7 +1411,14 @@ def crawl_interactions(
                 except Exception:
                     pass
 
-                locator.click(timeout=5000)
+                try:
+                    locator.scroll_into_view_if_needed(timeout=3000)
+                except Exception:
+                    pass
+                try:
+                    locator.click(timeout=5000)
+                except Exception:
+                    locator.click(timeout=5000, force=True)
                 ipage.wait_for_timeout(WAIT_AFTER_CLICK_MS)
                 if use_networkidle:
                     try:
@@ -1324,6 +1517,9 @@ def crawl_interactions(
                     }
                 )
                 saved += 1
+                (interactions_dir / "interactions.json").write_text(
+                    json.dumps(registry, indent=2), encoding="utf-8"
+                )
                 print(f"    + interaction {saved}: {item.get('label') or selector} ({itype})")
             except Exception as exc:
                 not_scraped.append(_not_scraped_entry(item, "click_failed", detail=str(exc)))
@@ -1380,6 +1576,7 @@ def bfs_crawl(
     sidebar_first: bool = True,
     resume: bool = True,
     hash_routes: bool = True,
+    wait_for_stripe_content: bool = False,
 ) -> dict:
     checkpoint_path = get_crawl_checkpoint_path(app_name)
     start_norm = normalize_url(start_url)
@@ -1547,6 +1744,7 @@ def bfs_crawl(
                 url,
                 use_networkidle=use_networkidle,
                 wait_ms=wait_after_load_ms,
+                wait_for_stripe_content=wait_for_stripe_content,
             )
 
             if check_login and is_login_page(page):
@@ -1557,10 +1755,13 @@ def bfs_crawl(
             page_dir = crawl_root / slug
             page_title = page.title()
 
-            # Expand collapsed sidebar nav groups before capturing (Stripe only).
+            # Expand collapsed sidebar nav groups before capture (_goto_clean also expands).
             _nav_expanded = _expand_stripe_nav(page, page.url)
             if _nav_expanded:
-                print(f"[STRIPE] Expanded {_nav_expanded} collapsed nav item(s)")
+                print(f"[STRIPE] Expanded {_nav_expanded} collapsed nav item(s) (post-wait)")
+            _likwid_expanded = _expand_likwid_nav(page, page.url)
+            if _likwid_expanded:
+                print(f"[LIKWID] Expanded {_likwid_expanded} sidebar accordion(s) (post-wait)")
 
             save_page_capture(
                 page_dir, page, url, page_title, page_type, skip_screenshots=skip_screenshots
@@ -1659,6 +1860,7 @@ def bfs_crawl(
                     wait_after_load_ms=wait_after_load_ms,
                     use_networkidle=use_networkidle,
                     skip_screenshots=skip_screenshots,
+                    wait_for_stripe_content=wait_for_stripe_content,
                 )
                 interactions_found += ix["found"]
                 interactions_saved += ix["saved"]
@@ -1700,6 +1902,9 @@ def bfs_crawl(
 
         except Exception as exc:
             print(f"[BFS] Page capture failed: {exc}")
+            if "Download is starting" in str(exc) or "ERR_NETWORK_CHANGED" in str(exc):
+                print(f"[BFS] Skipping URL after transient error: {url}")
+                continue
             traceback.print_exc()
             raise
         finally:
@@ -1728,6 +1933,186 @@ def _get_hybrid_checkpoint_path(app_name: str) -> Path:
     return get_metadata_dir(app_name) / "hybrid_checkpoint.json"
 
 
+_IXP_SKIP_CLASSES = {"accordion-button", "accordion-title"}
+_IXP_SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing", "Developers"}
+
+
+def _ixp_process_slug(
+    context,
+    crawl_root: Path,
+    url: str,
+    slug: str,
+    *,
+    max_interactions: int,
+    max_ranked_interactions: int,
+    mandatory_tab_labels: list[str] | None,
+    mandatory_interaction_labels: list[str] | None,
+    skip_screenshots: bool,
+    wait_after_load_ms: int,
+    use_networkidle: bool,
+    use_ax_discovery: bool,
+    ax_max_candidates_per_page: int,
+    ax_skip_grid_roles: bool,
+    wait_for_stripe_content: bool,
+) -> dict:
+    """Discover candidates on *url* and run crawl_interactions for *slug*."""
+    page = None
+    try:
+        page = context.new_page()
+        _goto_clean(
+            page,
+            url,
+            use_networkidle=use_networkidle,
+            wait_ms=wait_after_load_ms,
+            wait_for_stripe_content=wait_for_stripe_content,
+        )
+        page_title = page.title()
+
+        candidates = discover_with_scroll(page)
+        if use_ax_discovery:
+            try:
+                from discover.accessibility import enhance_candidates_with_accessibility
+                candidates = enhance_candidates_with_accessibility(
+                    page, candidates,
+                    max_candidates=ax_max_candidates_per_page,
+                    skip_grid_roles=ax_skip_grid_roles,
+                )
+            except Exception as exc:
+                print(f"[AX] Enhancement failed ({slug}): {exc}")
+
+        candidates = [
+            c for c in candidates
+            if not any(cls in (c.get("className") or "") for cls in _IXP_SKIP_CLASSES)
+            and (c.get("label") or "").strip() not in _IXP_SKIP_LABELS
+        ]
+
+        if candidates and os.getenv("GEMINI_API_KEY"):
+            from ranker.interaction_ranker import rank_candidates
+            candidates = rank_candidates(
+                page_title, url, candidates,
+                top_n=max_ranked_interactions,
+                mandatory_labels=mandatory_tab_labels or [],
+                mandatory_interaction_labels=mandatory_interaction_labels or [],
+            )
+            print(f"[IXP] Ranked ({slug}): {len(candidates)}")
+
+        page.close()
+        page = None
+
+        page_dir = crawl_root / slug
+        return crawl_interactions(
+            context, url, slug, page_dir, crawl_root, candidates, max_interactions,
+            wait_after_load_ms=wait_after_load_ms,
+            use_networkidle=use_networkidle,
+            skip_screenshots=skip_screenshots,
+            wait_for_stripe_content=wait_for_stripe_content,
+        )
+    except Exception as exc:
+        print(f"[IXP] Failed ({slug}): {exc}")
+        traceback.print_exc()
+        return {"found": 0, "saved": 0, "nav_targets": []}
+    finally:
+        if page:
+            try:
+                page.close()
+            except Exception:
+                pass
+
+
+def _ixp_worker_entry(task: dict) -> dict:
+    """Process one interaction-pass slug in an isolated browser process."""
+    slug = task["slug"]
+    url = task["url"]
+    crawl_root = Path(task["crawl_root"])
+    opts = task["opts"]
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=bool(task.get("headless", True)), channel="chrome")
+        context = browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            user_agent=USER_AGENT,
+            storage_state=task["auth_file"],
+        )
+        prepare_context(context)
+        try:
+            if task.get("save_page_if_missing"):
+                page_dir = crawl_root / slug
+                if not (page_dir / "page.html").exists():
+                    nav_page = None
+                    try:
+                        nav_page = context.new_page()
+                        _goto_clean(
+                            nav_page,
+                            url,
+                            use_networkidle=opts["use_networkidle"],
+                            wait_ms=opts["wait_after_load_ms"],
+                            wait_for_stripe_content=opts["wait_for_stripe_content"],
+                        )
+                        _nav_exp = _expand_stripe_nav(nav_page, url)
+                        if _nav_exp:
+                            print(f"[STRIPE] Expanded {_nav_exp} collapsed nav item(s) on {slug}")
+                        _likwid_exp = _expand_likwid_nav(nav_page, url)
+                        if _likwid_exp:
+                            print(f"[LIKWID] Expanded {_likwid_exp} sidebar accordion(s) on {slug}")
+                        save_page_capture(
+                            page_dir, nav_page, url, nav_page.title(),
+                            "post_auth", skip_screenshots=opts["skip_screenshots"],
+                        )
+                    except Exception as exc:
+                        print(f"[IXP] Nav page save failed ({slug}): {exc}")
+                    finally:
+                        if nav_page:
+                            try:
+                                nav_page.close()
+                            except Exception:
+                                pass
+
+            result = _ixp_process_slug(
+                context, crawl_root, url, slug,
+                max_interactions=opts["max_interactions"],
+                max_ranked_interactions=opts["max_ranked_interactions"],
+                mandatory_tab_labels=opts.get("mandatory_tab_labels") or [],
+                mandatory_interaction_labels=opts.get("mandatory_interaction_labels") or [],
+                skip_screenshots=opts["skip_screenshots"],
+                wait_after_load_ms=opts["wait_after_load_ms"],
+                use_networkidle=opts["use_networkidle"],
+                use_ax_discovery=opts["use_ax_discovery"],
+                ax_max_candidates_per_page=opts["ax_max_candidates_per_page"],
+                ax_skip_grid_roles=opts["ax_skip_grid_roles"],
+                wait_for_stripe_content=opts["wait_for_stripe_content"],
+            )
+            return {"slug": slug, **result}
+        finally:
+            context.close()
+            browser.close()
+
+
+def _interactions_saved_on_disk(interactions_dir: Path) -> bool:
+    """True only when interactions.json lists at least one saved capture."""
+    reg = interactions_dir / "interactions.json"
+    if not reg.is_file():
+        return False
+    try:
+        data = json.loads(reg.read_text(encoding="utf-8"))
+        return bool(data)
+    except Exception:
+        return False
+
+
+def _clear_page_interactions(page_dir: Path) -> None:
+    """Remove saved interaction captures so the interaction pass can re-run."""
+    interactions_dir = page_dir / "interactions"
+    if not interactions_dir.is_dir():
+        return
+    for sub in interactions_dir.iterdir():
+        if sub.is_dir() and (sub / "page.html").is_file():
+            shutil.rmtree(sub)
+    for name in ("interactions.json", "not_scraped.json", "discovered.json"):
+        p = interactions_dir / name
+        if p.is_file():
+            p.unlink()
+
+
 def run_interaction_pass(
     context,
     crawl_root: Path,
@@ -1744,6 +2129,10 @@ def run_interaction_pass(
     use_ax_discovery: bool = True,
     ax_max_candidates_per_page: int = 200,
     ax_skip_grid_roles: bool = True,
+    wait_for_stripe_content: bool = False,
+    redo_depth2_interactions: bool = False,
+    redo_all_interactions: bool = False,
+    workers: int = 1,
 ) -> dict:
     """Phase 2 of a hybrid crawl: run interactions on all BFS-discovered pages.
 
@@ -1759,6 +2148,33 @@ def run_interaction_pass(
 
     sitemap: list[dict] = json.loads(sitemap_path.read_text(encoding="utf-8"))
 
+    if redo_all_interactions:
+        cleared = 0
+        for entry in sitemap:
+            page_dir = crawl_root / entry["slug"]
+            if (page_dir / "interactions").is_dir():
+                _clear_page_interactions(page_dir)
+                cleared += 1
+        ixp_ckpt_path = get_metadata_dir(app_name) / "interaction_pass_checkpoint.json"
+        if ixp_ckpt_path.exists():
+            ixp_ckpt_path.unlink()
+        if cleared:
+            print(f"[IXP] Cleared interactions on {cleared} page(s) for re-crawl")
+
+    if redo_depth2_interactions:
+        cleared = 0
+        for entry in sitemap:
+            url = entry.get("url", "")
+            if not any(pat in url for pat in depth2_patterns):
+                continue
+            slug = entry["slug"]
+            ix_json = crawl_root / slug / "interactions" / "interactions.json"
+            if ix_json.exists():
+                ix_json.unlink()
+                cleared += 1
+        if cleared:
+            print(f"[IXP] Cleared interactions on {cleared} depth-2 page(s) for re-crawl")
+
     ixp_ckpt_path = get_metadata_dir(app_name) / "interaction_pass_checkpoint.json"
     completed: set[str] = set()
     if ixp_ckpt_path.exists():
@@ -1772,132 +2188,189 @@ def run_interaction_pass(
 
     sitemap_sorted = sorted(sitemap, key=_sort_key)
 
-    _SKIP_CLASSES = {"accordion-button", "accordion-title"}
-    _SKIP_LABELS = {"button", "div", "Subscribe", "TAKE A LIVE PRODUCT TOUR", "testing", "Developers"}
-
     interactions_saved = 0
 
     def _process_one(url: str, slug: str) -> dict:
-        """Open url, discover + filter + rank candidates, run crawl_interactions."""
-        page = None
-        try:
-            page = context.new_page()
-            _goto_clean(page, url, use_networkidle=use_networkidle, wait_ms=wait_after_load_ms)
-            page_title = page.title()
-
-            candidates = discover_with_scroll(page)
-            if use_ax_discovery:
-                try:
-                    from discover.accessibility import enhance_candidates_with_accessibility
-                    candidates = enhance_candidates_with_accessibility(
-                        page, candidates,
-                        max_candidates=ax_max_candidates_per_page,
-                        skip_grid_roles=ax_skip_grid_roles,
-                    )
-                except Exception as exc:
-                    print(f"[AX] Enhancement failed: {exc}")
-
-            candidates = [
-                c for c in candidates
-                if not any(cls in (c.get("className") or "") for cls in _SKIP_CLASSES)
-                and (c.get("label") or "").strip() not in _SKIP_LABELS
-            ]
-
-            if candidates and os.getenv("GEMINI_API_KEY"):
-                from ranker.interaction_ranker import rank_candidates
-                candidates = rank_candidates(
-                    page_title, url, candidates,
-                    top_n=max_ranked_interactions,
-                    mandatory_labels=mandatory_tab_labels or [],
-                    mandatory_interaction_labels=mandatory_interaction_labels or [],
-                )
-                print(f"[IXP] Ranked: {len(candidates)}")
-
-            page.close()
-            page = None
-
-            page_dir = crawl_root / slug
-            return crawl_interactions(
-                context, url, slug, page_dir, crawl_root, candidates, max_interactions,
-                wait_after_load_ms=wait_after_load_ms,
-                use_networkidle=use_networkidle,
-                skip_screenshots=skip_screenshots,
-            )
-        except Exception as exc:
-            print(f"[IXP] Failed ({slug}): {exc}")
-            traceback.print_exc()
-            return {"found": 0, "saved": 0, "nav_targets": []}
-        finally:
-            if page:
-                try:
-                    page.close()
-                except Exception:
-                    pass
+        return _ixp_process_slug(
+            context, crawl_root, url, slug,
+            max_interactions=max_interactions,
+            max_ranked_interactions=max_ranked_interactions,
+            mandatory_tab_labels=mandatory_tab_labels,
+            mandatory_interaction_labels=mandatory_interaction_labels,
+            skip_screenshots=skip_screenshots,
+            wait_after_load_ms=wait_after_load_ms,
+            use_networkidle=use_networkidle,
+            use_ax_discovery=use_ax_discovery,
+            ax_max_candidates_per_page=ax_max_candidates_per_page,
+            ax_skip_grid_roles=ax_skip_grid_roles,
+            wait_for_stripe_content=wait_for_stripe_content,
+        )
 
     def _save_ckpt() -> None:
         ixp_ckpt_path.write_text(
             json.dumps({"completed_slugs": list(completed)}, indent=2), encoding="utf-8"
         )
 
-    for entry in sitemap_sorted:
-        url = entry["url"]
-        slug = entry["slug"]
-        page_dir = crawl_root / slug
-        interactions_dir = page_dir / "interactions"
+    def _ixp_opts() -> dict:
+        return {
+            "max_interactions": max_interactions,
+            "max_ranked_interactions": max_ranked_interactions,
+            "mandatory_tab_labels": mandatory_tab_labels or [],
+            "mandatory_interaction_labels": mandatory_interaction_labels or [],
+            "skip_screenshots": skip_screenshots,
+            "wait_after_load_ms": wait_after_load_ms,
+            "use_networkidle": use_networkidle,
+            "use_ax_discovery": use_ax_discovery,
+            "ax_max_candidates_per_page": ax_max_candidates_per_page,
+            "ax_skip_grid_roles": ax_skip_grid_roles,
+            "wait_for_stripe_content": wait_for_stripe_content,
+        }
 
-        if slug in completed or (interactions_dir / "interactions.json").exists():
-            completed.add(slug)
-            continue
-
-        is_priority = any(pat in url for pat in depth2_patterns)
-        effective_depth = 2 if is_priority else 1
-        print(f"[IXP] [depth={effective_depth}] {slug}")
-
-        ix = _process_one(url, slug)
-        interactions_saved += ix.get("saved", 0)
-        print(f"[IXP] Saved: {ix.get('saved', 0)} | nav_targets: {len(ix.get('nav_targets', []))}")
-
-        if effective_depth >= 2:
-            for nav_url in ix.get("nav_targets", []):
-                nav_slug = page_slug(nav_url)
-                if nav_slug in completed:
+    def _run_parallel_batch(tasks: list[dict]) -> list[str]:
+        nonlocal interactions_saved
+        if not tasks:
+            return []
+        auth_path = str(get_auth_file(app_name))
+        opts = _ixp_opts()
+        nav_collected: list[str] = []
+        print(f"[IXP] Parallel batch: {len(tasks)} page(s), {workers} workers")
+        with ProcessPoolExecutor(max_workers=workers) as pool:
+            futures = {
+                pool.submit(
+                    _ixp_worker_entry,
+                    {
+                        "slug": t["slug"],
+                        "url": t["url"],
+                        "crawl_root": str(crawl_root),
+                        "auth_file": auth_path,
+                        "headless": True,
+                        "save_page_if_missing": t.get("save_page_if_missing", False),
+                        "opts": opts,
+                    },
+                ): t
+                for t in tasks
+            }
+            for fut in as_completed(futures):
+                task = futures[fut]
+                slug = task["slug"]
+                try:
+                    ix = fut.result()
+                except Exception as exc:
+                    print(f"[IXP] Worker failed ({slug}): {exc}")
+                    completed.add(slug)
+                    _save_ckpt()
                     continue
-                nav_page_dir = crawl_root / nav_slug
-                nav_ix_dir = nav_page_dir / "interactions"
-                if (nav_ix_dir / "interactions.json").exists():
-                    completed.add(nav_slug)
-                    continue
-
-                print(f"[IXP] [depth=2 nav] {nav_slug}")
-
-                if not (nav_page_dir / "page.html").exists():
-                    nav_page = None
-                    try:
-                        nav_page = context.new_page()
-                        _goto_clean(nav_page, nav_url, use_networkidle=use_networkidle, wait_ms=wait_after_load_ms)
-                        _nav_exp = _expand_stripe_nav(nav_page, nav_url)
-                        if _nav_exp:
-                            print(f"[STRIPE] Expanded {_nav_exp} collapsed nav item(s) on {nav_slug}")
-                        save_page_capture(
-                            nav_page_dir, nav_page, nav_url, nav_page.title(),
-                            "post_auth", skip_screenshots=skip_screenshots,
-                        )
-                    except Exception as exc:
-                        print(f"[IXP] Nav page save failed ({nav_slug}): {exc}")
-                    finally:
-                        if nav_page:
-                            try:
-                                nav_page.close()
-                            except Exception:
-                                pass
-
-                nav_ix = _process_one(nav_url, nav_slug)
-                interactions_saved += nav_ix.get("saved", 0)
-                completed.add(nav_slug)
+                slug = ix.get("slug", slug)
+                interactions_saved += ix.get("saved", 0)
+                completed.add(slug)
                 _save_ckpt()
+                print(f"[IXP] Done {slug}: saved={ix.get('saved', 0)}")
+                nav_collected.extend(ix.get("nav_targets", []))
+        return nav_collected
 
-        completed.add(slug)
-        _save_ckpt()
+    if workers > 1:
+        print(f"[IXP] Using {workers} parallel workers")
+        priority_tasks: list[dict] = []
+        rest_tasks: list[dict] = []
+        for entry in sitemap_sorted:
+            url = entry["url"]
+            slug = entry["slug"]
+            interactions_dir = (crawl_root / slug) / "interactions"
+            if slug in completed or _interactions_saved_on_disk(interactions_dir):
+                completed.add(slug)
+                continue
+            task = {"slug": slug, "url": url}
+            if any(pat in url for pat in depth2_patterns):
+                priority_tasks.append(task)
+            else:
+                rest_tasks.append(task)
+
+        nav_tasks: list[dict] = []
+        seen_nav_slugs: set[str] = set()
+        for nav_url in _run_parallel_batch(priority_tasks):
+            nav_slug = page_slug(nav_url)
+            if nav_slug in completed or nav_slug in seen_nav_slugs:
+                continue
+            nav_ix_dir = (crawl_root / nav_slug) / "interactions"
+            if (nav_ix_dir / "interactions.json").is_file() and _interactions_saved_on_disk(nav_ix_dir):
+                completed.add(nav_slug)
+                seen_nav_slugs.add(nav_slug)
+                continue
+            seen_nav_slugs.add(nav_slug)
+            nav_tasks.append({
+                "slug": nav_slug,
+                "url": nav_url,
+                "save_page_if_missing": True,
+            })
+
+        _run_parallel_batch(nav_tasks)
+        _run_parallel_batch(rest_tasks)
+    else:
+        for entry in sitemap_sorted:
+            url = entry["url"]
+            slug = entry["slug"]
+            page_dir = crawl_root / slug
+            interactions_dir = page_dir / "interactions"
+
+            if slug in completed or _interactions_saved_on_disk(interactions_dir):
+                completed.add(slug)
+                continue
+
+            is_priority = any(pat in url for pat in depth2_patterns)
+            effective_depth = 2 if is_priority else 1
+            print(f"[IXP] [depth={effective_depth}] {slug}")
+
+            ix = _process_one(url, slug)
+            interactions_saved += ix.get("saved", 0)
+            print(f"[IXP] Saved: {ix.get('saved', 0)} | nav_targets: {len(ix.get('nav_targets', []))}")
+
+            if effective_depth >= 2:
+                for nav_url in ix.get("nav_targets", []):
+                    nav_slug = page_slug(nav_url)
+                    if nav_slug in completed:
+                        continue
+                    nav_page_dir = crawl_root / nav_slug
+                    nav_ix_dir = nav_page_dir / "interactions"
+                    if (nav_ix_dir / "interactions.json").is_file() and _interactions_saved_on_disk(nav_ix_dir):
+                        completed.add(nav_slug)
+                        continue
+
+                    print(f"[IXP] [depth=2 nav] {nav_slug}")
+
+                    if not (nav_page_dir / "page.html").exists():
+                        nav_page = None
+                        try:
+                            nav_page = context.new_page()
+                            _goto_clean(
+                                nav_page,
+                                nav_url,
+                                use_networkidle=use_networkidle,
+                                wait_ms=wait_after_load_ms,
+                                wait_for_stripe_content=wait_for_stripe_content,
+                            )
+                            _nav_exp = _expand_stripe_nav(nav_page, nav_url)
+                            if _nav_exp:
+                                print(f"[STRIPE] Expanded {_nav_exp} collapsed nav item(s) on {nav_slug}")
+                            save_page_capture(
+                                nav_page_dir, nav_page, nav_url, nav_page.title(),
+                                "post_auth", skip_screenshots=skip_screenshots,
+                            )
+                        except Exception as exc:
+                            print(f"[IXP] Nav page save failed ({nav_slug}): {exc}")
+                        finally:
+                            if nav_page:
+                                try:
+                                    nav_page.close()
+                                except Exception:
+                                    pass
+
+                    nav_ix = _process_one(nav_url, nav_slug)
+                    interactions_saved += nav_ix.get("saved", 0)
+                    completed.add(nav_slug)
+                    _save_ckpt()
+
+            completed.add(slug)
+            _save_ckpt()
 
     print(f"[IXP] Done — {interactions_saved} total interactions saved")
     if ixp_ckpt_path.exists():
@@ -1939,6 +2412,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
         prepare_context(context)
         priority_url_patterns = cfg.get("priority_url_patterns") or []
         seed_url_patterns = cfg.get("seed_url_patterns") or []
+        wait_for_stripe_content = bool(cfg.get("crawl_wait_for_stripe_content", False))
 
         if hybrid:
             hybrid_ckpt_path = _get_hybrid_checkpoint_path(app_name)
@@ -1980,6 +2454,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                     use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
                     ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
                     ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+                    wait_for_stripe_content=wait_for_stripe_content,
                 )
                 bfs_pages = bfs_result["pages"]
                 hybrid_ckpt_path.write_text(
@@ -1993,23 +2468,31 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                 print(f"[HYBRID] Phase 1 already complete — {bfs_pages} pages in sitemap")
 
             # ── Phase 2: Interaction pass (depth-2 for priority, depth-1 for rest) ──
-            print("[HYBRID] Phase 2: Interaction pass")
-            ix_result = run_interaction_pass(
-                context,
-                crawl_root,
-                app_name,
-                depth2_patterns=cfg.get("interaction_depth_2_patterns") or [],
-                max_interactions=max_interactions,
-                max_ranked_interactions=max_ranked_interactions,
-                mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
-                mandatory_interaction_labels=cfg.get("mandatory_interaction_labels") or [],
-                skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
-                wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
-                use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
-                use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
-                ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
-                ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
-            )
+            if cfg.get("crawl_bfs_only"):
+                print("[HYBRID] Phase 2 skipped (crawl_bfs_only) — run crawl-interactions later")
+                ix_result = {"interactions_saved": 0}
+            else:
+                print("[HYBRID] Phase 2: Interaction pass")
+                ix_result = run_interaction_pass(
+                    context,
+                    crawl_root,
+                    app_name,
+                    depth2_patterns=cfg.get("interaction_depth_2_patterns") or [],
+                    max_interactions=max_interactions,
+                    max_ranked_interactions=max_ranked_interactions,
+                    mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
+                    mandatory_interaction_labels=cfg.get("mandatory_interaction_labels") or [],
+                    skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+                    wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+                    use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+                    use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
+                    ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
+                    ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+                    wait_for_stripe_content=wait_for_stripe_content,
+                    redo_depth2_interactions=bool(cfg.get("crawl_redo_depth2_interactions", False)),
+                    redo_all_interactions=bool(cfg.get("crawl_redo_interactions", False)),
+                    workers=int(cfg.get("crawl_workers", 1)),
+                )
 
             if hybrid_ckpt_path.exists():
                 hybrid_ckpt_path.unlink()
@@ -2051,11 +2534,62 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                 use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
                 ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
                 ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+                wait_for_stripe_content=wait_for_stripe_content,
             )
 
         context.close()
         browser.close()
     return result
+
+
+def crawl_interaction_pass(app_name: str, cfg: dict) -> dict:
+    """Run hybrid phase 2 only — interactions on all pages in sitemap.json."""
+    crawl_root = ensure_app_dirs(app_name)
+    sitemap_path = get_sitemap_path(app_name)
+    if not sitemap_path.is_file():
+        raise FileNotFoundError(
+            f"No sitemap for '{app_name}' — run a page crawl first (crawl-postauth)."
+        )
+    sitemap = json.loads(sitemap_path.read_text(encoding="utf-8"))
+    max_interactions = cfg.get("max_interactions_per_page", DEFAULT_MAX_INTERACTIONS)
+    max_ranked_interactions = cfg.get("max_ranked_interactions", 15)
+    wait_for_stripe_content = bool(cfg.get("crawl_wait_for_stripe_content", False))
+
+    with sync_playwright() as p:
+        auth_file = ensure_auth(p, cfg["login_url"], app_name)
+        browser = p.chromium.launch(headless=False, channel="chrome")
+        context = browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            user_agent=USER_AGENT,
+            storage_state=auth_file,
+        )
+        prepare_context(context)
+        print(f"[IXP] Phase 2 only — {len(sitemap)} page(s) in sitemap")
+        ix_result = run_interaction_pass(
+            context,
+            crawl_root,
+            app_name,
+            depth2_patterns=cfg.get("interaction_depth_2_patterns") or [],
+            max_interactions=max_interactions,
+            max_ranked_interactions=max_ranked_interactions,
+            mandatory_tab_labels=cfg.get("mandatory_tab_labels") or [],
+            mandatory_interaction_labels=cfg.get("mandatory_interaction_labels") or [],
+            skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+            wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+            use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+            use_ax_discovery=bool(cfg.get("use_ax_discovery", True)),
+            ax_max_candidates_per_page=int(cfg.get("ax_max_candidates_per_page", 200)),
+            ax_skip_grid_roles=bool(cfg.get("ax_skip_grid_roles", True)),
+            wait_for_stripe_content=wait_for_stripe_content,
+            redo_depth2_interactions=bool(cfg.get("crawl_redo_depth2_interactions", False)),
+            redo_all_interactions=bool(cfg.get("crawl_redo_interactions", False)),
+            workers=int(cfg.get("crawl_workers", 1)),
+        )
+        browser.close()
+    return {
+        "pages": len(sitemap),
+        "interactions_saved": ix_result["interactions_saved"],
+    }
 
 
 def crawl_preauth(app_name: str, cfg: dict) -> dict:
@@ -2073,9 +2607,13 @@ def crawl_application(app_name: str, cfg: dict) -> dict:
         pre = crawl_preauth(app_name, cfg)
         print(f"  {pre['pages']} pages, {pre['interactions_saved']} interactions saved")
 
-    print("post-auth crawl...")
-    post = crawl_postauth(app_name, cfg)
-    print(f"  {post['pages']} pages, {post['interactions_saved']} interactions saved")
+    post = {"pages": 0, "interactions_saved": 0}
+    if cfg.get("crawl_post_auth", True):
+        print("post-auth crawl...")
+        post = crawl_postauth(app_name, cfg)
+        print(f"  {post['pages']} pages, {post['interactions_saved']} interactions saved")
+    else:
+        print("post-auth crawl skipped (crawl_post_auth=False)")
 
     return {
         "pages_crawled": pre["pages"] + post["pages"],

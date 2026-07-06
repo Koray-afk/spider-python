@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Select an Item",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/003-select-an-item",
+    "relationship_file": "interactions/003-select-an-item/relationship.json"
+  },
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/004-interaction",
+    "relationship_file": "interactions/004-interaction/relationship.json"
+  }
+]

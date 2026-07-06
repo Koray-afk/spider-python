@@ -1,0 +1,102 @@
+[
+  {
+    "label": "Auto-allocate (oldest first)",
+    "id": "auto-allocate",
+    "className": "btn btn-sm btn-light-primary",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "Auto-allocate (oldest first)",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Record & Post",
+    "id": "",
+    "className": "btn btn-dark",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Record & Post",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Save without posting",
+    "id": "",
+    "className": "btn btn-light-primary",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Save without posting",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "---------",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "span",
+    "ax_name": "---------",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Bank Transfer",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "span",
+    "ax_name": "Bank Transfer",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u2014 Select Bank Account \u2014",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "span",
+    "ax_name": "\u2014 Select Bank Account \u2014",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\u2014 Select Vendor \u2014",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "span",
+    "ax_name": "\u2014 Select Vendor \u2014",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Against Invoices / Bills",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "Against Invoices / Bills",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Awareness",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/001-awareness",
+    "relationship_file": "interactions/001-awareness/relationship.json"
+  },
+  {
+    "label": "Interest",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-interest",
+    "relationship_file": "interactions/002-interest/relationship.json"
+  },
+  {
+    "label": "Decision",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/003-decision",
+    "relationship_file": "interactions/003-decision/relationship.json"
+  },
+  {
+    "label": "Purchase",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-purchase",
+    "relationship_file": "interactions/004-purchase/relationship.json"
+  },
+  {
+    "label": "Retain",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/005-retain",
+    "relationship_file": "interactions/005-retain/relationship.json"
+  },
+  {
+    "label": "Save Assignment",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/007-save-assignment",
+    "relationship_file": "interactions/007-save-assignment/relationship.json"
+  }
+]

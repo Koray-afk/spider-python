@@ -1,0 +1,146 @@
+[
+  {
+    "label": "New Chat",
+    "id": "lkh-new-chat-btn",
+    "className": "btn btn-sm w-100 lkh-btn-send",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "New Chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Status",
+    "id": "",
+    "className": "select2-selection select2-selection--single form-select form-select-solid",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "span",
+    "ax_name": "Status",
+    "ax_role": "combobox",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "What is my total order value this month?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Who are my top 10 customers?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "Which items are below reorder level?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "How's my business doing?",
+    "id": "",
+    "className": "lkh-suggest-pill",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "How's my business doing?",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Ask AI",
+    "id": "lkh-send-btn",
+    "className": "lkh-btn-send",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Ask AI",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Parent User",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "span",
+    "ax_name": "Parent User",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Name",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "span",
+    "ax_name": "Name",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Email",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "span",
+    "ax_name": "Email",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Created",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "span",
+    "ax_name": "Created",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Category",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "span",
+    "ax_name": "Category",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Access",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "span",
+    "ax_name": "Access",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Actions",
+    "id": "",
+    "className": "dt-column-title",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "span",
+    "ax_name": "Actions",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

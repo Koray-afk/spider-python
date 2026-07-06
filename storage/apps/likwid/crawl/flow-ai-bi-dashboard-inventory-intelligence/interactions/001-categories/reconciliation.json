@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Categories",
+    "tagName": "button",
+    "id": "",
+    "className": "filter-btn filter-btn-active",
+    "selector": "[data-crawl-id=\"2\"]",
+    "outerHTML": "<button class=\"filter-btn filter-btn-active\" data-crawl-id=\"2\">Categories</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

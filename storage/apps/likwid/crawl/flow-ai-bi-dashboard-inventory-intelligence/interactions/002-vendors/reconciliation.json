@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Vendors",
+    "tagName": "button",
+    "id": "",
+    "className": "filter-btn",
+    "selector": "[data-crawl-id=\"3\"]",
+    "outerHTML": "<button class=\"filter-btn\" data-crawl-id=\"3\">Vendors</button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}

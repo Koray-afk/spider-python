@@ -1,0 +1,8 @@
+[
+  {
+    "label": "Add Job (Ctrl + m)",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-add-job-ctrl-m",
+    "relationship_file": "interactions/001-add-job-ctrl-m/relationship.json"
+  }
+]

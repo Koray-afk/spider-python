@@ -1,0 +1,64 @@
+[
+  {
+    "label": "Create Sale Order",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "New Chat",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"5\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"5\" id=\"lkh-new-chat-btn\" class=\"btn btn-sm w-100 lkh-btn-send\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "What is my total order value this month?",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"6\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"6\" class=\"lkh-suggest-pill\">What is my total order value this month?</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Who are my top 10 customers?",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"7\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"7\" class=\"lkh-suggest-pill\">Who are my top 10 customers?</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Which items are below reorder level?",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"8\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"8\" class=\"lkh-suggest-pill\">Which items are below reorder level?</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "How's my business doing?",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"9\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"9\" class=\"lkh-suggest-pill\">How's my business doing?</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Ask AI",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"10\\\"]\").first\n    - locator resolved to <button id=\"lkh-send-btn\" data-crawl-id=\"10\" class=\"lkh-btn-send\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "2",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "input",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  }
+]

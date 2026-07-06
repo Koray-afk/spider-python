@@ -1,0 +1,32 @@
+[
+  {
+    "label": "---------",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-interaction",
+    "relationship_file": "interactions/004-interaction/relationship.json"
+  },
+  {
+    "label": "Bank Transfer",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/005-bank-transfer",
+    "relationship_file": "interactions/005-bank-transfer/relationship.json"
+  },
+  {
+    "label": "\u2014 Select Bank Account \u2014",
+    "selector": "[data-crawl-id=\"6\"]",
+    "interaction_path": "interactions/006-select-bank-account",
+    "relationship_file": "interactions/006-select-bank-account/relationship.json"
+  },
+  {
+    "label": "\u2014 Select Vendor \u2014",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/007-select-vendor",
+    "relationship_file": "interactions/007-select-vendor/relationship.json"
+  },
+  {
+    "label": "Against Invoices / Bills",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/008-against-invoices-bills",
+    "relationship_file": "interactions/008-against-invoices-bills/relationship.json"
+  }
+]

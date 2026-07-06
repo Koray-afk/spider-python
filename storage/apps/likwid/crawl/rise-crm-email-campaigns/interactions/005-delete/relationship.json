@@ -1,0 +1,34 @@
+{
+  "source_page": "rise-crm-email-campaigns",
+  "source_url": "https://likwidai.com/rise-crm/email-campaigns/",
+  "source_title": "Likwid.Ai",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "btn btn-icon btn-light btn-active-light-primary btn-sm",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#campaignsTableBody > tr:nth-of-type(1) > td:nth-of-type(8) > button:nth-of-type(3)",
+    "crawl_selector": "[data-crawl-id=\"5\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[8]/button[3]",
+    "outer_html": "<button class=\"btn btn-icon btn-light btn-active-light-primary btn-sm\" onclick=\"deleteCampaign(8); return false;\" title=\"Delete\" data-crawl-id=\"5\">\n                                                                    <i class=\"ki-duotone ki-trash fs-2\">\n                                                                        <span class=\"path1\"></span>\n                                                                        <span class=\"path2\"></span>\n                                                                        <span class=\"path3\"></span>\n                                                                        <span class=\"path4\"></span>\n                                                                        <span class=\"path5\"></span>\n                                                                    </i>\n                                                                </button>"
+  },
+  "target": {
+    "url": "https://likwidai.com/rise-crm/email-campaigns/",
+    "slug": "rise-crm-email-campaigns",
+    "title": "Likwid.Ai"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button class=\"btn btn-icon btn-light btn-active-light-primary btn-sm\" onclick=\"deleteCampaign(8); return false;\" title=\"Delete\" data-crawl-id=\"5\">\n                                                                    <i class=\"ki-duotone ki-trash fs-2\">\n                                                                        <span class=\"path1\"></span>\n                                                                        <span class=\"path2\"></span>\n                                                                        <span class=\"path3\"></span>\n                                                                        <span class=\"path4\"></span>\n                                                                        <span class=\"path5\"></span>\n                                                                    </i>\n                                                                </button>",
+  "trigger_label": "Delete",
+  "trigger_id": "",
+  "trigger_class": "btn btn-icon btn-light btn-active-light-primary btn-sm",
+  "target_url": "https://likwidai.com/rise-crm/email-campaigns/",
+  "target_slug": "rise-crm-email-campaigns",
+  "target_title": "Likwid.Ai"
+}

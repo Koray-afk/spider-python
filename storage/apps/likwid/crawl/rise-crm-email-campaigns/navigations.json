@@ -1,0 +1,25 @@
+[
+  {
+    "label": "View Analytics",
+    "tag_name": "button",
+    "selector": "#campaignsTableBody > tr:nth-of-type(1) > td:nth-of-type(8) > button:nth-of-type(1)",
+    "target_url": "https://likwidai.com/rise-crm/campaign-views/8/",
+    "target_slug": "rise-crm-campaign-views-8",
+    "target_page": "../rise-crm-campaign-views-8/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "btn btn-icon btn-light btn-active-light-primary btn-sm me-1",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#campaignsTableBody > tr:nth-of-type(1) > td:nth-of-type(8) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[8]/button[1]",
+      "outer_html": "<button class=\"btn btn-icon btn-light btn-active-light-primary btn-sm me-1\" onclick=\"window.location.href='/rise-crm/campaign-views/8/'; return false;\" title=\"View Analytics\" data-crawl-id=\"3\">\n                                                                    <i class=\"ki-duotone ki-chart-simple fs-2\">\n                                                                        <span class=\"path1\"></span>\n                                                                        <span class=\"path2\"></span>\n                                                                        <span class=\"path3\"></span>\n                                                                        <span class=\"path4\"></span>\n                                                                    </i>\n                                                                </button>"
+    }
+  }
+]

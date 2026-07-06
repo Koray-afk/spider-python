@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "label": "Funnel\n11",
+    "tagName": "button",
+    "id": "",
+    "className": "up-pipe-btn",
+    "selector": "[data-crawl-id=\"5\"]",
+    "outerHTML": "<button class=\"up-pipe-btn\" onclick=\"switchPipeline('funnel', this)\" data-crawl-id=\"5\">\n                                        <span class=\"up-pipe-dot\" style=\"background:#7239ea;\"></span>\n                                        <span>Funnel</span>\n                                        <span class=\"up-pipe-count\">11</span>\n                                    </button>"
+  },
+  "interaction_type": "unknown",
+  "location": {
+    "parentSelector": "",
+    "parentXPath": "",
+    "insertMethod": "append"
+  },
+  "ui_html": "",
+  "ui_css": "",
+  "backdrop_html": "",
+  "tab_content_html": "",
+  "tab_content_selector": ""
+}
