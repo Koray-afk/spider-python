@@ -159,8 +159,13 @@
         // absolutely-positioned wrapper div. Left alone, that wrapper forces
         // horizontal overflow on any narrower viewport, regardless of
         // breakpoint, so this is unscoped from the media query below.
+        // NOTE: this must resolve to a concrete percentage, not `auto` — an
+        // absolutely-positioned box with no left/right offsets shrink-to-fits
+        // around its content, and that content's own width is a percentage
+        // of *this* box, so `width:auto` here is circular and Chrome collapses
+        // both to 0×0 (charts disappear entirely).
         "[aria-hidden='true']:has(img[data-stitch-frozen-chart]) {",
-        "  max-width: 100% !important; width: auto !important;",
+        "  max-width: 100% !important; width: 100% !important;",
         "}",
         "img[data-stitch-frozen-chart] {",
         "  max-width: 100% !important; width: auto !important; height: auto !important;",
@@ -168,13 +173,14 @@
         ".stitch-table-scroll {",
         "  overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch;",
         "}",
+        // The Likwid AI chat panel is `position:fixed; transform:translateX(100%)`
+        // when closed. A transformed fixed element still contributes to the
+        // document's scrollable area at its POST-transform position, which
+        // sits entirely to the right of the viewport — at every breakpoint,
+        // not just mobile — inflating scrollWidth by the panel's full width.
+        "html, body { overflow-x: hidden !important; max-width: 100vw; }",
+        "#lkh-chat-overlay { max-width: 100vw; }",
         "@media (max-width: 991.98px) {",
-        // Belt-and-suspenders: once the real viewport meta is honored, any
-        // other baked desktop-width element (fixed-pixel panels, absolute
-        // chart wrappers we didn't catch above, etc.) would otherwise force
-        // real horizontal scrolling/shifting instead of just being clipped.
-        "  html, body { overflow-x: hidden !important; max-width: 100vw; }",
-        "  #lkh-chat-overlay { max-width: 100vw; }",
         // The drawer must stay BELOW the header (not top:0) — otherwise it
         // physically covers the hamburger button that opened it, and the
         // only way to close is tapping the dimmed overlay.
