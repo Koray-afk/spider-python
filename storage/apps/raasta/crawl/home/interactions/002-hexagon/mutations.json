@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "added",
+    "tag": "svg",
+    "id": "",
+    "cls": "",
+    "parentId": "",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "attr",
+    "attr": "class",
+    "tag": "SPAN",
+    "id": "",
+    "cls": "text-xs text-violet-400"
+  },
+  {
+    "kind": "added",
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "rounded px-2 py-0.5",
+    "parentId": "",
+    "parentTag": "DIV"
+  },
+  {
+    "kind": "attr",
+    "attr": "style",
+    "tag": "CANVAS",
+    "id": "",
+    "cls": "maplibregl-canvas"
+  }
+]

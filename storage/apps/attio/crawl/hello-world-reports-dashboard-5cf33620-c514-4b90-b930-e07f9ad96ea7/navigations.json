@@ -1,0 +1,48 @@
+[
+  {
+    "label": "New report",
+    "tag_name": "button",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/new",
+    "target_slug": "hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-cell-new",
+    "target_page": "../hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-cell-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "New report",
+      "id": "",
+      "class_name": "sc-nXGzg koRIpI",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[1]",
+      "outer_html": "<button type=\"button\" aria-busy=\"false\" class=\"sc-nXGzg koRIpI\" data-crawl-id=\"17\"><div class=\"sc-kKZOal jvgEBh\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX jbHVSw\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></div><div class=\"sc-cEqhnH kRqcxL\">New report</div></button>"
+    }
+  },
+  {
+    "label": "Add report",
+    "tag_name": "button",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/new",
+    "target_slug": "hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-cell-new",
+    "target_page": "../hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-cell-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "sc-cFucVl jtHenZ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "Add report",
+      "css_selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[3]/div[2]/button[1]",
+      "outer_html": "<button aria-label=\"Add report\" class=\"sc-cFucVl jtHenZ\" data-crawl-id=\"19\"><svg height=\"24px\" width=\"24px\" class=\"sc-ivVcHX dpA-dXH\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"24px\" width=\"24px\"></use></svg></button>"
+    }
+  }
+]

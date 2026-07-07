@@ -115,6 +115,7 @@ def ensure_app_dirs(app_name: str) -> Path:
     get_metadata_dir(app_name).mkdir(parents=True, exist_ok=True)
     crawl_dir = get_crawl_dir(app_name)
     crawl_dir.mkdir(parents=True, exist_ok=True)
+    get_assets_dir(app_name).mkdir(parents=True, exist_ok=True)
     return crawl_dir
 
 
@@ -125,6 +126,9 @@ def clean_crawl(app_name: str) -> None:
         if side.is_file():
             side.unlink()
         shutil.rmtree(path)
+    assets = get_assets_dir(app_name)
+    if assets.exists():
+        shutil.rmtree(assets)
     checkpoint = get_crawl_checkpoint_path(app_name)
     if checkpoint.exists():
         checkpoint.unlink()

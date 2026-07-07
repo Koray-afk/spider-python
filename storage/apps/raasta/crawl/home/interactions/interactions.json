@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Freeform",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/001-freeform",
+    "relationship_file": "interactions/001-freeform/relationship.json"
+  },
+  {
+    "label": "Hexagon",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/002-hexagon",
+    "relationship_file": "interactions/002-hexagon/relationship.json"
+  },
+  {
+    "label": "Planning",
+    "selector": "[data-crawl-id=\"3\"]",
+    "interaction_path": "interactions/005-planning",
+    "relationship_file": "interactions/005-planning/relationship.json"
+  },
+  {
+    "label": "Recent sessions",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/010-recent-sessions",
+    "relationship_file": "interactions/010-recent-sessions/relationship.json"
+  },
+  {
+    "label": "\ud83c\uddfa\ud83c\uddf8 New York\ncached\n\nManhattan grid, dense last-mile",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/011-new-york-cached-manhattan-grid-dense-last-mile",
+    "relationship_file": "interactions/011-new-york-cached-manhattan-grid-dense-last-mile/relationship.json"
+  }
+]

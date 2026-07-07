@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-home-skip-nav",
+  "source_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "source_title": "Home - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Today, Jul 6",
+    "id": "",
+    "class_name": "sc-nXGzg fVtiWL",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"16\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1]",
+    "outer_html": "<button type=\"button\" aria-busy=\"false\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"radix-_r_3k_\" data-state=\"closed\" class=\"sc-nXGzg fVtiWL\" data-crawl-id=\"16\"><div class=\"sc-cEqhnH fSYUvH\">Today, Jul 6</div></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/home#skip-nav",
+    "slug": "hello-world-home-skip-nav",
+    "title": "Home - Attio"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button type=\"button\" aria-busy=\"false\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"radix-_r_3k_\" data-state=\"closed\" class=\"sc-nXGzg fVtiWL\" data-crawl-id=\"16\"><div class=\"sc-cEqhnH fSYUvH\">Today, Jul 6</div></button>",
+  "trigger_label": "Today, Jul 6",
+  "trigger_id": "",
+  "trigger_class": "sc-nXGzg fVtiWL",
+  "target_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "target_slug": "hello-world-home-skip-nav",
+  "target_title": "Home - Attio"
+}

@@ -1,0 +1,38 @@
+{
+  "source_page": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda",
+  "source_url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda",
+  "source_title": "random notes 1 - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Record Details",
+    "id": "",
+    "class_name": "sc-eGbbim hXsTiZ",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"23\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "outer_html": "<button type=\"button\" aria-controls=\"radix-_r_a7_\" aria-expanded=\"true\" data-state=\"open\" class=\"sc-eGbbim hXsTiZ\" data-crawl-id=\"23\"><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr5 _1fxkonrh _1fxkonrn _1fxkonrt _1fxkonrs _1fxkonry\">Record Details</div><svg height=\"12px\" width=\"12px\" class=\"sc-ivVcHX dpA-dXH sc-kXPqpr fdJgBt\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/1e14f10e32d4d2d9.svg#icon\" height=\"12px\" width=\"12px\"></use></svg></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/overview",
+    "slug": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda-overview",
+    "title": "random notes 1 - Attio"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button type=\"button\" aria-controls=\"radix-_r_a7_\" aria-expanded=\"true\" data-state=\"open\" class=\"sc-eGbbim hXsTiZ\" data-crawl-id=\"23\"><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr5 _1fxkonrh _1fxkonrn _1fxkonrt _1fxkonrs _1fxkonry\">Record Details</div><svg height=\"12px\" width=\"12px\" class=\"sc-ivVcHX dpA-dXH sc-kXPqpr fdJgBt\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/1e14f10e32d4d2d9.svg#icon\" height=\"12px\" width=\"12px\"></use></svg></button>",
+  "trigger_label": "Record Details",
+  "trigger_id": "",
+  "trigger_class": "sc-eGbbim hXsTiZ",
+  "target_url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/overview",
+  "target_slug": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda-overview",
+  "target_title": "random notes 1 - Attio",
+  "tab_content": {
+    "selector": "#radix-_r_a7_",
+    "file": "tab-content.html"
+  }
+}

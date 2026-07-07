@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-home-skip-nav",
+  "source_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "source_title": "Home - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "radix-_r_32_",
+    "class_name": "sc-jKUoKL bUlinV",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "List options",
+    "selector": "#radix-_r_32_",
+    "crawl_selector": "[data-crawl-id=\"8\"]",
+    "xpath": "//*[@id=\"radix-_r_32_\"]",
+    "outer_html": "<button data-visible=\"false\" aria-label=\"List options\" type=\"button\" id=\"radix-_r_32_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" class=\"sc-jKUoKL bUlinV\" data-crawl-id=\"8\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/f74aeda5f398b4a1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/home#skip-nav",
+    "slug": "hello-world-home-skip-nav",
+    "title": "Home - Attio"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button data-visible=\"false\" aria-label=\"List options\" type=\"button\" id=\"radix-_r_32_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" class=\"sc-jKUoKL bUlinV\" data-crawl-id=\"8\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/f74aeda5f398b4a1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></button>",
+  "trigger_label": "List options",
+  "trigger_id": "radix-_r_8c_",
+  "trigger_class": "sc-jKUoKL bUlinV",
+  "target_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "target_slug": "hello-world-home-skip-nav",
+  "target_title": "Home - Attio"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-collapse-sidebar",
+    "relationship_file": "interactions/001-collapse-sidebar/relationship.json"
+  },
+  {
+    "label": "Collapse columns",
+    "selector": "[data-crawl-id=\"23\"]",
+    "interaction_path": "interactions/002-collapse-columns",
+    "relationship_file": "interactions/002-collapse-columns/relationship.json"
+  },
+  {
+    "label": "Expand columns",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/003-expand-columns",
+    "relationship_file": "interactions/003-expand-columns/relationship.json"
+  },
+  {
+    "label": "Collapse cards",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/004-collapse-cards",
+    "relationship_file": "interactions/004-collapse-cards/relationship.json"
+  },
+  {
+    "label": "Expand cards",
+    "selector": "[data-crawl-id=\"26\"]",
+    "interaction_path": "interactions/005-expand-cards",
+    "relationship_file": "interactions/005-expand-cards/relationship.json"
+  },
+  {
+    "label": "Comments",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/006-comments",
+    "relationship_file": "interactions/006-comments/relationship.json"
+  }
+]

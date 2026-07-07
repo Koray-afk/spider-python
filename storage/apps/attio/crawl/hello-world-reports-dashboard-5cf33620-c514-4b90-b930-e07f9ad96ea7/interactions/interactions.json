@@ -1,0 +1,32 @@
+[
+  {
+    "label": "dashboard menu",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/001-dashboard-menu",
+    "relationship_file": "interactions/001-dashboard-menu/relationship.json"
+  },
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/002-collapse-sidebar",
+    "relationship_file": "interactions/002-collapse-sidebar/relationship.json"
+  },
+  {
+    "label": "Track the number of companies by their primary location country",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/010-track-the-number-of-companies-by-their-primary-l",
+    "relationship_file": "interactions/010-track-the-number-of-companies-by-their-primary-l/relationship.json"
+  },
+  {
+    "label": "Share",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/016-share",
+    "relationship_file": "interactions/016-share/relationship.json"
+  },
+  {
+    "label": "cell menu",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/018-cell-menu",
+    "relationship_file": "interactions/018-cell-menu/relationship.json"
+  }
+]

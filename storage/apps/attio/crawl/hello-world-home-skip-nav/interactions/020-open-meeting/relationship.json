@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-home-skip-nav",
+  "source_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "source_title": "Home - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "sc-jaPBio gNCmqQ sc-nXGzg gvaYSc",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Open meeting",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"22\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "outer_html": "<button type=\"button\" aria-label=\"Open meeting\" aria-busy=\"false\" class=\"sc-jaPBio gNCmqQ sc-nXGzg gvaYSc\" data-crawl-id=\"22\"><div data-is-small-ghost=\"false\" class=\"sc-kKZOal jvgEBh\"><svg height=\"12px\" width=\"12px\" class=\"sc-ivVcHX kldBgz sc-ixiStU iniCoc\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/785213621bd6a3f9.svg#icon\" height=\"12px\" width=\"12px\"></use></svg></div></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/home#skip-nav",
+    "slug": "hello-world-home-skip-nav",
+    "title": "Home - Attio"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button type=\"button\" aria-label=\"Open meeting\" aria-busy=\"false\" class=\"sc-jaPBio gNCmqQ sc-nXGzg gvaYSc\" data-crawl-id=\"22\"><div data-is-small-ghost=\"false\" class=\"sc-kKZOal jvgEBh\"><svg height=\"12px\" width=\"12px\" class=\"sc-ivVcHX kldBgz sc-ixiStU iniCoc\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/785213621bd6a3f9.svg#icon\" height=\"12px\" width=\"12px\"></use></svg></div></button>",
+  "trigger_label": "Open meeting",
+  "trigger_id": "",
+  "trigger_class": "sc-jaPBio gNCmqQ sc-nXGzg gvaYSc",
+  "target_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "target_slug": "hello-world-home-skip-nav",
+  "target_title": "Home - Attio"
+}

@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-notes",
+  "source_url": "https://app.attio.com/hello-world/notes",
+  "source_title": "Notes - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "sc-hbvCEB iHxGkz",
+    "name": "",
+    "role": "radio",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "View as a list of notes",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]",
+    "outer_html": "<button type=\"button\" data-state=\"off\" role=\"radio\" aria-checked=\"false\" aria-label=\"View as a list of notes\" class=\"sc-hbvCEB iHxGkz\" tabindex=\"-1\" data-radix-collection-item=\"\" data-crawl-id=\"17\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/cc6c3b434afd4b33.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/notes",
+    "slug": "hello-world-notes",
+    "title": "Notes - Attio"
+  },
+  "interaction_type": "tab-switch",
+  "original_element_html": "<button type=\"button\" data-state=\"off\" role=\"radio\" aria-checked=\"false\" aria-label=\"View as a list of notes\" class=\"sc-hbvCEB iHxGkz\" tabindex=\"-1\" data-radix-collection-item=\"\" data-crawl-id=\"17\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/cc6c3b434afd4b33.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></button>",
+  "trigger_label": "View as a list of notes",
+  "trigger_id": "",
+  "trigger_class": "sc-hbvCEB iHxGkz",
+  "target_url": "https://app.attio.com/hello-world/notes",
+  "target_slug": "hello-world-notes",
+  "target_title": "Notes - Attio"
+}

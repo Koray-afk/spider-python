@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-automations-sequences",
+  "source_url": "https://app.attio.com/hello-world/automations/sequences",
+  "source_title": "Sequences - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "",
+    "class_name": "sc-jKUoKL bUlinV",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Add list",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"9\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/nav[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[2]/button[1]",
+    "outer_html": "<button data-visible=\"false\" aria-label=\"Add list\" class=\"sc-jKUoKL bUlinV\" data-crawl-id=\"9\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/automations/sequences",
+    "slug": "hello-world-automations-sequences",
+    "title": "Sequences - Attio"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button data-visible=\"false\" aria-label=\"Add list\" class=\"sc-jKUoKL bUlinV\" data-crawl-id=\"9\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></button>",
+  "trigger_label": "Add list",
+  "trigger_id": "",
+  "trigger_class": "sc-jKUoKL bUlinV",
+  "target_url": "https://app.attio.com/hello-world/automations/sequences",
+  "target_slug": "hello-world-automations-sequences",
+  "target_title": "Sequences - Attio"
+}

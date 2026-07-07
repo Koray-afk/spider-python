@@ -1,0 +1,206 @@
+[
+  {
+    "label": "Freeform",
+    "id": "",
+    "className": "flex items-center gap-1 rounded px-2 py-0.5 text-xs text-violet-400 hover:text-violet-300 transition disabled:opacity-30",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "Freeform",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Hexagon",
+    "id": "",
+    "className": "flex items-center gap-1 rounded px-2 py-0.5 text-xs text-violet-400 hover:text-violet-300 transition disabled:opacity-30",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Hexagon",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Dashboard",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Dashboard",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "History",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "History",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Planning",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Planning",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Riders",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Riders",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Billing",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Billing",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New chat",
+    "id": "",
+    "className": "rounded-full p-1 text-gray-500 hover:text-white transition",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "ax_name": "New chat",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Upload CSV, JSON, or Excel",
+    "id": "",
+    "className": "rounded-lg p-2 text-gray-500 transition hover:bg-surface-lighter hover:text-gray-300 disabled:opacity-30",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "ax_name": "Upload CSV, JSON, or Excel",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Recent sessions",
+    "id": "",
+    "className": "rounded-full p-1 transition text-gray-500 hover:text-white",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "ax_name": "Recent sessions",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\uddfa\ud83c\uddf8 New York\ncached\n\nManhattan grid, dense last-mile",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\uddfa\ud83c\uddf8 New York\ncached\n\nManhattan grid, dense last-mile",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\udde6\ud83c\uddfa Melbourne\ncached\n\nGrid layout, tram corridors",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\udde6\ud83c\uddfa Melbourne\ncached\n\nGrid layout, tram corridors",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\uddee\ud83c\uddf3 Pune\ncached\n\nRiver barriers, dense urban delivery",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\uddee\ud83c\uddf3 Pune\ncached\n\nRiver barriers, dense urban delivery",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\uddf0\ud83c\uddf7 Seoul\ncached\n\nDense urban grid, narrow streets",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\uddf0\ud83c\uddf7 Seoul\ncached\n\nDense urban grid, narrow streets",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\uddef\ud83c\uddf5 Tokyo\ncached\n\nComplex street network, alleys",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\uddef\ud83c\uddf5 Tokyo\ncached\n\nComplex street network, alleys",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\uddf8\ud83c\uddec Singapore\n\nCompact island district",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\uddf8\ud83c\uddec Singapore\n\nCompact island district",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\udde8\ud83c\udded Zurich\ncached\n\nOld town, European precision",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\udde8\ud83c\udded Zurich\ncached\n\nOld town, European precision",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\udde6\ud83c\uddea Dubai\n\nDesert city, wide boulevards",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\udde6\ud83c\uddea Dubai\n\nDesert city, wide boulevards",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\uddf2\ud83c\uddfd CDMX\n\nMega city neighborhood",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\uddf2\ud83c\uddfd CDMX\n\nMega city neighborhood",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "\ud83c\udde8\ud83c\uddf4 Bogot\u00e1\ncached\n\nDense grid, LatAm last-mile",
+    "id": "",
+    "className": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "ax_name": "\ud83c\udde8\ud83c\uddf4 Bogot\u00e1\ncached\n\nDense grid, LatAm last-mile",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

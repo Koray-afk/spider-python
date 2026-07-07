@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Weather",
+  "triggerId": "",
+  "triggerClass": "flex items-center gap-2 rounded-full border px-4 py-2 text-[13px] font-semibold transition border-blue-500 bg-blue-500 text-white shadow-[0_0_14px_rgba(59,130,246,0.4)]",
+  "selector": "[data-crawl-id=\"8\"]",
+  "interactionType": "unknown",
+  "sourcePage": "dashboard",
+  "sourceUrl": "https://workspace.rastaa.ai/dashboard",
+  "beforeUrl": "https://workspace.rastaa.ai/dashboard",
+  "beforeTitle": "Rastaa",
+  "url": "https://workspace.rastaa.ai/dashboard",
+  "title": "Rastaa",
+  "resultPagePath": "dashboard/interactions/003-weather",
+  "captured_at": "2026-07-07T08:58:26.999437+00:00"
+}

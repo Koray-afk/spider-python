@@ -1,0 +1,166 @@
+[
+  {
+    "label": "Dashboard",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Dashboard",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "History",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "History",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Weather",
+    "id": "",
+    "className": "flex items-center gap-2 rounded-full border px-4 py-2 text-[13px] font-semibold transition border-blue-500 bg-blue-500 text-white shadow-[0_0_14px_rgba(59,130,246,0.4)]",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Weather",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "All",
+    "id": "",
+    "className": "shrink-0 rounded-full border px-4 py-1.5 text-[13px] font-medium whitespace-nowrap transition border-blue-400 bg-blue-500 text-white",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "All",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Snow",
+    "id": "",
+    "className": "shrink-0 rounded-full border px-4 py-1.5 text-[13px] font-medium whitespace-nowrap transition border-sky-300/40 bg-sky-300/10 text-sky-200 hover:bg-sky-300/20",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "Snow",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Rainy",
+    "id": "",
+    "className": "shrink-0 rounded-full border px-4 py-1.5 text-[13px] font-medium whitespace-nowrap transition border-blue-500/40 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Rainy",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Cloudy",
+    "id": "",
+    "className": "shrink-0 rounded-full border px-4 py-1.5 text-[13px] font-medium whitespace-nowrap transition border-slate-400/40 bg-slate-500/10 text-slate-300 hover:bg-slate-500/20",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "ax_name": "Cloudy",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sunny",
+    "id": "",
+    "className": "shrink-0 rounded-full border px-4 py-1.5 text-[13px] font-medium whitespace-nowrap transition border-amber-400/40 bg-amber-400/10 text-amber-200 hover:bg-amber-400/20",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "ax_name": "Sunny",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Very Hot",
+    "id": "",
+    "className": "shrink-0 rounded-full border px-4 py-1.5 text-[13px] font-medium whitespace-nowrap transition border-red-500/40 bg-red-500/10 text-red-300 hover:bg-red-500/20",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "ax_name": "Very Hot",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Trips",
+    "id": "",
+    "className": "relative inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[12px] font-medium transition border-cyan-400/20 bg-cyan-400/10 text-cyan-300",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Trips",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Planning",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Planning",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Riders",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Riders",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Billing",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Billing",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Refresh trips",
+    "id": "",
+    "className": "absolute top-[76px] right-2 z-[3] flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-[#0c1522]/90 text-white/70 shadow-[0_4px_12px_rgba(0,0,0,0.35)] hover:text-white hover:bg-[#0c1522] transition backdrop-blur-md",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "ax_name": "Refresh trips",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "abhi",
+    "id": "",
+    "className": "mb-10 flex flex-col items-center group",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "abhi",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Close trips panel",
+    "id": "",
+    "className": "absolute top-10 z-[3] flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white text-[#0c1522] shadow-[0_6px_14px_rgba(0,0,0,0.35)] hover:bg-white/90 transition-[right] duration-300 right-[380px]",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "ax_name": "Close trips panel",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

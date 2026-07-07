@@ -438,6 +438,18 @@ APPS = {
             "Filter",
         ],
     },
+    "attio":{
+        "pre_auth_home": "https://app.attio.com/",
+        "login_url": "https://app.attio.com/auth/sign-in",
+        "post_auth_home": "https://app.attio.com/hello-world/home",
+        "max_pages_pre_auth": 1,
+        "max_pages_post_auth": 100,
+        "max_interactions_per_page": 20,
+        "max_ranked_interactions": 20,
+        "max_interaction_depth": 20,
+        "crawl_skip_screenshots": True,
+        "crawl_wait_after_load_ms": 20000,
+    },
     "salesforge": {
         "pre_auth_home": "https://app.salesforge.ai/login",
         "login_url": "https://app.salesforge.ai/login",
@@ -458,6 +470,11 @@ APPS = {
         "crawl_sidebar_first": True,
         "crawl_resume": True,
         "crawl_hash_routes": False,
+        "crawl_hybrid": True,
+        "crawl_bfs_only": False,
+        "crawl_redo_interactions": False,
+        "crawl_workers": 4,
+        "stitch_entry_slug": "home",
         # Phase 1: BFS page discovery. Phase 2: interaction pass.
         "crawl_hybrid": True,
         "crawl_bfs_only": False,
@@ -529,6 +546,47 @@ APPS = {
     },
 }
 
+_RAASTA_APP = {
+    "pre_auth_home": "https://workspace.rastaa.ai/",
+    "login_url": "https://workspace.rastaa.ai/",
+    "post_auth_home": "https://workspace.rastaa.ai",
+    "max_pages_pre_auth": 1,
+    "max_pages_post_auth": 100,
+    "max_interactions_per_page": 20,
+    "max_ranked_interactions": 20,
+    "max_interaction_depth": 10,
+    "crawl_skip_screenshots": True,
+    "crawl_wait_after_load_ms": 20000,
+    "crawl_use_networkidle": False,
+    "crawl_sidebar_first": True,
+    "crawl_resume": True,
+    # Path-based SPA: sidebar buttons discovered by click (see _collect_rastaa_sidebar_links).
+    "crawl_hash_routes": False,
+    "crawl_hybrid": True,
+    "crawl_bfs_only": False,
+    # Re-run interaction pass once after config fixes (set False after success).
+    "crawl_redo_interactions": True,
+    # Single worker keeps phase-2 interactions on the visible browser context.
+    "crawl_workers": 1,
+    "crawl_ixp_headless": False,
+    "stitch_entry_slug": "home",
+    "seed_url_patterns": ["/"],
+    "interaction_depth_2_patterns": ["workspace.rastaa.ai"],
+    "mandatory_tab_labels": ["Freeform", "Hexagon"],
+    "mandatory_interaction_labels": [
+        "Dashboard",
+        "Planning",
+        "Riders",
+        "History",
+        "Billing",
+        "New chat",
+        "Recent sessions",
+        "Upload CSV, JSON, or Excel",
+        "Hold to speak",
+    ],
+}
+
+APPS["raasta"] = _RAASTA_APP
 
 def get_app_config(app_name: str) -> dict:
     if app_name not in APPS:

@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-home-skip-nav",
+  "source_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "source_title": "Home - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "radix-_r_7r_",
+    "class_name": "sc-nXGzg gvaYSc",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Pending",
+    "selector": "#radix-_r_7r_",
+    "crawl_selector": "[data-crawl-id=\"21\"]",
+    "xpath": "//*[@id=\"radix-_r_7r_\"]",
+    "outer_html": "<button type=\"button\" aria-label=\"Pending\" aria-busy=\"false\" id=\"radix-_r_7r_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" class=\"sc-nXGzg gvaYSc\" style=\"opacity: 1;\" data-crawl-id=\"21\"><div data-is-small-ghost=\"true\" class=\"sc-kKZOal jvgEBh\"><div class=\"sc-itBZGx fPYJee\"><div class=\"sc-flRcQE dcagYR\"></div></div></div></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/home#skip-nav",
+    "slug": "hello-world-home-skip-nav",
+    "title": "Home - Attio"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button type=\"button\" aria-label=\"Pending\" aria-busy=\"false\" id=\"radix-_r_7r_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" class=\"sc-nXGzg gvaYSc\" style=\"opacity: 1;\" data-crawl-id=\"21\"><div data-is-small-ghost=\"true\" class=\"sc-kKZOal jvgEBh\"><div class=\"sc-itBZGx fPYJee\"><div class=\"sc-flRcQE dcagYR\"></div></div></div></button>",
+  "trigger_label": "Pending",
+  "trigger_id": "radix-_r_at_",
+  "trigger_class": "sc-nXGzg gvaYSc",
+  "target_url": "https://app.attio.com/hello-world/home#skip-nav",
+  "target_slug": "hello-world-home-skip-nav",
+  "target_title": "Home - Attio"
+}

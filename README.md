@@ -147,7 +147,7 @@ python main.py clean zoho
 python main.py html-clean zoho
 python main.py analyze zoho
 python main.py semantic_tree zoho
-python main.py component_tree zoho
+python main.py component_trdee zoho
 python main.py catalog zoho
 python main.py workflows zoho
 python main.py modules zoho

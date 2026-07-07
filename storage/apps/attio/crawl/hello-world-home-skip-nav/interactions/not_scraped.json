@@ -1,0 +1,24 @@
+[
+  {
+    "label": "New task",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Record options",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Keep Pro",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" aria-busy=\"false\" data-crawl-id=\"11\" class=\"sc-nXGzg eHkkpr\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  }
+]

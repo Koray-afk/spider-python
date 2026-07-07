@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Freeform",
+  "triggerId": "",
+  "triggerClass": "flex items-center gap-1 rounded px-2 py-0.5 text-xs text-violet-400 hover:text-violet-300 transition disabled:opacity-30",
+  "selector": "[data-crawl-id=\"10\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "home",
+  "sourceUrl": "https://workspace.rastaa.ai",
+  "beforeUrl": "https://workspace.rastaa.ai/",
+  "beforeTitle": "Rastaa",
+  "url": "https://workspace.rastaa.ai/",
+  "title": "Rastaa",
+  "resultPagePath": "home/interactions/001-freeform",
+  "captured_at": "2026-07-07T08:49:22.562163+00:00"
+}

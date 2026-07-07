@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/001-collapse-sidebar",
+    "relationship_file": "interactions/001-collapse-sidebar/relationship.json"
+  },
+  {
+    "label": "Remove from favorites",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/014-remove-from-favorites",
+    "relationship_file": "interactions/014-remove-from-favorites/relationship.json"
+  },
+  {
+    "label": "Share",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/015-share",
+    "relationship_file": "interactions/015-share/relationship.json"
+  },
+  {
+    "label": "dashboard menu",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/016-dashboard-menu",
+    "relationship_file": "interactions/016-dashboard-menu/relationship.json"
+  },
+  {
+    "label": "Describe dashboard...",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/017-describe-dashboard",
+    "relationship_file": "interactions/017-describe-dashboard/relationship.json"
+  }
+]

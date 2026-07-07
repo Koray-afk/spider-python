@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Planning",
+  "triggerId": "",
+  "triggerClass": "flex flex-col items-center gap-2.5",
+  "selector": "[data-crawl-id=\"3\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "home",
+  "sourceUrl": "https://workspace.rastaa.ai",
+  "beforeUrl": "https://workspace.rastaa.ai/",
+  "beforeTitle": "Rastaa",
+  "url": "https://workspace.rastaa.ai/",
+  "title": "Rastaa",
+  "resultPagePath": "home/interactions/005-planning",
+  "captured_at": "2026-07-07T08:50:54.673997+00:00"
+}

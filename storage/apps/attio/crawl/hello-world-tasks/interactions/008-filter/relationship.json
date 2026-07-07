@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-tasks",
+  "source_url": "https://app.attio.com/hello-world/tasks",
+  "source_title": "Tasks - Attio",
+  "trigger": {
+    "tag_name": "div",
+    "text": "Filter",
+    "id": "radix-_r_3j_",
+    "class_name": "sc-blxrf ceQwoo",
+    "name": "",
+    "role": "group",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#radix-_r_3j_",
+    "crawl_selector": "[data-crawl-id=\"21\"]",
+    "xpath": "//*[@id=\"radix-_r_3j_\"]",
+    "outer_html": "<div role=\"group\" aria-disabled=\"false\" tabindex=\"0\" type=\"button\" id=\"radix-_r_3j_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" data-orientation=\"horizontal\" class=\"sc-blxrf ceQwoo\" style=\"outline: none;\" data-crawl-id=\"21\"><div data-errored=\"false\" class=\"sc-eyaWZm djrNkB\"><button data-container-variant=\"placeholder\" data-has-prefix=\"true\" data-is-first-element=\"true\" data-is-last-element=\"true\" data-icon-only=\"false\" data-pos=\"0\" type=\"button\" data-readonly=\"false\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\" class=\"sc-hihtOB epRoEp\" data-crawl-id=\"15\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/1ff16ffa47fcfe8a.svg#icon\" height=\"14px\" width=\"14px\"></use></svg><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr7 _1fxkonri _1fxkonrn _1fxkonrt _1fxkonrr\" style=\"color: currentcolor;\">Filter</div></button></div></div>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/tasks",
+    "slug": "hello-world-tasks",
+    "title": "Tasks - Attio"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<div role=\"group\" aria-disabled=\"false\" tabindex=\"0\" type=\"button\" id=\"radix-_r_3j_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" data-orientation=\"horizontal\" class=\"sc-blxrf ceQwoo\" style=\"outline: none;\" data-crawl-id=\"21\"><div data-errored=\"false\" class=\"sc-eyaWZm djrNkB\"><button data-container-variant=\"placeholder\" data-has-prefix=\"true\" data-is-first-element=\"true\" data-is-last-element=\"true\" data-icon-only=\"false\" data-pos=\"0\" type=\"button\" data-readonly=\"false\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\" class=\"sc-hihtOB epRoEp\" data-crawl-id=\"15\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/1ff16ffa47fcfe8a.svg#icon\" height=\"14px\" width=\"14px\"></use></svg><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr7 _1fxkonri _1fxkonrn _1fxkonrt _1fxkonrr\" style=\"color: currentcolor;\">Filter</div></button></div></div>",
+  "trigger_label": "Filter",
+  "trigger_id": "radix-_r_93_",
+  "trigger_class": "sc-blxrf ceQwoo",
+  "target_url": "https://app.attio.com/hello-world/tasks",
+  "target_slug": "hello-world-tasks",
+  "target_title": "Tasks - Attio"
+}

@@ -1,0 +1,1443 @@
+{
+  "version": 1,
+  "page_type": "post_auth",
+  "updated_at": "2026-07-06T18:04:19.651448+00:00",
+  "visited": [
+    "https://app.attio.com/hello-world",
+    "https://app.attio.com/hello-world/automations/sequences",
+    "https://app.attio.com/hello-world/automations/sequences#skip-nav",
+    "https://app.attio.com/hello-world/automations/workflows",
+    "https://app.attio.com/hello-world/automations/workflows#skip-nav",
+    "https://app.attio.com/hello-world/calls",
+    "https://app.attio.com/hello-world/calls#skip-nav",
+    "https://app.attio.com/hello-world/collection/4e91f5b0-d8d3-4521-96aa-c71d8aeebab2",
+    "https://app.attio.com/hello-world/collection/4e91f5b0-d8d3-4521-96aa-c71d8aeebab2/view/a04f26c9-4c41-44f8-8219-39ad93951078#skip-nav",
+    "https://app.attio.com/hello-world/companies",
+    "https://app.attio.com/hello-world/companies/view/8d1711bc-d6ac-4005-aaf4-598b6d6bf1ba#skip-nav",
+    "https://app.attio.com/hello-world/company/262e9976-e742-4efc-a7af-9dc9b5cef7e2",
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12",
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/activity",
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/notes",
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/overview#skip-nav",
+    "https://app.attio.com/hello-world/company/31e23173-6abf-40d6-a4ba-3471a83c0817",
+    "https://app.attio.com/hello-world/company/42106b74-8a93-4b80-818b-a3d9a52a8573",
+    "https://app.attio.com/hello-world/company/4cc096a5-459b-433e-bb1d-53f8f5cb4aa6",
+    "https://app.attio.com/hello-world/company/5e64b623-491f-44d6-a8d1-e03d79563549",
+    "https://app.attio.com/hello-world/company/5e99cab7-7826-4125-9be2-8a22499ee4f9",
+    "https://app.attio.com/hello-world/company/63c9eff7-98a1-4141-8e46-af133f9e647c",
+    "https://app.attio.com/hello-world/company/71d52d95-7876-4b95-86d9-efec6e94100a",
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda",
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/activity",
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/notes",
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/overview#skip-nav",
+    "https://app.attio.com/hello-world/company/b0631bd6-1aa4-44b8-8179-7aad467f8028",
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee",
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/activity",
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/notes",
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/overview#skip-nav",
+    "https://app.attio.com/hello-world/deals",
+    "https://app.attio.com/hello-world/deals/view/808ed0c7-9f7f-4ed2-a7ee-b34d04eb1210#skip-nav",
+    "https://app.attio.com/hello-world/emails/drafts",
+    "https://app.attio.com/hello-world/emails/drafts#skip-nav",
+    "https://app.attio.com/hello-world/home",
+    "https://app.attio.com/hello-world/home#skip-nav",
+    "https://app.attio.com/hello-world/notes",
+    "https://app.attio.com/hello-world/notes#skip-nav",
+    "https://app.attio.com/hello-world/people",
+    "https://app.attio.com/hello-world/people/view/4844b94f-49c5-4e93-b491-8f57adacecfc#skip-nav",
+    "https://app.attio.com/hello-world/person/26132314-2321-486a-b1b1-b457c1b919d3",
+    "https://app.attio.com/hello-world/person/31594ba0-88fb-4a34-9429-fd34a3568cf5",
+    "https://app.attio.com/hello-world/person/3a591d9b-39c9-437c-89f8-9f048cdff815",
+    "https://app.attio.com/hello-world/person/ca0c8c04-bb6c-425c-af61-68e6cdc910f6",
+    "https://app.attio.com/hello-world/person/f556eacc-d1b6-448a-b284-150fd17218cd",
+    "https://app.attio.com/hello-world/reports",
+    "https://app.attio.com/hello-world/reports#skip-nav",
+    "https://app.attio.com/hello-world/reports/dashboard/0428b0ee-a064-4af1-9ea4-5e5088a47391",
+    "https://app.attio.com/hello-world/reports/dashboard/0428b0ee-a064-4af1-9ea4-5e5088a47391#skip-nav",
+    "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7",
+    "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7#skip-nav",
+    "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/97076b65-7509-40b9-9fd5-8254910948c7",
+    "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/97076b65-7509-40b9-9fd5-8254910948c7#skip-nav",
+    "https://app.attio.com/hello-world/reports/dashboard/9ca686fe-44c9-4b9e-93e7-20c461ecbcfd",
+    "https://app.attio.com/hello-world/reports/dashboard/9ca686fe-44c9-4b9e-93e7-20c461ecbcfd#skip-nav",
+    "https://app.attio.com/hello-world/settings/account",
+    "https://app.attio.com/hello-world/settings/app-connections",
+    "https://app.attio.com/hello-world/settings/appearance",
+    "https://app.attio.com/hello-world/settings/apps",
+    "https://app.attio.com/hello-world/settings/ask-attio",
+    "https://app.attio.com/hello-world/settings/automations/sequences",
+    "https://app.attio.com/hello-world/settings/automations/workflows",
+    "https://app.attio.com/hello-world/settings/billing",
+    "https://app.attio.com/hello-world/settings/call-intelligence",
+    "https://app.attio.com/hello-world/settings/call-recorder",
+    "https://app.attio.com/hello-world/settings/data/data-connectors",
+    "https://app.attio.com/hello-world/settings/data/import-history",
+    "https://app.attio.com/hello-world/settings/data/lists",
+    "https://app.attio.com/hello-world/settings/data/objects",
+    "https://app.attio.com/hello-world/settings/data/objects#skip-nav",
+    "https://app.attio.com/hello-world/settings/data/objects/companies",
+    "https://app.attio.com/hello-world/settings/data/objects/deals",
+    "https://app.attio.com/hello-world/settings/data/objects/people",
+    "https://app.attio.com/hello-world/settings/data/objects/users",
+    "https://app.attio.com/hello-world/settings/data/objects/workspaces",
+    "https://app.attio.com/hello-world/settings/developers",
+    "https://app.attio.com/hello-world/settings/email-and-calendar-accounts",
+    "https://app.attio.com/hello-world/settings/members-and-teams",
+    "https://app.attio.com/hello-world/settings/migration",
+    "https://app.attio.com/hello-world/settings/notifications",
+    "https://app.attio.com/hello-world/settings/plan",
+    "https://app.attio.com/hello-world/settings/referrals",
+    "https://app.attio.com/hello-world/settings/reports/dashboards",
+    "https://app.attio.com/hello-world/settings/security",
+    "https://app.attio.com/hello-world/settings/storage-accounts",
+    "https://app.attio.com/hello-world/settings/support-request",
+    "https://app.attio.com/hello-world/settings/workspace",
+    "https://app.attio.com/hello-world/settings/workspace-admin-access-grants",
+    "https://app.attio.com/hello-world/settings/workspace-ask-attio",
+    "https://app.attio.com/hello-world/settings/workspace-email-and-calendar",
+    "https://app.attio.com/hello-world/tasks",
+    "https://app.attio.com/hello-world/tasks#skip-nav",
+    "https://app.attio.com/hello-world/users",
+    "https://app.attio.com/hello-world/users/import/new",
+    "https://app.attio.com/hello-world/users/view/f2668a5d-d947-460d-b4d8-13c03a80887d#skip-nav",
+    "https://app.attio.com/hello-world/workspaces",
+    "https://app.attio.com/hello-world/workspaces/import/new",
+    "https://app.attio.com/hello-world/workspaces/view/6fb36b14-da1d-476d-abea-c62eca19abb5#skip-nav"
+  ],
+  "sidebar_queue": [],
+  "deferred_queue": [
+    {
+      "url": "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/activity#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/notes#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/activity#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/notes#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/activity#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/notes#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/chats/new?i=W3sidHlwZSI6Im1lZXRpbmciLCJwYXJhbXMiOnsibWVldGluZ19pZCI6ImQxODJiMmExLWJmMDMtNGM4OC1iMWE1LWE3YThjOWI3NzRhNCJ9LCJwcm9taW5lbmNlIjoiaGlnaCJ9XQ%3D%3D",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/account#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/appearance#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/email-and-calendar-accounts#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/email-and-calendar-accounts/aa4e166b-85f5-4d9a-ae5b-83bb025a4f64/general",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/integrations/mailbox/gmail/auth/start",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/integrations/mailbox/exchange/auth/start",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/email-and-calendar-accounts/dec99d1a-d20e-4367-b98e-075ba497ea18/general",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/call-intelligence#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/storage-accounts#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/referrals#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/notifications#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/ask-attio/general#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/app-connections#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/installed",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/workspace#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/members-and-teams/members#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/members-and-teams/members/a0c58d8e-86c6-4b0b-a212-162e3e133acb",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/workspace-ask-attio/usage#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/call-recorder#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/plan#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/billing#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/billing/record-usage",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/billing/automation-credit-usage",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/developers/access-tokens#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/support-request#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/migration#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/segment",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/fibbler",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/cometly",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/outdoo",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/segmetrics",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/etropo",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/chatgpt",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/slack",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/pipedream",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/relay-app",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/spiich",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/klavis-ai",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/den",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/ply",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/pandadoc",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/stripe",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/sequence",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/maple-billing",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/paid",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/hyperline",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/monetize-now",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/granola",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/fireflies",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/aircall",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/quo",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/circleback",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/mobile-first-integrations-allo",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/claap",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/slashy",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/channeled",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/housecat",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/skylar-ai-roleplays",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/scribeless",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/onbox",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/gmail",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/pylon",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/intercom",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/plain",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/sparrowdesk",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/productlane",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/bubbla-v",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/screen-reply",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/unthread",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/clay",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/customer-io",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/apollo",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/notion",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/snitcher",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/lemlist",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/polytomic",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/mixmax",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/mailchimp",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/outreach",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/salesforge",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/ada-ai-email-marketing-employee",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/autotouch-ai",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/typeform",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/fillout",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/tallyforms",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/fyrebox-quiz-maker",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/calendly-events",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/forms-app",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/orbit-ai",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/site-seam",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/linear",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/miro-insights",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/productboard",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/nalvin",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/revo",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/windmill",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/itr",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/box",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/google-drive",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/apps/microsoft-onedrive",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/security#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/workspace-email-and-calendar#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/workspace-admin-access-grants#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/lists#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/lists/4e91f5b0-d8d3-4521-96aa-c71d8aeebab2",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/data-connectors#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/import-history#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/reports/dashboards#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/reports/dashboards/5cf33620-c514-4b90-b930-e07f9ad96ea7/reports",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/reports/dashboards/0428b0ee-a064-4af1-9ea4-5e5088a47391/reports",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/reports/dashboards/9ca686fe-44c9-4b9e-93e7-20c461ecbcfd/reports",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/automations/sequences#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/automations/workflows#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/objects/companies/general#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/objects/deals/general#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/objects/people/general#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/objects/users/general#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/settings/data/objects/workspaces/general#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/63c9eff7-98a1-4141-8e46-af133f9e647c/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/63c9eff7-98a1-4141-8e46-af133f9e647c/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/63c9eff7-98a1-4141-8e46-af133f9e647c/emails",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/262e9976-e742-4efc-a7af-9dc9b5cef7e2/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/262e9976-e742-4efc-a7af-9dc9b5cef7e2/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/5e99cab7-7826-4125-9be2-8a22499ee4f9/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/5e99cab7-7826-4125-9be2-8a22499ee4f9/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/42106b74-8a93-4b80-818b-a3d9a52a8573/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/42106b74-8a93-4b80-818b-a3d9a52a8573/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/31e23173-6abf-40d6-a4ba-3471a83c0817/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/31e23173-6abf-40d6-a4ba-3471a83c0817/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/5e64b623-491f-44d6-a8d1-e03d79563549/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/5e64b623-491f-44d6-a8d1-e03d79563549/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/71d52d95-7876-4b95-86d9-efec6e94100a/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/71d52d95-7876-4b95-86d9-efec6e94100a/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/b0631bd6-1aa4-44b8-8179-7aad467f8028/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/b0631bd6-1aa4-44b8-8179-7aad467f8028/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/b0631bd6-1aa4-44b8-8179-7aad467f8028/emails",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/4cc096a5-459b-433e-bb1d-53f8f5cb4aa6/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/company/4cc096a5-459b-433e-bb1d-53f8f5cb4aa6/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/31594ba0-88fb-4a34-9429-fd34a3568cf5/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/31594ba0-88fb-4a34-9429-fd34a3568cf5/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/31594ba0-88fb-4a34-9429-fd34a3568cf5/emails",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/3a591d9b-39c9-437c-89f8-9f048cdff815/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/3a591d9b-39c9-437c-89f8-9f048cdff815/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/3a591d9b-39c9-437c-89f8-9f048cdff815/emails",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/f556eacc-d1b6-448a-b284-150fd17218cd/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/f556eacc-d1b6-448a-b284-150fd17218cd/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/f556eacc-d1b6-448a-b284-150fd17218cd/emails",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/ca0c8c04-bb6c-425c-af61-68e6cdc910f6/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/ca0c8c04-bb6c-425c-af61-68e6cdc910f6/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/ca0c8c04-bb6c-425c-af61-68e6cdc910f6/emails",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/26132314-2321-486a-b1b1-b457c1b919d3/overview#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/person/26132314-2321-486a-b1b1-b457c1b919d3/activity",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/users/import/new#skip-nav",
+      "depth": 3
+    },
+    {
+      "url": "https://app.attio.com/hello-world/workspaces/import/new#skip-nav",
+      "depth": 3
+    }
+  ],
+  "pages_completed": 100,
+  "sitemap": [
+    {
+      "slug": "hello-world-home",
+      "url": "https://app.attio.com/hello-world/home",
+      "title": "Home - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-home-skip-nav",
+      "url": "https://app.attio.com/hello-world/home#skip-nav",
+      "title": "Home - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-tasks",
+      "url": "https://app.attio.com/hello-world/tasks",
+      "title": "Tasks - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-notes",
+      "url": "https://app.attio.com/hello-world/notes",
+      "title": "Notes - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-emails-drafts",
+      "url": "https://app.attio.com/hello-world/emails/drafts",
+      "title": "Emails - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-calls",
+      "url": "https://app.attio.com/hello-world/calls",
+      "title": "Calls - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports",
+      "url": "https://app.attio.com/hello-world/reports",
+      "title": "Dashboards - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-automations-sequences",
+      "url": "https://app.attio.com/hello-world/automations/sequences",
+      "title": "Sequences - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-automations-workflows",
+      "url": "https://app.attio.com/hello-world/automations/workflows",
+      "title": "Workflows - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-2da9d1ec-98b5-4348-ae50-b771cd76fa12",
+      "url": "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12",
+      "title": "Airbnb - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-d07cce7f-bf24-422d-aa07-62219172e0ee",
+      "url": "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee",
+      "title": "Disney - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7",
+      "title": "Companies by Country - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-0428b0ee-a064-4af1-9ea4-5e5088a47391",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/0428b0ee-a064-4af1-9ea4-5e5088a47391",
+      "title": "New Dashboard - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda",
+      "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda",
+      "title": "random notes 1 - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-9ca686fe-44c9-4b9e-93e7-20c461ecbcfd",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/9ca686fe-44c9-4b9e-93e7-20c461ecbcfd",
+      "title": "New Dashboard - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects",
+      "url": "https://app.attio.com/hello-world/settings/data/objects",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-companies",
+      "url": "https://app.attio.com/hello-world/companies",
+      "title": "Companies | All Companies - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-people",
+      "url": "https://app.attio.com/hello-world/people",
+      "title": "People | Recently Contacted People - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-deals",
+      "url": "https://app.attio.com/hello-world/deals",
+      "title": "Deals - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-users",
+      "url": "https://app.attio.com/hello-world/users",
+      "title": "Users | All Users - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-workspaces",
+      "url": "https://app.attio.com/hello-world/workspaces",
+      "title": "Workspaces | All Workspaces - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-collection-4e91f5b0-d8d3-4521-96aa-c71d8aeebab2",
+      "url": "https://app.attio.com/hello-world/collection/4e91f5b0-d8d3-4521-96aa-c71d8aeebab2",
+      "title": "Startup Fundraising / Pipeline - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-tasks-skip-nav",
+      "url": "https://app.attio.com/hello-world/tasks#skip-nav",
+      "title": "Tasks - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-notes-skip-nav",
+      "url": "https://app.attio.com/hello-world/notes#skip-nav",
+      "title": "Notes - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-emails-drafts-skip-nav",
+      "url": "https://app.attio.com/hello-world/emails/drafts#skip-nav",
+      "title": "Emails - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-calls-skip-nav",
+      "url": "https://app.attio.com/hello-world/calls#skip-nav",
+      "title": "Calls - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-skip-nav",
+      "url": "https://app.attio.com/hello-world/reports#skip-nav",
+      "title": "Dashboards - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-cell-97076b65-7509-40b9-9fd5-8254910948c7",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/97076b65-7509-40b9-9fd5-8254910948c7",
+      "title": "Companies by Country - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-automations-sequences-skip-nav",
+      "url": "https://app.attio.com/hello-world/automations/sequences#skip-nav",
+      "title": "Sequences - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-automations-workflows-skip-nav",
+      "url": "https://app.attio.com/hello-world/automations/workflows#skip-nav",
+      "title": "Workflows - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-2da9d1ec-98b5-4348-ae50-b771cd76fa12-overview-skip-nav",
+      "url": "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/overview#skip-nav",
+      "title": "Airbnb - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-2da9d1ec-98b5-4348-ae50-b771cd76fa12-activity",
+      "url": "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/activity",
+      "title": "Airbnb - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-2da9d1ec-98b5-4348-ae50-b771cd76fa12-notes",
+      "url": "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/notes",
+      "title": "Airbnb - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-d07cce7f-bf24-422d-aa07-62219172e0ee-overview-skip-nav",
+      "url": "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/overview#skip-nav",
+      "title": "Disney - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-d07cce7f-bf24-422d-aa07-62219172e0ee-activity",
+      "url": "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/activity",
+      "title": "Disney - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-d07cce7f-bf24-422d-aa07-62219172e0ee-notes",
+      "url": "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/notes",
+      "title": "Disney - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-skip-nav",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7#skip-nav",
+      "title": "Companies by Country - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-0428b0ee-a064-4af1-9ea4-5e5088a47391-skip-nav",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/0428b0ee-a064-4af1-9ea4-5e5088a47391#skip-nav",
+      "title": "New Dashboard - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda-overview-skip-nav",
+      "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/overview#skip-nav",
+      "title": "random notes 1 - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda-activity",
+      "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/activity",
+      "title": "random notes 1 - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-8c853c0e-0bc0-4781-9607-28991f241dda-notes",
+      "url": "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/notes",
+      "title": "random notes 1 - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-9ca686fe-44c9-4b9e-93e7-20c461ecbcfd-skip-nav",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/9ca686fe-44c9-4b9e-93e7-20c461ecbcfd#skip-nav",
+      "title": "New Dashboard - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects-skip-nav",
+      "url": "https://app.attio.com/hello-world/settings/data/objects#skip-nav",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world",
+      "url": "https://app.attio.com/hello-world",
+      "title": "Home - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-account",
+      "url": "https://app.attio.com/hello-world/settings/account",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-appearance",
+      "url": "https://app.attio.com/hello-world/settings/appearance",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-email-and-calendar-accounts",
+      "url": "https://app.attio.com/hello-world/settings/email-and-calendar-accounts",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-call-intelligence",
+      "url": "https://app.attio.com/hello-world/settings/call-intelligence",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-storage-accounts",
+      "url": "https://app.attio.com/hello-world/settings/storage-accounts",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-referrals",
+      "url": "https://app.attio.com/hello-world/settings/referrals",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-notifications",
+      "url": "https://app.attio.com/hello-world/settings/notifications",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-ask-attio",
+      "url": "https://app.attio.com/hello-world/settings/ask-attio",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-app-connections",
+      "url": "https://app.attio.com/hello-world/settings/app-connections",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-workspace",
+      "url": "https://app.attio.com/hello-world/settings/workspace",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-members-and-teams",
+      "url": "https://app.attio.com/hello-world/settings/members-and-teams",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-workspace-ask-attio",
+      "url": "https://app.attio.com/hello-world/settings/workspace-ask-attio",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-call-recorder",
+      "url": "https://app.attio.com/hello-world/settings/call-recorder",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-plan",
+      "url": "https://app.attio.com/hello-world/settings/plan",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-billing",
+      "url": "https://app.attio.com/hello-world/settings/billing",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-developers",
+      "url": "https://app.attio.com/hello-world/settings/developers",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-support-request",
+      "url": "https://app.attio.com/hello-world/settings/support-request",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-migration",
+      "url": "https://app.attio.com/hello-world/settings/migration",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-apps",
+      "url": "https://app.attio.com/hello-world/settings/apps",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-security",
+      "url": "https://app.attio.com/hello-world/settings/security",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-workspace-email-and-calendar",
+      "url": "https://app.attio.com/hello-world/settings/workspace-email-and-calendar",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-workspace-admin-access-grants",
+      "url": "https://app.attio.com/hello-world/settings/workspace-admin-access-grants",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-lists",
+      "url": "https://app.attio.com/hello-world/settings/data/lists",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-data-connectors",
+      "url": "https://app.attio.com/hello-world/settings/data/data-connectors",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-import-history",
+      "url": "https://app.attio.com/hello-world/settings/data/import-history",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-reports-dashboards",
+      "url": "https://app.attio.com/hello-world/settings/reports/dashboards",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-automations-sequences",
+      "url": "https://app.attio.com/hello-world/settings/automations/sequences",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-automations-workflows",
+      "url": "https://app.attio.com/hello-world/settings/automations/workflows",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects-companies",
+      "url": "https://app.attio.com/hello-world/settings/data/objects/companies",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects-deals",
+      "url": "https://app.attio.com/hello-world/settings/data/objects/deals",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects-people",
+      "url": "https://app.attio.com/hello-world/settings/data/objects/people",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects-users",
+      "url": "https://app.attio.com/hello-world/settings/data/objects/users",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-settings-data-objects-workspaces",
+      "url": "https://app.attio.com/hello-world/settings/data/objects/workspaces",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-companies-view-8d1711bc-d6ac-4005-aaf4-598b6d6bf1ba-skip-nav",
+      "url": "https://app.attio.com/hello-world/companies/view/8d1711bc-d6ac-4005-aaf4-598b6d6bf1ba#skip-nav",
+      "title": "Companies | All Companies - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-63c9eff7-98a1-4141-8e46-af133f9e647c",
+      "url": "https://app.attio.com/hello-world/company/63c9eff7-98a1-4141-8e46-af133f9e647c",
+      "title": "Google - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-262e9976-e742-4efc-a7af-9dc9b5cef7e2",
+      "url": "https://app.attio.com/hello-world/company/262e9976-e742-4efc-a7af-9dc9b5cef7e2",
+      "title": "Microsoft - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-5e99cab7-7826-4125-9be2-8a22499ee4f9",
+      "url": "https://app.attio.com/hello-world/company/5e99cab7-7826-4125-9be2-8a22499ee4f9",
+      "title": "Apple - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-42106b74-8a93-4b80-818b-a3d9a52a8573",
+      "url": "https://app.attio.com/hello-world/company/42106b74-8a93-4b80-818b-a3d9a52a8573",
+      "title": "United Airlines - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-31e23173-6abf-40d6-a4ba-3471a83c0817",
+      "url": "https://app.attio.com/hello-world/company/31e23173-6abf-40d6-a4ba-3471a83c0817",
+      "title": "PayPal - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-5e64b623-491f-44d6-a8d1-e03d79563549",
+      "url": "https://app.attio.com/hello-world/company/5e64b623-491f-44d6-a8d1-e03d79563549",
+      "title": "LVMH - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-71d52d95-7876-4b95-86d9-efec6e94100a",
+      "url": "https://app.attio.com/hello-world/company/71d52d95-7876-4b95-86d9-efec6e94100a",
+      "title": "Intercom - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-b0631bd6-1aa4-44b8-8179-7aad467f8028",
+      "url": "https://app.attio.com/hello-world/company/b0631bd6-1aa4-44b8-8179-7aad467f8028",
+      "title": "Attio - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-company-4cc096a5-459b-433e-bb1d-53f8f5cb4aa6",
+      "url": "https://app.attio.com/hello-world/company/4cc096a5-459b-433e-bb1d-53f8f5cb4aa6",
+      "title": "Insurge AI - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-people-view-4844b94f-49c5-4e93-b491-8f57adacecfc-skip-nav",
+      "url": "https://app.attio.com/hello-world/people/view/4844b94f-49c5-4e93-b491-8f57adacecfc#skip-nav",
+      "title": "People | Recently Contacted People - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-person-31594ba0-88fb-4a34-9429-fd34a3568cf5",
+      "url": "https://app.attio.com/hello-world/person/31594ba0-88fb-4a34-9429-fd34a3568cf5",
+      "title": "Gauri Jindal - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-person-3a591d9b-39c9-437c-89f8-9f048cdff815",
+      "url": "https://app.attio.com/hello-world/person/3a591d9b-39c9-437c-89f8-9f048cdff815",
+      "title": "Tanush Agarwal - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-person-f556eacc-d1b6-448a-b284-150fd17218cd",
+      "url": "https://app.attio.com/hello-world/person/f556eacc-d1b6-448a-b284-150fd17218cd",
+      "title": "Abhiman Singh - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-person-ca0c8c04-bb6c-425c-af61-68e6cdc910f6",
+      "url": "https://app.attio.com/hello-world/person/ca0c8c04-bb6c-425c-af61-68e6cdc910f6",
+      "title": "Rohith Vegesna - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-person-26132314-2321-486a-b1b1-b457c1b919d3",
+      "url": "https://app.attio.com/hello-world/person/26132314-2321-486a-b1b1-b457c1b919d3",
+      "title": "Abhi Jain - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-deals-view-808ed0c7-9f7f-4ed2-a7ee-b34d04eb1210-skip-nav",
+      "url": "https://app.attio.com/hello-world/deals/view/808ed0c7-9f7f-4ed2-a7ee-b34d04eb1210#skip-nav",
+      "title": "Deals | Pipeline - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-users-view-f2668a5d-d947-460d-b4d8-13c03a80887d-skip-nav",
+      "url": "https://app.attio.com/hello-world/users/view/f2668a5d-d947-460d-b4d8-13c03a80887d#skip-nav",
+      "title": "Users | All Users - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-users-import-new",
+      "url": "https://app.attio.com/hello-world/users/import/new",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-workspaces-view-6fb36b14-da1d-476d-abea-c62eca19abb5-skip-nav",
+      "url": "https://app.attio.com/hello-world/workspaces/view/6fb36b14-da1d-476d-abea-c62eca19abb5#skip-nav",
+      "title": "Workspaces | All Workspaces - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-workspaces-import-new",
+      "url": "https://app.attio.com/hello-world/workspaces/import/new",
+      "title": "Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-collection-4e91f5b0-d8d3-4521-96aa-c71d8aeebab2-view-a04f26c9-4c41-44f8-8219-39ad93951078-skip-nav",
+      "url": "https://app.attio.com/hello-world/collection/4e91f5b0-d8d3-4521-96aa-c71d8aeebab2/view/a04f26c9-4c41-44f8-8219-39ad93951078#skip-nav",
+      "title": "Startup Fundraising / Pipeline - Attio",
+      "page_type": "post_auth"
+    },
+    {
+      "slug": "hello-world-reports-dashboard-5cf33620-c514-4b90-b930-e07f9ad96ea7-cell-97076b65-7509-40b9-9fd5-8254910948c7-skip-nav",
+      "url": "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/97076b65-7509-40b9-9fd5-8254910948c7#skip-nav",
+      "title": "Companies by Country - Attio",
+      "page_type": "post_auth"
+    }
+  ],
+  "link_counters": {
+    "__global__": {},
+    "https://app.attio.com/hello-world/home": {},
+    "https://app.attio.com/hello-world/tasks": {},
+    "https://app.attio.com/hello-world/notes": {},
+    "https://app.attio.com/hello-world/emails/drafts": {},
+    "https://app.attio.com/hello-world/calls": {},
+    "https://app.attio.com/hello-world/reports": {},
+    "https://app.attio.com/hello-world/automations/sequences": {},
+    "https://app.attio.com/hello-world/automations/workflows": {},
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12": {},
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee": {},
+    "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7": {},
+    "https://app.attio.com/hello-world/reports/dashboard/0428b0ee-a064-4af1-9ea4-5e5088a47391": {},
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda": {},
+    "https://app.attio.com/hello-world/reports/dashboard/9ca686fe-44c9-4b9e-93e7-20c461ecbcfd": {},
+    "https://app.attio.com/hello-world/settings/data/objects": {},
+    "https://app.attio.com/hello-world/companies": {},
+    "https://app.attio.com/hello-world/people": {},
+    "https://app.attio.com/hello-world/deals": {},
+    "https://app.attio.com/hello-world/users": {},
+    "https://app.attio.com/hello-world/workspaces": {},
+    "https://app.attio.com/hello-world/collection/4e91f5b0-d8d3-4521-96aa-c71d8aeebab2": {},
+    "https://app.attio.com/hello-world/reports/dashboard/5cf33620-c514-4b90-b930-e07f9ad96ea7/cell/97076b65-7509-40b9-9fd5-8254910948c7": {},
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/activity": {},
+    "https://app.attio.com/hello-world/company/2da9d1ec-98b5-4348-ae50-b771cd76fa12/notes": {},
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/activity": {},
+    "https://app.attio.com/hello-world/company/d07cce7f-bf24-422d-aa07-62219172e0ee/notes": {},
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/activity": {},
+    "https://app.attio.com/hello-world/company/8c853c0e-0bc0-4781-9607-28991f241dda/notes": {},
+    "https://app.attio.com/hello-world": {},
+    "https://app.attio.com/hello-world/settings/account": {},
+    "https://app.attio.com/hello-world/settings/appearance": {},
+    "https://app.attio.com/hello-world/settings/email-and-calendar-accounts": {},
+    "https://app.attio.com/hello-world/settings/call-intelligence": {},
+    "https://app.attio.com/hello-world/settings/storage-accounts": {},
+    "https://app.attio.com/hello-world/settings/referrals": {},
+    "https://app.attio.com/hello-world/settings/notifications": {},
+    "https://app.attio.com/hello-world/settings/ask-attio": {},
+    "https://app.attio.com/hello-world/settings/app-connections": {},
+    "https://app.attio.com/hello-world/settings/workspace": {},
+    "https://app.attio.com/hello-world/settings/members-and-teams": {},
+    "https://app.attio.com/hello-world/settings/workspace-ask-attio": {},
+    "https://app.attio.com/hello-world/settings/call-recorder": {},
+    "https://app.attio.com/hello-world/settings/plan": {},
+    "https://app.attio.com/hello-world/settings/billing": {},
+    "https://app.attio.com/hello-world/settings/developers": {},
+    "https://app.attio.com/hello-world/settings/support-request": {},
+    "https://app.attio.com/hello-world/settings/migration": {},
+    "https://app.attio.com/hello-world/settings/apps": {},
+    "https://app.attio.com/hello-world/settings/security": {},
+    "https://app.attio.com/hello-world/settings/workspace-email-and-calendar": {},
+    "https://app.attio.com/hello-world/settings/workspace-admin-access-grants": {},
+    "https://app.attio.com/hello-world/settings/data/lists": {},
+    "https://app.attio.com/hello-world/settings/data/data-connectors": {},
+    "https://app.attio.com/hello-world/settings/data/import-history": {},
+    "https://app.attio.com/hello-world/settings/reports/dashboards": {},
+    "https://app.attio.com/hello-world/settings/automations/sequences": {},
+    "https://app.attio.com/hello-world/settings/automations/workflows": {},
+    "https://app.attio.com/hello-world/settings/data/objects/companies": {},
+    "https://app.attio.com/hello-world/settings/data/objects/deals": {},
+    "https://app.attio.com/hello-world/settings/data/objects/people": {},
+    "https://app.attio.com/hello-world/settings/data/objects/users": {},
+    "https://app.attio.com/hello-world/settings/data/objects/workspaces": {},
+    "https://app.attio.com/hello-world/company/63c9eff7-98a1-4141-8e46-af133f9e647c": {},
+    "https://app.attio.com/hello-world/company/262e9976-e742-4efc-a7af-9dc9b5cef7e2": {},
+    "https://app.attio.com/hello-world/company/5e99cab7-7826-4125-9be2-8a22499ee4f9": {},
+    "https://app.attio.com/hello-world/company/42106b74-8a93-4b80-818b-a3d9a52a8573": {},
+    "https://app.attio.com/hello-world/company/31e23173-6abf-40d6-a4ba-3471a83c0817": {},
+    "https://app.attio.com/hello-world/company/5e64b623-491f-44d6-a8d1-e03d79563549": {},
+    "https://app.attio.com/hello-world/company/71d52d95-7876-4b95-86d9-efec6e94100a": {},
+    "https://app.attio.com/hello-world/company/b0631bd6-1aa4-44b8-8179-7aad467f8028": {},
+    "https://app.attio.com/hello-world/company/4cc096a5-459b-433e-bb1d-53f8f5cb4aa6": {},
+    "https://app.attio.com/hello-world/person/31594ba0-88fb-4a34-9429-fd34a3568cf5": {},
+    "https://app.attio.com/hello-world/person/3a591d9b-39c9-437c-89f8-9f048cdff815": {},
+    "https://app.attio.com/hello-world/person/f556eacc-d1b6-448a-b284-150fd17218cd": {},
+    "https://app.attio.com/hello-world/person/ca0c8c04-bb6c-425c-af61-68e6cdc910f6": {},
+    "https://app.attio.com/hello-world/person/26132314-2321-486a-b1b1-b457c1b919d3": {},
+    "https://app.attio.com/hello-world/users/import/new": {},
+    "https://app.attio.com/hello-world/workspaces/import/new": {}
+  },
+  "sidebar_discovered": false
+}

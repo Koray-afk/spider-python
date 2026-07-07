@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-tasks",
+  "source_url": "https://app.attio.com/hello-world/tasks",
+  "source_title": "Tasks - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "New task",
+    "id": "",
+    "class_name": "sc-nXGzg koRIpI",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2)",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[2]",
+    "outer_html": "<button type=\"button\" aria-busy=\"false\" class=\"sc-nXGzg koRIpI\" data-crawl-id=\"17\"><div class=\"sc-kKZOal jvgEBh\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX jbHVSw\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></div><div class=\"sc-cEqhnH kRqcxL\">New task</div></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/tasks?command-menu-page=task&id=new",
+    "slug": "hello-world-tasks",
+    "title": "Tasks - Attio"
+  },
+  "interaction_type": "modal",
+  "original_element_html": "<button type=\"button\" aria-busy=\"false\" class=\"sc-nXGzg koRIpI\" data-crawl-id=\"17\"><div class=\"sc-kKZOal jvgEBh\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX jbHVSw\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></div><div class=\"sc-cEqhnH kRqcxL\">New task</div></button>",
+  "trigger_label": "New task",
+  "trigger_id": "",
+  "trigger_class": "sc-nXGzg koRIpI",
+  "target_url": "https://app.attio.com/hello-world/tasks?command-menu-page=task&id=new",
+  "target_slug": "hello-world-tasks",
+  "target_title": "Tasks - Attio"
+}

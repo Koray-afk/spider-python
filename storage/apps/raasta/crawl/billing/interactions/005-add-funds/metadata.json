@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Add Funds",
+  "triggerId": "",
+  "triggerClass": "flex items-center gap-1 rounded-lg border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-[11px] font-medium text-amber-400 hover:bg-amber-500/20 transition",
+  "selector": "[data-crawl-id=\"7\"]",
+  "interactionType": "unknown",
+  "sourcePage": "billing",
+  "sourceUrl": "https://workspace.rastaa.ai/billing",
+  "beforeUrl": "https://workspace.rastaa.ai/billing",
+  "beforeTitle": "Rastaa",
+  "url": "https://workspace.rastaa.ai/billing",
+  "title": "Rastaa",
+  "resultPagePath": "billing/interactions/005-add-funds",
+  "captured_at": "2026-07-07T09:12:37.452354+00:00"
+}

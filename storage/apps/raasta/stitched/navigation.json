@@ -1,0 +1,139 @@
+{
+  "billing": {
+    "title": "Rastaa",
+    "url": "https://workspace.rastaa.ai/billing",
+    "pages": {},
+    "interactions": [
+      {
+        "label": "Add Funds",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": false,
+        "fallback": "interactions/005-add-funds/page.html"
+      },
+      {
+        "label": "Monthly",
+        "type": "tab-switch",
+        "ui_id": "interaction_2",
+        "has_ui": false,
+        "fallback": "interactions/001-monthly/page.html"
+      },
+      {
+        "label": "YearlySave ~20%",
+        "type": "tab-switch",
+        "ui_id": "interaction_3",
+        "has_ui": false,
+        "fallback": "interactions/002-yearlysave-20/page.html"
+      },
+      {
+        "label": "Add Funds",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": false,
+        "fallback": "interactions/005-add-funds/page.html"
+      }
+    ]
+  },
+  "dashboard": {
+    "title": "Rastaa",
+    "url": "https://workspace.rastaa.ai/dashboard",
+    "pages": {},
+    "interactions": [
+      {
+        "label": "Weather",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": false,
+        "fallback": "interactions/003-weather/page.html"
+      },
+      {
+        "label": "Weather",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": false,
+        "fallback": "interactions/003-weather/page.html"
+      }
+    ]
+  },
+  "history": {
+    "title": "Rastaa",
+    "url": "https://workspace.rastaa.ai/history",
+    "pages": {},
+    "interactions": []
+  },
+  "home": {
+    "title": "Rastaa",
+    "url": "https://workspace.rastaa.ai",
+    "pages": {
+      "dashboard": "../dashboard/page.html",
+      "history": "../history/page.html",
+      "riders": "../riders/page.html",
+      "billing": "../billing/page.html"
+    },
+    "interactions": [
+      {
+        "label": "Recent sessions",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": false,
+        "fallback": "interactions/010-recent-sessions/page.html"
+      },
+      {
+        "label": "Freeform",
+        "type": "tab-switch",
+        "ui_id": "interaction_2",
+        "has_ui": false,
+        "fallback": "interactions/001-freeform/page.html"
+      },
+      {
+        "label": "Hexagon",
+        "type": "tab-switch",
+        "ui_id": "interaction_3",
+        "has_ui": false,
+        "fallback": "interactions/002-hexagon/page.html"
+      },
+      {
+        "label": "Planning",
+        "type": "tab-switch",
+        "ui_id": "interaction_4",
+        "has_ui": false,
+        "fallback": "interactions/005-planning/page.html"
+      },
+      {
+        "label": "Recent sessions",
+        "type": "unknown",
+        "ui_id": "interaction_5",
+        "has_ui": false,
+        "fallback": "interactions/010-recent-sessions/page.html"
+      },
+      {
+        "label": "\ud83c\uddfa\ud83c\uddf8 New York\ncached\n\nManhattan grid, dense last-mile",
+        "type": "unknown",
+        "ui_id": "interaction_6",
+        "has_ui": false,
+        "fallback": "interactions/011-new-york-cached-manhattan-grid-dense-last-mile/page.html"
+      }
+    ]
+  },
+  "riders": {
+    "title": "Rastaa",
+    "url": "https://workspace.rastaa.ai/riders",
+    "pages": {},
+    "interactions": [
+      {
+        "label": "Add Driver",
+        "type": "unknown",
+        "ui_id": "interaction_1",
+        "has_ui": false,
+        "fallback": "interactions/003-add-driver/page.html"
+      },
+      {
+        "label": "Add Driver",
+        "type": "unknown",
+        "ui_id": "",
+        "has_ui": false,
+        "fallback": "interactions/003-add-driver/page.html"
+      }
+    ]
+  }
+}

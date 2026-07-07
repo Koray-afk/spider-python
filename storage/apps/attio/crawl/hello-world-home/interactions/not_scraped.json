@@ -1,0 +1,82 @@
+[
+  {
+    "label": "Quick actions\n\u2318K",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"3\" data-full-width=\"true\" class=\"sc-hJxyNS sc-hRBdqa iVkgaU bBcBOI\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Remove favorite",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"6\\\"]\").first\n    - locator resolved to <button type=\"button\" aria-busy=\"false\" data-crawl-id=\"6\" data-state=\"closed\" class=\"sc-nXGzg gvaYSc\" aria-label=\"Remove favorite\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Record options",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "List options",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "Keep Pro",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "Auto",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "Insert prompt",
+    "selector": "[data-crawl-id=\"14\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "Submit message",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "Previous day",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "label": "Next day",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.attio.com/hello-world/home\nCall log:\n  - navigating to \"https://app.attio.com/hello-world/home\", waiting until \"domcontentloaded\"\n"
+  }
+]
