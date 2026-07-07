@@ -1,0 +1,98 @@
+[
+  {
+    "label": "Collapse meeting",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/001-collapse-meeting",
+    "relationship_file": "interactions/001-collapse-meeting/relationship.json"
+  },
+  {
+    "label": "New favorites folder",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/002-new-favorites-folder",
+    "relationship_file": "interactions/002-new-favorites-folder/relationship.json"
+  },
+  {
+    "label": "Add list",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/003-add-list",
+    "relationship_file": "interactions/003-add-list/relationship.json"
+  },
+  {
+    "label": "New chat",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/004-new-chat",
+    "relationship_file": "interactions/004-new-chat/relationship.json"
+  },
+  {
+    "label": "/",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/006-interaction",
+    "relationship_file": "interactions/006-interaction/relationship.json"
+  },
+  {
+    "label": "Today, Jul 6",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/007-today-jul-6",
+    "relationship_file": "interactions/007-today-jul-6/relationship.json"
+  },
+  {
+    "label": "Meeting filters",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/008-meeting-filters",
+    "relationship_file": "interactions/008-meeting-filters/relationship.json"
+  },
+  {
+    "label": "Pending",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/009-pending",
+    "relationship_file": "interactions/009-pending/relationship.json"
+  },
+  {
+    "label": "H\nHello World",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/010-h-hello-world",
+    "relationship_file": "interactions/010-h-hello-world/relationship.json"
+  },
+  {
+    "label": "List options",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/013-list-options",
+    "relationship_file": "interactions/013-list-options/relationship.json"
+  },
+  {
+    "label": "Auto",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/014-auto",
+    "relationship_file": "interactions/014-auto/relationship.json"
+  },
+  {
+    "label": "Insert prompt",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/015-insert-prompt",
+    "relationship_file": "interactions/015-insert-prompt/relationship.json"
+  },
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/016-collapse-sidebar",
+    "relationship_file": "interactions/016-collapse-sidebar/relationship.json"
+  },
+  {
+    "label": "Previous day",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/018-previous-day",
+    "relationship_file": "interactions/018-previous-day/relationship.json"
+  },
+  {
+    "label": "Next day",
+    "selector": "[data-crawl-id=\"18\"]",
+    "interaction_path": "interactions/019-next-day",
+    "relationship_file": "interactions/019-next-day/relationship.json"
+  },
+  {
+    "label": "Open meeting",
+    "selector": "[data-crawl-id=\"22\"]",
+    "interaction_path": "interactions/020-open-meeting",
+    "relationship_file": "interactions/020-open-meeting/relationship.json"
+  }
+]

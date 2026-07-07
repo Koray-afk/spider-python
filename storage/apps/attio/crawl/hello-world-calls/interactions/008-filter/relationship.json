@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-calls",
+  "source_url": "https://app.attio.com/hello-world/calls",
+  "source_title": "Calls - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Filter",
+    "id": "",
+    "class_name": "sc-hihtOB epRoEp",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#radix-_r_3n_ > div:nth-of-type(1) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"17\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/button[1]",
+    "outer_html": "<button data-container-variant=\"placeholder\" data-has-prefix=\"true\" data-is-first-element=\"true\" data-is-last-element=\"true\" data-icon-only=\"false\" data-pos=\"0\" type=\"button\" data-readonly=\"false\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\" class=\"sc-hihtOB epRoEp\" data-crawl-id=\"17\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/1ff16ffa47fcfe8a.svg#icon\" height=\"14px\" width=\"14px\"></use></svg><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr7 _1fxkonri _1fxkonrn _1fxkonrt _1fxkonrr\" style=\"color: currentcolor;\">Filter</div></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/calls",
+    "slug": "hello-world-calls",
+    "title": "Calls - Attio"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button data-container-variant=\"placeholder\" data-has-prefix=\"true\" data-is-first-element=\"true\" data-is-last-element=\"true\" data-icon-only=\"false\" data-pos=\"0\" type=\"button\" data-readonly=\"false\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\" class=\"sc-hihtOB epRoEp\" data-crawl-id=\"17\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/1ff16ffa47fcfe8a.svg#icon\" height=\"14px\" width=\"14px\"></use></svg><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr7 _1fxkonri _1fxkonrn _1fxkonrt _1fxkonrr\" style=\"color: currentcolor;\">Filter</div></button>",
+  "trigger_label": "Filter",
+  "trigger_id": "",
+  "trigger_class": "sc-hihtOB epRoEp",
+  "target_url": "https://app.attio.com/hello-world/calls",
+  "target_slug": "hello-world-calls",
+  "target_title": "Calls - Attio"
+}

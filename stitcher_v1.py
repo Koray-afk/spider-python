@@ -36,8 +36,20 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup, Tag
 
 from config import get_app_config
+from asset_localizer import (
+    copy_assets_to_stitched,
+    finalize_asset_tree,
+    localize_html_assets,
+    rewire_asset_prefix,
+)
+from stitch_maps import (
+    ensure_maplibre_vendor_assets,
+    load_map_state,
+    page_has_maplibre,
+)
 from storage.storage_manager import (
     clean_stitched,
+    get_assets_dir,
     get_crawl_dir,
     get_metadata_dir,
     get_sitemap_path,
@@ -203,6 +215,533 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
     );
   })();
   // ── End Likwid bootstrap ───────────────────────────────────────────────────
+
+  // ── Rastaa dashboard: weather filter panel ─────────────────────────────────
+  var raastaWeather = (function () {
+    if (document.body.getAttribute("data-raasta-page") !== "dashboard") return null;
+
+    function norm(el) {
+      return (el.textContent || "").replace(/\\s+/g, " ").trim();
+    }
+
+    function findWeatherBtn() {
+      var tagged = document.querySelector("[data-raasta-weather-toggle]");
+      if (tagged) return tagged;
+      var buttons = document.querySelectorAll("button");
+      for (var i = 0; i < buttons.length; i++) {
+        if (norm(buttons[i]) === "Weather") return buttons[i];
+      }
+      return null;
+    }
+
+    function findFilterRow() {
+      var rows = document.querySelectorAll(".raasta-weather-filters, div.mt-3.flex.flex-nowrap");
+      for (var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        var btns = row.querySelectorAll("button");
+        if (!btns.length) continue;
+        for (var j = 0; j < btns.length; j++) {
+          if (norm(btns[j]) === "All") return row;
+        }
+      }
+      return null;
+    }
+
+    var weatherBtn = findWeatherBtn();
+    var filterRow = findFilterRow();
+    if (!weatherBtn || !filterRow) return null;
+
+    weatherBtn.removeAttribute("data-stitch-ui-id");
+    weatherBtn.setAttribute("data-raasta-weather-toggle", "");
+    weatherBtn.setAttribute("type", "button");
+    filterRow.classList.add("raasta-weather-filters");
+
+    if (!document.getElementById("raasta-weather-style")) {
+      var st = document.createElement("style");
+      st.id = "raasta-weather-style";
+      st.textContent = [
+        ".raasta-weather-filters.raasta-weather-hidden { display: none !important; }",
+        ".raasta-weather-filters button.raasta-wf-on {",
+        "  border-color: rgb(96 165 250) !important;",
+        "  background-color: rgb(59 130 246) !important;",
+        "  color: #fff !important;",
+        "  box-shadow: 0 0 14px rgba(59,130,246,0.4);",
+        "}",
+        "[data-raasta-weather-toggle], .raasta-weather-filters button {",
+        "  pointer-events: auto !important; cursor: pointer !important;",
+        "}",
+      ].join("\\n");
+      document.head.appendChild(st);
+    }
+
+    var chips = filterRow.querySelectorAll("button");
+    var saved = [];
+    for (var i = 0; i < chips.length; i++) {
+      saved.push({ btn: chips[i], cls: chips[i].className, label: norm(chips[i]) });
+      chips[i].setAttribute("type", "button");
+    }
+
+    var filtersVisible = true;
+    var selected = "All";
+
+    function selectFilter(label) {
+      selected = label;
+      for (var i = 0; i < saved.length; i++) {
+        var item = saved[i];
+        item.btn.className = item.cls;
+        var on = item.label === label;
+        if (on) item.btn.classList.add("raasta-wf-on");
+        item.btn.setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
+
+    function setVisible(v) {
+      filtersVisible = v;
+      filterRow.classList.toggle("raasta-weather-hidden", !v);
+      weatherBtn.setAttribute("aria-expanded", v ? "true" : "false");
+    }
+
+    selectFilter("All");
+    setVisible(true);
+
+    return {
+      isWeatherClick: function (target) {
+        return !!(target.closest && target.closest("[data-raasta-weather-toggle]"));
+      },
+      isFilterClick: function (target) {
+        return target.closest ? target.closest(".raasta-weather-filters button") : null;
+      },
+      toggle: function () {
+        setVisible(!filtersVisible);
+      },
+      select: function (btn) {
+        selectFilter(norm(btn));
+      },
+    };
+  })();
+  // ── End Rastaa weather ─────────────────────────────────────────────────────
+
+  // ── Rastaa riders: Add Driver modal + localStorage list ───────────────────
+  var raastaRiders = (function () {
+    if (document.body.getAttribute("data-raasta-page") !== "riders") return null;
+
+    var STORAGE_KEY = "raasta_riders_v1";
+
+    function norm(el) {
+      return (el.textContent || "").replace(/\\s+/g, " ").trim();
+    }
+
+    function esc(s) {
+      return String(s || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function loadRiders() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function saveRiders(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    function findListRoot() {
+      var headings = document.querySelectorAll("h1");
+      for (var i = 0; i < headings.length; i++) {
+        if (norm(headings[i]) !== "Drivers") continue;
+        var walk = headings[i].parentElement;
+        for (var d = 0; d < 8 && walk; d++) {
+          var list = walk.querySelector(".flex-1.overflow-auto");
+          if (list) return list;
+          walk = walk.parentElement;
+        }
+      }
+      return null;
+    }
+
+    function updateCount(n) {
+      var ps = document.querySelectorAll("p");
+      for (var i = 0; i < ps.length; i++) {
+        var t = norm(ps[i]);
+        if (/drivers registered$/i.test(t)) {
+          ps[i].textContent = n + " driver" + (n === 1 ? "" : "s") + " registered";
+          return;
+        }
+      }
+    }
+
+    function riderName(r) {
+      return [r.firstName, r.lastName].filter(Boolean).join(" ").trim() || "Unnamed Rider";
+    }
+
+    function initials(r) {
+      var first = String(r.firstName || "").trim();
+      var last = String(r.lastName || "").trim();
+      if (first && last) return (first.charAt(0) + last.charAt(0)).toLowerCase();
+      if (first.length >= 2) return first.slice(0, 2).toLowerCase();
+      if (first) return first.charAt(0).toLowerCase();
+      return "??";
+    }
+
+    function statusLabel(status) {
+      if (status === "Offline") return "Inactive";
+      return status || "Online";
+    }
+
+    function statusPillHtml(status) {
+      var label = statusLabel(status);
+      if (status === "Online") {
+        return (
+          '<span class="inline-block rounded-full px-2.5 py-1 text-[11px] font-medium bg-green-500/15 text-green-400">' +
+          esc(label) +
+          "</span>"
+        );
+      }
+      return (
+        '<span class="inline-block rounded-full px-2.5 py-1 text-[11px] font-medium bg-white/[0.06] text-white/40">' +
+        esc(label) +
+        "</span>"
+      );
+    }
+
+    var GRID_ROW =
+      "grid grid-cols-[2fr_1.5fr_1.5fr_1fr_1fr_100px] items-center";
+    var EDIT_ICON =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>';
+    var DELETE_ICON =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2 lucide-trash-2" aria-hidden="true"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path><line x1="10" x2="10" y1="11" y2="17"></line><line x1="14" x2="14" y1="11" y2="17"></line></svg>';
+
+    function renderRiders() {
+      var root = findListRoot();
+      if (!root) return;
+      var riders = loadRiders();
+      updateCount(riders.length);
+      if (!riders.length) {
+        root.innerHTML =
+          '<div class="text-sm text-white/25 py-8 text-center">No drivers yet.</div>';
+        return;
+      }
+      var html = '<div class="rounded-2xl border border-white/[0.06] overflow-hidden">';
+      html +=
+        '<div class="' +
+        GRID_ROW +
+        ' border-b border-white/[0.06] bg-white/[0.02] px-5 py-3">';
+      html +=
+        '<span class="text-[11px] font-medium text-white/40 uppercase tracking-wider">Name</span>';
+      html +=
+        '<span class="text-[11px] font-medium text-white/40 uppercase tracking-wider">Phone</span>';
+      html +=
+        '<span class="text-[11px] font-medium text-white/40 uppercase tracking-wider">Email</span>';
+      html +=
+        '<span class="text-[11px] font-medium text-white/40 uppercase tracking-wider">Hub</span>';
+      html +=
+        '<span class="text-[11px] font-medium text-white/40 uppercase tracking-wider">Status</span>';
+      html +=
+        '<span class="text-[11px] font-medium text-white/40 uppercase tracking-wider text-right">Actions</span>';
+      html += "</div>";
+      for (var i = 0; i < riders.length; i++) {
+        var r = riders[i];
+        var name = riderName(r);
+        var hub = r.hub ? esc(r.hub) : "—";
+        var rowCls =
+          GRID_ROW +
+          " border-b border-white/[0.04] px-5 py-3.5 text-[13px] text-white/80 hover:bg-white/[0.02] transition";
+        if (i === riders.length - 1) rowCls += " last:border-b-0";
+        html +=
+          '<div class="' +
+          rowCls +
+          '" data-raasta-rider-row="' +
+          esc(r.id) +
+          '">';
+        html +=
+          '<div class="flex items-center gap-3 min-w-0"><div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent text-[11px] font-semibold">' +
+          esc(initials(r)) +
+          '</div><span class="truncate font-medium text-white">' +
+          esc(name) +
+          "</span></div>";
+        html +=
+          '<span class="text-white/55 truncate">' + esc(r.phone || "—") + "</span>";
+        html +=
+          '<span class="text-white/55 truncate">' + esc(r.email || "—") + "</span>";
+        html += '<span class="text-white/55 truncate">' + hub + "</span>";
+        html += "<div>" + statusPillHtml(r.status) + "</div>";
+        html += '<div class="flex items-center justify-end gap-1.5">';
+        html +=
+          '<button class="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.04] text-white/50 hover:bg-white/[0.08] hover:text-white transition" title="Edit" type="button" data-raasta-edit-rider="' +
+          esc(r.id) +
+          '">' +
+          EDIT_ICON +
+          "</button>";
+        html +=
+          '<button class="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.07] bg-transparent text-white/30 hover:border-red-500/30 hover:bg-red-500/10 hover:text-red-400 transition" title="Delete" type="button" data-raasta-delete-rider="' +
+          esc(r.id) +
+          '">' +
+          DELETE_ICON +
+          "</button>";
+        html += "</div></div>";
+      }
+      html += "</div>";
+      root.innerHTML = html;
+    }
+
+    var editingId = null;
+
+    function findModal() {
+      return document.querySelector(".raasta-rider-modal");
+    }
+
+    function markModal(modal) {
+      if (!modal) return null;
+      modal.classList.add("raasta-rider-modal");
+      return modal;
+    }
+
+    function openModal(riderId) {
+      var existing = findModal();
+      if (existing) existing.remove();
+      editingId = riderId || null;
+      var tpl = window.__RAASTA_RIDER_MODAL_HTML__;
+      if (!tpl) return;
+      var wrap = document.createElement("div");
+      wrap.innerHTML = tpl;
+      var modal = wrap.firstElementChild;
+      if (!modal) return;
+      markModal(modal);
+      document.body.appendChild(modal);
+      if (riderId) {
+        var riders = loadRiders();
+        var rider = null;
+        for (var i = 0; i < riders.length; i++) {
+          if (riders[i].id === riderId) {
+            rider = riders[i];
+            break;
+          }
+        }
+        if (rider) populateForm(modal, rider);
+      } else {
+        resetModalChrome(modal);
+      }
+    }
+
+    function ridersHomeHref() {
+      if (location.pathname.indexOf("003-add-driver") !== -1) return "../../page.html";
+      return null;
+    }
+
+    function closeModal() {
+      var modal = findModal();
+      if (modal) modal.remove();
+      editingId = null;
+      var home = ridersHomeHref();
+      if (home) window.location.href = home;
+    }
+
+    function setField(form, prefix, value) {
+      var el = fieldByLabel(form, prefix);
+      if (el) el.value = value == null ? "" : value;
+    }
+
+    function resetModalChrome(modal) {
+      var title = modal.querySelector("h3");
+      if (title) title.textContent = "Add New Rider";
+      var form = modal.querySelector("form");
+      if (!form) return;
+      var submitBtn = form.querySelector("button[type='submit']");
+      if (submitBtn) submitBtn.textContent = "Add Rider";
+    }
+
+    function populateForm(modal, rider) {
+      var form = modal.querySelector("form");
+      if (!form) return;
+      setField(form, "First Name", rider.firstName);
+      setField(form, "Last Name", rider.lastName);
+      setField(form, "Phone Number", rider.phone);
+      setField(form, "Email", rider.email);
+      setField(form, "Vehicle Type", rider.vehicleType || "");
+      setField(form, "Initial Status", rider.status || "Online");
+      var title = modal.querySelector("h3");
+      if (title) title.textContent = "Edit Rider";
+      var submitBtn = form.querySelector("button[type='submit']");
+      if (submitBtn) submitBtn.textContent = "Save Rider";
+    }
+
+    function deleteRider(riderId) {
+      if (!riderId) return;
+      var riders = loadRiders().filter(function (r) {
+        return r.id !== riderId;
+      });
+      saveRiders(riders);
+      renderRiders();
+    }
+
+    function fieldByLabel(form, prefix) {
+      var labels = form.querySelectorAll("label");
+      for (var i = 0; i < labels.length; i++) {
+        if (norm(labels[i]).indexOf(prefix) === 0) {
+          var box = labels[i].parentElement;
+          return box ? box.querySelector("input, select, textarea") : null;
+        }
+      }
+      return null;
+    }
+
+    function readForm(modal) {
+      var form = modal.querySelector("form");
+      if (!form) return null;
+      var vehicle = fieldByLabel(form, "Vehicle Type");
+      var status = fieldByLabel(form, "Initial Status");
+      var first = fieldByLabel(form, "First Name");
+      var last = fieldByLabel(form, "Last Name");
+      var phone = fieldByLabel(form, "Phone Number");
+      var email = fieldByLabel(form, "Email");
+      return {
+        firstName: first ? first.value : "",
+        lastName: last ? last.value : "",
+        phone: phone ? phone.value : "",
+        email: email ? email.value : "",
+        vehicleType: vehicle ? vehicle.value : "",
+        status: status ? status.value : "Online",
+      };
+    }
+
+    function submitRider(modal) {
+      var data = readForm(modal);
+      if (!data || !String(data.firstName).trim() || !String(data.phone).trim()) {
+        return false;
+      }
+      var riders = loadRiders();
+      var payload = {
+        firstName: String(data.firstName).trim(),
+        lastName: String(data.lastName).trim(),
+        phone: String(data.phone).trim(),
+        email: String(data.email).trim(),
+        vehicleType: data.vehicleType || "",
+        status: data.status || "Online",
+        hub: "",
+      };
+      if (editingId) {
+        var updated = false;
+        for (var i = 0; i < riders.length; i++) {
+          if (riders[i].id === editingId) {
+            riders[i] = Object.assign({}, riders[i], payload, { id: editingId });
+            updated = true;
+            break;
+          }
+        }
+        if (!updated) riders.push(Object.assign({ id: editingId, createdAt: new Date().toISOString() }, payload));
+      } else {
+        riders.push(
+          Object.assign(
+            { id: String(Date.now()), createdAt: new Date().toISOString() },
+            payload
+          )
+        );
+      }
+      saveRiders(riders);
+      editingId = null;
+      var home = ridersHomeHref();
+      if (modal) modal.remove();
+      if (home) {
+        window.location.href = home;
+        return true;
+      }
+      renderRiders();
+      return true;
+    }
+
+    var overlays = document.querySelectorAll("div.fixed.inset-0");
+    for (var o = 0; o < overlays.length; o++) {
+      if (norm(overlays[o]).indexOf("Add New Rider") !== -1) {
+        markModal(overlays[o]);
+        break;
+      }
+    }
+
+    renderRiders();
+
+    return {
+      handleClick: function (target, e) {
+        var editBtn = target.closest("[data-raasta-edit-rider]");
+        if (editBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          openModal(editBtn.getAttribute("data-raasta-edit-rider"));
+          return true;
+        }
+
+        var delBtn = target.closest("[data-raasta-delete-rider]");
+        if (delBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          deleteRider(delBtn.getAttribute("data-raasta-delete-rider"));
+          return true;
+        }
+
+        if (target.closest("[data-raasta-add-rider]")) {
+          e.preventDefault();
+          e.stopPropagation();
+          openModal(null);
+          return true;
+        }
+
+        var modal = findModal();
+        if (!modal || !modal.contains(target)) return false;
+
+        var cancelBtn = target.closest("button");
+        if (cancelBtn && norm(cancelBtn) === "Cancel") {
+          e.preventDefault();
+          e.stopPropagation();
+          closeModal();
+          return true;
+        }
+
+        if (cancelBtn && cancelBtn.querySelector(".lucide-x")) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeModal();
+          return true;
+        }
+
+        var backdrop = modal.firstElementChild;
+        if (backdrop && target === backdrop) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeModal();
+          return true;
+        }
+
+        if (
+          cancelBtn &&
+          (norm(cancelBtn) === "Add Rider" || norm(cancelBtn) === "Save Rider")
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          submitRider(modal);
+          return true;
+        }
+
+        if (target.closest("form") && modal.contains(target.closest("form"))) {
+          var submit = target.closest("button[type='submit']");
+          if (submit) {
+            e.preventDefault();
+            e.stopPropagation();
+            submitRider(modal);
+            return true;
+          }
+        }
+
+        return false;
+      },
+    };
+  })();
+  // ── End Rastaa riders ──────────────────────────────────────────────────────
 
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
@@ -1009,6 +1548,28 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         return;
       }
 
+      // 0j. Rastaa dashboard — weather toggle + filter chips (not stitch interactions).
+      if (raastaWeather) {
+        var rwFilter = raastaWeather.isFilterClick(t);
+        if (rwFilter) {
+          e.preventDefault();
+          e.stopPropagation();
+          raastaWeather.select(rwFilter);
+          return;
+        }
+        if (raastaWeather.isWeatherClick(t)) {
+          e.preventDefault();
+          e.stopPropagation();
+          raastaWeather.toggle();
+          return;
+        }
+      }
+
+      // 0k. Rastaa riders — Add Driver modal, Cancel, save to localStorage.
+      if (raastaRiders && raastaRiders.handleClick(t, e)) {
+        return;
+      }
+
       // 0i. Likwid Flow sidebar links (Inventory submenu, Procurement, etc.) — must run
       // before accordion handler, which also matches clicks inside [data-stitch-accordion].
       var likwidSideNav = t.closest("#kt_app_sidebar a[data-stitch-page], #kt_app_sidebar a[data-stitch-go]");
@@ -1163,6 +1724,12 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
         btn &&
         !btn.closest(".stitch-injected-ui") &&
         !btn.hasAttribute("data-stitch-ui-id") &&
+        !btn.hasAttribute("data-raasta-weather-toggle") &&
+        !btn.hasAttribute("data-raasta-add-rider") &&
+        !btn.hasAttribute("data-raasta-edit-rider") &&
+        !btn.hasAttribute("data-raasta-delete-rider") &&
+        !btn.closest(".raasta-weather-filters") &&
+        !btn.closest(".raasta-rider-modal") &&
         !btn.hasAttribute("data-stitch-go") &&
         !btn.hasAttribute("data-stitch-tab-id") &&
         !btn.hasAttribute("data-stitch-accordion")
@@ -1212,6 +1779,269 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
 """
 
 _INERT_PREFIXES = ("javascript:", "mailto:", "tel:", "data:", "blob:")
+
+
+def _is_raasta_app(app_name: str) -> bool:
+    return app_name == "raasta" or app_name.startswith("raasta")
+
+
+_RAASTA_MAP_PAGES = frozenset({"home", "dashboard"})
+_RAASTA_PUNE_CENTER = [73.8567, 18.5204]
+_RAASTA_MELBOURNE_CENTER = [144.971, -37.807]
+
+# Inline raster style — no style.json network fetch (main cause of 5s+ delay).
+_RAASTA_FAST_MAP_STYLE: dict = {
+    "version": 8,
+    "sources": {
+        "osm": {
+            "type": "raster",
+            "tiles": ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+            "tileSize": 256,
+            "maxzoom": 19,
+        }
+    },
+    "layers": [{"id": "osm", "type": "raster", "source": "osm"}],
+}
+
+_RAASTA_MAP_LAYOUT_CSS = """\
+.maplibregl-map {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 320px !important;
+}
+.maplibregl-canvas,
+.maplibregl-map .maplibregl-canvas-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+@media (min-width: 768px) {
+  .raasta-map-panel { display: block !important; }
+}
+"""
+
+_RAASTA_PAGE_MAP_DEFAULTS: dict[str, dict] = {
+    "home": {"center": _RAASTA_PUNE_CENTER, "zoom": 11, "demo_markers": 0},
+    "dashboard": {"center": _RAASTA_MELBOURNE_CENTER, "zoom": 11.5, "demo_markers": 30},
+}
+
+
+def _raasta_demo_delivery_geojson(count: int, center: list[float]) -> dict:
+    import math
+
+    lng, lat = center[0], center[1]
+    features = []
+    for i in range(count):
+        angle = (i / max(count, 1)) * math.pi * 2
+        ring = 0.35 + (i % 5) * 0.13
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        lng + math.cos(angle) * 0.045 * ring,
+                        lat + math.sin(angle) * 0.032 * ring,
+                    ],
+                },
+                "properties": {"id": i + 1},
+            }
+        )
+    return {"type": "FeatureCollection", "features": features}
+
+
+def _raasta_stitch_map_states(slug: str, page_dir: Path | None, html: str) -> list[dict]:
+    """Rastaa-only: build map configs for stitch (inline style, no remote style.json)."""
+    states = load_map_state(page_dir)
+    if states and any(s.get("style") or s.get("geojsonSources") for s in states):
+        return states
+
+    page_default = _RAASTA_PAGE_MAP_DEFAULTS.get(slug)
+    if not page_default:
+        return []
+
+    count = max(1, html.count("maplibregl-map"))
+    out: list[dict] = []
+    for _ in range(count):
+        geojson_sources: list[dict] = []
+        if page_default.get("demo_markers"):
+            geojson_sources.append(
+                {
+                    "sourceId": "raasta-demo-deliveries",
+                    "data": _raasta_demo_delivery_geojson(
+                        int(page_default["demo_markers"]),
+                        page_default["center"],
+                    ),
+                }
+            )
+        out.append(
+            {
+                "center": list(page_default["center"]),
+                "zoom": page_default["zoom"],
+                "bearing": 0,
+                "pitch": 0,
+                "style": _RAASTA_FAST_MAP_STYLE,
+                "geojsonSources": geojson_sources,
+            }
+        )
+    return out
+
+
+def _inject_raasta_maps(soup: BeautifulSoup, to_root: str, slug: str, map_states: list[dict]) -> bool:
+    """Rastaa-only: inject map assets early in <head> for fast first paint."""
+    if not map_states:
+        return False
+
+    head = soup.head
+    body = soup.body
+    if not head or not body:
+        return False
+
+    body["data-raasta-page"] = slug
+
+    if not head.find("style", id="raasta-map-layout-css"):
+        style_tag = soup.new_tag("style", id="raasta-map-layout-css")
+        style_tag.string = _RAASTA_MAP_LAYOUT_CSS
+        head.append(style_tag)
+
+    js_rel = "vendor/maplibre/maplibre-gl.js"
+    css_rel = "vendor/maplibre/maplibre-gl.css"
+    js_src = f"{to_root}assets/{js_rel}"
+    css_href = f"{to_root}assets/{css_rel}"
+
+    if not head.find("link", href=lambda h: h and "maplibre-gl.css" in h):
+        preload = soup.new_tag("link", rel="preload", href=js_src)
+        preload["as"] = "script"
+        head.append(preload)
+        head.append(soup.new_tag("link", rel="stylesheet", href=css_href))
+
+    if not any(
+        "__RASTAA_MAPS__" in (tag.string or "")
+        for tag in head.find_all("script")
+    ):
+        data = json.dumps(map_states, ensure_ascii=True).replace("</", "<\\/")
+        cfg_tag = soup.new_tag("script")
+        cfg_tag.string = f"window.__RASTAA_MAPS__ = {data};"
+        head.append(cfg_tag)
+
+    if not head.find("script", src=lambda s: s and "maplibre-gl.js" in s):
+        ml = soup.new_tag("script", src=js_src)
+        head.append(ml)
+
+    maps_src = f"{to_root}raasta_maps.js"
+    if not body.find("script", src=lambda s: s and s.endswith("raasta_maps.js")):
+        body.append(soup.new_tag("script", src=maps_src))
+
+    return True
+
+
+def _unwire_raasta_weather_interaction(
+    soup: BeautifulSoup, configs: dict[str, dict]
+) -> None:
+    """Dashboard Weather is handled by raasta_ui.js — drop stitch interaction wiring."""
+    for btn in soup.find_all("button"):
+        text = btn.get_text(" ", strip=True)
+        if text != "Weather":
+            continue
+        ui_id = btn.get("data-stitch-ui-id")
+        if ui_id:
+            configs.pop(ui_id, None)
+            del btn["data-stitch-ui-id"]
+        btn["data-raasta-weather-toggle"] = ""
+        break
+
+
+def _extract_raasta_rider_modal_html(page_dir: Path) -> str:
+    """Pull the Add Rider overlay from the crawled interaction snapshot."""
+    ipath = page_dir / "interactions" / "003-add-driver" / "page.html"
+    if not ipath.is_file():
+        return ""
+    try:
+        soup = BeautifulSoup(ipath.read_text(encoding="utf-8"), "html.parser")
+    except Exception:
+        return ""
+    for div in soup.find_all("div"):
+        classes = div.get("class") or []
+        if isinstance(classes, str):
+            classes = classes.split()
+        cls = " ".join(classes)
+        if "fixed" in cls and "inset-0" in cls and "z-[10000]" in cls:
+            if "Add New Rider" not in div.get_text(" ", strip=True):
+                continue
+            if isinstance(div.get("class"), list):
+                div["class"] = [*div["class"], "raasta-rider-modal"]
+            else:
+                div["class"] = f"{div['class']} raasta-rider-modal"
+            return str(div)
+    return ""
+
+
+def _unwire_raasta_add_driver_interaction(
+    soup: BeautifulSoup, configs: dict[str, dict]
+) -> None:
+    """Riders Add Driver is handled in runtime.js — drop stitch interaction wiring."""
+    for btn in soup.find_all("button"):
+        if btn.get_text(" ", strip=True) != "Add Driver":
+            continue
+        ui_id = btn.get("data-stitch-ui-id")
+        if ui_id:
+            configs.pop(ui_id, None)
+            del btn["data-stitch-ui-id"]
+        btn["data-raasta-add-rider"] = ""
+        break
+
+
+def _inject_raasta_riders_page(
+    soup: BeautifulSoup, configs: dict[str, dict], page_dir: Path
+) -> None:
+    """Rastaa riders list: tag page + embed modal HTML for in-page Add Driver."""
+    body = soup.body
+    if not body:
+        return
+    body["data-raasta-page"] = "riders"
+    _unwire_raasta_add_driver_interaction(soup, configs)
+    modal_html = _extract_raasta_rider_modal_html(page_dir)
+    if not modal_html:
+        return
+    if body.find("script", id="raasta-rider-modal-tpl"):
+        return
+    script = soup.new_tag("script", id="raasta-rider-modal-tpl")
+    script.string = f"window.__RAASTA_RIDER_MODAL_HTML__ = {json.dumps(modal_html)};"
+    body.append(script)
+
+
+def _tag_raasta_riders_interaction_page(soup: BeautifulSoup) -> None:
+    """Tag the baked-in Add Rider overlay on the interaction snapshot page."""
+    body = soup.body
+    if body:
+        body["data-raasta-page"] = "riders"
+    for div in soup.find_all("div"):
+        classes = div.get("class") or []
+        if isinstance(classes, str):
+            classes = classes.split()
+        cls = " ".join(classes)
+        if "fixed" in cls and "inset-0" in cls and "z-[10000]" in cls:
+            if "Add New Rider" not in div.get_text(" ", strip=True):
+                continue
+            existing = div.get("class") or []
+            if isinstance(existing, str):
+                existing = existing.split()
+            if "raasta-rider-modal" not in existing:
+                div["class"] = [*existing, "raasta-rider-modal"]
+            break
+
+
+def _inject_raasta_ui(soup: BeautifulSoup, to_root: str, slug: str) -> None:
+    """Rastaa dashboard: load stitched raasta_ui.js (Trips flyout + weather filters)."""
+    body = soup.body
+    if not body:
+        return
+    body["data-raasta-page"] = slug
+    ui_src = f"{to_root}raasta_ui.js"
+    if body.find("script", src=lambda s: s and s.endswith("raasta_ui.js")):
+        return
+    body.append(soup.new_tag("script", src=ui_src))
+
 
 _ENTRY_TITLE_HINTS = ("dashboard",)
 _ENTRY_SLUG_HINTS = (
@@ -2618,8 +3448,12 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
                 score += 10
         if aria and el.get("aria-label") == aria:
             score += 25
-        if text and el.get_text(" ", strip=True) == text:
-            score += 20
+        if text:
+            el_text = el.get_text(" ", strip=True)
+            if el_text == text:
+                score += 20
+            else:
+                continue
         if name and el.get("name") == name:
             score += 15
         if role and el.get("role") == role:
@@ -2657,6 +3491,8 @@ def _wire_navigations(
             continue
         el = _find_trigger(soup, trigger, used) if trigger else None
         if el is None:
+            continue
+        if el.get("data-stitch-go"):
             continue
         used.add(id(el))
         rel = f"{to_root}{slug}/page.html"
@@ -3448,6 +4284,28 @@ def _process_html(
         print(f"[STITCH] Neutralized {likwid_forms} Likwid POST stage button(s) on {page_dir.name if page_dir else '?'}")
     if app_name == "likwid":
         _inject_browser_control_helper(soup)
+    if (
+        _is_raasta_app(app_name)
+        and page_dir is not None
+        and page_dir.name in _RAASTA_MAP_PAGES
+        and page_has_maplibre(html)
+    ):
+        slug = page_dir.name
+        map_states = _raasta_stitch_map_states(slug, page_dir, html)
+        if _inject_raasta_maps(soup, to_root, slug, map_states):
+            print(
+                f"[STITCH] Rastaa map enabled ({len(map_states)} map(s)) on {slug}"
+            )
+    if _is_raasta_app(app_name) and page_dir is not None and page_dir.name == "dashboard":
+        _unwire_raasta_weather_interaction(soup, configs)
+        _inject_raasta_ui(soup, to_root, "dashboard")
+        print("[STITCH] Rastaa dashboard UI enabled (Trips flyout + weather filters)")
+    if _is_raasta_app(app_name) and page_dir is not None:
+        if page_dir.name == "riders":
+            _inject_raasta_riders_page(soup, configs, page_dir)
+            print("[STITCH] Rastaa riders UI enabled (Add Driver modal + localStorage)")
+        elif page_dir.name == "003-add-driver" and page_dir.parent.name == "interactions":
+            _tag_raasta_riders_interaction_page(soup)
     _inject_runtime(
         soup,
         to_root,
@@ -3868,13 +4726,29 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             replica_js.read_text(encoding="utf-8"), encoding="utf-8"
         )
 
-    fonts_dir = stitched_dir / "assets" / "fonts"
-    fonts_dir.mkdir(parents=True, exist_ok=True)
-    css_dir = stitched_dir / "assets" / "css"
-    css_dir.mkdir(parents=True, exist_ok=True)
-    images_dir = stitched_dir / "assets" / "images"
-    images_dir.mkdir(parents=True, exist_ok=True)
-    css_cdn_dirs: dict[str, str] = {}
+    raasta_maps_js = Path(__file__).resolve().parent / "src" / "runtime" / "raasta_maps.js"
+    if _is_raasta_app(app_name) and raasta_maps_js.is_file():
+        (stitched_dir / "raasta_maps.js").write_text(
+            raasta_maps_js.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        print("[STITCH] Rastaa MapLibre replay layer enabled")
+
+    raasta_ui_js = Path(__file__).resolve().parent / "src" / "runtime" / "raasta_ui.js"
+    if _is_raasta_app(app_name) and raasta_ui_js.is_file():
+        (stitched_dir / "raasta_ui.js").write_text(
+            raasta_ui_js.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        print("[STITCH] Rastaa dashboard UI layer enabled")
+
+    stitched_assets = stitched_dir / "assets"
+    app_assets = get_assets_dir(app_name)
+    assets_copied = copy_assets_to_stitched(app_assets, stitched_assets)
+    if assets_copied:
+        print(f"[STITCH] Copied/updated {assets_copied} asset file(s) from crawl")
+    stitched_assets.mkdir(parents=True, exist_ok=True)
+    if _is_raasta_app(app_name):
+        ensure_maplibre_vendor_assets(stitched_assets)
+    assets_localized_total = 0
 
     navigation: dict[str, dict] = {}
     pages_done = 0
@@ -3908,9 +4782,17 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             likwid_flows=likwid_flows,
             app_name=app_name,
         )
-        new_html = _localize_hubspot_css(new_html, css_dir, to_root="../", css_cdn_dirs=css_cdn_dirs)
-        new_html = _localize_fonts(new_html, fonts_dir, to_root="../")
-        new_html = _localize_remote_images(new_html, images_dir, to_root="../")
+        new_html = rewire_asset_prefix(new_html, "../assets/")
+        new_html, asset_stats = localize_html_assets(
+            new_html,
+            urls.get(slug, ""),
+            stitched_assets,
+            "../assets/",
+            download_missing=True,
+        )
+        assets_localized_total += asset_stats.get("rewritten", 0) + asset_stats.get(
+            "downloaded", 0
+        )
         (out_dir / "page.html").write_text(new_html, encoding="utf-8")
         pages_done += 1
         accordions_total += accordions
@@ -3939,9 +4821,17 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 likwid_flows=likwid_flows,
                 app_name=app_name,
             )
-            new_ihtml = _localize_hubspot_css(new_ihtml, css_dir, to_root="../../../", css_cdn_dirs=css_cdn_dirs)
-            new_ihtml = _localize_fonts(new_ihtml, fonts_dir, to_root="../../../")
-            new_ihtml = _localize_remote_images(new_ihtml, images_dir, to_root="../../../")
+            new_ihtml = rewire_asset_prefix(new_ihtml, "../../../assets/")
+            new_ihtml, iasset_stats = localize_html_assets(
+                new_ihtml,
+                urls.get(slug, ""),
+                stitched_assets,
+                "../../../assets/",
+                download_missing=True,
+            )
+            assets_localized_total += iasset_stats.get("rewritten", 0) + iasset_stats.get(
+                "downloaded", 0
+            )
             pointer_events_fixed += ifixes[0]
             controls_restored += ifixes[1]
             dst.write_text(new_ihtml, encoding="utf-8")
@@ -3984,11 +4874,12 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
         _write_entry_redirect(stitched_dir, entry_slug)
         print(f"[STITCH] Entry page: {entry_slug}")
 
-    _localize_css_bundle_fonts(css_dir, css_cdn_dirs)
+    finalize_asset_tree(stitched_assets)
 
     print(
         f"[STITCH] Interaction fixes: {pointer_events_fixed} pointer-events:none removed, "
-        f"{controls_restored} disabled controls restored"
+        f"{controls_restored} disabled controls restored, "
+        f"{assets_localized_total} asset URL(s) localized"
     )
     print(f"[STITCH] Output: {stitched_dir.resolve()}")
     return {

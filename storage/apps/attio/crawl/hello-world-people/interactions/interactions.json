@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Comments",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/001-comments",
+    "relationship_file": "interactions/001-comments/relationship.json"
+  },
+  {
+    "label": "New Person",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/002-new-person",
+    "relationship_file": "interactions/002-new-person/relationship.json"
+  },
+  {
+    "label": "New Person",
+    "selector": "[data-crawl-id=\"24\"]",
+    "interaction_path": "interactions/003-new-person",
+    "relationship_file": "interactions/003-new-person/relationship.json"
+  },
+  {
+    "label": "Import / Export",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/004-import-export",
+    "relationship_file": "interactions/004-import-export/relationship.json"
+  },
+  {
+    "label": "Add list",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/005-add-list",
+    "relationship_file": "interactions/005-add-list/relationship.json"
+  },
+  {
+    "label": "New favorites folder",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/006-new-favorites-folder",
+    "relationship_file": "interactions/006-new-favorites-folder/relationship.json"
+  },
+  {
+    "label": "Add column",
+    "selector": "[data-crawl-id=\"25\"]",
+    "interaction_path": "interactions/007-add-column",
+    "relationship_file": "interactions/007-add-column/relationship.json"
+  }
+]

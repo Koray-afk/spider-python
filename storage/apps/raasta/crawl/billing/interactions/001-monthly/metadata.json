@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "Monthly",
+  "triggerId": "",
+  "triggerClass": "rounded-lg px-3 py-1.5 text-[12px] font-medium transition bg-white/[0.08] text-white",
+  "selector": "[data-crawl-id=\"8\"]",
+  "interactionType": "tab-switch",
+  "sourcePage": "billing",
+  "sourceUrl": "https://workspace.rastaa.ai/billing",
+  "beforeUrl": "https://workspace.rastaa.ai/billing",
+  "beforeTitle": "Rastaa",
+  "url": "https://workspace.rastaa.ai/billing",
+  "title": "Rastaa",
+  "resultPagePath": "billing/interactions/001-monthly",
+  "captured_at": "2026-07-07T09:11:05.408860+00:00"
+}

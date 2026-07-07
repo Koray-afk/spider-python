@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Quick actions\n\u2318K",
+    "tag_name": "button",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "target_url": "https://app.attio.com/hello-world/home",
+    "target_slug": "hello-world-home",
+    "target_page": "../hello-world-home/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Quick actions\n\u2318K",
+      "id": "",
+      "class_name": "sc-hJxyNS sc-hRBdqa iVkgaU bBcBOI",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/nav[1]/div[2]/button[1]",
+      "outer_html": "<button data-full-width=\"true\" class=\"sc-hJxyNS sc-hRBdqa iVkgaU bBcBOI\" data-crawl-id=\"3\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"sc-gpCDyN JTCXd\"><rect x=\"2\" y=\"1\" width=\"10\" height=\"9\" rx=\"2.5\" stroke=\"rgba(0, 0, 0, 0.63)\" stroke-width=\"1.1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"sc-etqWSH EZuuQ\"></rect><rect x=\"2\" y=\"1\" width=\"10\" height=\"9\" rx=\"2.5\" stroke=\"rgba(0, 0, 0, 0.63)\" stroke-width=\"1.1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"#FBFBFB\" data-active=\"false\" class=\"sc-djgZwR dwctQN\"></rect><path d=\"M5.33333 3.1665V7.83317M5.33333 6.1665L6.38596 5.1665M6.38596 5.1665L8.49123 3.1665M6.38596 5.1665L8.66667 7.83317\" stroke=\"rgba(0, 0, 0, 0.63)\" stroke-width=\"1.1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-active=\"false\" class=\"sc-gHrfUk kDshSS\"></path></svg><div class=\"_1fxkonr0 _1fxkonr1 _1fxkonr7 _1fxkonri _1fxkonrn _1fxkonrt _1fxkonrr _1fxkonrx _1fxkonr1c\">Quick actions</div><div class=\"sc-hhosPf dLhDcA\"><kbd data-size=\"20\" data-multi=\"true\" data-variant=\"default\" class=\"sc-khnOGs fbAJBz\">\u2318k</kbd></div></button>"
+    }
+  }
+]

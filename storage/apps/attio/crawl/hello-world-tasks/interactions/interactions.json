@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Add list",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/001-add-list",
+    "relationship_file": "interactions/001-add-list/relationship.json"
+  },
+  {
+    "label": "New task",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/002-new-task",
+    "relationship_file": "interactions/002-new-task/relationship.json"
+  },
+  {
+    "label": "New favorites folder",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/003-new-favorites-folder",
+    "relationship_file": "interactions/003-new-favorites-folder/relationship.json"
+  },
+  {
+    "label": "/",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/005-interaction",
+    "relationship_file": "interactions/005-interaction/relationship.json"
+  },
+  {
+    "label": "Sorted by Due date",
+    "selector": "[data-crawl-id=\"14\"]",
+    "interaction_path": "interactions/006-sorted-by-due-date",
+    "relationship_file": "interactions/006-sorted-by-due-date/relationship.json"
+  },
+  {
+    "label": "Filter",
+    "selector": "[data-crawl-id=\"15\"]",
+    "interaction_path": "interactions/007-filter",
+    "relationship_file": "interactions/007-filter/relationship.json"
+  },
+  {
+    "label": "Filter",
+    "selector": "[data-crawl-id=\"21\"]",
+    "interaction_path": "interactions/008-filter",
+    "relationship_file": "interactions/008-filter/relationship.json"
+  },
+  {
+    "label": "H\nHello World",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/009-h-hello-world",
+    "relationship_file": "interactions/009-h-hello-world/relationship.json"
+  },
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/010-collapse-sidebar",
+    "relationship_file": "interactions/010-collapse-sidebar/relationship.json"
+  },
+  {
+    "label": "Ask Attio",
+    "selector": "[data-crawl-id=\"13\"]",
+    "interaction_path": "interactions/016-ask-attio",
+    "relationship_file": "interactions/016-ask-attio/relationship.json"
+  },
+  {
+    "label": "View settings",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/017-view-settings",
+    "relationship_file": "interactions/017-view-settings/relationship.json"
+  },
+  {
+    "label": "Task options",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/019-task-options",
+    "relationship_file": "interactions/019-task-options/relationship.json"
+  }
+]

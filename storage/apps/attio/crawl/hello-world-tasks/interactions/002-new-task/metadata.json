@@ -1,0 +1,15 @@
+{
+  "triggerLabel": "New task",
+  "triggerId": "",
+  "triggerClass": "sc-nXGzg koRIpI",
+  "selector": "[data-crawl-id=\"17\"]",
+  "interactionType": "modal",
+  "sourcePage": "hello-world-tasks",
+  "sourceUrl": "https://app.attio.com/hello-world/tasks",
+  "beforeUrl": "https://app.attio.com/hello-world/tasks",
+  "beforeTitle": "Tasks - Attio",
+  "url": "https://app.attio.com/hello-world/tasks?command-menu-page=task&id=new",
+  "title": "Tasks - Attio",
+  "resultPagePath": "hello-world-tasks/interactions/002-new-task",
+  "captured_at": "2026-07-06T18:05:51.021183+00:00"
+}

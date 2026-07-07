@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Quick actions\n\u2318K",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"3\\\"]\").first\n    - locator resolved to <button data-crawl-id=\"3\" data-full-width=\"true\" class=\"sc-hJxyNS sc-hRBdqa iVkgaU bBcBOI\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Remove favorite",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"6\\\"]\").first\n    - locator resolved to <button type=\"button\" aria-busy=\"false\" data-crawl-id=\"6\" data-state=\"closed\" class=\"sc-nXGzg gvaYSc\" aria-label=\"Remove favorite\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Record options",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"7\\\"]\").first\n    - locator resolved to <button type=\"button\" id=\"radix-_r_2e_\" data-crawl-id=\"7\" data-state=\"closed\" data-visible=\"false\" aria-haspopup=\"menu\" aria-expanded=\"false\" class=\"sc-jKUoKL bUlinV\" aria-label=\"Record options\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "List options",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"8\\\"]\").first\n    - locator resolved to <button type=\"button\" id=\"radix-_r_35_\" data-crawl-id=\"8\" data-state=\"closed\" data-visible=\"false\" aria-haspopup=\"menu\" aria-expanded=\"false\" class=\"sc-jKUoKL bUlinV\" aria-label=\"List options\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Keep Pro",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"11\\\"]\").first\n    - locator resolved to <button type=\"button\" aria-busy=\"false\" data-crawl-id=\"11\" class=\"sc-nXGzg eHkkpr\">\u2026</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+  },
+  {
+    "label": "Untitled note\nAirbnb",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "div",
+    "status": "not_scraped",
+    "reason": "click_failed",
+    "detail": "Locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator(\"[data-crawl-id=\\\"21\\\"]\").first\n    - locator resolved to <div tabindex=\"0\" role=\"button\" data-crawl-id=\"21\" aria-disabled=\"false\" data-dragging=\"false\" aria-roledescription=\"sortable\" data-attio-item-state=\"inactive\" aria-describedby=\"DndDescribedBy-0\" data-navigable-list-item-active=\"false\" class=\"sc-duwuwo kVcrBj sc-bBguhg krHJyc\">\u2026</div>\n  - attempting click action\n    - scrolling into view if needed\n    - do"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Monthly",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/001-monthly",
+    "relationship_file": "interactions/001-monthly/relationship.json"
+  },
+  {
+    "label": "YearlySave ~20%",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/002-yearlysave-20",
+    "relationship_file": "interactions/002-yearlysave-20/relationship.json"
+  },
+  {
+    "label": "Add Funds",
+    "selector": "[data-crawl-id=\"7\"]",
+    "interaction_path": "interactions/005-add-funds",
+    "relationship_file": "interactions/005-add-funds/relationship.json"
+  }
+]

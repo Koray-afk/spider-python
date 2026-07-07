@@ -1,0 +1,86 @@
+[
+  {
+    "label": "Monthly",
+    "id": "",
+    "className": "rounded-lg px-3 py-1.5 text-[12px] font-medium transition bg-white/[0.08] text-white",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Monthly",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "YearlySave ~20%",
+    "id": "",
+    "className": "rounded-lg px-3 py-1.5 text-[12px] font-medium transition text-white/40 hover:text-white/60",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "YearlySave ~20%",
+    "ax_role": "button",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Dashboard",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Dashboard",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "History",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "History",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Add Funds",
+    "id": "",
+    "className": "flex items-center gap-1 rounded-lg border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-[11px] font-medium text-amber-400 hover:bg-amber-500/20 transition",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Add Funds",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Planning",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Planning",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Riders",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Riders",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Billing",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Billing",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Calls\n0",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/001-calls-0",
+    "relationship_file": "interactions/001-calls-0/relationship.json"
+  },
+  {
+    "label": "/",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/003-interaction",
+    "relationship_file": "interactions/003-interaction/relationship.json"
+  },
+  {
+    "label": "New favorites folder",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/004-new-favorites-folder",
+    "relationship_file": "interactions/004-new-favorites-folder/relationship.json"
+  },
+  {
+    "label": "Add list",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/005-add-list",
+    "relationship_file": "interactions/005-add-list/relationship.json"
+  },
+  {
+    "label": "Sorted by Date",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/007-sorted-by-date",
+    "relationship_file": "interactions/007-sorted-by-date/relationship.json"
+  },
+  {
+    "label": "Filter",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/008-filter",
+    "relationship_file": "interactions/008-filter/relationship.json"
+  },
+  {
+    "label": "Filter",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/009-filter",
+    "relationship_file": "interactions/009-filter/relationship.json"
+  },
+  {
+    "label": "H\nHello World",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/010-h-hello-world",
+    "relationship_file": "interactions/010-h-hello-world/relationship.json"
+  },
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/011-collapse-sidebar",
+    "relationship_file": "interactions/011-collapse-sidebar/relationship.json"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "source_page": "hello-world-tasks",
+  "source_url": "https://app.attio.com/hello-world/tasks",
+  "source_title": "Tasks - Attio",
+  "trigger": {
+    "tag_name": "button",
+    "text": "",
+    "id": "radix-_r_6h_",
+    "class_name": "sc-nXGzg epXnPo sc-hdBpBO klNrSN",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "Task options",
+    "selector": "#radix-_r_6h_",
+    "crawl_selector": "[data-crawl-id=\"19\"]",
+    "xpath": "//*[@id=\"radix-_r_6h_\"]",
+    "outer_html": "<button type=\"button\" aria-label=\"Task options\" aria-busy=\"false\" data-is-hovering=\"true\" tabindex=\"-1\" id=\"radix-_r_6h_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" class=\"sc-nXGzg epXnPo sc-hdBpBO klNrSN\" data-crawl-id=\"19\"><div data-is-small-ghost=\"false\" class=\"sc-kKZOal jvgEBh\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz sc-ixiStU iniCoc\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/e1a4569cd56a6b40.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></div></button>"
+  },
+  "target": {
+    "url": "https://app.attio.com/hello-world/tasks",
+    "slug": "hello-world-tasks",
+    "title": "Tasks - Attio"
+  },
+  "interaction_type": "dropdown",
+  "original_element_html": "<button type=\"button\" aria-label=\"Task options\" aria-busy=\"false\" data-is-hovering=\"true\" tabindex=\"-1\" id=\"radix-_r_6h_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" class=\"sc-nXGzg epXnPo sc-hdBpBO klNrSN\" data-crawl-id=\"19\"><div data-is-small-ghost=\"false\" class=\"sc-kKZOal jvgEBh\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz sc-ixiStU iniCoc\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/e1a4569cd56a6b40.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></div></button>",
+  "trigger_label": "Task options",
+  "trigger_id": "radix-_r_9j_",
+  "trigger_class": "sc-nXGzg epXnPo sc-hdBpBO klNrSN",
+  "target_url": "https://app.attio.com/hello-world/tasks",
+  "target_slug": "hello-world-tasks",
+  "target_title": "Tasks - Attio"
+}

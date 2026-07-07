@@ -1,0 +1,258 @@
+[
+  {
+    "label": "Comments",
+    "id": "",
+    "className": "sc-nXGzg epXnPo",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "ax_name": "Comments",
+    "ax_role": "button",
+    "region": "banner",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "New Person",
+    "id": "",
+    "className": "sc-nXGzg koRIpI",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "ax_name": "New Person",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Person",
+    "id": "",
+    "className": "sc-nXGzg epXnPo sc-hoYIRu iciWDY",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "ax_name": "New Person",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Import / Export",
+    "id": "radix-_r_fc_",
+    "className": "sc-nXGzg kOzSVL",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "ax_name": "Import / Export",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add list",
+    "id": "",
+    "className": "sc-jKUoKL bUlinV",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "Add list",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New favorites folder",
+    "id": "",
+    "className": "sc-jKUoKL bUlinV",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "New favorites folder",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add column",
+    "id": "",
+    "className": "sc-nXGzg kdlBQV sc-gkzKBC fXygiA",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "ax_name": "Add column",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New chat",
+    "id": "",
+    "className": "sc-kniiuh liSXMZ",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "New chat",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add calculation",
+    "id": "",
+    "className": "sc-ZeTLf iuRKMz",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "ax_name": "Add calculation",
+    "ax_role": "div",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "/",
+    "id": "",
+    "className": "sc-hJxyNS iVkgaU",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "/",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sorted by\nLast email interaction",
+    "id": "",
+    "className": "sc-hihtOB epRoEp",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "ax_name": "Sorted by\nLast email interaction",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filter",
+    "id": "",
+    "className": "sc-hihtOB epRoEp",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "ax_name": "Filter",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sorted by\nLast email interaction",
+    "id": "",
+    "className": "",
+    "selector": "[data-crawl-id=\"28\"]",
+    "elementType": "div",
+    "ax_name": "Sorted by\nLast email interaction",
+    "ax_role": "div",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Last calendar interaction",
+    "id": "radix-_r_gb_",
+    "className": "_1k6k0o30",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "div",
+    "ax_name": "Last calendar interaction",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Last email interaction",
+    "id": "radix-_r_gg_",
+    "className": "_1k6k0o30",
+    "selector": "[data-crawl-id=\"30\"]",
+    "elementType": "div",
+    "ax_name": "Last email interaction",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Connection strength",
+    "id": "radix-_r_gl_",
+    "className": "_1k6k0o30",
+    "selector": "[data-crawl-id=\"31\"]",
+    "elementType": "div",
+    "ax_name": "Connection strength",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "H\nHello World",
+    "id": "radix-_r_au_",
+    "className": "sc-hGXtya hqGTWo",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "H\nHello World",
+    "ax_role": "button",
+    "region": "navigation",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Collapse sidebar",
+    "id": "",
+    "className": "sc-kViKHC bAywJq",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Collapse sidebar",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quick actions\n\u2318K",
+    "id": "",
+    "className": "sc-hJxyNS sc-hRBdqa iVkgaU bBcBOI",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Quick actions\n\u2318K",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Remove favorite",
+    "id": "",
+    "className": "sc-nXGzg gvaYSc",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Remove favorite",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  }
+]

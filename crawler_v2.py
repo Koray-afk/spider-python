@@ -26,6 +26,14 @@ from storage.storage_manager import (
     get_sitemap_path,
 )
 
+from stitch_maps import (
+    capture_maplibre_states,
+    save_map_state,
+    uses_maplibre_capture,
+    wait_for_maplibre,
+)
+from asset_localizer import assets_url_prefix, localize_html_assets, resolve_assets_dir
+
 _SCRIPTS = json.loads(Path(__file__).with_name("crawler_scripts.json").read_text(encoding="utf-8"))
 DISCOVER_JS = _SCRIPTS["discover"]
 CLASSIFY_JS = _SCRIPTS["classify"]
@@ -79,6 +87,51 @@ _STRIPE_SIDEBAR_LINKS_JS = """() => {
     out.push({ href, label });
   }
   return out;
+}"""
+
+_RASTAA_SIDEBAR_BUTTONS_JS = """() => {
+  const aside = document.querySelector('aside');
+  if (!aside) return [];
+  const out = [];
+  function labelFromButton(btn) {
+    const span = btn.querySelector('span');
+    return (span ? span.textContent : btn.innerText || btn.getAttribute('aria-label') || '').trim();
+  }
+  const nav = aside.querySelector('nav');
+  if (nav) {
+    nav.querySelectorAll('button[type="button"]').forEach(function(btn, i) {
+      const label = labelFromButton(btn);
+      if (label) out.push({ label: label, kind: 'nav', index: i });
+    });
+  }
+  let asideIdx = 0;
+  aside.querySelectorAll(':scope > button[type="button"]').forEach(function(btn) {
+    if (btn.classList.contains('mb-10')) return;
+    const label = labelFromButton(btn);
+    if (label) out.push({ label: label, kind: 'aside', index: asideIdx });
+    asideIdx += 1;
+  });
+  return out;
+}"""
+
+_RASTAA_SIDEBAR_CLICK_JS = """(spec) => {
+  const aside = document.querySelector('aside');
+  if (!aside || !spec) return false;
+  let btn;
+  if (spec.kind === 'nav') {
+    const nav = aside.querySelector('nav');
+    if (!nav) return false;
+    btn = nav.querySelectorAll('button[type="button"]')[spec.index];
+  } else {
+    const btns = [];
+    aside.querySelectorAll(':scope > button[type="button"]').forEach(function(b) {
+      if (!b.classList.contains('mb-10')) btns.push(b);
+    });
+    btn = btns[spec.index];
+  }
+  if (!btn) return false;
+  btn.click();
+  return true;
 }"""
 
 MUTATION_OBSERVER_SETUP_JS = """() => {
@@ -254,9 +307,13 @@ def _inline_hubspot_styled_css(page, html: str) -> str:
     return _inline_cssom_styles(page, html, style_id="hs-captured-styles")
 
 
+def _inline_attio_styled_css(page, html: str) -> str:
+    return _inline_cssom_styles(page, html, style_id="attio-captured-styles")
+
+
 def _uses_cssom_capture(page_url: str) -> bool:
     u = page_url.lower()
-    return "hubspot" in u or "dashboard.stripe.com" in u
+    return "hubspot" in u or "dashboard.stripe.com" in u or "app.attio.com" in u
 
 
 _BAKE_SELECTORS = [
@@ -593,8 +650,11 @@ def static_snapshot_html(html: str, page_url: str, *, page=None) -> str:
     are stripped from the snapshot.
     """
     if page is not None and _uses_cssom_capture(page_url):
-        if "hubspot" in page_url.lower():
+        u = page_url.lower()
+        if "hubspot" in u:
             html = _inline_hubspot_styled_css(page, html)
+        elif "app.attio.com" in u:
+            html = _inline_attio_styled_css(page, html)
         else:
             html = _inline_cssom_styles(page, html, style_id="stripe-captured-styles")
     html = make_assets_absolute(html, page_url, include_js=False)
@@ -933,8 +993,29 @@ def save_page_capture(
     page_dir.mkdir(parents=True, exist_ok=True)
 
     print("[PAGE] Saving HTML")
+    if uses_maplibre_capture(page.url):
+        if wait_for_maplibre(page):
+            map_states = capture_maplibre_states(page)
+            if map_states:
+                save_map_state(page_dir, map_states)
+                print(f"[MAP] Captured {len(map_states)} map state(s)")
+        else:
+            print("[MAP] Map not ready before capture")
     _prepare_snapshot_dom(page, page.url)
     html = static_snapshot_html(page.content(), page.url, page=page)
+    try:
+        assets_dir = resolve_assets_dir(page_dir)
+        prefix = assets_url_prefix(page_dir, assets_dir)
+        html, asset_stats = localize_html_assets(
+            html, page.url, assets_dir, prefix, download_missing=True
+        )
+        if asset_stats.get("downloaded") or asset_stats.get("rewritten"):
+            print(
+                f"[ASSETS] page assets: {asset_stats.get('downloaded', 0)} new, "
+                f"{asset_stats.get('rewritten', 0)} rewritten"
+            )
+    except Exception as exc:
+        print(f"[ASSETS] Page asset localize skipped: {exc}")
     (page_dir / "page.html").write_text(html, encoding="utf-8")
 
     print("[PAGE] Saving Screenshot")
@@ -976,8 +1057,27 @@ def save_interaction_capture(
     rel_folder = str(folder.relative_to(crawl_root))
 
     print("[PAGE] Saving HTML")
+    if uses_maplibre_capture(page.url):
+        if wait_for_maplibre(page):
+            map_states = capture_maplibre_states(page)
+            if map_states:
+                save_map_state(folder, map_states)
+                print(f"[MAP] Captured {len(map_states)} map state(s)")
     _prepare_snapshot_dom(page, page.url)
     html = static_snapshot_html(page.content(), page.url, page=page)
+    try:
+        assets_dir = resolve_assets_dir(folder)
+        prefix = assets_url_prefix(folder, assets_dir)
+        html, asset_stats = localize_html_assets(
+            html, page.url, assets_dir, prefix, download_missing=True
+        )
+        if asset_stats.get("downloaded") or asset_stats.get("rewritten"):
+            print(
+                f"[ASSETS] interaction assets: {asset_stats.get('downloaded', 0)} new, "
+                f"{asset_stats.get('rewritten', 0)} rewritten"
+            )
+    except Exception as exc:
+        print(f"[ASSETS] Interaction asset localize skipped: {exc}")
     (folder / "page.html").write_text(html, encoding="utf-8")
 
     print("[PAGE] Saving Screenshot")
@@ -1123,9 +1223,65 @@ def collect_links(page, page_url: str, base_domain: str) -> list[str]:
     return links
 
 
+def _collect_rastaa_sidebar_links(page, page_url: str, base_domain: str) -> list[dict]:
+    """Click each Rastaa sidebar button and record the real post-click URL.
+
+    Rastaa uses path-based client routing (Planning → /, others → /dashboard, etc.)
+    with <button> nav — not hash routes or <a href> links.
+    """
+    try:
+        buttons = page.evaluate(_RASTAA_SIDEBAR_BUTTONS_JS) or []
+    except Exception:
+        return []
+    if not buttons:
+        return []
+
+    start_url = normalize_url(page_url or page.url)
+    out: list[dict] = []
+    seen: set[str] = set()
+
+    for spec in buttons:
+        label = (spec.get("label") or "").strip()
+        if not label:
+            continue
+        try:
+            page.goto(start_url, wait_until="domcontentloaded", timeout=60000)
+            page.wait_for_timeout(500)
+            _scroll_page_for_discovery(page)
+            clicked = page.evaluate(_RASTAA_SIDEBAR_CLICK_JS, spec)
+            if not clicked:
+                print(f"[BFS] Rastaa sidebar: could not click {label!r}")
+                continue
+            page.wait_for_timeout(WAIT_AFTER_CLICK_MS)
+            try:
+                page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+            after = normalize_url(page.url)
+            p = urlparse(after)
+            if p.netloc and p.netloc != base_domain:
+                continue
+            if after in seen:
+                continue
+            seen.add(after)
+            out.append({"url": after, "label": label})
+            print(f"[BFS] Rastaa sidebar: {label!r} → {after}")
+        except Exception as exc:
+            print(f"[BFS] Rastaa sidebar click failed ({label!r}): {exc}")
+
+    try:
+        page.goto(start_url, wait_until="domcontentloaded", timeout=60000)
+        page.wait_for_timeout(300)
+    except Exception:
+        pass
+    return out
+
+
 def collect_sidebar_links(page, page_url: str, base_domain: str) -> list[dict]:
     """Left-nav module links in DOM order (skips quick-add /new shortcuts)."""
     url_lower = (page_url or "").lower()
+    if "rastaa.ai" in url_lower:
+        return _collect_rastaa_sidebar_links(page, page_url, base_domain)
     if "dashboard.stripe.com" in url_lower:
         js = _STRIPE_SIDEBAR_LINKS_JS
     elif "likwidai.com" in url_lower:
@@ -1301,8 +1457,8 @@ def detect_tab_switch(
     return {_key(t) for t in before_tabs} != {_key(t) for t in after_tabs}
 
 
-def discover_with_scroll(page) -> list[dict]:
-    """Scroll through the page to trigger lazy rendering, then discover all triggers."""
+def _scroll_page_for_discovery(page) -> None:
+    """Scroll through the page to trigger lazy rendering before discovery/replay."""
     try:
         h = page.evaluate("() => document.body.scrollHeight") or 0
         for pct in [0.3, 0.6, 1.0]:
@@ -1312,6 +1468,11 @@ def discover_with_scroll(page) -> list[dict]:
         page.wait_for_timeout(500)
     except Exception:
         pass
+
+
+def discover_with_scroll(page) -> list[dict]:
+    """Scroll through the page to trigger lazy rendering, then discover all triggers."""
+    _scroll_page_for_discovery(page)
     return page.evaluate(DISCOVER_JS)
 
 
@@ -1378,6 +1539,7 @@ def crawl_interactions(
                     wait_ms=wait_after_load_ms,
                     wait_for_stripe_content=wait_for_stripe_content,
                 )
+                _scroll_page_for_discovery(ipage)
                 ipage.evaluate(DISCOVER_JS)
 
                 locator = ipage.locator(selector).first
@@ -1771,14 +1933,26 @@ def bfs_crawl(
             if sidebar_first and not sidebar_discovered:
                 nav_items = collect_sidebar_links(page, page.url, base_domain)
                 if nav_items:
-                    has_dashboard = any(
-                        "home/dashboard" in _route_fragment(n["url"]) for n in nav_items
-                    )
+                    if hash_routes:
+                        has_dashboard = any(
+                            "home/dashboard" in _route_fragment(n["url"]) for n in nav_items
+                        )
+                    else:
+                        has_dashboard = any(
+                            urlparse(n["url"]).path.rstrip("/").endswith("/dashboard")
+                            for n in nav_items
+                        )
                     print(f"[BFS] Sidebar modules (in order): {len(nav_items)}")
                     order_urls: list[str] = []
                     for nav in nav_items:
                         link = nav["url"]
-                        if has_dashboard and _is_bare_home(link, hash_routes=hash_routes):
+                        # Zoho-style hash SPAs: skip bare home when dashboard exists.
+                        # Path SPAs (Rastaa): Planning is / and must stay in the queue.
+                        if (
+                            hash_routes
+                            and has_dashboard
+                            and _is_bare_home(link, hash_routes=hash_routes)
+                        ):
                             print(f"    · skip duplicate home: {link}")
                             continue
                         label = nav.get("label") or ""
@@ -2133,6 +2307,7 @@ def run_interaction_pass(
     redo_depth2_interactions: bool = False,
     redo_all_interactions: bool = False,
     workers: int = 1,
+    ixp_headless: bool = True,
 ) -> dict:
     """Phase 2 of a hybrid crawl: run interactions on all BFS-discovered pages.
 
@@ -2224,6 +2399,7 @@ def run_interaction_pass(
             "ax_max_candidates_per_page": ax_max_candidates_per_page,
             "ax_skip_grid_roles": ax_skip_grid_roles,
             "wait_for_stripe_content": wait_for_stripe_content,
+            "ixp_headless": ixp_headless,
         }
 
     def _run_parallel_batch(tasks: list[dict]) -> list[str]:
@@ -2243,7 +2419,7 @@ def run_interaction_pass(
                         "url": t["url"],
                         "crawl_root": str(crawl_root),
                         "auth_file": auth_path,
-                        "headless": True,
+                        "headless": opts.get("ixp_headless", True),
                         "save_page_if_missing": t.get("save_page_if_missing", False),
                         "opts": opts,
                     },
@@ -2492,6 +2668,7 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
                     redo_depth2_interactions=bool(cfg.get("crawl_redo_depth2_interactions", False)),
                     redo_all_interactions=bool(cfg.get("crawl_redo_interactions", False)),
                     workers=int(cfg.get("crawl_workers", 1)),
+                    ixp_headless=bool(cfg.get("crawl_ixp_headless", True)),
                 )
 
             if hybrid_ckpt_path.exists():
@@ -2584,6 +2761,7 @@ def crawl_interaction_pass(app_name: str, cfg: dict) -> dict:
             redo_depth2_interactions=bool(cfg.get("crawl_redo_depth2_interactions", False)),
             redo_all_interactions=bool(cfg.get("crawl_redo_interactions", False)),
             workers=int(cfg.get("crawl_workers", 1)),
+            ixp_headless=bool(cfg.get("crawl_ixp_headless", False)),
         )
         browser.close()
     return {

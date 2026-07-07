@@ -1,0 +1,34 @@
+{
+  "source_page": "home",
+  "source_url": "https://workspace.rastaa.ai",
+  "source_title": "Rastaa",
+  "trigger": {
+    "tag_name": "button",
+    "text": "\ud83c\uddfa\ud83c\uddf8 New York\ncached\n\nManhattan grid, dense last-mile",
+    "id": "",
+    "class_name": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#root > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"14\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]",
+    "outer_html": "<button class=\"group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50\" data-crawl-id=\"14\"><div class=\"flex items-center justify-between\"><span class=\"font-medium text-gray-200\">\ud83c\uddfa\ud83c\uddf8 New York</span><span class=\"text-[9px] text-emerald-500\">cached</span></div><p class=\"mt-0.5 text-[10px] text-gray-600 group-hover:text-gray-500\">Manhattan grid, dense last-mile</p></button>"
+  },
+  "target": {
+    "url": "https://workspace.rastaa.ai/",
+    "slug": "home",
+    "title": "Rastaa"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50\" data-crawl-id=\"14\"><div class=\"flex items-center justify-between\"><span class=\"font-medium text-gray-200\">\ud83c\uddfa\ud83c\uddf8 New York</span><span class=\"text-[9px] text-emerald-500\">cached</span></div><p class=\"mt-0.5 text-[10px] text-gray-600 group-hover:text-gray-500\">Manhattan grid, dense last-mile</p></button>",
+  "trigger_label": "\ud83c\uddfa\ud83c\uddf8 New York\ncached\n\nManhattan grid, dense last-mile",
+  "trigger_id": "",
+  "trigger_class": "group relative rounded-lg border px-3 py-2 text-left text-xs transition border-[var(--card-border)] bg-[var(--card-bg)] hover:border-white/20 hover:bg-[var(--card-bg-hover)] disabled:opacity-50",
+  "target_url": "https://workspace.rastaa.ai/",
+  "target_slug": "home",
+  "target_title": "Rastaa"
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Dashboard",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Dashboard",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "History",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "History",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Add Driver",
+    "id": "",
+    "className": "flex items-center gap-2 rounded-xl bg-accent/90 hover:bg-accent px-4 py-2 text-[13px] font-medium text-white transition",
+    "selector": "[data-crawl-id=\"7\"]",
+    "elementType": "button",
+    "ax_name": "Add Driver",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Planning",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Planning",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Riders",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"4\"]",
+    "elementType": "button",
+    "ax_name": "Riders",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Billing",
+    "id": "",
+    "className": "flex flex-col items-center gap-2.5",
+    "selector": "[data-crawl-id=\"6\"]",
+    "elementType": "button",
+    "ax_name": "Billing",
+    "ax_role": "button",
+    "llm_type": "navigation"
+  }
+]

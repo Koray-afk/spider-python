@@ -1,0 +1,244 @@
+[
+  {
+    "label": "Collapse sidebar",
+    "id": "",
+    "className": "sc-kViKHC bAywJq",
+    "selector": "[data-crawl-id=\"2\"]",
+    "elementType": "button",
+    "ax_name": "Collapse sidebar",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Collapse columns",
+    "id": "",
+    "className": "sc-hbvCEB iHxGkz",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "ax_name": "Collapse columns",
+    "ax_role": "radio",
+    "region": "main",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Expand columns",
+    "id": "",
+    "className": "sc-hbvCEB iHxGkz",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "ax_name": "Expand columns",
+    "ax_role": "radio",
+    "region": "main",
+    "ax_states": [
+      "checked"
+    ],
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Collapse cards",
+    "id": "",
+    "className": "sc-hbvCEB iHxGkz",
+    "selector": "[data-crawl-id=\"25\"]",
+    "elementType": "button",
+    "ax_name": "Collapse cards",
+    "ax_role": "radio",
+    "region": "main",
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Expand cards",
+    "id": "",
+    "className": "sc-hbvCEB iHxGkz",
+    "selector": "[data-crawl-id=\"26\"]",
+    "elementType": "button",
+    "ax_name": "Expand cards",
+    "ax_role": "radio",
+    "region": "main",
+    "ax_states": [
+      "checked"
+    ],
+    "llm_type": "tab_switch"
+  },
+  {
+    "label": "Comments",
+    "id": "",
+    "className": "sc-nXGzg epXnPo",
+    "selector": "[data-crawl-id=\"13\"]",
+    "elementType": "button",
+    "ax_name": "Comments",
+    "ax_role": "button",
+    "region": "banner",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New favorites folder",
+    "id": "",
+    "className": "sc-jKUoKL bUlinV",
+    "selector": "[data-crawl-id=\"5\"]",
+    "elementType": "button",
+    "ax_name": "New favorites folder",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add list",
+    "id": "",
+    "className": "sc-jKUoKL bUlinV",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "Add list",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New chat",
+    "id": "",
+    "className": "sc-kniiuh liSXMZ",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "New chat",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Import / Export",
+    "id": "radix-_r_bm_",
+    "className": "sc-nXGzg kOzSVL",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "ax_name": "Import / Export",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "New Deal",
+    "id": "",
+    "className": "sc-nXGzg koRIpI",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "ax_name": "New Deal",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Add stage",
+    "id": "",
+    "className": "_1dgz18u0",
+    "selector": "[data-crawl-id=\"29\"]",
+    "elementType": "button",
+    "ax_name": "Add stage",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Lead\n0\nNew Deal",
+    "id": "",
+    "className": "xcu0812",
+    "selector": "[data-crawl-id=\"37\"]",
+    "elementType": "div",
+    "ax_name": "Lead\n0\nNew Deal",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Sorted by\nCreated at",
+    "id": "",
+    "className": "sc-hihtOB epRoEp",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "ax_name": "Sorted by\nCreated at",
+    "ax_role": "button",
+    "region": "main",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Filter",
+    "id": "",
+    "className": "sc-hihtOB epRoEp",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "ax_name": "Filter",
+    "ax_role": "button",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Lead\n0",
+    "id": "",
+    "className": "sc-gujKlf dNNwZQ _1luvkv97",
+    "selector": "[data-crawl-id=\"32\"]",
+    "elementType": "div",
+    "ax_name": "Lead\n0",
+    "ax_role": "div",
+    "region": "main",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "H\nHello World",
+    "id": "radix-_r_58_",
+    "className": "sc-hGXtya hqGTWo",
+    "selector": "[data-crawl-id=\"1\"]",
+    "elementType": "button",
+    "ax_name": "H\nHello World",
+    "ax_role": "button",
+    "region": "navigation",
+    "ax_states": [
+      "collapsed",
+      "haspopup"
+    ],
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Quick actions\n\u2318K",
+    "id": "",
+    "className": "sc-hJxyNS sc-hRBdqa iVkgaU bBcBOI",
+    "selector": "[data-crawl-id=\"3\"]",
+    "elementType": "button",
+    "ax_name": "Quick actions\n\u2318K",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Keep Pro",
+    "id": "",
+    "className": "sc-nXGzg eHkkpr",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Keep Pro",
+    "ax_role": "button",
+    "region": "navigation",
+    "llm_type": "navigation"
+  },
+  {
+    "label": "Ask Attio",
+    "id": "",
+    "className": "sc-nXGzg eDOWht",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "ax_name": "Ask Attio",
+    "ax_role": "button",
+    "region": "banner",
+    "llm_type": "interaction"
+  }
+]

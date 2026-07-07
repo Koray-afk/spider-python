@@ -1,0 +1,48 @@
+[
+  {
+    "label": "Templates\n0",
+    "tag_name": "button",
+    "selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+    "target_url": "https://app.attio.com/hello-world/notes/templates",
+    "target_slug": "hello-world-notes-templates",
+    "target_page": "../hello-world-notes-templates/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "Templates\n0",
+      "id": "",
+      "class_name": "sc-gRPdEC VlkzF",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#root > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[2]",
+      "outer_html": "<button data-active=\"false\" data-tabs-variant=\"ghost\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\" class=\"sc-gRPdEC VlkzF\" data-crawl-id=\"13\"><span class=\"sc-cuZDWv hzdHog\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/736da8f87e1efc75.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></span><span class=\"sc-boZvaW gQYLhN\">Templates</span><span data-variant=\"tertiary\" data-size=\"14\" class=\"sc-jGSRRB iuGMVl\">0</span></button>"
+    }
+  },
+  {
+    "label": "New chat",
+    "tag_name": "button",
+    "selector": "#radix-_r_38_ > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://app.attio.com/hello-world/chats/new",
+    "target_slug": "hello-world-chats-new",
+    "target_page": "../hello-world-chats-new/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "New chat",
+      "id": "",
+      "class_name": "sc-kniiuh liSXMZ",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "",
+      "css_selector": "#radix-_r_38_ > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/nav[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[5]/div[2]/div[1]/div[1]/button[1]",
+      "outer_html": "<button type=\"button\" class=\"sc-kniiuh liSXMZ\" data-crawl-id=\"10\"><div class=\"sc-bkYWhe gGBWG\"><svg height=\"14px\" width=\"14px\" class=\"sc-ivVcHX kldBgz\"><use href=\"https://app.attio.com/web-assets/assets/icon-defs/c2446e204a9cf0e1.svg#icon\" height=\"14px\" width=\"14px\"></use></svg></div><div class=\"sc-lmKyiw dHdGIQ\">New chat</div></button>"
+    }
+  }
+]

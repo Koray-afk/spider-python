@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Notes\n4",
+    "selector": "[data-crawl-id=\"12\"]",
+    "interaction_path": "interactions/001-notes-4",
+    "relationship_file": "interactions/001-notes-4/relationship.json"
+  },
+  {
+    "label": "View as a list of notes",
+    "selector": "[data-crawl-id=\"17\"]",
+    "interaction_path": "interactions/003-view-as-a-list-of-notes",
+    "relationship_file": "interactions/003-view-as-a-list-of-notes/relationship.json"
+  },
+  {
+    "label": "/",
+    "selector": "[data-crawl-id=\"4\"]",
+    "interaction_path": "interactions/004-interaction",
+    "relationship_file": "interactions/004-interaction/relationship.json"
+  },
+  {
+    "label": "New favorites folder",
+    "selector": "[data-crawl-id=\"5\"]",
+    "interaction_path": "interactions/005-new-favorites-folder",
+    "relationship_file": "interactions/005-new-favorites-folder/relationship.json"
+  },
+  {
+    "label": "Add list",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/006-add-list",
+    "relationship_file": "interactions/006-add-list/relationship.json"
+  },
+  {
+    "label": "New note",
+    "selector": "[data-crawl-id=\"19\"]",
+    "interaction_path": "interactions/008-new-note",
+    "relationship_file": "interactions/008-new-note/relationship.json"
+  },
+  {
+    "label": "Sorted by Creation date",
+    "selector": "[data-crawl-id=\"16\"]",
+    "interaction_path": "interactions/009-sorted-by-creation-date",
+    "relationship_file": "interactions/009-sorted-by-creation-date/relationship.json"
+  },
+  {
+    "label": "H\nHello World",
+    "selector": "[data-crawl-id=\"1\"]",
+    "interaction_path": "interactions/010-h-hello-world",
+    "relationship_file": "interactions/010-h-hello-world/relationship.json"
+  },
+  {
+    "label": "Collapse sidebar",
+    "selector": "[data-crawl-id=\"2\"]",
+    "interaction_path": "interactions/011-collapse-sidebar",
+    "relationship_file": "interactions/011-collapse-sidebar/relationship.json"
+  },
+  {
+    "label": "Note options",
+    "selector": "[data-crawl-id=\"20\"]",
+    "interaction_path": "interactions/017-note-options",
+    "relationship_file": "interactions/017-note-options/relationship.json"
+  }
+]

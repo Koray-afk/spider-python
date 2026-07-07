@@ -1,0 +1,79 @@
+[
+  {
+    "label": "New chat",
+    "selector": "[data-crawl-id=\"12\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "Upload CSV, JSON, or Excel",
+    "selector": "[data-crawl-id=\"24\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "\ud83c\udde6\ud83c\uddfa Melbourne\ncached\n\nGrid layout, tram corridors",
+    "selector": "[data-crawl-id=\"15\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "\ud83c\uddee\ud83c\uddf3 Pune\ncached\n\nRiver barriers, dense urban delivery",
+    "selector": "[data-crawl-id=\"16\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "no_ui_change"
+  },
+  {
+    "label": "\ud83c\uddf0\ud83c\uddf7 Seoul\ncached\n\nDense urban grid, narrow streets",
+    "selector": "[data-crawl-id=\"17\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\ud83c\uddef\ud83c\uddf5 Tokyo\ncached\n\nComplex street network, alleys",
+    "selector": "[data-crawl-id=\"18\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\ud83c\uddf8\ud83c\uddec Singapore\n\nCompact island district",
+    "selector": "[data-crawl-id=\"19\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\ud83c\udde8\ud83c\udded Zurich\ncached\n\nOld town, European precision",
+    "selector": "[data-crawl-id=\"20\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\ud83c\udde6\ud83c\uddea Dubai\n\nDesert city, wide boulevards",
+    "selector": "[data-crawl-id=\"21\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\ud83c\uddf2\ud83c\uddfd CDMX\n\nMega city neighborhood",
+    "selector": "[data-crawl-id=\"22\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  },
+  {
+    "label": "\ud83c\udde8\ud83c\uddf4 Bogot\u00e1\ncached\n\nDense grid, LatAm last-mile",
+    "selector": "[data-crawl-id=\"23\"]",
+    "elementType": "button",
+    "status": "not_scraped",
+    "reason": "not_visible"
+  }
+]
