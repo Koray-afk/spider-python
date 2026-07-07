@@ -368,6 +368,24 @@ def _dropdown_ui_html(panel_el: Tag) -> str:
     return str(panel_el)
 
 
+def _trigger_has_tab_role(trigger: dict) -> bool:
+    """Return True when the trigger element has role="tab".
+
+    Checked against (in order): the 'role' key directly on the trigger dict,
+    and then the stored outerHTML string so older relationship.json files that
+    don't have a separate 'role' key are handled correctly.
+    """
+    role = (trigger.get("role") or "").strip().lower()
+    if role == "tab":
+        return True
+    outer = trigger.get("outer_html") or trigger.get("outerHTML") or ""
+    if outer:
+        m = re.search(r'\brole=["\']([^"\']+)["\']', outer)
+        if m and m.group(1).strip().lower() == "tab":
+            return True
+    return False
+
+
 def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dict:
     """Diff main vs interaction DOM and return the full reconciliation record."""
     main_soup = BeautifulSoup(main_html, "html.parser")
@@ -385,6 +403,12 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
     ui_html = "\n".join(str(r) for r in ui_roots)
     backdrop_html = "\n".join(str(r) for r in backdrop_roots)
 
+    # Detect tab-switch from the trigger's own role attribute — _classify()
+    # never produces "tab-switch" because _TYPE_RULES has no tab category.
+    # Elevate to tab-switch early so the panel extraction below runs.
+    if _trigger_has_tab_role(trigger):
+        interaction_type = "tab-switch"
+
     # For dropdowns: extract ONLY the controlled panel from the interaction page.
     # The DOM diff often picks up the trigger wrapper and unrelated siblings.
     panel_id = _resolve_panel_id(inter_soup, trigger)
@@ -394,8 +418,10 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
     if panel_id:
         panel_el = inter_soup.find(id=panel_id)
         if isinstance(panel_el, Tag):
-            # Fix 1 — dropdown: use only the controlled panel as ui_html.
-            if interaction_type == "dropdown" or _is_dropdown_panel(panel_el):
+            # Dropdown branch — only when the trigger is NOT a tab.
+            if interaction_type != "tab-switch" and (
+                interaction_type == "dropdown" or _is_dropdown_panel(panel_el)
+            ):
                 ui_html = _dropdown_ui_html(panel_el)
                 backdrop_html = ""
                 interaction_type = "dropdown"
@@ -406,9 +432,10 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
                     "insertMethod": "append",
                 }
 
-            # Fix 3 — tab-switch: capture the panel's innerHTML so the stitcher
-            # can swap it in without a page reload.
-            if "tab" in interaction_type.replace("-", "_").lower():
+            # Tab-switch: capture the panel's innerHTML for in-place content swap.
+            # Previously gated on interaction_type containing "tab", which _classify()
+            # could never produce — now correctly triggered by the role detection above.
+            if interaction_type == "tab-switch":
                 tab_content_html = panel_el.decode_contents()
                 tab_content_selector = f"#{panel_id}"
 
