@@ -893,6 +893,14 @@
         "#stitch-inkndye-color-overlay.show { opacity: 1; visibility: visible; }",
         ".stitch-inkndye-color-drawer { transition: transform 0.3s ease-in-out; }",
         ".stitch-inkndye-color-drawer.stitch-open { transform: translateX(0) !important; }",
+        /* Title sits on top of the × in DOM order — ignore its clicks */
+        ".stitch-inkndye-color-drawer > h2 { pointer-events: none !important; }",
+        ".stitch-inkndye-color-drawer > button.absolute.top-3.right-3,",
+        ".stitch-inkndye-color-drawer > [data-stitch-inkndye-close] {",
+        "  z-index: 100 !important;",
+        "  pointer-events: auto !important;",
+        "  cursor: pointer !important;",
+        "}",
         ".cursor-pointer h4 { cursor: pointer; pointer-events: auto !important; }",
       ].join("\n");
       document.head.appendChild(inkStyle);
@@ -913,6 +921,12 @@
     }
 
     function findCatalogueTrigger(el) {
+      // If the click originated inside the colour drawer itself, never treat it
+      // as an "open" trigger — the close / cancel buttons inside the drawer must
+      // not accidentally re-open it.
+      var drawer = getColorDrawer();
+      if (drawer && drawer.contains(el)) return null;
+
       var node = el;
       while (node && node !== document.body) {
         if (node.nodeType !== 1) {
@@ -950,10 +964,57 @@
     function openColorDrawer() {
       var drawer = getColorDrawer();
       if (!drawer) return;
+      drawer.classList.add("stitch-inkndye-color-drawer");
       drawer.classList.add("stitch-open");
+      drawer.setAttribute("data-stitch-inkndye-drawer", "1");
+      var closeBtn =
+        drawer.querySelector("button.absolute.top-3.right-3") ||
+        drawer.querySelector(":scope > button");
+      if (closeBtn) closeBtn.setAttribute("data-stitch-inkndye-close", "1");
       overlay.classList.add("show");
       document.body.classList.add("stitch-inkndye-color-drawer-open");
     }
+
+    function isDrawerCloseButton(btn) {
+      if (!btn) return false;
+      if (btn.hasAttribute && btn.hasAttribute("data-stitch-inkndye-close")) return true;
+      var label = (btn.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+      if (/^[×x]$/.test(label)) return true;
+      if (label === "cancel" || label === "close") return true;
+      if (/^add colou?r$/.test(label)) return true;
+      return false;
+    }
+
+    // Pure geometry: top-right corner of the open drawer = close zone.
+    // Does NOT require e.target to be the button (h2 often steals the hit).
+    function isTopRightCloseZone(e, drawer) {
+      var rect = drawer.getBoundingClientRect();
+      return (
+        e.clientX >= rect.right - 56 &&
+        e.clientX <= rect.right + 4 &&
+        e.clientY >= rect.top - 4 &&
+        e.clientY <= rect.top + 56
+      );
+    }
+
+    function tagInkndyeNodes() {
+      var drawer = getColorDrawer();
+      if (drawer) {
+        drawer.setAttribute("data-stitch-inkndye-drawer", "1");
+        var closeBtn =
+          drawer.querySelector("button.absolute.top-3.right-3") ||
+          drawer.querySelector(":scope > button");
+        if (closeBtn) closeBtn.setAttribute("data-stitch-inkndye-close", "1");
+      }
+      var headings = document.querySelectorAll("h4");
+      for (var i = 0; i < headings.length; i++) {
+        var h4 = headings[i];
+        if (!/color catalogue/i.test(h4.textContent || "")) continue;
+        var trigger = h4.closest(".cursor-pointer") || h4.parentElement;
+        if (trigger) trigger.setAttribute("data-stitch-inkndye-catalogue", "1");
+      }
+    }
+    tagInkndyeNodes();
 
     if (!document.body.__stitchInkndyeBound) {
       document.body.__stitchInkndyeBound = true;
@@ -964,23 +1025,42 @@
           var trigger = findCatalogueTrigger(e.target);
           if (trigger) {
             e.preventDefault();
-            e.stopPropagation();
+            e.stopImmediatePropagation();
             openColorDrawer();
             return;
           }
+
           var drawer = getColorDrawer();
           if (!drawer || !drawer.classList.contains("stitch-open")) return;
+
           if (e.target === overlay) {
             e.preventDefault();
-            e.stopPropagation();
+            e.stopImmediatePropagation();
             closeColorDrawer();
             return;
           }
-          var closeBtn = e.target.closest && e.target.closest("button");
-          if (closeBtn && drawer.contains(closeBtn) && /^[×xX]$/.test((closeBtn.textContent || "").trim())) {
+
+          // 1) Coordinate close zone — works even when h2 covers the ×
+          if (isTopRightCloseZone(e, drawer)) {
             e.preventDefault();
-            e.stopPropagation();
+            e.stopImmediatePropagation();
             closeColorDrawer();
+            return;
+          }
+
+          // 2) Explicit close / cancel / add-color buttons
+          var btn = e.target.closest && e.target.closest("button");
+          if (btn && drawer.contains(btn) && isDrawerCloseButton(btn)) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            closeColorDrawer();
+            return;
+          }
+
+          // 3) Swallow other in-drawer clicks (no backend in static clone)
+          if (drawer.contains(e.target)) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
           }
         },
         true
@@ -1741,6 +1821,14 @@
       var t = eventTargetDeep(e);
       if (!t || !t.closest) return;
 
+      // Ink N Dyes color drawer + catalogue trigger (handled by bootstrapInkndyeLayout).
+      if (
+        t.closest("[data-stitch-inkndye-drawer]") ||
+        t.closest("[data-stitch-inkndye-catalogue]")
+      ) {
+        return;
+      }
+
       // Clicks inside an open injected overlay: navigate local links / demo-select items.
       if (handleInjectedUIClick(e, t)) return;
 
@@ -2036,7 +2124,9 @@
         !btn.closest(".raasta-rider-modal") &&
         !btn.hasAttribute("data-stitch-go") &&
         !btn.hasAttribute("data-stitch-tab-id") &&
-        !btn.hasAttribute("data-stitch-accordion")
+        !btn.hasAttribute("data-stitch-accordion") &&
+        !btn.closest("[data-stitch-inkndye-drawer]") &&
+        !btn.closest("[data-stitch-inkndye-catalogue]")
       ) {
         showDemoHint();
       }
