@@ -928,6 +928,131 @@ RUNTIME_JS = """// Stitcher runtime — page navigation, sidebar accordions, and
   })();
   // ── End Salesforge bootstrap ───────────────────────────────────────────────
 
+  // ── Ink N Dyes static-clone bootstrap ─────────────────────────────────────
+  (function bootstrapInkndyeLayout() {
+    var root = document.getElementById("root");
+    if (!root) return;
+    if (!/ink\\s*n\\s*dyes/i.test(document.title || "") &&
+        !document.querySelector('img[alt="Logo"][src*="images_logo"]')) {
+      return;
+    }
+
+    if (!document.getElementById("stitch-inkndye-style")) {
+      var inkStyle = document.createElement("style");
+      inkStyle.id = "stitch-inkndye-style";
+      inkStyle.textContent = [
+        "/* Support phone bar is hidden below md on the live React app */",
+        "#root nav.hidden.md\\\\:flex { display: flex !important; flex-wrap: wrap; }",
+        ".stitch-inkndye-color-drawer-open { overflow: hidden; }",
+        "#stitch-inkndye-color-overlay {",
+        "  position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 40;",
+        "  opacity: 0; visibility: hidden; transition: opacity 0.2s;",
+        "}",
+        "#stitch-inkndye-color-overlay.show { opacity: 1; visibility: visible; }",
+        ".stitch-inkndye-color-drawer { transition: transform 0.3s ease-in-out; }",
+        ".stitch-inkndye-color-drawer.stitch-open { transform: translateX(0) !important; }",
+        ".cursor-pointer h4 { cursor: pointer; pointer-events: auto !important; }",
+      ].join("\\n");
+      document.head.appendChild(inkStyle);
+    }
+
+    function getColorDrawer() {
+      var candidates = document.querySelectorAll(
+        ".fixed.top-0.right-0.translate-x-full, .fixed.top-0.right-0.stitch-inkndye-color-drawer"
+      );
+      for (var i = 0; i < candidates.length; i++) {
+        var el = candidates[i];
+        if (/add colors/i.test(el.textContent || "")) {
+          el.classList.add("stitch-inkndye-color-drawer");
+          return el;
+        }
+      }
+      return null;
+    }
+
+    function findCatalogueTrigger(el) {
+      var node = el;
+      while (node && node !== document.body) {
+        if (node.nodeType !== 1) {
+          node = node.parentElement;
+          continue;
+        }
+        if (node.tagName === "H4" && /color catalogue/i.test(node.textContent || "")) {
+          return node.closest(".cursor-pointer") || node.parentElement;
+        }
+        var h4 = node.querySelector && node.querySelector("h4");
+        if (h4 && /color catalogue/i.test(h4.textContent || "")) {
+          return node.classList && node.classList.contains("cursor-pointer")
+            ? node
+            : node.closest(".cursor-pointer") || node;
+        }
+        node = node.parentElement;
+      }
+      return null;
+    }
+
+    var overlay = document.getElementById("stitch-inkndye-color-overlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "stitch-inkndye-color-overlay";
+      document.body.appendChild(overlay);
+    }
+
+    function closeColorDrawer() {
+      var drawer = getColorDrawer();
+      if (drawer) drawer.classList.remove("stitch-open");
+      overlay.classList.remove("show");
+      document.body.classList.remove("stitch-inkndye-color-drawer-open");
+    }
+
+    function openColorDrawer() {
+      var drawer = getColorDrawer();
+      if (!drawer) return;
+      drawer.classList.add("stitch-open");
+      overlay.classList.add("show");
+      document.body.classList.add("stitch-inkndye-color-drawer-open");
+    }
+
+    if (!document.body.__stitchInkndyeBound) {
+      document.body.__stitchInkndyeBound = true;
+
+      document.addEventListener(
+        "click",
+        function (e) {
+          var trigger = findCatalogueTrigger(e.target);
+          if (trigger) {
+            e.preventDefault();
+            e.stopPropagation();
+            openColorDrawer();
+            return;
+          }
+          var drawer = getColorDrawer();
+          if (!drawer || !drawer.classList.contains("stitch-open")) return;
+          if (e.target === overlay) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeColorDrawer();
+            return;
+          }
+          var closeBtn = e.target.closest && e.target.closest("button");
+          if (closeBtn && drawer.contains(closeBtn) && /^[\u00d7xX]$/.test((closeBtn.textContent || "").trim())) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeColorDrawer();
+          }
+        },
+        true
+      );
+
+      overlay.addEventListener("click", closeColorDrawer);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" || e.keyCode === 27) closeColorDrawer();
+      });
+    }
+  })();
+  // ── End Ink N Dyes bootstrap ───────────────────────────────────────────────
+
   function configFor(id) {
     var all = window.__STITCH_INTERACTIONS__ || {};
     return all[id] || null;
