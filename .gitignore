@@ -3,7 +3,7 @@
 pages/*
 !pages/.gitkeep
 
-assets/
+/assets/
 
 replicas/*
 !replicas/.gitkeep
@@ -11,5 +11,4 @@ replicas/*
 __pycache__/
 *.pyc
 venv/
-__pycache__/
-*.pyc
+.DS_Store

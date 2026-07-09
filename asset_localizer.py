@@ -11,7 +11,7 @@ import shutil
 import ssl
 import urllib.request
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import quote, urljoin, urlparse, urlsplit, urlunsplit
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico", ".avif"}
 CSS_EXTS = {".css"}
@@ -38,6 +38,7 @@ _INLINE_STYLE_ATTR_RE = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 _MANIFEST_NAME = "_manifest.json"
+_FAILED_DOWNLOADS: set[str] = set()
 
 
 def resolve_assets_dir(page_dir: Path) -> Path:
@@ -109,6 +110,23 @@ def _url_key(url: str) -> str:
     return url.split("#", 1)[0]
 
 
+def _quote_remote_url(url: str) -> str:
+    """Encode unsafe characters in remote asset URLs before urllib sees them."""
+    parts = urlsplit(url)
+    if parts.scheme not in {"http", "https"}:
+        return url
+    path = quote(parts.path, safe="/%:@!$&'()*+,;=")
+    query = quote(parts.query, safe="/%:@!$&'()*+,;=?")
+    return urlunsplit((parts.scheme, parts.netloc, path, query, parts.fragment))
+
+
+def _is_probably_asset_url(url: str) -> bool:
+    parts = urlsplit(url)
+    if parts.scheme not in {"http", "https"}:
+        return False
+    return bool(parts.path.strip("/")) or bool(parts.query)
+
+
 def _ext_from_url(url: str) -> str:
     key = _url_key(url)
     path = urlparse(key).path
@@ -132,7 +150,14 @@ def _bucket_for_ext(ext: str) -> str:
 
 def _local_path_for_url(url: str, manifest: dict[str, str]) -> str | None:
     base = url.split("#")[0].split("?")[0]
-    return manifest.get(base) or manifest.get(url)
+    quoted = _quote_remote_url(url)
+    quoted_base = quoted.split("#")[0].split("?")[0]
+    return (
+        manifest.get(base)
+        or manifest.get(url)
+        or manifest.get(quoted_base)
+        or manifest.get(quoted)
+    )
 
 
 def _make_local_name(url: str) -> tuple[str, str]:
@@ -146,10 +171,12 @@ def _make_local_name(url: str) -> tuple[str, str]:
 
 
 def _download_url(url: str, assets_dir: Path, manifest: dict[str, str]) -> str | None:
-    key = _url_key(url)
+    key = _url_key(_quote_remote_url(url))
     if not key.startswith(("http://", "https://")):
         return None
     if any(key.startswith(s) for s in _SKIP_SCHEMES):
+        return None
+    if key in _FAILED_DOWNLOADS or not _is_probably_asset_url(key):
         return None
 
     existing = manifest.get(key)
@@ -180,6 +207,7 @@ def _download_url(url: str, assets_dir: Path, manifest: dict[str, str]) -> str |
         print(f"[ASSETS] Downloaded {rel_path}")
         return rel_path
     except Exception as exc:
+        _FAILED_DOWNLOADS.add(key)
         print(f"[ASSETS] Failed {key}: {exc}")
         return None
 
