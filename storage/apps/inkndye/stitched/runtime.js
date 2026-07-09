@@ -1629,6 +1629,8 @@
       document.removeEventListener("click", container.__stitchOutside, false);
     if (container.__stitchKey)
       document.removeEventListener("keydown", container.__stitchKey, true);
+    // Un-rotate the button chevron when the accordion panel is closed.
+    if (container.__stitchBtnSvg) container.__stitchBtnSvg.classList.remove("rotate-180");
     if (container.parentNode) container.parentNode.removeChild(container);
   }
 
@@ -1694,15 +1696,29 @@
         container.appendChild(styleEl);
       }
       if (cfg.backdropHtml) container.insertAdjacentHTML("beforeend", cfg.backdropHtml);
-      container.insertAdjacentHTML("beforeend", cfg.uiHtml);
 
       var method = (cfg.insertMethod || "append").toLowerCase();
-      if (method === "replace") {
+      if (parent.tagName === "BUTTON" || parent.tagName === "A") {
+        // Accordion / inline toggle pattern: parentSelector points at the button
+        // itself. Appending inside a button breaks layout. Instead:
+        //  1. Strip any leading <svg> from uiHtml (it's a duplicate chevron —
+        //     we handle rotation directly on the button's own svg).
+        //  2. Insert the content panel as a sibling immediately after the button.
+        var cleanHtml = cfg.uiHtml.replace(/^\s*<svg[\s\S]*?<\/svg>\s*/i, "");
+        container.insertAdjacentHTML("beforeend", cleanHtml || cfg.uiHtml);
+        var btnSvg = parent.querySelector("svg");
+        if (btnSvg) btnSvg.classList.add("rotate-180");
+        container.__stitchBtnSvg = btnSvg;
+        parent.insertAdjacentElement("afterend", container);
+      } else if (method === "replace") {
+        container.insertAdjacentHTML("beforeend", cfg.uiHtml);
         parent.innerHTML = "";
         parent.appendChild(container);
       } else if (method === "prepend" || method === "insert" || method === "afterbegin") {
+        container.insertAdjacentHTML("beforeend", cfg.uiHtml);
         parent.insertAdjacentElement("afterbegin", container);
       } else {
+        container.insertAdjacentHTML("beforeend", cfg.uiHtml);
         parent.insertAdjacentElement("beforeend", container);
       }
 
