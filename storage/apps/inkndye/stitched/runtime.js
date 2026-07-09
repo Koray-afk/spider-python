@@ -159,8 +159,13 @@
         // absolutely-positioned wrapper div. Left alone, that wrapper forces
         // horizontal overflow on any narrower viewport, regardless of
         // breakpoint, so this is unscoped from the media query below.
+        // NOTE: this must resolve to a concrete percentage, not `auto` — an
+        // absolutely-positioned box with no left/right offsets shrink-to-fits
+        // around its content, and that content's own width is a percentage
+        // of *this* box, so `width:auto` here is circular and Chrome collapses
+        // both to 0×0 (charts disappear entirely).
         "[aria-hidden='true']:has(img[data-stitch-frozen-chart]) {",
-        "  max-width: 100% !important; width: auto !important;",
+        "  max-width: 100% !important; width: 100% !important;",
         "}",
         "img[data-stitch-frozen-chart] {",
         "  max-width: 100% !important; width: auto !important; height: auto !important;",
@@ -168,13 +173,14 @@
         ".stitch-table-scroll {",
         "  overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch;",
         "}",
+        // The Likwid AI chat panel is `position:fixed; transform:translateX(100%)`
+        // when closed. A transformed fixed element still contributes to the
+        // document's scrollable area at its POST-transform position, which
+        // sits entirely to the right of the viewport — at every breakpoint,
+        // not just mobile — inflating scrollWidth by the panel's full width.
+        "html, body { overflow-x: hidden !important; max-width: 100vw; }",
+        "#lkh-chat-overlay { max-width: 100vw; }",
         "@media (max-width: 991.98px) {",
-        // Belt-and-suspenders: once the real viewport meta is honored, any
-        // other baked desktop-width element (fixed-pixel panels, absolute
-        // chart wrappers we didn't catch above, etc.) would otherwise force
-        // real horizontal scrolling/shifting instead of just being clipped.
-        "  html, body { overflow-x: hidden !important; max-width: 100vw; }",
-        "  #lkh-chat-overlay { max-width: 100vw; }",
         // The drawer must stay BELOW the header (not top:0) — otherwise it
         // physically covers the hamburger button that opened it, and the
         // only way to close is tapping the dimmed overlay.
@@ -814,124 +820,6 @@
     };
   })();
   // ── End Rastaa riders ──────────────────────────────────────────────────────
-  // ── Ink N Dyes: color catalogue slide-in drawer (product detail pages) ─────
-  var inkndyeColorDrawer = (function () {
-    if (!/productDetails-/i.test(location.pathname)) return null;
-
-    function norm(el) {
-      return (el.textContent || "").replace(/\s+/g, " ").trim();
-    }
-
-    function findDrawer() {
-      var panels = document.querySelectorAll(
-        "div.fixed.top-0.right-0, div.fixed.inset-y-0.right-0"
-      );
-      for (var i = 0; i < panels.length; i++) {
-        var h2 = panels[i].querySelector("h2");
-        if (h2 && norm(h2) === "Add Colors") return panels[i];
-      }
-      return null;
-    }
-
-    function findTrigger() {
-      var h4s = document.querySelectorAll("h4");
-      for (var i = 0; i < h4s.length; i++) {
-        if (/color catalogue/i.test(norm(h4s[i]))) {
-          var el = h4s[i].closest(".cursor-pointer");
-          if (el) return el;
-        }
-      }
-      return null;
-    }
-
-    function isOpen(drawer) {
-      return drawer && drawer.classList.contains("translate-x-0");
-    }
-
-    function openDrawer(drawer) {
-      if (!drawer) return;
-      drawer.classList.remove("translate-x-full");
-      drawer.classList.add("translate-x-0");
-    }
-
-    function closeDrawer(drawer) {
-      if (!drawer) return;
-      drawer.classList.remove("translate-x-0");
-      drawer.classList.add("translate-x-full");
-    }
-
-    if (!document.getElementById("stitch-inkndye-color-drawer-style")) {
-      var st = document.createElement("style");
-      st.id = "stitch-inkndye-color-drawer-style";
-      st.textContent = [
-        "[data-stitch-inkndye-color-trigger] {",
-        "  pointer-events: auto !important; cursor: pointer !important;",
-        "}",
-        "div.fixed.top-0.right-0 h-full.bg-white.shadow-lg {",
-        "  pointer-events: auto !important;",
-        "}",
-      ].join("\n");
-      document.head.appendChild(st);
-    }
-
-    var drawer = findDrawer();
-    if (drawer) {
-      drawer.classList.add("translate-x-full");
-      drawer.classList.remove("translate-x-0");
-    }
-    var trigger = findTrigger();
-    if (trigger) trigger.setAttribute("data-stitch-inkndye-color-trigger", "");
-
-    document.addEventListener("keydown", function (e) {
-      if ((e.key === "Escape" || e.keyCode === 27) && drawer && isOpen(drawer)) {
-        closeDrawer(drawer);
-      }
-    });
-
-    return {
-      handleClick: function (target, e) {
-        var panel = findDrawer();
-        if (!panel) return false;
-
-        if (target.closest("[data-stitch-inkndye-color-trigger]")) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (isOpen(panel)) closeDrawer(panel);
-          else openDrawer(panel);
-          return true;
-        }
-
-        if (!panel.contains(target)) return false;
-
-        var btn = target.closest("button");
-        if (btn) {
-          var label = norm(btn);
-          if (label === "×" || label === "x" || /^cancel$/i.test(label)) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeDrawer(panel);
-            return true;
-          }
-        }
-
-        var swatch = target.closest(".border-4.rounded-md.cursor-pointer");
-        if (swatch && panel.contains(swatch)) {
-          e.preventDefault();
-          e.stopPropagation();
-          panel.querySelectorAll(".border-4.rounded-md.cursor-pointer").forEach(function (s) {
-            s.classList.remove("border-purple-800");
-            if (!s.classList.contains("border-gray-300")) s.classList.add("border-gray-300");
-          });
-          swatch.classList.remove("border-gray-300");
-          swatch.classList.add("border-purple-800");
-          return true;
-        }
-
-        return false;
-      },
-    };
-  })();
-  // ── End Ink N Dyes color drawer ───────────────────────────────────────────
   // ── Salesforge static-clone bootstrap ─────────────────────────────────────
   (function bootstrapSalesforgeLayout() {
     if (window.location.hostname.indexOf("salesforge.ai") === -1 &&
@@ -1842,11 +1730,6 @@
 
       // 0k. Rastaa riders — Add Driver modal, Cancel, save to localStorage.
       if (raastaRiders && raastaRiders.handleClick(t, e)) {
-        return;
-      }
-
-      // 0l. Ink N Dyes — color catalogue drawer open/close.
-      if (inkndyeColorDrawer && inkndyeColorDrawer.handleClick(t, e)) {
         return;
       }
 
