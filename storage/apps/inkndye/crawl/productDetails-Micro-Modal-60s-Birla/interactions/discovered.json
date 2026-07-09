@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Product Description",
+    "id": "",
+    "className": "flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800",
+    "selector": "[data-crawl-id=\"8\"]",
+    "elementType": "button",
+    "ax_name": "Product Description",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Packaging & Delivery",
+    "id": "",
+    "className": "flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800",
+    "selector": "[data-crawl-id=\"9\"]",
+    "elementType": "button",
+    "ax_name": "Packaging & Delivery",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Suggested Use",
+    "id": "",
+    "className": "flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800",
+    "selector": "[data-crawl-id=\"10\"]",
+    "elementType": "button",
+    "ax_name": "Suggested Use",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  },
+  {
+    "label": "Precautions",
+    "id": "",
+    "className": "flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800",
+    "selector": "[data-crawl-id=\"11\"]",
+    "elementType": "button",
+    "ax_name": "Precautions",
+    "ax_role": "button",
+    "llm_type": "interaction"
+  }
+]

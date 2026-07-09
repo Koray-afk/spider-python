@@ -10,7 +10,7 @@ import traceback
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import parse_qs, urlencode, urljoin, urlparse
 
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
@@ -112,6 +112,95 @@ _RASTAA_SIDEBAR_BUTTONS_JS = """() => {
     asideIdx += 1;
   });
   return out;
+}"""
+
+# Ink N Dyes — sidebar category list + product cards (session-based crawl).
+_INKNDYE_CATEGORY_LABELS_JS = """() => {
+  const headers = [...document.querySelectorAll('h4')];
+  const catHeader = headers.find(h => (h.innerText || '').trim() === 'Category');
+  if (!catHeader) return [];
+  const ul = catHeader.nextElementSibling;
+  if (!ul) return [];
+  const out = [];
+  ul.querySelectorAll('li').forEach(function(li) {
+    const h5 = li.querySelector('h5');
+    const label = h5 ? (h5.innerText || '').trim() : '';
+    if (label) out.push(label);
+  });
+  return out;
+}"""
+
+_INKNDYE_CLICK_CATEGORY_JS = """(label) => {
+  if (!label) return false;
+  const headers = [...document.querySelectorAll('h4')];
+  const catHeader = headers.find(h => (h.innerText || '').trim() === 'Category');
+  if (!catHeader) return false;
+  const ul = catHeader.nextElementSibling;
+  if (!ul) return false;
+  for (const li of ul.querySelectorAll('li')) {
+    const h5 = li.querySelector('h5');
+    if (h5 && (h5.innerText || '').trim() === label) {
+      li.scrollIntoView({ block: 'center' });
+      li.click();
+      return true;
+    }
+  }
+  return false;
+}"""
+
+_INKNDYE_DISCOVER_PRODUCTS_JS = """() => {
+  const cards = [...document.querySelectorAll('div.bg-purple-100')].filter(function(el) {
+    return el.querySelector('button') && /view colors/i.test(el.innerText || '');
+  });
+  return cards.map(function(card, index) {
+    const titleEl = card.querySelector('h4.font-semibold') ||
+      card.querySelector('h4.text-center') ||
+      card.querySelector('h4');
+    const title = titleEl ? (titleEl.innerText || '').trim() : '';
+    const btn = [...card.querySelectorAll('button')].find(function(b) {
+      return /view colors/i.test(b.innerText || '');
+    });
+    return {
+      index: index,
+      title: title,
+      selector: btn ? '' : '',
+    };
+  }).filter(function(item) { return item.title; });
+}"""
+
+_INKNDYE_CLICK_VIEW_COLORS_JS = """(index) => {
+  const cards = [...document.querySelectorAll('div.bg-purple-100')].filter(function(el) {
+    return el.querySelector('button') && /view colors/i.test(el.innerText || '');
+  });
+  const card = cards[index];
+  if (!card) return false;
+  const btn = [...card.querySelectorAll('button')].find(function(b) {
+    return /view colors/i.test(b.innerText || '');
+  });
+  if (!btn) return false;
+  btn.scrollIntoView({ block: 'center' });
+  btn.click();
+  return true;
+}"""
+
+_INKNDYE_PRODUCT_DETAILS_READY_JS = """() => {
+  if (!/productDetails/i.test(location.pathname)) return false;
+  const text = document.body ? (document.body.innerText || '') : '';
+  return !text.includes('No product details available');
+}"""
+
+_INKNDYE_CATEGORY_LI_BY_LABEL_JS = """(label) => {
+  if (!label) return null;
+  const headers = [...document.querySelectorAll('h4')];
+  const catHeader = headers.find(h => (h.innerText || '').trim() === 'Category');
+  if (!catHeader) return null;
+  const ul = catHeader.nextElementSibling;
+  if (!ul) return null;
+  for (const li of ul.querySelectorAll('li')) {
+    const h5 = li.querySelector('h5');
+    if (h5 && (h5.innerText || '').trim() === label) return li;
+  }
+  return null;
 }"""
 
 _RASTAA_SIDEBAR_CLICK_JS = """(spec) => {
@@ -677,7 +766,7 @@ def _freeze_chart_canvases(page) -> None:
 
 
 def _make_css_urls_absolute(html: str, page_url: str) -> str:
-    """Absolutize url() references inside <style> blocks.
+    """Absolutize url() references inside <style> blocks and inline style="".
 
     make_assets_absolute() only rewrites src= and href= HTML attributes.
     @font-face src, background-image, and other url() calls inside <style>
@@ -692,14 +781,31 @@ def _make_css_urls_absolute(html: str, page_url: str) -> str:
             return um.group(0)
         return f"url({urljoin(page_url, u)})"
 
-    def _fix_style_block(m: re.Match) -> str:
-        return re.sub(r"url\(([^)]*)\)", _fix_url, m.group(0))
+    def _fix_css_text(text: str) -> str:
+        return re.sub(r"url\(([^)]*)\)", _fix_url, text)
 
-    return re.sub(
+    def _fix_style_block(m: re.Match) -> str:
+        return _fix_css_text(m.group(0))
+
+    html = re.sub(
         r"<style\b[^>]*>[\s\S]*?</style>",
         _fix_style_block,
         html,
         flags=re.IGNORECASE,
+    )
+
+    def _fix_inline_style(m: re.Match) -> str:
+        quote, content = m.group(1), m.group(2)
+        new_content = _fix_css_text(content)
+        if new_content == content:
+            return m.group(0)
+        return f"style={quote}{new_content}{quote}"
+
+    return re.sub(
+        r'\bstyle=(["\'])(.*?)\1',
+        _fix_inline_style,
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
     )
 
 
@@ -800,17 +906,48 @@ def abs_url(url: str, base: str) -> str | None:
     return resolved
 
 
+# When set (from config crawl_preserve_query_params), normalize_url / page_slug
+# keep listed query keys — e.g. inkndyes /category?name=Cotton vs ?name=Bamboo.
+_PRESERVE_QUERY_PARAMS: list[str] = []
+
+
+def set_preserve_query_params(params: list[str] | None) -> None:
+    global _PRESERVE_QUERY_PARAMS
+    _PRESERVE_QUERY_PARAMS = list(params or [])
+
+
+def _preserved_query_suffix(p) -> str:
+    if not _PRESERVE_QUERY_PARAMS or not p.query:
+        return ""
+    qs = parse_qs(p.query, keep_blank_values=True)
+    parts: list[str] = []
+    for key in _PRESERVE_QUERY_PARAMS:
+        if key in qs and qs[key]:
+            parts.append(f"{key}={qs[key][0]}")
+    return "&".join(parts)
+
+
 def normalize_url(url: str) -> str:
     p = urlparse(url)
     path = p.path.rstrip("/") or "/"
+    q = _preserved_query_suffix(p)
+    base = f"{p.scheme}://{p.netloc}{path}"
+    if q:
+        base = f"{base}?{q}"
     if p.fragment:
-        return f"{p.scheme}://{p.netloc}{path}#{p.fragment.split('?')[0]}"
-    return f"{p.scheme}://{p.netloc}{path}"
+        frag = p.fragment.split("?")[0]
+        return f"{base}#{frag}" if frag else base
+    return base
 
 
 def page_slug(url: str) -> str:
     p = urlparse(url)
     raw = f"{p.path}-{p.fragment}" if p.fragment else p.path
+    if _PRESERVE_QUERY_PARAMS:
+        qs = parse_qs(p.query, keep_blank_values=True)
+        for key in _PRESERVE_QUERY_PARAMS:
+            if key in qs and qs[key]:
+                raw = f"{raw}-{key}-{qs[key][0]}"
     slug = re.sub(r"[^a-zA-Z0-9]+", "-", raw).strip("-")
     return re.sub(r"-+", "-", slug) or "home"
 
@@ -1719,6 +1856,8 @@ def _not_scraped_entry(item: dict, reason: str, *, detail: str = "") -> dict:
 def dom_changed(before: dict, after: dict) -> bool:
     if after.get("overlays", 0) > before.get("overlays", 0):
         return True
+    if after.get("slidePanelsOpen", 0) > before.get("slidePanelsOpen", 0):
+        return True
     b, a = before.get("len", 0), after.get("len", 0)
     if b == 0:
         return a > 300
@@ -1774,8 +1913,15 @@ def crawl_interactions(
     skip_screenshots: bool = False,
     wait_for_stripe_content: bool = False,
     mandatory_interaction_labels: list[str] | None = None,
+    existing_page=None,
+    prepare_page_fn=None,
+    skip_labels: set[str] | None = None,
 ) -> dict:
-    """Replay each discovered trigger, reusing one tab (reload between clicks)."""
+    """Replay each discovered trigger, reusing one tab (reload between clicks).
+
+    When *existing_page* and *prepare_page_fn* are set, the live tab is reused and
+    *prepare_page_fn* resets page state before each click (session SPAs).
+    """
     interactions_dir = page_dir / "interactions"
     interactions_dir.mkdir(parents=True, exist_ok=True)
     (interactions_dir / "discovered.json").write_text(
@@ -1804,16 +1950,21 @@ def crawl_interactions(
             not_scraped.append(_not_scraped_entry(c, "over_budget"))
 
     ipage = None
+    close_page = True
     try:
-        ipage = context.new_page()
+        ipage = existing_page or context.new_page()
+        close_page = existing_page is None
         for idx, item in enumerate(to_process, start=1):
             selector = item.get("selector", "")
             if not selector:
                 not_scraped.append(_not_scraped_entry(item, "no_selector"))
                 continue
+            label_lower = (item.get("label") or "").strip().lower()
+            if skip_labels and any(s.lower() in label_lower for s in skip_labels):
+                not_scraped.append(_not_scraped_entry(item, "skipped_label"))
+                continue
             # Anchors are usually navigation — skip unless label is a mandatory interaction
             # (e.g. Salesforge "Add a mailbox" is an <a> that opens a modal).
-            label_lower = (item.get("label") or "").strip().lower()
             is_mandatory_anchor = (
                 (item.get("elementType") or "").lower() == "a"
                 and mandatory_interaction_labels
@@ -1824,13 +1975,16 @@ def crawl_interactions(
                 continue
 
             try:
-                _goto_clean(
-                    ipage,
-                    page_url,
-                    use_networkidle=use_networkidle,
-                    wait_ms=wait_after_load_ms,
-                    wait_for_stripe_content=wait_for_stripe_content,
-                )
+                if prepare_page_fn:
+                    prepare_page_fn(ipage)
+                else:
+                    _goto_clean(
+                        ipage,
+                        page_url,
+                        use_networkidle=use_networkidle,
+                        wait_ms=wait_after_load_ms,
+                        wait_for_stripe_content=wait_for_stripe_content,
+                    )
                 _scroll_page_for_discovery(ipage)
                 if is_login_page(ipage):
                     print(f"[IXP] Session expired mid-capture on {source_slug} — stopping")
@@ -1914,7 +2068,15 @@ def crawl_interactions(
                 # No DOM change means no UI state appeared — nothing to capture.
                 # Tab-switch panels often swap equally-sized content so dom_changed
                 # may return False; never skip them on that basis.
-                if not dom_changed(before_fp, after_fp) and item.get("llm_type") != "tab_switch":
+                is_mandatory = bool(
+                    mandatory_interaction_labels
+                    and any(m.lower() in label_lower for m in mandatory_interaction_labels)
+                )
+                if (
+                    not dom_changed(before_fp, after_fp)
+                    and item.get("llm_type") != "tab_switch"
+                    and not is_mandatory
+                ):
                     not_scraped.append(_not_scraped_entry(item, "no_ui_change"))
                     continue
 
@@ -1983,7 +2145,7 @@ def crawl_interactions(
                 not_scraped.append(_not_scraped_entry(item, "click_failed", detail=str(exc)))
                 print(f"[BFS] Interaction not scraped ({selector}): {exc}")
     finally:
-        if ipage:
+        if ipage and close_page:
             try:
                 ipage.close()
             except Exception:
@@ -2930,8 +3092,781 @@ def run_interaction_pass(
     return {"interactions_saved": interactions_saved}
 
 
+def _get_inkndye_checkpoint_path(app_name: str) -> Path:
+    return get_metadata_dir(app_name) / "inkndye_checkpoint.json"
+
+
+def _inkndye_category_url(origin: str, category_label: str) -> str:
+    base = origin.rstrip("/")
+    return f"{base}/category?{urlencode({'name': category_label})}"
+
+
+def _inkndye_product_slug(category_label: str, product_title: str) -> str:
+    def part(text: str) -> str:
+        slug = re.sub(r"[^a-zA-Z0-9]+", "-", (text or "").strip()).strip("-")
+        return re.sub(r"-+", "-", slug)
+
+    return f"productDetails-{part(category_label)}-{part(product_title)}"
+
+
+def _inkndye_uses_session_crawler(app_name: str, cfg: dict) -> bool:
+    return app_name == "inkndye" or bool(cfg.get("crawl_session_navigator"))
+
+
+def _inkndye_goto_category(
+    page,
+    category_label: str,
+    origin: str,
+    *,
+    use_networkidle: bool,
+    wait_ms: int,
+) -> str:
+    """Navigate to a category via sidebar click, falling back to direct URL."""
+    try:
+        page.evaluate(_INKNDYE_CLICK_CATEGORY_JS, category_label)
+        page.wait_for_timeout(WAIT_AFTER_CLICK_MS)
+        try:
+            page.wait_for_load_state("domcontentloaded", timeout=15000)
+        except Exception:
+            pass
+    except Exception as exc:
+        print(f"[INKNDYE] Sidebar click failed ({category_label!r}): {exc}")
+
+    target = _inkndye_category_url(origin, category_label)
+    if normalize_url(page.url) != normalize_url(target):
+        _goto_clean(page, target, use_networkidle=use_networkidle, wait_ms=wait_ms)
+    _scroll_page_for_discovery(page)
+    return normalize_url(page.url)
+
+
+def _inkndye_click_view_colors(page, index: int) -> bool:
+    try:
+        if page.evaluate(_INKNDYE_CLICK_VIEW_COLORS_JS, index):
+            return True
+    except Exception:
+        pass
+    try:
+        cards = page.locator("div.bg-purple-100").filter(
+            has=page.locator("button", has_text=re.compile(r"view colors", re.I))
+        )
+        if index >= cards.count():
+            return False
+        btn = cards.nth(index).locator("button", has_text=re.compile(r"view colors", re.I)).first
+        btn.scroll_into_view_if_needed(timeout=5000)
+        btn.click(timeout=5000)
+        return True
+    except Exception as exc:
+        print(f"[INKNDYE] VIEW COLORS click failed (index={index}): {exc}")
+        return False
+
+
+def _inkndye_wait_product_details(page, timeout_ms: int = 20000) -> bool:
+    deadline = time.time() + (timeout_ms / 1000.0)
+    while time.time() < deadline:
+        try:
+            if page.evaluate(_INKNDYE_PRODUCT_DETAILS_READY_JS):
+                page.wait_for_timeout(500)
+                return True
+        except Exception:
+            pass
+        page.wait_for_timeout(400)
+    return False
+
+
+def _inkndye_load_sitemap(app_name: str) -> list[dict]:
+    path = get_sitemap_path(app_name)
+    if not path.is_file():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
+
+
+def _inkndye_upsert_sitemap(sitemap: list[dict], *, slug: str, url: str, title: str, page_type: str) -> None:
+    entry = {"slug": slug, "url": url, "title": title, "page_type": page_type}
+    for i, item in enumerate(sitemap):
+        if item.get("slug") == slug:
+            sitemap[i] = entry
+            return
+    sitemap.append(entry)
+
+
+def _inkndye_append_navigation(page_dir: Path, nav_entry: dict) -> None:
+    path = page_dir / "navigations.json"
+    existing: list[dict] = []
+    if path.is_file():
+        try:
+            existing = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(existing, list):
+                existing = []
+        except Exception:
+            existing = []
+    css = (nav_entry.get("trigger") or {}).get("css_selector") or nav_entry.get("selector") or ""
+    key = (
+        nav_entry.get("target_slug"),
+        nav_entry.get("product_title") or nav_entry.get("label"),
+        css,
+    )
+    for item in existing:
+        item_css = (item.get("trigger") or {}).get("css_selector") or item.get("selector") or ""
+        if (
+            item.get("target_slug") == key[0]
+            and (item.get("product_title") or item.get("label")) == key[1]
+            and item_css == key[2]
+        ):
+            return
+    existing.append(nav_entry)
+    path.write_text(json.dumps(existing, indent=2), encoding="utf-8")
+
+
+def _inkndye_extract_element_meta(page, locator) -> dict:
+    try:
+        return locator.evaluate(EXTRACT_ELEMENT_JS) or {}
+    except Exception:
+        return {}
+
+
+def _inkndye_extract_category_trigger(page, label: str) -> dict:
+    handle = None
+    try:
+        handle = page.evaluate_handle(_INKNDYE_CATEGORY_LI_BY_LABEL_JS, label)
+        if not handle:
+            return {}
+        el = handle.as_element()
+        if not el:
+            return {}
+        return el.evaluate(EXTRACT_ELEMENT_JS) or {}
+    except Exception:
+        return {}
+    finally:
+        if handle:
+            try:
+                handle.dispose()
+            except Exception:
+                pass
+
+
+def _inkndye_view_colors_locator(page, index: int):
+    cards = page.locator("div.bg-purple-100").filter(
+        has=page.locator("button", has_text=re.compile(r"view colors", re.I))
+    )
+    return cards.nth(index).locator("button", has_text=re.compile(r"view colors", re.I)).first
+
+
+def _inkndye_record_sidebar_navigations(
+    page,
+    cat_dir: Path,
+    categories: list[str],
+    origin: str,
+) -> None:
+    """Record sidebar category <li> navigations for the stitcher (standard navigations.json)."""
+    for label in categories:
+        trigger = _inkndye_extract_category_trigger(page, label)
+        target_url = _inkndye_category_url(origin, label)
+        target_slug = page_slug(target_url)
+        _inkndye_append_navigation(
+            cat_dir,
+            {
+                "label": label,
+                "tag_name": trigger.get("tag_name") or "li",
+                "selector": trigger.get("css_selector", ""),
+                "target_url": target_url,
+                "target_slug": target_slug,
+                "target_page": f"../{target_slug}/page.html",
+                "trigger": trigger,
+            },
+        )
+
+
+_INKNDYE_PRODUCT_SKIP_LABELS = {
+    "add to cart",
+    "go back",
+    "subscribe",
+    "menu",
+    "logout",
+    "english",
+    "add color",
+    "cancel",
+    "×",
+}
+
+
+def _inkndye_save_product_metadata(
+    prod_dir: Path,
+    *,
+    category: str,
+    product_title: str,
+    view_colors_index: int,
+    category_slug: str,
+) -> None:
+    meta_path = prod_dir / "metadata.json"
+    meta: dict = {}
+    if meta_path.is_file():
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception:
+            meta = {}
+    meta["inkndye"] = {
+        "category": category,
+        "product_title": product_title,
+        "view_colors_index": view_colors_index,
+        "category_slug": category_slug,
+    }
+    meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+
+
+def _inkndye_lookup_product_replay(crawl_root: Path, prod_slug: str) -> dict | None:
+    """Find category + VIEW COLORS index from category navigations.json."""
+    for cat_dir in sorted(crawl_root.glob("category-name-*")):
+        nav_path = cat_dir / "navigations.json"
+        if not nav_path.is_file():
+            continue
+        try:
+            navs = json.loads(nav_path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if not isinstance(navs, list):
+            continue
+        for i, nav in enumerate(navs):
+            if nav.get("target_slug") != prod_slug:
+                continue
+            title = (nav.get("product_title") or nav.get("label") or "").strip()
+            vc_index = nav.get("view_colors_index")
+            if vc_index is None:
+                vc_index = sum(
+                    1 for j in range(i)
+                    if (navs[j].get("label") or "").strip().upper() == "VIEW COLORS"
+                )
+            return {
+                "category_slug": cat_dir.name,
+                "category": nav.get("category") or cat_dir.name.replace("category-name-", "").replace("-", " "),
+                "product_title": title,
+                "view_colors_index": int(vc_index),
+            }
+    return None
+
+
+def _inkndye_product_replay_info(crawl_root: Path, prod_dir: Path, prod_slug: str) -> dict | None:
+    meta_path = prod_dir / "metadata.json"
+    if meta_path.is_file():
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            ink = meta.get("inkndye") or {}
+            if ink.get("category"):
+                return {
+                    "category": ink["category"],
+                    "product_title": ink.get("product_title", ""),
+                    "view_colors_index": int(ink.get("view_colors_index", 0)),
+                    "category_slug": ink.get("category_slug") or "",
+                }
+        except Exception:
+            pass
+    return _inkndye_lookup_product_replay(crawl_root, prod_slug)
+
+
+def _inkndye_restore_product_page(
+    page,
+    *,
+    cat_label: str,
+    product_index: int,
+    origin: str,
+    use_networkidle: bool,
+    wait_ms: int,
+) -> bool:
+    _inkndye_goto_category(
+        page,
+        cat_label,
+        origin,
+        use_networkidle=use_networkidle,
+        wait_ms=wait_ms,
+    )
+    if not _inkndye_click_view_colors(page, product_index):
+        return False
+    page.wait_for_timeout(WAIT_AFTER_CLICK_MS)
+    return _inkndye_wait_product_details(page)
+
+
+def _inkndye_record_product_back_nav(
+    page,
+    prod_dir: Path,
+    *,
+    cat_label: str,
+    cat_slug: str,
+    origin: str,
+) -> None:
+    back = page.locator('button[aria-label="Go Back"]').first
+    if back.count() == 0:
+        return
+    trigger = _inkndye_extract_element_meta(page, back)
+    target_url = _inkndye_category_url(origin, cat_label)
+    _inkndye_append_navigation(
+        prod_dir,
+        {
+            "label": "Go Back",
+            "tag_name": trigger.get("tag_name") or "button",
+            "selector": trigger.get("css_selector", ""),
+            "target_url": target_url,
+            "target_slug": cat_slug,
+            "target_page": f"../{cat_slug}/page.html",
+            "trigger": trigger,
+        },
+    )
+
+
+def _inkndye_filter_product_candidates(candidates: list[dict]) -> list[dict]:
+    out: list[dict] = []
+    for c in candidates:
+        label = (c.get("label") or "").strip().lower()
+        if not label or label in _INKNDYE_PRODUCT_SKIP_LABELS:
+            continue
+        if any(skip in label for skip in ("view colors", "add to cart")):
+            continue
+        out.append(c)
+    return out
+
+
+def _inkndye_force_interaction_types(
+    candidates: list[dict],
+    mandatory_interaction_labels: list[str] | None,
+) -> list[dict]:
+    """Inkndye accordions are in-page expansions, not tab switches."""
+    if not mandatory_interaction_labels:
+        return candidates
+    for c in candidates:
+        label = (c.get("label") or "").strip().lower()
+        if any(m.lower() in label for m in mandatory_interaction_labels):
+            c["llm_type"] = "interaction"
+    return candidates
+
+
+def _inkndye_capture_product_interactions(
+    page,
+    context,
+    *,
+    prod_dir: Path,
+    prod_slug: str,
+    prod_url: str,
+    cat_label: str,
+    product_index: int,
+    cat_slug: str,
+    origin: str,
+    crawl_root: Path,
+    max_interactions: int,
+    max_ranked_interactions: int,
+    mandatory_tab_labels: list[str] | None,
+    mandatory_interaction_labels: list[str] | None,
+    skip_screenshots: bool,
+    wait_after_load_ms: int,
+    use_networkidle: bool,
+    use_ax_discovery: bool,
+    ax_max_candidates_per_page: int,
+    ax_skip_grid_roles: bool,
+) -> dict:
+    """Discover and capture in-page interactions on a live product detail page."""
+    ix_dir = prod_dir / "interactions"
+    if _interactions_saved_on_disk(ix_dir):
+        print(f"[INKNDYE] Interactions already captured: {prod_slug}")
+        return {"found": 0, "saved": 0}
+    if ix_dir.is_dir() and (ix_dir / "discovered.json").is_file():
+        print(f"[INKNDYE] Clearing failed interaction capture for retry: {prod_slug}")
+        _clear_page_interactions(prod_dir)
+
+    _scroll_page_for_discovery(page)
+    candidates = discover_with_scroll(page)
+    if use_ax_discovery:
+        try:
+            from discover.accessibility import enhance_candidates_with_accessibility
+            candidates = enhance_candidates_with_accessibility(
+                page, candidates,
+                max_candidates=ax_max_candidates_per_page,
+                skip_grid_roles=ax_skip_grid_roles,
+            )
+        except Exception as exc:
+            print(f"[INKNDYE] AX discovery failed ({prod_slug}): {exc}")
+
+    candidates = _inkndye_filter_product_candidates(candidates)
+    candidates = [
+        c for c in candidates
+        if not any(cls in (c.get("className") or "") for cls in _IXP_SKIP_CLASSES)
+        and (c.get("label") or "").strip() not in _IXP_SKIP_LABELS
+    ]
+
+    if candidates and os.getenv("GEMINI_API_KEY"):
+        from ranker.interaction_ranker import rank_candidates
+        candidates = rank_candidates(
+            page.title(), prod_url, candidates,
+            top_n=max_ranked_interactions,
+            mandatory_labels=mandatory_tab_labels or [],
+            mandatory_interaction_labels=mandatory_interaction_labels or [],
+        )
+        print(f"[INKNDYE] Ranked interactions ({prod_slug}): {len(candidates)}")
+        candidates = _inkndye_force_interaction_types(candidates, mandatory_interaction_labels)
+    elif candidates:
+        from ranker.interaction_ranker import _inject_mandatory_labels
+        candidates = _inject_mandatory_labels(
+            candidates,
+            candidates[:max_ranked_interactions],
+            top_n=max_ranked_interactions,
+            mandatory_labels=mandatory_tab_labels or [],
+            mandatory_interaction_labels=mandatory_interaction_labels or [],
+        )
+        candidates = _inkndye_force_interaction_types(candidates, mandatory_interaction_labels)
+
+    if not candidates:
+        print(f"[INKNDYE] No interaction candidates on {prod_slug}")
+        return {"found": 0, "saved": 0}
+
+    def _prepare(ipage) -> None:
+        ok = _inkndye_restore_product_page(
+            ipage,
+            cat_label=cat_label,
+            product_index=product_index,
+            origin=origin,
+            use_networkidle=use_networkidle,
+            wait_ms=wait_after_load_ms,
+        )
+        if not ok:
+            raise RuntimeError(f"Could not restore product page: {cat_label}")
+
+    print(f"[INKNDYE] Capturing {len(candidates)} interaction(s) on {prod_slug}")
+    result = crawl_interactions(
+        context,
+        prod_url,
+        prod_slug,
+        prod_dir,
+        crawl_root,
+        candidates,
+        max_interactions,
+        wait_after_load_ms=wait_after_load_ms,
+        use_networkidle=use_networkidle,
+        skip_screenshots=skip_screenshots,
+        mandatory_interaction_labels=mandatory_interaction_labels,
+        existing_page=page,
+        prepare_page_fn=_prepare,
+        skip_labels={"go back"},
+    )
+    _inkndye_record_product_back_nav(
+        page,
+        prod_dir,
+        cat_label=cat_label,
+        cat_slug=cat_slug,
+        origin=origin,
+    )
+    return result
+
+
+def crawl_inkndye(
+    context,
+    start_url: str,
+    base_domain: str,
+    crawl_root: Path,
+    app_name: str,
+    *,
+    page_type: str,
+    max_pages: int,
+    skip_screenshots: bool,
+    wait_after_load_ms: int,
+    use_networkidle: bool,
+    resume: bool,
+    interactions_only: bool = False,
+    max_interactions: int = DEFAULT_MAX_INTERACTIONS,
+    max_ranked_interactions: int = 15,
+    mandatory_tab_labels: list[str] | None = None,
+    mandatory_interaction_labels: list[str] | None = None,
+    use_ax_discovery: bool = True,
+    ax_max_candidates_per_page: int = 200,
+    ax_skip_grid_roles: bool = True,
+) -> dict:
+    """Session crawl for inkndyes.com — categories, VIEW COLORS, product interactions."""
+    origin = f"{urlparse(start_url).scheme}://{urlparse(start_url).netloc}"
+    checkpoint_path = _get_inkndye_checkpoint_path(app_name)
+    ckpt: dict = {"products_done": {}}
+    if resume and checkpoint_path.is_file():
+        try:
+            ckpt = json.loads(checkpoint_path.read_text(encoding="utf-8"))
+        except Exception:
+            ckpt = {"products_done": {}}
+    products_done: dict[str, list[str]] = ckpt.setdefault("products_done", {})
+
+    sitemap = _inkndye_load_sitemap(app_name)
+    pages = 0
+    products_saved = 0
+    interactions_saved = 0
+    hit_page_limit = False
+    session_expired = False
+    page = None
+
+    def _save_ckpt() -> None:
+        checkpoint_path.write_text(json.dumps(ckpt, indent=2), encoding="utf-8")
+        get_sitemap_path(app_name).write_text(json.dumps(sitemap, indent=2), encoding="utf-8")
+
+    try:
+        page = context.new_page()
+        _goto_clean(
+            page,
+            start_url,
+            use_networkidle=use_networkidle,
+            wait_ms=wait_after_load_ms,
+        )
+        if is_login_page(page):
+            print("[INKNDYE] Session expired — delete metadata/auth.json and re-run")
+            session_expired = True
+            return {"pages": 0, "interactions_found": 0, "interactions_saved": 0, "products_saved": 0}
+
+        categories = page.evaluate(_INKNDYE_CATEGORY_LABELS_JS) or []
+        if not categories:
+            print("[INKNDYE] No sidebar categories found — using seed list from config")
+            categories = [
+                "Cotton", "Bamboo", "Micro Modal", "Excel", "Viscose", "Tencel",
+                "Ecovero", "Livaeco", "Flax Varieties", "Excel-Linen", "Bhagalpuri Silk",
+            ]
+
+        print(f"[INKNDYE] Categories: {len(categories)}")
+        for cat_label in categories:
+            if pages >= max_pages:
+                print("[INKNDYE] Page limit reached")
+                hit_page_limit = True
+                break
+
+            print(f"[INKNDYE] Category: {cat_label}")
+            cat_url = _inkndye_goto_category(
+                page,
+                cat_label,
+                origin,
+                use_networkidle=use_networkidle,
+                wait_ms=wait_after_load_ms,
+            )
+            if is_login_page(page):
+                print("[INKNDYE] Session expired during crawl")
+                session_expired = True
+                break
+
+            cat_slug = page_slug(cat_url)
+            cat_dir = crawl_root / cat_slug
+            if not _page_on_disk(crawl_root, cat_url):
+                save_page_capture(
+                    cat_dir,
+                    page,
+                    cat_url,
+                    page.title(),
+                    page_type,
+                    skip_screenshots=skip_screenshots,
+                )
+                pages += 1
+                _inkndye_upsert_sitemap(
+                    sitemap, slug=cat_slug, url=cat_url, title=page.title(), page_type=page_type
+                )
+                _save_ckpt()
+                print(f"[INKNDYE] Saved category page: {cat_slug}")
+            else:
+                print(f"[INKNDYE] Category already on disk: {cat_slug}")
+
+            _inkndye_record_sidebar_navigations(page, cat_dir, categories, origin)
+
+            products = page.evaluate(_INKNDYE_DISCOVER_PRODUCTS_JS) or []
+            print(f"[INKNDYE] Products on {cat_label}: {len(products)}")
+            done_titles = set(products_done.get(cat_label, []))
+
+            for product in products:
+                if pages >= max_pages:
+                    hit_page_limit = True
+                    break
+                title = (product.get("title") or "").strip()
+                index = int(product.get("index", 0))
+                if not title:
+                    continue
+                if title in done_titles and not interactions_only:
+                    print(f"[INKNDYE] Skip (done): {cat_label} / {title}")
+                    continue
+
+                prod_slug = _inkndye_product_slug(cat_label, title)
+                prod_dir = crawl_root / prod_slug
+                on_disk = (prod_dir / "page.html").is_file()
+                needs_interactions = not _interactions_saved_on_disk(prod_dir / "interactions")
+
+                if on_disk:
+                    done_titles.add(title)
+                    products_done[cat_label] = sorted(done_titles)
+                    _save_ckpt()
+                    if not needs_interactions:
+                        print(f"[INKNDYE] Skip (on disk): {prod_slug}")
+                        continue
+                    replay = _inkndye_product_replay_info(crawl_root, prod_dir, prod_slug) or {
+                        "category": cat_label,
+                        "product_title": title,
+                        "view_colors_index": index,
+                        "category_slug": cat_slug,
+                    }
+                    if not _inkndye_restore_product_page(
+                        page,
+                        cat_label=replay["category"],
+                        product_index=int(replay.get("view_colors_index", index)),
+                        origin=origin,
+                        use_networkidle=use_networkidle,
+                        wait_ms=wait_after_load_ms,
+                    ):
+                        print(f"[INKNDYE] Could not replay product: {prod_slug}")
+                        continue
+                    ix = _inkndye_capture_product_interactions(
+                        page,
+                        context,
+                        prod_dir=prod_dir,
+                        prod_slug=prod_slug,
+                        prod_url=page.url,
+                        cat_label=replay["category"],
+                        product_index=int(replay.get("view_colors_index", index)),
+                        cat_slug=replay.get("category_slug") or cat_slug,
+                        origin=origin,
+                        crawl_root=crawl_root,
+                        max_interactions=max_interactions,
+                        max_ranked_interactions=max_ranked_interactions,
+                        mandatory_tab_labels=mandatory_tab_labels,
+                        mandatory_interaction_labels=mandatory_interaction_labels,
+                        skip_screenshots=skip_screenshots,
+                        wait_after_load_ms=wait_after_load_ms,
+                        use_networkidle=use_networkidle,
+                        use_ax_discovery=use_ax_discovery,
+                        ax_max_candidates_per_page=ax_max_candidates_per_page,
+                        ax_skip_grid_roles=ax_skip_grid_roles,
+                    )
+                    interactions_saved += int(ix.get("saved", 0))
+                    saved_n = int(ix.get("saved", 0))
+                    if saved_n:
+                        print(f"[INKNDYE] Saved {saved_n} interaction(s) for {prod_slug}")
+                    else:
+                        print(f"[INKNDYE] No interactions saved for {prod_slug} (see not_scraped.json)")
+                    continue
+
+                if interactions_only:
+                    continue
+
+                # Fresh category state before each VIEW COLORS click.
+                _inkndye_goto_category(
+                    page,
+                    cat_label,
+                    origin,
+                    use_networkidle=use_networkidle,
+                    wait_ms=wait_after_load_ms,
+                )
+                btn = _inkndye_view_colors_locator(page, index)
+                trigger_meta = _inkndye_extract_element_meta(page, btn)
+                if not _inkndye_click_view_colors(page, index):
+                    print(f"[INKNDYE] Could not click VIEW COLORS: {cat_label} / {title}")
+                    continue
+
+                page.wait_for_timeout(WAIT_AFTER_CLICK_MS)
+                if not _inkndye_wait_product_details(page):
+                    print(f"[INKNDYE] Product details not ready: {cat_label} / {title}")
+                    continue
+
+                prod_url = page.url
+                save_page_capture(
+                    prod_dir,
+                    page,
+                    prod_url,
+                    page.title(),
+                    page_type,
+                    skip_screenshots=skip_screenshots,
+                )
+                _inkndye_save_product_metadata(
+                    prod_dir,
+                    category=cat_label,
+                    product_title=title,
+                    view_colors_index=index,
+                    category_slug=cat_slug,
+                )
+                pages += 1
+                products_saved += 1
+                done_titles.add(title)
+                products_done[cat_label] = sorted(done_titles)
+
+                _inkndye_upsert_sitemap(
+                    sitemap,
+                    slug=prod_slug,
+                    url=prod_url,
+                    title=page.title(),
+                    page_type=page_type,
+                )
+                _inkndye_append_navigation(
+                    cat_dir,
+                    {
+                        "label": "VIEW COLORS",
+                        "tag_name": trigger_meta.get("tag_name") or "button",
+                        "selector": trigger_meta.get("css_selector", ""),
+                        "target_url": prod_url,
+                        "target_slug": prod_slug,
+                        "target_page": f"../{prod_slug}/page.html",
+                        "product_title": title,
+                        "category": cat_label,
+                        "view_colors_index": index,
+                        "trigger": trigger_meta,
+                    },
+                )
+                ix = _inkndye_capture_product_interactions(
+                    page,
+                    context,
+                    prod_dir=prod_dir,
+                    prod_slug=prod_slug,
+                    prod_url=prod_url,
+                    cat_label=cat_label,
+                    product_index=index,
+                    cat_slug=cat_slug,
+                    origin=origin,
+                    crawl_root=crawl_root,
+                    max_interactions=max_interactions,
+                    max_ranked_interactions=max_ranked_interactions,
+                    mandatory_tab_labels=mandatory_tab_labels,
+                    mandatory_interaction_labels=mandatory_interaction_labels,
+                    skip_screenshots=skip_screenshots,
+                    wait_after_load_ms=wait_after_load_ms,
+                    use_networkidle=use_networkidle,
+                    use_ax_discovery=use_ax_discovery,
+                    ax_max_candidates_per_page=ax_max_candidates_per_page,
+                    ax_skip_grid_roles=ax_skip_grid_roles,
+                )
+                interactions_saved += int(ix.get("saved", 0))
+                _save_ckpt()
+                print(f"[INKNDYE] Saved product: {prod_slug}")
+
+        if checkpoint_path.is_file() and not hit_page_limit and not session_expired:
+            checkpoint_path.unlink()
+
+        print(
+            f"[INKNDYE] Done — {pages} pages, {products_saved} products, "
+            f"{interactions_saved} interactions saved this run"
+        )
+        return {
+            "pages": pages,
+            "interactions_found": interactions_saved,
+            "interactions_saved": interactions_saved,
+            "products_saved": products_saved,
+            "resumed": bool(products_done),
+        }
+    finally:
+        if page:
+            try:
+                page.close()
+            except Exception:
+                pass
+
+
+def _inkndye_interaction_kwargs(cfg: dict) -> dict:
+    return {
+        "max_interactions": cfg.get("max_interactions_per_page", DEFAULT_MAX_INTERACTIONS),
+        "max_ranked_interactions": cfg.get("max_ranked_interactions", 15),
+        "mandatory_tab_labels": cfg.get("mandatory_tab_labels") or [],
+        "mandatory_interaction_labels": cfg.get("mandatory_interaction_labels") or [],
+        "use_ax_discovery": bool(cfg.get("use_ax_discovery", True)),
+        "ax_max_candidates_per_page": int(cfg.get("ax_max_candidates_per_page", 200)),
+        "ax_skip_grid_roles": bool(cfg.get("ax_skip_grid_roles", True)),
+    }
+
+
 def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
     crawl_root = ensure_app_dirs(app_name)
+    set_preserve_query_params(cfg.get("crawl_preserve_query_params"))
     max_interactions = cfg.get("max_interactions_per_page", DEFAULT_MAX_INTERACTIONS)
     max_ranked_interactions = cfg.get("max_ranked_interactions", 15)
     max_interaction_depth = cfg.get("max_interaction_depth", 3)
@@ -2971,6 +3906,26 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
         priority_url_patterns = cfg.get("priority_url_patterns") or []
         seed_url_patterns = cfg.get("seed_url_patterns") or []
         wait_for_stripe_content = bool(cfg.get("crawl_wait_for_stripe_content", False))
+
+        if _inkndye_uses_session_crawler(app_name, cfg) and post_auth:
+            print("[INKNDYE] Session crawl (categories + VIEW COLORS + product interactions)")
+            result = crawl_inkndye(
+                context,
+                start,
+                urlparse(start).netloc,
+                crawl_root,
+                app_name,
+                page_type=page_type,
+                max_pages=max_pages,
+                skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+                wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+                use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+                resume=bool(cfg.get("crawl_resume", True)),
+                **_inkndye_interaction_kwargs(cfg),
+            )
+            context.close()
+            browser.close()
+            return result
 
         if hybrid:
             hybrid_ckpt_path = _get_hybrid_checkpoint_path(app_name)
@@ -3107,6 +4062,44 @@ def _run_browser(app_name: str, cfg: dict, *, post_auth: bool) -> dict:
 def crawl_interaction_pass(app_name: str, cfg: dict) -> dict:
     """Run hybrid phase 2 only — interactions on all pages in sitemap.json."""
     crawl_root = ensure_app_dirs(app_name)
+    set_preserve_query_params(cfg.get("crawl_preserve_query_params"))
+
+    if _inkndye_uses_session_crawler(app_name, cfg):
+        print("[INKNDYE] Interaction pass — capture product page interactions")
+        with sync_playwright() as p:
+            auth_file = ensure_auth(p, cfg["login_url"], app_name)
+            start = post_auth_start_url(auth_file, cfg["post_auth_home"])
+            browser = p.chromium.launch(
+                headless=bool(cfg.get("crawl_interaction_headless", False)),
+                channel="chrome",
+            )
+            context = browser.new_context(
+                viewport={"width": 1920, "height": 1080},
+                user_agent=USER_AGENT,
+                storage_state=auth_file,
+            )
+            prepare_context(context)
+            result = crawl_inkndye(
+                context,
+                start,
+                urlparse(start).netloc,
+                crawl_root,
+                app_name,
+                page_type="post_auth",
+                max_pages=cfg.get("max_pages_post_auth", 80),
+                skip_screenshots=bool(cfg.get("crawl_skip_screenshots")),
+                wait_after_load_ms=int(cfg.get("crawl_wait_after_load_ms", WAIT_AFTER_LOAD_MS)),
+                use_networkidle=bool(cfg.get("crawl_use_networkidle", True)),
+                resume=bool(cfg.get("crawl_resume", True)),
+                interactions_only=True,
+                **_inkndye_interaction_kwargs(cfg),
+            )
+            browser.close()
+        return {
+            "pages": result.get("pages", 0),
+            "interactions_saved": result.get("interactions_saved", 0),
+        }
+
     sitemap_path = get_sitemap_path(app_name)
     if not sitemap_path.is_file():
         raise FileNotFoundError(

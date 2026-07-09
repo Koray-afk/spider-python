@@ -386,6 +386,23 @@ def _trigger_has_tab_role(trigger: dict) -> bool:
     return False
 
 
+def _find_open_slide_panel(soup: BeautifulSoup) -> Tag | None:
+    """Tailwind-style slide-in panels that toggle translate-x-full (no new DOM nodes)."""
+    for el in soup.find_all(True):
+        if not isinstance(el, Tag):
+            continue
+        classes = _classes(el)
+        if not (("fixed" in classes) and ("right-0" in classes or "inset-y-0" in classes)):
+            continue
+        if "translate-x-full" in classes:
+            continue
+        text = el.get_text(strip=True)
+        if len(text) < 40:
+            continue
+        return el
+    return None
+
+
 def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dict:
     """Diff main vs interaction DOM and return the full reconciliation record."""
     main_soup = BeautifulSoup(main_html, "html.parser")
@@ -402,6 +419,17 @@ def reconcile_interaction(main_html: str, inter_html: str, trigger: dict) -> dic
     location = _location(added[0] if added else None)
     ui_html = "\n".join(str(r) for r in ui_roots)
     backdrop_html = "\n".join(str(r) for r in backdrop_roots)
+
+    if not ui_html.strip():
+        slide = _find_open_slide_panel(inter_soup)
+        if slide is not None:
+            ui_html = str(slide)
+            interaction_type = "drawer"
+            location = {
+                "parentSelector": "",
+                "parentXPath": "",
+                "insertMethod": "append",
+            }
 
     # Detect tab-switch from the trigger's own role attribute — _classify()
     # never produces "tab-switch" because _TYPE_RULES has no tab category.

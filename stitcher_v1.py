@@ -31,7 +31,7 @@ import re
 import ssl
 import urllib.request
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 from bs4 import BeautifulSoup, Tag
 
@@ -2948,6 +2948,52 @@ def _norm_route(raw: str) -> str:
     return "/" + raw.strip("/").lower()
 
 
+def _route_key_with_query(raw: str, preserve_params: list[str] | None) -> str:
+    """Build a normalized route key that keeps configured query params (e.g. ?name=cotton)."""
+    if not raw or not preserve_params:
+        return ""
+    href = raw.strip()
+    if href.startswith("/"):
+        href = f"http://local{href}"
+    parsed = urlparse(href)
+    if not parsed.query:
+        return ""
+    qs = parse_qs(parsed.query, keep_blank_values=True)
+    parts: list[str] = []
+    for key in preserve_params:
+        if key in qs and qs[key]:
+            parts.append(f"{key.lower()}={qs[key][0].strip().lower()}")
+    if not parts:
+        return ""
+    path = _norm_route(parsed.path or "/")
+    return f"{path}?{'&'.join(parts)}"
+
+
+def _query_label_slug_index(
+    page_dirs: list[Path], valid_slugs: set[str], preserve_params: list[str] | None
+) -> dict[str, str]:
+    """Map display labels from preserved query params (e.g. name=Cotton) → page slug."""
+    if not preserve_params:
+        return {}
+    label_key = "name" if "name" in preserve_params else preserve_params[0]
+    out: dict[str, str] = {}
+    for page_dir in page_dirs:
+        slug = page_dir.name
+        if slug not in valid_slugs:
+            continue
+        meta = page_dir / "metadata.json"
+        if not meta.is_file():
+            continue
+        try:
+            url = json.loads(meta.read_text(encoding="utf-8")).get("url", "")
+            qs = parse_qs(urlparse(url).query, keep_blank_values=True)
+            if label_key in qs and qs[label_key]:
+                out[qs[label_key][0].strip()] = slug
+        except Exception:
+            continue
+    return out
+
+
 def _resolve_nav_target_slug(
     nav: dict,
     valid_slugs: set[str],
@@ -3260,7 +3306,11 @@ def _stripe_extra_route_keys(url: str, slug: str) -> list[str]:
 
 
 def _build_route_index(
-    page_dirs: list[Path], sitemap: list[dict], valid_slugs: set[str]
+    page_dirs: list[Path],
+    sitemap: list[dict],
+    valid_slugs: set[str],
+    *,
+    preserve_query_params: list[str] | None = None,
 ) -> dict[str, str]:
     """Map normalized route (with and without query) → slug for every crawled
     page. Sourced primarily from each page's own metadata.json url (so the
@@ -3280,6 +3330,9 @@ def _build_route_index(
         if parsed.path:
             keys.add(_norm_route(parsed.path))
             keys.add(_norm_route(url))
+        qkey = _route_key_with_query(url, preserve_query_params)
+        if qkey:
+            keys.add(qkey)
         for alias in _hubspot_extra_route_keys(url, slug):
             keys.add(alias)
         for alias in _stripe_extra_route_keys(url, slug):
@@ -3300,10 +3353,18 @@ def _build_route_index(
     return index
 
 
-def _resolve_anchor(href: str, route_index: dict[str, str]) -> str | None:
+def _resolve_anchor(
+    href: str,
+    route_index: dict[str, str],
+    *,
+    preserve_query_params: list[str] | None = None,
+) -> str | None:
     """Return the target slug for an anchor href, or None if not a crawled page."""
     if not href:
         return None
+    qkey = _route_key_with_query(href, preserve_query_params)
+    if qkey and qkey in route_index:
+        return route_index[qkey]
     full = _norm_route(href)
     if full in route_index:
         return route_index[full]
@@ -3311,7 +3372,13 @@ def _resolve_anchor(href: str, route_index: dict[str, str]) -> str | None:
     return route_index.get(base)
 
 
-def _rewrite_anchors(soup: BeautifulSoup, route_index: dict[str, str], to_root: str) -> dict[str, str]:
+def _rewrite_anchors(
+    soup: BeautifulSoup,
+    route_index: dict[str, str],
+    to_root: str,
+    *,
+    preserve_query_params: list[str] | None = None,
+) -> dict[str, str]:
     """Rewrite every <a href> to a local page or neutralize it. Returns the
     slug→relative-path map of resolved page links for the navigation manifest."""
     page_links: dict[str, str] = {}
@@ -3323,7 +3390,7 @@ def _rewrite_anchors(soup: BeautifulSoup, route_index: dict[str, str], to_root: 
         if low in ("", "#") or low.startswith("#") or low.startswith(_INERT_PREFIXES):
             continue
 
-        slug = _resolve_anchor(href, route_index)
+        slug = _resolve_anchor(href, route_index, preserve_query_params=preserve_query_params)
         if slug:
             rel = f"{to_root}{slug}/page.html"
             a["href"] = rel
@@ -3337,6 +3404,42 @@ def _rewrite_anchors(soup: BeautifulSoup, route_index: dict[str, str], to_root: 
             a["data-stitch-route"] = href
             a["href"] = "#"
             a["data-stitch-unresolved"] = "1"
+    return page_links
+
+
+def _wire_label_sidebar_lists(
+    soup: BeautifulSoup,
+    label_to_slug: dict[str, str],
+    to_root: str,
+    used: set[int],
+) -> dict[str, str]:
+    """Wire sidebar <li> items whose label matches a crawled page (query ?name=… apps)."""
+    page_links: dict[str, str] = {}
+    if not label_to_slug:
+        return page_links
+    labels = set(label_to_slug)
+    for ul in soup.find_all("ul"):
+        matches: list[tuple[Tag, str]] = []
+        for li in ul.find_all("li", recursive=False):
+            if id(li) in used or li.get("data-stitch-go"):
+                continue
+            label_el = li.find(["h5", "h4", "span", "a"])
+            if not label_el:
+                continue
+            text = label_el.get_text(strip=True)
+            if text in labels:
+                matches.append((li, text))
+        if len(matches) < 2:
+            continue
+        for li, text in matches:
+            slug = label_to_slug.get(text)
+            if not slug:
+                continue
+            used.add(id(li))
+            rel = f"{to_root}{slug}/page.html"
+            li["data-stitch-go"] = rel
+            li["data-stitch-page"] = slug
+            page_links[slug] = rel
     return page_links
 
 
@@ -3684,6 +3787,70 @@ def _find_trigger(soup: BeautifulSoup, trigger: dict, used: set[int]):
     return best if best_score > 0 else None
 
 
+def _find_trigger_in_container(soup: BeautifulSoup, nav: dict, used: set[int]):
+    """Match a trigger inside a list card when container_text / product_title is set."""
+    container_text = (
+        nav.get("product_title") or nav.get("container_text") or ""
+    ).strip()
+    label = (nav.get("label") or "").strip()
+    if not container_text:
+        return None
+    for heading in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
+        if heading.get_text(strip=True) != container_text:
+            continue
+        card = heading
+        for _ in range(8):
+            parent = card.parent
+            if parent is None or not getattr(parent, "name", None):
+                break
+            card = parent
+            if label:
+                for btn in card.find_all(["button", "a"]):
+                    if id(btn) in used:
+                        continue
+                    btn_text = btn.get_text(strip=True)
+                    if label.lower() in btn_text.lower():
+                        return btn
+            else:
+                if id(card) not in used:
+                    return card
+    return None
+
+
+def _navigation_trigger_from_nav(nav: dict) -> dict:
+    """Build a trigger dict for _find_trigger from a navigations.json record."""
+    trigger = _normalize_trigger(nav.get("trigger") or {})
+    fallback = _normalize_trigger(
+        {
+            "tag_name": nav.get("tag_name"),
+            "text": nav.get("label"),
+            "css_selector": nav.get("selector"),
+            "class_name": nav.get("class_name"),
+        }
+    )
+    for key, val in fallback.items():
+        if val and not trigger.get(key):
+            trigger[key] = val
+    css = (
+        trigger.get("css_selector")
+        or nav.get("selector")
+        or (nav.get("trigger") or {}).get("css_selector")
+        or ""
+    )
+    if css:
+        trigger["css_selector"] = css
+    return trigger
+
+
+def _find_navigation_element(soup: BeautifulSoup, nav: dict, used: set[int]):
+    """Resolve a navigation trigger — container disambiguation first, then attributes."""
+    el = _find_trigger_in_container(soup, nav, used)
+    if el is not None:
+        return el
+    trigger = _navigation_trigger_from_nav(nav)
+    return _find_trigger(soup, trigger, used)
+
+
 def _wire_navigations(
     soup: BeautifulSoup,
     navigations: list[dict],
@@ -3704,7 +3871,7 @@ def _wire_navigations(
         # Anchors are already rewritten via href; skip to avoid redundancy.
         if (trigger.get("tag_name") or nav.get("tag_name") or "").lower() == "a":
             continue
-        el = _find_trigger(soup, trigger, used) if trigger else None
+        el = _find_navigation_element(soup, nav, used)
         if el is None:
             continue
         if el.get("data-stitch-go"):
@@ -3846,6 +4013,7 @@ def _normalize_trigger(trigger: dict) -> dict:
         "name": trigger.get("name") or "",
         "role": trigger.get("role") or "",
         "outer_html": trigger.get("outer_html") or trigger.get("outerHTML") or "",
+        "css_selector": trigger.get("css_selector") or trigger.get("selector") or "",
     }
 
 
@@ -4463,10 +4631,14 @@ def _process_html(
     expand_sidebars: bool = True,
     likwid_flows: dict | None = None,
     app_name: str = "",
+    preserve_query_params: list[str] | None = None,
+    label_to_slug: dict[str, str] | None = None,
 ) -> tuple[str, dict[str, str], list[dict], int, tuple[int, int]]:
     soup = BeautifulSoup(html, "html.parser")
     stripe_panels = _inject_stripe_workload_nav_panels(soup, route_index)
-    page_links = _rewrite_anchors(soup, route_index, to_root)
+    page_links = _rewrite_anchors(
+        soup, route_index, to_root, preserve_query_params=preserve_query_params
+    )
     used: set[int] = set()
     # Accordions first: claim sidebar toggles so interaction wiring never
     # rebinds them to a snapshot, and rewritten submenu anchors stay reachable.
@@ -4502,6 +4674,10 @@ def _process_html(
     if navigations and valid_slugs is not None:
         page_links.update(
             _wire_navigations(soup, navigations, valid_slugs, to_root, used, route_index)
+        )
+    if label_to_slug:
+        page_links.update(
+            _wire_label_sidebar_lists(soup, label_to_slug, to_root, used)
         )
     if interactions and page_dir is not None:
         # Wire tabs first (fallback): claims remaining tab-switch triggers.
@@ -4954,7 +5130,12 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
 
     page_dirs = [d for d in sorted(crawl_dir.iterdir()) if d.is_dir() and (d / "page.html").exists()]
     valid_slugs = {d.name for d in page_dirs if d.name != "login"}
-    route_index = _build_route_index(page_dirs, sitemap, valid_slugs)
+    stitch_cfg = get_app_config(app_name)
+    preserve_query_params = stitch_cfg.get("crawl_preserve_query_params") or []
+    route_index = _build_route_index(
+        page_dirs, sitemap, valid_slugs, preserve_query_params=preserve_query_params
+    )
+    label_to_slug = _query_label_slug_index(page_dirs, valid_slugs, preserve_query_params)
 
     stitched_dir = get_stitched_dir(app_name)
     clean_stitched(app_name)
@@ -5037,6 +5218,8 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
             expand_sidebars=expand_sidebars,
             likwid_flows=likwid_flows,
             app_name=app_name,
+            preserve_query_params=preserve_query_params,
+            label_to_slug=label_to_slug,
         )
         new_html = rewire_asset_prefix(new_html, "../assets/")
         new_html, asset_stats = localize_html_assets(
@@ -5076,6 +5259,8 @@ def stitch_app(app_name: str, expand_sidebars: bool = True) -> dict:
                 expand_sidebars=expand_sidebars,
                 likwid_flows=likwid_flows,
                 app_name=app_name,
+                preserve_query_params=preserve_query_params,
+                label_to_slug=label_to_slug,
             )
             new_ihtml = rewire_asset_prefix(new_ihtml, "../../../assets/")
             new_ihtml, iasset_stats = localize_html_assets(

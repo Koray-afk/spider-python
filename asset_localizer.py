@@ -33,6 +33,10 @@ _CSS_IMPORT_RE = re.compile(
     re.IGNORECASE,
 )
 _LOCAL_ASSET_RE = re.compile(r"(?:\.\./)+assets/([^)\'\"'\s]+)")
+_INLINE_STYLE_ATTR_RE = re.compile(
+    r'\bstyle=(["\'])(.*?)\1',
+    re.IGNORECASE | re.DOTALL,
+)
 _MANIFEST_NAME = "_manifest.json"
 
 
@@ -244,6 +248,46 @@ def _rewrite_url(raw: str, assets_dir: Path, manifest: dict[str, str], url_prefi
     return raw + fragment
 
 
+def _rewrite_style_urls_in_text(
+    text: str,
+    page_url: str,
+    assets_dir: Path,
+    manifest: dict[str, str],
+    url_prefix: str,
+    stats: dict,
+    *,
+    download_missing: bool,
+) -> str:
+    """Rewrite url(...) inside a CSS fragment (inline style or <style> block)."""
+
+    def _url_repl(um: re.Match) -> str:
+        raw = um.group(2).strip().strip("'\"")
+        if raw.startswith(("data:", "blob:", "#")):
+            return um.group(0)
+        if raw.startswith("../"):
+            rel = _LOCAL_ASSET_RE.match(raw)
+            if rel:
+                stats["rewritten"] += 1
+                return f"url({url_prefix}{rel.group(1)})"
+            return um.group(0)
+        absolute = raw
+        if not raw.startswith(("http://", "https://")):
+            absolute = urljoin(page_url, raw)
+        if not download_missing and absolute.startswith(("http://", "https://")):
+            rel = _local_path_for_url(absolute, manifest)
+            if not rel:
+                return um.group(0)
+            stats["rewritten"] += 1
+            return f"url({url_prefix}{rel})"
+        new_url = _rewrite_url(absolute, assets_dir, manifest, url_prefix)
+        if new_url != absolute:
+            stats["rewritten"] += 1
+            return f"url({new_url})"
+        return um.group(0)
+
+    return _STYLE_URL_RE.sub(_url_repl, text)
+
+
 def localize_html_assets(
     html: str,
     page_url: str,
@@ -283,25 +327,25 @@ def localize_html_assets(
 
     def _style_block_repl(match: re.Match) -> str:
         block = match.group(0)
-
-        def _url_repl(um: re.Match) -> str:
-            raw = um.group(2).strip().strip("'\"")
-            if raw.startswith(("data:", "blob:", "#")):
-                return um.group(0)
-            absolute = urljoin(page_url, raw) if not raw.startswith(("http://", "https://", "../")) else raw
-            if absolute.startswith("../"):
-                rel = _LOCAL_ASSET_RE.match(absolute)
-                if rel:
-                    stats["rewritten"] += 1
-                    return f"url({url_prefix}{rel.group(1)})"
-                return um.group(0)
-            new_url = _rewrite_url(absolute, assets_dir, manifest, url_prefix)
-            if new_url != absolute:
-                stats["rewritten"] += 1
-                return f"url({new_url})"
-            return um.group(0)
-
-        return _STYLE_URL_RE.sub(_url_repl, block)
+        inner = re.sub(
+            r"^<style\b[^>]*>|</style>$",
+            "",
+            block,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        new_inner = _rewrite_style_urls_in_text(
+            inner,
+            page_url,
+            assets_dir,
+            manifest,
+            url_prefix,
+            stats,
+            download_missing=download_missing,
+        )
+        if new_inner == inner:
+            return block
+        return block.replace(inner, new_inner, 1)
 
     html = re.sub(
         r"<style\b[^>]*>[\s\S]*?</style>",
@@ -309,6 +353,23 @@ def localize_html_assets(
         html,
         flags=re.IGNORECASE,
     )
+
+    def _inline_style_repl(match: re.Match) -> str:
+        quote, content = match.group(1), match.group(2)
+        new_content = _rewrite_style_urls_in_text(
+            content,
+            page_url,
+            assets_dir,
+            manifest,
+            url_prefix,
+            stats,
+            download_missing=download_missing,
+        )
+        if new_content == content:
+            return match.group(0)
+        return f"style={quote}{new_content}{quote}"
+
+    html = _INLINE_STYLE_ATTR_RE.sub(_inline_style_repl, html)
 
     stats["downloaded"] = len(manifest) - before
     _save_manifest(assets_dir, manifest)

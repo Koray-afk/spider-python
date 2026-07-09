@@ -1,0 +1,34 @@
+{
+  "source_page": "productDetails-Viscose-20s-compact",
+  "source_url": "https://www.inkndyes.com/productDetails",
+  "source_title": "Ink N Dyes | Premium Yarn & Dye Manufacturer",
+  "trigger": {
+    "tag_name": "button",
+    "text": "Packaging & Delivery",
+    "id": "",
+    "class_name": "flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800",
+    "name": "",
+    "role": "",
+    "href": "",
+    "src": "",
+    "data_testid": "",
+    "aria_label": "",
+    "selector": "#root > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(8) > div:nth-of-type(2) > button:nth-of-type(1)",
+    "crawl_selector": "[data-crawl-id=\"9\"]",
+    "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[8]/div[2]/button[1]",
+    "outer_html": "<button class=\"flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800\" data-crawl-id=\"9\"><span>Packaging &amp; Delivery</span><svg class=\"w-5 h-5 transition-transform \" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\"></path></svg></button>"
+  },
+  "target": {
+    "url": "https://www.inkndyes.com/productDetails",
+    "slug": "productDetails",
+    "title": "Ink N Dyes | Premium Yarn & Dye Manufacturer"
+  },
+  "interaction_type": "unknown",
+  "original_element_html": "<button class=\"flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800\" data-crawl-id=\"9\"><span>Packaging &amp; Delivery</span><svg class=\"w-5 h-5 transition-transform \" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\"></path></svg></button>",
+  "trigger_label": "Packaging & Delivery",
+  "trigger_id": "",
+  "trigger_class": "flex justify-between items-center w-full text-left text-md md:text-lg font-semibold text-gray-800",
+  "target_url": "https://www.inkndyes.com/productDetails",
+  "target_slug": "productDetails",
+  "target_title": "Ink N Dyes | Premium Yarn & Dye Manufacturer"
+}

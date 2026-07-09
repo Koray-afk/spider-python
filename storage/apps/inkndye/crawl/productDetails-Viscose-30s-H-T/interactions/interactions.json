@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Product Description",
+    "selector": "[data-crawl-id=\"8\"]",
+    "interaction_path": "interactions/001-product-description",
+    "relationship_file": "interactions/001-product-description/relationship.json"
+  },
+  {
+    "label": "Packaging & Delivery",
+    "selector": "[data-crawl-id=\"9\"]",
+    "interaction_path": "interactions/002-packaging-delivery",
+    "relationship_file": "interactions/002-packaging-delivery/relationship.json"
+  },
+  {
+    "label": "Suggested Use",
+    "selector": "[data-crawl-id=\"10\"]",
+    "interaction_path": "interactions/003-suggested-use",
+    "relationship_file": "interactions/003-suggested-use/relationship.json"
+  },
+  {
+    "label": "Precautions",
+    "selector": "[data-crawl-id=\"11\"]",
+    "interaction_path": "interactions/004-precautions",
+    "relationship_file": "interactions/004-precautions/relationship.json"
+  }
+]

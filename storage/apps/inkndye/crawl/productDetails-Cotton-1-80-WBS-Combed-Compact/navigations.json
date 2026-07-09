@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Go Back",
+    "tag_name": "button",
+    "selector": "#root > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1)",
+    "target_url": "https://www.inkndyes.com/category?name=Cotton",
+    "target_slug": "category-name-Cotton",
+    "target_page": "../category-name-Cotton/page.html",
+    "trigger": {
+      "tag_name": "button",
+      "text": "",
+      "id": "",
+      "class_name": "text-xl rounded-md border border-purple-800 p-2 text-purple-800 hover:bg-purple-100 transition",
+      "name": "",
+      "role": "",
+      "href": "",
+      "src": "",
+      "data_testid": "",
+      "aria_label": "Go Back",
+      "css_selector": "#root > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]",
+      "outer_html": "<button class=\"text-xl rounded-md border border-purple-800 p-2 text-purple-800 hover:bg-purple-100 transition\" aria-label=\"Go Back\" data-crawl-id=\"3\"><svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" viewBox=\"0 0 512 512\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z\"></path></svg></button>"
+    }
+  }
+]
