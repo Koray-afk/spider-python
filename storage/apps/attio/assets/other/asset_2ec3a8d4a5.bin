@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LE1B1B6YV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6LE1B1B6YV');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Insurge AI — Personalised Visual and Voice Led AI Meetings for Every Prospect</title>
+    <meta name="description" content="Insurge AI delivers live, personalised visual and voice led AI meetings to every prospect instantly — at unlimited scale, 24/7, without a human in the room.">
+    <meta name="author" content="Insurge AI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://insurgeai.com" />
+
+    <!-- Open Graph -->
+    
+    
+    <meta property="og:url" content="https://insurgeai.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Insurge AI" />
+    <meta property="og:image" content="https://insurgeai.com/og-image.png?v=2">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    
+    <meta name="twitter:image" content="https://insurgeai.com/og-image.png?v=2">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload hero images -->
+    <link
+      rel="preload"
+      href="/herbg.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="/logo.png"
+      as="image"
+      type="image/png"
+      fetchpriority="high"
+    />
+
+    <!-- Organisation Schema — static, read by Google without JS -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Insurge AI",
+        "url": "https://insurgeai.com",
+        "logo": "https://insurgeai.com/favicon.png",
+        "description": "Personalised visual and voice led AI meetings delivered instantly to every prospect at unlimited scale",
+        "sameAs": [
+          "https://linkedin.com/company/insurge-ai"
+        ]
+      }
+    </script>
+
+    <!-- SoftwareApplication Schema — static, read by Google without JS -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Insurge AI",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Personalised visual and voice led AI meeting agents that deliver instant, scalable prospect meetings without a human in the room",
+        "url": "https://insurgeai.com",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://insurgeai.com"
+        }
+      }
+    </script>
+    <meta property="og:title" content="Insurge AI — Personalised Visual and Voice Led AI Meetings for Every Prospect">
+  <meta name="twitter:title" content="Insurge AI — Personalised Visual and Voice Led AI Meetings for Every Prospect">
+  <meta property="og:description" content="Insurge AI delivers live, personalised visual and voice led AI meetings to every prospect instantly — at unlimited scale, 24/7, without a human in the room.">
+  <meta name="twitter:description" content="Insurge AI delivers live, personalised visual and voice led AI meetings to every prospect instantly — at unlimited scale, 24/7, without a human in the room.">
+  <script type="module" crossorigin src="/assets/index-CDPKjGqa.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-oXkCh9PK.css">
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

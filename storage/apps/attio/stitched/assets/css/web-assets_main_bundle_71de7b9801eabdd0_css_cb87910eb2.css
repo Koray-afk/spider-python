@@ -1,0 +1,145 @@
+@layer reset {
+  html {
+    overscroll-behavior: none;
+  }
+
+  *, :before, :after {
+    box-sizing: border-box;
+  }
+
+  ul[class], ol[class] {
+    padding: 0;
+  }
+
+  body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+  }
+
+  body {
+    scroll-behavior: smooth;
+    text-rendering: optimizespeed;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  ul[class], ol[class] {
+    list-style: none;
+  }
+
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  article > * + * {
+    margin-top: 1em;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      animation-duration: 0s !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+  html, body {
+    font-family: Inter, sans-serif;
+  }
+
+  #root > div {
+    outline: none;
+  }
+}
+
+.layout-debugging * {
+  border: 1px solid red;
+}
+
+#\31 p-live-region {
+  display: none !important;
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url(../fonts/web-assets_InterVariable_ff710c092d_woff2_2ba39b479e.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url(../fonts/web-assets_InterVariable-Italic_ef0ecaff96_woff2_df62d5d63a.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/web-assets_JetBrainsMono-Regular_b8c97ebabd_woff2_5028745ba0.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/web-assets_JetBrainsMono-Italic_0cc3c38e1a_woff2_c1be9b1f9b.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/web-assets_JetBrainsMono-Medium_375d6faec4_woff2_4b37f01bdf.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: italic;
+  font-weight: 500;
+  src: url(../fonts/web-assets_JetBrainsMono-MediumItalic_10e385f3c9_woff2_9d7e35a5e4.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/web-assets_JetBrainsMono-SemiBold_e6d3cf35d6_woff2_1f586525d4.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: italic;
+  font-weight: 600;
+  src: url(../fonts/web-assets_JetBrainsMono-SemiBoldItalic_cf02460117_woff2_f6dcbfa013.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/web-assets_JetBrainsMono-Bold_bcc869acd6_woff2_c3e1187f1a.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Jetbrains Mono;
+  font-style: italic;
+  font-weight: 700;
+  src: url(../fonts/web-assets_JetBrainsMono-BoldItalic_16d4a373b2_woff2_cb708bb79a.woff2) format("woff2");
+}
+

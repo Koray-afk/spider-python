@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="color-scheme" content="light dark">
+    <title>Attio</title>
+    <style>html{background-color:#FFFFFF}@media (prefers-color-scheme:dark){html{background-color:#101112}}</style>
+    <script nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">!function(){try{var p=localStorage.getItem("attio:preferred_theme");if(p){var id=p.split(":")[1];if(id==="dark")document.documentElement.style.backgroundColor="#101112";else if(id==="hacker")document.documentElement.style.backgroundColor="#000000";else if(id==="light")document.documentElement.style.backgroundColor="#FFFFFF";}}catch(e){}}();</script>
+    <link rel="preload" href="https://app.attio.com/web-assets/InterVariable-Italic.ef0ecaff96.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://app.attio.com/web-assets/InterVariable.ff710c092d.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <script nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.15.2";
+        }}();
+    </script>
+    <link rel="stylesheet" href="https://app.attio.com/web-assets/lib-vendors.bundle.45813f77e56628ee.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://app.attio.com/web-assets/main.bundle.71de7b9801eabdd0.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.ATTIO_DEHYDRATED_STORE={"active_user":null,"environment":{"attio_execution_id":"6c09a58d-28af-4848-97d8-2cd005fc1949","attio_api_domain":"https://api.attio.com","attio_app_domain":"https://app.attio.com","attio_awac_domain":"https://awac.attio.com","attio_soho_domain":"https://attio.link","attio_hooks_domain":"https://hooks.attio.com","attio_client_extension_runtime_domain":"https://attio.host","attio_asset_bucket_domain":"assets.attio.com","attio_resource_domain":"https://cdn.attio.com","dropbox":{"app_key":"2xrwsj59f9vw4kb"},"pusher":{"app_key":"be5e0e45793df9f7cde9","cluster":"eu"},"version":{"channel":"master","latest":"8f54285e06f2f573cdcc0487cfa467ca45a776da","running":"8f54285e06f2f573cdcc0487cfa467ca45a776da","loaded_at":"2026-07-06T17:12:58.114Z","lock_out_before":"2026-05-14T15:00:00.000Z","platform":"web-app"},"mixpanel":{"project_token":"947e6010d91c7a8684887289a58582cc","marketing_site_project_token":"947e6010d91c7a8684887289a58582cc"},"gtm":{"id":"GTM-NQKQ8FJ"},"segment":{"web_app_write_key":"cH7S0SwABWtP2A6REMiA8E8exkdu058l"},"system_developer_app_ids":{"mailchimp":"6a7229a7-0850-4542-93a0-06d632d5a470","mixmax":"155382ad-b702-494a-9d99-8c685a1c5b08"},"opentelemetry_enduser_collector_url":"https://telemetry.attio.build","traceparent":"00-c9951cd5394ccd0fa87594b13bcf0b55-d4300945770e597f-01","tracestate":"trace_level=30"}}</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.ATTIO_DEHYDRATED_WORKSPACES=[]</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.RESERVED_SLUGS=["api","attio","welcome","integrations","auth","admin","awac","atac","redirect","workspaces","authorize","app-invites","2fa-recovery","2fa","account-lock","account-recover","account-recovery","account-unlock","account-verify","account","activate","auth-callback","auth-login","auth-logout","auth-register","auth-reset-password","auth-signup","auth-token","auth-verify","auth","change-password","confirm-email","consent","email-confirm","email-verification","forgot-password","jwks-json","jwks","login","logout","oauth-access-token","oauth-authorize","oauth-callback","oauth-consent","oauth-error","oauth-introspect","oauth-login","oauth-redirect","oauth-refresh-token","oauth-revoke","oauth-token","oauth-userinfo","oauth","openid-authorize","openid-callback","openid-config","openid-configuration","openid-connect","openid-introspect","openid-jwks","openid-logout","openid-redirect","openid-revoke","openid-token","openid-userinfo","openid","password-change","password-recovery","password-reset","profile","recover-password","refresh-token","register","reset-password","saml-acs","saml-idp","saml-login","saml-metadata","saml-slo","saml-sp","saml-sso-login","saml-sso","saml","session","sessions","signin","signout","signup","token","tokens","two-factor-recovery","two-factor","user-2fa","user-account","user-activate","user-change-password","user-forgot-password","user-lock","user-login","user-logout","user-profile","user-recover-account","user-recover-password","user-recover","user-register","user-reset-password","user-signin","user-signout","user-signup","user-unlock","user-verify-email","user-verify","verify-2fa","verify-email","verify","well-known","admin-dashboard","admin","administrator","api-v1","api-v2","api","backend","backup","backups","bin","cgi-bin","cmd","config","configuration","control-panel","controlpanel","dashboard","database","db","debug","env","graphql","hidden","internal-api","log","logs","manage","management","private-api","private","script","scripts","secret","secure","service","services","settings","super-user","superuser","system-config","system","404","500","error","download","downloads","faq","help","privacy","security","terms","uploads","ds-store","git","hg","htaccess","htpasswd","svn"]</script>
+    <div id="root">
+    </div>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.STRIPE_PUBLIC_KEY="pk_live_wv4oPhoZWPdQPxalsV27sl6V00oN2xGcG7"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.STRIPE_US_PUBLIC_KEY="pk_live_51S3E1uJ7eBw7sxdHRydg7QrjqkZudTHLLThNVfab17ZuUMvmvNKCNTzqT6i2fjQ38En90aYOZhufAfsATZywJwrt00sGWhtv1i"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.MAPBOX_CLIENT_TOKEN="pk.eyJ1IjoiYXR0aW8tYWxleCIsImEiOiJjbGR5Z2NwNjQwY2RwM3ZrOXpzcDhkbXl1In0.SjEW-OKdjYyxNDS6qgwBTA"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.STORYBLOK_CLIENT_TOKEN="myystnFT5Lu4UrDI3pkXkAtt"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.ALGOLIA_ATTIO_MARKETING_APP_ID="WMF1W6G3L8"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.ALGOLIA_SEARCH_CLIENT_TOKEN="09f7d51c2ad3041c7e986e1286de1da9"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.ALGOLIA_HELP_INDEX_NAME="polaris_help_index"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.SENTRY_WEB_APP_DSN="https://40d6bc649bf2416a805d31f64d42fda5@o394581.ingest.sentry.io/5244890"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.SENTRY_WEB_NEXUS_DSN="https://73e4183303a04497a1ae9a971fc4cdd8@o394581.ingest.sentry.io/5530539"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.DD_APPLICATION_ID="f5cbf5ec-03f1-4521-91e7-f59c8d17f116"</script>
+    <script type="text/javascript" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949">window.DD_REACT_CLIENT_TOKEN="pub69840e9d8451b8e5909e859df12c0ea5"</script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/runtime.bundle.540c71728634136d.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-react.bundle.0c6c23f202bfe8ee.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-router.bundle.d606068925e191e1.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-pdf.bundle.237da80e7de778a1.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-video.bundle.3622d8e70c82165b.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-rive.bundle.d7a565da47004881.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-codemirror.bundle.f3fc3a736ff26284.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-motion.bundle.77c5b30d7190df2a.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-xyflow.bundle.d9a7d82cf1774f63.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-yjs.bundle.13a4ca5c7ec721a6.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-lexical.bundle.429beeaab6306b39.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-otel.bundle.a99346eacda8cd2b.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-sentry.bundle.4281bece8684659e.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-datadog.bundle.a50c01458f807228.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-graphql.bundle.1acdefc9f3aa028a.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-floating.bundle.3e6b2fe6ffd77299.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-react-aria.bundle.f00811dd8cc14170.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-radix.bundle.b5187ef41478c1b0.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-dnd-kit.bundle.fd842f3c3a894395.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main-picasso.bundle.92bc1d6007cd5b45.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main-attio-web.bundle.4234ccfe7cacf6e0.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main-web-containers.bundle.b822d3c711203e6a.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main-web-features.bundle.3fe224985c33effb.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main-rich-text.bundle.9d4b9d3090590655.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main-attio-nexus.bundle.9e606d0183b20322.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/lib-vendors.bundle.5d81715e44fa72ff.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+    <script type="text/javascript" src="https://app.attio.com/web-assets/main.bundle.927c6db0b6fe8389.js" crossorigin="anonymous" nonce="6c09a58d-28af-4848-97d8-2cd005fc1949"></script>
+</body>
+
+</html>

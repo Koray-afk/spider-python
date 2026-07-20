@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Redirecting to %{new_domain}</title></head>
+<body onload="document.forms[0].submit()">
+<form method="POST" action="https://www.airbnb.co.in/v2/domain_switch/handoff">
+<input type="hidden" name="version" value="1">
+<input type="hidden" name="payload" value="eyJjb29raWVzIjp7ImJldiI6IjE3ODMzNTgyMjBfRUFObUU0WVdWak0yTTNZVCIsImV2ZXJlc3RfY29va2llIjoiMTc4MzM1ODIyMC5FQU1tSTFNamhqTnpVeU5HWTRPVC56Vm9saURBY25ndzJraS03SU4zemxMV1A2N2lyTTJmZlpKZy1sT09SWnFVIn0sInJlZGlyZWN0X3BhdGgiOiIvIiwicmVkaXJlY3RfcXVlcnlfcmF3IjoibG9jYWxlPWVuIiwiaG9zdCI6ImFpcmJuYi5jby5pbiIsInBhdGgiOiIvdjIvZG9tYWluX3N3aXRjaC9oYW5kb2ZmIiwidHMiOjE3ODMzNTgyMjA2OTZ9.-d7_M99pALJDQ0-_xvm-CPoFROeU8sl_PsLbVI1s5QI">
+<noscript><button type="submit">Redirecting to %{new_domain}</button></noscript>
+</form>
+</body>
+</html>
